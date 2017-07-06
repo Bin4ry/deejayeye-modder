@@ -1,0 +1,31 @@
+diff -Naur original/smali_classes5/dji/pilot/publics/objects/DJIApplicationLike.smali mod/smali_classes5/dji/pilot/publics/objects/DJIApplicationLike.smali
+--- original/smali_classes5/dji/pilot/publics/objects/DJIApplicationLike.smali	2017-07-06 01:03:44.705120200 +0200
++++ mod/smali_classes5/dji/pilot/publics/objects/DJIApplicationLike.smali	2017-07-06 23:46:26.359773300 +0200
+@@ -620,28 +620,6 @@
+ 
+     invoke-static {v0, v1}, Lcom/dji/frame/c/c;->a(ILdji/thirdparty/afinal/b$b;)V
+ 
+-    .line 155
+-    new-instance v0, Landroid/content/Intent;
+-
+-    invoke-virtual {p0}, Ldji/pilot/publics/objects/DJIApplicationLike;->getApplication()Landroid/app/Application;
+-
+-    move-result-object v1
+-
+-    const-class v2, Ldji/dbox/upgrade/p4/statemachine/DJIUpgradeService;
+-
+-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+-
+-    iput-object v0, p0, Ldji/pilot/publics/objects/DJIApplicationLike;->upgradeService:Landroid/content/Intent;
+-
+-    .line 156
+-    invoke-virtual {p0}, Ldji/pilot/publics/objects/DJIApplicationLike;->getApplication()Landroid/app/Application;
+-
+-    move-result-object v0
+-
+-    iget-object v1, p0, Ldji/pilot/publics/objects/DJIApplicationLike;->upgradeService:Landroid/content/Intent;
+-
+-    invoke-virtual {v0, v1}, Landroid/app/Application;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+-
+     .line 158
+     invoke-static {}, Lorg/greenrobot/eventbus/EventBus;->getDefault()Lorg/greenrobot/eventbus/EventBus;
