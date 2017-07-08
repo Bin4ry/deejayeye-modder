@@ -9,7 +9,7 @@ java -jar tools/apktool.jar d -o decompile_out PutApkHere/orig.apk
 echo done
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" off
+         2 "remove forced Updates from DJI Go4" on
          3 "remove Firmware Upgrade check" off
 		 4 "offline login" off)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
