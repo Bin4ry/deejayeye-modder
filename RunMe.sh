@@ -10,7 +10,8 @@ echo done
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" off
-         3 "remove Firmware Upgrade check" off)
+         3 "remove Firmware Upgrade check" off
+		 4 "offline login" off)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -29,6 +30,11 @@ do
         3)
             cd decompile_out
 			patch -l -p1 < ../patches/removeFWUpgradeService.patch
+			cd ..
+            ;;
+		4)
+            cd decompile_out
+			patch -l -p1 < ../patches/offlineLogin.patch
 			cd ..
             ;;
     esac
