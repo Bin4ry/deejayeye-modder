@@ -8,4 +8,5 @@ RemoveFwUpgradeService:
 This will stop FW Upgrade Service to start, this way the app does not know which firmware the aircraft is running. This might be useful for people on old firmware versions
 
 Offline login:
-Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass.
+Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass. You will need to go offline for this to work once during the login.
+
