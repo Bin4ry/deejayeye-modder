@@ -64,6 +64,7 @@ do
 			cp ../patches/nfz/flyforbid.json res/raw/flyforbid.json
 			cp ../patches/nfz/flyforbid_airmap/* assets/flysafe/flyforbid_airmap/
 			cp ../patches/nfz/flysafe_areas_djigo.db assets/flysafe/flysafe_areas_djigo.db
+			patch -l -p1 < ../patches/removeNFZ.patch
 			cd ..
             ;;		
     esac
