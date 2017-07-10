@@ -75,7 +75,7 @@ java -jar tools/apktool.jar b -o out/mod.apk decompile_out
 echo Signing with testkey
 java -jar tools/sign.jar out/mod.apk
 rm -f out/mod.apk
-mv out/mod.s.apk out/mod.apk
+mv out/mod.s.apk out/mod-v8.apk
 echo Done signing
 echo Removing decompile_out folder
 rm -rf decompile_out
