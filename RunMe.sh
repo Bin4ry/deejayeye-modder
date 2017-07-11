@@ -1,7 +1,8 @@
 #!/bin/bash
+ver=`cat version.txt`
 mkdir out
 clear
-echo Welcome to the smali patcher
+echo Welcome to the smali patcher version: $ver
 echo Please put the original file into the "PutApkHere" folder and name it orig.apk
 read -p "Press any key to continue... "
 echo Decompiling original apk
@@ -10,12 +11,12 @@ echo done
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" off
-		 4 "offline login (thx artu-ole)" off
-		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" off
-		 6 "remove Google APIs (keep if you want to keep social)" off
-		 7 "remove social networks (keep Google APIs too!)" off
-		 8 "remove NFZ db (thx err0r4o4)" off)
+         3 "remove Firmware Upgrade check" on
+		 4 "offline login (thx artu-ole)" on
+		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
+		 6 "remove Google APIs (keep if you want to keep social)" on
+		 7 "remove social networks (keep Google APIs too!)" on
+		 8 "remove NFZ db (thx err0r4o4)" on)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -59,18 +60,26 @@ do
 		8)
             cd decompile_out
 			rm assets/flysafe/flysafe_areas_djigo.db
+			rm assets/flysafe/flysafe_polygon_1860.db
 			rm assets/flysafe/flyforbid_airmap/*.json
 			rm res/raw/flyforbid.json
-			rm lib/libSDKRelativeJNI.so
+			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			cp ../patches/nfz/flyforbid.json res/raw/flyforbid.json
 			cp ../patches/nfz/flyforbid_airmap/* assets/flysafe/flyforbid_airmap/
 			cp ../patches/nfz/flysafe_areas_djigo.db assets/flysafe/flysafe_areas_djigo.db
-			cp ../patches/libSDKRelativeJNI.so lib/libSDKRelativeJNI.so
+			cp ../patches/nfz/flysafe_polygon_1860.db assets/flysafe/flysafe_polygon_1860.db
+			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.patch
+			rm lib/armeabi-v7a/libSDKRelativeJNI.so
+			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			patch -l -p1 < ../patches/removeNFZ.patch
 			cd ..
             ;;		
     esac
 done
+cd decompile_out
+rm assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
+cp ../patches/unknown.lol assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
+cd ..
 echo =======================
 echo Done patching
 echo Rebuilding apk
@@ -78,7 +87,8 @@ java -jar tools/apktool.jar b -o out/mod.apk decompile_out
 echo Signing with testkey
 java -jar tools/sign.jar out/mod.apk
 rm -f out/mod.apk
-mv out/mod.s.apk out/mod-v9.apk
+rm -f out/mod-$ver.apk
+mv out/mod.s.apk out/mod-$ver.apk
 echo Done signing
 echo Removing decompile_out folder
 rm -rf decompile_out

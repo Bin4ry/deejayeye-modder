@@ -184,6 +184,7 @@ diff -Naur orig/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali mod/smali_clas
  
      .line 177
      iget-object v3, p0, Lcn/sharesdk/wechat/utils/g$2;->b:Lcn/sharesdk/wechat/utils/g;
+
 diff -Naur orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali
 --- orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2017-07-10 10:51:18.960969600 +0200
 +++ mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2017-07-10 12:46:45.892899000 +0200
@@ -196,6 +197,7 @@ diff -Naur orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali mod/smali_classe
  
      .line 150
      :try_start_0
+
 diff -Naur orig/smali_classes2/com/a/a/a/h.smali mod/smali_classes2/com/a/a/a/h.smali
 --- orig/smali_classes2/com/a/a/a/h.smali	2017-07-10 10:51:19.059324300 +0200
 +++ mod/smali_classes2/com/a/a/a/h.smali	2017-07-10 12:45:17.271018600 +0200
@@ -353,6 +355,7 @@ diff -Naur orig/smali_classes3/com/mob/commons/authorize/a.smali mod/smali_class
  
      .line 208
      const/4 v3, 0x0
+
 diff -Naur orig/smali_classes3/com/mob/commons/c.smali mod/smali_classes3/com/mob/commons/c.smali
 --- orig/smali_classes3/com/mob/commons/c.smali	2017-07-10 10:51:29.924332100 +0200
 +++ mod/smali_classes3/com/mob/commons/c.smali	2017-07-10 12:45:31.310453600 +0200
@@ -637,6 +640,7 @@ diff -Naur orig/smali_classes2/cn/sharesdk/instagram/Instagram.smali mod/smali_c
 +    const-string/jumbo v6, "INVALIDinstagram.com/"
  
      invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
 diff -Naur orig/smali_classes2/cn/sharesdk/facebook/d.smali mod/smali_classes2/cn/sharesdk/facebook/d.smali
 --- orig/smali_classes2/cn/sharesdk/facebook/d.smali	2017-07-10 10:51:18.428923600 +0200
 +++ mod/smali_classes2/cn/sharesdk/facebook/d.smali	2017-07-10 12:46:45.102351200 +0200
@@ -694,6 +698,7 @@ diff -Naur orig/smali_classes2/cn/sharesdk/facebook/d.smali mod/smali_classes2/c
  
      .line 83
      new-instance v4, Landroid/os/Bundle;
+
 diff -Naur orig/smali_classes2/cn/sharesdk/framework/b/c.smali mod/smali_classes2/cn/sharesdk/framework/b/c.smali
 --- orig/smali_classes2/cn/sharesdk/framework/b/c.smali	2017-07-10 10:51:18.572606100 +0200
 +++ mod/smali_classes2/cn/sharesdk/framework/b/c.smali	2017-07-10 12:45:16.461127200 +0200
@@ -836,6 +841,7 @@ diff -Naur orig/smali_classes2/cn/sharesdk/sina/weibo/d.smali mod/smali_classes2
  
      :goto_0
      return-object v0
+
 diff -Naur orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali
 --- orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2017-07-10 10:51:18.721305700 +0200
 +++ mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2017-07-10 12:45:16.852451700 +0200
