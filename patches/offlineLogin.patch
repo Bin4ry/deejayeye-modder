@@ -15,7 +15,7 @@
 -    const-string/jumbo v0, "accountCenterLoginByEmail failure no=%s, str=%s"
  
 -    const/4 v1, 0x2
-+    const-string/jumbo v0, "{\"code\":0,\"message\":\"ok\",\"data\":{\"nick_name\":\"err0r4o4\",\"cookie_name\":\"_meta_key\",\"cookie_key\":\"wBXwEPq3b87VljETLxGY7vzQWnPSb0plwXaOzxphs5Meadbv\",\"active\":true,\"email\":\"i@love.dji\",\"token\":\"6828gz90xw0xsdbo5nf6vqd9v1g3by9d8oep8gtk\",\"validity\":1907509295,\"user_id\":\"421951681084276658\",\"register_phone\":\"\",\"area_code\":\"\",\"inner_email\":false,\"subscription\":false,\"vipLevel\":null}}"
++    const-string/jumbo v0, "{\"code\":0,\"message\":\"ok\",\"data\":{\"nick_name\":\"iL0veDJI\",\"cookie_name\":\"_meta_key\",\"cookie_key\":\"wBXwEPq3b87VljETLxGY7vzQWnPSb0plwXaOzxphs5Meadbv\",\"active\":true,\"email\":\"i@love.dji\",\"token\":\"6828gz90xw0xsdbo5nf6vqd9v1g3by9d8oep8gtk\",\"validity\":1907509295,\"user_id\":\"421951681084276658\",\"register_phone\":\"\",\"area_code\":\"\",\"inner_email\":false,\"subscription\":false,\"vipLevel\":null}}"
  
 -    new-array v1, v1, [Ljava/lang/Object;
 +    invoke-static {v0}, Ldji/pilot/usercenter/mode/AccountCenterMemberResponse;->parse(Ljava/lang/String;)Ldji/pilot/usercenter/mode/AccountCenterBaseResponse;
