@@ -9,6 +9,7 @@ echo "Welcome to the smali patcher"
 echo "Please put the original file into the "PutApkHere" folder and name it orig.apk"
 echo "and the patches to apply to the "PutPatchesHere" folder"
 pause
+cd %~dp0
 echo "Decompiling original apk"
 java -jar tools\apktool.jar d -o decompile_out PutApkHere\orig.apk
 echo "done"
