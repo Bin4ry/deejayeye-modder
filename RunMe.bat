@@ -59,7 +59,6 @@ java -jar tools\apktool.jar b -o out\mod.apk decompile_out
 echo "Signing with testkey"
 java -jar tools\sign.jar out\mod.apk
 del /f /q out\mod.apk
-del /f /q out\mod-%ver%.apk
 move out\mod.s.apk out\mod-%ver%.apk
 echo "Done signing"
 echo "Removing decompile_out folder"
