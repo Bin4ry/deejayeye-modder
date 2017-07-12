@@ -10,12 +10,12 @@ echo done
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" off
-		 4 "offline login (thx artu-ole)" off
-		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" off
-		 6 "remove Google APIs (keep if you want to keep social)" off
-		 7 "remove social networks (keep Google APIs too!)" off
-		 8 "remove NFZ db (thx err0r4o4)" off)
+         3 "remove Firmware Upgrade check" on
+		 4 "offline login (thx artu-ole)" on
+		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
+		 6 "remove Google APIs (keep if you want to keep social)" on
+		 7 "remove social networks (keep Google APIs too!)" on
+		 8 "remove NFZ db (thx err0r4o4)" on)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -73,6 +73,10 @@ do
             ;;		
     esac
 done
+cd decompile_out
+rm assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
+cp ../patches/unknown.patch assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
+cd ..
 echo =======================
 echo Done patching
 echo Rebuilding apk
