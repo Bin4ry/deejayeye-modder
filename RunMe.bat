@@ -34,13 +34,6 @@ IF EXIST %folder%\removeNFZ.patch (
 	copy "..\patches\nfz\flysafe_areas_djigo.db" "assets\flysafe\flysafe_areas_djigo.db"
 	copy "..\patches\nfz\flysafe_polygon_1860.db" "assets\flysafe\flysafe_polygon_1860.db"
 	copy "..\patches\libSDKRelativeJNI.so" "lib\armeabi-v7a\libSDKRelativeJNI.so"
-	del /f /q "assets\flysafe\flyforbid_airmap\*.json"
-	del /f /q "res\raw\flyforbid.json"
-	del /f /q "lib\libSDKRelativeJNI.so"
-	copy "..\patches\nfz\flyforbid.json" "res\raw\flyforbid.json"
-	copy "..\patches\nfz\flyforbid_airmap\*.*" "assets\flysafe\flyforbid_airmap\"
-	copy "..\patches\nfz\flysafe_areas_djigo.db" "assets\flysafe\flysafe_areas_djigo.db"
-	copy "..\patches\libSDKRelativeJNI.so" "lib\libSDKRelativeJNI.so"
 	patch -l -s -p1 < ..\%folder%\removeNFZ.patch
 	rename "..\%folder%\removeNFZ.patch" removeNFZ.patch.done
 	cd ..
@@ -68,7 +61,6 @@ java -jar tools\sign.jar out\mod.apk
 del /f /q out\mod.apk
 del /f /q out\mod-%ver%.apk
 move out\mod.s.apk out\mod-%ver%.apk
-move out\mod.s.apk out\mod-v9.apk
 echo "Done signing"
 echo "Removing decompile_out folder"
 rd /S /Q decompile_out
