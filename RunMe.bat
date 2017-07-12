@@ -9,6 +9,7 @@ echo "Welcome to the smali patcher version: %ver%"
 echo "Please put the original file into the "PutApkHere" folder and name it orig.apk"
 echo "and the patches to apply to the "PutPatchesHere" folder"
 pause
+cd %~dp0
 echo "Decompiling original apk"
 java -jar tools\apktool.jar d -o decompile_out PutApkHere\orig.apk
 echo "done"
@@ -48,8 +49,8 @@ IF EXIST %folder%\removeNFZ.patch.done (
 	rename "%folder%\removeNFZ.patch.done" removeNFZ.patch
 	)
 cd decompile_out
-del /f /q assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
-copy "../patches/unknown.patch" "assets/terms/en/DJI_Go_4_App_Terms_of_Use.html"
+del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
+copy "..\patches\unknown.patch" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
 cd ..
 echo "======================="
 echo "Done patching"
