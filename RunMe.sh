@@ -79,7 +79,7 @@ do
 done
 cd decompile_out
 rm assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
-cp ../patches/unknown.lol assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
+cp ../patches/unknown.patch assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
 cd ..
 echo =======================
 echo Done patching
