@@ -59,13 +59,15 @@ do
 		8)
             cd decompile_out
 			rm assets/flysafe/flysafe_areas_djigo.db
+			rm assets/flysafe/flysafe_polygon_1860.db
 			rm assets/flysafe/flyforbid_airmap/*.json
 			rm res/raw/flyforbid.json
-			rm lib/libSDKRelativeJNI.so
+			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			cp ../patches/nfz/flyforbid.json res/raw/flyforbid.json
 			cp ../patches/nfz/flyforbid_airmap/* assets/flysafe/flyforbid_airmap/
 			cp ../patches/nfz/flysafe_areas_djigo.db assets/flysafe/flysafe_areas_djigo.db
-			cp ../patches/libSDKRelativeJNI.so lib/libSDKRelativeJNI.so
+			cp ../patches/nfz/flysafe_polygon_1860.db assets/flysafe/flysafe_polygon_1860.db
+			cp ../patches/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI.so
 			patch -l -p1 < ../patches/removeNFZ.patch
 			cd ..
             ;;		
@@ -78,7 +80,7 @@ java -jar tools/apktool.jar b -o out/mod.apk decompile_out
 echo Signing with testkey
 java -jar tools/sign.jar out/mod.apk
 rm -f out/mod.apk
-mv out/mod.s.apk out/mod-v9.apk
+mv out/mod.s.apk out/mod-v21.apk
 echo Done signing
 echo Removing decompile_out folder
 rm -rf decompile_out

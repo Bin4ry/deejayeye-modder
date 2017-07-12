@@ -553,3 +553,101 @@ diff -Naur orig/smali/dji/midware/h/b.smali mod/smali/dji/midware/h/b.smali
  
      .line 55
      invoke-direct {p0, v0, p1, p2}, Ldji/midware/h/b;->b(Ljava/lang/String;Ljava/lang/String;Ldji/thirdparty/afinal/f/a;)V
+
+diff -Naur original/smali/dji/midware/data/forbid/db/FlyforbidDbManager.smali mod/smali/dji/midware/data/forbid/db/FlyforbidDbManager.smali
+--- original/smali/dji/midware/data/forbid/db/FlyforbidDbManager.smali	2017-07-12 13:01:14.360354900 +0200
++++ mod/smali/dji/midware/data/forbid/db/FlyforbidDbManager.smali	2017-07-12 13:08:26.350909300 +0200
+@@ -1275,35 +1275,9 @@
+ 
+     .prologue
+     .line 167
+-    iget-object v0, p0, Ldji/midware/data/forbid/db/FlyforbidDbManager;->mContext:Landroid/content/Context;
+-
+-    invoke-static {v0}, Ldji/midware/data/forbid/DJIFlyForbidController;->getDataSource(Landroid/content/Context;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    const-string/jumbo v1, "airmap"
+-
+-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_0
+-
+-    .line 168
+-    invoke-direct {p0, p1, p2, p3, p4}, Ldji/midware/data/forbid/db/FlyforbidDbManager;->getNearFlyForbidAreaAirMap(DD)Ljava/util/List;
+-
+-    move-result-object v0
+-
+-    .line 170
+-    :goto_0
++    const v0, 0x0
++	
+     return-object v0
+-
+-    :cond_0
+-    invoke-direct {p0, p1, p2, p3, p4}, Ldji/midware/data/forbid/db/FlyforbidDbManager;->getNearFlyForbidAreaNfz(DD)Ljava/util/List;
+-
+-    move-result-object v0
+-
+-    goto :goto_0
+ .end method
+ 
+ .method public isDbFileExists()Z
+
+diff -Naur original/smali/dji/midware/data/forbid/DJIFlyForbidController.smali mod/smali/dji/midware/data/forbid/DJIFlyForbidController.smali
+--- original/smali/dji/midware/data/forbid/DJIFlyForbidController.smali	2017-07-12 13:01:14.374530200 +0200
++++ mod/smali/dji/midware/data/forbid/DJIFlyForbidController.smali	2017-07-12 13:40:39.165922600 +0200
+@@ -433,18 +433,8 @@
+     move-result-object v0
+ 
+     .line 403
+-    const-string/jumbo v1, "DatabaseUpdate"
+-
+-    const-string/jumbo v3, "generateCheckList, get mFlyfrbMainDbManager"
+-
+-    invoke-static {v1, v3}, Ldji/log/DJILog;->d(Ljava/lang/String;Ljava/lang/String;)V
+-
+-    .line 404
+-    iget-object v1, p0, Ldji/midware/data/forbid/DJIFlyForbidController;->mFlyfrbMainDbManager:Ldji/midware/data/forbid/db/FlyfrbPolygonMainDbManager;
+-
+-    invoke-virtual {v1, p1, p2, p3, p4}, Ldji/midware/data/forbid/db/FlyfrbPolygonMainDbManager;->getNearFlyforbidArea(DD)Ljava/util/List;
+-
+-    move-result-object v1
++   
++    const v1, 0x0
+ 
+     .line 409
+     if-eqz v1, :cond_1
+
+diff -Naur original/smali/dji/midware/data/model/P3/DataFlycGetPushUnlimitState.smali mod/smali/dji/midware/data/model/P3/DataFlycGetPushUnlimitState.smali
+--- original/smali/dji/midware/data/model/P3/DataFlycGetPushUnlimitState.smali	2017-07-12 13:01:15.022878700 +0200
++++ mod/smali/dji/midware/data/model/P3/DataFlycGetPushUnlimitState.smali	2017-07-12 13:54:10.584935100 +0200
+@@ -138,25 +138,7 @@
+ 
+     .prologue
+     .line 42
+-    const/4 v0, 0x3
+-
+-    const/4 v1, 0x1
+-
+-    const-class v2, Ljava/lang/Integer;
+-
+-    const/4 v3, 0x0
+-
+-    new-array v3, v3, [I
+-
+-    invoke-virtual {p0, v0, v1, v2, v3}, Ldji/midware/data/model/P3/DataFlycGetPushUnlimitState;->get(IILjava/lang/Class;[I)Ljava/lang/Number;
+-
+-    move-result-object v0
+-
+-    check-cast v0, Ljava/lang/Integer;
+-
+-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v0
++    const/4 v0, 0x1
+ 
+     return v0
+ .end method
