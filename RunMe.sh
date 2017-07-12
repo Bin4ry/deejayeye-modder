@@ -1,7 +1,8 @@
 #!/bin/bash
+ver=`cat version.txt`
 mkdir out
 clear
-echo Welcome to the smali patcher
+echo Welcome to the smali patcher version: $ver
 echo Please put the original file into the "PutApkHere" folder and name it orig.apk
 read -p "Press any key to continue... "
 echo Decompiling original apk
@@ -84,7 +85,8 @@ java -jar tools/apktool.jar b -o out/mod.apk decompile_out
 echo Signing with testkey
 java -jar tools/sign.jar out/mod.apk
 rm -f out/mod.apk
-mv out/mod.s.apk out/mod-v21.apk
+rm -f out/mod-$ver.apk
+mv out/mod.s.apk out/mod-$ver.apk
 echo Done signing
 echo Removing decompile_out folder
 rm -rf decompile_out
