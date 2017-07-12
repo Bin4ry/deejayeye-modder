@@ -49,8 +49,8 @@ IF EXIST %folder%\removeNFZ.patch.done (
 	rename "%folder%\removeNFZ.patch.done" removeNFZ.patch
 	)
 cd decompile_out
-del /f /q assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
-copy "../patches/unknown.patch" "assets/terms/en/DJI_Go_4_App_Terms_of_Use.html"
+del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
+copy "..\patches\unknown.patch" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
 cd ..
 echo "======================="
 echo "Done patching"
