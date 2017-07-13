@@ -68,7 +68,7 @@ do
 			cp ../patches/nfz/flyforbid_airmap/* assets/flysafe/flyforbid_airmap/
 			cp ../patches/nfz/flysafe_areas_djigo.db assets/flysafe/flysafe_areas_djigo.db
 			cp ../patches/nfz/flysafe_polygon_1860.db assets/flysafe/flysafe_polygon_1860.db
-			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so patches/so.patch
+			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.patch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			patch -l -p1 < ../patches/removeNFZ.patch
