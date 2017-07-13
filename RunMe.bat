@@ -1,6 +1,7 @@
 @echo off
 REM Please install GnuWin patch
 REM You can get here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
+cd /d %~dp0
 set /p ver=<version.txt
 set "folder=PutPatchesHere"
 md out
@@ -9,7 +10,6 @@ echo "Welcome to the smali patcher version: %ver%"
 echo "Please put the original file into the "PutApkHere" folder and name it orig.apk"
 echo "and the patches to apply to the "PutPatchesHere" folder"
 pause
-cd %~dp0
 echo "Decompiling original apk"
 java -jar tools\apktool.jar d -o decompile_out PutApkHere\orig.apk
 echo "done"
@@ -59,7 +59,6 @@ java -jar tools\apktool.jar b -o out\mod.apk decompile_out
 echo "Signing with testkey"
 java -jar tools\sign.jar out\mod.apk
 del /f /q out\mod.apk
-del /f /q out\mod-%ver%.apk
 move out\mod.s.apk out\mod-%ver%.apk
 echo "Done signing"
 echo "Removing decompile_out folder"
