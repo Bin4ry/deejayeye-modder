@@ -1,6 +1,6 @@
 diff -Naur orig/smali/dji/midware/i/f.smali mod/smali/dji/midware/i/f.smali
---- orig/smali/dji/midware/i/f.smali	2017-07-10 10:51:15.880517100 +0200
-+++ mod/smali/dji/midware/i/f.smali	2017-07-10 12:45:13.254112400 +0200
+--- orig/smali/dji/midware/i/f.smali    2017-07-10 10:51:15.880517100 +0200
++++ mod/smali/dji/midware/i/f.smali     2017-07-10 12:45:13.254112400 +0200
 @@ -129,7 +129,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -20,8 +20,8 @@ diff -Naur orig/smali/dji/midware/i/f.smali mod/smali/dji/midware/i/f.smali
      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes2/b/c$c.smali mod/smali_classes2/b/c$c.smali
---- orig/smali_classes2/b/c$c.smali	2017-07-10 10:51:17.193237700 +0200
-+++ mod/smali_classes2/b/c$c.smali	2017-07-10 12:46:43.708783900 +0200
+--- orig/smali_classes2/b/c$c.smali     2017-07-10 10:51:17.193237700 +0200
++++ mod/smali_classes2/b/c$c.smali      2017-07-10 12:46:43.708783900 +0200
 @@ -589,7 +589,7 @@
      .line 628
      iget-object v0, p0, Lb/c$c;->a:Ljava/lang/String;
@@ -32,8 +32,8 @@ diff -Naur orig/smali_classes2/b/c$c.smali mod/smali_classes2/b/c$c.smali
      invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
  
 diff -Naur orig/smali_classes2/com/a/a/a/k.smali mod/smali_classes2/com/a/a/a/k.smali
---- orig/smali_classes2/com/a/a/a/k.smali	2017-07-10 10:51:19.055322200 +0200
-+++ mod/smali_classes2/com/a/a/a/k.smali	2017-07-10 12:45:17.283027900 +0200
+--- orig/smali_classes2/com/a/a/a/k.smali       2017-07-10 10:51:19.055322200 +0200
++++ mod/smali_classes2/com/a/a/a/k.smali        2017-07-10 12:45:17.283027900 +0200
 @@ -495,7 +495,7 @@
  
      const/4 v1, 0x1
@@ -170,8 +170,8 @@ diff -Naur orig/smali_classes2/com/a/a/a/k.smali mod/smali_classes2/com/a/a/a/k.
      invoke-virtual {v2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
  
 diff -Naur orig/smali_classes2/com/a/a/a/o.smali mod/smali_classes2/com/a/a/a/o.smali
---- orig/smali_classes2/com/a/a/a/o.smali	2017-07-10 10:51:19.075336000 +0200
-+++ mod/smali_classes2/com/a/a/a/o.smali	2017-07-10 12:45:17.314050400 +0200
+--- orig/smali_classes2/com/a/a/a/o.smali       2017-07-10 10:51:19.075336000 +0200
++++ mod/smali_classes2/com/a/a/a/o.smali        2017-07-10 12:45:17.314050400 +0200
 @@ -139,43 +139,43 @@
      invoke-virtual {v0, v1}, Ljavax/xml/parsers/DocumentBuilderFactory;->setIgnoringComments(Z)V
  
@@ -251,8 +251,8 @@ diff -Naur orig/smali_classes2/com/a/a/a/o.smali mod/smali_classes2/com/a/a/a/o.
      invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
  
 diff -Naur orig/smali_classes2/com/a/a/a/r.smali mod/smali_classes2/com/a/a/a/r.smali
---- orig/smali_classes2/com/a/a/a/r.smali	2017-07-10 10:51:19.080339800 +0200
-+++ mod/smali_classes2/com/a/a/a/r.smali	2017-07-10 12:45:17.332080700 +0200
+--- orig/smali_classes2/com/a/a/a/r.smali       2017-07-10 10:51:19.080339800 +0200
++++ mod/smali_classes2/com/a/a/a/r.smali        2017-07-10 12:45:17.332080700 +0200
 @@ -166,7 +166,7 @@
  
      move-result-object v0
@@ -335,8 +335,8 @@ diff -Naur orig/smali_classes2/com/a/a/a/r.smali mod/smali_classes2/com/a/a/a/r.
      const-string/jumbo v3, "rights"
  
 diff -Naur orig/smali_classes2/com/a/a/a/s.smali mod/smali_classes2/com/a/a/a/s.smali
---- orig/smali_classes2/com/a/a/a/s.smali	2017-07-10 10:51:19.085342700 +0200
-+++ mod/smali_classes2/com/a/a/a/s.smali	2017-07-10 12:45:17.343069700 +0200
+--- orig/smali_classes2/com/a/a/a/s.smali       2017-07-10 10:51:19.085342700 +0200
++++ mod/smali_classes2/com/a/a/a/s.smali        2017-07-10 12:45:17.343069700 +0200
 @@ -77,43 +77,43 @@
          }
      .end annotation
@@ -1203,8 +1203,8 @@ diff -Naur orig/smali_classes2/com/a/a/a/s.smali mod/smali_classes2/com/a/a/a/s.
      const-string/jumbo v4, "title"
  
 diff -Naur orig/smali_classes2/com/a/a/a/u.smali mod/smali_classes2/com/a/a/a/u.smali
---- orig/smali_classes2/com/a/a/a/u.smali	2017-07-10 10:51:19.091347800 +0200
-+++ mod/smali_classes2/com/a/a/a/u.smali	2017-07-10 12:45:17.354095900 +0200
+--- orig/smali_classes2/com/a/a/a/u.smali       2017-07-10 10:51:19.091347800 +0200
++++ mod/smali_classes2/com/a/a/a/u.smali        2017-07-10 12:45:17.354095900 +0200
 @@ -17,7 +17,7 @@
  
  .field private static final g:Ljava/lang/String; = "</x:xmpmeta>"
@@ -1233,8 +1233,8 @@ diff -Naur orig/smali_classes2/com/a/a/a/u.smali mod/smali_classes2/com/a/a/a/u.
      const-string/jumbo v2, "Thumbnails"
  
 diff -Naur orig/smali_classes2/com/a/a/a.smali mod/smali_classes2/com/a/a/a.smali
---- orig/smali_classes2/com/a/a/a.smali	2017-07-10 10:51:19.092347500 +0200
-+++ mod/smali_classes2/com/a/a/a.smali	2017-07-10 12:45:17.229990100 +0200
+--- orig/smali_classes2/com/a/a/a.smali 2017-07-10 10:51:19.092347500 +0200
++++ mod/smali_classes2/com/a/a/a.smali  2017-07-10 12:45:17.229990100 +0200
 @@ -3,69 +3,69 @@
  
  
@@ -1415,8 +1415,8 @@ diff -Naur orig/smali_classes2/com/a/a/a.smali mod/smali_classes2/com/a/a/a.smal
 -.field public static final z:Ljava/lang/String; = "http://ns.adobe.com/exif/1.0/"
 +.field public static final z:Ljava/lang/String; = "INVALIDns.adobe.com/exif/1.0/"
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali mod/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali
---- orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali	2017-07-10 10:51:19.255131900 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali	2017-07-10 12:45:17.501200500 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali    2017-07-10 10:51:19.255131900 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali     2017-07-10 12:45:17.501200500 +0200
 @@ -89,7 +89,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1427,8 +1427,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$
      invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$QueryHostTask.smali mod/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$QueryHostTask.smali
---- orig/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$QueryHostTask.smali	2017-07-10 10:51:19.302786200 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$QueryHostTask.smali	2017-07-10 12:45:17.560223500 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$QueryHostTask.smali        2017-07-10 10:51:19.302786200 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$QueryHostTask.smali 2017-07-10 12:45:17.560223500 +0200
 @@ -106,7 +106,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1439,8 +1439,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/dpa/util/HttpdnsMini$Quer
      invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.smali mod/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.smali
---- orig/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.smali	2017-07-10 10:51:19.453313900 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.smali	2017-07-10 12:45:17.725341200 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.smali   2017-07-10 10:51:19.453313900 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.smali    2017-07-10 12:45:17.725341200 +0200
 @@ -35,7 +35,7 @@
  
  .field public static final DEFAULT_XML_ENCODING:Ljava/lang/String; = "utf-8"
@@ -1451,8 +1451,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/common/MNSConstants.s
  .field public static final DELAY_MESSAGES_TAG:Ljava/lang/String; = "DelayMessages"
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali mod/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali
---- orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali	2017-07-10 10:51:19.449811300 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali	2017-07-10 12:45:17.800393800 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali     2017-07-10 10:51:19.449811300 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali      2017-07-10 12:45:17.800393800 +0200
 @@ -56,7 +56,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1472,8 +1472,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali mod/s
      invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali
---- orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali	2017-07-10 10:51:19.563733300 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali	2017-07-10 12:45:17.892459900 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali     2017-07-10 10:51:19.563733300 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali      2017-07-10 12:45:17.892459900 +0200
 @@ -47,7 +47,7 @@
      move-result-object v0
  
@@ -1484,8 +1484,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/Messa
      const-string/jumbo v2, "Message"
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali
---- orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali	2017-07-10 10:51:19.559731200 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali	2017-07-10 12:45:17.898463000 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali   2017-07-10 10:51:19.559731200 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali    2017-07-10 12:45:17.898463000 +0200
 @@ -47,7 +47,7 @@
      move-result-object v0
  
@@ -1496,8 +1496,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/Queue
      const-string/jumbo v2, "Queue"
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.smali mod/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.smali
---- orig/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.smali	2017-07-10 10:51:19.628986000 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.smali	2017-07-10 12:45:17.961509100 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.smali   2017-07-10 10:51:19.628986000 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.smali    2017-07-10 12:45:17.961509100 +0200
 @@ -17,7 +17,7 @@
  
  .field public static final DEFAULT_OBJECT_CONTENT_TYPE:Ljava/lang/String; = "application/octet-stream"
@@ -1508,8 +1508,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/oss/common/OSSConstants.s
  .field public static final DEFAULT_RETRY_COUNT:I = 0x2
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali
---- orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali	2017-07-10 10:51:19.643788600 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali	2017-07-10 12:45:17.986527000 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali        2017-07-10 10:51:19.643788600 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali 2017-07-10 12:45:17.986527000 +0200
 @@ -89,7 +89,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1520,8 +1520,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsM
      invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali mod/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali
---- orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali	2017-07-10 10:51:19.584696700 +0200
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali	2017-07-10 12:45:18.248730800 +0200
+--- orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali     2017-07-10 10:51:19.584696700 +0200
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali      2017-07-10 12:45:18.248730800 +0200
 @@ -58,7 +58,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1541,8 +1541,8 @@ diff -Naur orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali mod/s
      invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
  
 diff -Naur orig/smali_classes2/com/alipay/b/g/a.smali mod/smali_classes2/com/alipay/b/g/a.smali
---- orig/smali_classes2/com/alipay/b/g/a.smali	2017-07-10 10:51:20.211023900 +0200
-+++ mod/smali_classes2/com/alipay/b/g/a.smali	2017-07-10 12:46:47.563855300 +0200
+--- orig/smali_classes2/com/alipay/b/g/a.smali  2017-07-10 10:51:20.211023900 +0200
++++ mod/smali_classes2/com/alipay/b/g/a.smali   2017-07-10 12:46:47.563855300 +0200
 @@ -202,7 +202,7 @@
  
      packed-switch p1, :pswitch_data_0
@@ -1578,8 +1578,8 @@ diff -Naur orig/smali_classes2/com/alipay/b/g/a.smali mod/smali_classes2/com/ali
      invoke-static {v0}, Lcom/alipay/e/a/a/a/a/a;->a(Ljava/lang/String;)V
  
 diff -Naur orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali mod/smali_classes2/com/alipay/e/a/a/a/a/a.smali
---- orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali	2017-07-10 10:51:20.280087900 +0200
-+++ mod/smali_classes2/com/alipay/e/a/a/a/a/a.smali	2017-07-10 12:46:47.585765600 +0200
+--- orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali    2017-07-10 10:51:20.280087900 +0200
++++ mod/smali_classes2/com/alipay/e/a/a/a/a/a.smali     2017-07-10 12:46:47.585765600 +0200
 @@ -10,7 +10,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -1590,8 +1590,8 @@ diff -Naur orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali mod/smali_classes2/c
      sput-object v0, Lcom/alipay/e/a/a/a/a/a;->a:Ljava/lang/String;
  
 diff -Naur orig/smali_classes2/com/alipay/sdk/app/PayTask.smali mod/smali_classes2/com/alipay/sdk/app/PayTask.smali
---- orig/smali_classes2/com/alipay/sdk/app/PayTask.smali	2017-07-10 10:51:20.435941300 +0200
-+++ mod/smali_classes2/com/alipay/sdk/app/PayTask.smali	2017-07-10 12:46:47.777899600 +0200
+--- orig/smali_classes2/com/alipay/sdk/app/PayTask.smali        2017-07-10 10:51:20.435941300 +0200
++++ mod/smali_classes2/com/alipay/sdk/app/PayTask.smali 2017-07-10 12:46:47.777899600 +0200
 @@ -977,7 +977,7 @@
      .line 106
      new-instance v1, Ljava/lang/StringBuilder;
@@ -1647,8 +1647,8 @@ diff -Naur orig/smali_classes2/com/alipay/sdk/app/PayTask.smali mod/smali_classe
      invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
  
 diff -Naur orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali mod/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali
---- orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali	2017-07-10 10:51:20.475078200 +0200
-+++ mod/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali	2017-07-10 12:46:47.792910100 +0200
+--- orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali  2017-07-10 10:51:20.475078200 +0200
++++ mod/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali   2017-07-10 12:46:47.792910100 +0200
 @@ -294,7 +294,7 @@
      return v0
  
@@ -1686,8 +1686,8 @@ diff -Naur orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali mod/smali_
      invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
  
 diff -Naur orig/smali_classes2/com/alipay/sdk/b/a.smali mod/smali_classes2/com/alipay/sdk/b/a.smali
---- orig/smali_classes2/com/alipay/sdk/b/a.smali	2017-07-10 10:51:20.477083100 +0200
-+++ mod/smali_classes2/com/alipay/sdk/b/a.smali	2017-07-10 12:45:19.056303300 +0200
+--- orig/smali_classes2/com/alipay/sdk/b/a.smali        2017-07-10 10:51:20.477083100 +0200
++++ mod/smali_classes2/com/alipay/sdk/b/a.smali 2017-07-10 12:45:19.056303300 +0200
 @@ -25,7 +25,7 @@
  
  .field public static final k:Ljava/lang/String; = "sdklite://h5quit"
@@ -1707,8 +1707,8 @@ diff -Naur orig/smali_classes2/com/alipay/sdk/b/a.smali mod/smali_classes2/com/a
      sput-object v0, Lcom/alipay/sdk/b/a;->a:Ljava/lang/String;
  
 diff -Naur orig/smali_classes2/com/alipay/sdk/c/a.smali mod/smali_classes2/com/alipay/sdk/c/a.smali
---- orig/smali_classes2/com/alipay/sdk/c/a.smali	2017-07-10 10:51:20.484467600 +0200
-+++ mod/smali_classes2/com/alipay/sdk/c/a.smali	2017-07-10 12:45:19.065308800 +0200
+--- orig/smali_classes2/com/alipay/sdk/c/a.smali        2017-07-10 10:51:20.484467600 +0200
++++ mod/smali_classes2/com/alipay/sdk/c/a.smali 2017-07-10 12:45:19.065308800 +0200
 @@ -5,7 +5,7 @@
  # static fields
  .field public static final a:I = 0xdac
@@ -1737,8 +1737,8 @@ diff -Naur orig/smali_classes2/com/alipay/sdk/c/a.smali mod/smali_classes2/com/a
      invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
  
 diff -Naur orig/smali_classes2/com/alipay/sdk/f/a/c.smali mod/smali_classes2/com/alipay/sdk/f/a/c.smali
---- orig/smali_classes2/com/alipay/sdk/f/a/c.smali	2017-07-10 10:51:20.514499200 +0200
-+++ mod/smali_classes2/com/alipay/sdk/f/a/c.smali	2017-07-10 12:45:19.107383500 +0200
+--- orig/smali_classes2/com/alipay/sdk/f/a/c.smali      2017-07-10 10:51:20.514499200 +0200
++++ mod/smali_classes2/com/alipay/sdk/f/a/c.smali       2017-07-10 12:45:19.107383500 +0200
 @@ -29,7 +29,7 @@
  
      .prologue
@@ -1749,8 +1749,8 @@ diff -Naur orig/smali_classes2/com/alipay/sdk/f/a/c.smali mod/smali_classes2/com
      .line 60
      const/4 v1, 0x1
 diff -Naur orig/smali_classes2/com/alipay/sdk/j/l.smali mod/smali_classes2/com/alipay/sdk/j/l.smali
---- orig/smali_classes2/com/alipay/sdk/j/l.smali	2017-07-10 10:51:20.559488300 +0200
-+++ mod/smali_classes2/com/alipay/sdk/j/l.smali	2017-07-10 12:45:19.188838400 +0200
+--- orig/smali_classes2/com/alipay/sdk/j/l.smali        2017-07-10 10:51:20.559488300 +0200
++++ mod/smali_classes2/com/alipay/sdk/j/l.smali 2017-07-10 12:45:19.188838400 +0200
 @@ -1086,7 +1086,7 @@
  
      if-nez v0, :cond_6
@@ -1761,8 +1761,8 @@ diff -Naur orig/smali_classes2/com/alipay/sdk/j/l.smali mod/smali_classes2/com/a
      invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
  
 diff -Naur orig/smali_classes2/com/c/c/h.smali mod/smali_classes2/com/c/c/h.smali
---- orig/smali_classes2/com/c/c/h.smali	2017-07-10 10:51:22.079012000 +0200
-+++ mod/smali_classes2/com/c/c/h.smali	2017-07-10 12:45:20.041443000 +0200
+--- orig/smali_classes2/com/c/c/h.smali 2017-07-10 10:51:22.079012000 +0200
++++ mod/smali_classes2/com/c/c/h.smali  2017-07-10 12:45:20.041443000 +0200
 @@ -3,27 +3,27 @@
  
  
@@ -1797,8 +1797,8 @@ diff -Naur orig/smali_classes2/com/c/c/h.smali mod/smali_classes2/com/c/c/h.smal
      .end annotation
  .end field
 diff -Naur orig/smali_classes2/com/c/c/q/c.smali mod/smali_classes2/com/c/c/q/c.smali
---- orig/smali_classes2/com/c/c/q/c.smali	2017-07-10 10:51:22.152964500 +0200
-+++ mod/smali_classes2/com/c/c/q/c.smali	2017-07-10 12:45:20.188546800 +0200
+--- orig/smali_classes2/com/c/c/q/c.smali       2017-07-10 10:51:22.152964500 +0200
++++ mod/smali_classes2/com/c/c/q/c.smali        2017-07-10 12:45:20.188546800 +0200
 @@ -6,17 +6,17 @@
  
  
@@ -1874,8 +1874,8 @@ diff -Naur orig/smali_classes2/com/c/c/q/c.smali mod/smali_classes2/com/c/c/q/c.
      new-instance v7, Ljava/lang/String;
  
 diff -Naur orig/smali_classes2/com/dji/a/d.smali mod/smali_classes2/com/dji/a/d.smali
---- orig/smali_classes2/com/dji/a/d.smali	2017-07-10 10:51:22.231308400 +0200
-+++ mod/smali_classes2/com/dji/a/d.smali	2017-07-10 12:46:49.013943200 +0200
+--- orig/smali_classes2/com/dji/a/d.smali       2017-07-10 10:51:22.231308400 +0200
++++ mod/smali_classes2/com/dji/a/d.smali        2017-07-10 12:46:49.013943200 +0200
 @@ -59,7 +59,7 @@
  
      .prologue
@@ -1895,8 +1895,8 @@ diff -Naur orig/smali_classes2/com/dji/a/d.smali mod/smali_classes2/com/dji/a/d.
      return-object v0
  .end method
 diff -Naur orig/smali_classes2/com/dji/aliyun/c.smali mod/smali_classes2/com/dji/aliyun/c.smali
---- orig/smali_classes2/com/dji/aliyun/c.smali	2017-07-10 10:51:22.279995500 +0200
-+++ mod/smali_classes2/com/dji/aliyun/c.smali	2017-07-10 12:45:20.364673600 +0200
+--- orig/smali_classes2/com/dji/aliyun/c.smali  2017-07-10 10:51:22.279995500 +0200
++++ mod/smali_classes2/com/dji/aliyun/c.smali   2017-07-10 12:45:20.364673600 +0200
 @@ -195,7 +195,7 @@
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
  
@@ -1907,8 +1907,8 @@ diff -Naur orig/smali_classes2/com/dji/aliyun/c.smali mod/smali_classes2/com/dji
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali mod/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali
---- orig/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali	2017-07-10 10:51:22.305341500 +0200
-+++ mod/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali	2017-07-10 12:46:49.219089600 +0200
+--- orig/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali      2017-07-10 10:51:22.305341500 +0200
++++ mod/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali       2017-07-10 12:46:49.219089600 +0200
 @@ -125,7 +125,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1919,8 +1919,8 @@ diff -Naur orig/smali_classes2/com/dji/aliyun/model/MediaAliyunInfo.smali mod/sm
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes2/com/dji/update/a/a.smali mod/smali_classes2/com/dji/update/a/a.smali
---- orig/smali_classes2/com/dji/update/a/a.smali	2017-07-10 10:51:22.476441000 +0200
-+++ mod/smali_classes2/com/dji/update/a/a.smali	2017-07-10 12:46:49.458257600 +0200
+--- orig/smali_classes2/com/dji/update/a/a.smali        2017-07-10 10:51:22.476441000 +0200
++++ mod/smali_classes2/com/dji/update/a/a.smali 2017-07-10 12:46:49.458257600 +0200
 @@ -29,9 +29,9 @@
  
  .field private static final i:Ljava/lang/String; = "UpdateAgent"
@@ -1953,8 +1953,8 @@ diff -Naur orig/smali_classes2/com/dji/update/a/a.smali mod/smali_classes2/com/d
  .end method
 
  diff -Naur orig/smali_classes2/com/flurry/sdk/gy.smali mod/smali_classes2/com/flurry/sdk/gy.smali
---- orig/smali_classes2/com/flurry/sdk/gy.smali	2017-07-10 10:51:23.661089300 +0200
-+++ mod/smali_classes2/com/flurry/sdk/gy.smali	2017-07-10 12:46:51.622473500 +0200
+--- orig/smali_classes2/com/flurry/sdk/gy.smali 2017-07-10 10:51:23.661089300 +0200
++++ mod/smali_classes2/com/flurry/sdk/gy.smali  2017-07-10 12:46:51.622473500 +0200
 @@ -167,7 +167,7 @@
      sput-object v0, Lcom/flurry/sdk/gy;->a:Ljava/lang/String;
  
@@ -1965,8 +1965,8 @@ diff -Naur orig/smali_classes2/com/dji/update/a/a.smali mod/smali_classes2/com/d
      sput-object v0, Lcom/flurry/sdk/gy;->b:Ljava/lang/String;
  
 diff -Naur orig/smali_classes2/com/flurry/sdk/hh.smali mod/smali_classes2/com/flurry/sdk/hh.smali
---- orig/smali_classes2/com/flurry/sdk/hh.smali	2017-07-10 10:51:23.681603400 +0200
-+++ mod/smali_classes2/com/flurry/sdk/hh.smali	2017-07-10 12:46:51.723545000 +0200
+--- orig/smali_classes2/com/flurry/sdk/hh.smali 2017-07-10 10:51:23.681603400 +0200
++++ mod/smali_classes2/com/flurry/sdk/hh.smali  2017-07-10 12:46:51.723545000 +0200
 @@ -34,12 +34,12 @@
      sput-object v0, Lcom/flurry/sdk/hh;->e:Ljava/lang/String;
  
@@ -1983,8 +1983,8 @@ diff -Naur orig/smali_classes2/com/flurry/sdk/hh.smali mod/smali_classes2/com/fl
      sput-object v0, Lcom/flurry/sdk/hh;->g:Ljava/lang/String;
  
 diff -Naur orig/smali_classes2/com/flurry/sdk/jz.smali mod/smali_classes2/com/flurry/sdk/jz.smali
---- orig/smali_classes2/com/flurry/sdk/jz.smali	2017-07-10 10:51:23.857728300 +0200
-+++ mod/smali_classes2/com/flurry/sdk/jz.smali	2017-07-10 12:45:23.235708100 +0200
+--- orig/smali_classes2/com/flurry/sdk/jz.smali 2017-07-10 10:51:23.857728300 +0200
++++ mod/smali_classes2/com/flurry/sdk/jz.smali  2017-07-10 12:45:23.235708100 +0200
 @@ -150,7 +150,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1995,8 +1995,8 @@ diff -Naur orig/smali_classes2/com/flurry/sdk/jz.smali mod/smali_classes2/com/fl
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.smali mod/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.smali
---- orig/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.smali	2017-07-10 10:51:32.269512900 +0200
-+++ mod/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.smali	2017-07-10 12:45:36.978466600 +0200
+--- orig/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.smali   2017-07-10 10:51:32.269512900 +0200
++++ mod/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.smali    2017-07-10 12:45:36.978466600 +0200
 @@ -1198,7 +1198,7 @@
  
      .prologue
@@ -2007,8 +2007,8 @@ diff -Naur orig/smali_classes3/com/ta/utdid2/core/persistent/FastXmlSerializer.s
      invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
  
 diff -Naur orig/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali mod/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali
---- orig/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali	2017-07-10 10:51:32.266510500 +0200
-+++ mod/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali	2017-07-10 12:45:37.012479700 +0200
+--- orig/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali    2017-07-10 10:51:32.266510500 +0200
++++ mod/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali     2017-07-10 12:45:37.012479700 +0200
 @@ -2220,7 +2220,7 @@
      invoke-interface {v0, v3, v1}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
  
@@ -2028,8 +2028,8 @@ diff -Naur orig/smali_classes3/com/ta/utdid2/core/persistent/XmlUtils.smali mod/
      invoke-interface {v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
  
 diff -Naur orig/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy.smali mod/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy.smali
---- orig/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy.smali	2017-07-10 10:51:32.421620400 +0200
-+++ mod/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy.smali	2017-07-10 12:45:37.248646000 +0200
+--- orig/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy.smali 2017-07-10 10:51:32.421620400 +0200
++++ mod/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy.smali  2017-07-10 12:45:37.248646000 +0200
 @@ -121,14 +121,14 @@
      :cond_0
      iget-object v0, p0, Lcom/tencent/bugly/beta/upgrade/BetaUploadStrategy;->a:Lcom/tencent/bugly/proguard/bg;
@@ -2048,8 +2048,8 @@ diff -Naur orig/smali_classes3/com/tencent/bugly/beta/upgrade/BetaUploadStrategy
      iput-object v1, v0, Lcom/tencent/bugly/proguard/bg;->e:Ljava/lang/String;
  
 diff -Naur orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali mod/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali
---- orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali	2017-07-10 10:51:32.497174000 +0200
-+++ mod/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali	2017-07-10 12:45:37.381753900 +0200
+--- orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali        2017-07-10 10:51:32.497174000 +0200
++++ mod/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali 2017-07-10 12:45:37.381753900 +0200
 @@ -86,17 +86,17 @@
  
      .prologue
@@ -2072,8 +2072,8 @@ diff -Naur orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/Str
      sput-object v0, Lcom/tencent/bugly/crashreport/common/strategy/StrategyBean;->c:Ljava/lang/String;
  
 diff -Naur orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReporter.smali mod/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReporter.smali
---- orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReporter.smali	2017-07-10 10:51:32.989023000 +0200
-+++ mod/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReporter.smali	2017-07-10 12:47:07.642434900 +0200
+--- orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReporter.smali       2017-07-10 10:51:32.989023000 +0200
++++ mod/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReporter.smali        2017-07-10 12:47:07.642434900 +0200
 @@ -118,7 +118,7 @@
      :goto_0
      const-string/jumbo v0, "Tinker.DefaultLoadReporter"
@@ -2084,8 +2084,8 @@ diff -Naur orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultLoadReport
      new-array v2, v4, [Ljava/lang/Object;
  
 diff -Naur orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchReporter.smali mod/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchReporter.smali
---- orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchReporter.smali	2017-07-10 10:51:32.989524400 +0200
-+++ mod/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchReporter.smali	2017-07-10 12:47:07.651454000 +0200
+--- orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchReporter.smali      2017-07-10 10:51:32.989524400 +0200
++++ mod/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchReporter.smali       2017-07-10 12:47:07.651454000 +0200
 @@ -229,7 +229,7 @@
      .line 199
      const-string/jumbo v0, "Tinker.DefaultPatchReporter"
@@ -2096,8 +2096,8 @@ diff -Naur orig/smali_classes3/com/tencent/tinker/lib/reporter/DefaultPatchRepor
      new-array v2, v5, [Ljava/lang/Object;
  
 diff -Naur orig/smali_classes3/com/ut/mini/base/a.smali mod/smali_classes3/com/ut/mini/base/a.smali
---- orig/smali_classes3/com/ut/mini/base/a.smali	2017-07-10 10:51:33.126085800 +0200
-+++ mod/smali_classes3/com/ut/mini/base/a.smali	2017-07-10 12:45:38.531557000 +0200
+--- orig/smali_classes3/com/ut/mini/base/a.smali        2017-07-10 10:51:33.126085800 +0200
++++ mod/smali_classes3/com/ut/mini/base/a.smali 2017-07-10 12:45:38.531557000 +0200
 @@ -14,12 +14,12 @@
  
      .prologue
@@ -2114,8 +2114,8 @@ diff -Naur orig/smali_classes3/com/ut/mini/base/a.smali mod/smali_classes3/com/u
      sput-object v0, Lcom/ut/mini/base/a;->b:Ljava/lang/String;
  
 diff -Naur orig/smali_classes3/com/ut/mini/core/d/a$a.smali mod/smali_classes3/com/ut/mini/core/d/a$a.smali
---- orig/smali_classes3/com/ut/mini/core/d/a$a.smali	2017-07-10 10:51:33.200638600 +0200
-+++ mod/smali_classes3/com/ut/mini/core/d/a$a.smali	2017-07-10 12:45:38.655644600 +0200
+--- orig/smali_classes3/com/ut/mini/core/d/a$a.smali    2017-07-10 10:51:33.200638600 +0200
++++ mod/smali_classes3/com/ut/mini/core/d/a$a.smali     2017-07-10 12:45:38.655644600 +0200
 @@ -115,7 +115,7 @@
      invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
  
@@ -2126,8 +2126,8 @@ diff -Naur orig/smali_classes3/com/ut/mini/core/d/a$a.smali mod/smali_classes3/c
      const/4 v3, 0x0
  
 diff -Naur orig/smali_classes3/com/ut/mini/core/e/a/b$a.smali mod/smali_classes3/com/ut/mini/core/e/a/b$a.smali
---- orig/smali_classes3/com/ut/mini/core/e/a/b$a.smali	2017-07-10 10:51:33.220152900 +0200
-+++ mod/smali_classes3/com/ut/mini/core/e/a/b$a.smali	2017-07-10 12:45:38.681664600 +0200
+--- orig/smali_classes3/com/ut/mini/core/e/a/b$a.smali  2017-07-10 10:51:33.220152900 +0200
++++ mod/smali_classes3/com/ut/mini/core/e/a/b$a.smali   2017-07-10 12:45:38.681664600 +0200
 @@ -172,7 +172,7 @@
      if-eqz v1, :cond_5
  
@@ -2138,8 +2138,8 @@ diff -Naur orig/smali_classes3/com/ut/mini/core/e/a/b$a.smali mod/smali_classes3
      const/4 v8, 0x0
  
 diff -Naur orig/smali_classes3/dji/data/upgrade/a/a.smali mod/smali_classes3/dji/data/upgrade/a/a.smali
---- orig/smali_classes3/dji/data/upgrade/a/a.smali	2017-07-10 10:51:33.938662500 +0200
-+++ mod/smali_classes3/dji/data/upgrade/a/a.smali	2017-07-10 12:47:09.906330700 +0200
+--- orig/smali_classes3/dji/data/upgrade/a/a.smali      2017-07-10 10:51:33.938662500 +0200
++++ mod/smali_classes3/dji/data/upgrade/a/a.smali       2017-07-10 12:47:09.906330700 +0200
 @@ -5,7 +5,7 @@
  # static fields
  .field public static final a:Ljava/lang/String; = "YTS7yyTAkmHkMwut"
@@ -2168,8 +2168,8 @@ diff -Naur orig/smali_classes3/dji/data/upgrade/a/a.smali mod/smali_classes3/dji
      sput-object v0, Ldji/data/upgrade/a/a;->c:Ljava/lang/String;
  
 diff -Naur orig/smali_classes3/dji/data/upgrade/c/d.smali mod/smali_classes3/dji/data/upgrade/c/d.smali
---- orig/smali_classes3/dji/data/upgrade/c/d.smali	2017-07-10 10:51:33.956174600 +0200
-+++ mod/smali_classes3/dji/data/upgrade/c/d.smali	2017-07-10 12:47:10.015406700 +0200
+--- orig/smali_classes3/dji/data/upgrade/c/d.smali      2017-07-10 10:51:33.956174600 +0200
++++ mod/smali_classes3/dji/data/upgrade/c/d.smali       2017-07-10 12:47:10.015406700 +0200
 @@ -15,9 +15,9 @@
  
  .field private static b:Z = false
@@ -2200,8 +2200,8 @@ diff -Naur orig/smali_classes3/dji/data/upgrade/c/d.smali mod/smali_classes3/dji
      goto :goto_0
  .end method
 diff -Naur orig/smali_classes3/dji/dbox/upgrade/p4/a/a.smali mod/smali_classes3/dji/dbox/upgrade/p4/a/a.smali
---- orig/smali_classes3/dji/dbox/upgrade/p4/a/a.smali	2017-07-10 10:51:34.123293300 +0200
-+++ mod/smali_classes3/dji/dbox/upgrade/p4/a/a.smali	2017-07-10 12:47:10.263212100 +0200
+--- orig/smali_classes3/dji/dbox/upgrade/p4/a/a.smali   2017-07-10 10:51:34.123293300 +0200
++++ mod/smali_classes3/dji/dbox/upgrade/p4/a/a.smali    2017-07-10 12:47:10.263212100 +0200
 @@ -525,7 +525,7 @@
  
      .prologue
@@ -2212,8 +2212,8 @@ diff -Naur orig/smali_classes3/dji/dbox/upgrade/p4/a/a.smali mod/smali_classes3/
      return-object v0
  .end method
 diff -Naur orig/smali_classes3/dji/dbox/upgrade/p4/c/b.smali mod/smali_classes3/dji/dbox/upgrade/p4/c/b.smali
---- orig/smali_classes3/dji/dbox/upgrade/p4/c/b.smali	2017-07-10 10:51:34.159819500 +0200
-+++ mod/smali_classes3/dji/dbox/upgrade/p4/c/b.smali	2017-07-10 12:47:10.320252700 +0200
+--- orig/smali_classes3/dji/dbox/upgrade/p4/c/b.smali   2017-07-10 10:51:34.159819500 +0200
++++ mod/smali_classes3/dji/dbox/upgrade/p4/c/b.smali    2017-07-10 12:47:10.320252700 +0200
 @@ -57,12 +57,12 @@
      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
  
@@ -2239,8 +2239,8 @@ diff -Naur orig/smali_classes3/dji/dbox/upgrade/p4/c/b.smali mod/smali_classes3/
      const-string/jumbo v3, "application/x-www-form-urlencoded"
  
 diff -Naur orig/smali_classes3/dji/internal/e/i.smali mod/smali_classes3/dji/internal/e/i.smali
---- orig/smali_classes3/dji/internal/e/i.smali	2017-07-10 10:51:34.746590800 +0200
-+++ mod/smali_classes3/dji/internal/e/i.smali	2017-07-10 12:45:42.173139500 +0200
+--- orig/smali_classes3/dji/internal/e/i.smali  2017-07-10 10:51:34.746590800 +0200
++++ mod/smali_classes3/dji/internal/e/i.smali   2017-07-10 12:45:42.173139500 +0200
 @@ -48,7 +48,7 @@
      sput-object v0, Ldji/internal/e/i;->f:Ljava/lang/String;
  
@@ -2251,8 +2251,8 @@ diff -Naur orig/smali_classes3/dji/internal/e/i.smali mod/smali_classes3/dji/int
      sput-object v0, Ldji/internal/e/i;->e:Ljava/lang/String;
  
 diff -Naur orig/smali_classes3/dji/internal/logics/w.smali mod/smali_classes3/dji/internal/logics/w.smali
---- orig/smali_classes3/dji/internal/logics/w.smali	2017-07-10 10:51:34.829850200 +0200
-+++ mod/smali_classes3/dji/internal/logics/w.smali	2017-07-10 12:47:11.780463700 +0200
+--- orig/smali_classes3/dji/internal/logics/w.smali     2017-07-10 10:51:34.829850200 +0200
++++ mod/smali_classes3/dji/internal/logics/w.smali      2017-07-10 12:47:11.780463700 +0200
 @@ -5,9 +5,9 @@
  # static fields
  .field private static a:Z = false
@@ -2283,8 +2283,8 @@ diff -Naur orig/smali_classes3/dji/internal/logics/w.smali mod/smali_classes3/dj
      goto :goto_0
  .end method
 diff -Naur orig/smali_classes4/dji/pilot/active/b.smali mod/smali_classes4/dji/pilot/active/b.smali
---- orig/smali_classes4/dji/pilot/active/b.smali	2017-07-10 10:51:35.346188700 +0200
-+++ mod/smali_classes4/dji/pilot/active/b.smali	2017-07-10 12:47:12.789285100 +0200
+--- orig/smali_classes4/dji/pilot/active/b.smali        2017-07-10 10:51:35.346188700 +0200
++++ mod/smali_classes4/dji/pilot/active/b.smali 2017-07-10 12:47:12.789285100 +0200
 @@ -16,11 +16,11 @@
  
  .field private static final b:Ljava/lang/String; = "re1qu2es3ta4cti9vev8eri7fy"
@@ -2328,8 +2328,8 @@ diff -Naur orig/smali_classes4/dji/pilot/active/b.smali mod/smali_classes4/dji/p
      iget-object v3, p0, Ldji/pilot/active/b;->k:Landroid/content/Context;
  
 diff -Naur orig/smali_classes4/dji/pilot/active/DJIActiveController.smali mod/smali_classes4/dji/pilot/active/DJIActiveController.smali
---- orig/smali_classes4/dji/pilot/active/DJIActiveController.smali	2017-07-10 10:51:35.332679400 +0200
-+++ mod/smali_classes4/dji/pilot/active/DJIActiveController.smali	2017-07-10 12:47:12.867341600 +0200
+--- orig/smali_classes4/dji/pilot/active/DJIActiveController.smali      2017-07-10 10:51:35.332679400 +0200
++++ mod/smali_classes4/dji/pilot/active/DJIActiveController.smali       2017-07-10 12:47:12.867341600 +0200
 @@ -31,13 +31,13 @@
  
  .field private static final j:Ljava/lang/String; = "re1qu2es3ta4cti9vev8eri7fy"
@@ -2384,8 +2384,8 @@ diff -Naur orig/smali_classes4/dji/pilot/active/DJIActiveController.smali mod/sm
      iget-object v3, p0, Ldji/pilot/active/DJIActiveController;->J:Landroid/content/Context;
  
 diff -Naur orig/smali_classes4/dji/pilot/active/f.smali mod/smali_classes4/dji/pilot/active/f.smali
---- orig/smali_classes4/dji/pilot/active/f.smali	2017-07-10 10:51:35.355195300 +0200
-+++ mod/smali_classes4/dji/pilot/active/f.smali	2017-07-10 12:47:12.906380900 +0200
+--- orig/smali_classes4/dji/pilot/active/f.smali        2017-07-10 10:51:35.355195300 +0200
++++ mod/smali_classes4/dji/pilot/active/f.smali 2017-07-10 12:47:12.906380900 +0200
 @@ -29,7 +29,7 @@
      sput-object v0, Ldji/pilot/active/f;->a:Ljava/lang/String;
  
@@ -2396,8 +2396,8 @@ diff -Naur orig/smali_classes4/dji/pilot/active/f.smali mod/smali_classes4/dji/p
      sput-object v0, Ldji/pilot/active/f;->b:Ljava/lang/String;
  
 diff -Naur orig/smali_classes4/dji/pilot/college/b/a.smali mod/smali_classes4/dji/pilot/college/b/a.smali
---- orig/smali_classes4/dji/pilot/college/b/a.smali	2017-07-10 10:51:35.431842200 +0200
-+++ mod/smali_classes4/dji/pilot/college/b/a.smali	2017-07-10 12:45:43.702224300 +0200
+--- orig/smali_classes4/dji/pilot/college/b/a.smali     2017-07-10 10:51:35.431842200 +0200
++++ mod/smali_classes4/dji/pilot/college/b/a.smali      2017-07-10 12:45:43.702224300 +0200
 @@ -21,7 +21,7 @@
  
      .prologue
@@ -2408,8 +2408,8 @@ diff -Naur orig/smali_classes4/dji/pilot/college/b/a.smali mod/smali_classes4/dj
      const/4 v1, 0x1
  
 diff -Naur orig/smali_classes4/dji/pilot/college/b/b.smali mod/smali_classes4/dji/pilot/college/b/b.smali
---- orig/smali_classes4/dji/pilot/college/b/b.smali	2017-07-10 10:51:35.432843500 +0200
-+++ mod/smali_classes4/dji/pilot/college/b/b.smali	2017-07-10 12:45:43.707227300 +0200
+--- orig/smali_classes4/dji/pilot/college/b/b.smali     2017-07-10 10:51:35.432843500 +0200
++++ mod/smali_classes4/dji/pilot/college/b/b.smali      2017-07-10 12:45:43.707227300 +0200
 @@ -10,7 +10,7 @@
  
  .field public static final d:I = 0x10001
@@ -2420,8 +2420,8 @@ diff -Naur orig/smali_classes4/dji/pilot/college/b/b.smali mod/smali_classes4/dj
  .field public static final f:Ljava/lang/String; = ""
  
 diff -Naur orig/smali_classes4/dji/pilot/configs/a.smali mod/smali_classes4/dji/pilot/configs/a.smali
---- orig/smali_classes4/dji/pilot/configs/a.smali	2017-07-10 10:51:35.444119100 +0200
-+++ mod/smali_classes4/dji/pilot/configs/a.smali	2017-07-10 12:47:13.047467500 +0200
+--- orig/smali_classes4/dji/pilot/configs/a.smali       2017-07-10 10:51:35.444119100 +0200
++++ mod/smali_classes4/dji/pilot/configs/a.smali        2017-07-10 12:47:13.047467500 +0200
 @@ -9,13 +9,13 @@
  
  .field public static final c:I = 0x12c
@@ -2477,8 +2477,8 @@ diff -Naur orig/smali_classes4/dji/pilot/configs/a.smali mod/smali_classes4/dji/
      aput-object v1, v0, v4
  
 diff -Naur orig/smali_classes4/dji/pilot/countrycode/a/a.smali mod/smali_classes4/dji/pilot/countrycode/a/a.smali
---- orig/smali_classes4/dji/pilot/countrycode/a/a.smali	2017-07-10 10:51:35.463496200 +0200
-+++ mod/smali_classes4/dji/pilot/countrycode/a/a.smali	2017-07-10 12:47:13.067482000 +0200
+--- orig/smali_classes4/dji/pilot/countrycode/a/a.smali 2017-07-10 10:51:35.463496200 +0200
++++ mod/smali_classes4/dji/pilot/countrycode/a/a.smali  2017-07-10 12:47:13.067482000 +0200
 @@ -83,7 +83,7 @@
  
      .prologue
@@ -2490,8 +2490,8 @@ diff -Naur orig/smali_classes4/dji/pilot/countrycode/a/a.smali mod/smali_classes
  .end method
 
  diff -Naur orig/smali_classes4/dji/pilot/fpv/control/a/e.smali mod/smali_classes4/dji/pilot/fpv/control/a/e.smali
---- orig/smali_classes4/dji/pilot/fpv/control/a/e.smali	2017-07-10 10:51:37.206655000 +0200
-+++ mod/smali_classes4/dji/pilot/fpv/control/a/e.smali	2017-07-10 12:47:17.473244100 +0200
+--- orig/smali_classes4/dji/pilot/fpv/control/a/e.smali 2017-07-10 10:51:37.206655000 +0200
++++ mod/smali_classes4/dji/pilot/fpv/control/a/e.smali  2017-07-10 12:47:17.473244100 +0200
 @@ -3,7 +3,7 @@
  
  
@@ -2535,8 +2535,8 @@ diff -Naur orig/smali_classes4/dji/pilot/countrycode/a/a.smali mod/smali_classes
      const/4 v4, 0x2
  
 diff -Naur orig/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali mod/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali
---- orig/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali	2017-07-10 10:51:37.242525800 +0200
-+++ mod/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali	2017-07-10 12:47:17.597331300 +0200
+--- orig/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali       2017-07-10 10:51:37.242525800 +0200
++++ mod/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali        2017-07-10 12:47:17.597331300 +0200
 @@ -169,7 +169,7 @@
  
      .prologue
@@ -2556,8 +2556,8 @@ diff -Naur orig/smali_classes4/dji/pilot/fpv/control/deviceCheck/a.smali mod/sma
      .line 38
      const-string/jumbo v0, "6b71b0dcab32dbd74ea260fa168b3081"
 diff -Naur orig/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali mod/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali
---- orig/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali	2017-07-10 10:51:37.318039200 +0200
-+++ mod/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali	2017-07-10 12:47:17.878086500 +0200
+--- orig/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali       2017-07-10 10:51:37.318039200 +0200
++++ mod/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali        2017-07-10 12:47:17.878086500 +0200
 @@ -76,7 +76,7 @@
      if-eqz v0, :cond_0
  
@@ -2613,8 +2613,8 @@ diff -Naur orig/smali_classes4/dji/pilot/fpv/control/phoneVerify/b.smali mod/sma
      goto :goto_0
  .end method
 diff -Naur orig/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali mod/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali
---- orig/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali	2017-07-10 10:51:37.710495700 +0200
-+++ mod/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali	2017-07-10 12:45:49.757517500 +0200
+--- orig/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali     2017-07-10 10:51:37.710495700 +0200
++++ mod/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali      2017-07-10 12:45:49.757517500 +0200
 @@ -73,7 +73,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2634,8 +2634,8 @@ diff -Naur orig/smali_classes4/dji/pilot/fpv/model/DJIGeocoderResult.smali mod/s
      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes4/dji/pilot/fpv/view/a.smali mod/smali_classes4/dji/pilot/fpv/view/a.smali
---- orig/smali_classes4/dji/pilot/fpv/view/a.smali	2017-07-10 10:51:38.006542700 +0200
-+++ mod/smali_classes4/dji/pilot/fpv/view/a.smali	2017-07-10 12:47:19.432897100 +0200
+--- orig/smali_classes4/dji/pilot/fpv/view/a.smali      2017-07-10 10:51:38.006542700 +0200
++++ mod/smali_classes4/dji/pilot/fpv/view/a.smali       2017-07-10 12:47:19.432897100 +0200
 @@ -26,7 +26,7 @@
      invoke-direct {p0, p1}, Ldji/pilot/publics/objects/c;-><init>(Landroid/content/Context;)V
  
@@ -2646,8 +2646,8 @@ diff -Naur orig/smali_classes4/dji/pilot/fpv/view/a.smali mod/smali_classes4/dji
      iput-object v0, p0, Ldji/pilot/fpv/view/a;->e:Ljava/lang/String;
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali mod/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali
---- orig/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali	2017-07-10 10:51:38.687184600 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali	2017-07-10 12:47:21.551284600 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali     2017-07-10 10:51:38.687184600 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali      2017-07-10 12:47:21.551284600 +0200
 @@ -241,7 +241,7 @@
      .line 71
      iget-object v1, p0, Ldji/pilot/liveshare/Weibo/a/b;->weiboRunner:Lcom/sina/weibo/sdk/net/AsyncWeiboRunner;
@@ -2667,8 +2667,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/a/b.smali mod/smali_cla
      const-string/jumbo v3, "POST"
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali mod/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali
---- orig/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali	2017-07-10 10:51:38.687184600 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali	2017-07-10 12:47:21.558290100 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali     2017-07-10 10:51:38.687184600 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali      2017-07-10 12:47:21.558290100 +0200
 @@ -3,7 +3,7 @@
  
  
@@ -2679,8 +2679,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/b/a.smali mod/smali_cla
  .field protected static final HTTPMETHOD_GET:Ljava/lang/String; = "GET"
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali mod/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali
---- orig/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali	2017-07-10 10:51:38.691196900 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali	2017-07-10 12:47:21.571299200 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali     2017-07-10 10:51:38.691196900 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali      2017-07-10 12:47:21.571299200 +0200
 @@ -3,7 +3,7 @@
  
  
@@ -2718,8 +2718,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/b/c.smali mod/smali_cla
      invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali mod/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali
---- orig/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali	2017-07-10 10:51:38.691196900 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali	2017-07-10 12:47:21.577303400 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali     2017-07-10 10:51:38.691196900 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali      2017-07-10 12:47:21.577303400 +0200
 @@ -5,6 +5,6 @@
  # static fields
  .field public static final APP_KEY:Ljava/lang/String; = "3268350148"
@@ -2729,8 +2729,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/b/d.smali mod/smali_cla
  
  .field public static final SCOPE:Ljava/lang/String; = "email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali mod/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali
---- orig/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali	2017-07-10 10:51:38.710403000 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali	2017-07-10 12:47:21.590312800 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali    2017-07-10 10:51:38.710403000 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali     2017-07-10 12:47:21.590312800 +0200
 @@ -36,7 +36,7 @@
  
      const-string/jumbo v2, "3268350148"
@@ -2741,8 +2741,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.sm
      const-string/jumbo v4, "email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write"
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Youtube/a.smali mod/smali_classes4/dji/pilot/liveshare/Youtube/a.smali
---- orig/smali_classes4/dji/pilot/liveshare/Youtube/a.smali	2017-07-10 10:51:38.751434500 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Youtube/a.smali	2017-07-10 12:47:21.623336100 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Youtube/a.smali     2017-07-10 10:51:38.751434500 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Youtube/a.smali      2017-07-10 12:47:21.623336100 +0200
 @@ -70,7 +70,7 @@
  
      const/4 v1, 0x1
@@ -2753,8 +2753,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Youtube/a.smali mod/smali_cla
      aput-object v2, v0, v1
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.smali mod/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.smali
---- orig/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.smali	2017-07-10 10:51:38.725912500 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.smali	2017-07-10 12:47:21.681377600 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.smali     2017-07-10 10:51:38.725912500 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.smali      2017-07-10 12:47:21.681377600 +0200
 @@ -25,9 +25,9 @@
  
  .field private static final SCOPE_EMAIL:Ljava/lang/String; = "email"
@@ -2768,8 +2768,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Youtube/BasicModeActivity.sma
  .field private static SHOWLOGINDIALOG:I
  
 diff -Naur orig/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.smali mod/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.smali
---- orig/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.smali	2017-07-10 10:51:38.759439800 +0200
-+++ mod/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.smali	2017-07-10 12:47:21.797460300 +0200
+--- orig/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.smali   2017-07-10 10:51:38.759439800 +0200
++++ mod/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.smali    2017-07-10 12:47:21.797460300 +0200
 @@ -106,7 +106,7 @@
  
      const/4 v1, 0x1
@@ -2780,8 +2780,8 @@ diff -Naur orig/smali_classes4/dji/pilot/liveshare/Youtube/youtubeLiveActivity.s
      aput-object v2, v0, v1
  
 diff -Naur orig/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali mod/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali
---- orig/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali	2017-07-10 10:51:39.082495900 +0200
-+++ mod/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali	2017-07-10 12:45:53.094885300 +0200
+--- orig/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali  2017-07-10 10:51:39.082495900 +0200
++++ mod/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali   2017-07-10 12:45:53.094885300 +0200
 @@ -24,7 +24,7 @@
  
  .field public static final h:Ljava/lang/String; = "/depth.jpg"
@@ -2846,8 +2846,8 @@ diff -Naur orig/smali_classes4/dji/pilot/playback/kumquat/bokeh/manager/DJIBokeh
      const-string/jumbo v3, "CalibratedOpticalCenterY"
  
 diff -Naur orig/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali mod/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali
---- orig/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali	2017-07-10 10:51:39.124035000 +0200
-+++ mod/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali	2017-07-10 12:45:53.228981900 +0200
+--- orig/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali    2017-07-10 10:51:39.124035000 +0200
++++ mod/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali     2017-07-10 12:45:53.228981900 +0200
 @@ -11,7 +11,7 @@
  
  .field private static final d:Ljava/lang/String; = "_result"
@@ -2966,8 +2966,8 @@ diff -Naur orig/smali_classes4/dji/pilot/playback/kumquat/panorama/manager/DJIPa
      const-string/jumbo v3, "CalibratedOpticalCenterY"
  
 diff -Naur orig/smali_classes4/dji/pilot/popup/a/a.smali mod/smali_classes4/dji/pilot/popup/a/a.smali
---- orig/smali_classes4/dji/pilot/popup/a/a.smali	2017-07-10 10:51:39.258981900 +0200
-+++ mod/smali_classes4/dji/pilot/popup/a/a.smali	2017-07-10 12:47:22.941132600 +0200
+--- orig/smali_classes4/dji/pilot/popup/a/a.smali       2017-07-10 10:51:39.258981900 +0200
++++ mod/smali_classes4/dji/pilot/popup/a/a.smali        2017-07-10 12:47:22.941132600 +0200
 @@ -87,7 +87,7 @@
      move-result-object v0
  
@@ -2978,8 +2978,8 @@ diff -Naur orig/smali_classes4/dji/pilot/popup/a/a.smali mod/smali_classes4/dji/
      new-instance v2, Ldji/pilot/popup/a/a$1;
  
 diff -Naur orig/smali_classes4/dji/pilot/popup/b/a.smali mod/smali_classes4/dji/pilot/popup/b/a.smali
---- orig/smali_classes4/dji/pilot/popup/b/a.smali	2017-07-10 10:51:39.276856700 +0200
-+++ mod/smali_classes4/dji/pilot/popup/b/a.smali	2017-07-10 12:47:22.980161600 +0200
+--- orig/smali_classes4/dji/pilot/popup/b/a.smali       2017-07-10 10:51:39.276856700 +0200
++++ mod/smali_classes4/dji/pilot/popup/b/a.smali        2017-07-10 12:47:22.980161600 +0200
 @@ -57,14 +57,14 @@
      if-eqz v0, :cond_0
  
@@ -2998,8 +2998,8 @@ diff -Naur orig/smali_classes4/dji/pilot/popup/b/a.smali mod/smali_classes4/dji/
      goto :goto_0
  .end method
 diff -Naur orig/smali_classes5/dji/pilot/publics/c/b.smali mod/smali_classes5/dji/pilot/publics/c/b.smali
---- orig/smali_classes5/dji/pilot/publics/c/b.smali	2017-07-10 10:51:39.391257300 +0200
-+++ mod/smali_classes5/dji/pilot/publics/c/b.smali	2017-07-10 12:45:53.898455400 +0200
+--- orig/smali_classes5/dji/pilot/publics/c/b.smali     2017-07-10 10:51:39.391257300 +0200
++++ mod/smali_classes5/dji/pilot/publics/c/b.smali      2017-07-10 12:45:53.898455400 +0200
 @@ -267,7 +267,7 @@
      .line 150
      iget-object v0, p0, Ldji/pilot/publics/c/b;->b:Ldji/thirdparty/afinal/c;
@@ -3010,8 +3010,8 @@ diff -Naur orig/smali_classes5/dji/pilot/publics/c/b.smali mod/smali_classes5/dj
      const-string/jumbo v3, "application/x-www-form-urlencoded"
  
 diff -Naur orig/smali_classes5/dji/pilot/publics/control/a.smali mod/smali_classes5/dji/pilot/publics/control/a.smali
---- orig/smali_classes5/dji/pilot/publics/control/a.smali	2017-07-10 10:51:39.442916800 +0200
-+++ mod/smali_classes5/dji/pilot/publics/control/a.smali	2017-07-10 12:47:23.240345700 +0200
+--- orig/smali_classes5/dji/pilot/publics/control/a.smali       2017-07-10 10:51:39.442916800 +0200
++++ mod/smali_classes5/dji/pilot/publics/control/a.smali        2017-07-10 12:47:23.240345700 +0200
 @@ -5375,7 +5375,7 @@
      .line 351
      iget-object v0, p0, Ldji/pilot/publics/control/a;->E:Ldji/thirdparty/afinal/c;
@@ -3022,9 +3022,9 @@ diff -Naur orig/smali_classes5/dji/pilot/publics/control/a.smali mod/smali_class
      new-instance v2, Ldji/pilot/publics/control/a$2;
  
 diff -Naur orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali mod/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali
---- orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali	2017-07-10 10:51:39.656025900 +0200
-+++ mod/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali	2017-07-10 12:47:23.904746700 +0200
-@@ -1180,7 +1180,7 @@
+--- orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali        2017-07-10 10:51:39.656025900 +0200
++++ mod/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali         2017-07-10 12:47:23.904746700 +0200
+@@ -1173,7 +1173,7 @@
  
      move-result-object v0
  
@@ -3034,8 +3034,8 @@ diff -Naur orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali 
      const-string/jumbo v4, "application/x-www-form-urlencoded"
  
 diff -Naur orig/smali_classes5/dji/pilot/publics/util/e.smali mod/smali_classes5/dji/pilot/publics/util/e.smali
---- orig/smali_classes5/dji/pilot/publics/util/e.smali	2017-07-10 10:51:39.715028800 +0200
-+++ mod/smali_classes5/dji/pilot/publics/util/e.smali	2017-07-10 12:45:54.900164900 +0200
+--- orig/smali_classes5/dji/pilot/publics/util/e.smali  2017-07-10 10:51:39.715028800 +0200
++++ mod/smali_classes5/dji/pilot/publics/util/e.smali   2017-07-10 12:45:54.900164900 +0200
 @@ -3,11 +3,11 @@
  
  
@@ -3069,8 +3069,8 @@ diff -Naur orig/smali_classes5/dji/pilot/publics/util/e.smali mod/smali_classes5
      .line 157
      :cond_0
 diff -Naur orig/smali_classes5/dji/pilot/server/a.smali mod/smali_classes5/dji/pilot/server/a.smali
---- orig/smali_classes5/dji/pilot/server/a.smali	2017-07-10 10:51:39.828639900 +0200
-+++ mod/smali_classes5/dji/pilot/server/a.smali	2017-07-10 12:47:24.384086800 +0200
+--- orig/smali_classes5/dji/pilot/server/a.smali        2017-07-10 10:51:39.828639900 +0200
++++ mod/smali_classes5/dji/pilot/server/a.smali 2017-07-10 12:47:24.384086800 +0200
 @@ -5,7 +5,7 @@
  # static fields
  .field protected static final a:Ljava/lang/String; = "2"
@@ -3081,8 +3081,8 @@ diff -Naur orig/smali_classes5/dji/pilot/server/a.smali mod/smali_classes5/dji/p
  
  # direct methods
 diff -Naur orig/smali_classes5/dji/pilot/server/b.smali mod/smali_classes5/dji/pilot/server/b.smali
---- orig/smali_classes5/dji/pilot/server/b.smali	2017-07-10 10:51:39.832642700 +0200
-+++ mod/smali_classes5/dji/pilot/server/b.smali	2017-07-10 12:47:24.408103800 +0200
+--- orig/smali_classes5/dji/pilot/server/b.smali        2017-07-10 10:51:39.832642700 +0200
++++ mod/smali_classes5/dji/pilot/server/b.smali 2017-07-10 12:47:24.408103800 +0200
 @@ -198,14 +198,14 @@
      if-eqz v0, :cond_0
  
@@ -3101,8 +3101,8 @@ diff -Naur orig/smali_classes5/dji/pilot/server/b.smali mod/smali_classes5/dji/p
      goto :goto_0
  .end method
 diff -Naur orig/smali_classes5/dji/pilot/store/DJIStoreFragment.smali mod/smali_classes5/dji/pilot/store/DJIStoreFragment.smali
---- orig/smali_classes5/dji/pilot/store/DJIStoreFragment.smali	2017-07-10 10:51:39.870794000 +0200
-+++ mod/smali_classes5/dji/pilot/store/DJIStoreFragment.smali	2017-07-10 12:47:24.520182200 +0200
+--- orig/smali_classes5/dji/pilot/store/DJIStoreFragment.smali  2017-07-10 10:51:39.870794000 +0200
++++ mod/smali_classes5/dji/pilot/store/DJIStoreFragment.smali   2017-07-10 12:47:24.520182200 +0200
 @@ -12,9 +12,9 @@
  
  
@@ -3133,8 +3133,8 @@ diff -Naur orig/smali_classes5/dji/pilot/store/DJIStoreFragment.smali mod/smali_
      goto :goto_0
  .end method
 diff -Naur orig/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali mod/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali
---- orig/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali	2017-07-10 10:51:39.884807000 +0200
-+++ mod/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali	2017-07-10 12:47:24.784370300 +0200
+--- orig/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali       2017-07-10 10:51:39.884807000 +0200
++++ mod/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali        2017-07-10 12:47:24.784370300 +0200
 @@ -308,7 +308,7 @@
      .line 145
      iget-object v0, p0, Ldji/pilot/upgrade/UpgradeConfigInfo;->j:Ldji/thirdparty/afinal/c;
@@ -3145,8 +3145,8 @@ diff -Naur orig/smali_classes5/dji/pilot/upgrade/UpgradeConfigInfo.smali mod/sma
      new-instance v2, Ldji/pilot/upgrade/UpgradeConfigInfo$1;
  
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/b/e.smali mod/smali_classes5/dji/pilot/usercenter/b/e.smali
---- orig/smali_classes5/dji/pilot/usercenter/b/e.smali	2017-07-10 10:51:40.019772600 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/b/e.smali	2017-07-10 12:47:24.971859000 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/b/e.smali  2017-07-10 10:51:40.019772600 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/b/e.smali   2017-07-10 12:47:24.971859000 +0200
 @@ -4828,7 +4828,7 @@
  
      .prologue
@@ -3157,8 +3157,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/b/e.smali mod/smali_classes5
      const/4 v1, 0x2
  
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/a.smali mod/smali_classes5/dji/pilot/usercenter/protocol/a.smali
---- orig/smali_classes5/dji/pilot/usercenter/protocol/a.smali	2017-07-10 10:51:40.135412100 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/protocol/a.smali	2017-07-10 12:45:56.063004800 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/protocol/a.smali   2017-07-10 10:51:40.135412100 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/a.smali    2017-07-10 12:45:56.063004800 +0200
 @@ -23,7 +23,7 @@
      .line 37
      sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -3187,8 +3187,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/a.smali mod/smali_c
      const/4 v2, 0x1
  
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/b.smali mod/smali_classes5/dji/pilot/usercenter/protocol/b.smali
---- orig/smali_classes5/dji/pilot/usercenter/protocol/b.smali	2017-07-10 10:51:40.144418300 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/protocol/b.smali	2017-07-10 12:47:25.370119100 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/protocol/b.smali   2017-07-10 10:51:40.144418300 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/b.smali    2017-07-10 12:47:25.370119100 +0200
 @@ -24,7 +24,7 @@
      :try_start_0
      sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -3271,8 +3271,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/b.smali mod/smali_c
      const/4 v2, 0x2
  
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/c.smali mod/smali_classes5/dji/pilot/usercenter/protocol/c.smali
---- orig/smali_classes5/dji/pilot/usercenter/protocol/c.smali	2017-07-10 10:51:40.143417700 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/protocol/c.smali	2017-07-10 12:47:25.376123300 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/protocol/c.smali   2017-07-10 10:51:40.143417700 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/c.smali    2017-07-10 12:47:25.376123300 +0200
 @@ -6,31 +6,31 @@
  
  
@@ -3325,8 +3325,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/c.smali mod/smali_c
 -.field public static final z:Ljava/lang/String; = "https://mydjiflight.dji.com/flight/"
 +.field public static final z:Ljava/lang/String; = "INVALIDmydjiflight.dji.com/flight/"
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/e.smali mod/smali_classes5/dji/pilot/usercenter/protocol/e.smali
---- orig/smali_classes5/dji/pilot/usercenter/protocol/e.smali	2017-07-10 10:51:40.148421500 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/protocol/e.smali	2017-07-10 12:47:25.388132600 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/protocol/e.smali   2017-07-10 10:51:40.148421500 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/e.smali    2017-07-10 12:47:25.388132600 +0200
 @@ -38,25 +38,25 @@
  
  .field public static final aM:Ljava/lang/String; = "cn-test-sp.skypixel.com"
@@ -3382,8 +3382,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/e.smali mod/smali_c
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/f.smali mod/smali_classes5/dji/pilot/usercenter/protocol/f.smali
---- orig/smali_classes5/dji/pilot/usercenter/protocol/f.smali	2017-07-10 10:51:40.151423400 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/protocol/f.smali	2017-07-10 12:45:56.148064200 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/protocol/f.smali   2017-07-10 10:51:40.151423400 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/f.smali    2017-07-10 12:45:56.148064200 +0200
 @@ -23,7 +23,7 @@
      .line 36
      sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -3439,8 +3439,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/f.smali mod/smali_c
      const/4 v2, 0x3
  
 diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/g.smali mod/smali_classes5/dji/pilot/usercenter/protocol/g.smali
---- orig/smali_classes5/dji/pilot/usercenter/protocol/g.smali	2017-07-10 10:51:40.167939200 +0200
-+++ mod/smali_classes5/dji/pilot/usercenter/protocol/g.smali	2017-07-10 12:47:25.473192400 +0200
+--- orig/smali_classes5/dji/pilot/usercenter/protocol/g.smali   2017-07-10 10:51:40.167939200 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/g.smali    2017-07-10 12:47:25.473192400 +0200
 @@ -69,7 +69,7 @@
  
      .line 57
@@ -3469,8 +3469,8 @@ diff -Naur orig/smali_classes5/dji/pilot/usercenter/protocol/g.smali mod/smali_c
      invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali mod/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali
---- orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali	2017-07-10 10:51:40.548696600 +0200
-+++ mod/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali	2017-07-10 12:45:57.162770100 +0200
+--- orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali       2017-07-10 10:51:40.548696600 +0200
++++ mod/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali        2017-07-10 12:45:57.162770100 +0200
 @@ -77,7 +77,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3481,8 +3481,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity
      invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity.smali mod/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity.smali
---- orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity.smali	2017-07-10 10:51:40.554701300 +0200
-+++ mod/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity.smali	2017-07-10 12:45:57.172776800 +0200
+--- orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity.smali 2017-07-10 10:51:40.554701300 +0200
++++ mod/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity.smali  2017-07-10 12:45:57.172776800 +0200
 @@ -172,7 +172,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3502,8 +3502,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/academy/activity/DJIFlightBookActivity
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQActivity.smali mod/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQActivity.smali
---- orig/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQActivity.smali	2017-07-10 10:51:40.574719300 +0200
-+++ mod/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQActivity.smali	2017-07-10 12:45:57.273850200 +0200
+--- orig/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQActivity.smali  2017-07-10 10:51:40.574719300 +0200
++++ mod/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQActivity.smali   2017-07-10 12:45:57.273850200 +0200
 @@ -260,7 +260,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3514,8 +3514,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/academy/activity/DJINewAcademyNormalQA
      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/account/profile/b.smali mod/smali_classes5/dji/pilot2/account/profile/b.smali
---- orig/smali_classes5/dji/pilot2/account/profile/b.smali	2017-07-10 10:51:40.754495800 +0200
-+++ mod/smali_classes5/dji/pilot2/account/profile/b.smali	2017-07-10 12:47:26.981017300 +0200
+--- orig/smali_classes5/dji/pilot2/account/profile/b.smali      2017-07-10 10:51:40.754495800 +0200
++++ mod/smali_classes5/dji/pilot2/account/profile/b.smali       2017-07-10 12:47:26.981017300 +0200
 @@ -17,7 +17,7 @@
  # static fields
  .field private static final K:Ljava/lang/String; = "DJIEditProfilePresenter"
@@ -3535,8 +3535,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/account/profile/b.smali mod/smali_clas
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/e/a.smali mod/smali_classes5/dji/pilot2/e/a.smali
---- orig/smali_classes5/dji/pilot2/e/a.smali	2017-07-10 10:51:41.131087600 +0200
-+++ mod/smali_classes5/dji/pilot2/e/a.smali	2017-07-10 12:45:58.713869800 +0200
+--- orig/smali_classes5/dji/pilot2/e/a.smali    2017-07-10 10:51:41.131087600 +0200
++++ mod/smali_classes5/dji/pilot2/e/a.smali     2017-07-10 12:45:58.713869800 +0200
 @@ -77,7 +77,7 @@
  
      move-result-object v1
@@ -3547,8 +3547,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/e/a.smali mod/smali_classes5/dji/pilot
      invoke-virtual {v2}, Ljava/lang/String;->length()I
  
 diff -Naur orig/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivity.smali mod/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivity.smali
---- orig/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivity.smali	2017-07-10 10:51:41.175856700 +0200
-+++ mod/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivity.smali	2017-07-10 12:47:28.068735000 +0200
+--- orig/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivity.smali       2017-07-10 10:51:41.175856700 +0200
++++ mod/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivity.smali        2017-07-10 12:47:28.068735000 +0200
 @@ -94,12 +94,12 @@
      iput-boolean v1, p0, Ldji/pilot2/explore/activity/DJIMediaDisplayActivity;->h:Z
  
@@ -3565,8 +3565,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/explore/activity/DJIMediaDisplayActivi
      iput-object v0, p0, Ldji/pilot2/explore/activity/DJIMediaDisplayActivity;->j:Ljava/lang/String;
  
 diff -Naur orig/smali_classes5/dji/pilot2/main/a/a.smali mod/smali_classes5/dji/pilot2/main/a/a.smali
---- orig/smali_classes5/dji/pilot2/main/a/a.smali	2017-07-10 10:51:41.638519100 +0200
-+++ mod/smali_classes5/dji/pilot2/main/a/a.smali	2017-07-10 12:45:59.998782200 +0200
+--- orig/smali_classes5/dji/pilot2/main/a/a.smali       2017-07-10 10:51:41.638519100 +0200
++++ mod/smali_classes5/dji/pilot2/main/a/a.smali        2017-07-10 12:45:59.998782200 +0200
 @@ -58,7 +58,7 @@
      if-eqz v0, :cond_0
  
@@ -3577,8 +3577,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/main/a/a.smali mod/smali_classes5/dji/
      .line 64
      :goto_0
 diff -Naur orig/smali_classes5/dji/pilot2/main/a/b.smali mod/smali_classes5/dji/pilot2/main/a/b.smali
---- orig/smali_classes5/dji/pilot2/main/a/b.smali	2017-07-10 10:51:41.640061300 +0200
-+++ mod/smali_classes5/dji/pilot2/main/a/b.smali	2017-07-10 12:46:00.012791800 +0200
+--- orig/smali_classes5/dji/pilot2/main/a/b.smali       2017-07-10 10:51:41.640061300 +0200
++++ mod/smali_classes5/dji/pilot2/main/a/b.smali        2017-07-10 12:46:00.012791800 +0200
 @@ -7,7 +7,7 @@
  
  .field public static final b:Ljava/lang/String; = "never_connected"
@@ -3598,8 +3598,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/main/a/b.smali mod/smali_classes5/dji/
      const/4 v3, 0x2
  
 diff -Naur orig/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.smali mod/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.smali
---- orig/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.smali	2017-07-10 10:51:41.646659700 +0200
-+++ mod/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.smali	2017-07-10 12:46:00.026801300 +0200
+--- orig/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.smali     2017-07-10 10:51:41.646659700 +0200
++++ mod/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.smali      2017-07-10 12:46:00.026801300 +0200
 @@ -6,7 +6,7 @@
  
  
@@ -3610,8 +3610,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/main/activity/DJIChangeAppActivity.sma
  
  # instance fields
 diff -Naur orig/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smali mod/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smali
---- orig/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smali	2017-07-10 10:51:41.648660800 +0200
-+++ mod/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smali	2017-07-10 12:46:00.057825000 +0200
+--- orig/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smali      2017-07-10 10:51:41.648660800 +0200
++++ mod/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smali       2017-07-10 12:46:00.057825000 +0200
 @@ -96,7 +96,7 @@
      .line 186
      sget-object v1, Ldji/pilot2/welcome/fragment/DJIWebviewFragment;->z:Ljava/lang/String;
@@ -3631,8 +3631,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/main/activity/DJILegalAgreement$a.smal
      invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
  
 diff -Naur orig/smali_classes5/dji/pilot2/media/a/k.smali mod/smali_classes5/dji/pilot2/media/a/k.smali
---- orig/smali_classes5/dji/pilot2/media/a/k.smali	2017-07-10 10:51:41.799064900 +0200
-+++ mod/smali_classes5/dji/pilot2/media/a/k.smali	2017-07-10 12:46:00.502138600 +0200
+--- orig/smali_classes5/dji/pilot2/media/a/k.smali      2017-07-10 10:51:41.799064900 +0200
++++ mod/smali_classes5/dji/pilot2/media/a/k.smali       2017-07-10 12:46:00.502138600 +0200
 @@ -288,7 +288,7 @@
  
      .prologue
@@ -3643,8 +3643,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/media/a/k.smali mod/smali_classes5/dji
      return-object v0
  .end method
 diff -Naur orig/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali mod/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali
---- orig/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali	2017-07-10 10:51:41.927895100 +0200
-+++ mod/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali	2017-07-10 12:46:00.848398300 +0200
+--- orig/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali  2017-07-10 10:51:41.927895100 +0200
++++ mod/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali   2017-07-10 12:46:00.848398300 +0200
 @@ -705,7 +705,7 @@
      if-eqz v0, :cond_3
  
@@ -3665,8 +3665,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/mine/activity/PrivacyActivity.smali mo
  .end method
 
 diff -Naur orig/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali mod/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali
---- orig/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali	2017-07-10 10:51:42.200749600 +0200
-+++ mod/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali	2017-07-10 12:47:30.684695100 +0200
+--- orig/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali     2017-07-10 10:51:42.200749600 +0200
++++ mod/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali      2017-07-10 12:47:30.684695100 +0200
 @@ -16,9 +16,9 @@
  # static fields
  .field private static a:[I = null
@@ -3689,8 +3689,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/music/album/MusicAlbumView.smali mod/s
      new-instance v2, Ldji/pilot2/music/album/MusicAlbumView$1;
  
 diff -Naur orig/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.smali mod/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.smali
---- orig/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.smali	2017-07-10 10:51:42.403246100 +0200
-+++ mod/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.smali	2017-07-10 12:46:01.934154400 +0200
+--- orig/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.smali   2017-07-10 10:51:42.403246100 +0200
++++ mod/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.smali    2017-07-10 12:46:01.934154400 +0200
 @@ -910,7 +910,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3701,8 +3701,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/nativeexplore/activity/GLMapActivity.s
      invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali mod/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali
---- orig/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali	2017-07-10 10:51:42.957467400 +0200
-+++ mod/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali	2017-07-10 12:46:02.823023000 +0200
+--- orig/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali 2017-07-10 10:51:42.957467400 +0200
++++ mod/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali  2017-07-10 12:46:02.823023000 +0200
 @@ -1528,7 +1528,7 @@
  
      invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3713,8 +3713,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/newlibrary/library/b/a.smali mod/smali
      invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali mod/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali
---- orig/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali	2017-07-10 10:51:43.112781000 +0200
-+++ mod/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali	2017-07-10 12:46:03.151256200 +0200
+--- orig/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali       2017-07-10 10:51:43.112781000 +0200
++++ mod/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali        2017-07-10 12:46:03.151256200 +0200
 @@ -52,15 +52,15 @@
      .line 28
      new-array v0, v5, [Ljava/lang/String;
@@ -3735,8 +3735,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/phantom/activity/DJIPhantomLearnActivi
      aput-object v1, v0, v4
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$a.smali mod/smali_classes5/dji/pilot2/publics/b/a$a.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$a.smali	2017-07-10 10:51:43.277706000 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$a.smali	2017-07-10 12:47:32.542873300 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$a.smali  2017-07-10 10:51:43.277706000 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$a.smali   2017-07-10 12:47:32.542873300 +0200
 @@ -31,7 +31,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3756,8 +3756,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$a.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$b.smali mod/smali_classes5/dji/pilot2/publics/b/a$b.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$b.smali	2017-07-10 10:51:43.275204700 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$b.smali	2017-07-10 12:47:32.546875800 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$b.smali  2017-07-10 10:51:43.275204700 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$b.smali   2017-07-10 12:47:32.546875800 +0200
 @@ -14,6 +14,6 @@
  
  
@@ -3768,8 +3768,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$b.smali mod/smali_classes5
 -.field public static final b:Ljava/lang/String; = "https://app-service.skypixel.com/api/invalid_md5_list"
 +.field public static final b:Ljava/lang/String; = "INVALIDapp-service.skypixel.com/api/invalid_md5_list"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$c.smali mod/smali_classes5/dji/pilot2/publics/b/a$c.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$c.smali	2017-07-10 10:51:43.277205700 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$c.smali	2017-07-10 12:47:32.550890800 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$c.smali  2017-07-10 10:51:43.277205700 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$c.smali   2017-07-10 12:47:32.550890800 +0200
 @@ -22,21 +22,21 @@
  
  .field public static final d:Ljava/lang/String;
@@ -3853,8 +3853,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$c.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$d.smali mod/smali_classes5/dji/pilot2/publics/b/a$d.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$d.smali	2017-07-10 10:51:43.275704500 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$d.smali	2017-07-10 12:46:03.430454000 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$d.smali  2017-07-10 10:51:43.275704500 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$d.smali   2017-07-10 12:46:03.430454000 +0200
 @@ -231,47 +231,47 @@
  
      new-array v0, v0, [Ljava/lang/String;
@@ -3970,8 +3970,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$d.smali mod/smali_classes5
      aput-object v2, v0, v1
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$e.smali mod/smali_classes5/dji/pilot2/publics/b/a$e.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$e.smali	2017-07-10 10:51:43.279206700 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$e.smali	2017-07-10 12:47:32.559885200 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$e.smali  2017-07-10 10:51:43.279206700 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$e.smali   2017-07-10 12:47:32.559885200 +0200
 @@ -20,21 +20,21 @@
  
  .field public static final c:Ljava/lang/String; = "file:///android_asset/htmls/explore_first_load_local_en.html"
@@ -4026,8 +4026,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$e.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$f.smali mod/smali_classes5/dji/pilot2/publics/b/a$f.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$f.smali	2017-07-10 10:51:43.296734100 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$f.smali	2017-07-10 12:47:32.562885600 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$f.smali  2017-07-10 10:51:43.296734100 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$f.smali   2017-07-10 12:47:32.562885600 +0200
 @@ -14,9 +14,9 @@
  
  
@@ -4068,8 +4068,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$f.smali mod/smali_classes5
 -.field public static final m:Ljava/lang/String; = "http://djistatic.com/agreement/dji-go-4-pp.html"
 +.field public static final m:Ljava/lang/String; = "INVALIDdjistatic.com/agreement/dji-go-4-pp.html"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$g.smali mod/smali_classes5/dji/pilot2/publics/b/a$g.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$g.smali	2017-07-10 10:51:43.279707000 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$g.smali	2017-07-10 12:46:03.444477600 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$g.smali  2017-07-10 10:51:43.279707000 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$g.smali   2017-07-10 12:46:03.444477600 +0200
 @@ -18,6 +18,6 @@
  
  .field public static final b:Ljava/lang/String; = "config/video-template?type=1"
@@ -4080,8 +4080,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$g.smali mod/smali_classes5
 -.field public static final d:Ljava/lang/String; = "http://www.djiexplore.com/movie_templates"
 +.field public static final d:Ljava/lang/String; = "INVALIDwww.djiexplore.com/movie_templates"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$h.smali mod/smali_classes5/dji/pilot2/publics/b/a$h.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$h.smali	2017-07-10 10:51:43.288212600 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$h.smali	2017-07-10 12:47:32.570892800 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$h.smali  2017-07-10 10:51:43.288212600 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$h.smali   2017-07-10 12:47:32.570892800 +0200
 @@ -14,97 +14,97 @@
  
  
@@ -4257,8 +4257,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$h.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$i.smali mod/smali_classes5/dji/pilot2/publics/b/a$i.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$i.smali	2017-07-10 10:51:43.292217300 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$i.smali	2017-07-10 12:47:32.577898000 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$i.smali  2017-07-10 10:51:43.292217300 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$i.smali   2017-07-10 12:47:32.577898000 +0200
 @@ -109,7 +109,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4269,8 +4269,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$i.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$j.smali mod/smali_classes5/dji/pilot2/publics/b/a$j.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$j.smali	2017-07-10 10:51:43.290214700 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$j.smali	2017-07-10 12:46:03.459475900 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$j.smali  2017-07-10 10:51:43.290214700 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$j.smali   2017-07-10 12:46:03.459475900 +0200
 @@ -14,13 +14,13 @@
  
  
@@ -4349,8 +4349,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$j.smali mod/smali_classes5
 -.field public static final z:Ljava/lang/String; = "http://www.djiexplore.com/academy/faq/"
 +.field public static final z:Ljava/lang/String; = "INVALIDwww.djiexplore.com/academy/faq/"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$k.smali mod/smali_classes5/dji/pilot2/publics/b/a$k.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$k.smali	2017-07-10 10:51:43.290214700 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$k.smali	2017-07-10 12:46:03.462476300 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$k.smali  2017-07-10 10:51:43.290214700 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$k.smali   2017-07-10 12:46:03.462476300 +0200
 @@ -14,6 +14,6 @@
  
  
@@ -4361,8 +4361,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$k.smali mod/smali_classes5
 -.field public static final b:Ljava/lang/String; = "http://www.dji.com/flysafe/fri/global"
 +.field public static final b:Ljava/lang/String; = "INVALIDwww.dji.com/flysafe/fri/global"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$l.smali mod/smali_classes5/dji/pilot2/publics/b/a$l.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$l.smali	2017-07-10 10:51:43.292718300 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$l.smali	2017-07-10 12:47:32.587903200 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$l.smali  2017-07-10 10:51:43.292718300 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$l.smali   2017-07-10 12:47:32.587903200 +0200
 @@ -16,7 +16,7 @@
  # static fields
  .field public static final a:Ljava/lang/String; = "/api/mobile/explore/alert?"
@@ -4382,8 +4382,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$l.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$m.smali mod/smali_classes5/dji/pilot2/publics/b/a$m.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$m.smali	2017-07-10 10:51:43.294740300 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$m.smali	2017-07-10 12:47:32.592906900 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$m.smali  2017-07-10 10:51:43.294740300 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$m.smali   2017-07-10 12:47:32.592906900 +0200
 @@ -18,19 +18,19 @@
  
  .field public static final b:Ljava/lang/String;
@@ -4438,8 +4438,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$m.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$n.smali mod/smali_classes5/dji/pilot2/publics/b/a$n.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$n.smali	2017-07-10 10:51:43.297650200 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$n.smali	2017-07-10 12:46:03.473485800 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$n.smali  2017-07-10 10:51:43.297650200 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$n.smali   2017-07-10 12:46:03.473485800 +0200
 @@ -14,7 +14,7 @@
  
  
@@ -4459,8 +4459,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$n.smali mod/smali_classes5
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$o.smali mod/smali_classes5/dji/pilot2/publics/b/a$o.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a$o.smali	2017-07-10 10:51:43.296734100 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a$o.smali	2017-07-10 12:47:32.598913100 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a$o.smali  2017-07-10 10:51:43.296734100 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a$o.smali   2017-07-10 12:47:32.598913100 +0200
 @@ -14,14 +14,14 @@
  
  
@@ -4483,8 +4483,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$o.smali mod/smali_classes5
 -.field public static final f:Ljava/lang/String; = "https://test.aasky.net/pilot/iwant/introduction"
 +.field public static final f:Ljava/lang/String; = "INVALIDtest.aasky.net/pilot/iwant/introduction"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a.smali mod/smali_classes5/dji/pilot2/publics/b/a.smali
---- orig/smali_classes5/dji/pilot2/publics/b/a.smali	2017-07-10 10:51:43.297650200 +0200
-+++ mod/smali_classes5/dji/pilot2/publics/b/a.smali	2017-07-10 12:46:03.481504400 +0200
+--- orig/smali_classes5/dji/pilot2/publics/b/a.smali    2017-07-10 10:51:43.297650200 +0200
++++ mod/smali_classes5/dji/pilot2/publics/b/a.smali     2017-07-10 12:46:03.481504400 +0200
 @@ -45,9 +45,9 @@
  
  .field public static final j:Ljava/lang/String; = "mobile"
@@ -4498,8 +4498,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a.smali mod/smali_classes5/d
  .field public static final m:Ljava/lang/String; = ".dbeta.me"
  
 diff -Naur orig/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.smali mod/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.smali
---- orig/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.smali	2017-07-10 10:51:43.613130500 +0200
-+++ mod/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.smali	2017-07-10 12:47:33.137047400 +0200
+--- orig/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.smali   2017-07-10 10:51:43.613130500 +0200
++++ mod/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.smali    2017-07-10 12:47:33.137047400 +0200
 @@ -848,7 +848,7 @@
  
      move-result-object v1
@@ -4519,8 +4519,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/share/activity/DJIShareLaterActivity.s
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/share/b/b.smali mod/smali_classes5/dji/pilot2/share/b/b.smali
---- orig/smali_classes5/dji/pilot2/share/b/b.smali	2017-07-10 10:51:43.622137100 +0200
-+++ mod/smali_classes5/dji/pilot2/share/b/b.smali	2017-07-10 12:46:04.074911400 +0200
+--- orig/smali_classes5/dji/pilot2/share/b/b.smali      2017-07-10 10:51:43.622137100 +0200
++++ mod/smali_classes5/dji/pilot2/share/b/b.smali       2017-07-10 12:46:04.074911400 +0200
 @@ -605,7 +605,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4531,8 +4531,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/share/b/b.smali mod/smali_classes5/dji
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/share/d/d$2.smali mod/smali_classes5/dji/pilot2/share/d/d$2.smali
---- orig/smali_classes5/dji/pilot2/share/d/d$2.smali	2017-07-10 10:51:43.653784300 +0200
-+++ mod/smali_classes5/dji/pilot2/share/d/d$2.smali	2017-07-10 12:47:33.231113400 +0200
+--- orig/smali_classes5/dji/pilot2/share/d/d$2.smali    2017-07-10 10:51:43.653784300 +0200
++++ mod/smali_classes5/dji/pilot2/share/d/d$2.smali     2017-07-10 12:47:33.231113400 +0200
 @@ -45,7 +45,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4543,8 +4543,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/share/d/d$2.smali mod/smali_classes5/d
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/share/d/d.smali mod/smali_classes5/dji/pilot2/share/d/d.smali
---- orig/smali_classes5/dji/pilot2/share/d/d.smali	2017-07-10 10:51:43.652662900 +0200
-+++ mod/smali_classes5/dji/pilot2/share/d/d.smali	2017-07-10 12:47:33.238117400 +0200
+--- orig/smali_classes5/dji/pilot2/share/d/d.smali      2017-07-10 10:51:43.652662900 +0200
++++ mod/smali_classes5/dji/pilot2/share/d/d.smali       2017-07-10 12:47:33.238117400 +0200
 @@ -229,12 +229,12 @@
      invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
  
@@ -4561,8 +4561,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/share/d/d.smali mod/smali_classes5/dji
      invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
  
 diff -Naur orig/smali_classes5/dji/pilot2/share/f/a.smali mod/smali_classes5/dji/pilot2/share/f/a.smali
---- orig/smali_classes5/dji/pilot2/share/f/a.smali	2017-07-10 10:51:43.675179100 +0200
-+++ mod/smali_classes5/dji/pilot2/share/f/a.smali	2017-07-10 12:47:33.261133900 +0200
+--- orig/smali_classes5/dji/pilot2/share/f/a.smali      2017-07-10 10:51:43.675179100 +0200
++++ mod/smali_classes5/dji/pilot2/share/f/a.smali       2017-07-10 12:47:33.261133900 +0200
 @@ -3,11 +3,11 @@
  
  
@@ -4588,8 +4588,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/share/f/a.smali mod/smali_classes5/dji
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/upgrade/b.smali mod/smali_classes5/dji/pilot2/upgrade/b.smali
---- orig/smali_classes5/dji/pilot2/upgrade/b.smali	2017-07-10 10:51:44.470234500 +0200
-+++ mod/smali_classes5/dji/pilot2/upgrade/b.smali	2017-07-10 12:46:05.264754700 +0200
+--- orig/smali_classes5/dji/pilot2/upgrade/b.smali      2017-07-10 10:51:44.470234500 +0200
++++ mod/smali_classes5/dji/pilot2/upgrade/b.smali       2017-07-10 12:46:05.264754700 +0200
 @@ -551,7 +551,7 @@
      iput-object v1, v0, Ldji/pilot/publics/model/DJIUpgradePackListModel$DJIUpgradePack;->m0900:Ljava/lang/String;
  
@@ -4600,8 +4600,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/upgrade/b.smali mod/smali_classes5/dji
      iput-object v1, v0, Ldji/pilot/publics/model/DJIUpgradePackListModel$DJIUpgradePack;->packurl:Ljava/lang/String;
  
 diff -Naur orig/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali mod/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali
---- orig/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali	2017-07-10 10:51:44.546183200 +0200
-+++ mod/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali	2017-07-10 12:46:05.678049100 +0200
+--- orig/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali        2017-07-10 10:51:44.546183200 +0200
++++ mod/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali 2017-07-10 12:46:05.678049100 +0200
 @@ -867,7 +867,7 @@
      if-nez v0, :cond_5
  
@@ -4621,8 +4621,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/upgrade/rollback/P3cFactoryView.smali 
      iput-object v0, v1, Ldji/pilot/publics/control/upgrade/DLPackageInfo;->mDLUrl:Ljava/lang/String;
  
 diff -Naur orig/smali_classes5/dji/pilot2/usercenter/a/a.smali mod/smali_classes5/dji/pilot2/usercenter/a/a.smali
---- orig/smali_classes5/dji/pilot2/usercenter/a/a.smali	2017-07-10 10:51:44.605778300 +0200
-+++ mod/smali_classes5/dji/pilot2/usercenter/a/a.smali	2017-07-10 12:47:34.844989600 +0200
+--- orig/smali_classes5/dji/pilot2/usercenter/a/a.smali 2017-07-10 10:51:44.605778300 +0200
++++ mod/smali_classes5/dji/pilot2/usercenter/a/a.smali  2017-07-10 12:47:34.844989600 +0200
 @@ -126,7 +126,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4633,8 +4633,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/usercenter/a/a.smali mod/smali_classes
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.smali mod/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.smali
---- orig/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.smali	2017-07-10 10:51:44.650236400 +0200
-+++ mod/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.smali	2017-07-10 12:46:05.840162600 +0200
+--- orig/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.smali    2017-07-10 10:51:44.650236400 +0200
++++ mod/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.smali     2017-07-10 12:46:05.840162600 +0200
 @@ -173,7 +173,7 @@
  
      const v5, 0x7f020020
@@ -4663,8 +4663,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/usercenter/activate/ActivateDjiCare.sm
      move-object v1, p0
  
 diff -Naur orig/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali mod/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali
---- orig/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali	2017-07-10 10:51:44.734809600 +0200
-+++ mod/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali	2017-07-10 12:47:35.147775200 +0200
+--- orig/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali        2017-07-10 10:51:44.734809600 +0200
++++ mod/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali 2017-07-10 12:47:35.147775200 +0200
 @@ -413,7 +413,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4675,8 +4675,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/usercenter/activate/CheckDeviceActivit
      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali mod/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali
---- orig/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali	2017-07-10 10:51:44.796483400 +0200
-+++ mod/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali	2017-07-10 12:47:35.199190600 +0200
+--- orig/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali  2017-07-10 10:51:44.796483400 +0200
++++ mod/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali   2017-07-10 12:47:35.199190600 +0200
 @@ -236,7 +236,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4696,8 +4696,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/usercenter/activate/wm100/a/b.smali mo
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
 diff -Naur orig/smali_classes5/dji/pilot2/utils/w.smali mod/smali_classes5/dji/pilot2/utils/w.smali
---- orig/smali_classes5/dji/pilot2/utils/w.smali	2017-07-10 10:51:45.070792600 +0200
-+++ mod/smali_classes5/dji/pilot2/utils/w.smali	2017-07-10 12:47:35.702314800 +0200
+--- orig/smali_classes5/dji/pilot2/utils/w.smali        2017-07-10 10:51:45.070792600 +0200
++++ mod/smali_classes5/dji/pilot2/utils/w.smali 2017-07-10 12:47:35.702314800 +0200
 @@ -54,7 +54,7 @@
      if-eqz v0, :cond_0
  
@@ -5470,8 +5470,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/utils/w.smali mod/smali_classes5/dji/p
      return-object v0
  .end method
 diff -Naur orig/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali mod/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali
---- orig/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali	2017-07-10 10:51:45.127066900 +0200
-+++ mod/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali	2017-07-10 12:47:35.830405200 +0200
+--- orig/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali  2017-07-10 10:51:45.127066900 +0200
++++ mod/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali   2017-07-10 12:47:35.830405200 +0200
 @@ -55,7 +55,7 @@
      invoke-super {p0, p1, p2}, Ldji/pilot2/publics/object/e$b;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
  
@@ -5482,8 +5482,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.
      invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
  
 diff -Naur orig/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity.smali mod/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity.smali
---- orig/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity.smali	2017-07-10 10:51:45.172150400 +0200
-+++ mod/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity.smali	2017-07-10 12:47:35.897452200 +0200
+--- orig/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity.smali      2017-07-10 10:51:45.172150400 +0200
++++ mod/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity.smali       2017-07-10 12:47:35.897452200 +0200
 @@ -104,7 +104,7 @@
      if-eqz v1, :cond_0
  
@@ -5521,8 +5521,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/whatsnew/acitivty/WhatsNewAnotherActiv
      iput-object v0, p0, Ldji/pilot2/whatsnew/acitivty/WhatsNewAnotherActivity;->h:Ljava/lang/String;
  
 diff -Naur orig/smali_classes5/dji/setting/ui/widget/d.smali mod/smali_classes5/dji/setting/ui/widget/d.smali
---- orig/smali_classes5/dji/setting/ui/widget/d.smali	2017-07-10 10:51:47.574745500 +0200
-+++ mod/smali_classes5/dji/setting/ui/widget/d.smali	2017-07-10 12:46:14.507310400 +0200
+--- orig/smali_classes5/dji/setting/ui/widget/d.smali   2017-07-10 10:51:47.574745500 +0200
++++ mod/smali_classes5/dji/setting/ui/widget/d.smali    2017-07-10 12:46:14.507310400 +0200
 @@ -122,7 +122,7 @@
      .line 65
      new-instance v3, Ldji/setting/ui/widget/d$b;
@@ -5533,8 +5533,8 @@ diff -Naur orig/smali_classes5/dji/setting/ui/widget/d.smali mod/smali_classes5/
      invoke-direct {v3, p0, v1, v4}, Ldji/setting/ui/widget/d$b;-><init>(Ldji/setting/ui/widget/d;Ljava/lang/String;Ljava/lang/String;)V
  
 diff -Naur orig/smali_classes6/dji/thirdparty/a/c$c.smali mod/smali_classes6/dji/thirdparty/a/c$c.smali
---- orig/smali_classes6/dji/thirdparty/a/c$c.smali	2017-07-10 10:51:47.814928400 +0200
-+++ mod/smali_classes6/dji/thirdparty/a/c$c.smali	2017-07-10 12:47:45.095965300 +0200
+--- orig/smali_classes6/dji/thirdparty/a/c$c.smali      2017-07-10 10:51:47.814928400 +0200
++++ mod/smali_classes6/dji/thirdparty/a/c$c.smali       2017-07-10 12:47:45.095965300 +0200
 @@ -589,7 +589,7 @@
      .line 628
      iget-object v0, p0, Ldji/thirdparty/a/c$c;->a:Ljava/lang/String;
@@ -5545,8 +5545,8 @@ diff -Naur orig/smali_classes6/dji/thirdparty/a/c$c.smali mod/smali_classes6/dji
      invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
  
 diff -Naur orig/smali_classes6/dji/thirdparty/c/f.smali mod/smali_classes6/dji/thirdparty/c/f.smali
---- orig/smali_classes6/dji/thirdparty/c/f.smali	2017-07-10 10:51:48.102767800 +0200
-+++ mod/smali_classes6/dji/thirdparty/c/f.smali	2017-07-10 12:46:15.905300500 +0200
+--- orig/smali_classes6/dji/thirdparty/c/f.smali        2017-07-10 10:51:48.102767800 +0200
++++ mod/smali_classes6/dji/thirdparty/c/f.smali 2017-07-10 12:46:15.905300500 +0200
 @@ -1394,7 +1394,7 @@
      invoke-virtual {v2, v3, v4}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
  
@@ -5557,8 +5557,8 @@ diff -Naur orig/smali_classes6/dji/thirdparty/c/f.smali mod/smali_classes6/dji/t
      const-string/jumbo v4, "2"
  
 diff -Naur orig/smali_classes6/dji/thirdparty/d/l.smali mod/smali_classes6/dji/thirdparty/d/l.smali
---- orig/smali_classes6/dji/thirdparty/d/l.smali	2017-07-10 10:51:48.168340300 +0200
-+++ mod/smali_classes6/dji/thirdparty/d/l.smali	2017-07-10 12:46:16.090432400 +0200
+--- orig/smali_classes6/dji/thirdparty/d/l.smali        2017-07-10 10:51:48.168340300 +0200
++++ mod/smali_classes6/dji/thirdparty/d/l.smali 2017-07-10 12:46:16.090432400 +0200
 @@ -123,7 +123,7 @@
  
      invoke-direct {v1}, Ldji/thirdparty/a/ab$a;-><init>()V
@@ -5586,3 +5586,8 @@ diff -Naur orig/smali_classes6/dji/thirdparty/d/l.smali mod/smali_classes6/dji/t
  
      .line 46
      invoke-virtual {v1, v2}, Ldji/thirdparty/a/ab$a;->a(Ljava/lang/String;)Ldji/thirdparty/a/ab$a;
+
+
+
+
+
