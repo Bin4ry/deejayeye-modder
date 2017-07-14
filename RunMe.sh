@@ -71,14 +71,6 @@ do
             ;;	
 		8)
             cd decompile_out
-			rm assets/flysafe/flysafe_areas_djigo.db
-			rm assets/flysafe/flysafe_polygon_1860.db
-			rm assets/flysafe/flyforbid_airmap/*.json
-			rm res/raw/flyforbid.json
-			cp ../patches/nfz/flyforbid.json res/raw/flyforbid.json
-			cp ../patches/nfz/flyforbid_airmap/* assets/flysafe/flyforbid_airmap/
-			cp ../patches/nfz/flysafe_areas_djigo.db assets/flysafe/flysafe_areas_djigo.db
-			cp ../patches/nfz/flysafe_polygon_1860.db assets/flysafe/flysafe_polygon_1860.db
 			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.patch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			patch -l -p1 < ../patches/removeNFZ.patch
