@@ -6,25 +6,25 @@ diff -Naur orig/smali_classes2/com/google/android/gms/auth/api/credentials/Ident
  
  # static fields
 -.field public static final FACEBOOK:Ljava/lang/String; = "https://www.facebook.com"
-+.field public static final FACEBOOK:Ljava/lang/String; = "INVALIDwww.facebook.com"
++.field public static final FACEBOOK:Ljava/lang/String; = "http://127.0.0.1"
  
 -.field public static final GOOGLE:Ljava/lang/String; = "https://accounts.google.com"
-+.field public static final GOOGLE:Ljava/lang/String; = "INVALIDaccounts.google.com"
++.field public static final GOOGLE:Ljava/lang/String; = "http://127.0.0.1"
  
 -.field public static final LINKEDIN:Ljava/lang/String; = "https://www.linkedin.com"
-+.field public static final LINKEDIN:Ljava/lang/String; = "INVALIDwww.linkedin.com"
++.field public static final LINKEDIN:Ljava/lang/String; = "http://127.0.0.1"
  
 -.field public static final MICROSOFT:Ljava/lang/String; = "https://login.live.com"
-+.field public static final MICROSOFT:Ljava/lang/String; = "INVALIDlogin.live.com"
++.field public static final MICROSOFT:Ljava/lang/String; = "http://127.0.0.1"
  
 -.field public static final PAYPAL:Ljava/lang/String; = "https://www.paypal.com"
-+.field public static final PAYPAL:Ljava/lang/String; = "INVALIDwww.paypal.com"
++.field public static final PAYPAL:Ljava/lang/String; = "http://127.0.0.1"
  
 -.field public static final TWITTER:Ljava/lang/String; = "https://twitter.com"
-+.field public static final TWITTER:Ljava/lang/String; = "INVALIDtwitter.com"
++.field public static final TWITTER:Ljava/lang/String; = "http://127.0.0.1"
  
 -.field public static final YAHOO:Ljava/lang/String; = "https://login.yahoo.com"
-+.field public static final YAHOO:Ljava/lang/String; = "INVALIDlogin.yahoo.com"
++.field public static final YAHOO:Ljava/lang/String; = "http://127.0.0.1"
  
  
  # direct methods
@@ -33,7 +33,7 @@ diff -Naur orig/smali_classes2/com/google/android/gms/auth/api/credentials/Ident
      if-eqz v0, :cond_0
  
 -    const-string/jumbo v0, "https://accounts.google.com"
-+    const-string/jumbo v0, "INVALIDaccounts.google.com"
++    const-string/jumbo v0, "http://127.0.0.1"
  
      :goto_0
      return-object v0
@@ -42,7 +42,7 @@ diff -Naur orig/smali_classes2/com/google/android/gms/auth/api/credentials/Ident
      if-eqz v0, :cond_1
  
 -    const-string/jumbo v0, "https://www.facebook.com"
-+    const-string/jumbo v0, "INVALIDwww.facebook.com"
++    const-string/jumbo v0, "http://127.0.0.1"
  
      goto :goto_0
  
@@ -54,7 +54,7 @@ diff -Naur orig/smali_classes2/com/google/android/gms/common/internal/zzn.smali 
      .locals 2
  
 -    const-string/jumbo v0, "http://plus.google.com/"
-+    const-string/jumbo v0, "INVALIDplus.google.com/"
++    const-string/jumbo v0, "http://127.0.0.1/"
  
      invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
  
@@ -66,54 +66,54 @@ diff -Naur orig/smali_classes2/com/google/android/gms/common/Scopes.smali mod/sm
  
  # static fields
 -.field public static final APP_STATE:Ljava/lang/String; = "https://www.googleapis.com/auth/appstate"
-+.field public static final APP_STATE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/appstate"
++.field public static final APP_STATE:Ljava/lang/String; = "http://127.0.0.1/appstate"
  
 -.field public static final CLOUD_SAVE:Ljava/lang/String; = "https://www.googleapis.com/auth/datastoremobile"
-+.field public static final CLOUD_SAVE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/datastoremobile"
++.field public static final CLOUD_SAVE:Ljava/lang/String; = "http://127.0.0.1/datastoremobile"
  
 -.field public static final DRIVE_APPFOLDER:Ljava/lang/String; = "https://www.googleapis.com/auth/drive.appdata"
-+.field public static final DRIVE_APPFOLDER:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/drive.appdata"
++.field public static final DRIVE_APPFOLDER:Ljava/lang/String; = "http://127.0.0.1/drive.appdata"
  
 -.field public static final DRIVE_FILE:Ljava/lang/String; = "https://www.googleapis.com/auth/drive.file"
-+.field public static final DRIVE_FILE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/drive.file"
++.field public static final DRIVE_FILE:Ljava/lang/String; = "http://127.0.0.1/drive.file"
  
  .field public static final EMAIL:Ljava/lang/String; = "email"
  
 -.field public static final FITNESS_ACTIVITY_READ:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.activity.read"
-+.field public static final FITNESS_ACTIVITY_READ:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.activity.read"
++.field public static final FITNESS_ACTIVITY_READ:Ljava/lang/String; = "http://127.0.0.1/fitness.activity.read"
  
 -.field public static final FITNESS_ACTIVITY_READ_WRITE:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.activity.write"
-+.field public static final FITNESS_ACTIVITY_READ_WRITE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.activity.write"
++.field public static final FITNESS_ACTIVITY_READ_WRITE:Ljava/lang/String; = "http://127.0.0.1/fitness.activity.write"
  
 -.field public static final FITNESS_BODY_READ:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.body.read"
-+.field public static final FITNESS_BODY_READ:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.body.read"
++.field public static final FITNESS_BODY_READ:Ljava/lang/String; = "http://127.0.0.1/fitness.body.read"
  
 -.field public static final FITNESS_BODY_READ_WRITE:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.body.write"
-+.field public static final FITNESS_BODY_READ_WRITE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.body.write"
++.field public static final FITNESS_BODY_READ_WRITE:Ljava/lang/String; = "http://127.0.0.1/fitness.body.write"
  
 -.field public static final FITNESS_LOCATION_READ:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.location.read"
-+.field public static final FITNESS_LOCATION_READ:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.location.read"
++.field public static final FITNESS_LOCATION_READ:Ljava/lang/String; = "http://127.0.0.1/fitness.location.read"
  
 -.field public static final FITNESS_LOCATION_READ_WRITE:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.location.write"
-+.field public static final FITNESS_LOCATION_READ_WRITE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.location.write"
++.field public static final FITNESS_LOCATION_READ_WRITE:Ljava/lang/String; = "http://127.0.0.1/fitness.location.write"
  
 -.field public static final FITNESS_NUTRITION_READ:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.nutrition.read"
-+.field public static final FITNESS_NUTRITION_READ:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.nutrition.read"
++.field public static final FITNESS_NUTRITION_READ:Ljava/lang/String; = "http://127.0.0.1/fitness.nutrition.read"
  
 -.field public static final FITNESS_NUTRITION_READ_WRITE:Ljava/lang/String; = "https://www.googleapis.com/auth/fitness.nutrition.write"
-+.field public static final FITNESS_NUTRITION_READ_WRITE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/fitness.nutrition.write"
++.field public static final FITNESS_NUTRITION_READ_WRITE:Ljava/lang/String; = "http://127.0.0.1/fitness.nutrition.write"
  
 -.field public static final GAMES:Ljava/lang/String; = "https://www.googleapis.com/auth/games"
-+.field public static final GAMES:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/games"
++.field public static final GAMES:Ljava/lang/String; = "http://127.0.0.1/games"
  
 -.field public static final PLUS_LOGIN:Ljava/lang/String; = "https://www.googleapis.com/auth/plus.login"
-+.field public static final PLUS_LOGIN:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/plus.login"
++.field public static final PLUS_LOGIN:Ljava/lang/String; = "http://127.0.0.1/plus.login"
  
 -.field public static final PLUS_ME:Ljava/lang/String; = "https://www.googleapis.com/auth/plus.me"
-+.field public static final PLUS_ME:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/plus.me"
++.field public static final PLUS_ME:Ljava/lang/String; = "http://127.0.0.1/plus.me"
  
 -.field public static final PLUS_MOMENTS:Ljava/lang/String; = "https://www.googleapis.com/auth/plus.moments.write"
-+.field public static final PLUS_MOMENTS:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/plus.moments.write"
++.field public static final PLUS_MOMENTS:Ljava/lang/String; = "http://127.0.0.1/plus.moments.write"
  
  .field public static final PROFILE:Ljava/lang/String; = "profile"
  
@@ -125,7 +125,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
  
 -    const-string/jumbo v1, "http://"
-+    const-string/jumbo v1, "INVALID"
++    const-string/jumbo v1, "http://127.0.0.1"
  
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
@@ -137,7 +137,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/clientlogin
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v1, "https://www.google.com"
-+    const-string/jumbo v1, "INVALIDwww.google.com"
++    const-string/jumbo v1, "http://127.0.0.1"
  
      invoke-direct {v0, v1}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -149,7 +149,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      new-instance v4, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v0, "https://accounts.google.com/o/oauth2/token"
-+    const-string/jumbo v0, "INVALIDaccounts.google.com/o/oauth2/token"
++    const-string/jumbo v0, "http://127.0.0.1/token"
  
      invoke-direct {v4, v0}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -158,7 +158,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      move-result-object v6
  
 -    const-string/jumbo v7, "https://accounts.google.com/o/oauth2/auth"
-+    const-string/jumbo v7, "INVALIDaccounts.google.com/o/oauth2/auth"
++    const-string/jumbo v7, "http://127.0.0.1/auth"
  
      move-object v0, p0
  
@@ -167,7 +167,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      new-instance v4, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v0, "https://accounts.google.com/o/oauth2/token"
-+    const-string/jumbo v0, "INVALIDaccounts.google.com/o/oauth2/token"
++    const-string/jumbo v0, "http://127.0.0.1/token"
  
      invoke-direct {v4, v0}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -176,7 +176,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      invoke-direct {v5, p3, p4}, Lcom/google/api/client/auth/oauth2/ClientParametersAuthentication;-><init>(Ljava/lang/String;Ljava/lang/String;)V
  
 -    const-string/jumbo v7, "https://accounts.google.com/o/oauth2/auth"
-+    const-string/jumbo v7, "INVALIDaccounts.google.com/o/oauth2/auth"
++    const-string/jumbo v7, "http://127.0.0.1/auth"
  
      move-object v0, p0
  
@@ -188,7 +188,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      .prologue
      .line 86
 -    const-string/jumbo v0, "https://accounts.google.com/o/oauth2/auth"
-+    const-string/jumbo v0, "INVALIDaccounts.google.com/o/oauth2/auth"
++    const-string/jumbo v0, "http://127.0.0.1/auth"
  
      invoke-direct {p0, v0, p1, p2, p3}, Lcom/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeRequestUrl;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection;)V
  
@@ -200,7 +200,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      .prologue
      .line 92
 -    const-string/jumbo v3, "https://accounts.google.com/o/oauth2/token"
-+    const-string/jumbo v3, "INVALIDaccounts.google.com/o/oauth2/token"
++    const-string/jumbo v3, "http://127.0.0.1/token"
  
      move-object v0, p0
  
@@ -212,7 +212,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      .prologue
      .line 74
 -    const-string/jumbo v0, "https://accounts.google.com/o/oauth2/auth"
-+    const-string/jumbo v0, "INVALIDaccounts.google.com/o/oauth2/auth"
++    const-string/jumbo v0, "http://127.0.0.1/auth"
  
      invoke-direct {p0, v0, p1}, Lcom/google/api/client/auth/oauth2/BrowserClientRequestUrl;-><init>(Ljava/lang/String;Ljava/lang/String;)V
  
@@ -224,7 +224,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
      .line 356
 -    const-string/jumbo v0, "https://accounts.google.com/o/oauth2/token"
-+    const-string/jumbo v0, "INVALIDaccounts.google.com/o/oauth2/token"
++    const-string/jumbo v0, "http://127.0.0.1/token"
  
      invoke-virtual {p0, v0}, Lcom/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder;->setTokenServerEncodedUrl(Ljava/lang/String;)Lcom/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder;
  
@@ -236,10 +236,10 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
  # static fields
 -.field public static final AUTHORIZATION_SERVER_URL:Ljava/lang/String; = "https://accounts.google.com/o/oauth2/auth"
-+.field public static final AUTHORIZATION_SERVER_URL:Ljava/lang/String; = "INVALIDaccounts.google.com/o/oauth2/auth"
++.field public static final AUTHORIZATION_SERVER_URL:Ljava/lang/String; = "http://127.0.0.1/auth"
  
 -.field public static final DEFAULT_PUBLIC_CERTS_ENCODED_URL:Ljava/lang/String; = "https://www.googleapis.com/oauth2/v1/certs"
-+.field public static final DEFAULT_PUBLIC_CERTS_ENCODED_URL:Ljava/lang/String; = "INVALIDwww.googleapis.com/oauth2/v1/certs"
++.field public static final DEFAULT_PUBLIC_CERTS_ENCODED_URL:Ljava/lang/String; = "http://127.0.0.1/certs"
      .annotation build Lcom/google/api/client/util/Beta;
      .end annotation
  .end field
@@ -247,7 +247,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  .field public static final OOB_REDIRECT_URI:Ljava/lang/String; = "urn:ietf:wg:oauth:2.0:oob"
  
 -.field public static final TOKEN_SERVER_URL:Ljava/lang/String; = "https://accounts.google.com/o/oauth2/token"
-+.field public static final TOKEN_SERVER_URL:Ljava/lang/String; = "INVALIDaccounts.google.com/o/oauth2/token"
++.field public static final TOKEN_SERVER_URL:Ljava/lang/String; = "http://127.0.0.1/token"
  
  
  # direct methods
@@ -259,7 +259,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
      .line 249
 -    const-string/jumbo v0, "https://www.googleapis.com/oauth2/v1/certs"
-+    const-string/jumbo v0, "INVALIDwww.googleapis.com/oauth2/v1/certs"
++    const-string/jumbo v0, "http://127.0.0.1/certs"
  
      iput-object v0, p0, Lcom/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder;->publicCertsEncodedUrl:Ljava/lang/String;
  
@@ -271,7 +271,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v1, "https://accounts.google.com/o/oauth2/token"
-+    const-string/jumbo v1, "INVALIDaccounts.google.com/o/oauth2/token"
++    const-string/jumbo v1, "http://127.0.0.1/token"
  
      invoke-direct {v0, v1}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -283,7 +283,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/batch/BatchReque
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v1, "https://www.googleapis.com/batch"
-+    const-string/jumbo v1, "INVALIDwww.googleapis.com/batch"
++    const-string/jumbo v1, "http://127.0.0.1/batch"
  
      invoke-direct {v0, v1}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -295,7 +295,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/batch/BatchUnpar
      new-instance v1, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v2, "http://google.com/"
-+    const-string/jumbo v2, "INVALIDgoogle.com/"
++    const-string/jumbo v2, "http://127.0.0.1/"
  
      invoke-direct {v1, v2}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -307,7 +307,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/compute/ComputeC
  
      .line 109
 -    const-string/jumbo v0, "http://metadata/computeMetadata/v1/instance/service-accounts/default/token"
-+    const-string/jumbo v0, "INVALIDmetadata/computeMetadata/v1/instance/service-accounts/default/token"
++    const-string/jumbo v0, "http://127.0.0.1/token"
  
      invoke-virtual {p0, v0}, Lcom/google/api/client/googleapis/compute/ComputeCredential$Builder;->setTokenServerEncodedUrl(Ljava/lang/String;)Lcom/google/api/client/googleapis/compute/ComputeCredential$Builder;
  
@@ -319,7 +319,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/googleapis/compute/ComputeC
  
  # static fields
 -.field public static final TOKEN_SERVER_ENCODED_URL:Ljava/lang/String; = "http://metadata/computeMetadata/v1/instance/service-accounts/default/token"
-+.field public static final TOKEN_SERVER_ENCODED_URL:Ljava/lang/String; = "INVALIDmetadata/computeMetadata/v1/instance/service-accounts/default/token"
++.field public static final TOKEN_SERVER_ENCODED_URL:Ljava/lang/String; = "http://127.0.0.1/token"
  
  
  # direct methods
@@ -331,7 +331,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/http/UriTemplate.smali mod/
      .line 254
      :cond_1
 -    const-string/jumbo v0, "http://"
-+    const-string/jumbo v0, "INVALID"
++    const-string/jumbo v0, "http://127.0.0.1"
  
      invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
  
@@ -340,7 +340,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/http/UriTemplate.smali mod/
      if-nez v0, :cond_0
  
 -    const-string/jumbo v0, "https://"
-+    const-string/jumbo v0, "INVALID"
++    const-string/jumbo v0, "http://127.0.0.1"
  
      invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
  
@@ -352,7 +352,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/testing/http/HttpTesting.sm
  .field public static final SIMPLE_GENERIC_URL:Lcom/google/api/client/http/GenericUrl;
  
 -.field public static final SIMPLE_URL:Ljava/lang/String; = "http://google.com/"
-+.field public static final SIMPLE_URL:Ljava/lang/String; = "INVALIDgoogle.com/"
++.field public static final SIMPLE_URL:Ljava/lang/String; = "http://127.0.0.1/"
  
  
  # direct methods
@@ -361,7 +361,7 @@ diff -Naur orig/smali_classes2/com/google/api/client/testing/http/HttpTesting.sm
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
  
 -    const-string/jumbo v1, "http://google.com/"
-+    const-string/jumbo v1, "INVALIDgoogle.com/"
++    const-string/jumbo v1, "http://127.0.0.1/"
  
      invoke-direct {v0, v1}, Lcom/google/api/client/http/GenericUrl;-><init>(Ljava/lang/String;)V
  
@@ -373,7 +373,7 @@ diff -Naur orig/smali_classes2/com/google/api/services/youtube/YouTube$Builder.s
      .prologue
      .line 11323
 -    const-string/jumbo v3, "https://www.googleapis.com/"
-+    const-string/jumbo v3, "INVALIDwww.googleapis.com/"
++    const-string/jumbo v3, "http://127.0.0.1/"
  
      const-string/jumbo v4, "youtube/v3/"
  
@@ -385,19 +385,19 @@ diff -Naur orig/smali_classes2/com/google/api/services/youtube/YouTubeScopes.sma
  
  # static fields
 -.field public static final YOUTUBE:Ljava/lang/String; = "https://www.googleapis.com/auth/youtube"
-+.field public static final YOUTUBE:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/youtube"
++.field public static final YOUTUBE:Ljava/lang/String; = "http://127.0.0.1/youtube"
  
 -.field public static final YOUTUBEPARTNER:Ljava/lang/String; = "https://www.googleapis.com/auth/youtubepartner"
-+.field public static final YOUTUBEPARTNER:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/youtubepartner"
++.field public static final YOUTUBEPARTNER:Ljava/lang/String; = "http://127.0.0.1/youtubepartner"
  
 -.field public static final YOUTUBEPARTNER_CHANNEL_AUDIT:Ljava/lang/String; = "https://www.googleapis.com/auth/youtubepartner-channel-audit"
-+.field public static final YOUTUBEPARTNER_CHANNEL_AUDIT:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/youtubepartner-channel-audit"
++.field public static final YOUTUBEPARTNER_CHANNEL_AUDIT:Ljava/lang/String; = "http://127.0.0.1/youtubepartner-channel-audit"
  
 -.field public static final YOUTUBE_READONLY:Ljava/lang/String; = "https://www.googleapis.com/auth/youtube.readonly"
-+.field public static final YOUTUBE_READONLY:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/youtube.readonly"
++.field public static final YOUTUBE_READONLY:Ljava/lang/String; = "http://127.0.0.1/youtube.readonly"
  
 -.field public static final YOUTUBE_UPLOAD:Ljava/lang/String; = "https://www.googleapis.com/auth/youtube.upload"
-+.field public static final YOUTUBE_UPLOAD:Ljava/lang/String; = "INVALIDwww.googleapis.com/auth/youtube.upload"
++.field public static final YOUTUBE_UPLOAD:Ljava/lang/String; = "http://127.0.0.1/youtube.upload"
  
  
  # direct methods
@@ -406,31 +406,31 @@ diff -Naur orig/smali_classes2/com/google/api/services/youtube/YouTubeScopes.sma
  
      .line 52
 -    const-string/jumbo v1, "https://www.googleapis.com/auth/youtube"
-+    const-string/jumbo v1, "INVALIDwww.googleapis.com/auth/youtube"
++    const-string/jumbo v1, "http://127.0.0.1/youtube"
  
      invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
  
      .line 53
 -    const-string/jumbo v1, "https://www.googleapis.com/auth/youtube.readonly"
-+    const-string/jumbo v1, "INVALIDwww.googleapis.com/auth/youtube.readonly"
++    const-string/jumbo v1, "http://127.0.0.1/youtube.readonly"
  
      invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
  
      .line 54
 -    const-string/jumbo v1, "https://www.googleapis.com/auth/youtube.upload"
-+    const-string/jumbo v1, "INVALIDwww.googleapis.com/auth/youtube.upload"
++    const-string/jumbo v1, "http://127.0.0.1/youtube.upload"
  
      invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
  
      .line 55
 -    const-string/jumbo v1, "https://www.googleapis.com/auth/youtubepartner"
-+    const-string/jumbo v1, "INVALIDwww.googleapis.com/auth/youtubepartner"
++    const-string/jumbo v1, "http://127.0.0.1/youtubepartner"
  
      invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
  
      .line 56
 -    const-string/jumbo v1, "https://www.googleapis.com/auth/youtubepartner-channel-audit"
-+    const-string/jumbo v1, "INVALIDwww.googleapis.com/auth/youtubepartner-channel-audit"
++    const-string/jumbo v1, "http://127.0.0.1/youtubepartner-channel-audit"
  
      invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
  
@@ -442,10 +442,10 @@ diff -Naur orig/smali_classes2/com/google/api/services/youtube/YouTube.smali mod
  
  # static fields
 -.field public static final DEFAULT_BASE_URL:Ljava/lang/String; = "https://www.googleapis.com/youtube/v3/"
-+.field public static final DEFAULT_BASE_URL:Ljava/lang/String; = "INVALIDwww.googleapis.com/youtube/v3/"
++.field public static final DEFAULT_BASE_URL:Ljava/lang/String; = "http://127.0.0.1/"
  
 -.field public static final DEFAULT_ROOT_URL:Ljava/lang/String; = "https://www.googleapis.com/"
-+.field public static final DEFAULT_ROOT_URL:Ljava/lang/String; = "INVALIDwww.googleapis.com/"
++.field public static final DEFAULT_ROOT_URL:Ljava/lang/String; = "http://127.0.0.1/"
  
  .field public static final DEFAULT_SERVICE_PATH:Ljava/lang/String; = "youtube/v3/"
  
