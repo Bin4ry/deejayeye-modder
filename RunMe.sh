@@ -20,8 +20,7 @@ options=(1 "force FCC patch" on
 		 4 "offline login (thx artu-ole)" on
 		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
 		 6 "remove Google APIs (keep if you want to keep social)" on
-		 7 "remove social networks (keep Google APIs too!)" on
-		 8 "remove NFZ db from App to rely on birds [BETA] (thx err0r4o4)" on)
+		 7 "remove social networks (keep Google APIs too!)" on)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -54,6 +53,9 @@ do
 		5)
             cd decompile_out
 			patch -l -p1 < ../patches/removeOnlinefunction.patch
+			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.patch
+			rm lib/armeabi-v7a/libSDKRelativeJNI.so
+			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
 			cd ..
 			echo "removeOnlinefunction" >> out/lastbuild-cfg.txt
             ;;	
@@ -69,14 +71,6 @@ do
 			cd ..
 			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
-		8)
-            cd decompile_out
-			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.patch
-			rm lib/armeabi-v7a/libSDKRelativeJNI.so
-			patch -l -p1 < ../patches/removeNFZ.patch
-			cd ..
-			echo "removeNFZ" >> out/lastbuild-cfg.txt
-            ;;		
     esac
 done
 cd decompile_out
