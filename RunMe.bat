@@ -1,6 +1,9 @@
 @echo off
 REM Please install GnuWin patch
 REM You can get here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
+REM Please copy bspatch.exe into tools folder
+REM You can get here: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
+cd /d %~dp0
 set /p ver=<version.txt
 set "folder=PutPatchesHere"
 md out
@@ -9,7 +12,6 @@ echo "Welcome to the smali patcher version: %ver%"
 echo "Please put the original file into the "PutApkHere" folder and name it orig.apk"
 echo "and the patches to apply to the "PutPatchesHere" folder"
 pause
-cd %~dp0
 echo "Decompiling original apk"
 java -jar tools\apktool.jar d -o decompile_out PutApkHere\orig.apk
 echo "done"
@@ -28,12 +30,13 @@ IF EXIST %folder%\removeNFZ.patch (
 	del /f /q "assets\flysafe\flysafe_polygon_1860.db"
 	del /f /q "assets\flysafe\flyforbid_airmap\*.json"
 	del /f /q "res\raw\flyforbid.json"
-	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 	copy "..\patches\nfz\flyforbid.json" "res\raw\flyforbid.json"
 	copy "..\patches\nfz\flyforbid_airmap\*.*" "assets\flysafe\flyforbid_airmap\"
 	copy "..\patches\nfz\flysafe_areas_djigo.db" "assets\flysafe\flysafe_areas_djigo.db"
 	copy "..\patches\nfz\flysafe_polygon_1860.db" "assets\flysafe\flysafe_polygon_1860.db"
-	copy "..\patches\libSDKRelativeJNI.so" "lib\armeabi-v7a\libSDKRelativeJNI.so"
+	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.patch
+	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
+	rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
 	patch -l -s -p1 < ..\%folder%\removeNFZ.patch
 	rename "..\%folder%\removeNFZ.patch" removeNFZ.patch.done
 	cd ..
