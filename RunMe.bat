@@ -23,22 +23,14 @@ for /f "tokens=*" %%f in ('dir /b %folder%\*.patch') do (
 	del /f /q %folder%\%%f.copy
 	)
 
-IF EXIST %folder%\removeNFZ.patch (
+IF EXIST %folder%\removeOnlinefunction.patch (
 	echo "removing NFZ..."
 	cd decompile_out
-	del /f /q "assets\flysafe\flysafe_areas_djigo.db"
-	del /f /q "assets\flysafe\flysafe_polygon_1860.db"
-	del /f /q "assets\flysafe\flyforbid_airmap\*.json"
-	del /f /q "res\raw\flyforbid.json"
-	copy "..\patches\nfz\flyforbid.json" "res\raw\flyforbid.json"
-	copy "..\patches\nfz\flyforbid_airmap\*.*" "assets\flysafe\flyforbid_airmap\"
-	copy "..\patches\nfz\flysafe_areas_djigo.db" "assets\flysafe\flysafe_areas_djigo.db"
-	copy "..\patches\nfz\flysafe_polygon_1860.db" "assets\flysafe\flysafe_polygon_1860.db"
 	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.patch
 	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 	rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
-	patch -l -s -p1 < ..\%folder%\removeNFZ.patch
-	rename "..\%folder%\removeNFZ.patch" removeNFZ.patch.done
+	patch -l -s -p1 < ..\%folder%\removeOnlinefunction.patch
+	rename "..\%folder%\removeOnlinefunction.patch" removeOnlinefunction.patch.done
 	cd ..
 )
 
@@ -48,8 +40,8 @@ for /f "tokens=*" %%f in ('dir /b %folder%\*.patch') do (
 	patch  -l -s -p1 < ..\%folder%\%%f
 	cd ..
 	)
-IF EXIST %folder%\removeNFZ.patch.done (
-	rename "%folder%\removeNFZ.patch.done" removeNFZ.patch
+IF EXIST %folder%\removeOnlinefunction.patch.done (
+	rename "%folder%\removeOnlinefunction.patch.done" removeOnlinefunction.patch
 	)
 cd decompile_out
 del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
