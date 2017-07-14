@@ -1,6 +1,11 @@
 #!/bin/bash
 ver=`cat version.txt`
 mkdir out
+if [ -e out/lastbuild-cfg.txt ]
+then
+rm out/lastbuild-cfg.txt
+fi
+echo "Version: $ver" >> out/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
 echo Please put the original file into the "PutApkHere" folder and name it orig.apk
@@ -16,7 +21,7 @@ options=(1 "force FCC patch" on
 		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
 		 6 "remove Google APIs (keep if you want to keep social)" on
 		 7 "remove social networks (keep Google APIs too!)" on
-		 8 "remove NFZ db (thx err0r4o4)" on)
+		 8 "remove NFZ db from App to rely on birds [BETA] (thx err0r4o4)" on)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -26,36 +31,43 @@ do
             cd decompile_out
 			patch -l -p1 < ../patches/forceFCC.patch
 			cd ..
+			echo "forceFCC" >> out/lastbuild-cfg.txt
             ;;
         2)
             cd decompile_out
 			patch -l -p1 < ../patches/removeUpdateForce.patch
 			cd ..
+			echo "removeUpdateForce" >> out/lastbuild-cfg.txt
             ;;
         3)
             cd decompile_out
 			patch -l -p1 < ../patches/removeFWUpgradeService.patch
 			cd ..
+			echo "removeFWUpgradeService" >> out/lastbuild-cfg.txt
             ;;
 		4)
             cd decompile_out
 			patch -l -p1 < ../patches/offlineLogin.patch
 			cd ..
+			echo "offlineLogin" >> out/lastbuild-cfg.txt
             ;;
 		5)
             cd decompile_out
 			patch -l -p1 < ../patches/removeOnlinefunction.patch
 			cd ..
+			echo "removeOnlinefunction" >> out/lastbuild-cfg.txt
             ;;	
 		6)
             cd decompile_out
 			patch -l -p1 < ../patches/removeGoogleApis.patch
 			cd ..
+			echo "removeGoogleApis" >> out/lastbuild-cfg.txt
             ;;	
 		7)
             cd decompile_out
 			patch -l -p1 < ../patches/removeSocial.patch
 			cd ..
+			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
 		8)
             cd decompile_out
@@ -71,6 +83,7 @@ do
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			patch -l -p1 < ../patches/removeNFZ.patch
 			cd ..
+			echo "removeNFZ" >> out/lastbuild-cfg.txt
             ;;		
     esac
 done
