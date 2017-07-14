@@ -24,12 +24,12 @@ for /f "tokens=*" %%f in ('dir /b %folder%\*.patch') do (
 	)
 
 IF EXIST %folder%\removeOnlinefunction.patch (
-	echo "removing NFZ..."
+	echo "Applying %folder%\removeOnlinefunction.patch"
 	cd decompile_out
 	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.patch
 	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 	rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
-	patch -l -s -p1 < ..\%folder%\removeOnlinefunction.patch
+	..\tools\patch -l -s -p1 < ..\%folder%\removeOnlinefunction.patch
 	rename "..\%folder%\removeOnlinefunction.patch" removeOnlinefunction.patch.done
 	cd ..
 )
@@ -37,7 +37,7 @@ IF EXIST %folder%\removeOnlinefunction.patch (
 for /f "tokens=*" %%f in ('dir /b %folder%\*.patch') do (
 	echo "Applying %folder%\%%f"
 	cd decompile_out
-	patch  -l -s -p1 < ..\%folder%\%%f
+	..\tools\patch  -l -s -p1 < ..\%folder%\%%f
 	cd ..
 	)
 IF EXIST %folder%\removeOnlinefunction.patch.done (

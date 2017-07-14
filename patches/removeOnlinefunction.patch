@@ -3762,11 +3762,11 @@ diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$b.smali mod/smali_classes5
  
  
  # static fields
--.field public static final a:Ljava/lang/String; = "https://app-service.skypixel.com/api/http://127.0.0.1"
-+.field public static final a:Ljava/lang/String; = "http://127.0.0.1/http://127.0.0.1"
+-.field public static final a:Ljava/lang/String; = "https://app-service.skypixel.com/api/invalid_sn_list"
++.field public static final a:Ljava/lang/String; = "http://127.0.0.1/invalid_sn_list"
  
--.field public static final b:Ljava/lang/String; = "https://app-service.skypixel.com/api/http://127.0.0.1"
-+.field public static final b:Ljava/lang/String; = "http://127.0.0.1/http://127.0.0.1"
+-.field public static final b:Ljava/lang/String; = "https://app-service.skypixel.com/api/invalid_md5_list"
++.field public static final b:Ljava/lang/String; = "http://127.0.0.1/invalid_md5_list"
 diff -Naur orig/smali_classes5/dji/pilot2/publics/b/a$c.smali mod/smali_classes5/dji/pilot2/publics/b/a$c.smali
 --- orig/smali_classes5/dji/pilot2/publics/b/a$c.smali	2017-07-10 10:51:43.277205700 +0200
 +++ mod/smali_classes5/dji/pilot2/publics/b/a$c.smali	2017-07-10 12:47:32.550890800 +0200
@@ -4826,8 +4826,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/utils/w.smali mod/smali_classes5/dji/p
  
      .prologue
      .line 1043
--    const-string/jumbo v0, "https://app-service.skypixel.com/api/http://127.0.0.1"
-+    const-string/jumbo v0, "http://127.0.0.1/http://127.0.0.1"
+-    const-string/jumbo v0, "https://app-service.skypixel.com/api/invalid_sn_list"
++    const-string/jumbo v0, "http://127.0.0.1/invalid_sn_list"
  
      return-object v0
  .end method
@@ -4835,8 +4835,8 @@ diff -Naur orig/smali_classes5/dji/pilot2/utils/w.smali mod/smali_classes5/dji/p
  
      .prologue
      .line 1047
--    const-string/jumbo v0, "https://app-service.skypixel.com/api/http://127.0.0.1"
-+    const-string/jumbo v0, "http://127.0.0.1/http://127.0.0.1"
+-    const-string/jumbo v0, "https://app-service.skypixel.com/api/invalid_md5_list"
++    const-string/jumbo v0, "http://127.0.0.1/invalid_md5_list"
  
      return-object v0
  .end method
