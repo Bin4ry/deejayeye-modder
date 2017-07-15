@@ -5,6 +5,10 @@ if [ -e out/lastbuild-cfg.txt ]
 then
 rm out/lastbuild-cfg.txt
 fi
+if [ -e out/lastbuild-md5.txt ]
+then
+rm out/lastbuild-md5.txt
+fi
 echo "Version: $ver" >> out/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
@@ -20,7 +24,8 @@ options=(1 "force FCC patch" on
 		 4 "offline login (thx artu-ole)" on
 		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
 		 6 "remove Google APIs (keep if you want to keep social)" on
-		 7 "remove social networks (keep Google APIs too!)" on)
+		 7 "remove social networks (keep Google APIs too!)" on
+		 8 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -71,6 +76,12 @@ do
 			cd ..
 			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
+		7)
+            cd decompile_out
+			patch -l -p1 < ../patches/enableP3series.patch
+			cd ..
+			echo "enableP3series" >> out/lastbuild-cfg.txt
+            ;;	
     esac
 done
 cd decompile_out
@@ -87,6 +98,7 @@ rm -f out/mod.apk
 rm -f out/mod-$ver.apk
 mv out/mod.s.apk out/mod-$ver.apk
 echo Done signing
+md5sum out/mod-$ver.apk > lastbuild-md5.txt
 echo Removing decompile_out folder
 rm -rf decompile_out
 echo Have fun and stay safe!

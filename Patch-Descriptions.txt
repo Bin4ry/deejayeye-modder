@@ -19,5 +19,5 @@ will remove Google API's (keep them if you want social!)
 remove Social:
 This will remove all the social network stuff. FB, Twitter blablab (if you want this you should keep googleapi's too!)
 
-remove NFZ db:
-This will add an empty NFZ db instead of a real one. [db version 01.00.99.99 - db date 12/12/2018] (thx to err0r4o4)
+enable P3series:
+This patch will enable P3 Series with DJI Go, you HAVE TO remove the SD-Card otherwise it will crash. (thx to DKoro1)
