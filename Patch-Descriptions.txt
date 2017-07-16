@@ -13,6 +13,9 @@ Will remove the real login and give you a bogus one. Enter at least one char int
 remove Onlinefunction:
 This will replace all urls inside the code with bogus ones, so the app cannot connect to the internet. Here Maps is excluded, so you can still have maps! This patch HAS to be applied together with the Offline login or you won't be able to login anymore! (thx to err0r4o4)
 
+soPatch:
+Will patch the libSDKRelativeJNI.so to stop it from calling home! 
+
 remove Google API:
 will remove Google API's (keep them if you want social!)
 
@@ -21,3 +24,6 @@ This will remove all the social network stuff. FB, Twitter blablab (if you want 
 
 enable P3series:
 This patch will enable P3 Series with DJI Go, you HAVE TO remove the SD-Card otherwise it will crash. (thx to DKoro1)
+
+enableMavicFlightModesOnSpark:
+enable Mavic Pro flight modes for Spark (thx djayeyeballs)

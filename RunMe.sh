@@ -25,7 +25,8 @@ options=(1 "force FCC patch" on
 		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
 		 6 "remove Google APIs (keep if you want to keep social)" on
 		 7 "remove social networks (keep Google APIs too!)" on
-		 8 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
+		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on 
+		 9 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -76,7 +77,13 @@ do
 			cd ..
 			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
-		7)
+		8)
+            cd decompile_out
+			patch -l -p1 < ../patches/enableMavicFlightModesOnSpark.patch
+			cd ..
+			echo "enableMavicFlightModesOnSpark" >> out/lastbuild-cfg.txt
+            ;;	
+		9)
             cd decompile_out
 			patch -l -p1 < ../patches/enableP3series.patch
 			cd ..
