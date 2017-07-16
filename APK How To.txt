@@ -1,0 +1,26 @@
+APK Creation Using Windows
+
+Grab the files from bin4ry. https://github.com/Bin4ry/deejayeye-modder
+
+Unzip them to a folder. Create a tools folder. Create a PutPatchesHere folder.
+
+Get this: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe and install it. 
+Go to the installed windows directory and copy patch.exe to the tools folder
+
+Go get this and put it in the tools folder too: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
+
+Next get this: https://bitbucket.org/iBotPeaches/apktool/downloads/ and download apktool_2.2.3.jar and put it in the tools folder. 
+Rename it to apktool.jar
+
+This one too: https://github.com/appium/sign/raw/master/dist/sign.jar Yup, goes in the tools folder
+
+Now, you should have the following files in your tools folder: Apktool.jar, bspatch.exe, patch.exe and sign.jar
+
+Go get the 4.1.3 APK from here: https://www.apkmirror.com/apk/dji-technology-co-ltd/dji-go-4/dji-go-4-4-1-3-release/dji-go-4-4-1-3-android-apk-download/ 
+Put it in the PutApkHere folder. Rename this apk to orig.apk. Do you see how easy bin4ry made this for you? You need to tell him thanks. 
+Ok, next. Go to the patches folder and copy the patches you want for the new APK. Paste them into the PutPatchesHere folder. 
+Wow, that was easy. Almost ready to rock n roll.
+
+Run RunMe.bat as admin. If you don’t know how to do this, just stop right now. Follow the prompts, you can now choose what patches you want to apply!! 
+Pick a number for the corresponding patch and hit enter to move to the next choice. Once you are done, enter P, then enter again. 
+It may take a while, so be patient.
