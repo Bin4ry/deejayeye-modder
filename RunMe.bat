@@ -1,19 +1,4 @@
 @ECHO OFF
-REM Please copy 'sign.jar' into 'tools' folder
-REM You can get it here: https://github.com/appium/sign/raw/master/dist/sign.jar
-REM Please copy apktool to 'tools' and rename it 'apktool.jar'
-REM You can get it here: https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.3.jar
-REM Please install gnuwin32 and copy 'patch.exe' into 'tools' folder
-REM You can get it here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
-REM Please copy 'bspatch.exe' into 'tools' folder
-REM You can get it here: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
-REM You may need to install Java Development Kit
-REM You can get it here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-REM apktool.jar CRC32 184A0735
-REM bspatch.exe CRC32 0E267C90
-REM patch.exe CRC32 13C89B7A
-REM sign.jar CRC32 AD954C4B
-REM orig.apk CRC32 9D8B27AC
 
 SETLOCAL ENABLEEXTENSIONS
 SETLOCAL ENABLEDELAYEDEXPANSION
@@ -94,17 +79,19 @@ GOTO:EOF
 :menu_
 :menu_Execute:
 :menu_P   Start Patching
+
+IF EXIST out\mod-%ver%.apk (
+	rd /S /Q out
+	)
 md out
 md %p_out%
 
 echo -: Converting patches...
-rename "patches\so.patch" so.bspatch
 for /f "tokens=*" %%f in ('dir /b patches\*.patch') do (
 	copy patches\%%f %p_out%\%%f.copy >nul
 	TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
 	del /f /q %p_out%\%%f.copy
 	)
-rename "patches\so.bspatch" so.patch
 
 echo -: Decompiling original apk...
 java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
@@ -127,8 +114,8 @@ if /i "%offlineLogin:~0,1%"=="Y" (
 	..\tools\patch  -l -s -p1 < ..\%p_out%\offlineLogin.patch
 	)
 if /i "%removeOnlinefunction:~0,1%"=="Y" (
-	echo -: Applying removeOnlinefunction.patch and so.patch...
-	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.patch
+	echo -: Applying removeOnlinefunction.patch and so.bspatch...
+	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch
 	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 	rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
 	..\tools\patch -l -s -p1 < ..\%p_out%\removeOnlinefunction.patch
@@ -157,16 +144,11 @@ java -jar tools\apktool.jar b -o out\mod.apk %d_out%
 echo -: Signing with testkey...
 java -jar tools\sign.jar out\mod.apk
 del /f /q out\mod.apk
-IF EXIST out\mod-%ver%.apk (
-	del /f /q out\mod-%ver%.apk
-	)
-move out\mod.s.apk out\mod-%ver%.apk
-echo -: Cleaning up
+move out\mod.s.apk out\mod-%ver%.apk >nul
+echo -: Have fun and stay safe!
+echo -: Cleaning up...
 rd /S /Q %d_out%
 rd /S /Q %p_out%
-echo -: Have fun and stay safe!
-pause
-exit
 GOTO:EOF
 
 ::-----------------------------------------------------------
