@@ -8,6 +8,9 @@ cd /d %~dp0
 set /p ver=<version.txt
 set "p_out=patches_out"
 set "d_out=decompile_out"
+set "a_out=_NEW_APK"
+rd /S /Q %a_out% >nul 2>&1
+rd /S /Q %p_out% >nul 2>&1
 set title=%~n0
 TITLE %title%
 
@@ -36,7 +39,7 @@ echo. =========================== DeeJayEYE Patcher v%ver% =====================
 echo.
 for /f "tokens=1,2,* delims=_ " %%A in ('"findstr /b /c:":menu_" "%~f0""') do echo.  %%B  %%C
 set choice=
-echo.&set /p choice=Make a choice or hit ENTER to quit: ||(
+echo.&set /p choice=-: Choose patches or hit ENTER to quit: ||(
     call:savePersistentVars "%FilePersist%"&   rem --save
     GOTO:EOF
 )
@@ -44,46 +47,43 @@ echo.&call:menu_%choice%
 GOTO:menuLOOP
 
 :menu_Options:
-:menu_1   forceFCC                       '!forceFCC!' [!forceFCC_choice:~1,-1!]
+:menu_1 - forceFCC                   '!forceFCC!' [!forceFCC_choice:~1,-1!]
 call:getNextInList forceFCC "!forceFCC_choice!"
 cls
 GOTO:EOF
-:menu_2   removeUpdateForce              '!removeUpdateForce!' [!removeUpdateForce_choice:~1,-1!]
+:menu_2 - removeUpdateForce          '!removeUpdateForce!' [!removeUpdateForce_choice:~1,-1!]
 call:getNextInList removeUpdateForce "!removeUpdateForce_choice!"
 cls
 GOTO:EOF
-:menu_3   removeFWUpgradeService         '!removeFWUpgradeService!' [!removeFWUpgradeService_choice:~1,-1!]
+:menu_3 - removeFWUpgradeService     '!removeFWUpgradeService!' [!removeFWUpgradeService_choice:~1,-1!]
 call:getNextInList removeFWUpgradeService "!removeFWUpgradeService_choice!"
 cls
 GOTO:EOF
-:menu_4   offlineLogin                   '!offlineLogin!' [!offlineLogin_choice:~1,-1!]
+:menu_4 - offlineLogin               '!offlineLogin!' [!offlineLogin_choice:~1,-1!]
 call:getNextInList offlineLogin "!offlineLogin_choice!"
 cls
 GOTO:EOF
-:menu_5   removeOnlinefunction           '!removeOnlinefunction!' [!removeOnlinefunction_choice:~1,-1!]
+:menu_5 - removeOnlinefunction       '!removeOnlinefunction!' [!removeOnlinefunction_choice:~1,-1!]
 call:getNextInList removeOnlinefunction "!removeOnlinefunction_choice!"
 cls
 GOTO:EOF
-:menu_6   removeGoogleApis               '!removeGoogleApis!' [!removeGoogleApis_choice:~1,-1!]
+:menu_6 - removeGoogleApis           '!removeGoogleApis!' [!removeGoogleApis_choice:~1,-1!]
 call:getNextInList removeGoogleApis "!removeGoogleApis_choice!"
 cls
 GOTO:EOF
-:menu_7   removeSocial                   '!removeSocial!' [!removeSocial_choice:~1,-1!]
+:menu_7 - removeSocial               '!removeSocial!' [!removeSocial_choice:~1,-1!]
 call:getNextInList removeSocial "!removeSocial_choice!"
 cls
 GOTO:EOF
-:menu_8   enableP3series                 '!enableP3series!' [!enableP3series_choice:~1,-1!]
+:menu_8 - enableP3series             '!enableP3series!' [!enableP3series_choice:~1,-1!]
 call:getNextInList enableP3series "!enableP3series_choice!"
 cls
 GOTO:EOF
 :menu_
 :menu_Execute:
-:menu_P   Start Patching
+:menu_P - Start Patching
 
-IF EXIST out\mod-%ver%.apk (
-	rd /S /Q out
-	)
-md out
+md %a_out%
 md %p_out%
 
 echo -: Converting patches...
@@ -94,8 +94,15 @@ for /f "tokens=*" %%f in ('dir /b patches\*.patch') do (
 	)
 
 echo -: Decompiling original apk...
-java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
-
+IF EXIST PutApkHere\orig.apk (
+	java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
+	) ELSE (
+	echo -:
+	echo -: FATAL ERROR '\PutApkHere\orig.apk' NOT FOUND
+	echo -:
+	pause
+	exit
+	)
 cd %d_out%
 if /i "%forceFCC:~0,1%"=="Y" (
 	echo -: Applying forceFCC patch...
@@ -140,13 +147,13 @@ REM here
 
 cd ..
 echo -: Rebuilding apk...
-java -jar tools\apktool.jar b -o out\mod.apk %d_out%
+java -jar tools\apktool.jar b -o %a_out%\mod.apk %d_out%
 echo -: Signing with testkey...
-java -jar tools\sign.jar out\mod.apk
-del /f /q out\mod.apk
-move out\mod.s.apk out\mod-%ver%.apk >nul
-echo -: Have fun and stay safe!
+java -jar tools\sign.jar %a_out%\mod.apk
+del /f /q %a_out%\mod.apk
+move %a_out%\mod.s.apk %a_out%\mod-%ver%.apk >nul
 echo -: Cleaning up...
+echo -: "Have fun and stay safe!"
 rd /S /Q %d_out%
 rd /S /Q %p_out%
 GOTO:EOF
