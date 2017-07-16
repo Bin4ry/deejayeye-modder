@@ -1,0 +1,84 @@
+List taken from Netguard logs, while App is running
+
+1.sps data.here.com
+102.229.215.21/7002
+103.229.215.21/7002
+113.31.17.108/19000
+114.67.46.79/7011
+121.46.25.202/7002
+192.168.1.1/19003
+192.168.1.1/19005
+192.168.1.1/2345
+192.168.1.1/53
+192.168.1.2/5678
+192.168.2.1/9003
+209.9.106.12
+abroad.apilocate.amap.com/80 ?2
+acbe.aasky.net
+account-api.dji.com/443
+active.dji.com
+adash.m.taobao.com/80
+adhoc.djiservice.org
+adhoc-usa.djicdn.com
+amap-api.cn-hangzhou.oss-pub.aliyur
+android.bugly.qq.com
+apilocate.amap.com
+app-service.skypixel.com
+asset1.djicdn.com
+asset2.djicdn.com
+asset3.djicdn.com
+asset4.djicdn.com
+asset5.djicdn.com
+astat.bugly.qq.com
+astat.bugly.qq.com/8011
+baidu.com
+bam.nr-data.net
+cdn1.affirm.com
+cdn-hz.skypixel.com
+cdn-usa.skypixel.com/443
+click.dji.com
+conf.international.baidu.com
+connect.facebook.net
+d16koec4ujdumm.couldfront.net/80
+dds.dji.com
+djicdn.com
+djiexplore.com
+djistatic.com
+download.vcdn.nokia.com
+easytomessage.com/1900
+ flurry.com
+ flysafe-api.dji.com
+ gitlab.djicorp.com
+ graph.facebook.com
+im64.jpush.cn/3000
+im64.jpush.cn/7000
+im64.jpush.cn/7002
+im64.jpush.cn/7003
+js-agent.newrelic.com
+mydjiflight.dji.com
+newrelic.com
+pilotv2.djivideos.com
+pingma.qq.com
+pro-dji-service-usa-cdn.aasky.net
+product1.djicdn.com
+qbox.me
+resolver2.opendns.com/53
+restapi.amap.com/443
+rqd.uu.qq.com
+s.jpush.cn/1900 ?2
+skypixel.com
+skypixel-hz.oss-cn-hangzhou.aliyuncs.com
+skypixel-usa.oss-us-west-1.aliyuncs.com
+stastical-report.djiservice.org/443
+static.bundles.hybrid.api.here.com
+statistical-report.djiservice.org
+tpns.qq.com
+u.dji.com
+update.sdk.jiguang.cn
+upgrade.bgcentre.com/443
+upgrade.dj2006.net
+white 1.sps.data.here.com
+white download.vcdn.data.here.com
+white places.hybrid.api.here.com
+white static.bundles.hybrid.api.here.com
+white version.hybrid.api.here.com/443
