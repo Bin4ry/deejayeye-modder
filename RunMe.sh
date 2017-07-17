@@ -34,31 +34,31 @@ do
     case $choice in
         1)
             cd decompile_out
-			patch -l -p1 < ../patches/forceFCC.patch
+			patch -l -p1 -N < ../patches/forceFCC.patch
 			cd ..
 			echo "forceFCC" >> out/lastbuild-cfg.txt
             ;;
         2)
             cd decompile_out
-			patch -l -p1 < ../patches/removeUpdateForce.patch
+			patch -l -p1 -N < ../patches/removeUpdateForce.patch
 			cd ..
 			echo "removeUpdateForce" >> out/lastbuild-cfg.txt
             ;;
         3)
             cd decompile_out
-			patch -l -p1 < ../patches/removeFWUpgradeService.patch
+			patch -l -p1 -N < ../patches/removeFWUpgradeService.patch
 			cd ..
 			echo "removeFWUpgradeService" >> out/lastbuild-cfg.txt
             ;;
 		4)
             cd decompile_out
-			patch -l -p1 < ../patches/offlineLogin.patch
+			patch -l -p1 -N < ../patches/offlineLogin.patch
 			cd ..
 			echo "offlineLogin" >> out/lastbuild-cfg.txt
             ;;
 		5)
             cd decompile_out
-			patch -l -p1 < ../patches/removeOnlinefunction.patch
+			patch -l -p1 -N < ../patches/removeOnlinefunction.patch
 			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.bspatch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
@@ -67,25 +67,25 @@ do
             ;;	
 		6)
             cd decompile_out
-			patch -l -p1 < ../patches/removeGoogleApis.patch
+			patch -l -p1 -N < ../patches/removeGoogleApis.patch
 			cd ..
 			echo "removeGoogleApis" >> out/lastbuild-cfg.txt
             ;;	
 		7)
             cd decompile_out
-			patch -l -p1 < ../patches/removeSocial.patch
+			patch -l -p1 -N < ../patches/removeSocial.patch
 			cd ..
 			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
 		8)
             cd decompile_out
-			patch -l -p1 < ../patches/enableMavicFlightModesOnSpark.patch
+			patch -l -p1 -N < ../patches/enableMavicFlightModesOnSpark.patch
 			cd ..
 			echo "enableMavicFlightModesOnSpark" >> out/lastbuild-cfg.txt
             ;;	
 		9)
             cd decompile_out
-			patch -l -p1 < ../patches/enableP3series.patch
+			patch -l -p1 -N < ../patches/enableP3series.patch
 			cd ..
 			echo "enableP3series" >> out/lastbuild-cfg.txt
             ;;	
