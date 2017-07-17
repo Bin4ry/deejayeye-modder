@@ -1,19 +1,16 @@
 @ECHO OFF
-
 SETLOCAL ENABLEEXTENSIONS
 SETLOCAL ENABLEDELAYEDEXPANSION
-
 cd /d %~dp0
-
 set /p ver=<version.txt
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
-rd /S /Q %a_out% >nul 2>&1
 rd /S /Q %p_out% >nul 2>&1
+rd /S /Q %d_out% >nul 2>&1
+rd /S /Q %a_out% >nul 2>&1
 set title=%~n0
 TITLE %title%
-
 set FilePersist=%~dpn0+.cmd&
 set             forceFCC_choice=,Yes,No,
 call:setPersist forceFCC=No
@@ -34,7 +31,6 @@ call:setPersist enableP3series=No
 set             enableMavicFlightModesOnSpark_choice=,Yes,No,
 call:setPersist enableMavicFlightModesOnSpark=No
 call:restorePersistentVars "%FilePersist%"
-
 :menuLOOP
 echo.
 echo. =========================== DeeJayEYE Patcher v%ver% ============================
@@ -47,7 +43,6 @@ echo.&set /p choice=-: Choose patches or hit ENTER to quit: ||(
 )
 echo.&call:menu_%choice%
 GOTO:menuLOOP
-
 :menu_Options:
 :menu_1 - forceFCC                                '!forceFCC!' [!forceFCC_choice:~1,-1!]
 call:getNextInList forceFCC "!forceFCC_choice!"
@@ -86,19 +81,26 @@ call:getNextInList enableMavicFlightModesOnSpark "!enableMavicFlightModesOnSpark
 cls
 GOTO:EOF
 :menu_
+:menu_Help:
+:menu_R - View readme
+notepad Readme.md
+cls
+GOTO:EOF
+:menu_D - View patch descriptions
+notepad Patch-Descriptions.txt
+cls
+GOTO:EOF
+:menu_
 :menu_Execute:
 :menu_P - Start Patching
-
 md %a_out%
 md %p_out%
-
 echo -: Converting patches...
 for /f "tokens=*" %%f in ('dir /b patches\*.patch') do (
 	copy patches\%%f %p_out%\%%f.copy >nul
 	TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
 	del /f /q %p_out%\%%f.copy
 	)
-
 echo -: Decompiling original apk...
 IF EXIST PutApkHere\orig.apk (
 	java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
@@ -151,10 +153,8 @@ if /i "%enableMavicFlightModesOnSpark:~0,1%"=="Y" (
 	)
 del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
 copy "..\patches\unknown.lol" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html" >nul
-
 REM nothing
 REM here
-
 cd ..
 echo -: Rebuilding apk...
 java -jar tools\apktool.jar b -o %a_out%\mod.apk %d_out%
@@ -169,16 +169,13 @@ echo -: "Have fun and stay safe!"
 pause
 exit
 GOTO:EOF
-
 ::-----------------------------------------------------------
 :: helpers here
 ::-----------------------------------------------------------
-
 :setPersist -- to be called to initialize persistent variables
 ::          -- %*: set command arguments
 set %*
 GOTO:EOF
-
 :getPersistentVars -- returns a comma separated list of persistent variables
 ::                 -- %~1: reference to return variable 
 SETLOCAL
@@ -189,7 +186,6 @@ for /f "tokens=2 delims== " %%a in ('"%parse%"') do (set retlist=!retlist!%%a,)
     IF "%~1" NEQ "" SET %~1=%retlist%
 )
 GOTO:EOF
-
 :savePersistentVars -- Save values of persistent variables into a file
 ::                  -- %~1: file name
 SETLOCAL
@@ -197,12 +193,10 @@ echo.>"%~1"
 call :getPersistentVars persvars
 for %%a in (%persvars%) do (echo.SET %%a=!%%a!>>"%~1")
 GOTO:EOF
-
 :restorePersistentVars -- Restore the values of the persistent variables
 ::                     -- %~1: batch file name to restore from
 if exist "%FilePersist%" call "%FilePersist%"
 GOTO:EOF
-
 :getNextInList -- return next value in list
 ::             -- %~1 - in/out ref to current value, returns new value
 ::             -- %~2 - in     choice list, must start with delimiter which must not be '@'
