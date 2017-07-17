@@ -28,3 +28,20 @@ https://bitbucket.org/iBotPeaches/apktool/downloads/
 https://apps.evozi.com/apk-downloader/
 
 4.) RunMe.sh
+
+
+...for Windows users:
+
+1.) Please copy 'sign.jar' into 'tools' folder, check above for link
+
+2.) Please copy apktool to 'tools' and rename it 'apktool.jar', check above for link
+
+3.) Please install gnuwin32 and copy 'patch.exe' into 'tools' folder, you can get it here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
+
+4.) Please copy 'bspatch.exe' into 'tools' folder, you can get it here: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
+
+5.) You may need to install Java Development Kit, you can get it here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+6.) Get the apk, check above for link
+
+7.) RunMe.bat (as Administrator)
