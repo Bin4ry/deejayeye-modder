@@ -72,12 +72,12 @@ GOTO:EOF
 call:getNextInList removeSocial "!removeSocial_choice!"
 cls
 GOTO:EOF
-:menu_8 - enableP3series                          '!enableP3series!' [!enableP3series_choice:~1,-1!]
-call:getNextInList enableP3series "!enableP3series_choice!"
+:menu_8 - enableMavicFlightModesOnSpark           '!enableMavicFlightModesOnSpark!' [!enableMavicFlightModesOnSpark_choice:~1,-1!]
+call:getNextInList enableMavicFlightModesOnSpark "!enableMavicFlightModesOnSpark_choice!"
 cls
 GOTO:EOF
-:menu_9 - enableMavicFlightModesOnSpark           '!enableMavicFlightModesOnSpark!' [!enableMavicFlightModesOnSpark_choice:~1,-1!]
-call:getNextInList enableMavicFlightModesOnSpark "!enableMavicFlightModesOnSpark_choice!"
+:menu_9 - enableP3series                          '!enableP3series!' [!enableP3series_choice:~1,-1!]
+call:getNextInList enableP3series "!enableP3series_choice!"
 cls
 GOTO:EOF
 :menu_
