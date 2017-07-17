@@ -31,6 +31,8 @@ set             removeSocial_choice=,Yes,No,
 call:setPersist removeSocial=No
 set             enableP3series_choice=,Yes,No,
 call:setPersist enableP3series=No
+set             enableMavicFlightModesOnSpark_choice=,Yes,No,
+call:setPersist enableMavicFlightModesOnSpark=No
 call:restorePersistentVars "%FilePersist%"
 
 :menuLOOP
@@ -47,36 +49,40 @@ echo.&call:menu_%choice%
 GOTO:menuLOOP
 
 :menu_Options:
-:menu_1 - forceFCC                   '!forceFCC!' [!forceFCC_choice:~1,-1!]
+:menu_1 - forceFCC                                '!forceFCC!' [!forceFCC_choice:~1,-1!]
 call:getNextInList forceFCC "!forceFCC_choice!"
 cls
 GOTO:EOF
-:menu_2 - removeUpdateForce          '!removeUpdateForce!' [!removeUpdateForce_choice:~1,-1!]
+:menu_2 - removeUpdateForce                       '!removeUpdateForce!' [!removeUpdateForce_choice:~1,-1!]
 call:getNextInList removeUpdateForce "!removeUpdateForce_choice!"
 cls
 GOTO:EOF
-:menu_3 - removeFWUpgradeService     '!removeFWUpgradeService!' [!removeFWUpgradeService_choice:~1,-1!]
+:menu_3 - removeFWUpgradeService                  '!removeFWUpgradeService!' [!removeFWUpgradeService_choice:~1,-1!]
 call:getNextInList removeFWUpgradeService "!removeFWUpgradeService_choice!"
 cls
 GOTO:EOF
-:menu_4 - offlineLogin               '!offlineLogin!' [!offlineLogin_choice:~1,-1!]
+:menu_4 - offlineLogin                            '!offlineLogin!' [!offlineLogin_choice:~1,-1!]
 call:getNextInList offlineLogin "!offlineLogin_choice!"
 cls
 GOTO:EOF
-:menu_5 - removeOnlinefunction       '!removeOnlinefunction!' [!removeOnlinefunction_choice:~1,-1!]
+:menu_5 - removeOnlinefunction                    '!removeOnlinefunction!' [!removeOnlinefunction_choice:~1,-1!]
 call:getNextInList removeOnlinefunction "!removeOnlinefunction_choice!"
 cls
 GOTO:EOF
-:menu_6 - removeGoogleApis           '!removeGoogleApis!' [!removeGoogleApis_choice:~1,-1!]
+:menu_6 - removeGoogleApis                        '!removeGoogleApis!' [!removeGoogleApis_choice:~1,-1!]
 call:getNextInList removeGoogleApis "!removeGoogleApis_choice!"
 cls
 GOTO:EOF
-:menu_7 - removeSocial               '!removeSocial!' [!removeSocial_choice:~1,-1!]
+:menu_7 - removeSocial                            '!removeSocial!' [!removeSocial_choice:~1,-1!]
 call:getNextInList removeSocial "!removeSocial_choice!"
 cls
 GOTO:EOF
-:menu_8 - enableP3series             '!enableP3series!' [!enableP3series_choice:~1,-1!]
+:menu_8 - enableP3series                          '!enableP3series!' [!enableP3series_choice:~1,-1!]
 call:getNextInList enableP3series "!enableP3series_choice!"
+cls
+GOTO:EOF
+:menu_9 - enableMavicFlightModesOnSpark           '!enableMavicFlightModesOnSpark!' [!enableMavicFlightModesOnSpark_choice:~1,-1!]
+call:getNextInList enableMavicFlightModesOnSpark "!enableMavicFlightModesOnSpark_choice!"
 cls
 GOTO:EOF
 :menu_
@@ -139,6 +145,10 @@ if /i "%enableP3series:~0,1%"=="Y" (
 	echo -: Applying enableP3series patch...
 	..\tools\patch  -l -s -p1 < ..\%p_out%\enableP3series.patch
 	)
+if /i "%enableMavicFlightModesOnSpark:~0,1%"=="Y" (
+	echo -: Applying enableMavicFlightModesOnSpark patch...
+	..\tools\patch  -l -s -p1 < ..\%p_out%\enableMavicFlightModesOnSpark.patch
+	)
 del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
 copy "..\patches\unknown.lol" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html" >nul
 
@@ -153,9 +163,11 @@ java -jar tools\sign.jar %a_out%\mod.apk
 del /f /q %a_out%\mod.apk
 move %a_out%\mod.s.apk %a_out%\mod-%ver%.apk >nul
 echo -: Cleaning up...
-echo -: "Have fun and stay safe!"
 rd /S /Q %d_out%
 rd /S /Q %p_out%
+echo -: "Have fun and stay safe!"
+pause
+exit
 GOTO:EOF
 
 ::-----------------------------------------------------------
