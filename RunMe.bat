@@ -35,6 +35,7 @@ call:restorePersistentVars "%FilePersist%"
 echo.
 echo. =========================== DeeJayEYE Patcher v%ver% ============================
 echo.
+call:check_Permissions
 for /f "tokens=1,2,* delims=_ " %%A in ('"findstr /b /c:":menu_" "%~f0""') do echo.  %%B  %%C
 set choice=
 echo.&set /p choice=-: Choose patches or hit ENTER to quit: ||(
@@ -214,5 +215,13 @@ for /f "tokens=2 delims=@" %%a in ("%lll%") do set lll=%%a
 for /f "delims=%dlm%" %%a in ("%lll%") do set new=%%a
 ( ENDLOCAL & REM RETURN VALUES
     IF "%~1" NEQ "" (SET %~1=%new%) ELSE (echo.%new%)
+)
+GOTO:EOF
+:check_Permissions
+net session >nul 2>&1
+if not %errorLevel% == 0 (
+    echo Error: Script requires administrator permissions. Press any key to exit, and relaunch with "Run as administrator".
+    pause >nul
+    exit
 )
 GOTO:EOF
