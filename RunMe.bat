@@ -114,42 +114,42 @@ IF EXIST PutApkHere\orig.apk (
 cd %d_out%
 if /i "%forceFCC:~0,1%"=="Y" (
 	echo -: Applying forceFCC patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\forceFCC.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\forceFCC.patch
 	)
 if /i "%removeUpdateForce:~0,1%"=="Y" (
 	echo -: Applying removeUpdateForce patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeUpdateForce.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeUpdateForce.patch
 	)
 if /i "%removeFWUpgradeService:~0,1%"=="Y" (
 	echo -: Applying removeFWUpgradeService patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeFWUpgradeService.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeFWUpgradeService.patch
 	)
 if /i "%offlineLogin:~0,1%"=="Y" (
 	echo -: Applying offlineLogin patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\offlineLogin.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\offlineLogin.patch
 	)
 if /i "%removeOnlinefunction:~0,1%"=="Y" (
 	echo -: Applying removeOnlinefunction.patch and so.bspatch...
 	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch
 	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 	rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
-	..\tools\patch -l -s -p1 < ..\%p_out%\removeOnlinefunction.patch
+	..\tools\patch -l -s -p1 -N -r - < ..\%p_out%\removeOnlinefunction.patch
 	)
 if /i "%removeGoogleApis:~0,1%"=="Y" (
 	echo -: Applying removeGoogleApis patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeGoogleApis.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeGoogleApis.patch
 	)
 if /i "%removeSocial:~0,1%"=="Y" (
 	echo -: Applying removeSocial patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeSocial.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeSocial.patch
 	)
 if /i "%enableP3series:~0,1%"=="Y" (
 	echo -: Applying enableP3series patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\enableP3series.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\enableP3series.patch
 	)
 if /i "%enableMavicFlightModesOnSpark:~0,1%"=="Y" (
 	echo -: Applying enableMavicFlightModesOnSpark patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\enableMavicFlightModesOnSpark.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\enableMavicFlightModesOnSpark.patch
 	)
 del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
 copy "..\patches\unknown.lol" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html" >nul
