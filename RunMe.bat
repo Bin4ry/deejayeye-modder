@@ -1,19 +1,16 @@
 @ECHO OFF
-
 SETLOCAL ENABLEEXTENSIONS
 SETLOCAL ENABLEDELAYEDEXPANSION
-
 cd /d %~dp0
-
 set /p ver=<version.txt
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
-rd /S /Q %a_out% >nul 2>&1
 rd /S /Q %p_out% >nul 2>&1
+rd /S /Q %d_out% >nul 2>&1
+rd /S /Q %a_out% >nul 2>&1
 set title=%~n0
 TITLE %title%
-
 set FilePersist=%~dpn0+.cmd&
 set             forceFCC_choice=,Yes,No,
 call:setPersist forceFCC=No
@@ -34,11 +31,11 @@ call:setPersist enableP3series=No
 set             enableMavicFlightModesOnSpark_choice=,Yes,No,
 call:setPersist enableMavicFlightModesOnSpark=No
 call:restorePersistentVars "%FilePersist%"
-
 :menuLOOP
 echo.
 echo. =========================== DeeJayEYE Patcher v%ver% ============================
 echo.
+call:check_Permissions
 for /f "tokens=1,2,* delims=_ " %%A in ('"findstr /b /c:":menu_" "%~f0""') do echo.  %%B  %%C
 set choice=
 echo.&set /p choice=-: Choose patches or hit ENTER to quit: ||(
@@ -47,7 +44,6 @@ echo.&set /p choice=-: Choose patches or hit ENTER to quit: ||(
 )
 echo.&call:menu_%choice%
 GOTO:menuLOOP
-
 :menu_Options:
 :menu_1 - forceFCC                                '!forceFCC!' [!forceFCC_choice:~1,-1!]
 call:getNextInList forceFCC "!forceFCC_choice!"
@@ -77,28 +73,35 @@ GOTO:EOF
 call:getNextInList removeSocial "!removeSocial_choice!"
 cls
 GOTO:EOF
-:menu_8 - enableP3series                          '!enableP3series!' [!enableP3series_choice:~1,-1!]
+:menu_8 - enableMavicFlightModesOnSpark           '!enableMavicFlightModesOnSpark!' [!enableMavicFlightModesOnSpark_choice:~1,-1!]
+call:getNextInList enableMavicFlightModesOnSpark "!enableMavicFlightModesOnSpark_choice!"
+cls
+GOTO:EOF
+:menu_9 - enableP3series                          '!enableP3series!' [!enableP3series_choice:~1,-1!]
 call:getNextInList enableP3series "!enableP3series_choice!"
 cls
 GOTO:EOF
-:menu_9 - enableMavicFlightModesOnSpark           '!enableMavicFlightModesOnSpark!' [!enableMavicFlightModesOnSpark_choice:~1,-1!]
-call:getNextInList enableMavicFlightModesOnSpark "!enableMavicFlightModesOnSpark_choice!"
+:menu_
+:menu_Help:
+:menu_R - View readme
+notepad Readme.md
+cls
+GOTO:EOF
+:menu_D - View patch descriptions
+notepad Patch-Descriptions.txt
 cls
 GOTO:EOF
 :menu_
 :menu_Execute:
 :menu_P - Start Patching
-
 md %a_out%
 md %p_out%
-
 echo -: Converting patches...
 for /f "tokens=*" %%f in ('dir /b patches\*.patch') do (
 	copy patches\%%f %p_out%\%%f.copy >nul
 	TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
 	del /f /q %p_out%\%%f.copy
 	)
-
 echo -: Decompiling original apk...
 IF EXIST PutApkHere\orig.apk (
 	java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
@@ -112,49 +115,47 @@ IF EXIST PutApkHere\orig.apk (
 cd %d_out%
 if /i "%forceFCC:~0,1%"=="Y" (
 	echo -: Applying forceFCC patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\forceFCC.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\forceFCC.patch
 	)
 if /i "%removeUpdateForce:~0,1%"=="Y" (
 	echo -: Applying removeUpdateForce patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeUpdateForce.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeUpdateForce.patch
 	)
 if /i "%removeFWUpgradeService:~0,1%"=="Y" (
 	echo -: Applying removeFWUpgradeService patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeFWUpgradeService.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeFWUpgradeService.patch
 	)
 if /i "%offlineLogin:~0,1%"=="Y" (
 	echo -: Applying offlineLogin patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\offlineLogin.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\offlineLogin.patch
 	)
 if /i "%removeOnlinefunction:~0,1%"=="Y" (
 	echo -: Applying removeOnlinefunction.patch and so.bspatch...
 	..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch
 	del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 	rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
-	..\tools\patch -l -s -p1 < ..\%p_out%\removeOnlinefunction.patch
+	..\tools\patch -l -s -p1 -N -r - < ..\%p_out%\removeOnlinefunction.patch
 	)
 if /i "%removeGoogleApis:~0,1%"=="Y" (
 	echo -: Applying removeGoogleApis patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeGoogleApis.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeGoogleApis.patch
 	)
 if /i "%removeSocial:~0,1%"=="Y" (
 	echo -: Applying removeSocial patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\removeSocial.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\removeSocial.patch
 	)
 if /i "%enableP3series:~0,1%"=="Y" (
 	echo -: Applying enableP3series patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\enableP3series.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\enableP3series.patch
 	)
 if /i "%enableMavicFlightModesOnSpark:~0,1%"=="Y" (
 	echo -: Applying enableMavicFlightModesOnSpark patch...
-	..\tools\patch  -l -s -p1 < ..\%p_out%\enableMavicFlightModesOnSpark.patch
+	..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\enableMavicFlightModesOnSpark.patch
 	)
 del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
 copy "..\patches\unknown.lol" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html" >nul
-
 REM nothing
 REM here
-
 cd ..
 echo -: Rebuilding apk...
 java -jar tools\apktool.jar b -o %a_out%\mod.apk %d_out%
@@ -169,16 +170,13 @@ echo -: "Have fun and stay safe!"
 pause
 exit
 GOTO:EOF
-
 ::-----------------------------------------------------------
 :: helpers here
 ::-----------------------------------------------------------
-
 :setPersist -- to be called to initialize persistent variables
 ::          -- %*: set command arguments
 set %*
 GOTO:EOF
-
 :getPersistentVars -- returns a comma separated list of persistent variables
 ::                 -- %~1: reference to return variable 
 SETLOCAL
@@ -189,7 +187,6 @@ for /f "tokens=2 delims== " %%a in ('"%parse%"') do (set retlist=!retlist!%%a,)
     IF "%~1" NEQ "" SET %~1=%retlist%
 )
 GOTO:EOF
-
 :savePersistentVars -- Save values of persistent variables into a file
 ::                  -- %~1: file name
 SETLOCAL
@@ -197,12 +194,10 @@ echo.>"%~1"
 call :getPersistentVars persvars
 for %%a in (%persvars%) do (echo.SET %%a=!%%a!>>"%~1")
 GOTO:EOF
-
 :restorePersistentVars -- Restore the values of the persistent variables
 ::                     -- %~1: batch file name to restore from
 if exist "%FilePersist%" call "%FilePersist%"
 GOTO:EOF
-
 :getNextInList -- return next value in list
 ::             -- %~1 - in/out ref to current value, returns new value
 ::             -- %~2 - in     choice list, must start with delimiter which must not be '@'
@@ -220,5 +215,13 @@ for /f "tokens=2 delims=@" %%a in ("%lll%") do set lll=%%a
 for /f "delims=%dlm%" %%a in ("%lll%") do set new=%%a
 ( ENDLOCAL & REM RETURN VALUES
     IF "%~1" NEQ "" (SET %~1=%new%) ELSE (echo.%new%)
+)
+GOTO:EOF
+:check_Permissions
+net session >nul 2>&1
+if not %errorLevel% == 0 (
+    echo Error: Script requires administrator permissions. Press any key to exit, and relaunch with "Run as administrator".
+    pause >nul
+    exit
 )
 GOTO:EOF
