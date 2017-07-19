@@ -70,12 +70,13 @@ GOTO:EOF
 md %a_out%
 md %p_out%
 echo -: Converting patches...
+rename "patches\origin" origin.patch
 for /f "tokens=*" %%f in ('dir /b patches\*.patch') do (
 	copy patches\%%f %p_out%\%%f.copy >nul
 	TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
 	del /f /q %p_out%\%%f.copy
 	)
-copy patches\origin %p_out%\origin.patch.copy >nul
+rename "patches\origin.patch" origin
 echo -: Decompiling original apk...
 IF EXIST PutApkHere\orig.apk (
 	java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
@@ -87,12 +88,13 @@ IF EXIST PutApkHere\orig.apk (
 	exit
 	)
 cd %d_out%
+REM ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
 for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do (
 	if /i "!%%f:~0,1!"=="Y" (
 		echo -: Applying %%f patch...
 		..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\%%f.patch
-			if "%%f"=="removeOnlinefunction" (
-			echo -: Applying so.bspatch...
+		if "%%f"=="removeOnlinefunction" (
+			echo -: Supporting with so.bspatch...
 			..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch
 			del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
 			rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
