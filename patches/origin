@@ -12,8 +12,8 @@ diff -Naur orig/res/values/strings.xml mod/res/values/strings.xml
      <string name="phantom_dji_plz_connect">Connect Your Aircraft</string>
 
 diff -Naur orig/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html mod/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html
---- orig/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-15 12:45:59.736252000 +0200
-+++ mod/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-19 11:41:28.495910500 +0200
+--- orig/assets/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-15 12:45:59.736252000 +0200
++++ mod/assets/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-19 11:41:28.495910500 +0200
 @@ -14,6 +14,16 @@
  </style>
  </head>
