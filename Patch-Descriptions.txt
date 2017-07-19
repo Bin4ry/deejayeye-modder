@@ -27,3 +27,6 @@ This patch will enable P3 Series with DJI Go, you HAVE TO remove the SD-Card oth
 
 enableMavicFlightModesOnSpark:
 enable Mavic Pro flight modes for Spark (thx djayeyeballs)
+
+enableSparkWifiChannelSelectOnOtg:
+brings back the Wifi channel selection screen!
