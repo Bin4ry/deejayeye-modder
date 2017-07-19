@@ -19,16 +19,3 @@ diff -Naur original/smali_classes2/com/dji/update/config/OnlineConfig.smali mod/
  
      return v0
  .end method
-
-diff -Naur orig/res/values/strings.xml mod/res/values/strings.xml
---- orig/res/values/strings.xml	2017-07-12 13:01:11.068878700 +0200
-+++ mod/res/values/strings.xml	2017-07-17 06:03:30.373571900 +0200
-@@ -3331,7 +3331,7 @@
-     <string name="phantom_dji_control_connect">Remote Controller connected. Connect your aircraft.</string>
-     <string name="phantom_dji_hlz_connect_device">Connect Your Device</string>
-     <string name="phantom_dji_how_to_connect">How to Connect</string>
--    <string name="phantom_dji_learn_advice">Learn more about your local regulations and policies</string>
-+    <string name="phantom_dji_learn_advice">If you downloaded this app from FB or band you got ripped off. Please visit this link to get the original mod. https://github.com/Bin4ry/deejayeye-modder</string>
-     <string name="phantom_dji_osmo_camera">Camera</string>
-     <string name="phantom_dji_phantom">PHANTOM</string>
-     <string name="phantom_dji_plz_connect">Connect Your Aircraft</string>
