@@ -1,3 +1,10 @@
+UPDATE: 
+
+This software is free to use, feel free to modify. 
+
+Only thing i ask for is to link this git as a start point of your own modifications.
+
+
 UPDATE: No more NFZ stuff here.
 
 Reasons: 
