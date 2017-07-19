@@ -84,7 +84,7 @@ do
 			cd ..
 			echo "enableMavicFlightModesOnSpark" >> out/lastbuild-cfg.txt
             ;;	
-		8)
+		9)
             cd decompile_out
 			patch -l -p1 -N -r - < ../patches/enableSparkWifiChannelSelectOnOtg.patch
 			cd ..
