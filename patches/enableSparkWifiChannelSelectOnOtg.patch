@@ -10,6 +10,18 @@ diff -Naur orig/smali_classes5/dji/setting/ui/tab/TabWifi.smali mod/smali_classe
  
      invoke-virtual {p0, v0}, Ldji/setting/ui/tab/TabWifi;->setVisibility(I)V
  
+diff -Naur orig/smali_classes5/dji/setting/ui/wifi/AutoSelectChannelView.smali mod/smali_classes5/dji/setting/ui/wifi/AutoSelectChannelView.smali
+--- orig/smali_classes5/dji/setting/ui/wifi/AutoSelectChannelView.smali	2017-07-12 13:01:54.428810700 +0200
++++ mod/smali_classes5/dji/setting/ui/wifi/AutoSelectChannelView.smali	2017-07-19 16:43:08.492603300 +0200
+@@ -18,7 +18,7 @@
+     .locals 2
+ 
+     .prologue
+-    const/16 v1, 0x8
++    const/16 v1, 0x0
+ 
+     .line 42
+     invoke-static {}, Ldji/setting/ui/wifi/a;->a()Z
 diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiChannelIndexView.smali mod/smali_classes5/dji/setting/ui/wifi/WifiChannelIndexView.smali
 --- orig/smali_classes5/dji/setting/ui/wifi/WifiChannelIndexView.smali	2017-07-12 13:01:54.432813900 +0200
 +++ mod/smali_classes5/dji/setting/ui/wifi/WifiChannelIndexView.smali	2017-07-19 15:51:20.160949700 +0200
@@ -46,17 +58,17 @@ diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiCodeRateSelectView.smali 
  
      invoke-virtual {p0, v0}, Ldji/setting/ui/wifi/WifiCodeRateSelectView;->setVisibility(I)V
  
-diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali mod/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali
---- orig/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali	2017-07-12 13:01:54.453832800 +0200
-+++ mod/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali	2017-07-19 15:52:20.733425700 +0200
-@@ -224,7 +224,7 @@
-     .line 106
-     iget-object v0, p0, Ldji/setting/ui/wifi/WifiFreqModeView;->d:Landroid/widget/RadioButton;
+diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali mod/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali
+--- orig/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali	2017-07-12 13:01:54.454833300 +0200
++++ mod/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali	2017-07-19 16:43:37.806386700 +0200
+@@ -107,7 +107,7 @@
  
--    const/16 v1, 0x8
-+    const/16 v1, 0x0
+     .line 85
+     :cond_0
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
  
-     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setVisibility(I)V
+     invoke-virtual {p0, v0}, Ldji/setting/ui/wifi/WifiResetView;->setVisibility(I)V
  
 diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiSettingView.smali mod/smali_classes5/dji/setting/ui/wifi/WifiSettingView.smali
 --- orig/smali_classes5/dji/setting/ui/wifi/WifiSettingView.smali	2017-07-12 13:01:54.467152000 +0200
