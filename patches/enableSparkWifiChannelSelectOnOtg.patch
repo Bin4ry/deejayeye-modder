@@ -58,6 +58,18 @@ diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiCodeRateSelectView.smali 
  
      invoke-virtual {p0, v0}, Ldji/setting/ui/wifi/WifiCodeRateSelectView;->setVisibility(I)V
  
+diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali mod/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali
+--- orig/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali	2017-07-12 13:01:54.453832800 +0200
++++ mod/smali_classes5/dji/setting/ui/wifi/WifiFreqModeView.smali	2017-07-19 17:30:27.969399900 +0200
+@@ -611,8 +611,6 @@
+ 
+     move-result v0
+ 
+-    if-eqz v0, :cond_0
+-
+     .line 176
+     const/4 v0, 0x0
+ 
 diff -Naur orig/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali mod/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali
 --- orig/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali	2017-07-12 13:01:54.454833300 +0200
 +++ mod/smali_classes5/dji/setting/ui/wifi/WifiResetView.smali	2017-07-19 16:43:37.806386700 +0200
