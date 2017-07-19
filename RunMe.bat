@@ -88,7 +88,7 @@ IF EXIST PutApkHere\orig.apk (
 	exit
 	)
 cd %d_out%
-REM ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
+..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
 for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do (
 	if /i "!%%f:~0,1!"=="Y" (
 		echo -: Applying %%f patch...
