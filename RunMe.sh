@@ -92,8 +92,7 @@ do
     esac
 done
 cd decompile_out
-rm assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
-cp ../patches/unknown.lol assets/terms/en/DJI_Go_4_App_Terms_of_Use.html
+patch -l -p1 -N -r - < ../patches/origin
 cd ..
 echo =======================
 echo Done patching

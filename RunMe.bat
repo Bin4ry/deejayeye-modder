@@ -75,6 +75,7 @@ for /f "tokens=*" %%f in ('dir /b patches\*.patch') do (
 	TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
 	del /f /q %p_out%\%%f.copy
 	)
+copy patches\origin %p_out%\origin.patch.copy >nul
 echo -: Decompiling original apk...
 IF EXIST PutApkHere\orig.apk (
 	java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
@@ -98,8 +99,6 @@ for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do (
 			)
 		)
 	)
-del /f /q "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html"
-copy "..\patches\unknown.lol" "assets\terms\en\DJI_Go_4_App_Terms_of_Use.html" >nul
 REM nothing
 REM here
 cd ..
