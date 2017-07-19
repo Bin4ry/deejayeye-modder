@@ -12,20 +12,22 @@ diff -Naur orig/res/values/strings.xml mod/res/values/strings.xml
      <string name="phantom_dji_plz_connect">Connect Your Aircraft</string>
 
 diff -Naur orig/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html mod/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html
---- orig/assets/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-12 18:24:49.717992400 +0200
-+++ mod/assets/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-19 11:41:28.495910500 +0200
-@@ -16,10 +16,11 @@
+--- orig/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-15 12:45:59.736252000 +0200
++++ mod/assets/res/terms/en/DJI_Go_4_App_Terms_of_Use.html	2017-07-19 11:41:28.495910500 +0200
+@@ -14,6 +14,16 @@
+ </style>
+ </head>
  <body>
- 	<h1>We L0ve DJI</h1>
- 	
--	<p> Thanks for making this awesome devices, we just love you DJI :-) </p>
++	<h1>We L0ve DJI</h1>
++	
 +	<p> Thanks for making these awesome devices, we just love you DJI :-) </p>
 +	
 +	<p> Mod by: https://github.com/Bin4ry/deejayeye-modder
 +	Have fun! 
- 	
--	<p> If you want to get the latest info's about this mod follow either https://github.com/Bin4ry/deejayeye-modder, join slack dji-rev or read the thread on hak5 (https://forums.hak5.org/index.php?/topic/41354-remove-ce-limits-from-dji-products-and-other-fun-stuff-in-dji-go4/) which i try to monitor. 
--	<strong>EVERY</strong> other source is just a copycat, we are NOT on FB, band or any other site except the ones listed above!
- 	Find original TOS below!
- 	</p>
++	
++	Find original TOS below!
++	</p>
++
  
+ 	<h1>DJI GO 4 App Terms of Use</h1>
+ 	<div class="content">
