@@ -25,8 +25,8 @@ echo.
 echo.-:=========================[ DeeJayEYE Patcher v%ver% ]==========================:-
 echo.    :Options:
 for /f "tokens=1,* delims=. " %%X in ('dir /b patches\*.patch') do (
-set "pC= [!pCounter!]"
-set "pC=!pC:~-4!"
+ set "pC= [!pCounter!]"
+ set "pC=!pC:~-4!"
  echo.  !pC! '!%%X!' %%X
  REM [!%newvar%_choice:~1,-1!] speshul
  set patch!pCounter!=%%X
