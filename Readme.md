@@ -1,19 +1,13 @@
-UPDATE: 
+# deeyayeye-modder
+
+![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
+
+
 
 This software is free to use, feel free to modify. 
 
 Only thing i ask for is to link this git as a start point of your own modifications.
 
-
-UPDATE: No more NFZ stuff here.
-
-Reasons: 
-
-1.) I don't want people flying in NFZ 
-
-2.) It did not work consistently
-
-If you want to fly in a RED NFZ AND are allowed to AND have problems with them activating your account to do so you should fallback to the firmware parameter change. This was never meant to help people fly in RED NFZ!
 
 Disclaimer:
 
@@ -52,3 +46,14 @@ https://apps.evozi.com/apk-downloader/
 6.) Get the apk, check above for link
 
 7.) RunMe.bat (as Administrator)
+
+
+UPDATE: No more NFZ stuff here.
+
+Reasons: 
+
+1.) I don't want people flying in NFZ 
+
+2.) It did not work consistently
+
+If you want to fly in a RED NFZ AND are allowed to AND have problems with them activating your account to do so you should fallback to the firmware parameter change. This was never meant to help people fly in RED NFZ!
