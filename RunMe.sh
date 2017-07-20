@@ -1,4 +1,23 @@
 #!/bin/bash
+command -v dialog >/dev/null 2>&1 || { echo "I require dialog but it's not installed.  Aborting." >&2; err=1; }
+command -v bspatch >/dev/null 2>&1 || { echo "I require bspatch but it's not installed.  Aborting." >&2; err=1; }
+command -v patch >/dev/null 2>&1 || { echo "I require patch but it's not installed.  Aborting." >&2; err=1; }
+if [ ! -f tools/apktool.jar ] 
+then
+echo "apktool.jar not found, run download_tools.sh!"
+err=1
+fi
+if [ ! -f tools/sign.jar ] 
+then
+echo "Sign.jar not found, run download_tools.sh!"
+err=1
+fi
+
+if [ $err == 1 ]
+then
+exit 1
+fi
+
 ver=`cat version.txt`
 mkdir out
 if [ -e out/lastbuild-cfg.txt ]
