@@ -30,3 +30,4 @@ enable Mavic Pro flight modes for Spark (thx djayeyeballs)
 
 enableSparkWifiChannelSelectOnOtg:
 brings back the Wifi channel selection screen!
+
