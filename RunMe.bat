@@ -2,9 +2,9 @@
 SETLOCAL ENABLEEXTENSIONS
 SETLOCAL ENABLEDELAYEDEXPANSION
 cd /d %~dp0
-set /p ver=<version.txt
+<nul set /p ver=<version.txt
 set title=%~n0
-TITLE %title%
+TITLE DeeJayEYE Patcher v%ver%
 for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
  set "newvar=%%F"
  set %newvar%_choice=,Yes,No,
@@ -21,30 +21,29 @@ for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
  set %newvar%_choice=,Yes,No,
  call:setPersist "!newvar!=No" )
 :menuLOOP
+cls
 echo.
-echo.-:=========================[ DeeJayEYE Patcher v%ver% ]==========================:-
-echo.    :Options:
+REM [!%newvar%_choice:~1,-1!] speshul
 for /f "tokens=1,* delims=. " %%X in ('dir /b patches\*.patch') do (
  set "pC= [!pCounter!]"
- set "pC=!pC:~-4!"
- echo.  !pC! '!%%X!' %%X
- REM [!%newvar%_choice:~1,-1!] speshul
+ set "pX=!%%X! "
+ set "stringy='%%X'                                              "
+ set "scan=  !pC:~-4! !pX:~0,3! !stringy:~0,52!"
+ if !pCounter! == 1 ( echo.!scan![P]atch apk
+  ) else if !pCounter! == 3 ( echo.!scan![R]eadme
+  ) else if !pCounter! == 4 ( echo.!scan![D]escriptions
+  ) else echo.!scan!
  set patch!pCounter!=%%X
  set /a pCounter=!pCounter!+1 )
 color 08
 call:sleep 1
 color 07
+set /a pCounter=22-!pCounter!
+FOR /l %%i in (1,1,!pCounter!) do echo.
 set pCounter=1
-echo.
-echo.    :Help:
-echo.   [R]eadme
-echo.   [D]escriptions
-echo.
-echo.    :Execute:
-echo.   [P]atch apk
 set choice=
-echo.&set /p choice=-: [ENTER] choices: ||( GOTO:EOF )
-cls
+echo.&set /p choice=-: [ENTER] choice: ||( GOTO:EOF )
+rem cls
 echo.%choice%| findstr /r "^[1-9][0-9]*$">nul
 if %errorlevel% equ 0 (	echo.&call:menu_PM
  ) else echo.&call:menu_%choice%
@@ -64,6 +63,8 @@ GOTO:EOF
 :menu_P - Start Patching
 md %a_out%
 md %p_out%
+cls
+echo.
 echo.-: Converting patches...
 rename "patches\origin" origin.patch
 for /f "tokens=*" %%f in ('dir /b patches\*.patch') do ( copy patches\%%f %p_out%\%%f.copy >nul
@@ -71,19 +72,19 @@ for /f "tokens=*" %%f in ('dir /b patches\*.patch') do ( copy patches\%%f %p_out
  del /f /q %p_out%\%%f.copy )
 rename "patches\origin.patch" origin
 echo.-: Decompiling original apk...
-IF EXIST PutApkHere\orig.apk ( java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
- ) ELSE (
- echo.-:
- echo.-: FATAL ERROR '\PutApkHere\orig.apk' NOT FOUND
- echo.-:
- pause
- exit )
+:chks
+call:chkinst "PutApkHere\orig.apk"
+call:chkinst "tools\apktool.jar"
+call:chkinst "tools\bspatch.exe"
+call:chkinst "tools\patch.exe"
+call:chkinst "tools\sign.jar"
+java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
 cd %d_out%
 ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
 for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!%%f:~0,1!"=="Y" ( echo.-: Applying %%f patch...
   ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\%%f.patch
   if "%%f"=="removeOnlinefunction" ( echo.-: Supporting with so.bspatch...
-   ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch
+   ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch"
    del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
    rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
    )
@@ -104,13 +105,22 @@ rd /S /Q %p_out%
 echo.-: Have fun and stay safe
 pause
 exit
-GOTO:EOF
 ::-----------------------------------------------------------
 :: helpers here
 ::-----------------------------------------------------------
 :sleep -– waits some seconds before returning
 ::     -- %~1 – in, number of seconds to wait
 FOR /l %%a in (%~1,-1,1) do (ping -n 2 -w 1 127.0.0.1>NUL)
+GOTO:EOF
+:chkinst
+::                 -- %~1: the tool, whodathunkit
+if exist %~1 ( call
+ ) else (
+ echo.-: Could not find '%~1'...
+ echo.-: Press any key to resume...
+ pause >nul
+ GOTO:chks
+ )
 GOTO:EOF
 :setPersist -- to be called to initialize persistent variables
 ::          -- %*: set command arguments
