@@ -53,11 +53,15 @@ call:getNextInList !patch%choice%! "!%newvar%_choice!"
 cls
 GOTO:EOF
 :menu_R - View readme
+cls
 more Readme.md
+pause
 cls
 GOTO:EOF
 :menu_D - View patch descriptions
+cls
 more Patch-Descriptions.txt
+pause
 cls
 GOTO:EOF
 :menu_P - Start Patching
