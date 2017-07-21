@@ -31,8 +31,15 @@ fi
 echo "Version: $ver" >> out/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
-echo Please put the original file into the "PutApkHere" folder and name it orig.apk
+while true; do
+if [ -e PutApkHere/orig.apk ]
+then
+break
+else
+echo Original App not found! Please put the original file into the "PutApkHere" folder and name it orig.apk
 read -p "Press any key to continue... "
+fi
+done 
 echo Decompiling original apk
 java -jar tools/apktool.jar d -o decompile_out PutApkHere/orig.apk
 echo done
