@@ -16,12 +16,10 @@ rd /S /Q %p_out% >nul 2>&1
 rd /S /Q %d_out% >nul 2>&1
 rd /S /Q %a_out% >nul 2>&1
 set pCounter=1
-set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
  set "newvar=%%F"
  set %newvar%_choice=,Yes,No,
  call:setPersist "!newvar!=No" )
-call:restorePersistentVars "%FilePersist%"
 :menuLOOP
 cls
 echo.
@@ -55,13 +53,11 @@ call:getNextInList !patch%choice%! "!%newvar%_choice!"
 cls
 GOTO:EOF
 :menu_R - View readme
-cls
 more Readme.md
 pause
 cls
 GOTO:EOF
 :menu_D - View patch descriptions
-cls
 more Patch-Descriptions.txt
 pause
 cls
@@ -97,6 +93,15 @@ for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!
   )
  )
 REM nothing
+echo -: Modifying NFZ...
+del /f /q "assets\flysafe\flysafe_areas_djigo.db"
+del /f /q "assets\flysafe\flysafe_polygon_1860.db"
+del /f /q "assets\flysafe\flyforbid_airmap\*.json"
+del /f /q "res\raw\flyforbid.json"
+copy "..\patches\nfz\flyforbid.json" "res\raw\flyforbid.json"
+copy "..\patches\nfz\flyforbid_airmap\*.json" "assets\flysafe\flyforbid_airmap\"
+copy "..\patches\nfz\flysafe_areas_djigo.db" "assets\flysafe\flysafe_areas_djigo.db"
+copy "..\patches\nfz\flysafe_polygon_1860.db" "assets\flysafe\flysafe_polygon_1860.db"
 REM here
 cd ..
 echo.-: Rebuilding apk...
@@ -114,8 +119,8 @@ exit
 ::-----------------------------------------------------------
 :: helpers here
 ::-----------------------------------------------------------
-:sleep -– waits some seconds before returning
-::     -- %~1 – in, number of seconds to wait
+:sleep -â€“ waits some seconds before returning
+::     -- %~1 â€“ in, number of seconds to wait
 FOR /l %%a in (%~1,-1,1) do (ping -n 2 -w 1 127.0.0.1>NUL)
 GOTO:EOF
 :chkinst
@@ -128,18 +133,7 @@ if exist %~1 ( call
  GOTO:chks
  )
 GOTO:EOF
-:savePersistentVars -- Save values of persistent variables into a file
-::                  -- %~1: file name
-SETLOCAL
-echo.>"%~1"
-call :getPersistentVars persvars
-echo %persvars%
-for %%a in (%persvars%) do (echo.SET %%a=!%%a!>>"%~1")
-GOTO:EOF
-:restorePersistentVars -- Restore the values of the persistent variables
-::                     -- %~1: batch file name to restore from
-if exist "%FilePersist%" call "%FilePersist%"
-GOTO:EOF:setPersist -- to be called to initialize persistent variables
+:setPersist -- to be called to initialize persistent variables
 ::          -- %*: set command arguments
 set %*
 GOTO:EOF
