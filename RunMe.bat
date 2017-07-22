@@ -5,10 +5,6 @@ cd /d %~dp0
 <nul set /p ver=<version.txt
 set title=%~n0
 TITLE DeeJayEYE Patcher v%ver%
-for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
- set "newvar=%%F"
- set %newvar%_choice=,Yes,No,
- call:setPersist "!newvar!=Yes" )
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
@@ -16,10 +12,12 @@ rd /S /Q %p_out% >nul 2>&1
 rd /S /Q %d_out% >nul 2>&1
 rd /S /Q %a_out% >nul 2>&1
 set pCounter=1
+set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
  set "newvar=%%F"
- set %newvar%_choice=,Yes,No,
+ set !newvar!_choice=,Yes,No,
  call:setPersist "!newvar!=No" )
+call:restorePersistentVars "%FilePersist%"
 :menuLOOP
 cls
 echo.
@@ -42,8 +40,10 @@ set /a pCounter=22-!pCounter!
 FOR /l %%i in (1,1,!pCounter!) do echo.
 set pCounter=1
 set choice=
-echo.&set /p choice=-: [ENTER] choice: ||( GOTO:EOF )
-rem cls
+echo.&set /p choice=-: [ENTER] choice: ||(
+ REM call:savePersistentVars "%FilePersist%"&   rem --save the persistent variables to the storage
+ GOTO:EOF
+ )
 echo.%choice%| findstr /r "^[1-9][0-9]*$">nul
 if %errorlevel% equ 0 (	echo.&call:menu_PM
  ) else echo.&call:menu_%choice%
@@ -53,14 +53,14 @@ call:getNextInList !patch%choice%! "!%newvar%_choice!"
 cls
 GOTO:EOF
 :menu_R - View readme
+cls
 more Readme.md
 pause
-cls
 GOTO:EOF
 :menu_D - View patch descriptions
+cls
 more Patch-Descriptions.txt
 pause
-cls
 GOTO:EOF
 :menu_P - Start Patching
 md %a_out%
@@ -93,15 +93,6 @@ for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!
   )
  )
 REM nothing
-echo -: Modifying NFZ...
-del /f /q "assets\flysafe\flysafe_areas_djigo.db"
-del /f /q "assets\flysafe\flysafe_polygon_1860.db"
-del /f /q "assets\flysafe\flyforbid_airmap\*.json"
-del /f /q "res\raw\flyforbid.json"
-copy "..\patches\nfz\flyforbid.json" "res\raw\flyforbid.json"
-copy "..\patches\nfz\flyforbid_airmap\*.json" "assets\flysafe\flyforbid_airmap\"
-copy "..\patches\nfz\flysafe_areas_djigo.db" "assets\flysafe\flysafe_areas_djigo.db"
-copy "..\patches\nfz\flysafe_polygon_1860.db" "assets\flysafe\flysafe_polygon_1860.db"
 REM here
 cd ..
 echo.-: Rebuilding apk...
@@ -138,7 +129,7 @@ GOTO:EOF
 set %*
 GOTO:EOF
 :getPersistentVars -- returns a comma separated list of persistent variables
-::                 -- %~1: reference to return variable 
+::                 -- %~1: reference to return variable
 SETLOCAL
 set retlist=
 set parse=findstr /i /c:"call:setPersist" "%~f0%"^|find /v "ButNotThisLine"
@@ -146,6 +137,17 @@ for /f "tokens=2 delims== " %%a in ('"%parse%"') do (set retlist=!retlist!%%a,)
 ( ENDLOCAL & REM RETURN VALUES
     IF "%~1" NEQ "" SET %~1=%retlist%
 )
+GOTO:EOF
+:savePersistentVars -- Save values of persistent variables into a file
+::                  -- %~1: file name
+SETLOCAL
+echo.>"%~1"
+call :getPersistentVars persvars
+for %%a in (%persvars%) do (echo.SET %%a=!%%a!>>"%~1")
+GOTO:EOF
+:restorePersistentVars -- Restore the values of the persistent variables
+::                     -- %~1: batch file name to restore from
+if exist "%FilePersist%" call "%FilePersist%"
 GOTO:EOF
 :getNextInList -- return next value in list
 ::             -- %~1 - in/out ref to current value, returns new value
