@@ -10,6 +10,7 @@
 
 # Declare files that will always have CRLF line endings on checkout.
 *.bat text eol=crlf
+*.sh eol=LF
 
 # Denote all files that are truly binary and should not be modified.
 *.sopatch binary
