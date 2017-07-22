@@ -25,7 +25,7 @@ Also i will not include any apk to this git! You have to do everything yourself,
 
    b) Download sign.jar from https://github.com/appium/sign/raw/master/dist/sign.jar and put it in tools folder
 
-3. Get the apk to modify (ver. **4.1.3**), i suggest downloading from google play, to do so install this chrome extension: https://apps.evozi.com/apk-downloader/
+3. Get the apk to modify (ver. **4.1.3**), i suggest downloading from google play, to do so install this from http://www.apkmirror.com/ or if you don't trust anyone use this chrome extension (needs MANUAL install into chrome and cannot be found in the chrome-store): https://apps.evozi.com/apk-downloader/
 
 4. RunMe.sh
 
