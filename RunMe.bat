@@ -21,7 +21,7 @@ call:restorePersistentVars "%FilePersist%"
 :menuLOOP
 cls
 echo.
-REM [!%newvar%_choice:~1,-1!] speshul
+REM [!%newvar%_choice:~1,-1!] vewy speshul
 for /f "tokens=1,* delims=. " %%X in ('dir /b patches\*.patch') do (
  set "pC= [!pCounter!]"
  set "pX=!%%X! "
