@@ -16,10 +16,12 @@ rd /S /Q %p_out% >nul 2>&1
 rd /S /Q %d_out% >nul 2>&1
 rd /S /Q %a_out% >nul 2>&1
 set pCounter=1
+set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
  set "newvar=%%F"
  set %newvar%_choice=,Yes,No,
  call:setPersist "!newvar!=No" )
+call:restorePersistentVars "%FilePersist%"
 :menuLOOP
 cls
 echo.
@@ -126,7 +128,18 @@ if exist %~1 ( call
  GOTO:chks
  )
 GOTO:EOF
-:setPersist -- to be called to initialize persistent variables
+:savePersistentVars -- Save values of persistent variables into a file
+::                  -- %~1: file name
+SETLOCAL
+echo.>"%~1"
+call :getPersistentVars persvars
+echo %persvars%
+for %%a in (%persvars%) do (echo.SET %%a=!%%a!>>"%~1")
+GOTO:EOF
+:restorePersistentVars -- Restore the values of the persistent variables
+::                     -- %~1: batch file name to restore from
+if exist "%FilePersist%" call "%FilePersist%"
+GOTO:EOF:setPersist -- to be called to initialize persistent variables
 ::          -- %*: set command arguments
 set %*
 GOTO:EOF
