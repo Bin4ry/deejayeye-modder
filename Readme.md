@@ -25,7 +25,7 @@ Also i will not include any apk to this git! You have to do everything yourself,
 
    b) Download sign.jar from https://github.com/appium/sign/raw/master/dist/sign.jar and put it in tools folder
 
-3. Get the apk to modify, i suggest downloading from google play, to do so install this chrome extension: https://apps.evozi.com/apk-downloader/
+3. Get the apk to modify (ver. **4.1.3**), i suggest downloading from google play, to do so install this chrome extension: https://apps.evozi.com/apk-downloader/
 
 4. RunMe.sh
 
@@ -37,7 +37,7 @@ Also i will not include any apk to this git! You have to do everything yourself,
 3. Please install gnuwin32 and copy 'patch.exe' into 'tools' folder, you can get it here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
 4. Please copy 'bspatch.exe' into 'tools' folder, you can get it here: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
 5. You may need to install Java Development Kit, you can get it here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-6. Get the apk, check above for link
+6. Get the apk (ver. **4.1.3**), check above for link
 7. RunMe.bat (as Administrator)
 
 
