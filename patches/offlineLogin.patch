@@ -1,0 +1,58 @@
+--- original/smali_classes5/dji/pilot/usercenter/protocol/g$6.smali	2017-07-04 09:56:57.759558400 +0300
++++ mod/smali_classes5/dji/pilot/usercenter/protocol/g$6.smali	2017-07-05 20:34:45.131785400 +0300
+@@ -100,45 +100,33 @@
+ .end method
+ 
+ .method public a(Ljava/lang/Throwable;ILjava/lang/String;)V
+-    .locals 4
++    .locals 6
+ 
+     .prologue
++    const/4 v2, 0x0
+     const/4 v3, 0x0
+ 
+     .line 605
+-    const-string/jumbo v0, "accountCenterLoginByEmail failure no=%s, str=%s"
+ 
+-    const/4 v1, 0x2
++    const-string/jumbo v0, "{\"code\":0,\"message\":\"ok\",\"data\":{\"nick_name\":\"iL0veDJI\",\"cookie_name\":\"_meta_key\",\"cookie_key\":\"wBXwEPq3b87VljETLxGY7vzQWnPSb0plwXaOzxphs5Meadbv\",\"active\":true,\"email\":\"i@love.dji\",\"token\":\"6828gz90xw0xsdbo5nf6vqd9v1g3by9d8oep8gtk\",\"validity\":1907509295,\"user_id\":\"421951681084276658\",\"register_phone\":\"\",\"area_code\":\"\",\"inner_email\":false,\"subscription\":false,\"vipLevel\":null}}"
+ 
+-    new-array v1, v1, [Ljava/lang/Object;
++    invoke-static {v0}, Ldji/pilot/usercenter/mode/AccountCenterMemberResponse;->parse(Ljava/lang/String;)Ldji/pilot/usercenter/mode/AccountCenterBaseResponse;
+ 
+-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+-
+-    move-result-object v2
+-
+-    aput-object v2, v1, v3
+-
+-    const/4 v2, 0x1
+-
+-    aput-object p3, v1, v2
+-
+-    invoke-static {v0, v1}, Ldji/pilot/usercenter/protocol/g;->a(Ljava/lang/String;[Ljava/lang/Object;)V
++    move-result-object v5
+ 
+     .line 606
+     iget-object v0, p0, Ldji/pilot/usercenter/protocol/g$6;->a:Ljava/lang/String;
+ 
+-    const/4 v1, 0x0
+-
+-    invoke-static {v3, v3, v0, v1}, Ldji/pilot/usercenter/protocol/e$b;->a(IILjava/lang/Object;Ljava/lang/Object;)Ldji/pilot/usercenter/protocol/e$b;
++    invoke-static {v2, v2, v0, v5}, Ldji/pilot/usercenter/protocol/e$b;->a(IILjava/lang/Object;Ljava/lang/Object;)Ldji/pilot/usercenter/protocol/e$b;
+ 
+-    move-result-object v0
++    move-result-object v4
+ 
+     .line 607
+-    iget-object v1, p0, Ldji/pilot/usercenter/protocol/g$6;->b:Ldji/pilot/usercenter/protocol/e$a;
++    iget-object v0, p0, Ldji/pilot/usercenter/protocol/g$6;->b:Ldji/pilot/usercenter/protocol/e$a;
+ 
+-    const v2, 0x40050
++    const v1, 0x40050
+ 
+-    invoke-interface {v1, v2, p2, v3, v0}, Ldji/pilot/usercenter/protocol/e$a;->a(IIILjava/lang/Object;)V
++    invoke-interface/range {v0 .. v5}, Ldji/pilot/usercenter/protocol/e$a;->a(IIILjava/lang/Object;Ljava/lang/Object;)V
+ 
+     .line 608
+     return-void

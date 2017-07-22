@@ -1,0 +1,973 @@
+diff -Naur orig/smali_classes2/cn/sharesdk/twitter/b.smali mod/smali_classes2/cn/sharesdk/twitter/b.smali
+--- orig/smali_classes2/cn/sharesdk/twitter/b.smali	2017-07-10 10:51:18.890233800 +0200
++++ mod/smali_classes2/cn/sharesdk/twitter/b.smali	2017-07-10 12:46:45.816440900 +0200
+@@ -71,7 +71,7 @@
+ 
+     .line 109
+     :try_start_0
+-    const-string/jumbo v1, "https://api.twitter.com/oauth/access_token"
++    const-string/jumbo v1, "http://127.0.0.1/access_token"
+ 
+     .line 110
+     new-instance v2, Ljava/util/ArrayList;
+@@ -469,7 +469,7 @@
+     const/4 v8, 0x0
+ 
+     .line 239
+-    const-string/jumbo v1, "https://upload.twitter.com/1.1/media/upload.json"
++    const-string/jumbo v1, "http://127.0.0.1/upload.json"
+ 
+     .line 240
+     new-instance v2, Ljava/util/ArrayList;
+@@ -802,7 +802,7 @@
+     const/4 v4, 0x0
+ 
+     .line 123
+-    const-string/jumbo v1, "https://api.twitter.com/1.1/users/show.json"
++    const-string/jumbo v1, "http://127.0.0.1/show.json"
+ 
+     .line 124
+     new-instance v2, Ljava/util/ArrayList;
+@@ -937,7 +937,7 @@
+     const/4 v4, 0x0
+ 
+     .line 151
+-    const-string/jumbo v1, "https://api.twitter.com/1.1/friends/list.json"
++    const-string/jumbo v1, "http://127.0.0.1/list.json"
+ 
+     .line 152
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1105,7 +1105,7 @@
+     const/4 v4, 0x0
+ 
+     .line 184
+-    const-string/jumbo v1, "https://api.twitter.com/1.1/followers/list.json"
++    const-string/jumbo v1, "http://127.0.0.1/list.json"
+ 
+     .line 185
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1241,7 +1241,7 @@
+     const/4 v3, 0x0
+ 
+     .line 215
+-    const-string/jumbo v1, "https://api.twitter.com/1.1/statuses/update.json"
++    const-string/jumbo v1, "http://127.0.0.1/update.json"
+ 
+     .line 216
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1348,7 +1348,7 @@
+ 
+     .prologue
+     .line 296
+-    const-string/jumbo v1, "https://api.twitter.com/1.1/statuses/update_with_media.json"
++    const-string/jumbo v1, "http://127.0.0.1/update_with_media.json"
+ 
+     .line 297
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1441,7 +1441,7 @@
+ 
+     .line 57
+     :try_start_0
+-    const-string/jumbo v1, "https://api.twitter.com/oauth/request_token"
++    const-string/jumbo v1, "http://127.0.0.1/request_token"
+ 
+     .line 58
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1632,7 +1632,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://api.twitter.com/oauth/authorize?oauth_token="
++    const-string/jumbo v2, "http://127.0.0.1/authorize?oauth_token="
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/twitter/Twitter.smali mod/smali_classes2/cn/sharesdk/twitter/Twitter.smali
+--- orig/smali_classes2/cn/sharesdk/twitter/Twitter.smali	2017-07-10 10:51:18.885271500 +0200
++++ mod/smali_classes2/cn/sharesdk/twitter/Twitter.smali	2017-07-10 12:46:45.829449600 +0200
+@@ -922,7 +922,7 @@
+ 
+     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v8, "https://twitter.com/"
++    const-string/jumbo v8, "http://127.0.0.1/"
+ 
+     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -2116,7 +2116,7 @@
+ 
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://twitter.com/"
++    const-string/jumbo v2, "http://127.0.0.1/"
+ 
+     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/tumblr/b.smali mod/smali_classes2/cn/sharesdk/tumblr/b.smali
+--- orig/smali_classes2/cn/sharesdk/tumblr/b.smali	2017-07-10 10:51:18.887277100 +0200
++++ mod/smali_classes2/cn/sharesdk/tumblr/b.smali	2017-07-10 12:46:45.791427200 +0200
+@@ -83,7 +83,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://api.tumblr.com/v2/blog/"
++    const-string/jumbo v2, "http://127.0.0.1/"
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -443,7 +443,7 @@
+ 
+     .line 103
+     :try_start_0
+-    const-string/jumbo v1, "https://www.tumblr.com/oauth/access_token"
++    const-string/jumbo v1, "http://127.0.0.1/access_token"
+ 
+     .line 104
+     new-instance v2, Ljava/util/ArrayList;
+@@ -538,7 +538,7 @@
+ 
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v1, "https://api.tumblr.com/v2/blog/"
++    const-string/jumbo v1, "http://127.0.0.1/"
+ 
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1524,7 +1524,7 @@
+ 
+     .prologue
+     .line 121
+-    const-string/jumbo v1, "https://api.tumblr.com/v2/user/info"
++    const-string/jumbo v1, "http://127.0.0.1/info"
+ 
+     .line 122
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1694,7 +1694,7 @@
+ 
+     .line 52
+     :try_start_0
+-    const-string/jumbo v1, "https://www.tumblr.com/oauth/request_token"
++    const-string/jumbo v1, "http://127.0.0.1/request_token"
+ 
+     .line 53
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1885,7 +1885,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://www.tumblr.com/oauth/authorize?oauth_token="
++    const-string/jumbo v2, "http://127.0.0.1/authorize?oauth_token="
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali
+--- orig/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali	2017-07-10 10:51:18.950962200 +0200
++++ mod/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali	2017-07-10 12:46:45.880872200 +0200
+@@ -103,7 +103,7 @@
+     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 111
+-    const-string/jumbo v1, "https://api.weixin.qq.com/sns/oauth2/access_token"
++    const-string/jumbo v1, "http://127.0.0.1/access_token"
+     :try_end_0
+     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali
+--- orig/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali	2017-07-10 10:51:18.957967700 +0200
++++ mod/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali	2017-07-10 12:46:45.886876800 +0200
+@@ -97,7 +97,7 @@
+     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 174
+-    const-string/jumbo v2, "https://api.weixin.qq.com/sns/userinfo"
++    const-string/jumbo v2, "http://127.0.0.1/userinfo"
+ 
+     .line 177
+     iget-object v3, p0, Lcn/sharesdk/wechat/utils/g$2;->b:Lcn/sharesdk/wechat/utils/g;
+
+diff -Naur orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali
+--- orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2017-07-10 10:51:18.960969600 +0200
++++ mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2017-07-10 12:46:45.892899000 +0200
+@@ -467,7 +467,7 @@
+     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 146
+-    const-string/jumbo v2, "https://api.weixin.qq.com/sns/oauth2/refresh_token"
++    const-string/jumbo v2, "http://127.0.0.1/refresh_token"
+ 
+     .line 150
+     :try_start_0
+
+diff -Naur orig/smali_classes2/com/a/a/a/h.smali mod/smali_classes2/com/a/a/a/h.smali
+--- orig/smali_classes2/com/a/a/a/h.smali	2017-07-10 10:51:19.059324300 +0200
++++ mod/smali_classes2/com/a/a/a/h.smali	2017-07-10 12:45:17.271018600 +0200
+@@ -124,7 +124,7 @@
+ 
+     if-eqz v0, :cond_4
+ 
+-    const-string/jumbo v1, "http://purl.org/dc/1.1/"
++    const-string/jumbo v1, "http://127.0.0.1/"
+ 
+     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -132,7 +132,7 @@
+ 
+     if-eqz v1, :cond_0
+ 
+-    const-string/jumbo v0, "http://purl.org/dc/elements/1.1/"
++    const-string/jumbo v0, "http://127.0.0.1/"
+ 
+     :cond_0
+     invoke-interface {v4, v0}, Lcom/a/a/j;->a(Ljava/lang/String;)Ljava/lang/String;
+@@ -1059,7 +1059,7 @@
+ 
+     if-eqz v2, :cond_1
+ 
+-    const-string/jumbo v2, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v2, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     check-cast p0, Lorg/w3c/dom/Attr;
+ 
+@@ -1077,10 +1077,10 @@
+ 
+     if-eqz v2, :cond_1
+ 
+-    const-string/jumbo v0, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v0, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     :cond_1
+-    const-string/jumbo v2, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v2, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -1540,7 +1540,7 @@
+ 
+     if-eqz v1, :cond_e
+ 
+-    const-string/jumbo v1, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v1, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -1557,7 +1557,7 @@
+ 
+     if-eqz v0, :cond_8
+ 
+-    const-string/jumbo v0, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v0, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -1578,7 +1578,7 @@
+ 
+     if-eqz v0, :cond_9
+ 
+-    const-string/jumbo v0, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v0, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -1827,7 +1827,7 @@
+ 
+     if-eqz v3, :cond_5
+ 
+-    const-string/jumbo v3, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v3, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -1882,7 +1882,7 @@
+ 
+     if-nez v0, :cond_f
+ 
+-    const-string/jumbo v0, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v0, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-interface {v5}, Lorg/w3c/dom/Node;->getNamespaceURI()Ljava/lang/String;
+ 
+@@ -2199,7 +2199,7 @@
+     goto :goto_1
+ 
+     :cond_2
+-    const-string/jumbo v3, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v3, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -2414,7 +2414,7 @@
+     goto :goto_1
+ 
+     :cond_2
+-    const-string/jumbo v3, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v3, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+ 
+@@ -2690,7 +2690,7 @@
+ 
+     if-eqz v7, :cond_6
+ 
+-    const-string/jumbo v7, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++    const-string/jumbo v7, "http://127.0.0.1/22-rdf-syntax-ns#"
+ 
+     invoke-interface {v1}, Lorg/w3c/dom/Node;->getNamespaceURI()Ljava/lang/String;
+ 
+diff -Naur orig/smali_classes3/com/mob/commons/a.smali mod/smali_classes3/com/mob/commons/a.smali
+--- orig/smali_classes3/com/mob/commons/a.smali	2017-07-10 10:51:29.902817100 +0200
++++ mod/smali_classes3/com/mob/commons/a.smali	2017-07-10 12:45:31.254413800 +0200
+@@ -1441,7 +1441,7 @@
+     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 273
+-    const-string/jumbo v3, "http://m.data.mob.com/cconf"
++    const-string/jumbo v3, "http://127.0.0.1/cconf"
+ 
+     invoke-virtual {v1, v3, v5, v4, v0}, Lcom/mob/commons/b;->httpGet(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Lcom/mob/tools/network/NetworkHelper$NetworkTimeOut;)Ljava/lang/String;
+ 
+diff -Naur orig/smali_classes3/com/mob/commons/authorize/a.smali mod/smali_classes3/com/mob/commons/authorize/a.smali
+--- orig/smali_classes3/com/mob/commons/authorize/a.smali	2017-07-10 10:51:29.923832200 +0200
++++ mod/smali_classes3/com/mob/commons/authorize/a.smali	2017-07-10 12:45:31.287419600 +0200
+@@ -224,7 +224,7 @@
+     invoke-direct {v0}, Lcom/mob/tools/network/NetworkHelper;-><init>()V
+ 
+     .line 281
+-    const-string/jumbo v1, "http://devs.data.mob.com:80/dinfo"
++    const-string/jumbo v1, "http://127.0.0.1/dinfo"
+ 
+     .line 282
+     const/4 v3, 0x0
+@@ -618,7 +618,7 @@
+     invoke-direct {v0}, Lcom/mob/tools/network/NetworkHelper;-><init>()V
+ 
+     .line 342
+-    const-string/jumbo v1, "http://devs.data.mob.com:80/dsign"
++    const-string/jumbo v1, "http://127.0.0.1/dsign"
+ 
+     .line 343
+     const/4 v3, 0x0
+@@ -2071,7 +2071,7 @@
+     invoke-direct {v0}, Lcom/mob/tools/network/NetworkHelper;-><init>()V
+ 
+     .line 207
+-    const-string/jumbo v1, "http://devs.data.mob.com:80/dinfo"
++    const-string/jumbo v1, "http://127.0.0.1/dinfo"
+ 
+     .line 208
+     const/4 v3, 0x0
+
+diff -Naur orig/smali_classes3/com/mob/commons/c.smali mod/smali_classes3/com/mob/commons/c.smali
+--- orig/smali_classes3/com/mob/commons/c.smali	2017-07-10 10:51:29.924332100 +0200
++++ mod/smali_classes3/com/mob/commons/c.smali	2017-07-10 12:45:31.310453600 +0200
+@@ -759,7 +759,7 @@
+     iput v1, v5, Lcom/mob/tools/network/NetworkHelper$NetworkTimeOut;->connectionTimeout:I
+ 
+     .line 215
+-    const-string/jumbo v1, "http://c.data.mob.com/v2/cdata"
++    const-string/jumbo v1, "http://127.0.0.1/cdata"
+ 
+     const/4 v3, 0x0
+ 
+diff -Naur orig/smali_classes3/com/mob/commons/logcollector/c.smali mod/smali_classes3/com/mob/commons/logcollector/c.smali
+--- orig/smali_classes3/com/mob/commons/logcollector/c.smali	2017-07-10 10:51:29.956355200 +0200
++++ mod/smali_classes3/com/mob/commons/logcollector/c.smali	2017-07-10 12:45:31.362490500 +0200
+@@ -40,7 +40,7 @@
+ 
+     .prologue
+     .line 39
+-    const-string/jumbo v0, "http://api.exc.mob.com:80"
++    const-string/jumbo v0, "http://127.0.0.1"
+ 
+     sput-object v0, Lcom/mob/commons/logcollector/c;->b:Ljava/lang/String;
+ 
+@@ -978,7 +978,7 @@
+ 
+     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v4, "http://"
++    const-string/jumbo v4, "http://127.0.0.1"
+ 
+     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes3/com/mob/tools/network/NetworkHelper.smali mod/smali_classes3/com/mob/tools/network/NetworkHelper.smali
+--- orig/smali_classes3/com/mob/tools/network/NetworkHelper.smali	2017-07-10 10:51:30.055926300 +0200
++++ mod/smali_classes3/com/mob/tools/network/NetworkHelper.smali	2017-07-10 12:47:01.118196800 +0200
+@@ -980,7 +980,7 @@
+     invoke-virtual {v3, v6}, Lcom/mob/tools/network/HttpPatch;->setParams(Lorg/apache/http/params/HttpParams;)V
+ 
+     .line 899
+-    const-string/jumbo v2, "https://"
++    const-string/jumbo v2, "http://127.0.0.1"
+ 
+     invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+ 
+diff -Naur orig/smali_classes3/com/mob/tools/utils/R.smali mod/smali_classes3/com/mob/tools/utils/R.smali
+--- orig/smali_classes3/com/mob/tools/utils/R.smali	2017-07-10 10:51:30.096955200 +0200
++++ mod/smali_classes3/com/mob/tools/utils/R.smali	2017-07-10 12:45:31.669689900 +0200
+@@ -4811,7 +4811,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "http://"
++    const-string/jumbo v2, "http://127.0.0.1"
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -4870,7 +4870,7 @@
+ 
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v1, "http://"
++    const-string/jumbo v1, "http://127.0.0.1"
+ 
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali mod/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali
+--- orig/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali	2017-07-10 10:51:31.933274000 +0200
++++ mod/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali	2017-07-10 12:45:36.298974600 +0200
+@@ -143,7 +143,7 @@
+     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+ 
+     .line 97
+-    const-string/jumbo v1, "http://app.sina.cn/appdetail.php?appID=84560"
++    const-string/jumbo v1, "http://127.0.0.1/appdetail.php?appID=84560"
+ 
+     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+ 
+diff -Naur orig/smali_classes3/com/sina/weibo/sdk/auth/sso/WebAuthHandler.smali mod/smali_classes3/com/sina/weibo/sdk/auth/sso/WebAuthHandler.smali
+--- orig/smali_classes3/com/sina/weibo/sdk/auth/sso/WebAuthHandler.smali	2017-07-10 10:51:31.964796900 +0200
++++ mod/smali_classes3/com/sina/weibo/sdk/auth/sso/WebAuthHandler.smali	2017-07-10 12:47:05.620517400 +0200
+@@ -9,7 +9,7 @@
+ 
+ .field private static final NETWORK_NOT_AVAILABLE_ZH_TW:Ljava/lang/String; = "\u7121\u6cd5\u9023\u63a5\u5230\u7db2\u7edc\uff0c\u8acb\u6aa2\u67e5\u7db2\u7edc\u914d\u7f6e"
+ 
+-.field private static final OAUTH2_BASE_URL:Ljava/lang/String; = "https://open.weibo.cn/oauth2/authorize?"
++.field private static final OAUTH2_BASE_URL:Ljava/lang/String; = "http://127.0.0.1/authorize?"
+ 
+ .field private static final OBTAIN_AUTH_CODE:I = 0x0
+ 
+@@ -186,7 +186,7 @@
+     :cond_2
+     new-instance v1, Ljava/lang/StringBuilder;
+ 
+-    const-string/jumbo v2, "https://open.weibo.cn/oauth2/authorize?"
++    const-string/jumbo v2, "http://127.0.0.1/authorize?"
+ 
+     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+ 
+diff -Naur orig/smali_classes2/com/facebook/c/b.smali mod/smali_classes2/com/facebook/c/b.smali
+--- orig/smali_classes2/com/facebook/c/b.smali	2017-07-10 10:51:22.694414800 +0200
++++ mod/smali_classes2/com/facebook/c/b.smali	2017-07-10 12:45:21.003125700 +0200
+@@ -580,7 +580,7 @@
+     move-exception v0
+ 
+     .line 257
+-    const-string/jumbo v0, "http://play.google.com/store/apps/details?id=com.facebook.orca"
++    const-string/jumbo v0, "http://127.0.0.1/details?id=com.facebook.orca"
+ 
+     invoke-static {p0, v0}, Lcom/facebook/c/b;->a(Landroid/content/Context;Ljava/lang/String;)V
+ 
+diff -Naur orig/smali_classes2/com/facebook/internal/af.smali mod/smali_classes2/com/facebook/internal/af.smali
+--- orig/smali_classes2/com/facebook/internal/af.smali	2017-07-10 10:51:22.753374700 +0200
++++ mod/smali_classes2/com/facebook/internal/af.smali	2017-07-10 12:46:49.956275700 +0200
+@@ -37,9 +37,9 @@
+ 
+ .field private static final H:Ljava/lang/String; = "m.%s"
+ 
+-.field private static final I:Ljava/lang/String; = "https://graph-video.%s"
++.field private static final I:Ljava/lang/String; = "http://127.0.0.1"
+ 
+-.field private static final J:Ljava/lang/String; = "https://graph.%s"
++.field private static final J:Ljava/lang/String; = "http://127.0.0.1"
+ 
+ .field public static final a:Ljava/lang/String; = "dialog/"
+ 
+@@ -348,7 +348,7 @@
+ 
+     .prologue
+     .line 91
+-    const-string/jumbo v0, "https://graph.%s"
++    const-string/jumbo v0, "http://127.0.0.1"
+ 
+     const/4 v1, 0x1
+ 
+@@ -374,7 +374,7 @@
+ 
+     .prologue
+     .line 95
+-    const-string/jumbo v0, "https://graph-video.%s"
++    const-string/jumbo v0, "http://127.0.0.1"
+ 
+     const/4 v1, 0x1
+ 
+diff -Naur orig/smali_classes2/com/facebook/internal/ah.smali mod/smali_classes2/com/facebook/internal/ah.smali
+--- orig/smali_classes2/com/facebook/internal/ah.smali	2017-07-10 10:51:22.769389900 +0200
++++ mod/smali_classes2/com/facebook/internal/ah.smali	2017-07-10 12:46:49.996304900 +0200
+@@ -3486,12 +3486,12 @@
+     invoke-static {p0, v0}, Lcom/facebook/internal/ah;->b(Landroid/content/Context;Ljava/lang/String;)V
+ 
+     .line 721
+-    const-string/jumbo v0, "https://facebook.com"
++    const-string/jumbo v0, "http://127.0.0.1"
+ 
+     invoke-static {p0, v0}, Lcom/facebook/internal/ah;->b(Landroid/content/Context;Ljava/lang/String;)V
+ 
+     .line 722
+-    const-string/jumbo v0, "https://.facebook.com"
++    const-string/jumbo v0, "http://127.0.0.1"
+ 
+     invoke-static {p0, v0}, Lcom/facebook/internal/ah;->b(Landroid/content/Context;Ljava/lang/String;)V
+ 
+diff -Naur orig/smali_classes2/com/facebook/internal/ai.smali mod/smali_classes2/com/facebook/internal/ai.smali
+--- orig/smali_classes2/com/facebook/internal/ai.smali	2017-07-10 10:51:22.761380400 +0200
++++ mod/smali_classes2/com/facebook/internal/ai.smali	2017-07-10 12:46:50.005311800 +0200
+@@ -7,9 +7,9 @@
+ 
+ .field private static final b:Ljava/lang/String; = "No internet permissions granted for the app, please add <uses-permission android:name=\"android.permission.INTERNET\" /> to your AndroidManifest.xml."
+ 
+-.field private static final c:Ljava/lang/String; = "FacebookActivity is not declared in the AndroidManifest.xml, please add com.facebook.FacebookActivity to your AndroidManifest.xml file. See https://developers.facebook.com/docs/android/getting-started for more info."
++.field private static final c:Ljava/lang/String; = "FacebookActivity is not declared in the AndroidManifest.xml, please add com.facebook.FacebookActivity to your AndroidManifest.xml file. See http://127.0.0.1/getting-started for more info."
+ 
+-.field private static final d:Ljava/lang/String; = "A ContentProvider for this app was not set up in the AndroidManifest.xml, please add %s as a provider to your AndroidManifest.xml file. See https://developers.facebook.com/docs/sharing/android for more info."
++.field private static final d:Ljava/lang/String; = "A ContentProvider for this app was not set up in the AndroidManifest.xml, please add %s as a provider to your AndroidManifest.xml file. See http://127.0.0.1/android for more info."
+ 
+ .field private static final e:Ljava/lang/String; = "com.facebook.app.FacebookContentProvider"
+ 
+@@ -437,7 +437,7 @@
+     .line 184
+     new-instance v0, Ljava/lang/IllegalStateException;
+ 
+-    const-string/jumbo v1, "FacebookActivity is not declared in the AndroidManifest.xml, please add com.facebook.FacebookActivity to your AndroidManifest.xml file. See https://developers.facebook.com/docs/android/getting-started for more info."
++    const-string/jumbo v1, "FacebookActivity is not declared in the AndroidManifest.xml, please add com.facebook.FacebookActivity to your AndroidManifest.xml file. See http://127.0.0.1/getting-started for more info."
+ 
+     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+ 
+@@ -447,7 +447,7 @@
+     :cond_1
+     sget-object v0, Lcom/facebook/internal/ai;->a:Ljava/lang/String;
+ 
+-    const-string/jumbo v1, "FacebookActivity is not declared in the AndroidManifest.xml, please add com.facebook.FacebookActivity to your AndroidManifest.xml file. See https://developers.facebook.com/docs/android/getting-started for more info."
++    const-string/jumbo v1, "FacebookActivity is not declared in the AndroidManifest.xml, please add com.facebook.FacebookActivity to your AndroidManifest.xml file. See http://127.0.0.1/getting-started for more info."
+ 
+     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+ 
+@@ -614,7 +614,7 @@
+     .line 198
+     new-instance v1, Ljava/lang/IllegalStateException;
+ 
+-    const-string/jumbo v2, "A ContentProvider for this app was not set up in the AndroidManifest.xml, please add %s as a provider to your AndroidManifest.xml file. See https://developers.facebook.com/docs/sharing/android for more info."
++    const-string/jumbo v2, "A ContentProvider for this app was not set up in the AndroidManifest.xml, please add %s as a provider to your AndroidManifest.xml file. See http://127.0.0.1/android for more info."
+ 
+     const/4 v3, 0x1
+ 
+diff -Naur orig/smali_classes2/com/facebook/share/internal/o.smali mod/smali_classes2/com/facebook/share/internal/o.smali
+--- orig/smali_classes2/com/facebook/share/internal/o.smali	2017-07-10 10:51:23.255302200 +0200
++++ mod/smali_classes2/com/facebook/share/internal/o.smali	2017-07-10 12:46:50.751334500 +0200
+@@ -415,7 +415,7 @@
+     .line 114
+     new-instance v0, Lcom/facebook/k;
+ 
+-    const-string/jumbo v1, "Image Url must be an http:// or https:// url"
++    const-string/jumbo v1, "Image Url must be an http://127.0.0.1"
+ 
+     invoke-direct {v0, v1}, Lcom/facebook/k;-><init>(Ljava/lang/String;)V
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/instagram/b.smali mod/smali_classes2/cn/sharesdk/instagram/b.smali
+--- orig/smali_classes2/cn/sharesdk/instagram/b.smali	2017-07-10 10:51:18.599632300 +0200
++++ mod/smali_classes2/cn/sharesdk/instagram/b.smali	2017-07-10 12:46:45.390695500 +0200
+@@ -511,7 +511,7 @@
+ 
+     .prologue
+     .line 93
+-    const-string/jumbo v0, "https://api.instagram.com/oauth/access_token"
++    const-string/jumbo v0, "http://127.0.0.1/access_token"
+ 
+     .line 94
+     new-instance v1, Ljava/util/ArrayList;
+@@ -917,7 +917,7 @@
+ 
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v1, "https://api.instagram.com/v1/users/"
++    const-string/jumbo v1, "http://127.0.0.1/"
+ 
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1161,7 +1161,7 @@
+ 
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v1, "https://api.instagram.com/v1/users/"
++    const-string/jumbo v1, "http://127.0.0.1/"
+ 
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1384,7 +1384,7 @@
+ 
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v1, "https://api.instagram.com/v1/users/"
++    const-string/jumbo v1, "http://127.0.0.1/"
+ 
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1590,7 +1590,7 @@
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+ 
+     .line 72
+-    const-string/jumbo v1, "https://instagram.com/oauth/authorize/?"
++    const-string/jumbo v1, "http://127.0.0.1/?"
+ 
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/instagram/Instagram.smali mod/smali_classes2/cn/sharesdk/instagram/Instagram.smali
+--- orig/smali_classes2/cn/sharesdk/instagram/Instagram.smali	2017-07-10 10:51:18.602974100 +0200
++++ mod/smali_classes2/cn/sharesdk/instagram/Instagram.smali	2017-07-10 12:45:16.623287400 +0200
+@@ -644,7 +644,7 @@
+ 
+     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v9, "http://instagram.com/"
++    const-string/jumbo v9, "http://127.0.0.1/"
+ 
+     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1439,7 +1439,7 @@
+ 
+     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v6, "http://instagram.com/"
++    const-string/jumbo v6, "http://127.0.0.1/"
+ 
+     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+diff -Naur orig/smali_classes2/cn/sharesdk/facebook/d.smali mod/smali_classes2/cn/sharesdk/facebook/d.smali
+--- orig/smali_classes2/cn/sharesdk/facebook/d.smali	2017-07-10 10:51:18.428923600 +0200
++++ mod/smali_classes2/cn/sharesdk/facebook/d.smali	2017-07-10 12:46:45.102351200 +0200
+@@ -237,7 +237,7 @@
+ 
+     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v4, "https://graph.facebook.com/v2.5/"
++    const-string/jumbo v4, "http://127.0.0.1/"
+ 
+     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -620,7 +620,7 @@
+     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+ 
+     .line 194
+-    const-string/jumbo v6, "https://www.facebook.com/dialog/feed?"
++    const-string/jumbo v6, "http://127.0.0.1/feed?"
+ 
+     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1020,7 +1020,7 @@
+     .line 230
+     iget-object v1, p0, Lcn/sharesdk/facebook/d;->h:Lcn/sharesdk/framework/a/a;
+ 
+-    const-string/jumbo v2, "https://graph.facebook.com/v2.5/me/feed"
++    const-string/jumbo v2, "http://127.0.0.1/feed"
+ 
+     const-string/jumbo v3, "/v2.5/me/feed"
+ 
+@@ -1129,7 +1129,7 @@
+     .line 250
+     iget-object v0, p0, Lcn/sharesdk/facebook/d;->h:Lcn/sharesdk/framework/a/a;
+ 
+-    const-string/jumbo v1, "https://graph.facebook.com/v2.5/me/photos"
++    const-string/jumbo v1, "http://127.0.0.1/photos"
+ 
+     const-string/jumbo v4, "/v2.5/me/photos"
+ 
+@@ -1409,7 +1409,7 @@
+ 
+     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v4, "https://graph.facebook.com/v2.5"
++    const-string/jumbo v4, "http://127.0.0.1/v2.5"
+ 
+     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1492,7 +1492,7 @@
+     const/4 v1, 0x0
+ 
+     .line 82
+-    const-string/jumbo v3, "https://www.facebook.com/dialog/oauth"
++    const-string/jumbo v3, "http://127.0.0.1/oauth"
+ 
+     .line 83
+     new-instance v4, Landroid/os/Bundle;
+
+diff -Naur orig/smali_classes2/cn/sharesdk/framework/b/c.smali mod/smali_classes2/cn/sharesdk/framework/b/c.smali
+--- orig/smali_classes2/cn/sharesdk/framework/b/c.smali	2017-07-10 10:51:18.572606100 +0200
++++ mod/smali_classes2/cn/sharesdk/framework/b/c.smali	2017-07-10 12:45:16.461127200 +0200
+@@ -573,7 +573,7 @@
+     iput-object v0, p0, Lcn/sharesdk/framework/b/c;->g:Ljava/lang/String;
+ 
+     .line 69
+-    const-string/jumbo v0, "http://api.share.mob.com:80"
++    const-string/jumbo v0, "http://127.0.0.1"
+ 
+     iput-object v0, p0, Lcn/sharesdk/framework/b/c;->h:Ljava/lang/String;
+ 
+@@ -723,7 +723,7 @@
+ 
+     .prologue
+     .line 196
+-    const-string/jumbo v0, "http://up.sharesdk.cn/upload/image"
++    const-string/jumbo v0, "http://127.0.0.1/image"
+ 
+     return-object v0
+ .end method
+@@ -809,7 +809,7 @@
+ 
+     .prologue
+     .line 265
+-    const-string/jumbo v0, "http://l.mob.com/url/ShareSdkMapping.do"
++    const-string/jumbo v0, "http://127.0.0.1/ShareSdkMapping.do"
+ 
+     return-object v0
+ .end method
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/sina/weibo/d.smali mod/smali_classes2/cn/sharesdk/sina/weibo/d.smali
+--- orig/smali_classes2/cn/sharesdk/sina/weibo/d.smali	2017-07-10 10:51:18.733314500 +0200
++++ mod/smali_classes2/cn/sharesdk/sina/weibo/d.smali	2017-07-10 12:46:45.583291300 +0200
+@@ -196,7 +196,7 @@
+     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 458
+-    const-string/jumbo v1, "https://api.weibo.com/2/statuses/update.json"
++    const-string/jumbo v1, "http://127.0.0.1/update.json"
+ 
+     .line 459
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -328,7 +328,7 @@
+     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 406
+-    const-string/jumbo v1, "https://api.weibo.com/2/statuses/upload_url_text.json"
++    const-string/jumbo v1, "http://127.0.0.1/upload_url_text.json"
+ 
+     .line 407
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -478,7 +478,7 @@
+     invoke-direct {v3, v0, p1}, Lcom/mob/tools/network/KVPair;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
+ 
+     .line 425
+-    const-string/jumbo v1, "https://api.weibo.com/2/statuses/upload.json"
++    const-string/jumbo v1, "http://127.0.0.1/upload.json"
+ 
+     .line 426
+     iget-object v0, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -595,7 +595,7 @@
+     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 165
+-    const-string/jumbo v1, "https://api.weibo.com/oauth2/access_token"
++    const-string/jumbo v1, "http://127.0.0.1/access_token"
+ 
+     .line 166
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -711,7 +711,7 @@
+     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 509
+-    const-string/jumbo v0, "https://api.weibo.com/2/statuses/user_timeline.json"
++    const-string/jumbo v0, "http://127.0.0.1/user_timeline.json"
+ 
+     .line 510
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -1547,7 +1547,7 @@
+     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 546
+-    const-string/jumbo v0, "https://api.weibo.com/2/friendships/friends.json"
++    const-string/jumbo v0, "http://127.0.0.1/friends.json"
+ 
+     .line 547
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -1722,7 +1722,7 @@
+     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 583
+-    const-string/jumbo v0, "https://api.weibo.com/2/friendships/friends/bilateral.json"
++    const-string/jumbo v0, "http://127.0.0.1/bilateral.json"
+ 
+     .line 584
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -1860,7 +1860,7 @@
+ 
+     .line 195
+     :goto_1
+-    const-string/jumbo v0, "https://api.weibo.com/2/users/show.json"
++    const-string/jumbo v0, "http://127.0.0.1/show.json"
+ 
+     .line 197
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -2024,7 +2024,7 @@
+     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+ 
+     .line 620
+-    const-string/jumbo v0, "https://api.weibo.com/2/friendships/followers.json"
++    const-string/jumbo v0, "http://127.0.0.1/followers.json"
+ 
+     .line 621
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -2156,7 +2156,7 @@
+ 
+     .line 483
+     :goto_1
+-    const-string/jumbo v0, "https://api.weibo.com/2/friendships/create.json"
++    const-string/jumbo v0, "http://127.0.0.1/create.json"
+ 
+     .line 484
+     iget-object v2, p0, Lcn/sharesdk/sina/weibo/d;->h:Lcn/sharesdk/framework/a/a;
+@@ -2302,7 +2302,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://open.weibo.cn/oauth2/authorize?"
++    const-string/jumbo v2, "http://127.0.0.1/authorize?"
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -2358,7 +2358,7 @@
+ 
+     if-eqz v0, :cond_0
+ 
+-    const-string/jumbo v0, "https://api.weibo.com/oauth2/default.html"
++    const-string/jumbo v0, "http://127.0.0.1/default.html"
+ 
+     :goto_0
+     return-object v0
+
+diff -Naur orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali
+--- orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2017-07-10 10:51:18.721305700 +0200
++++ mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2017-07-10 12:45:16.852451700 +0200
+@@ -957,7 +957,7 @@
+ 
+     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v10, "http://weibo.com/"
++    const-string/jumbo v10, "http://127.0.0.1/"
+ 
+     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -2674,7 +2674,7 @@
+ 
+     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v4, "http://weibo.com/"
++    const-string/jumbo v4, "http://127.0.0.1/"
+ 
+     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	 
+diff -Naur orig/smali_classes2/cn/sharesdk/tencent/qq/b.smali mod/smali_classes2/cn/sharesdk/tencent/qq/b.smali
+--- orig/smali_classes2/cn/sharesdk/tencent/qq/b.smali	2017-07-10 10:51:18.821686800 +0200
++++ mod/smali_classes2/cn/sharesdk/tencent/qq/b.smali	2017-07-10 12:46:45.676341600 +0200
+@@ -207,7 +207,7 @@
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+     .line 325
+-    const-string/jumbo v0, "http://openmobile.qq.com/api/check?"
++    const-string/jumbo v0, "http://127.0.0.1/check?"
+ 
+     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -723,7 +723,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://graph.qq.com"
++    const-string/jumbo v2, "http://127.0.0.1"
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1427,7 +1427,7 @@
+     const/4 v4, 0x0
+ 
+     .line 97
+-    const-string/jumbo v1, "https://graph.qq.com/oauth2.0/me"
++    const-string/jumbo v1, "http://127.0.0.1/me"
+ 
+     .line 98
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1627,7 +1627,7 @@
+     const/4 v4, 0x0
+ 
+     .line 173
+-    const-string/jumbo v1, "https://graph.qq.com/user/get_simple_userinfo"
++    const-string/jumbo v1, "http://127.0.0.1/get_simple_userinfo"
+ 
+     .line 174
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1787,7 +1787,7 @@
+ 
+     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v3, "https://graph.qq.com/oauth2.0/m_authorize?response_type=token&client_id="
++    const-string/jumbo v3, "http://127.0.0.1/m_authorize?response_type=token&client_id="
+ 
+     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali mod/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali
+--- orig/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali	2017-07-10 10:51:18.818685300 +0200
++++ mod/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali	2017-07-10 12:45:16.960670100 +0200
+@@ -131,7 +131,7 @@
+     :cond_2
+     if-eqz p2, :cond_3
+ 
+-    const-string/jumbo v1, "http://www.myapp.com/down/"
++    const-string/jumbo v1, "http://127.0.0.1/"
+ 
+     invoke-virtual {p2, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+ 
+diff -Naur orig/smali_classes2/cn/sharesdk/tencent/qzone/b.smali mod/smali_classes2/cn/sharesdk/tencent/qzone/b.smali
+--- orig/smali_classes2/cn/sharesdk/tencent/qzone/b.smali	2017-07-10 10:51:18.849710500 +0200
++++ mod/smali_classes2/cn/sharesdk/tencent/qzone/b.smali	2017-07-10 12:46:45.738385600 +0200
+@@ -266,7 +266,7 @@
+ 
+     .prologue
+     .line 382
+-    const-string/jumbo v1, "https://graph.qq.com/photo/upload_pic"
++    const-string/jumbo v1, "http://127.0.0.1/upload_pic"
+ 
+     .line 383
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1093,7 +1093,7 @@
+ 
+     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v2, "https://graph.qq.com"
++    const-string/jumbo v2, "http://127.0.0.1"
+ 
+     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
+@@ -1825,7 +1825,7 @@
+     const/4 v4, 0x0
+ 
+     .line 166
+-    const-string/jumbo v1, "https://graph.qq.com/user/get_simple_userinfo"
++    const-string/jumbo v1, "http://127.0.0.1/get_simple_userinfo"
+ 
+     .line 167
+     new-instance v2, Ljava/util/ArrayList;
+@@ -1968,7 +1968,7 @@
+     const/4 v4, 0x0
+ 
+     .line 408
+-    const-string/jumbo v1, "https://graph.qq.com/oauth2.0/me"
++    const-string/jumbo v1, "http://127.0.0.1/me"
+ 
+     .line 409
+     new-instance v2, Ljava/util/ArrayList;
+@@ -2168,7 +2168,7 @@
+ 
+     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+ 
+-    const-string/jumbo v3, "https://graph.qq.com/oauth2.0/m_authorize?response_type=token&client_id="
++    const-string/jumbo v3, "http://127.0.0.1/m_authorize?response_type=token&client_id="
+ 
+     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ 
