@@ -52,6 +52,8 @@ If you want to fly in a RED NFZ AND are allowed to AND have problems with them a
 
 
 ### #DeeyayeyeHackingClub
+http://dji.retroroms.info/ - "Wiki"
+
 https://github.com/Bin4ry/deejayeye-modder - APK "tweaks" for settings & "mods" for additional / altered functionality
 
 https://github.com/hdnes/pyduml - Assistant-less firmware pushes and DUMLHacks referred to as DUMBHerring when used with "fireworks.tar" from RedHerring. DJI silently changes Assistant? great... we will just stop using it.
