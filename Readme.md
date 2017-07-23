@@ -2,7 +2,7 @@
 
 ![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
 
-![UDONTSAY](https://image.ibb.co/gSwTFQ/dji_statement.png)
+![UDONTSAY](https://image.ibb.co/e4bWLQ/dji_statement.png)
 
 ![BRINGIT](https://gifyu.com/images/bringit.gif)
 
