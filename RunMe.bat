@@ -18,6 +18,12 @@ for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
  set !newvar!_choice=,Yes,No,
  call:setPersist "!newvar!=No" )
 call:restorePersistentVars "%FilePersist%"
+java -version >nul 2>&1 && ( GOTO:menuLOOP
+ ) || ( call )
+javac -version >nul 2>&1 && ( GOTO:menuLOOP
+ ) || ( echo.-: Java not installed...
+ pause
+ exit )
 :menuLOOP
 cls
 echo.
@@ -42,8 +48,7 @@ set pCounter=1
 set choice=
 echo.&set /p choice=-: [ENTER] choice: ||(
  REM call:savePersistentVars "%FilePersist%"&   rem --save the persistent variables to the storage
- GOTO:EOF
- )
+ GOTO:EOF )
 echo.%choice%| findstr /r "^[1-9][0-9]*$">nul
 if %errorlevel% equ 0 (	echo.&call:menu_PM
  ) else echo.&call:menu_%choice%
@@ -88,10 +93,7 @@ for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!
   if "%%f"=="removeOnlinefunction" ( echo.-: Supporting with so.bspatch...
    ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch"
    del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
-   rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so
-   )
-  )
- )
+   rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so ) ) )
 REM nothing
 REM here
 cd ..
@@ -121,8 +123,7 @@ if exist %~1 ( call
  echo.-: Could not find '%~1'...
  echo.-: Press any key to resume...
  pause >nul
- GOTO:chks
- )
+ GOTO:chks )
 GOTO:EOF
 :setPersist -- to be called to initialize persistent variables
 ::          -- %*: set command arguments
@@ -135,8 +136,7 @@ set retlist=
 set parse=findstr /i /c:"call:setPersist" "%~f0%"^|find /v "ButNotThisLine"
 for /f "tokens=2 delims== " %%a in ('"%parse%"') do (set retlist=!retlist!%%a,)
 ( ENDLOCAL & REM RETURN VALUES
-    IF "%~1" NEQ "" SET %~1=%retlist%
-)
+    IF "%~1" NEQ "" SET %~1=%retlist% )
 GOTO:EOF
 :savePersistentVars -- Save values of persistent variables into a file
 ::                  -- %~1: file name
@@ -165,6 +165,5 @@ for /f "tokens=2 delims=@" %%a in ("%lll%") do set lll=%%a
                          rem.-- extract the next value
 for /f "delims=%dlm%" %%a in ("%lll%") do set new=%%a
 ( ENDLOCAL & REM RETURN VALUES
-    IF "%~1" NEQ "" (SET %~1=%new%) ELSE (echo.%new%)
-)
+    IF "%~1" NEQ "" (SET %~1=%new%) ELSE (echo.%new%) )
 GOTO:EOF
