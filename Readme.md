@@ -1,4 +1,4 @@
-# deeyayeye-modder
+# deejayeye-modder
 
 ![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
 
