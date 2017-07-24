@@ -1,8 +1,10 @@
-# deeyayeye-modder
+# deejayeye-modder
 
 ![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
 
+![UDONTSAY](https://image.ibb.co/e4bWLQ/dji_statement.png)
 
+![BRINGIT](https://gifyu.com/images/bringit.gif)
 
 This software is free to use, feel free to modify.
 
