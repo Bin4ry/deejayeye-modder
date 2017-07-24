@@ -47,7 +47,7 @@ FOR /l %%i in (1,1,!pCounter!) do echo.
 set pCounter=1
 set choice=
 echo.&set /p choice=-: [ENTER] choice: ||(
- REM call:savePersistentVars "%FilePersist%"&   rem --save the persistent variables to the storage
+ call:savePersistentVars "%FilePersist%"&   rem --save the persistent variables to the storage
  GOTO:EOF )
 echo.%choice%| findstr /r "^[1-9][0-9]*$">nul
 if %errorlevel% equ 0 (	echo.&call:menu_PM
@@ -133,8 +133,7 @@ GOTO:EOF
 ::                 -- %~1: reference to return variable
 SETLOCAL
 set retlist=
-set parse=findstr /i /c:"call:setPersist" "%~f0%"^|find /v "ButNotThisLine"
-for /f "tokens=2 delims== " %%a in ('"%parse%"') do (set retlist=!retlist!%%a,)
+for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (set retlist=!retlist!%%F,)
 ( ENDLOCAL & REM RETURN VALUES
     IF "%~1" NEQ "" SET %~1=%retlist% )
 GOTO:EOF
