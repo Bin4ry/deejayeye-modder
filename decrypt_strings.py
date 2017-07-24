@@ -12,7 +12,9 @@ key = 'I Love Android'
 
 def decrypt(s):
 	s = base64.decodestring(s)
-	return ''.join([chr(ord(c) ^ ord(key[i%7*2])) for i,c in enumerate(s)])
+	decr = ''.join([chr(ord(c) ^ ord(key[i%7*2])) for i,c in enumerate(s)])
+	decr = decr.replace('\r', '').replace('\n', '').replace('"', '').replace('\\','')
+	return decr
 
 if len(sys.argv) != 2:
 	print "Decrypts base64 + silly encrpytion in DJI Go4 4.1.4 smali files. Adds decrypted string as comment. Original smali file is replaced!"

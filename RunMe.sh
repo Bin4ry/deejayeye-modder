@@ -2,6 +2,7 @@
 command -v dialog >/dev/null 2>&1 || { echo "I require dialog but it's not installed.  Aborting." >&2; err=1; }
 command -v bspatch >/dev/null 2>&1 || { echo "I require bspatch but it's not installed.  Aborting." >&2; err=1; }
 command -v patch >/dev/null 2>&1 || { echo "I require patch but it's not installed.  Aborting." >&2; err=1; }
+
 if [ ! -f tools/apktool.jar ] 
 then
 echo "apktool.jar not found, run download_tools.sh!"
@@ -28,6 +29,7 @@ if [ -e out/lastbuild-md5.txt ]
 then
 rm out/lastbuild-md5.txt
 fi
+
 echo "Version: $ver" >> out/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
@@ -39,10 +41,26 @@ else
 echo Original App not found! Please put the original file into the "PutApkHere" folder and name it orig.apk
 read -p "Press any key to continue... "
 fi
-done 
+done
+ 
 echo Decompiling original apk
-java -jar tools/apktool.jar d -o decompile_out PutApkHere/orig.apk
+java -jar tools/apktool.jar d -f -o decompile_out PutApkHere/orig.apk
 echo done
+cd decompile_out
+apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
+cd ..
+echo "$apkver"
+read -p ""
+if [ ! -d "patches/$apkver" ] 
+then
+echo "Incompatible apk version!"
+read -p ""
+echo "Removing decompile_out folder"
+rm -rf decompile_out
+echo "Exiting now"
+exit 3
+fi
+
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
@@ -61,32 +79,32 @@ do
     case $choice in
         1)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/forceFCC.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/forceFCC.patch
 			cd ..
 			echo "forceFCC" >> out/lastbuild-cfg.txt
             ;;
         2)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/removeUpdateForce.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/removeUpdateForce.patch
 			cd ..
 			echo "removeUpdateForce" >> out/lastbuild-cfg.txt
             ;;
         3)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/removeFWUpgradeService.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/removeFWUpgradeService.patch
 			cd ..
 			echo "removeFWUpgradeService" >> out/lastbuild-cfg.txt
             ;;
 		4)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/offlineLogin.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/offlineLogin.patch
 			cd ..
 			echo "offlineLogin" >> out/lastbuild-cfg.txt
             ;;
 		5)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/removeOnlinefunction.patch
-			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/so.bspatch
+			patch -l -p1 -N -r - < ../patches/$apkver/removeOnlinefunction.patch
+			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/$apkver/so.bspatch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
 			cd ..
@@ -94,38 +112,38 @@ do
             ;;	
 		6)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/removeGoogleApis.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/removeGoogleApis.patch
 			cd ..
 			echo "removeGoogleApis" >> out/lastbuild-cfg.txt
             ;;	
 		7)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/removeSocial.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/removeSocial.patch
 			cd ..
 			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
 		8)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/enableMavicFlightModesOnSpark.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/enableMavicFlightModesOnSpark.patch
 			cd ..
 			echo "enableMavicFlightModesOnSpark" >> out/lastbuild-cfg.txt
             ;;	
 		9)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/enableSparkWifiChannelSelectOnOtg.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/enableSparkWifiChannelSelectOnOtg.patch
 			cd ..
 			echo "enableSparkWifiChannelSelectOnOtg" >> out/lastbuild-cfg.txt
             ;;	
 		10)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/enableP3series.patch
+			patch -l -p1 -N -r - < ../patches/$apkver/enableP3series.patch
 			cd ..
 			echo "enableP3series" >> out/lastbuild-cfg.txt
             ;;	
     esac
 done
 cd decompile_out
-patch -l -p1 -N -r - < ../patches/origin
+patch -l -p1 -N -r - < ../patches/$apkver/origin
 cd ..
 echo =======================
 echo Done patching
