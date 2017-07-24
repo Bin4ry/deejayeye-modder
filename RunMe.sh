@@ -60,6 +60,8 @@ echo "Exiting now"
 exit 3
 fi
 
+if [ "$apkver" == "4.1.3" ]
+then
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
@@ -73,6 +75,20 @@ options=(1 "force FCC patch" on
 		 10 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
+fi
+
+if [ "$apkver" == "4.1.4" ]
+then
+cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
+options=(1 "force FCC patch" on
+         2 "remove forced Updates from DJI Go4" on
+         3 "remove Firmware Upgrade check" on
+		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
+ 		 9 "enable Wifi channel selection on Spark with OTG" on)
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
+fi
+ 
 for choice in $choices
 do
     case $choice in
