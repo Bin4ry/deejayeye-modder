@@ -5,6 +5,7 @@ cd /d %~dp0
 <nul set /p ver=<version.txt
 set title=%~n0
 TITLE DeeJayEYE Patcher v%ver%
+set "patches=patches"
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
@@ -13,7 +14,7 @@ rd /S /Q %d_out% >nul 2>&1
 rd /S /Q %a_out% >nul 2>&1
 set pCounter=1
 set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
-for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (
+for /f "tokens=1,* delims=. " %%F in ('dir /b %patches%\*.patch') do (
  set "newvar=%%F"
  set !newvar!_choice=,Yes,No,
  call:setPersist "!newvar!=No" )
@@ -28,7 +29,7 @@ javac -version >nul 2>&1 && ( GOTO:menuLOOP
 cls
 echo.
 REM [!%newvar%_choice:~1,-1!] vewy speshul
-for /f "tokens=1,* delims=. " %%X in ('dir /b patches\*.patch') do (
+for /f "tokens=1,* delims=. " %%X in ('dir /b %patches%\*.patch') do (
  set "pC= [!pCounter!]"
  set "pX=!%%X! "
  set "stringy='%%X'                                              "
@@ -73,11 +74,11 @@ md %p_out%
 cls
 echo.
 echo.-: Converting patches...
-rename "patches\origin" origin.patch
-for /f "tokens=*" %%f in ('dir /b patches\*.patch') do ( copy patches\%%f %p_out%\%%f.copy >nul
+rename "%patches%\origin" origin.patch
+for /f "tokens=*" %%f in ('dir /b %patches%\*.patch') do ( copy %patches%\%%f %p_out%\%%f.copy >nul
  TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
  del /f /q %p_out%\%%f.copy )
-rename "patches\origin.patch" origin
+rename "%patches%\origin.patch" origin
 echo.-: Decompiling original apk...
 :chks
 call:chkinst "PutApkHere\orig.apk"
@@ -91,7 +92,7 @@ cd %d_out%
 for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!%%f:~0,1!"=="Y" ( echo.-: Applying %%f patch...
   ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\%%f.patch
   if "%%f"=="removeOnlinefunction" ( echo.-: Supporting with so.bspatch...
-   ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\patches\so.bspatch"
+   ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\%patches%\so.bspatch"
    del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
    rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so ) ) )
 REM nothing
@@ -133,7 +134,7 @@ GOTO:EOF
 ::                 -- %~1: reference to return variable
 SETLOCAL
 set retlist=
-for /f "tokens=1,* delims=. " %%F in ('dir /b patches\*.patch') do (set retlist=!retlist!%%F,)
+for /f "tokens=1,* delims=. " %%F in ('dir /b %patches%\*.patch') do (set retlist=!retlist!%%F,)
 ( ENDLOCAL & REM RETURN VALUES
     IF "%~1" NEQ "" SET %~1=%retlist% )
 GOTO:EOF
