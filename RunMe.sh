@@ -50,7 +50,6 @@ cd decompile_out
 apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
 cd ..
 echo "$apkver"
-read -p ""
 if [ ! -d "patches/$apkver" ] 
 then
 echo "Incompatible apk version!"
