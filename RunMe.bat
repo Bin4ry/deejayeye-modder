@@ -5,7 +5,7 @@ cd /d %~dp0
 <nul set /p ver=<version.txt
 set title=%~n0
 TITLE DeeJayEYE Patcher v%ver%
-set "patches=patches"
+set "patches=patches\4.1.3"
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
