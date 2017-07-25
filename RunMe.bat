@@ -5,15 +5,29 @@ cd /d %~dp0
 <nul set /p ver=<version.txt
 set title=%~n0
 TITLE DeeJayEYE Patcher v%ver%
-set "patches=patches\4.1.3"
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
+set aV414s=94569319
+set aV413s=104544384
+set pCounter=1
+set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 rd /S /Q %p_out% >nul 2>&1
 rd /S /Q %d_out% >nul 2>&1
 rd /S /Q %a_out% >nul 2>&1
-set pCounter=1
-set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
+:chks
+call:chkinst "PutApkHere\orig.apk"
+call:chkinst "tools\apktool.jar"
+call:chkinst "tools\bspatch.exe"
+call:chkinst "tools\patch.exe"
+call:chkinst "tools\sign.jar"
+for /F "usebackq" %%A IN ('PutApkHere\orig.apk') DO set size=%%~zA
+if %size% == %aV413s% ( set "patches=patches\4.1.3"
+ ) else if %size% == %aV414s% ( set "patches=patches\4.1.4"
+ ) else ( 
+ echo.-: Unrecognized apk file.
+ pause
+ exit )
 for /f "tokens=1,* delims=. " %%F in ('dir /b %patches%\*.patch') do (
  set "newvar=%%F"
  set !newvar!_choice=,Yes,No,
@@ -80,12 +94,6 @@ for /f "tokens=*" %%f in ('dir /b %patches%\*.patch') do ( copy %patches%\%%f %p
  del /f /q %p_out%\%%f.copy )
 rename "%patches%\origin.patch" origin
 echo.-: Decompiling original apk...
-:chks
-call:chkinst "PutApkHere\orig.apk"
-call:chkinst "tools\apktool.jar"
-call:chkinst "tools\bspatch.exe"
-call:chkinst "tools\patch.exe"
-call:chkinst "tools\sign.jar"
 java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
 cd %d_out%
 ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
