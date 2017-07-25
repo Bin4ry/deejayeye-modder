@@ -4,7 +4,6 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 cd /d %~dp0
 <nul set /p ver=<version.txt
 set title=%~n0
-TITLE DeeJayEYE Patcher v%ver%
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=_NEW_APK"
@@ -21,11 +20,12 @@ call:chkinst "tools\apktool.jar"
 call:chkinst "tools\bspatch.exe"
 call:chkinst "tools\patch.exe"
 call:chkinst "tools\sign.jar"
-for /F "usebackq" %%A IN ('PutApkHere\orig.apk') DO set size=%%~zA
+for /F "usebackq" %%A IN ('PutApkHere\orig.apk') do set size=%%~zA
 if %size% == %aV413s% ( set "patches=patches\4.1.3"
+ set "ver=%ver% (4.1.3)"
  ) else if %size% == %aV414s% ( set "patches=patches\4.1.4"
- ) else ( 
- echo.-: Unrecognized apk file.
+ set "ver=%ver% (4.1.4)"
+ ) else ( echo.-: Unrecognized apk file.
  pause
  exit )
 for /f "tokens=1,* delims=. " %%F in ('dir /b %patches%\*.patch') do (
@@ -42,6 +42,7 @@ javac -version >nul 2>&1 && ( GOTO:menuLOOP
 :menuLOOP
 cls
 echo.
+TITLE DeeJayEYE Patcher v%ver%
 REM [!%newvar%_choice:~1,-1!] vewy speshul
 for /f "tokens=1,* delims=. " %%X in ('dir /b %patches%\*.patch') do (
  set "pC= [!pCounter!]"
@@ -125,7 +126,7 @@ exit
 ::     -- %~1 – in, number of seconds to wait
 FOR /l %%a in (%~1,-1,1) do (ping -n 2 -w 1 127.0.0.1>NUL)
 GOTO:EOF
-:chkinst
+:chkinst -- check for required items
 ::                 -- %~1: the tool, whodathunkit
 if exist %~1 ( call
  ) else (
