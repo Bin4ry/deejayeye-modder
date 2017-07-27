@@ -22,9 +22,9 @@ call:chkinst "tools\patch.exe"
 call:chkinst "tools\sign.jar"
 for /F "usebackq" %%A IN ('PutApkHere\orig.apk') do set size=%%~zA
 if %size% == %aV413s% ( set "patches=patches\4.1.3"
- set "ver=%ver% (4.1.3)"
+ set "vers=%ver% (4.1.3)"
  ) else if %size% == %aV414s% ( set "patches=patches\4.1.4"
- set "ver=%ver% (4.1.4)"
+ set "vers=%ver% (4.1.4)"
  ) else ( echo.-: Unrecognized apk file.
  pause
  exit )
@@ -42,7 +42,7 @@ javac -version >nul 2>&1 && ( GOTO:menuLOOP
 :menuLOOP
 cls
 echo.
-TITLE DeeJayEYE Patcher v%ver%
+TITLE DeeJayEYE Patcher v%vers%
 REM [!%newvar%_choice:~1,-1!] vewy speshul
 for /f "tokens=1,* delims=. " %%X in ('dir /b %patches%\*.patch') do (
  set "pC= [!pCounter!]"
