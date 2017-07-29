@@ -1,14 +1,14 @@
 ForceFCC:
-This patch will force the TX power to FCC limits.
+This patch will force the TX power to FCC limits. This is needed if you use a non-GPS tablet with an EU simcard in the US. (useful for travelling)
 
 RemoveUpdateForce:
-This removed the ForceUpdate function of the app
+This removed the ForceUpdate function of the app. This will deactive the Updatecheck of the DJI Go app itself (NOT THE FIRMWARE!)
 
 RemoveFwUpgradeService:
-This will stop FW Upgrade Service to start, this way the app does not know which firmware the aircraft is running. This might be useful for people on old firmware versions
+This will stop FW Upgrade Service to start, this way the app does not know which firmware the aircraft is running and it will not force you to upgrade the firmware. This might be useful for people on old firmware versions.
 
 Offline login:
-Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass. (thx to artu-ole)
+Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass (any combo possible!). (thx to artu-ole)
 
 remove Onlinefunction:
 This will replace all urls inside the code with bogus ones, so the app cannot connect to the internet. Here Maps is excluded, so you can still have maps! This patch HAS to be applied together with the Offline login or you won't be able to login anymore! (thx to err0r4o4)
@@ -29,5 +29,5 @@ enableMavicFlightModesOnSpark:
 enable Mavic Pro flight modes for Spark (thx djayeyeballs)
 
 enableSparkWifiChannelSelectOnOtg:
-brings back the Wifi channel selection screen!
+brings back the Wifi channel selection screen! Works but the graph where you can see the network occupation is not filled with data yet. 
 
