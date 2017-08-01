@@ -18,6 +18,10 @@ I am not responsible for any damage done! Use your brain and all will be fine!
 
 Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
 
+## App version 4.1.4
+
+App version 4.1.4 is still work in progress. I would personally recommend using 4.1.3, anyway if you want to use 4.1.4 you can but it has not all patches yet AND the CC check dialog is gone and will not come back (still the fcc patch code is present and working [Spark RC 300FW seems to cause problems but SparkRC 100FW works!])
+
 ## SPARK USERS BEWARE
 
 Seems like RC Firmware 300 for the Spark breaks FCC mod, so DO NOT use it if you want to use the FCC mod, stay on 100, there is nothing bad with the 100 FW for the RC. 
