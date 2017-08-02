@@ -21,6 +21,9 @@ Also i will not include any apk to this git! You have to do everything yourself,
 ## App version 4.1.4
 
 App version 4.1.4 is still work in progress. I would personally recommend using 4.1.3, anyway if you want to use 4.1.4 you can but it has not all patches yet AND the CC check dialog is gone and will not come back (still the fcc patch code is present and working [Spark RC 300FW seems to cause problems but SparkRC 100FW works!])
+
+## FCC 
+
 If you get a message about different region etc. etc after using the FCC patch: YOU HAVE TO CLICK OK! 
 
 ## HowTo:
