@@ -8,20 +8,25 @@ import os
 # decrypt dji fw 4.1.4 strings by adding the decrypted version as comment to smali files
 # - by nopcode, miek and bin4ry
 
-key = 'I Love Android'
-
+key_414 = 'I Love Android'
+key_415 = 'Y9*PI8B#gD^6Yhd1'
+ 
 def decrypt(s):
 	s = base64.decodestring(s)
 	decr = ''.join([chr(ord(c) ^ ord(key[i%7*2])) for i,c in enumerate(s)])
 	decr = decr.replace('\r', '').replace('\n', '').replace('"', '').replace('\\','')
 	return decr
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
 	print "Decrypts base64 + silly encrpytion in DJI Go4 4.1.4 smali files. Adds decrypted string as comment. Original smali file is replaced!"
-	print "Syntax: {0} <folder>".format(sys.argv[0])
+	print "Syntax: {0} <key1 for 414 (1) or key2 for 415 (2)> <folder>".format(sys.argv[0])
 	sys.exit(1)
 
-path = sys.argv[1]
+if sys.argv[1] == '1':
+    key=key_414
+if sys.argv[1] == '2':
+    key=key_415
+path = sys.argv[2]
 for directory, subdirectories, files in os.walk(path):
     for file in files:
 		fname = os.path.join(directory, file)
