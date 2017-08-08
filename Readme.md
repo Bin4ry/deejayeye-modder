@@ -44,7 +44,7 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 ### Windows
 
-1. Please copy 'sign.jar' into 'tools' folder, check above for link
+1. Please copy 'sign.jar' into 'tools' folder, check above for link (if the 'tools' folder doesn't exist, simply create at the same level as the 'PutApkHere' folder)
 2. Please copy apktool to 'tools' and rename it 'apktool.jar', check above for link
 3. Please install gnuwin32 and copy 'patch.exe' into 'tools' folder, you can get it here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
 4. Please copy 'bspatch.exe' into 'tools' folder, you can get it here: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
