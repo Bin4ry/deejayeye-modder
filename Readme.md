@@ -55,7 +55,7 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 ### Windows Patcher
 
-![APKPATCH](http://imgur.com/a/KnSTb)
+![APKPATCH](http://i.imgur.com/43OgEOg.jpg)
 
 1. Follow the instructions for installing java and gnuwin32 above.
 2. Install .Net Framework 4.6.2 if you don't have it: https://www.microsoft.com/en-us/download/details.aspx?id=53344
