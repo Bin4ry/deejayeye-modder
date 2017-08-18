@@ -53,6 +53,21 @@ If you get a message about different region etc. etc after using the FCC patch: 
 7. RunMe.bat (as Administrator)
 
 
+### Windows Patcher
+
+1. Follow the instructions for installing java and gnuwin32 above.
+2. Install .Net Framework 4.6.2 if you don't have it: https://www.microsoft.com/en-us/download/details.aspx?id=53344
+3. Unzip PatchAPK.zip to a directory with no spaces, something like C:\DJIHacks will do.
+4. Add the tools path to your system environment PATH variable. So add C:\DJIHacks\PatchAPK\tools
+5. Rename the original apk you are going to decompile to something without any spaces like DJIGO-413.apk
+6. Launch the app by double clicking PatchAPK.exe
+7. Select file, and find your renamed apk
+8. Select file, and choose the version of the apk you are patching
+9. Click decompile, and wait until it finishes. apk will be decompiled to C:\DJIHacks\PatchAPK\decompile directory
+10. Select the patches to apply, and click the Patch button. (The dry run checkbox is for testing the patches without applying them)
+11. Click the build and sign button. Signed apk will be C:\DJIHacks\PatchAPK\decompile\dist\mod.apk
+12. Enjoy!
+
 #### UPDATE: No more NFZ stuff here.
 
 ##### Reasons:
