@@ -1,0 +1,55 @@
+diff -Naur orig/res/raw/product_26 mod/res/raw/product_26
+--- orig/res/raw/product_26	2017-07-12 13:01:08.674654200 +0200
++++ mod/res/raw/product_26	2017-07-16 21:53:22.775750200 +0200
+@@ -48,6 +48,50 @@
+                    "title":"gsnew_fpv_flight_mode_gesture",
+                    "is_gs_func":0,
+                    "jumpto":"gs://flightmode/gesture"
+-        }
++        },
++		{
++                  "img":"gs_menu_cinematic_bg",
++                  "title":"gsnew_gs_cinematic_menu",
++                  "is_gs_func":1,
++                  "floorflyc":21,
++                  "ceilflyc":10000,
++                  "jumpto":"gs://smartmode/cinematic/fromenter"
++		},
++		{
++                  "img":"gs_menu_terrain_tracking_bg",
++                  "title":"gsnew_gs_terrain_tracking_menu",
++                  "is_gs_func":1,
++                  "jumpto":"gs://smartmode/terraintracking/fromenter"
++		},
++		{
++                 "img":"gs_menu_point_of_insterest_bg",
++                 "title":"gsnew_gs_point_of_insterest_menu",
++                 "is_gs_func":1,
++                 "jumpto":"gs://smartmode/poi/fromenter"
++		},
++		{
++                 "img":"gs_menu_follow_me_bg",
++                 "title":"gsnew_gs_follow_me",
++                 "is_gs_func":1,
++                 "jumpto":"gs://smartmode/followme/fromenter"
++		},
++		{
++                 "img":"gs_menu_way_point_bg",
++                 "title":"gsnew_gs_way_point_menu",
++                 "is_gs_func":1,
++                 "jumpto":"gs://smartmode/waypoint/fromenter"
++		},
++		{
++                 "img":"gs_menu_home_lock_bg",
++                 "title":"gsnew_gs_home_lock_menu",
++                 "is_gs_func":1,
++                 "jumpto":"gs://smartmode/homelock/fromenter"
++		},
++		{
++                 "img":"gs_menu_course_lock_bg",
++                 "title":"gsnew_gs_course_lock_menu",
++                 "is_gs_func":1,
++                 "jumpto":"gs://smartmode/courselock/fromenter"
++		}
+     ]
+ }

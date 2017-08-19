@@ -1,0 +1,134 @@
+diff -Naur orig/smali_classes5/dji/pilot2/main/view/MainConnectionStateView$a.smali mod/smali_classes5/dji/pilot2/main/view/MainConnectionStateView$a.smali
+--- orig/smali_classes5/dji/pilot2/main/view/MainConnectionStateView$a.smali	2017-07-12 13:01:42.561102800 +0200
++++ mod/smali_classes5/dji/pilot2/main/view/MainConnectionStateView$a.smali	2017-07-15 12:45:51.252538400 +0200
+@@ -80,42 +80,6 @@
+ 
+     .line 509
+     :pswitch_2
+-    invoke-static {}, Ldji/midware/data/manager/P3/k;->getInstance()Ldji/midware/data/manager/P3/k;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v1}, Ldji/midware/data/manager/P3/k;->c()Ldji/midware/data/config/P3/ProductType;
+-
+-    move-result-object v1
+-
+-    invoke-static {v1}, Ldji/pilot/publics/util/a;->m(Ldji/midware/data/config/P3/ProductType;)Z
+-
+-    move-result v1
+-
+-    if-nez v1, :cond_0
+-
+-    .line 510
+-    new-instance v1, Landroid/content/Intent;
+-
+-    invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->b(Ldji/pilot2/main/view/MainConnectionStateView;)Landroid/content/Context;
+-
+-    move-result-object v2
+-
+-    const-class v3, Ldji/pilot2/main/activity/DJIChangeAppActivity;
+-
+-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+-
+-    .line 511
+-    invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->b(Ldji/pilot2/main/view/MainConnectionStateView;)Landroid/content/Context;
+-
+-    move-result-object v0
+-
+-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-
+-    goto :goto_0
+-
+-    .line 514
+-    :cond_0
+     invoke-static {}, Ldji/pilot2/main/view/MainConnectionStateView;->a()Ljava/lang/String;
+ 
+     move-result-object v1
+@@ -149,7 +113,7 @@
+ 
+     move-result v1
+ 
+-    if-eqz v1, :cond_2
++    if-eqz v1, :cond_1
+ 
+     .line 516
+     invoke-static {}, Ldji/midware/data/model/P3/Data1860GetPushCheckStatus;->getInstance()Ldji/midware/data/model/P3/Data1860GetPushCheckStatus;
+@@ -160,7 +124,7 @@
+ 
+     move-result v1
+ 
+-    if-eqz v1, :cond_1
++    if-eqz v1, :cond_0
+ 
+     .line 517
+     invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->c(Ldji/pilot2/main/view/MainConnectionStateView;)Ldji/pilot/publics/widget/DJIStateTextView;
+@@ -184,7 +148,7 @@
+     goto :goto_0
+ 
+     .line 519
+-    :cond_1
++    :cond_0
+     invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->c(Ldji/pilot2/main/view/MainConnectionStateView;)Ldji/pilot/publics/widget/DJIStateTextView;
+ 
+     move-result-object v1
+@@ -204,7 +168,7 @@
+     goto :goto_1
+ 
+     .line 522
+-    :cond_2
++    :cond_1
+     invoke-static {}, Ldji/midware/data/model/P3/Data1860GetPushCheckStatus;->getInstance()Ldji/midware/data/model/P3/Data1860GetPushCheckStatus;
+ 
+     move-result-object v1
+@@ -213,7 +177,7 @@
+ 
+     move-result v1
+ 
+-    if-eqz v1, :cond_3
++    if-eqz v1, :cond_2
+ 
+     .line 523
+     invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->c(Ldji/pilot2/main/view/MainConnectionStateView;)Ldji/pilot/publics/widget/DJIStateTextView;
+@@ -233,7 +197,7 @@
+     goto :goto_1
+ 
+     .line 525
+-    :cond_3
++    :cond_2
+     invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->c(Ldji/pilot2/main/view/MainConnectionStateView;)Ldji/pilot/publics/widget/DJIStateTextView;
+ 
+     move-result-object v1
+@@ -310,14 +274,14 @@
+     .line 539
+     sget-object v2, Ldji/midware/data/model/P3/DataCameraGetMode$MODE;->PLAYBACK:Ldji/midware/data/model/P3/DataCameraGetMode$MODE;
+ 
+-    if-eq v1, v2, :cond_4
++    if-eq v1, v2, :cond_3
+ 
+     sget-object v2, Ldji/midware/data/model/P3/DataCameraGetMode$MODE;->NEW_PLAYBACK:Ldji/midware/data/model/P3/DataCameraGetMode$MODE;
+ 
+-    if-ne v1, v2, :cond_5
++    if-ne v1, v2, :cond_4
+ 
+     .line 540
+-    :cond_4
++    :cond_3
+     invoke-static {}, Ldji/midware/data/model/P3/DataCameraSetMode;->getInstance()Ldji/midware/data/model/P3/DataCameraSetMode;
+ 
+     move-result-object v1
+@@ -338,14 +302,12 @@
+     goto/16 :goto_0
+ 
+     .line 561
+-    :cond_5
++    :cond_4
+     invoke-static {v0}, Ldji/pilot2/main/view/MainConnectionStateView;->f(Ldji/pilot2/main/view/MainConnectionStateView;)V
+ 
+     goto/16 :goto_0
+ 
+     .line 504
+-    nop
+-
+     :pswitch_data_0
+     .packed-switch 0x0
+         :pswitch_1
