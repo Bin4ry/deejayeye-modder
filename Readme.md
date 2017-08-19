@@ -61,7 +61,7 @@ If you get a message about different region etc. etc after using the FCC patch: 
 2. Install .Net Framework 4.6.2 if you don't have it: https://www.microsoft.com/en-us/download/details.aspx?id=53344
 3. Unzip PatchAPK.zip to a C:\
 4. Add the tools path to your system PATH variable. So add C:\PatchAPK\tools
-5. Rename the original apk you are going to decompile to something without any spaces like DJIGO-413.apk
+5. Rename the original apk you are going to decompile to something without any spaces like DJeyeGO-413.apk
 6. Launch the app by double clicking PatchAPK.exe
 7. Select file, and find your renamed apk
 8. Select file, and choose the version of the apk you are patching
