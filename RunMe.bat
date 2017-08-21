@@ -21,10 +21,10 @@ call:chkinst "tools\bspatch.exe"
 call:chkinst "tools\patch.exe"
 call:chkinst "tools\sign.jar"
 for /F "usebackq" %%A IN ('PutApkHere\orig.apk') do set size=%%~zA
-if %size% == %aV413s% ( set "patches=patches\4.1.3"
- set "vers=%ver% (4.1.3)"
- ) else if %size% == %aV414s% ( set "patches=patches\4.1.4"
- set "vers=%ver% (4.1.4)"
+if %size% == %aV413s% ( set "patches=patches\4.1.3-1024454"
+ set "vers=%ver% (4.1.3)-1024454"
+ ) else if %size% == %aV414s% ( set "patches=patches\4.1.4-1025373"
+ set "vers=%ver% (4.1.4)-1025373"
  ) else ( echo.-: Unrecognized apk file.
  pause
  exit )
