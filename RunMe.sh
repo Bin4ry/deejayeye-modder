@@ -51,12 +51,13 @@ apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
 apkvcode=`cat apktool.yml | grep versionCode: | awk '{print $2}'`
 eval apkvcode=$apkvcode
 cd ..
-echo "$apkver-$apkvcode"
+#echo "$apkver-$apkvcode"
 if [ ! -d "patches/$apkver-$apkvcode" ] 
 then
 echo "Incompatible apk version!"
 echo "ApkVersion: $apkver"
 echo "ApkVersionCode: $apkvcode"
+echo "Please take a look into the patches folder to see supported versions!"
 read -p ""
 echo "Removing decompile_out folder"
 rm -rf decompile_out
