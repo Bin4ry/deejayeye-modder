@@ -49,6 +49,7 @@ echo done
 cd decompile_out
 apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
 apkvcode=`cat apktool.yml | grep versionCode: | awk '{print $2}'`
+eval apkvcode=$apkvcode
 cd ..
 echo "$apkver-$apkvcode"
 if [ ! -d "patches/$apkver-$apkvcode" ] 
