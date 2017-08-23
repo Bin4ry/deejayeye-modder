@@ -31,3 +31,5 @@ enable Mavic Pro flight modes for Spark (thx djayeyeballs)
 enableSparkWifiChannelSelectOnOtg:
 brings back the Wifi channel selection screen! Works but the graph where you can see the network occupation is not filled with data yet. 
 
+enableCacheControl:
+brings back the option whether to cache video locally or not. May reduced crashes and CPU-load if switched off.

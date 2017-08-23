@@ -77,7 +77,8 @@ options=(1 "force FCC patch" on
 		 7 "remove social networks (keep Google APIs too!)" on
 		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on 
 		 9 "enable Wifi channel selection on Spark with OTG" on
-		 10 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
+		 10 "enable Cache control" on 
+		 11 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 fi
@@ -164,6 +165,12 @@ do
 			echo "enableSparkWifiChannelSelectOnOtg" >> out/lastbuild-cfg.txt
             ;;	
 		10)
+            cd decompile_out
+			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableCacheControl.patch
+			cd ..
+			echo "enableCacheControl" >> out/lastbuild-cfg.txt
+            ;;	
+		11)
             cd decompile_out
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableP3series.patch
 			cd ..

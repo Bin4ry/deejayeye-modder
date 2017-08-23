@@ -1,0 +1,12 @@
+diff -Naur original/smali_classes5/dji/setting/ui/general/VideoCacheOpenSwitch.smali mod/smali_classes5/dji/setting/ui/general/VideoCacheOpenSwitch.smali
+--- original/smali_classes5/dji/setting/ui/general/VideoCacheOpenSwitch.smali	Tue Aug 22 18:48:40 2017
++++ mod/smali_classes5/dji/setting/ui/general/VideoCacheOpenSwitch.smali	Tue Aug 22 18:06:00 2017
+@@ -99,7 +99,7 @@
+     if-eqz v0, :cond_0
+ 
+     .line 85
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/general/VideoCacheOpenSwitch;->setVisibility(I)V
+ 
