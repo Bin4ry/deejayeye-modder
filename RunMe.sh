@@ -30,7 +30,7 @@ then
 rm out/lastbuild-md5.txt
 fi
 
-echo "Version: $ver" >> out/lastbuild-cfg.txt
+echo "Smali patcher version: $ver" >> out/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
 while true; do
@@ -51,6 +51,8 @@ apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
 apkvcode=`cat apktool.yml | grep versionCode: | awk '{print $2}'`
 eval apkvcode=$apkvcode
 cd ..
+echo "APK Version: $apkver-$apkvcode" >> out/lastbuild-cfg.txt
+echo " " >> out/lastbuild-cfg.txt
 #echo "$apkver-$apkvcode"
 if [ ! -d "patches/$apkver-$apkvcode" ] 
 then
@@ -64,7 +66,7 @@ rm -rf decompile_out
 echo "Exiting now"
 exit 3
 fi
-
+echo "Active patches: " >> out/lastbuild-cfg.txt
 if [ "$apkver" == "4.1.3" ]
 then
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
