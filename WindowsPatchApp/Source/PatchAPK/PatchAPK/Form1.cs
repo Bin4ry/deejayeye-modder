@@ -302,11 +302,11 @@ namespace PatchAPK
             string version = "";
             if (toolStripMenuItem3.Checked)
             {
-                version = "4.1.4";
+                version = "4.1.4-1025373";
             }
             else
             {
-                version = "4.1.3";
+                version = "4.1.3-1024454";
             }
             return version;
         }
