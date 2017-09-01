@@ -9,6 +9,7 @@ set "d_out=decompile_out"
 set "a_out=_NEW_APK"
 set aV414s=94569319
 set aV413s=104544384
+set aV418s=99950086
 set pCounter=1
 set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 rd /S /Q %p_out% >nul 2>&1
