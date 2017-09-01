@@ -25,6 +25,8 @@ if %size% == %aV413s% ( set "patches=patches\4.1.3-1024454"
  set "vers=%ver% (4.1.3)-1024454"
  ) else if %size% == %aV414s% ( set "patches=patches\4.1.4-1025373"
  set "vers=%ver% (4.1.4)-1025373"
+  ) else if %size% == %aV418s% ( set "patches=patches\4.1.8-1025605"
+ set "vers=%ver% (4.1.8)-1025605"
  ) else ( echo.-: Unrecognized apk file.
  pause
  exit )

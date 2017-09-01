@@ -87,15 +87,6 @@ fi
 
 if [ "$apkver" == "4.1.4" ]
 then
-#mv decompile_out/smali/com/dji/k/a/a/b.smali decompile_out/smali/com/dji/k/a/a/b.bak
-#python decrypt_strings.py decompile_out/smali/dji
-#python decrypt_strings.py decompile_out/smali/com/dji
-#python decrypt_strings.py decompile_out/smali_classes2/com/dji
-#python decrypt_strings.py decompile_out/smali_classes3/dji
-#python decrypt_strings.py decompile_out/smali_classes4/dji
-#python decrypt_strings.py decompile_out/smali_classes5/dji
-#python decrypt_strings.py decompile_out/smali_classes6/dji
-#mv decompile_out/smali/com/dji/k/a/a/b.bak decompile_out/smali/com/dji/k/a/a/b.smali
 cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
@@ -105,6 +96,19 @@ options=(1 "force FCC patch" on
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 fi
+
+if [ "$apkver" == "4.1.8" ]
+then
+cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
+options=(1 "force FCC patch" on
+         2 "remove forced Updates from DJI Go4" on
+         3 "remove Firmware Upgrade check" on
+		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
+ 		 9 "enable Wifi channel selection on Spark with OTG" on)
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
+fi
+
  
 for choice in $choices
 do
