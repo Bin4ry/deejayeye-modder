@@ -105,6 +105,7 @@ options=(1 "force FCC patch" on
          3 "remove Firmware Upgrade check" on
 		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
  		 9 "enable Wifi channel selection on Spark with OTG" on)
+		 10 "enable Cache control" on 
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 fi
