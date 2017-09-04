@@ -300,13 +300,17 @@ namespace PatchAPK
         private string getAPKVersion()
         {
             string version = "";
+            if (toolStripMenuItem2.Checked)
+            {
+                version = "4.1.3-1024454";
+            }
             if (toolStripMenuItem3.Checked)
             {
                 version = "4.1.4-1025373";
             }
-            else
+            if (toolStripMenuItem4.Checked)
             {
-                version = "4.1.3-1024454";
+                version = "4.1.8-1025605";
             }
             return version;
         }
@@ -404,10 +408,11 @@ namespace PatchAPK
             {
                 toolStripMenuItem3.Checked = false;
             }
-            else
+            if (toolStripMenuItem4.Checked)
             {
-                toolStripMenuItem2.Checked = true;
+                toolStripMenuItem4.Checked = false;
             }
+            toolStripMenuItem2.Checked = true;
             loadPatches();
         }
 
@@ -417,11 +422,27 @@ namespace PatchAPK
             {
                 toolStripMenuItem2.Checked = false;
             }
-            else
+            if (toolStripMenuItem4.Checked)
             {
-                toolStripMenuItem3.Checked = true;
+                toolStripMenuItem4.Checked = false;
             }
+            toolStripMenuItem3.Checked = true;
             loadPatches();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            if (toolStripMenuItem2.Checked)
+            {
+                toolStripMenuItem2.Checked = false;
+            }
+            if (toolStripMenuItem3.Checked)
+            {
+                toolStripMenuItem3.Checked = false;
+            }
+            toolStripMenuItem4.Checked = true;
+            loadPatches();
+
         }
     }
 }
