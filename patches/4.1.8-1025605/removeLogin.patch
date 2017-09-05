@@ -1,0 +1,14 @@
+diff -Naur orig/smali_classes5/dji/pilot/usercenter/b/g.smali mod/smali_classes5/dji/pilot/usercenter/b/g.smali
+--- orig/smali_classes5/dji/pilot/usercenter/b/g.smali	2017-09-05 11:48:46.572127900 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/b/g.smali	2017-09-05 17:25:13.880622000 +0200
+@@ -1661,9 +1661,7 @@
+ 
+     move-result-object v0
+ 
+-    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->isMotorUp()Z
+-
+-    move-result v0
++    const/4 v0, 0x1
+ 
+     .line 431
+     invoke-static {}, Ldji/pilot/usercenter/b/g;->getInstance()Ldji/pilot/usercenter/b/g;

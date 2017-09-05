@@ -103,6 +103,8 @@ cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
          3 "remove Firmware Upgrade check" on
+		 4 "remove login" on
+		 5 "remove Onlinefunction [use with remove login!]\n\t (removes Social too)" on
 		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
  		 9 "enable Wifi channel selection on Spark with OTG" on
 		 10 "enable Cache control" on)
@@ -134,7 +136,12 @@ do
             ;;
 		4)
             cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/offlineLogin.patch
+			if [ "$apkver" == "4.1.8" ]
+			then
+				patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeLogin.patch
+			else
+				patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/offlineLogin.patch
+			fi
 			cd ..
 			echo "offlineLogin" >> out/lastbuild-cfg.txt
             ;;
@@ -182,7 +189,7 @@ do
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableP3series.patch
 			cd ..
 			echo "enableP3series" >> out/lastbuild-cfg.txt
-            ;;	
+            ;;
     esac
 done
 cd decompile_out
