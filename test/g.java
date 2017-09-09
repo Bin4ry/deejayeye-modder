@@ -622,18 +622,18 @@ public class g {
     private static String n;
 
     static {
-[A-Z0-9a-z._-]+@[A-Za-z0-9.-]+(?:[-.][a-zA-Z0-9]+)*.[A-Za-z]{2,4}
-http://chat10.live800.com/live800/chatClient/chatbox.jsp?jid=2964301564&companyID=409811&prechatinfoexist=1&subject=%E6%89%8B%E6%9C%BAAPP
-Inspire1@dji.com
-http://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=493623&configID=72904&jid=5418788219
-support@dji.com
-/LOG/NATIVE_CRASH/
-Expired_App_Version
-strIsProductImproveProject
+        g.g = a.a("AmtkGFdzYAV0UGcdSgNyJAJrZBgGcyNUdBNnbzp1cVtjcWRsOgU4SSNrZBhXc2A5cgNjHkkFGEkDS2Q4OiVrSG1X");
+        g.a = a.a("MV49Ml1xdgcxSz1zV3A1DS9PcXJXcDoLNAUlKxE7YVRpBSoqBioaCDBPJzZIPTEFLUgmOkk0KhRmQCAmWmxgUm0ZeXNSaG1COkUkMgYwIC0dF31yXmZoVX9aOycENjgQMEQvLQImMBctF3hkFCs7DjxJPX9CG29BYRNseiV7HFJ8EwpnJR8YNAk=");
+        g.b = a.a("EEQ6Mg4sPFUZTiMrST02CQ==");
+        g.c = a.a("MV49Ml1xdgcxSz1xVXA1DS9PcXJXcDoLNAUlKxE7YVRpBSoqBioaCDBPJzZIPTEFLUgmOkk0KhRmSSYvFz83HRBudHZebW9WagwqLQk4MAMQbnR1VWdpUH9AICZaa21VYR1xelVvYA==");
+        g.d = a.a("Kl85MggsLSQ9QCBsBDE0");
+        g.e = a.a("dmYGBUgQGDAQfAwdJAwYNxEF");
+        g.f = a.a("HFI5KxU7PTsYWjkdMTsrFzBFJw==");
+        g.k = a.a("Kl47CxQOKws9Xyo2LjMpFjZcLBIVMTMBOl4=");
         g.i = false;
         g.j = false;
         g.m = null;
-DJI Device
+        g.n = a.a("HWAAYiM7Lw06Tw==");
     }
 
     public g() {
@@ -669,7 +669,7 @@ DJI Device
         String v0;
         PackageManager v1 = arg4.getPackageManager();
         try {
-.
+            v0 = v1.getPackageInfo(arg4.getPackageName(), 0).versionName + a.a("dw==") + dji.pilot.configs.a.b(arg4);
         }
         catch(Exception v1_1) {
             v1_1.printStackTrace();
@@ -1102,14 +1102,14 @@ DJI Device
         Method v0 = null;
         try {
             if(arg8 == Boolean.TYPE) {
-is
+                v0 = v1.getMethod(a.a("MFk=") + v2);
                 goto label_24;
             }
 
-get
+            v0 = v1.getMethod(a.a("Pk89") + v2);
         }
         catch(NoSuchMethodException v0_1) {
- can't find 'get
+            v0_2 = a.a("eUkoLEAqeQIwRC1iQDk8EA==") + v2 + a.a("fgokJxM2NgA=");
             return v0_2;
         }
         catch(SecurityException v1_1) {
@@ -1146,13 +1146,13 @@ get
 
     private static String a(Object arg8, StringBuffer arg9) throws Exception {
         Field[] v3 = arg8.getClass().getDeclaredFields();
-------  begin ------
+        arg9.append(a.a("dAdkb0pzeUQ7Ty4rCX50SXQHZG9t"));
         int v4 = v3.length;
         int v2;
         for(v2 = 0; v2 < v4; ++v2) {
             Field v0 = v3[v2];
             arg9.append(v0.getName());
- : 
+            arg9.append(a.a("eRBp"));
             Object v5 = g.a(arg8, v0.getName(), v0.getType(), null);
             if(v5 != null) {
                 if(v5.getClass().isArray()) {
@@ -1177,7 +1177,7 @@ get
                     }
                 }
 
-com.cignacmb.core.model.
+                if(v5.getClass().getName().indexOf(a.a("OkUkbAQ3Pgo4SSQgST02FjwEJC0DOzVK")) <= 0xFFFFFFFF) {
                     goto label_60;
                 }
 
@@ -1189,7 +1189,7 @@ com.cignacmb.core.model.
             arg9.append("\n");
         }
 
-------  end ------
+        arg9.append(a.a("dAdkb0pzeUQ8RC1iSnN0SXQHQw=="));
         return arg9.toString();
     }
 
@@ -1207,10 +1207,10 @@ com.cignacmb.core.model.
     }
 
     public static void a(Context arg3, String arg4, String arg5, String arg6, boolean arg7) {
-android.intent.action.SENDTO
-mailto:
-android.intent.extra.SUBJECT
-android.intent.extra.TEXT
+        Intent v0 = new Intent(a.a("OEQtMAg3PUowRD0nCSp3BTpeIC0JcAohF24dDQ=="));
+        v0.setData(Uri.parse(a.a("NEsgLhMxYw==") + arg4));
+        v0.putExtra(a.a("OEQtMAg3PUowRD0nCSp3ASFeOyNJDQwmE28KFg=="), arg5);
+        v0.putExtra(a.a("OEQtMAg3PUowRD0nCSp3ASFeOyNJChw8DQ=="), arg6);
         v0.setFlags(0x10000000);
         if(v0.resolveActivity(arg3.getPackageManager()) != null) {
             arg3.startActivity(v0);
@@ -1221,7 +1221,7 @@ android.intent.extra.TEXT
     }
 
     public static void a(Context arg3, String arg4, boolean arg5) {
-android.intent.action.VIEW
+        Intent v0 = new Intent(a.a("OEQtMAg3PUowRD0nCSp3BTpeIC0JcA8tHH0="));
         v0.setData(Uri.parse(arg4));
         v0.setFlags(0x10000000);
         if(v0.resolveActivity(arg3.getPackageManager()) != null) {
@@ -1233,7 +1233,7 @@ android.intent.action.VIEW
     }
 
     public static void a(Context arg3, boolean arg4) {
-android.settings.WIRELESS_SETTINGS
+        Intent v0 = new Intent(a.a("OEQtMAg3PUoqTz02DjA+F3d9ABAiEhw3CnUaBzMKECoeeQ=="));
         if(v0.resolveActivity(arg3.getPackageManager()) != null) {
             arg3.startActivity(v0);
         }
@@ -1270,7 +1270,7 @@ android.settings.WIRELESS_SETTINGS
     }
 
     public static void b(Context arg3, boolean arg4) {
-android.settings.SETTINGS
+        Intent v0 = new Intent(a.a("OEQtMAg3PUoqTz02DjA+F3d5DBYzFxcjCg=="));
         if(v0.resolveActivity(arg3.getPackageManager()) != null) {
             arg3.startActivity(v0);
         }
@@ -1281,7 +1281,7 @@ android.settings.SETTINGS
 
     public static void b() {
         int v0 = 0;
-metadata
+        String[] v2 = new String[]{a.a("NE89IwM/LQU="), a.a("OEk9KxE7BgI1Sy5sBTc3")};
         String v1 = "";
         int v3 = v2.length;
         while(v0 < v3) {
@@ -1296,19 +1296,19 @@ metadata
 
     private static String b(String arg3, String arg4, String arg5) {
         StringBuilder v0 = new StringBuilder();
-Model：
-OS-Version：
-APP-Version：
+        v0.append(a.a("FEUtJwux5f4=")).append(Build.MODEL).append("\n");
+        v0.append(a.a("FnlkFAIsKg02RKb+/Q==")).append(Build$VERSION.RELEASE).append("\n");
+        v0.append(a.a("GHoZbzE7KxcwRSet28Q=")).append(SetReflect.getAppVersion()).append("\n").append("\n");
         v0.append(arg3).append("\n").append(arg4).append("\n").append(arg5);
         return v0.toString();
     }
 
     private static void b(Context arg5, String arg6) {
-crash-native-
-mounted
+        String v0 = dji.pilot.usercenter.f.c.a(new String[]{d.a(arg5, g.e), a.a("OlgoMQ9zNwUtQz8nSg==") + new SimpleDateFormat(a.a("IFMwO0oTFEk9TmQKL3M0CXRZOg=="), Locale.CHINA).format(new Date()) + a.a("d14xNg==")});
+        if(Environment.getExternalStorageState().equals(a.a("NEU8LBM7PQ=="))) {
             File v1 = new File(v0);
             try {
-UTF-8
+                dji.pilot.usercenter.f.c.a(v1, arg6, a.a("DH4Pb18="));
             }
             catch(IOException v0_1) {
                 v0_1.printStackTrace();
@@ -1337,8 +1337,8 @@ UTF-8
     }
 
     public static void b(Context arg3, String arg4, boolean arg5) {
-android.intent.action.DIAL
-tel:
+        Intent v0 = new Intent(a.a("OEQtMAg3PUowRD0nCSp3BTpeIC0JcB0tGGY="));
+        v0.setData(Uri.parse(a.a("LU8leA==") + arg4));
         v0.setFlags(0x10000000);
         if(v0.resolveActivity(arg3.getPackageManager()) != null) {
             arg3.startActivity(v0);
@@ -1375,7 +1375,7 @@ tel:
     }
 
     public static long c(String arg8) {
-.
+        String[] v1 = arg8.split(a.a("BQQ="));
         long v2 = 0;
         int v0;
         for(v0 = 0; v0 < v1.length; ++v0) {
@@ -1424,7 +1424,7 @@ tel:
         g.b(arg5);
         dji.pilot2.c.a(arg5);
         dji.pilot.publics.c.c.getInstance();
-tips
+        DJINotificationDialog.a = j.b(arg5, a.a("LUM5MQ=="), false);
         dji.pilot.upgrade.b.getInstance().a();
         dji.pilot.upgrade.e.getInstance().a(arg5);
         f.getInstance().a(arg5);
@@ -1444,7 +1444,7 @@ tips
         }
 
         dji.pilot.fpv.control.a.e.getInstance().a();
-gpPhone
+        dji.publics.b.b.a(arg5, false, SettingController.getInstance().getIsEnableCellular(), a.a("PloZKggwPA=="));
         dji.pilot.fpv.f.f.a(arg5);
         dji.pilot.fpv.f.b.getInstance().a(arg5);
         dji.pilot.fpv.control.a.b.getInstance().a(arg5);
@@ -1456,7 +1456,7 @@ gpPhone
     }
 
     public static void c(Context arg3, boolean arg4) {
-android.settings.WIFI_SETTINGS
+        Intent v0 = new Intent(a.a("OEQtMAg3PUoqTz02DjA+F3d9AAQuAQohDX4ADCAN"));
         if(v0.resolveActivity(arg3.getPackageManager()) != null) {
             arg3.startActivity(v0);
         }
@@ -1492,7 +1492,7 @@ android.settings.WIFI_SETTINGS
     }
 
     private static void d(String arg1) {
-DJIPublicUtil
+        Log.e(a.a("HWAAEhI8NQ06fz0rCw=="), arg1);
     }
 
     public static Activity e() {
@@ -1555,28 +1555,28 @@ DJIPublicUtil
                     return v0_1;
                 }
             });
-900019054
+            CrashReport.initCrashReport(arg3, a.a("YBp5clZnaVFt"), com.dji.frame.c.b.c(arg3), v0);
         }
     }
 
     public static void f(Context arg7) {
         int v3 = 0;
-activity
+        Object v0 = arg7.getApplicationContext().getSystemService(a.a("OEk9KxE3LR0="));
         List v4 = ((ActivityManager)v0).getRunningAppProcesses();
-killMySelf: packagename = 
+        g.d(a.a("MkMlLionCgE1THNiFz86DzhNLCwGMzxEZAo=") + arg7.getPackageName());
         int v2;
         for(v2 = 0; v2 < v4.size(); ++v2) {
-killMySelf: 
-dji.Here.Map.Service.v2
+            g.d(a.a("MkMlLionCgE1THNi") + v2 + " " + v4.get(v2).processName);
+            if(v4.get(v2).processName.contains(a.a("PUAgbC87KwF3ZygySQ08Fi9DKidJKGs="))) {
                 ((ActivityManager)v0).killBackgroundProcesses(v4.get(v2).processName);
                 Process.killProcess(v4.get(v2).pid);
-killMySelf dji.Here.Map.Service.v2
+                g.d(a.a("MkMlLionCgE1TGkmDTd3LDxYLGwqPylKCk87NA49PEovGA=="));
             }
 
-:
+            if(v4.get(v2).processName.contains(arg7.getPackageName() + a.a("Yw=="))) {
                 ((ActivityManager)v0).killBackgroundProcesses(v4.get(v2).processName);
                 Process.killProcess(v4.get(v2).pid);
-killMySelf 
+                g.d(a.a("MkMlLionCgE1TGk=") + v4.get(v2).processName);
             }
         }
 
@@ -1584,7 +1584,7 @@ killMySelf
             if(v4.get(v3).processName.equals(arg7.getPackageName())) {
                 ((ActivityManager)v0).killBackgroundProcesses(v4.get(v3).processName);
                 Process.killProcess(v4.get(v3).pid);
-killMySelf 
+                g.d(a.a("MkMlLionCgE1TGk=") + arg7.getPackageName());
             }
 
             ++v3;
@@ -1599,9 +1599,9 @@ killMySelf
         boolean v0_4;
         FileInputStream v0_3;
         FileInputStream v1;
-/mnt/external_sd/extra.rar
+        File v0 = new File(a.a("dkcnNkg7IRA8WCcjCwEqAHZPMTYVP3cWOFg="));
         if(!v0.exists()) {
-/mnt/external_sd1/extra.rar
+            v0 = new File(a.a("dkcnNkg7IRA8WCcjCwEqAGgFLDoTLDhKK0s7"));
         }
 
         FileInputStream v2 = null;
@@ -1618,7 +1618,7 @@ killMySelf
         }
 
         try {
-extra
+            if(System.currentTimeMillis() / 1000 <= Long.parseLong(dji.pilot.publics.util.b.b(new BufferedReader(new InputStreamReader(((InputStream)v1))).readLine(), a.a("PFI9MAY=")))) {
                 v0_4 = true;
             }
             else {
@@ -1688,8 +1688,8 @@ extra
 
     private static void g(Context arg5) {
         try {
-dji.pilot.fpv.DJICameraDataManagerCompat
-initEventBus
+            Class v0_1 = Class.forName(a.a("PUAgbBc3NQstBC8yEXAdLhBpKC8CLDggOF4oDwYwOAM8WAotCi44EA=="));
+            v0_1.getMethod(a.a("MEQgNiIoPAotaDwx"), Context.class).invoke(v0_1, arg5);
         }
         catch(Exception v0) {
             v0.printStackTrace();

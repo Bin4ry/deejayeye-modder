@@ -50,16 +50,21 @@ def file_replace(fname, pat):
         out_fname = fname + ".tmp"
         out = open(out_fname, "w")
         for line in f:
-            s_after = re.search(pat, line)
-	    if s_after is not None:
-		s_after = s_after.group(1)
+            match = re.search(pat, line)
+
+	    print line
+#	    print line.index(match.group(1))
+
+	    # Grab the rest of the line here!!! don't just replace with the decrypted match
+	    if match is not None:
+		match = match.group(1)
 		try:
-		        s_after = decrypt(s_after,klen)
+		        s_after = decrypt(match,klen)
 		except binascii.Error as err:	
-			out.write("xxx" + line)
+			out.write(line)
 			pass
-		print s_after
-                out.write(re.sub(pat, s_after, "yyy" + line))
+
+                out.write(re.sub(pat, s_after, line))
 	    else:
             	out.write(line)
         out.close()
