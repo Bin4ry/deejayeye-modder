@@ -55,11 +55,13 @@ def file_replace(fname, pat):
 	    # Grab the rest of the line here!!! don't just replace with the decrypted match
 	    if match is not None:
 		match = match.group(1)
+		s_after = ""
 		try:
 		        s_after = decrypt(match,klen)
 		except binascii.Error as err:	
 			out.write(line)
 			pass
+
 		line_after = line.replace(match,s_after)
 		line_after = line_after.replace("a.a(",'(')
                 out.write(re.sub(pat, line_after, line))
