@@ -43,7 +43,6 @@ def file_replace(fname, pat):
     # first, see if the pattern is even in the file.
     with open(fname) as f:
         if not any(re.search(pat, line) for line in f):
-	    print "match not in file " + fname
             return # pattern does not occur in file so we are done.
 
     # pattern is in the file, so perform replace operation.
@@ -57,14 +56,14 @@ def file_replace(fname, pat):
 		try:
 		        s_after = decrypt(s_after,klen)
 		except binascii.Error as err:	
-			out.write(line)
+			out.write("xxx" + line)
 			pass
-		#print s_after
-            	out.write(re.sub(pat, s_after, line))
+		print s_after
+                out.write(re.sub(pat, s_after, "yyy" + line))
 	    else:
             	out.write(line)
         out.close()
-	print "wrote " + fname + ".tmp"
+	print "wrote " + fname
         os.rename(out_fname, fname)
 
 # https://gist.github.com/whophil/2a999bcaf0ebfbd6e5c0d213fb38f489
@@ -79,7 +78,6 @@ def mass_replace(dir_name, replace_extensions=DEFAULT_REPLACE_EXTENSIONS):
     pat = re.compile('.*?a\.a\("([A-Za-z0-9+\/=]*)".*')
     filenames = recursive_glob(dir_name, "*.java")
     for fname in filenames:
-	print fname
     	if try_to_replace(fname, replace_extensions):
 		file_replace(fname, pat)
 
