@@ -64,7 +64,7 @@ def file_replace(fname, pat):
 
 		line_after = line.replace(match,s_after)
 		line_after = line_after.replace("a.a(",'(')
-                out.write(re.sub(pat, line_after, line))
+                out.write(re.sub(pat, line_after, line)[:-1])
 	    else:
             	out.write(line)
         out.close()
