@@ -52,9 +52,6 @@ def file_replace(fname, pat):
         for line in f:
             match = re.search(pat, line)
 
-	    print line
-#	    print line.index(match.group(1))
-
 	    # Grab the rest of the line here!!! don't just replace with the decrypted match
 	    if match is not None:
 		match = match.group(1)
@@ -63,8 +60,9 @@ def file_replace(fname, pat):
 		except binascii.Error as err:	
 			out.write(line)
 			pass
-
-                out.write(re.sub(pat, s_after, line))
+		line_after = line.replace(match,s_after)
+		line_after = line_after.replace("a.a(",'(')
+                out.write(re.sub(pat, line_after, line))
 	    else:
             	out.write(line)
         out.close()
