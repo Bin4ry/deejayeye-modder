@@ -38,9 +38,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aPKVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblAPK = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -48,9 +45,10 @@
             // 
             // btnDecompile
             // 
-            this.btnDecompile.Location = new System.Drawing.Point(12, 399);
+            this.btnDecompile.Location = new System.Drawing.Point(6, 207);
+            this.btnDecompile.Margin = new System.Windows.Forms.Padding(2);
             this.btnDecompile.Name = "btnDecompile";
-            this.btnDecompile.Size = new System.Drawing.Size(142, 40);
+            this.btnDecompile.Size = new System.Drawing.Size(71, 21);
             this.btnDecompile.TabIndex = 2;
             this.btnDecompile.Text = "Decompile";
             this.btnDecompile.UseVisualStyleBackColor = true;
@@ -60,28 +58,31 @@
             // 
             this.txtOutput.BackColor = System.Drawing.SystemColors.Control;
             this.txtOutput.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtOutput.Location = new System.Drawing.Point(551, 51);
+            this.txtOutput.Location = new System.Drawing.Point(276, 27);
+            this.txtOutput.Margin = new System.Windows.Forms.Padding(2);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(932, 689);
+            this.txtOutput.Size = new System.Drawing.Size(468, 360);
             this.txtOutput.TabIndex = 3;
             // 
             // clbPatch
             // 
             this.clbPatch.CheckOnClick = true;
             this.clbPatch.FormattingEnabled = true;
-            this.clbPatch.Location = new System.Drawing.Point(12, 51);
+            this.clbPatch.Location = new System.Drawing.Point(6, 27);
+            this.clbPatch.Margin = new System.Windows.Forms.Padding(2);
             this.clbPatch.Name = "clbPatch";
-            this.clbPatch.Size = new System.Drawing.Size(533, 342);
+            this.clbPatch.Size = new System.Drawing.Size(268, 169);
             this.clbPatch.TabIndex = 12;
             // 
             // btnPatch
             // 
-            this.btnPatch.Location = new System.Drawing.Point(160, 399);
+            this.btnPatch.Location = new System.Drawing.Point(80, 207);
+            this.btnPatch.Margin = new System.Windows.Forms.Padding(2);
             this.btnPatch.Name = "btnPatch";
-            this.btnPatch.Size = new System.Drawing.Size(142, 40);
+            this.btnPatch.Size = new System.Drawing.Size(71, 21);
             this.btnPatch.TabIndex = 13;
             this.btnPatch.Text = "Patch";
             this.btnPatch.UseVisualStyleBackColor = true;
@@ -92,9 +93,10 @@
             this.btnRecompile.BackColor = System.Drawing.SystemColors.Control;
             this.btnRecompile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecompile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRecompile.Location = new System.Drawing.Point(12, 445);
+            this.btnRecompile.Location = new System.Drawing.Point(6, 231);
+            this.btnRecompile.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecompile.Name = "btnRecompile";
-            this.btnRecompile.Size = new System.Drawing.Size(290, 40);
+            this.btnRecompile.Size = new System.Drawing.Size(145, 21);
             this.btnRecompile.TabIndex = 14;
             this.btnRecompile.Text = "Build and Sign";
             this.btnRecompile.UseVisualStyleBackColor = true;
@@ -103,9 +105,10 @@
             // cbDryRun
             // 
             this.cbDryRun.AutoSize = true;
-            this.cbDryRun.Location = new System.Drawing.Point(308, 406);
+            this.cbDryRun.Location = new System.Drawing.Point(154, 211);
+            this.cbDryRun.Margin = new System.Windows.Forms.Padding(2);
             this.cbDryRun.Name = "cbDryRun";
-            this.cbDryRun.Size = new System.Drawing.Size(116, 29);
+            this.cbDryRun.Size = new System.Drawing.Size(65, 17);
             this.cbDryRun.TabIndex = 15;
             this.cbDryRun.Text = "Dry Run";
             this.cbDryRun.UseVisualStyleBackColor = true;
@@ -119,79 +122,49 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1498, 40);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(749, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.aPKVersionToolStripMenuItem});
+            this.settingsToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.menuToolStripMenuItem.Text = "File";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Select APK";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // aPKVersionToolStripMenuItem
-            // 
-            this.aPKVersionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.aPKVersionToolStripMenuItem.Name = "aPKVersionToolStripMenuItem";
-            this.aPKVersionToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
-            this.aPKVersionToolStripMenuItem.Text = "APK Version";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Checked = true;
-            this.toolStripMenuItem2.CheckOnClick = true;
-            this.toolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(164, 38);
-            this.toolStripMenuItem2.Text = "4.1.3";
-            this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.CheckOnClick = true;
-            this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(164, 38);
-            this.toolStripMenuItem3.Text = "4.1.4";
-            this.toolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(92, 36);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // lblAPK
             // 
             this.lblAPK.AutoSize = true;
-            this.lblAPK.Location = new System.Drawing.Point(12, 714);
+            this.lblAPK.Location = new System.Drawing.Point(6, 371);
+            this.lblAPK.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAPK.Name = "lblAPK";
-            this.lblAPK.Size = new System.Drawing.Size(70, 25);
+            this.lblAPK.Size = new System.Drawing.Size(35, 13);
             this.lblAPK.TabIndex = 20;
             this.lblAPK.Text = "label1";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 752);
+            this.ClientSize = new System.Drawing.Size(749, 391);
             this.Controls.Add(this.lblAPK);
             this.Controls.Add(this.cbDryRun);
             this.Controls.Add(this.btnRecompile);
@@ -202,6 +175,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -225,9 +199,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aPKVersionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label lblAPK;
     }

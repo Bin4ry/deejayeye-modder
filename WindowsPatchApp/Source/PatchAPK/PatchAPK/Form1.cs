@@ -24,8 +24,9 @@ namespace PatchAPK
         public string apk = "";
         public string toolsdir = "";
         public string patchdir = "";
-        public string decompiledir = "";        
-
+        public string decompiledir = "";
+        public string apkversion = "";
+        
         private bool IsValidPath(string path)
         {
             Regex driveCheck = new Regex(@"^[a-zA-Z]:\\$");
@@ -112,7 +113,7 @@ namespace PatchAPK
             {                
                 Process proc = new Process();
                 proc.StartInfo.FileName = "java";
-                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\apktool.jar b -o " + decompiledir + "\\dist\\mod.apk " + decompiledir; 
+                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\apktool.jar b -o " + decompiledir + "\\out\\mod.apk " + decompiledir; 
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.RedirectStandardError = true;
@@ -159,7 +160,7 @@ namespace PatchAPK
             {
                 Process proc = new Process();
                 proc.StartInfo.FileName = "java";
-                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\sign.jar b " + decompiledir + "\\dist\\mod.apk --override";
+                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\sign.jar b " + decompiledir + "\\out\\mod.apk --override";
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.RedirectStandardError = true;
@@ -185,7 +186,7 @@ namespace PatchAPK
             try
             {                
                 Process proc = new Process();
-                proc.StartInfo.FileName = toolsdir + "\\bspatch";
+                proc.StartInfo.FileName = toolsdir + "\\bspatch.exe";
                 proc.StartInfo.Arguments = decompiledir + "\\lib\\armeabi-v7a\\libSDKRelativeJNI.so " + decompiledir + "\\lib\\armeabi-v7a\\libSDKRelativeJNI.so " + patchdir + "\\so.bspatch";
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.RedirectStandardOutput = true;
@@ -212,15 +213,21 @@ namespace PatchAPK
             for (int i = 0; i < clbPatch.Items.Count; i++) 
             {
                  string itm = clbPatch.Items[i].ToString();
-                 if(clbPatch.GetItemChecked(i) && itm != "removeOnlinefunction")
+                 if(clbPatch.GetItemChecked(i))
                  {
                      try
                      {
-                         string preArg = "";
+                        if (itm == "removeOnlinefunction")
+                        {
+                            MessageBox.Show("RemoveOnlinefunction patch will not be completely available using the windows exe");
+                            Thread thread3 = new Thread(bsPatch);
+                            thread3.Start();
+                        } else {
+                        string preArg = "";
                          Process proc = new Process();
                          proc.StartInfo.FileName = toolsdir + "\\patch.exe";
                          proc.StartInfo.WorkingDirectory = decompiledir;
-                         string f = patchdir + "\\" + clbPatch.Items[i].ToString() + ".patch";
+                         string f = patchdir + "\\" + itm + ".patch";
                          if (cbDryRun.Checked)
                          {
                              preArg = "--dry-run ";
@@ -233,7 +240,7 @@ namespace PatchAPK
                          proc.StartInfo.Verb = "runas";
                          proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
                          SetTextBoxText("<-------------- Begin Patch -------------->\r\n");
-                         SetTextBoxText("Applying Patch: " + clbPatch.Items[i].ToString() + "\r\n");
+                         SetTextBoxText("Applying Patch: " + itm + "\r\n");
                          //MessageBox.Show(f);
                          proc.Start();
                          proc.WaitForExit();
@@ -246,23 +253,53 @@ namespace PatchAPK
                          }
                          proc.Close();
                          SetTextBoxText("\r\n<-------------- Patch Complete ----------->\r\n");
-
-                     }
+                        }
+                    }
                      catch (Exception ex)
                      {
                          MessageBox.Show(ex.ToString());
                      }
                  }
-                 else if (clbPatch.GetItemChecked(i) && itm == "removeOnlinefunction")
-                 {
-                     Thread thread3 = new Thread(bsPatch);
-                     thread3.Start();
-                 }
 
             }           
             
         }
-                
+
+        private void Unix2Dos(string fileName)
+        {
+            const byte CR = 0x0D;
+            const byte LF = 0x0A;
+            byte[] DOS_LINE_ENDING = new byte[] { CR, LF };
+            byte[] data = File.ReadAllBytes(fileName);
+            using (FileStream fileStream = File.OpenWrite(fileName))
+            {
+                BinaryWriter bw = new BinaryWriter(fileStream);
+                int position = 0;
+                int index = 0;
+                do
+                {
+                    index = Array.IndexOf<byte>(data, LF, position);
+                    if (index >= 0)
+                    {
+                        if ((index > 0) && (data[index - 1] == CR))
+                        {
+                            // already dos ending
+                            bw.Write(data, position, index - position + 1);
+                        }
+                        else
+                        {
+                            bw.Write(data, position, index - position);
+                            bw.Write(DOS_LINE_ENDING);
+                        }
+                        position = index + 1;
+                    }
+                }
+                while (index > 0);
+                bw.Write(data, position, data.Length - position);
+                fileStream.SetLength(fileStream.Position);
+            }
+        }
+
         private void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
         {
             if (outLine.Data != null)
@@ -292,47 +329,44 @@ namespace PatchAPK
             apk = Application.StartupPath + "\\SELECT APK";
             lblAPK.Text = "";
             toolsdir = Application.StartupPath + "\\tools";
-            patchdir = Application.StartupPath + "\\patches\\" + getAPKVersion();
-            decompiledir = Application.StartupPath + "\\decompile";
+            //patchdir = Application.StartupPath + "\\patches\\" + getAPKVersion();
+            decompiledir = Application.StartupPath + "\\dec_out";
 
         }      
   
-        private string getAPKVersion()
-        {
-            string version = "";
-            if (toolStripMenuItem2.Checked)
-            {
-                version = "4.1.3-1024454";
-            }
-            if (toolStripMenuItem3.Checked)
-            {
-                version = "4.1.4-1025373";
-            }
-            if (toolStripMenuItem4.Checked)
-            {
-                version = "4.1.8-1025605";
-            }
-            return version;
-        }
-
-       
-
         private void loadPatches()
         {
             clbPatch.Items.Clear();
-            DirectoryInfo d = new DirectoryInfo(Application.StartupPath + "\\patches\\" + getAPKVersion());
+            DirectoryInfo d = new DirectoryInfo(Application.StartupPath + "\\patches\\" + apkversion);
             FileInfo[] Files = d.GetFiles("*.patch");
             foreach (FileInfo file in Files)
             {
+                Unix2Dos(Application.StartupPath + "\\patches\\" + apkversion + "\\" + file.Name);
                 clbPatch.Items.Add(file.Name.Replace(".patch", ""));
             }          
             
         }
 
+        private string checkSupportedVersion(string apksize)
+        {
+            //   Unix2Dos(Application.StartupPath + "\\patches\\versions.txt");
+            //   System.IO.StreamReader file = new System.IO.StreamReader(Application.StartupPath + "\\patches\\versions.txt");
+
+            string result = "";
+            var lines = File.ReadAllLines(Application.StartupPath + "\\patches\\versions.txt");
+            foreach (var line in lines)
+            {
+                if (line.Contains(apksize))  {
+                    string[] parts = line.Split(':');
+                    result = parts[0];
+                }
+            }
+            return result;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             SetVars();           
-            loadPatches();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -388,6 +422,19 @@ namespace PatchAPK
                 {
                     apk = file;
                     lblAPK.Text = file;
+                    var size = new FileInfo(file).Length;
+                    string supportedVersion = checkSupportedVersion(size.ToString());
+                    if (supportedVersion.Equals(""))
+                    {
+                        MessageBox.Show("APK Version not supported, please use an supported version, check the patches folder to see which versions are supported!");
+                        apk = "";
+                        lblAPK.Text = "";
+                    } else
+                    {
+                        apkversion = supportedVersion;
+                        patchdir = Application.StartupPath + "\\patches\\" + apkversion;
+                        loadPatches();
+                    }
                 }
                 catch (IOException ex)
                 {
@@ -400,49 +447,6 @@ namespace PatchAPK
         {
             Form frmA = new AboutBox1();
             frmA.ShowDialog();
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            if (toolStripMenuItem3.Checked)
-            {
-                toolStripMenuItem3.Checked = false;
-            }
-            if (toolStripMenuItem4.Checked)
-            {
-                toolStripMenuItem4.Checked = false;
-            }
-            toolStripMenuItem2.Checked = true;
-            loadPatches();
-        }
-
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            if (toolStripMenuItem2.Checked)
-            {
-                toolStripMenuItem2.Checked = false;
-            }
-            if (toolStripMenuItem4.Checked)
-            {
-                toolStripMenuItem4.Checked = false;
-            }
-            toolStripMenuItem3.Checked = true;
-            loadPatches();
-        }
-
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            if (toolStripMenuItem2.Checked)
-            {
-                toolStripMenuItem2.Checked = false;
-            }
-            if (toolStripMenuItem3.Checked)
-            {
-                toolStripMenuItem3.Checked = false;
-            }
-            toolStripMenuItem4.Checked = true;
-            loadPatches();
-
         }
     }
 }

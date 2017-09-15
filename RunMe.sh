@@ -118,18 +118,21 @@ do
     case $choice in
         1)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/forceFCC.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/forceFCC.patch
 			cd ..
 			echo "forceFCC" >> out/lastbuild-cfg.txt
             ;;
         2)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/removeUpdateForce.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeUpdateForce.patch
 			cd ..
 			echo "removeUpdateForce" >> out/lastbuild-cfg.txt
             ;;
         3)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/removeFWUpgradeService.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeFWUpgradeService.patch
 			cd ..
 			echo "removeFWUpgradeService" >> out/lastbuild-cfg.txt
@@ -138,8 +141,10 @@ do
             cd decompile_out
 			if [ "$apkver" == "4.1.8" ]
 			then
+				dos2unix ../patches/$apkver-$apkvcode/removeLogin.patch
 				patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeLogin.patch
 			else
+				dos2unix ../patches/$apkver-$apkvcode/offlineLogin.patch
 				patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/offlineLogin.patch
 			fi
 			cd ..
@@ -147,6 +152,7 @@ do
             ;;
 		5)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/removeOnlinefunction.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeOnlinefunction.patch
 			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/$apkver-$apkvcode/so.bspatch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
@@ -156,36 +162,42 @@ do
             ;;	
 		6)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/removeGoogleApis.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeGoogleApis.patch
 			cd ..
 			echo "removeGoogleApis" >> out/lastbuild-cfg.txt
             ;;	
 		7)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/removeSocial.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeSocial.patch
 			cd ..
 			echo "removeSocial" >> out/lastbuild-cfg.txt
             ;;	
 		8)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/enableMavicFlightModesOnSpark.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableMavicFlightModesOnSpark.patch
 			cd ..
 			echo "enableMavicFlightModesOnSpark" >> out/lastbuild-cfg.txt
             ;;	
 		9)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/enableSparkWifiChannelSelectOnOtg.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableSparkWifiChannelSelectOnOtg.patch
 			cd ..
 			echo "enableSparkWifiChannelSelectOnOtg" >> out/lastbuild-cfg.txt
             ;;	
 		10)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/enableCacheControl.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableCacheControl.patch
 			cd ..
 			echo "enableCacheControl" >> out/lastbuild-cfg.txt
             ;;	
 		11)
             cd decompile_out
+			dos2unix ../patches/$apkver-$apkvcode/enableP3series.patch
 			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableP3series.patch
 			cd ..
 			echo "enableP3series" >> out/lastbuild-cfg.txt
@@ -193,6 +205,7 @@ do
     esac
 done
 cd decompile_out
+dos2unix ../patches/$apkver-$apkvcode/origin
 patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/origin
 cd ..
 echo =======================
