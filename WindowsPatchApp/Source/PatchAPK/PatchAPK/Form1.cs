@@ -222,36 +222,7 @@ namespace PatchAPK
                             Thread thread3 = new Thread(bsPatch);
                             thread3.Start();
                         }
-                        string preArg = "";
-                         Process proc = new Process();
-                         proc.StartInfo.FileName = toolsdir + "\\patch.exe";
-                         proc.StartInfo.WorkingDirectory = decompiledir;
-                         string f = patchdir + "\\" + itm + ".patch";
-                         if (cbDryRun.Checked)
-                         {
-                             preArg = "--dry-run ";
-                         }
-                         proc.StartInfo.Arguments = preArg + "-l -p1 -N -i " + f;
-                         proc.StartInfo.CreateNoWindow = true;
-                         proc.StartInfo.RedirectStandardOutput = true;
-                         proc.StartInfo.RedirectStandardError = true;
-                         proc.StartInfo.UseShellExecute = false;
-                         proc.StartInfo.Verb = "runas";
-                         proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
-                         SetTextBoxText("<-------------- Begin Patch -------------->\r\n");
-                         SetTextBoxText("Applying Patch: " + itm + "\r\n");
-                         //MessageBox.Show(f);
-                         proc.Start();
-                         proc.WaitForExit(30000);
-                         string result = proc.StandardOutput.ReadToEnd();
-                         string error = proc.StandardError.ReadToEnd();
-                         SetTextBoxText("\r\nResult: " + result);
-                         if (error != "" && error != null)
-                         {
-                             SetTextBoxText("\r\nError: " + error);
-                         }
-                         proc.Close();
-                         SetTextBoxText("\r\n<-------------- Patch Complete ----------->\r\n");
+                        doPatch(itm);
                     }
                      catch (Exception ex)
                      {
@@ -259,10 +230,52 @@ namespace PatchAPK
                      }
                  }
 
-            }           
+            }
+            doPatch("origin");           
             
         }
 
+        private void doPatch(string patchname)
+        {
+            string preArg = "";
+            Process proc = new Process();
+            proc.StartInfo.FileName = toolsdir + "\\patch.exe";
+            proc.StartInfo.WorkingDirectory = decompiledir;
+            string f = "";
+            if (patchname == "origin")
+            {
+                f = patchdir + "\\" + patchname;
+            } else
+            {
+                f = patchdir + "\\" + patchname + ".patch";
+            }
+            Unix2Dos(f);
+            if (cbDryRun.Checked)
+            {
+                preArg = "--dry-run ";
+            }
+            proc.StartInfo.Arguments = preArg + "-l -p1 -N -i " + f;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.RedirectStandardError = true;
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.Verb = "runas";
+            proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
+            SetTextBoxText("<-------------- Begin Patch -------------->\r\n");
+            SetTextBoxText("Applying Patch: " + patchname + "\r\n");
+            //MessageBox.Show(f);
+            proc.Start();
+            proc.WaitForExit(30000);
+            string result = proc.StandardOutput.ReadToEnd();
+            string error = proc.StandardError.ReadToEnd();
+            SetTextBoxText("\r\nResult: " + result);
+            if (error != "" && error != null)
+            {
+                SetTextBoxText("\r\nError: " + error);
+            }
+            proc.Close();
+            SetTextBoxText("\r\n<-------------- Patch Complete ----------->\r\n");
+        }
         private void Unix2Dos(string fileName)
         {
             const byte CR = 0x0D;
@@ -339,7 +352,6 @@ namespace PatchAPK
             FileInfo[] Files = d.GetFiles("*.patch");
             foreach (FileInfo file in Files)
             {
-                Unix2Dos(Application.StartupPath + "\\patches\\" + apkversion + "\\" + file.Name);
                 clbPatch.Items.Add(file.Name.Replace(".patch", ""));
             }          
             
