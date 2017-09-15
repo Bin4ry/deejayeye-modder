@@ -219,10 +219,9 @@ namespace PatchAPK
                      {
                         if (itm == "removeOnlinefunction")
                         {
-                            MessageBox.Show("RemoveOnlinefunction patch will not be completely available using the windows exe");
                             Thread thread3 = new Thread(bsPatch);
                             thread3.Start();
-                        } else {
+                        }
                         string preArg = "";
                          Process proc = new Process();
                          proc.StartInfo.FileName = toolsdir + "\\patch.exe";
@@ -243,7 +242,7 @@ namespace PatchAPK
                          SetTextBoxText("Applying Patch: " + itm + "\r\n");
                          //MessageBox.Show(f);
                          proc.Start();
-                         proc.WaitForExit();
+                         proc.WaitForExit(30000);
                          string result = proc.StandardOutput.ReadToEnd();
                          string error = proc.StandardError.ReadToEnd();
                          SetTextBoxText("\r\nResult: " + result);
@@ -253,7 +252,6 @@ namespace PatchAPK
                          }
                          proc.Close();
                          SetTextBoxText("\r\n<-------------- Patch Complete ----------->\r\n");
-                        }
                     }
                      catch (Exception ex)
                      {
