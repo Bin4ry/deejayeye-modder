@@ -6,7 +6,7 @@ cd /d %~dp0
 set title=%~n0
 set "p_out=patches_out"
 set "d_out=decompile_out"
-set "a_out=_NEW_APK"
+set "a_out=__MODDED_APK_OUT__"
 set aV414s=94569319
 set aV413s=104544384
 set aV418s=99950086

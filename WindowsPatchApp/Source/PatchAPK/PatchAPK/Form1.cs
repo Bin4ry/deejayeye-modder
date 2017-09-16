@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace PatchAPK
 {
@@ -26,7 +27,9 @@ namespace PatchAPK
         public string patchdir = "";
         public string decompiledir = "";
         public string apkversion = "";
-        
+        public string outdir = "";
+        public string modver = "";
+
         private bool IsValidPath(string path)
         {
             Regex driveCheck = new Regex(@"^[a-zA-Z]:\\$");
@@ -113,7 +116,7 @@ namespace PatchAPK
             {                
                 Process proc = new Process();
                 proc.StartInfo.FileName = "java";
-                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\apktool.jar b -o " + decompiledir + "\\out\\mod.apk " + decompiledir; 
+                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\apktool.jar b -o " + outdir + "\\mod.apk " + decompiledir; 
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.RedirectStandardError = true;
@@ -127,7 +130,7 @@ namespace PatchAPK
                 proc.Close();
                 SetTextBoxText("\r\n<-------------- Recompile Complete ----------->\r\n");
 
-                Thread thread2 = new Thread(apkSign);
+                Thread thread2 = new Thread(apkSignAndCleanup);
                 thread2.Start();
             }
             catch (Exception ex)
@@ -154,13 +157,13 @@ namespace PatchAPK
             return shortPath.ToString();
         }
 
-        public void apkSign()
+        public void apkSignAndCleanup()
         {
             try
             {
                 Process proc = new Process();
                 proc.StartInfo.FileName = "java";
-                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\sign.jar b " + decompiledir + "\\out\\mod.apk --override";
+                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\sign.jar b " + outdir + "\\mod.apk --override";
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.RedirectStandardError = true;
@@ -172,8 +175,12 @@ namespace PatchAPK
                 //proc.BeginErrorReadLine();
                 proc.WaitForExit();
                 proc.Close();
+                System.IO.File.Move(outdir+"\\mod.apk", outdir + "\\mod-" + modver + ".apk");
                 SetTextBoxText("\r\n<-------------- Sign APK Complete ----------->\r\n");
-                
+                SetTextBoxText("<-------------- Begin Cleanup -------------->\r\n");
+                Directory.Delete(decompiledir, true);
+                SetTextBoxText("\r\n<-------------- Cleanup Complete ----------->\r\n");
+                SetTextBoxText("You can find the apk here: " + outdir + "\\mod-" + modver + ".apk");
             }
             catch (Exception ex)
             {
@@ -336,13 +343,16 @@ namespace PatchAPK
 
         private void SetVars()
         {            
-            System.IO.Directory.CreateDirectory(Application.StartupPath + "\\decompile");
-            apk = Application.StartupPath + "\\SELECT APK";
+            apk = Application.StartupPath + "\\PutApkHere";
             lblAPK.Text = "";
             toolsdir = Application.StartupPath + "\\tools";
             //patchdir = Application.StartupPath + "\\patches\\" + getAPKVersion();
-            decompiledir = Application.StartupPath + "\\dec_out";
-
+            decompiledir = Application.StartupPath + "\\decompile_out";
+            outdir = Application.StartupPath + "\\__MODDED_APK_OUT__";
+            modver = getModVersion();
+            System.IO.Directory.CreateDirectory(decompiledir);
+            System.IO.Directory.CreateDirectory(outdir);
+            SetTextBoxText("Patch version: " + modver);
         }      
   
         private void loadPatches()
@@ -359,9 +369,6 @@ namespace PatchAPK
 
         private string checkSupportedVersion(string apksize)
         {
-            //   Unix2Dos(Application.StartupPath + "\\patches\\versions.txt");
-            //   System.IO.StreamReader file = new System.IO.StreamReader(Application.StartupPath + "\\patches\\versions.txt");
-
             string result = "";
             var lines = File.ReadAllLines(Application.StartupPath + "\\patches\\versions.txt");
             foreach (var line in lines)
@@ -372,6 +379,14 @@ namespace PatchAPK
                 }
             }
             return result;
+        }
+
+        private string getModVersion()
+        {
+            string ver = "";
+            ver = File.ReadLines(Application.StartupPath + "\\version.txt").First();
+  
+            return ver;
         }
 
         private void Form1_Load(object sender, EventArgs e)
