@@ -1,0 +1,14 @@
+diff -Naur orig/smali_classes5/dji/pilot/usercenter/b/g.smali mod/smali_classes5/dji/pilot/usercenter/b/g.smali
+--- orig/smali_classes5/dji/pilot/usercenter/b/g.smali	2017-09-05 11:48:46.572127900 +0200
++++ mod/smali_classes5/dji/pilot/usercenter/b/g.smali	2017-09-06 10:48:33.126527100 +0200
+@@ -4914,9 +4914,7 @@
+ 
+     .prologue
+     .line 623
+-    iget-object v0, p0, Ldji/pilot/usercenter/b/g;->bs:Ldji/pilot/usercenter/mode/l;
+-
+-    iget-object v0, v0, Ldji/pilot/usercenter/mode/l;->V:Ljava/lang/String;
++    const-string v0, "iL0veDJI"
+ 
+     return-object v0
+ .end method
