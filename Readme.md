@@ -18,13 +18,13 @@ I am not responsible for any damage done! Use your brain and all will be fine!
 
 Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
 
-## App version 4.1.4
+## App version >= 4.1.4
 
-App version 4.1.4 is still work in progress. I would personally recommend using 4.1.3, anyway if you want to use 4.1.4 you can but it has not all patches yet AND the CC check dialog is gone and will not come back (still the fcc patch code is present and working)
+Starting from 4.1.4 the CC check dialog is gone and will not come back (still the fcc patch code is present and working)
 
 ## FCC 
 
-If you get a message about different region etc. etc after using the FCC patch: YOU HAVE TO CLICK OK! 
+If you get a message about different region etc. etc after using the FCC patch: YOU HAVE TO CLICK OK ONCE AFTER THE PATCH IS APPLIED! This will reboot the AC with the new Region (FCC REGION). Once you use and unmodded app the same popup will come again and if you click OK now it will reboot and apply the limits of your current region again!
 
 ## HowTo:
 
@@ -60,11 +60,10 @@ If you get a message about different region etc. etc after using the FCC patch: 
 4. Rename the original apk you are going to decompile to something without any spaces like DJeyeGO-413.apk
 5. Launch the app by double clicking PatchAPK.exe
 6. Select file, and find your renamed apk
-7. Select file, and choose the version of the apk you are patching
-8. Click decompile, and wait until it finishes. apk will be decompiled to "decompile" directory
-9. Select the patches to apply, and click the Patch button. (The dry run checkbox is for testing the patches without applying them)
-10. Click the build and sign button. Signed apk will be "decompile\dist\mod.apk"
-11. Enjoy!
+7. Click decompile, and wait until it finishes. apk will be decompiled to "decompile" directory
+8. Select the patches to apply, and click the Patch button. (The dry run checkbox is for testing the patches without applying them)
+9. Click the build and sign button. Signed apk will be "decompile\dist\mod.apk"
+10. Enjoy!
 
 Need help? Check out the wiki: http://dji.retroroms.info/howto/deejayeye-modder
 
