@@ -19,7 +19,7 @@ I am not responsible for any damage done! Use your brain and all will be fine!
 Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
 
 IF you ONLY want FCC mode and nothing else, you might be better of with this (works on Android AND iOS):
-https://dji.retroroms.info/howto/fccios
+https://dji.retroroms.info/howto/dji_configs
 
 
 ## App version >= 4.1.4
