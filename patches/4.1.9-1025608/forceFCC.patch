@@ -1,0 +1,151 @@
+diff -Naur orig/smali_classes4/dji/pilot/countrycode/a/b.smali mod/smali_classes4/dji/pilot/countrycode/a/b.smali
+--- orig/smali_classes4/dji/pilot/countrycode/a/b.smali 2017-09-17 17:40:02.438223200 +0200
++++ mod/smali_classes4/dji/pilot/countrycode/a/b.smali  2017-09-17 17:55:53.808469100 +0200
+@@ -433,22 +433,7 @@
+     .line 114
+     iget-object v0, p0, Ldji/pilot/countrycode/a/b;->d:Landroid/content/Context;
+
+-    const-string v1, "KUImLAI="
+-
+-    invoke-static {v1}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    move-result-object v0
+-
+-    check-cast v0, Landroid/telephony/TelephonyManager;
+-
+-    .line 115
+-    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNetworkCountryIso()Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "us"
+
+     .line 116
+     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+@@ -977,19 +962,10 @@
+
+     move-result v2
+
+-    if-nez v2, :cond_0
+-
+-    if-eqz v0, :cond_0
+-
+-    .line 207
+-    invoke-direct {p0, p1, p2, p3, p5}, Ldji/pilot/countrycode/a/b;->a(Ljava/lang/String;Ljava/lang/String;Ldji/pilot/countrycode/model/a;Ldji/pilot/countrycode/a/b$a;)V
++    goto :goto_1
+
+     .line 208
+-    const-string v0, "sInXpPvkHjQKwsf1guDOi+WmoMXgu9byvoffpfL7aF4MSz8FFy2+yc/N3Oc="
+-
+-    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "Foo ..."
+
+     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+@@ -999,14 +975,10 @@
+
+     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+-    const-string v2, "uqrZp/zjvMrvzenDj9Dugda8pv7vOTwQtpbAoefPscP/z8bTgs7Xg/S8rtfCt9ntv6HgrdvEeQ=="
+-
+-    invoke-static {v2}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
+-
+-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++    const-string v2, "Going to use fake function to always return US MCC: "
+
++       invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
+     move-result-object v0
+
+     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+@@ -1023,79 +995,20 @@
+     return-void
+
+     .line 209
+-    :cond_0
+-    invoke-virtual {p4}, Ldji/pilot/countrycode/model/a;->a()Z
+-
+-    move-result v2
+-
+-    if-nez v2, :cond_1
+-
+-    if-eqz v0, :cond_1
+-
+-    .line 210
+-    invoke-direct {p0, p1, p2, p4, p5}, Ldji/pilot/countrycode/a/b;->b(Ljava/lang/String;Ljava/lang/String;Ldji/pilot/countrycode/model/a;Ldji/pilot/countrycode/a/b$a;)V
+-
+-    .line 211
+-    const-string v0, "sInXpPvkHjQKzPvjgcLQjNedrPzwseXov6PCpPvkHjQKwsf1guDOi+WmoMXgu9byvoffpfL7a14URSsrCzseFCrN5NSAy/w="
+-
+-    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    goto :goto_0
+-
+-    .line 213
+-    :cond_1
++    :goto_1
++
+     const/4 v2, 0x0
+
+     invoke-direct {p0, p5, v2, v3}, Ldji/pilot/countrycode/a/b;->a(Ldji/pilot/countrycode/a/b$a;ZI)Z
+
+     move-result v2
+
+-    if-eqz v2, :cond_2
+-
+     .line 214
+-    const-string v0, "sInXpPvkHjQKzPvjgcLQjNedrPzwseXov6PCpPvkHjQKzPvjgcLQjNedrPzwseXoNGkKqunpvNrOxfXOjtnegda8ru/xuczBahAEIQS59PK+v+w="
+-
+-    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    goto :goto_0
+-
+-    .line 216
+-    :cond_2
+-    if-eqz v0, :cond_3
+-
+-    .line 217
+-    invoke-direct {p0, p1, p2, p5}, Ldji/pilot/countrycode/a/b;->a(Ljava/lang/String;Ljava/lang/String;Ldji/pilot/countrycode/a/b$a;)V
+-
+-    .line 218
+-    const-string v0, "sInXpPvkHjQKzPvjgcLQjNedrPzwseXov6PCpPvkHjQKzPvjgcLQjNedrPzwseXoNGkKpNX/v/jQwsf1guDOi+WmoMXgu9byvoffpfL7bV4Qeq7v8bnMwQ=="
+-
+-    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
++    const-string v0, "Call to fake function which will always answer with US MCC"
++
+     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+     goto :goto_0
+-
+-    .line 220
+-    :cond_3
+-    const-string v0, "Pk89YgQ9eQI4QyU3FTt5AjZYaSwCKi4LK0FpKxR+PQ0qSSYsCTs6EA=="
+-
+-    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    invoke-interface {p5, v3, v0}, Ldji/pilot/countrycode/a/b$a;->a(ILjava/lang/String;)V
+-
+-    goto :goto_0
+ .end method
+
+ .method public c()V

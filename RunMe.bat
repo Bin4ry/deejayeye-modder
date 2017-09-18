@@ -11,6 +11,7 @@ set aV414s=94569319
 set aV413s=104544384
 set aV418s=99950086
 set aV418t=100179415
+set aV419s=99833712
 set pCounter=1
 set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 rd /S /Q %p_out% >nul 2>&1
@@ -31,6 +32,8 @@ if %size% == %aV413s% ( set "patches=patches\4.1.3-1024454"
  set "vers=%ver% (4.1.8)-1025605"
   ) else if %size% == %aV418t% ( set "patches=patches\4.1.8-2025605"
  set "vers=%ver% (4.1.8)-2025605"
+  ) else if %size% == %aV419s% ( set "patches=patches\4.1.9-1025608"
+ set "vers=%ver% (4.1.9)-1025608"
  ) else ( echo.-: Unrecognized apk file.
  pause
  exit )
