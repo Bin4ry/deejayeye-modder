@@ -24,7 +24,7 @@ for /F "tokens=1 delims=:" %%a in ("%_CmdResult%") do (
    set "vers=%ver% %%a"
    set "patches=patches\%%a"
 )
-if NOT %%a ( echo.-: Unrecognized apk file.
+if "%_CmdResult%" == "" ( echo.-: Unrecognized apk file.
  pause
  exit )
 for /f "tokens=1,* delims=. " %%F in ('dir /b %patches%\*.patch') do (
