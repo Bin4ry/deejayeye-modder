@@ -214,6 +214,32 @@ namespace PatchAPK
             }
         }
 
+        public void bsPatch2()
+        {
+            try
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = toolsdir + "\\bspatch.exe";
+                proc.StartInfo.Arguments = decompiledir + "\\lib\\armeabi-v7a\\libFREncrypt.so " + decompiledir + "\\lib\\armeabi-v7a\\libFREncrypt.so " + patchdir + "\\so2.bspatch";
+                proc.StartInfo.CreateNoWindow = true;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.RedirectStandardError = true;
+                proc.StartInfo.UseShellExecute = false;
+                proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
+                SetTextBoxText("<-------------- Applying BSPATCH -------------->\r\n");
+                proc.Start();
+                proc.BeginOutputReadLine();
+                //proc.BeginErrorReadLine();
+                proc.WaitForExit();
+                proc.Close();
+                SetTextBoxText("\r\n<-------------- BSPATCH Complete ----------->\r\n");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         public void patch()
         {
             
@@ -238,8 +264,11 @@ namespace PatchAPK
                  }
 
             }
-            doPatch("origin");           
-            
+            doPatch("origin");
+            if (File.Exists(patchdir + "so2.bspatch"))
+            {
+                bsPatch2();
+            }
         }
 
         private void doPatch(string patchname)
