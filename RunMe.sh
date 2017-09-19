@@ -119,7 +119,6 @@ cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "force FCC patch" on
          2 "remove forced Updates from DJI Go4" on
          3 "remove Firmware Upgrade check" on
-		 4 "remove login" on
 		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
  		 9 "enable Wifi channel selection on Spark with OTG" on
 		 10 "enable Cache control" on)
