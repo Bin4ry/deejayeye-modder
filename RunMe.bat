@@ -97,6 +97,10 @@ echo.-: Decompiling original apk...
 java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
 cd %d_out%
 ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
+if exist "..\%patches%\so2.bspatch" (
+..\tools\bspatch lib\armeabi-v7a\libFREncrypt.so lib\armeabi-v7a\libFREncrypt-n.so ..\%patches%\so2.bspatch"
+del /f /q "lib\armeabi-v7a\libFREncrypt.so"
+rename "lib\armeabi-v7a\libFREncrypt-n.so" libFREncrypt.so )
 for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!%%f:~0,1!"=="Y" ( echo.-: Applying %%f patch...
   ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\%%f.patch
   if "%%f"=="removeOnlinefunction" ( echo.-: Supporting with so.bspatch...

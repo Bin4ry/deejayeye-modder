@@ -102,6 +102,12 @@ do
 done
 
 dos2unix ../patches/$apkver-$apkvcode/origin
+if [ -f ../patches/$apkver-$apkvcode/so2.bspatch ] 
+then
+bspatch lib/armeabi-v7a/libFREncrypt.so lib/armeabi-v7a/libFREncrypt-n.so ../patches/$apkver-$apkvcode/so2.bspatch
+rm lib/armeabi-v7a/libFREncrypt.so
+mv lib/armeabi-v7a/libFREncrypt-n.so lib/armeabi-v7a/libFREncrypt.so
+fi
 patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/origin
 cd ..
 echo =======================
