@@ -7,11 +7,6 @@ set title=%~n0
 set "p_out=patches_out"
 set "d_out=decompile_out"
 set "a_out=__MODDED_APK_OUT__"
-set aV414s=94569319
-set aV413s=104544384
-set aV418s=99950086
-set aV418t=100179415
-set aV419s=99833712
 set pCounter=1
 set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 rd /S /Q %p_out% >nul 2>&1
@@ -24,17 +19,12 @@ call:chkinst "tools\bspatch.exe"
 call:chkinst "tools\patch.exe"
 call:chkinst "tools\sign.jar"
 for /F "usebackq" %%A IN ('PutApkHere\orig.apk') do set size=%%~zA
-if %size% == %aV413s% ( set "patches=patches\4.1.3-1024454"
- set "vers=%ver% (4.1.3)-1024454"
- ) else if %size% == %aV414s% ( set "patches=patches\4.1.4-1025373"
- set "vers=%ver% (4.1.4)-1025373"
-  ) else if %size% == %aV418s% ( set "patches=patches\4.1.8-1025605"
- set "vers=%ver% (4.1.8)-1025605"
-  ) else if %size% == %aV418t% ( set "patches=patches\4.1.8-2025605"
- set "vers=%ver% (4.1.8)-2025605"
-  ) else if %size% == %aV419s% ( set "patches=patches\4.1.9-1025608"
- set "vers=%ver% (4.1.9)-1025608"
- ) else ( echo.-: Unrecognized apk file.
+for /f "tokens=*" %%a in ('findstr %size% patches\versions.txt') do set _CmdResult=%%a
+for /F "tokens=1 delims=:" %%a in ("%_CmdResult%") do (
+   set "vers=%ver% %%a"
+   set "patches=patches\%%a"
+)
+if NOT %%a ( echo.-: Unrecognized apk file.
  pause
  exit )
 for /f "tokens=1,* delims=. " %%F in ('dir /b %patches%\*.patch') do (

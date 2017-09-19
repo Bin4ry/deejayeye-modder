@@ -2,6 +2,7 @@
 command -v dialog >/dev/null 2>&1 || { echo "I require dialog but it's not installed.  Aborting." >&2; err=1; }
 command -v bspatch >/dev/null 2>&1 || { echo "I require bspatch but it's not installed.  Aborting." >&2; err=1; }
 command -v patch >/dev/null 2>&1 || { echo "I require patch but it's not installed.  Aborting." >&2; err=1; }
+command -v dos2unix >/dev/null 2>&1 || { echo "I require dos2unix but it's not installed.  Aborting." >&2; err=1; }
 
 if [ ! -f tools/apktool.jar ] 
 then
@@ -31,7 +32,7 @@ then
 rm $outdir/lastbuild-md5.txt
 fi
 
-echo "Smali patcher version: $ver" >> $outdir/lastbuild-cfg.txt
+echo "Smali patcher version: $ver" > $outdir/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
 while true; do
@@ -68,157 +69,38 @@ echo "Exiting now"
 exit 3
 fi
 echo "Active patches: " >> $outdir/lastbuild-cfg.txt
-if [ "$apkver" == "4.1.3" ]
-then
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" on
-		 4 "offline login (thx artu-ole)" on
-		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
-		 6 "remove Google APIs (keep if you want to keep social)" on
-		 7 "remove social networks (keep Google APIs too!)" on
-		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on 
-		 9 "enable Wifi channel selection on Spark with OTG" on
-		 10 "enable Cache control" on 
-		 11 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
+options=()
+i=1
+cmd=(dialog --separate-output --checklist "Select patches for APK Version: $apkver-$apkvcode" 22 76 16)
+for file in "patches/$apkver-$apkvcode/"*.patch; do
+	filename=$(basename "$file")
+	extension="${filename##*.}"
+	filename="${filename%.*}"
+#	echo "$i $filename"
+	options+=($i "$filename" on)
+	((i++))
+done
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-fi
 
-if [ "$apkver" == "4.1.4" ]
-then
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" on
-		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
- 		 9 "enable Wifi channel selection on Spark with OTG" on)
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-fi
-
-if [ "$apkver" == "4.1.8" ]
-then
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" on
-		 4 "remove login" on
-		 5 "remove Onlinefunction [use with remove login!]\n\t (removes Social too)" on
-		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
- 		 9 "enable Wifi channel selection on Spark with OTG" on
-		 10 "enable Cache control" on)
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-fi
-
-if [ "$apkver" == "4.1.9" ]
-then
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" on
-		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
- 		 9 "enable Wifi channel selection on Spark with OTG" on
-		 10 "enable Cache control" on)
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-fi
-
- 
+cd decompile_out
 for choice in $choices
 do
-    case $choice in
-        1)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/forceFCC.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/forceFCC.patch
-			cd ..
-			echo "forceFCC" >> $outdir/lastbuild-cfg.txt
-            ;;
-        2)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/removeUpdateForce.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeUpdateForce.patch
-			cd ..
-			echo "removeUpdateForce" >> $outdir/lastbuild-cfg.txt
-            ;;
-        3)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/removeFWUpgradeService.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeFWUpgradeService.patch
-			cd ..
-			echo "removeFWUpgradeService" >> $outdir/lastbuild-cfg.txt
-            ;;
-		4)
-            cd decompile_out
-			if [ "$apkver" == "4.1.8" ]
-			then
-				dos2unix ../patches/$apkver-$apkvcode/removeLogin.patch
-				patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeLogin.patch
-			else
-				dos2unix ../patches/$apkver-$apkvcode/offlineLogin.patch
-				patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/offlineLogin.patch
-			fi
-			cd ..
-			echo "offlineLogin" >> $outdir/lastbuild-cfg.txt
-            ;;
-		5)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/removeOnlinefunction.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeOnlinefunction.patch
+	let sel=$choice-1
+	let sel=$sel*3
+	let sel=$sel+1
+	patch=${options[$sel]}
+	dos2unix ../patches/$apkver-$apkvcode/$patch.patch
+	patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/$patch.patch
+	if [ "$patch" == "removeOnlinefunction" ]
+	then
 			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/$apkver-$apkvcode/so.bspatch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
-			cd ..
-			echo "removeOnlinefunction" >> $outdir/lastbuild-cfg.txt
-            ;;	
-		6)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/removeGoogleApis.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeGoogleApis.patch
-			cd ..
-			echo "removeGoogleApis" >> $outdir/lastbuild-cfg.txt
-            ;;	
-		7)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/removeSocial.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/removeSocial.patch
-			cd ..
-			echo "removeSocial" >> $outdir/lastbuild-cfg.txt
-            ;;	
-		8)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/enableMavicFlightModesOnSpark.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableMavicFlightModesOnSpark.patch
-			cd ..
-			echo "enableMavicFlightModesOnSpark" >> $outdir/lastbuild-cfg.txt
-            ;;	
-		9)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/enableSparkWifiChannelSelectOnOtg.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableSparkWifiChannelSelectOnOtg.patch
-			cd ..
-			echo "enableSparkWifiChannelSelectOnOtg" >> $outdir/lastbuild-cfg.txt
-            ;;	
-		10)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/enableCacheControl.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableCacheControl.patch
-			cd ..
-			echo "enableCacheControl" >> $outdir/lastbuild-cfg.txt
-            ;;	
-		11)
-            cd decompile_out
-			dos2unix ../patches/$apkver-$apkvcode/enableP3series.patch
-			patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/enableP3series.patch
-			cd ..
-			echo "enableP3series" >> $outdir/lastbuild-cfg.txt
-            ;;
-    esac
+	fi
+	
+	echo "$patch" >> ../$outdir/lastbuild-cfg.txt
 done
-cd decompile_out
+
 dos2unix ../patches/$apkver-$apkvcode/origin
 patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/origin
 cd ..
