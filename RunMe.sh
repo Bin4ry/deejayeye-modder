@@ -2,6 +2,7 @@
 command -v dialog >/dev/null 2>&1 || { echo "I require dialog but it's not installed.  Aborting." >&2; err=1; }
 command -v bspatch >/dev/null 2>&1 || { echo "I require bspatch but it's not installed.  Aborting." >&2; err=1; }
 command -v patch >/dev/null 2>&1 || { echo "I require patch but it's not installed.  Aborting." >&2; err=1; }
+command -v dos2unix >/dev/null 2>&1 || { echo "I require dos2unix but it's not installed.  Aborting." >&2; err=1; }
 
 if [ ! -f tools/apktool.jar ] 
 then
@@ -14,23 +15,24 @@ echo "Sign.jar not found, run download_tools.sh!"
 err=1
 fi
 
-if [ $err == 1 ]
+if [ $err -eq 1 ]
 then
 exit 1
 fi
 
 ver=`cat version.txt`
-mkdir out
-if [ -e out/lastbuild-cfg.txt ]
+outdir="__MODDED_APK_OUT__"
+mkdir $outdir
+if [ -e $outdir/lastbuild-cfg.txt ]
 then
-rm out/lastbuild-cfg.txt
+rm $outdir/lastbuild-cfg.txt
 fi
-if [ -e out/lastbuild-md5.txt ]
+if [ -e $outdir/lastbuild-md5.txt ]
 then
-rm out/lastbuild-md5.txt
+rm $outdir/lastbuild-md5.txt
 fi
 
-echo "Version: $ver" >> out/lastbuild-cfg.txt
+echo "Smali patcher version: $ver" > $outdir/lastbuild-cfg.txt
 clear
 echo Welcome to the smali patcher version: $ver
 while true; do
@@ -48,129 +50,77 @@ java -jar tools/apktool.jar d -f -o decompile_out PutApkHere/orig.apk
 echo done
 cd decompile_out
 apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
+apkvcode=`cat apktool.yml | grep versionCode: | awk '{print $2}'`
+eval apkvcode=$apkvcode
 cd ..
-echo "$apkver"
-if [ ! -d "patches/$apkver" ] 
+echo "APK Version: $apkver-$apkvcode" >> $outdir/lastbuild-cfg.txt
+echo " " >> $outdir/lastbuild-cfg.txt
+#echo "$apkver-$apkvcode"
+if [ ! -d "patches/$apkver-$apkvcode" ] 
 then
 echo "Incompatible apk version!"
+echo "ApkVersion: $apkver"
+echo "ApkVersionCode: $apkvcode"
+echo "Please take a look into the patches folder to see supported versions!"
 read -p ""
 echo "Removing decompile_out folder"
 rm -rf decompile_out
 echo "Exiting now"
 exit 3
 fi
-
-if [ "$apkver" == "4.1.3" ]
-then
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" on
-		 4 "offline login (thx artu-ole)" on
-		 5 "remove Onlinefunction [only use with offline login!] (thx err0r4o4)" on
-		 6 "remove Google APIs (keep if you want to keep social)" on
-		 7 "remove social networks (keep Google APIs too!)" on
-		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on 
-		 9 "enable Wifi channel selection on Spark with OTG" on
-		 10 "enable P3 Series (remove SD or it will crash) (thx DKoro1)" off)
+echo "Active patches: " >> $outdir/lastbuild-cfg.txt
+options=()
+i=1
+cmd=(dialog --separate-output --checklist "Select patches for APK Version: $apkver-$apkvcode" 22 76 16)
+for file in "patches/$apkver-$apkvcode/"*.patch; do
+	filename=$(basename "$file")
+	extension="${filename##*.}"
+	filename="${filename%.*}"
+#	echo "$i $filename"
+	options+=($i "$filename" on)
+	((i++))
+done
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-fi
 
-if [ "$apkver" == "4.1.4" ]
-then
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "force FCC patch" on
-         2 "remove forced Updates from DJI Go4" on
-         3 "remove Firmware Upgrade check" on
-		 8 "enable Mavic flight modes for Spark (thx djayeyeballs)" on
- 		 9 "enable Wifi channel selection on Spark with OTG" on)
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-fi
- 
+cd decompile_out
 for choice in $choices
 do
-    case $choice in
-        1)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/forceFCC.patch
-			cd ..
-			echo "forceFCC" >> out/lastbuild-cfg.txt
-            ;;
-        2)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/removeUpdateForce.patch
-			cd ..
-			echo "removeUpdateForce" >> out/lastbuild-cfg.txt
-            ;;
-        3)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/removeFWUpgradeService.patch
-			cd ..
-			echo "removeFWUpgradeService" >> out/lastbuild-cfg.txt
-            ;;
-		4)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/offlineLogin.patch
-			cd ..
-			echo "offlineLogin" >> out/lastbuild-cfg.txt
-            ;;
-		5)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/removeOnlinefunction.patch
-			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/$apkver/so.bspatch
+	let sel=$choice-1
+	let sel=$sel*3
+	let sel=$sel+1
+	patch=${options[$sel]}
+	dos2unix ../patches/$apkver-$apkvcode/$patch.patch
+	patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/$patch.patch
+	if [ "$patch" == "removeOnlinefunction" ]
+	then
+			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/$apkver-$apkvcode/so.bspatch
 			rm lib/armeabi-v7a/libSDKRelativeJNI.so
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
-			cd ..
-			echo "removeOnlinefunction" >> out/lastbuild-cfg.txt
-            ;;	
-		6)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/removeGoogleApis.patch
-			cd ..
-			echo "removeGoogleApis" >> out/lastbuild-cfg.txt
-            ;;	
-		7)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/removeSocial.patch
-			cd ..
-			echo "removeSocial" >> out/lastbuild-cfg.txt
-            ;;	
-		8)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/enableMavicFlightModesOnSpark.patch
-			cd ..
-			echo "enableMavicFlightModesOnSpark" >> out/lastbuild-cfg.txt
-            ;;	
-		9)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/enableSparkWifiChannelSelectOnOtg.patch
-			cd ..
-			echo "enableSparkWifiChannelSelectOnOtg" >> out/lastbuild-cfg.txt
-            ;;	
-		10)
-            cd decompile_out
-			patch -l -p1 -N -r - < ../patches/$apkver/enableP3series.patch
-			cd ..
-			echo "enableP3series" >> out/lastbuild-cfg.txt
-            ;;	
-    esac
+	fi
+	
+	echo "$patch" >> ../$outdir/lastbuild-cfg.txt
 done
-cd decompile_out
-patch -l -p1 -N -r - < ../patches/$apkver/origin
+
+dos2unix ../patches/$apkver-$apkvcode/origin
+if [ -f ../patches/$apkver-$apkvcode/so2.bspatch ] 
+then
+bspatch lib/armeabi-v7a/libFREncrypt.so lib/armeabi-v7a/libFREncrypt-n.so ../patches/$apkver-$apkvcode/so2.bspatch
+rm lib/armeabi-v7a/libFREncrypt.so
+mv lib/armeabi-v7a/libFREncrypt-n.so lib/armeabi-v7a/libFREncrypt.so
+fi
+patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/origin
 cd ..
 echo =======================
 echo Done patching
 echo Rebuilding apk
-java -jar tools/apktool.jar b -o out/mod.apk decompile_out
+java -jar tools/apktool.jar b -o $outdir/mod.apk decompile_out
 echo Signing with testkey
-java -jar tools/sign.jar out/mod.apk
-rm -f out/mod.apk
-rm -f out/mod-$ver.apk
-mv out/mod.s.apk out/mod-$ver.apk
+java -jar tools/sign.jar $outdir/mod.apk
+rm -f $outdir/mod.apk
+rm -f $outdir/mod-$ver.apk
+mv $outdir/mod.s.apk $outdir/mod-$ver.apk
 echo Done signing
-md5sum out/mod-$ver.apk > lastbuild-md5.txt
+md5sum $outdir/mod-$ver.apk > $outdir/lastbuild-md5.txt
 echo Removing decompile_out folder
 rm -rf decompile_out
 echo Have fun and stay safe!

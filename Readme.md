@@ -18,13 +18,17 @@ I am not responsible for any damage done! Use your brain and all will be fine!
 
 Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
 
-## App version 4.1.4
+IF you ONLY want FCC mode and nothing else, you might be better of with this (works on Android AND iOS):
+https://dji.retroroms.info/howto/dji_configs
 
-App version 4.1.4 is still work in progress. I would personally recommend using 4.1.3, anyway if you want to use 4.1.4 you can but it has not all patches yet AND the CC check dialog is gone and will not come back (still the fcc patch code is present and working [Spark RC 300FW seems to cause problems but SparkRC 100FW works!])
+
+## App version >= 4.1.4
+
+Starting from 4.1.4 the CC check dialog is gone and will not come back (still the fcc patch code is present and working)
 
 ## FCC 
 
-If you get a message about different region etc. etc after using the FCC patch: YOU HAVE TO CLICK OK! 
+If you get a message about different region etc. etc after using the FCC patch: YOU HAVE TO CLICK OK ONCE AFTER THE PATCH IS APPLIED! This will reboot the AC with the new Region (FCC REGION). Once you use and unmodded app the same popup will come again and if you click OK now it will reboot and apply the limits of your current region again!
 
 ## HowTo:
 
@@ -37,21 +41,35 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
    b) Download sign.jar from https://github.com/appium/sign/raw/master/dist/sign.jar and put it in tools folder
 
-3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/, or if you don't trust anyone use this chrome extension (needs MANUAL install into chrome and cannot be found in the chrome-store): https://apps.evozi.com/apk-downloader/
+3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
 
 4. RunMe.sh
 
 
 ### Windows
 
-1. Please copy 'sign.jar' into 'tools' folder, check above for link
-2. Please copy apktool to 'tools' and rename it 'apktool.jar', check above for link
-3. Please install gnuwin32 and copy 'patch.exe' into 'tools' folder, you can get it here: https://downloads.sourceforge.net/project/gnuwin32/patch/2.5.9-7/patch-2.5.9-7-setup.exe
-4. Please copy 'bspatch.exe' into 'tools' folder, you can get it here: https://github.com/eleme/bspatch/blob/master/tools/windows/bspatch.exe
-5. You may need to install Java Development Kit, you can get it here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-6. Get the apk (ver. **4.1.3**), check above for link
-7. RunMe.bat (as Administrator)
+1. You may need to install Java Development Kit, you can get it here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+2. Run the download_tools.bat file
+3. Get the apk (look in the patches folder for supported versions), check above for link
+4. RunMe.bat (as Administrator)
 
+
+### Windows Patcher
+
+![APKPATCH](http://i.imgur.com/43OgEOg.jpg)
+
+1. Follow the instructions for installing java and gnuwin32 above.
+2. Install .Net Framework 4.6.2 if you don't have it: https://www.microsoft.com/en-us/download/details.aspx?id=53344
+3. Install all tools as mentioned above
+4. Rename the original apk you are going to decompile to something without any spaces like DJeyeGO-413.apk
+5. Launch the app by double clicking PatchAPK.exe
+6. Select file, and find your renamed apk
+7. Click decompile, and wait until it finishes. apk will be decompiled to "decompile" directory
+8. Select the patches to apply, and click the Patch button. (The dry run checkbox is for testing the patches without applying them)
+9. Click the build and sign button. Signed apk will be "decompile\dist\mod.apk"
+10. Enjoy!
+
+Need help? Check out the wiki: http://dji.retroroms.info/howto/deejayeye-modder
 
 #### UPDATE: No more NFZ stuff here.
 
@@ -84,3 +102,5 @@ https://github.com/MAVProxyUser/DUMLrub - Ruby port of PyDUML, and firmware cher
 https://github.com/jezzab/DUMLdore - Even windows users need some love, so DUMLDore was created to help archive, and flash dji_system.bin files on windows platforms.
 
 https://github.com/MAVProxyUser/DJI_ftpd_aes_unscramble - DJI has modified the GPL Busybox ftpd on Mavic, Spark, & Inspire 2 to include AES scrambling of downloaded files... this tool will reverse the scrambling
+
+https://github.com/darksimpson/jdjitools - Java DJI Tools, a collection of various tools/snippets tied in one CLI shell-like application.

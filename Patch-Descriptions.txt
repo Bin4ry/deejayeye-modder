@@ -10,8 +10,12 @@ This will stop FW Upgrade Service to start, this way the app does not know which
 Offline login:
 Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass (any combo possible!). (thx to artu-ole)
 
+Remove login:
+For 4.1.8 it removes the login completely
+
 remove Onlinefunction:
 This will replace all urls inside the code with bogus ones, so the app cannot connect to the internet. Here Maps is excluded, so you can still have maps! This patch HAS to be applied together with the Offline login or you won't be able to login anymore! (thx to err0r4o4)
+On 4.1.8 you will need to stay online for the initial obb Download! This is needed once on first start!
 
 soPatch:
 This patch is automatically applied with "remove Onlinefunction". Will patch the libSDKRelativeJNI.so to stop it from calling home! 
@@ -31,3 +35,5 @@ enable Mavic Pro flight modes for Spark (thx djayeyeballs)
 enableSparkWifiChannelSelectOnOtg:
 brings back the Wifi channel selection screen! Works but the graph where you can see the network occupation is not filled with data yet. 
 
+enableCacheControl:
+brings back the option whether to cache video locally or not. May reduced crashes and CPU-load if switched off.
