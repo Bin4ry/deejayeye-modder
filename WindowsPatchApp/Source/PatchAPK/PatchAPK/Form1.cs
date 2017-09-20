@@ -265,7 +265,7 @@ namespace PatchAPK
 
             }
             doPatch("origin");
-            if (File.Exists(patchdir + "so2.bspatch"))
+            if (File.Exists(patchdir + "\\" + "so2.bspatch"))
             {
                 bsPatch2();
             }
