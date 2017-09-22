@@ -1,0 +1,16 @@
+diff -Naur orig/res/raw/product_13 mod/res/raw/product_13
+--- orig/res/raw/product_13	2017-09-05 09:36:03.047958800 +0200
++++ mod/res/raw/product_13	2017-09-22 08:14:28.289004800 +0200
+@@ -19,6 +19,12 @@
+                    "jumpto":"gs://flightmode/normal"
+         },
+         {
++                   "img":"selector_flightmode_quick_movie",
++                   "title":"gsnew_gs_quick_movie",
++                   "is_gs_func":1,
++                   "jumpto":"gs://flightmode/quickmovie"
++        },
++        {
+                    "img":"selector_flightmode_gesture",
+                    "title":"gsnew_fpv_flight_mode_gesture",
+                    "is_gs_func":0,
