@@ -21,6 +21,9 @@ Also i will not include any apk to this git! You have to do everything yourself,
 IF you ONLY want FCC mode and nothing else, you might be better of with this (works on Android AND iOS):
 https://dji.retroroms.info/howto/dji_configs
 
+## App version => 4.1.10
+
+Starting from 4.1.10 the apk is packed with secneo. This means that you will need to decrypt the classes0.dex from the assets folder "on-the-fly" with a rooted phone. Since this is not "noob" friendly i will not support this here.
 
 ## App version >= 4.1.4
 
