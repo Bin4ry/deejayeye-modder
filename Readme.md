@@ -44,6 +44,8 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
    b) Download sign.jar from https://github.com/appium/sign/raw/master/dist/sign.jar and put it in tools folder
 
+
+
 3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
 
 4. RunMe.sh
@@ -107,3 +109,5 @@ https://github.com/jezzab/DUMLdore - Even windows users need some love, so DUMLD
 https://github.com/MAVProxyUser/DJI_ftpd_aes_unscramble - DJI has modified the GPL Busybox ftpd on Mavic, Spark, & Inspire 2 to include AES scrambling of downloaded files... this tool will reverse the scrambling
 
 https://github.com/darksimpson/jdjitools - Java DJI Tools, a collection of various tools/snippets tied in one CLI shell-like application.
+
+https://github.com/htcheroportugal/r16/tree/r16backup - Portuguese Translation
