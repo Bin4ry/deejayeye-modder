@@ -9,7 +9,7 @@ then
 echo "apktool.jar not found, run download_tools.sh!"
 err=1
 fi
-if [ ! -f tools/apksigner.jar ] 
+if [ ! -f tools/apksigner/apksigner.jar ] 
 then
 echo "apksigner.jar not found, run download_tools.sh!"
 err=1
