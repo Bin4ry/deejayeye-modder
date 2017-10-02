@@ -1,5 +1,6 @@
 RunMe+.cmd
 PutApkHere/orig.apk
+tools/apktool.jar
 __MODDED_APK_OUT__/
 patches_out/
 decompile_out/
