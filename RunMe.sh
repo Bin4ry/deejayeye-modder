@@ -9,9 +9,9 @@ then
 echo "apktool.jar not found, run download_tools.sh!"
 err=1
 fi
-if [ ! -f tools/sign.jar ] 
+if [ ! -f tools/apksigner.jar ] 
 then
-echo "Sign.jar not found, run download_tools.sh!"
+echo "apksigner.jar not found, run download_tools.sh!"
 err=1
 fi
 
@@ -115,10 +115,9 @@ echo Done patching
 echo Rebuilding apk
 java -jar tools/apktool.jar b -o $outdir/mod.apk decompile_out
 echo Signing with testkey
-java -jar tools/sign.jar $outdir/mod.apk
-rm -f $outdir/mod.apk
+java -jar tools/apksigner/apksigner.jar sign --key tools/apksigner/testkey.pk8 --cert tools/apksigner/testkey.x509.pem $outdir/mod.apk
 rm -f $outdir/mod-$ver.apk
-mv $outdir/mod.s.apk $outdir/mod-$ver.apk
+mv $outdir/mod.apk $outdir/mod-$ver.apk
 echo Done signing
 md5sum $outdir/mod-$ver.apk > $outdir/lastbuild-md5.txt
 echo Removing decompile_out folder

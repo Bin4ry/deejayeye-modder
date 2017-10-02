@@ -17,7 +17,7 @@ call:chkinst "PutApkHere\orig.apk"
 call:chkinst "tools\apktool.jar"
 call:chkinst "tools\bspatch.exe"
 call:chkinst "tools\patch.exe"
-call:chkinst "tools\sign.jar"
+call:chkinst "tools\apksigner\apksigner.jar"
 for /F "usebackq" %%A IN ('PutApkHere\orig.apk') do set size=%%~zA
 for /f "tokens=*" %%a in ('findstr %size% patches\versions.txt') do set _CmdResult=%%a
 for /F "tokens=1 delims=:" %%a in ("%_CmdResult%") do (
@@ -113,9 +113,8 @@ cd ..
 echo.-: Rebuilding apk...
 java -jar tools\apktool.jar b -o %a_out%\mod.apk %d_out%
 echo.-: Signing with testkey...
-java -jar tools\sign.jar %a_out%\mod.apk
-del /f /q %a_out%\mod.apk
-move %a_out%\mod.s.apk %a_out%\mod-%ver%.apk >nul
+java -jar tools\apksigner\apksigner.jar sign --key tools\apksigner\testkey.pk8 --cert tools\apksigner\testkey.x509.pem %a_out%\mod.apk
+move %a_out%\mod.apk %a_out%\mod-%ver%.apk >nul
 echo.-: Cleaning up...
 rd /S /Q %d_out%
 rd /S /Q %p_out%

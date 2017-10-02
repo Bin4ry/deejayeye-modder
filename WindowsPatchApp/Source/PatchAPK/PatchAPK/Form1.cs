@@ -163,7 +163,7 @@ namespace PatchAPK
             {
                 Process proc = new Process();
                 proc.StartInfo.FileName = "java";
-                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\sign.jar b " + outdir + "\\mod.apk --override";
+                proc.StartInfo.Arguments = @"-jar " + toolsdir + "\\apksigner\\apksigner.jar sign --key " + toolsdir + "\\apksigner\\testkey.pk8 --cert " + toolsdir + "\\apksigner\\testkey.x509.pem " + outdir + "\\mod.apk";
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.RedirectStandardError = true;
