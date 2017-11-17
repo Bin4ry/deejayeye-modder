@@ -53,7 +53,7 @@ for directory, subdirectories, files in os.walk(path):
 							if enc:
 								#print(l)
 								next = lines[i+1]
-								if (("com/dji/k/a/a/b" in next) or ("com/dji/k/a/a/a" in next)):
+								if (("com/dji/k/a/a/b" in next) or ("com/dji/k/a/a/a" in next) or ("com/dji/f/a/a/b" in next)):
 									dec = decrypt(enc,klen)
 									l = l.replace(enc,dec)
 									print(l)
