@@ -1,0 +1,30 @@
+--- orig/smali_classes2/com/dji/frame/c/c.smali	2017-11-18 14:48:29.569826000 +0100
++++ mod/smali_classes2/com/dji/frame/c/c.smali	2017-11-18 14:58:01.170307104 +0100
+@@ -382,11 +382,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    const-string v2, "PUAgbAM8"
+-
+-    invoke-static {v2}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "/mnt/sdcard/DJI/dji_public.db"
+ 
+     sget-boolean v3, Lcom/dji/frame/c/c;->f:Z
+ 
+--- orig/smali_classes6/dji/thirdparty/afinal/b$a.smali	2017-11-18 14:48:36.953826000 +0100
++++ mod/smali_classes6/dji/thirdparty/afinal/b$a.smali	2017-11-18 15:01:32.099714405 +0100
+@@ -46,11 +46,7 @@
+     iput-object v0, p0, Ldji/thirdparty/afinal/b$a;->a:Landroid/content/Context;
+ 
+     .line 904
+-    const-string v0, "PUAgbAM8"
+-
+-    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "/mnt/sdcard/DJI/dji_public.db"
+ 
+     iput-object v0, p0, Ldji/thirdparty/afinal/b$a;->b:Ljava/lang/String;
+ 
