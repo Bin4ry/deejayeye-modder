@@ -11,7 +11,7 @@ Offline login:
 Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass (any combo possible!). (thx to artu-ole)
 
 Remove login:
-For 4.1.8 it removes the login completely
+For 4.1.8 and 4.1.14 it removes the login completely
 
 remove Onlinefunction:
 This will replace all urls inside the code with bogus ones, so the app cannot connect to the internet. Here Maps is excluded, so you can still have maps! This patch HAS to be applied together with the Offline login or you won't be able to login anymore! (thx to err0r4o4)
@@ -37,3 +37,9 @@ brings back the Wifi channel selection screen! Works but the graph where you can
 
 enableCacheControl:
 brings back the option whether to cache video locally or not. May reduced crashes and CPU-load if switched off.
+
+wind:
+removes the "high wind velocity. fly with caution." pop-up.
+
+wheel:
+removes the "Remote Controller Right Dial Locked. Lightly press it to adjust" pop-up. Inspire 2 only!
