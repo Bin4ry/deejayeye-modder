@@ -1,5 +1,5 @@
-diff -Naur original/smali_classes5/dji/pilot/publics/c/h.smali mod/smali_classes5/dji/pilot/publics/c/h.smali
---- original/smali_classes5/dji/pilot/publics/c/h.smali	2017-11-17 17:31:17.000000000 +0100
+diff -Naur orig/smali_classes5/dji/pilot/publics/c/h.smali mod/smali_classes5/dji/pilot/publics/c/h.smali
+--- orig/smali_classes5/dji/pilot/publics/c/h.smali	2017-11-17 17:31:17.000000000 +0100
 +++ mod/smali_classes5/dji/pilot/publics/c/h.smali	2017-11-23 15:21:26.000000000 +0100
 @@ -5127,6 +5127,8 @@
      invoke-virtual {p1}, Ldji/midware/data/model/P3/DataOsdGetPushHome;->isBigGale()Z
