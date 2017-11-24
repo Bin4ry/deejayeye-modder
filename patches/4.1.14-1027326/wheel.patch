@@ -1,5 +1,5 @@
-diff -Naur original/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali mod/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali
---- original/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali	2017-11-17 17:31:17.000000000 +0100
+diff -Naur orig/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali mod/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali
+--- orig/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali	2017-11-17 17:31:17.000000000 +0100
 +++ mod/smali_classes4/dji/pilot/fpv/camera/osd/DJICameraOsdKumquatView.smali	2017-11-21 17:58:24.000000000 +0100
 @@ -5448,6 +5448,8 @@
      invoke-virtual {p1}, Ldji/midware/data/model/P3/DataRcGetPushParams;->isWheelChanged()Z
