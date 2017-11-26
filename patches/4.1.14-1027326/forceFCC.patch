@@ -1,0 +1,47 @@
+diff -Naur orig/smali/dji/midware/data/model/P3/DataRcGetWifiFreqInfo.smali mod/smali/dji/midware/data/model/P3/DataRcGetWifiFreqInfo.smali
+--- orig/smali/dji/midware/data/model/P3/DataRcGetWifiFreqInfo.smali	2017-11-17 15:57:19.078300000 +0100
++++ mod/smali/dji/midware/data/model/P3/DataRcGetWifiFreqInfo.smali	2017-11-26 13:13:55.853800000 +0100
+@@ -312,41 +312,9 @@
+ 
+     .prologue
+     .line 160
+-    iget-object v0, p0, Ldji/midware/data/model/P3/DataRcGetWifiFreqInfo;->_recData:[B
++    const-string v0, "us"
+ 
+-    if-eqz v0, :cond_0
+-
+-    iget-object v0, p0, Ldji/midware/data/model/P3/DataRcGetWifiFreqInfo;->_recData:[B
+-
+-    array-length v0, v0
+-
+-    if-nez v0, :cond_1
+-
+-    .line 161
+-    :cond_0
+-    const-string v0, ""
+-
+-    .line 164
+-    :goto_0
+-    return-object v0
+-
+-    .line 163
+-    :cond_1
+-    iget-object v0, p0, Ldji/midware/data/model/P3/DataRcGetWifiFreqInfo;->_recData:[B
+-
+-    const/4 v1, 0x1
+-
+-    iget-object v2, p0, Ldji/midware/data/model/P3/DataRcGetWifiFreqInfo;->_recData:[B
+-
+-    array-length v2, v2
+-
+-    add-int/lit8 v2, v2, -0x1
+-
+-    invoke-static {v0, v1, v2}, Ldji/midware/j/c;->h([BII)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    goto :goto_0
++	return-object v0
+ .end method
+ 
+ .method public getFreqModeRange()[I

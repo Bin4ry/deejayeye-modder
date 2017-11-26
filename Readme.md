@@ -21,9 +21,16 @@ Also i will not include any apk to this git! You have to do everything yourself,
 IF you ONLY want FCC mode and nothing else, you might be better of with this (works on Android AND iOS):
 https://dji.retroroms.info/howto/dji_configs
 
-## App version => 4.1.10
 
-Starting from 4.1.10 the apk is packed with secneo. This means that you will need to decrypt the classes0.dex from the assets folder "on-the-fly" with a rooted phone. Since this is not "noob" friendly i will not support this here.
+## Want to contribute or learn some stuff? 
+Join our Slack (this is where the magic happens):
+https://join.slack.com/t/dji-rev/shared_invite/enQtMjIzMTI1MDA5MDcyLWJmZjQwYjdjZGMzYmZhYzIwZTQ1M2ZmYTY1Y2ZhYjkzYTkwYThiMjNlYzQzN2M5NDA4MmQ3M2RkZGMzZTIyNTY
+
+## What is the latest version to work?
+
+Latest version which works with this patches is app version 4.1.14, since the original version is encrypted you need a special decrypted version. This version can be found online.
+The filename is "go.v4_4.1.14-1027326-noSecNeo.apk" ONLY THIS VERSION is supported! 
+For further information come to slack and join #android-apk-patching
 
 ## App version >= 4.1.4
 
