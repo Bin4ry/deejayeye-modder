@@ -43,3 +43,6 @@ removes the "high wind velocity. fly with caution." pop-up.
 
 wheel:
 removes the "Remote Controller Right Dial Locked. Lightly press it to adjust" pop-up. Inspire 2 only!
+
+point of interest for inspire 2:
+activates point of interest for inspire 2. this has not been fully tested, be careful while using!
