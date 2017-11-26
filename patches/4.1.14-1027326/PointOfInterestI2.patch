@@ -1,0 +1,40 @@
+diff -Naur orig/res/raw/product_17 mod/res/raw/product17
+--- orig/res/raw/product_17	2017-11-17 17:31:10.000000000 +0100
++++ mod/res/raw/product_17	2017-11-26 10:07:29.000000000 +0100
+@@ -57,7 +57,7 @@
+                    "desc":"gsnew_in2_open_soon",
+                    "is_gs_func":1,
+                    "jumpto":"gs://smartmode/poi/fromenter",
+-                   "is_support":0
++                   "is_support":1
+         }
+     ]
+ }
+\ No newline at end of file
+
+diff -Naur orig/res/raw/product_17_tablet mod/res/raw/product_17_tablet
+--- orig/res/raw/product_17_tablet	2017-11-17 17:31:10.000000000 +0100
++++ mod/res/raw/product_17_tablet	2017-11-26 10:07:15.000000000 +0100
+@@ -55,7 +55,7 @@
+                    "desc":"gsnew_in2_open_soon",
+                 "is_gs_func":1,
+                 "jumpto":"gs://smartmode/poi/fromenter",
+-                "is_support":0
++                "is_support":1
+         }
+     ]
+ }
+\ No newline at end of file
+
+diff -Naur orig/res/values/strings.xml mod/res/values/strings.xml
+-- orig/res/values/strings.xml	2017-11-17 17:31:11.000000000 +0100
++++ mod/res/values/strings.xml	2017-11-26 10:11:05.000000000 +0100
+@@ -6866,7 +6866,7 @@
+     <string name="gsnew_gs_tripod_fail_by_pseudo">Cannot enter this mode while in Pano/ShallowFocus mode.</string>
+     <string name="gsnew_in2_not_install_gimbal">Gimbal Not Installed</string>
+     <string name="gsnew_in2_not_support_phone">Your mobile device does not support this function.</string>
+-    <string name="gsnew_in2_open_soon">Coming Soon</string>
++    <string name="gsnew_in2_open_soon">dJiBuGBoUnTyRoCkS</string>
+     <string name="gsnew_nfz_flight_mode_disclaimer">"You are now in a restricted area and will enter an Intelligent Flight Mode. When approaching a No-Fly Zone, the aircraft will stop flight and hover automatically. By enabling these modes, you understand that you are flying with increased risk and agree to be solely responsible for your flight. You are advised to follow tips below to use these modes more safely:
+ 
+ 1. Always keep aircraft away from No-Fly Zones.
