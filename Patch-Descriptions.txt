@@ -46,3 +46,7 @@ removes the "Remote Controller Right Dial Locked. Lightly press it to adjust" po
 
 point of interest for inspire 2:
 activates point of interest for inspire 2. this has not been fully tested, be careful while using!
+
+MakeDBPublic:
+will move the app private database dji.db wich is normally located at /data/data/dji.go.v4/databases/dji.db to /mnt/sdcard/DJI/dji_mod_{version_string}.db
+This database hold the recorded missions and moving it in user public area allow to do offline flight planning on non rooted devices ( https://www.dropbox.com/s/ne4rk6l7dr3qphj/Tutorial%20DJI%20Waypoints%20with%20Spark.pdf?dl=0 )
