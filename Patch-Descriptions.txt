@@ -13,6 +13,9 @@ Will remove the real login and give you a bogus one. Enter at least one char int
 Remove login:
 For 4.1.8 and 4.1.14 it removes the login completely
 
+Fake login:
+You can either login with your real account (online) or use the fake accout. To use the fake account you have to go offline (airplane mode) and put any non-numeric characters in the login box.
+
 remove Onlinefunction:
 This will replace all urls inside the code with bogus ones, so the app cannot connect to the internet. Here Maps is excluded, so you can still have maps! This patch HAS to be applied together with the Offline login or you won't be able to login anymore! (thx to err0r4o4)
 On 4.1.8 you will need to stay online for the initial obb Download! This is needed once on first start!
