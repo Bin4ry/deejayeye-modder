@@ -9,7 +9,7 @@
 -    invoke-static {v2}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
 -
 -    move-result-object v2
-+    const-string v2, "/mnt/sdcard/DJI/dji_public.db"
++    const-string v2, "/mnt/sdcard/DJI/dji_mod_4_1_9.db"
  
      sget-boolean v3, Lcom/dji/frame/c/c;->f:Z
  
@@ -24,7 +24,7 @@
 -    invoke-static {v0}, Lcom/dji/k/a/a/a;->a(Ljava/lang/String;)Ljava/lang/String;
 -
 -    move-result-object v0
-+    const-string v0, "/mnt/sdcard/DJI/dji_public.db"
++    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_9.db"
  
      iput-object v0, p0, Ldji/thirdparty/afinal/b$a;->b:Ljava/lang/String;
  
