@@ -24,6 +24,9 @@ remove Onlinefunction:
 This will replace all urls inside the code with bogus ones, so the app cannot connect to the internet. Here Maps is excluded, so you can still have maps! This patch HAS to be applied together with the Offline login or you won't be able to login anymore! (thx to err0r4o4)
 On 4.1.8 you will need to stay online for the initial obb Download! This is needed once on first start!
 
+goOffline:
+Similar to removeOnlinefunction but for app version 4.1.14 etc. This patch changes all online calls to localhost :)
+
 soPatch:
 This patch is automatically applied with "remove Onlinefunction". Will patch the libSDKRelativeJNI.so to stop it from calling home! 
 
