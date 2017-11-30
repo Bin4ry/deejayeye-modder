@@ -1,3 +1,13 @@
+diff -Naur orig/res/layout/activity_video_guide.xml mod/res/layout/activity_video_guide.xml
+--- orig/res/layout/activity_video_guide.xml	2017-11-30 15:43:55.415276300 +0100
++++ mod/res/layout/activity_video_guide.xml	2017-11-30 15:28:44.322643400 +0100
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
++<FrameLayout android:fitsSystemWindows="@bool/is_fix_system" android:layout_width="fill_parent" android:layout_height="fill_parent"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+     <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/s_48_dp">
+         <VideoView android:id="@id/video" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
 diff -Naur orig/res/values/bools.xml mod/res/values/bools.xml
 --- orig/res/values/bools.xml	2017-11-27 12:48:45.127096500 +0100
 +++ mod/res/values/bools.xml	2017-11-30 13:32:11.292110800 +0100

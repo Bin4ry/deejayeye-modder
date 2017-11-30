@@ -2,8 +2,8 @@ ForceFCC:
 This patch will force the TX power to FCC limits. This is needed if you use a non-GPS tablet with an EU simcard in the US. (useful for travelling)
 This patch only works reliable when your phone is in Airplane mode!
 
-fixLayoutToFullscreen:
-In App version 4.1.14 the LoginScreen is not in fullscreen mode, this may cause problems for some devices, since the Navigation bar is covering the SingIn button.
+fixLoginButton:
+In App version 4.1.14 the LoginButton is covered, this will fix it.
 
 RemoveUpdateForce:
 This removed the ForceUpdate function of the app. This will deactive the Updatecheck of the DJI Go app itself (NOT THE FIRMWARE!)
