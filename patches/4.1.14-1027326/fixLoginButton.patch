@@ -1,0 +1,10 @@
+diff -Naur orig/res/values/bools.xml mod/res/values/bools.xml
+--- orig/res/values/bools.xml	2017-11-27 12:48:45.127096500 +0100
++++ mod/res/values/bools.xml	2017-11-30 13:32:11.292110800 +0100
+@@ -5,5 +5,5 @@
+     <bool name="is_large_crystal">false</bool>
+     <bool name="is_small_crystal">false</bool>
+     <bool name="is_tablet">false</bool>
+-    <bool name="is_fix_system">false</bool>
++    <bool name="is_fix_system">true</bool>
+ </resources>
