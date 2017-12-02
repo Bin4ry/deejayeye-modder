@@ -15,7 +15,7 @@ Offline login:
 Will remove the real login and give you a bogus one. Enter at least one char into username and one into pass (any combo possible!). (thx to artu-ole)
 
 Remove login:
-For 4.1.8 and 4.1.14 it removes the login completely
+For 4.1.8 it removes the login completely
 
 Fake login:
 You can either login with your real account (online) or use the fake accout. To use the fake account you have to go offline (airplane mode) and put any non-numeric characters in the login box.
