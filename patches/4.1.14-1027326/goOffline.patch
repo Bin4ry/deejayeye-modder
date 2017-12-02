@@ -7052,38 +7052,6 @@ diff -Naur orig/smali_classes5/dji/pilot/liveshare/Youtube/youtubeLiveActivity.s
  
      aput-object v2, v0, v1
  
-diff -Naur orig/smali_classes5/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali mod/smali_classes5/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali
---- orig/smali_classes5/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali	2017-11-27 12:51:08.490476800 +0100
-+++ mod/smali_classes5/dji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager.smali	2017-11-30 09:07:02.986732900 +0100
-@@ -156,11 +156,7 @@
- 
-     sput-object v0, Ldji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager;->h:Ljava/lang/String;
- 
--    const-string v0, "MV49Ml1xdhMuXWcmDTd3BzZHZiYVMTcBdE4jK0hvd1R2"
--
--    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
--
--    move-result-object v0
-+    const-string v0, "http://127.0.0.1"
- 
-     sput-object v0, Ldji/pilot/playback/kumquat/bokeh/manager/DJIBokehManager;->i:Ljava/lang/String;
- 
-diff -Naur orig/smali_classes5/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali mod/smali_classes5/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali
---- orig/smali_classes5/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali	2017-11-27 12:51:08.693926200 +0100
-+++ mod/smali_classes5/dji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager.smali	2017-11-30 09:07:03.205726200 +0100
-@@ -126,11 +126,7 @@
- 
-     sput-object v0, Ldji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager;->i:Ljava/lang/String;
- 
--    const-string v0, "MV49Ml1xdhMuXWcmDTd3BzZHZiYVMTcBdE4jK0hvd1R2"
--
--    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
--
--    move-result-object v0
-+    const-string v0, "http://127.0.0.1"
- 
-     sput-object v0, Ldji/pilot/playback/kumquat/panorama/manager/DJIPanoramaManager;->j:Ljava/lang/String;
- 
 diff -Naur orig/smali_classes5/dji/pilot/publics/util/g.smali mod/smali_classes5/dji/pilot/publics/util/g.smali
 --- orig/smali_classes5/dji/pilot/publics/util/g.smali	2017-11-27 12:51:12.278819900 +0100
 +++ mod/smali_classes5/dji/pilot/publics/util/g.smali	2017-11-30 09:07:08.133871600 +0100
