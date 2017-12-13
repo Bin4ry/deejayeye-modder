@@ -1,0 +1,75 @@
+diff -Naur decomp_orig/smali/dji/midware/data/config/a/a.smali decomp_createpatch/smali/dji/midware/data/config/a/a.smali
+--- decomp_orig/smali/dji/midware/data/config/a/a.smali	2017-12-13 21:16:57.514998366 +0100
++++ decomp_createpatch/smali/dji/midware/data/config/a/a.smali	2017-12-13 21:19:57.466324843 +0100
+@@ -71,7 +71,7 @@
+     .line 27
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "CUUkIxMx"
++    const-string v1, "DUUkIxMx"
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -79,7 +79,7 @@
+ 
+     const/16 v2, 0x65
+ 
+-    const-string v3, "HmZ6clcb"
++    const-string v3, "ImZ6clcb"
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -92,7 +92,7 @@
+     .line 31
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "GlgwMRM/NTcyUwg="
++    const-string v1, "HlgwMRM/NTcyUwg="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -100,7 +100,7 @@
+ 
+     const/16 v2, 0xc9
+ 
+-    const-string v3, "A3l/clcf"
++    const-string v3, "B3l/clcf"
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -113,7 +113,7 @@
+     .line 35
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "GlgwMRM/NTcyUws="
++    const-string v1, "HlgwMRM/NTcyUws="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -121,7 +121,7 @@
+ 
+     const/16 v2, 0xca
+ 
+-    const-string v3, "A3l/clcc"
++    const-string v3, "B3l/clcc"
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -134,7 +134,7 @@
+     .line 39
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "FE14EQ=="
++    const-string v1, "GE14EQ=="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -142,7 +142,7 @@
+ 
+     const/16 v2, 0x12d
+ 
+-    const-string v3, "GG19clI="
++    const-string v3, "HG19clI="
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
