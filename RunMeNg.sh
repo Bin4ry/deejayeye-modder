@@ -74,7 +74,7 @@ command -v dos2unix >/dev/null 2>&1 || { echo "I require dos2unix but it's not i
 command -v getopt >/dev/null 2>&1 || { echo "I require getopt but it's not installed.  Aborting." >&2; err=1; }
 command -v convert >/dev/null 2>&1 || { echo "I require convert (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 command -v dwebp >/dev/null 2>&1 || { echo "I require dwebp (webp package) but it's not installed.  Aborting." >&2; err=1; }
-command -v display-im6 >/dev/null 2>&1 || { echo "I require display-im6 (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
+command -v display >/dev/null 2>&1 || { echo "I require display (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 
 if [ $err = 1 ]
 then
@@ -257,7 +257,7 @@ then
 		echo ""
 		echo "A window with image should open, when ready close it and choose to keep or try a new color value"
 		convert /tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift /tmp/test-$unique_rnd-out.png
-		display-im6 /tmp/test-$unique_rnd-out.png
+		display /tmp/test-$unique_rnd-out.png
 		echo ""
 		read -p "Keep this color or try a new one (y/n) ? " colorok
 		echo ""
