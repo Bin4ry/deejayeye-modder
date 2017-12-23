@@ -82,7 +82,7 @@ echo "Missing package. See detailled message above."
 exit 1
 fi
 
-SPLIT_ARG_TEMP=`getopt -o h:a:w:o:k:d:p:c:i:r:t: --longoptions apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
+SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:r:t: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
 
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
 
@@ -103,6 +103,7 @@ while true; do
 	case "$1" in
 		-h | --help )
 			usage
+			exit 1
 			break;
 			;;
 		-a | --apkname )
@@ -151,6 +152,14 @@ while true; do
 	esac
 done
 
+decompile_step=$(echo $decompile_step | tr '[:upper:]' '[:lower:]')
+patch_step=$(echo $patch_step | tr '[:upper:]' '[:lower:]')
+clone_step=$(echo $clone_step | tr '[:upper:]' '[:lower:]')
+repack_step=$(echo $repack_step | tr '[:upper:]' '[:lower:]')
+keep_temp=$(echo $keep_temp | tr '[:upper:]' '[:lower:]')
+add_timestamp=$(echo $add_timestamp | tr '[:upper:]' '[:lower:]')
+iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
+
 ver=`cat version.txt`
 outdir="__MODDED_APK_OUT__"
 
@@ -163,7 +172,7 @@ touch $log_file
 apkbasename=$(basename "$moddedapkname")
 apkbasename="${apkbasename%.*}"
 
-if [ ${add_timestamp,,} = "true" ] || [ ${add_timestamp,,} = "0" ]
+if [ "$add_timestamp" = "true" ] || [ "$add_timestamp" = "0" ]
 then
 	moddedapkname="$apkbasename-v$ver-$timestamp.apk"
 else
@@ -195,7 +204,10 @@ echo ""
 read -p "Agree (y/n)" -N 1 test_continue
 echo ""
 
-if [ "${test_continue,,}" = "y" ]
+test_continue=$(echo $test_continue | tr '[:upper:]' '[:lower:]')
+
+
+if [ "$test_continue" = "y" ]
 then
 	printf '%b\n' "$message" >> $log_file
 else
@@ -205,17 +217,17 @@ fi
 
 apkname=$(basename "$apkname")
 
-if [ "${decompile_step,,}" = "true" ] || [ "{$decompile_step,,}" = "y" ] || [ "{$decompile_step,,}" = "1" ]
+if [ "$decompile_step" = "true" ] || [ "$decompile_step" = "y" ] || [ "$decompile_step" = "1" ]
 then
 	./decompile_apk.sh $apkname $workdir $timestamp
 fi
 
-if [ "${patch_step,,}" = "true" ] || [ "{$patch_step,,}" = "y" ] || [ "{$patch_step,,}" = "1" ]
+if [ "$patch_step" = "true" ] || [ "$patch_step" = "y" ] || [ "$patch_step" = "1" ]
 then
 	./patch_apk.sh $workdir $timestamp
 fi
 
-if [ "${clone_step,,}" = "true" ] || [ "{$clone_step,,}" = "y" ] || [ "{$clone_step,,}" = "1" ]
+if [ "$clone_step" = "true" ] || [ "$clone_step" = "y" ] || [ "$clone_step" = "1" ]
 then
 	echo "Enter new package name (e.g. jdi.og.v4) :"
 	read -r -p "New package name : " newpackagename
@@ -233,7 +245,7 @@ then
 	./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$applabel"
 fi
 
-if [ "${iconmod_step,,}" = "true" ] || [ "{$iconmod_step,,}" = "y" ] || [ "{$iconmod_step,,}" = "1" ]
+if [ "$iconmod_step" = "true" ] || [ "$iconmod_step" = "y" ] || [ "$iconmod_step" = "1" ]
 then
 	unique_rnd=$RANDOM$RANDOM$RANDOM
 	cp $workdir/res/drawable/appicon40.png /tmp/test-$unique_rnd.png
@@ -261,7 +273,8 @@ then
 		echo ""
 		read -p "Keep this color or try a new one (y/n) ? " colorok
 		echo ""
-		if [ "${colorok,,}" == "y" ]
+		colorok=$(echo $colorok | tr '[:upper:]' '[:lower:]')
+		if [ "$colorok" == "y" ]
 		then
 		break
 		fi
@@ -271,7 +284,7 @@ then
 	./change_appicons_color.sh $workdir $hue_shift
 fi
 
-if [ "${repack_step,,}" = "true" ] || [ "{$repack_step,,}" = "y" ] || [ "{$repack_step,,}" = "1" ]
+if [ "$repack_step" = "true" ] || [ "$repack_step" = "y" ] || [ "$repack_step" = "1" ]
 then
 	echo Rebuilding apk
 	rm -rf $outdir/build
@@ -280,7 +293,7 @@ then
 	java -jar tools/apksigner/apksigner.jar sign --key tools/apksigner/testkey.pk8 --cert tools/apksigner/testkey.x509.pem $outdir/$moddedapkname
 fi
 
-if [ "${keep_temp,,}" = "false" ] || [ "{$keep_temp,,}" = "n" ] || [ "{$keep_temp,,}" = "0" ]
+if [ "$keep_temp" = "false" ] || [ "$keep_temp" = "n" ] || [ "$keep_temp" = "0" ]
 then
 	echo "Removing work directory $workdir"
 	rm -rf $workdir

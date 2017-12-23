@@ -21,7 +21,7 @@
 # 190 ~ 200 ~ orange
 
 #echo $1/appicon*
-
+err=0
 command -v convert >/dev/null 2>&1 || { echo "I require convert (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 command -v dwebp >/dev/null 2>&1 || { echo "I require dwebp (webp package) but it's not installed.  Aborting." >&2; err=1; }
 command -v display-im6 >/dev/null 2>&1 || { echo "I require display-im6 (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }

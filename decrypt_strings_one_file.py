@@ -1,0 +1,74 @@
+#!/usr/bin/env python
+
+import base64
+import sys
+import re
+import os
+
+# decrypt dji fw 4.1.4 strings by adding the decrypted version as comment to smali files
+# - by nopcode, miek and bin4ry
+
+key_414 = 'I Love Android'
+key_415 = 'Y9*PI8B#gD^6Yhd1'
+ 
+def decrypt(s,l):
+	s = base64.decodestring(s)
+	decr = ''.join([chr(ord(c) ^ ord(key[i%l*2])) for i,c in enumerate(s)])
+	decr = decr.replace('\r', '').replace('\n', '').replace('"', '').replace('\\','')
+	return decr
+
+if len(sys.argv) != 3:
+	print "Decrypts base64 + silly encrpytion in DJI Go4 4.1.4 smali files. Adds decrypted string as comment. Original smali file is replaced!"
+	print "Syntax: {0} <key1 for 414 (1) or key2 for >=415 (2)> <folder>".format(sys.argv[0])
+	sys.exit(1)
+
+if sys.argv[1] == '1':
+    key=key_414
+    klen=7
+if sys.argv[1] == '2':
+    key=key_415
+    klen=8
+fname = sys.argv[2]
+if fname.endswith('.smali'):
+	print(fname)
+	base64_str_rex = re.compile('\s*const-string.*\s*v[0-9]+\s*,\s*\"([^\"]*)\"\s*')
+	skip = 1
+	i = 0
+	
+	with open(fname, "r") as fd:
+		lines = list(fd)
+
+	with open(fname, "w") as fd:	
+		for l in lines:
+			i += 1
+			if (skip == 1):
+				l = l.rstrip()
+				match = base64_str_rex.match(l)
+				if match:
+					#print(l)
+					enc = match.group(1)
+					if enc:
+						#print(l)
+						next = lines[i+1]
+						if (("com/dji/k/a/a/b" in next) or ("com/dji/k/a/a/a" in next) or ("com/dji/f/a/a/b" in next)):
+							dec = decrypt(enc,klen)
+							l = l.replace(enc,dec)
+							print(l)
+							fd.write(l + "\n")
+							skip += 1
+						else:
+							fd.write(l + "\n")
+							skip = 1
+					#else:
+						#print("Empty string!")
+				else:
+					fd.write(l + "\n")
+			
+			else:
+				l=""
+				if (skip == 5):
+					skip = 1
+				else:
+					skip += 1
+		else:
+			foo=""

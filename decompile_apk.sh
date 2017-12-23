@@ -56,6 +56,9 @@ case $overwrite_choice in
 	echo "removing $2 and decompiling PutApkHere/$1 in subdirectory $2
 "
 	java -jar tools/apktool.jar d -f -o $2 PutApkHere/$1
+
+
+
 	;;
 	*)
 	echo "exiting to let you make a new call with new arguments

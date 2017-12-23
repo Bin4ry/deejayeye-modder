@@ -32,6 +32,12 @@
 #
 # ./prepare_cloning.sh ijd.og.v5 decompile_out "AIzaSyB-ICOGgAOCBopE5MdBDJXEkljD27pBSiJ" "IJD OG 4.1.14 modded"
 
+./decrypt_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
+./decrypt_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/scan/android/CaptureActivity\$11.smali"
+./decrypt_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
+./decrypt_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
+./decrypt_strings_one_file.py 2 "$1/smali_classes4/dji/pilot/fpv/control/y.smali"
+
 substitution_regex_packagename="s/dji.go.v4/$2/g"
 substitution_regex_googleapi="s/AIzaSyB-ICOGgAOCBopE5MdBDJXEkljD27pBSiI/$3/g"
 
@@ -49,7 +55,10 @@ find $1 -type f -exec sed -i $substitution_regex_packagename {} +
 #	Facebook provider number
 #	Application Label
 #
+
+sed -i '/\s*<permission android:name="dji.permission.broadcast"\sandroid:protectionLevel="signature"\/>/d' $1/AndroidManifest.xml
 sed -i $substitution_regex_googleapi $1/AndroidManifest.xml
 sed -i $substitution_regex_facebook $1/AndroidManifest.xml
 sed -i $substitution_regex_label $1/AndroidManifest.xml
+
 

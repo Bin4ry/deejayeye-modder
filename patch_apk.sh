@@ -8,6 +8,8 @@
 # First argument  : name of the decompiled apk directory e.g. decompile_out
 # Second argument : timestamp for generating the logs with autogeneration if empty
 
+err=0
+
 command -v dialog >/dev/null 2>&1 || { echo "I require dialog but it's not installed.  Aborting." >&2; err=1; }
 command -v bspatch >/dev/null 2>&1 || { echo "I require bspatch but it's not installed.  Aborting." >&2; err=1; }
 command -v patch >/dev/null 2>&1 || { echo "I require patch but it's not installed.  Aborting." >&2; err=1; }
@@ -64,7 +66,7 @@ choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 
 echo "deejayeye-modder version $ver" >> $log_file
 echo "    Command patch_apk.sh $1 $timestamp" >> $log_file
-echo "    ApkVersion     : $apkver" >> $log_fil
+echo "    ApkVersion     : $apkver" >> $log_file
 echo "    ApkVersionCode : $apkvcode" >> $log_file
 echo "    Active patches : " >> $log_file
 
