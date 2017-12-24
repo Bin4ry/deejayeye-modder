@@ -1,0 +1,12 @@
+diff -Naur orig/smali/dji/pilot/publics/c/g.smali mod/smali/dji/pilot/publics/c/g.smali
+--- orig/smali/dji/pilot/publics/c/g.smali	2017-12-02 09:14:18.000000000 +0100
++++ mod/smali/dji/pilot/publics/c/g.smali	2017-12-14 12:08:26.000000000 +0100
+@@ -2881,6 +2881,8 @@
+     invoke-virtual {p1}, Ldji/midware/data/model/P3/DataOsdGetPushHome;->isBigGale()Z
+ 
+     move-result v0
++    
++    const v0, 0x0
+ 
+     .line 594
+     iget-boolean v1, p0, Ldji/pilot/publics/c/g;->z:Z
