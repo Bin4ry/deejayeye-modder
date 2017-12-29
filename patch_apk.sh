@@ -54,7 +54,7 @@ fi
 
 options=()
 i=1
-cmd=(dialog --separate-output --checklist "Select patches for APK Version: $apkver-$apkvcode" 22 76 16)
+cmd=(dialog --separate-output --checklist "Select patches for APK Version: $apkver-$apkvcode" 26 76 20)
 for file in "patches/$apkver-$apkvcode/"*.patch; do
 	filename=$(basename "$file")
 	extension="${filename##*.}"

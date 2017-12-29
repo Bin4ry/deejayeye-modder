@@ -1,0 +1,480 @@
+diff -Naur decomp_orig/smali_classes4/dji/pilot/configs/CommonConfig.smali decomp_createpatch/smali_classes4/dji/pilot/configs/CommonConfig.smali
+--- decomp_orig/smali_classes4/dji/pilot/configs/CommonConfig.smali	2017-12-13 21:17:00.716267238 +0100
++++ decomp_createpatch/smali_classes4/dji/pilot/configs/CommonConfig.smali	2017-12-19 22:55:37.232276415 +0100
+@@ -83,6 +83,8 @@
+ 
+ .field public static test_this_sn_is_need_phone:Ljava/lang/String;
+ 
++.field public static upgradeServerType:I
++
+ .field public static webviewDebug:Z
+ 
+ 
+@@ -99,6 +101,8 @@
+ 
+     const/4 v1, 0x0
+ 
++    sput v1, Ldji/pilot/configs/CommonConfig;->upgradeServerType:I
++
+     .line 85
+     sput-boolean v1, Ldji/pilot/configs/CommonConfig;->couldChange:Z
+ 
+diff -Naur decomp_orig/smali_classes5/dji/pilot/publics/c/a.smali decomp_createpatch/smali_classes5/dji/pilot/publics/c/a.smali
+--- decomp_orig/smali_classes5/dji/pilot/publics/c/a.smali	2017-12-13 21:17:01.364524185 +0100
++++ decomp_createpatch/smali_classes5/dji/pilot/publics/c/a.smali	2017-12-19 21:28:28.790499970 +0100
+@@ -3,13 +3,256 @@
+ .source "SourceFile"
+ 
+ 
++# static fields
++.field public static a:Z
++
++.field public static b:Z
++
++.field public static c:Z
++
++.field public static d:Z
++
++.field public static e:Z
++
++.field private static f:Ljava/lang/String;
++
++
+ # direct methods
++.method static constructor <clinit>()V
++    .locals 2
++
++    .prologue
++    const/4 v1, 0x0
++
++    .line 25
++    const-string v0, ".DJI.configs"
++
++    sput-object v0, Ldji/pilot/publics/c/a;->f:Ljava/lang/String;
++
++    .line 27
++    sput-boolean v1, Ldji/pilot/publics/c/a;->a:Z
++
++    .line 30
++    sput-boolean v1, Ldji/pilot/publics/c/a;->b:Z
++
++    .line 32
++    sput-boolean v1, Ldji/pilot/publics/c/a;->c:Z
++
++    .line 34
++    sput-boolean v1, Ldji/pilot/publics/c/a;->d:Z
++
++    .line 36
++    sput-boolean v1, Ldji/pilot/publics/c/a;->e:Z
++
++    return-void
++.end method
++
+ .method public constructor <init>()V
+     .locals 0
+ 
+     .prologue
+-    .line 16
++    .line 24
+     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+ 
+     return-void
+ .end method
++
++.method public static a(Landroid/content/Context;)V
++    .locals 7
++
++    .prologue
++    const/4 v6, 0x2
++
++    const/4 v0, 0x1
++
++    const/4 v1, 0x0
++
++    .line 39
++    new-instance v2, Ljava/io/File;
++
++    const/4 v3, 0x0
++
++    invoke-virtual {p0, v3}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
++
++    move-result-object v3
++
++    sget-object v4, Ldji/pilot/publics/c/a;->f:Ljava/lang/String;
++
++    invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
++
++    .line 40
++    invoke-virtual {v2}, Ljava/io/File;->exists()Z
++
++    move-result v3
++
++    if-nez v3, :cond_0
++
++    .line 72
++    :goto_0
++    return-void
++
++    .line 43
++    :cond_0
++    sput v1, Ldji/pilot/configs/CommonConfig;->upgradeServerType:I
++
++    .line 45
++    :try_start_0
++    new-instance v3, Ljava/io/RandomAccessFile;
++
++    const-string v4, "r"
++
++    invoke-direct {v3, v2, v4}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
++
++    .line 46
++    const-wide/16 v4, 0x24
++
++    invoke-virtual {v3, v4, v5}, Ljava/io/RandomAccessFile;->seek(J)V
++
++    .line 47
++    invoke-virtual {v3}, Ljava/io/RandomAccessFile;->readInt()I
++
++    move-result v2
++
++    .line 48
++    if-ne v2, v0, :cond_1
++
++    move v2, v0
++
++    :goto_1
++    sput-boolean v2, Ldji/pilot/publics/c/a;->a:Z
++
++    .line 50
++    const/4 v2, 0x2
++
++    invoke-virtual {v3, v2}, Ljava/io/RandomAccessFile;->skipBytes(I)I
++
++    .line 51
++    invoke-virtual {v3}, Ljava/io/RandomAccessFile;->readShort()S
++
++    move-result v2
++
++    .line 52
++    if-ltz v2, :cond_2
++
++    if-gt v2, v6, :cond_2
++
++    .line 53
++    sput v2, Ldji/pilot/configs/CommonConfig;->upgradeServerType:I
++
++    .line 59
++    :goto_2
++    const/4 v2, 0x5
++
++    invoke-virtual {v3, v2}, Ljava/io/RandomAccessFile;->skipBytes(I)I
++
++    .line 60
++    invoke-virtual {v3}, Ljava/io/RandomAccessFile;->readByte()B
++
++    move-result v4
++
++    .line 61
++    and-int/lit8 v2, v4, 0x1
++
++    if-eqz v2, :cond_3
++
++    move v2, v0
++
++    :goto_3
++    sput-boolean v2, Ldji/pilot/publics/c/a;->b:Z
++
++    .line 62
++    and-int/lit8 v2, v4, 0x2
++
++    if-eqz v2, :cond_4
++
++    move v2, v0
++
++    :goto_4
++    sput-boolean v2, Ldji/pilot/publics/c/a;->c:Z
++
++    .line 63
++    and-int/lit8 v2, v4, 0x4
++
++    if-eqz v2, :cond_5
++
++    move v2, v0
++
++    :goto_5
++    sput-boolean v2, Ldji/pilot/publics/c/a;->d:Z
++
++    .line 64
++    and-int/lit8 v2, v4, 0x8
++
++    if-eqz v2, :cond_6
++
++    :goto_6
++    sput-boolean v0, Ldji/pilot/publics/c/a;->e:Z
++
++    .line 66
++    invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
++    :try_end_0
++    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
++    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
++
++    goto :goto_0
++
++    .line 67
++    :catch_0
++    move-exception v0
++
++    .line 68
++    invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
++
++    goto :goto_0
++
++    :cond_1
++    move v2, v1
++
++    .line 48
++    goto :goto_1
++
++    .line 55
++    :cond_2
++    const/4 v2, 0x0
++
++    :try_start_1
++    sput v2, Ldji/pilot/configs/CommonConfig;->upgradeServerType:I
++    :try_end_1
++    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
++    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
++
++    goto :goto_2
++
++    .line 69
++    :catch_1
++    move-exception v0
++
++    .line 70
++    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
++
++    goto :goto_0
++
++    :cond_3
++    move v2, v1
++
++    .line 61
++    goto :goto_3
++
++    :cond_4
++    move v2, v1
++
++    .line 62
++    goto :goto_4
++
++    :cond_5
++    move v2, v1
++
++    .line 63
++    goto :goto_5
++
++    :cond_6
++    move v0, v1
++
++    .line 64
++    goto :goto_6
++.end method
+diff -Naur decomp_orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService$4.smali decomp_createpatch/smali_classes5/dji/pilot/publics/objects/DJIGlobalService$4.smali
+--- decomp_orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService$4.smali	2017-12-13 21:17:01.448557492 +0100
++++ decomp_createpatch/smali_classes5/dji/pilot/publics/objects/DJIGlobalService$4.smali	2017-12-21 18:36:41.939725544 +0100
+@@ -62,6 +62,8 @@
+ 
+     invoke-static {v0}, Ldji/pilot/publics/objects/DJIGlobalService;->i(Ldji/pilot/publics/objects/DJIGlobalService;)V
+ 
++    invoke-static {v0}, Ldji/pilot/publics/objects/DJIGlobalService;->old_i(Ldji/pilot/publics/objects/DJIGlobalService;)V
++
+     .line 1131
+     return-void
+ .end method
+diff -Naur decomp_orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali decomp_createpatch/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali
+--- decomp_orig/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali	2017-12-13 21:17:01.460562251 +0100
++++ decomp_createpatch/smali_classes5/dji/pilot/publics/objects/DJIGlobalService.smali	2017-12-19 21:28:28.766499847 +0100
+@@ -3672,6 +3672,16 @@
+     .end packed-switch
+ .end method
+ 
++.method static synthetic old_i(Ldji/pilot/publics/objects/DJIGlobalService;)V
++    .locals 0
++
++    .prologue
++    .line 180
++    invoke-direct {p0}, Ldji/pilot/publics/objects/DJIGlobalService;->old_y()V
++
++    return-void
++.end method
++
+ .method static synthetic i(Ldji/pilot/publics/objects/DJIGlobalService;)V
+     .locals 0
+ 
+@@ -3692,6 +3702,7 @@
+     return-object v0
+ .end method
+ 
++
+ .method private j()V
+     .locals 3
+ 
+@@ -4758,6 +4769,96 @@
+     goto :goto_0
+ .end method
+ 
++.method private old_y()V
++    .locals 3
++
++    .prologue
++    const/4 v2, 0x0
++
++    .line 1282
++    sget-boolean v0, Ldji/pilot/publics/c/a;->b:Z
++
++    if-eqz v0, :cond_0
++
++    .line 1283
++    new-instance v0, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;-><init>()V
++
++    .line 1284
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->a()Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;
++
++    move-result-object v1
++
++    invoke-virtual {v1, v2}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->start(Ldji/midware/e/d;)V
++
++    .line 1285
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->join()V
++
++    .line 1287
++    :cond_0
++    sget-boolean v0, Ldji/pilot/publics/c/a;->c:Z
++
++    if-eqz v0, :cond_1
++
++    .line 1288
++    new-instance v0, Ldji/midware/data/model/P3/DataOsdSetSdrForceBoost;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrForceBoost;-><init>()V
++
++    .line 1289
++    invoke-virtual {v0, v2}, Ldji/midware/data/model/P3/DataOsdSetSdrForceBoost;->start(Ldji/midware/e/d;)V
++
++    .line 1290
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrForceBoost;->join()V
++
++    .line 1292
++    :cond_1
++    sget-boolean v0, Ldji/pilot/publics/c/a;->d:Z
++
++    if-eqz v0, :cond_2
++
++    .line 1293
++    new-instance v0, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;-><init>()V
++
++    .line 1294
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->b()Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;
++
++    move-result-object v1
++
++    invoke-virtual {v1, v2}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->start(Ldji/midware/e/d;)V
++
++    .line 1295
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->join()V
++
++    .line 1297
++    :cond_2
++    sget-boolean v0, Ldji/pilot/publics/c/a;->e:Z
++
++    if-eqz v0, :cond_3
++
++    .line 1298
++    new-instance v0, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;-><init>()V
++
++    .line 1299
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->c()Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;
++
++    move-result-object v1
++
++    invoke-virtual {v1, v2}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->start(Ldji/midware/e/d;)V
++
++    .line 1300
++    invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdSetSdrAssitantWrite;->join()V
++
++    .line 1302
++    :cond_3
++    return-void
++.end method
++
+ .method private y()V
+     .locals 2
+ 
+diff -Naur decomp_orig/smali_classes5/dji/pilot/publics/util/g.smali decomp_createpatch/smali_classes5/dji/pilot/publics/util/g.smali
+--- decomp_orig/smali_classes5/dji/pilot/publics/util/g.smali	2017-12-13 21:17:01.468565423 +0100
++++ decomp_createpatch/smali_classes5/dji/pilot/publics/util/g.smali	2017-12-19 22:16:14.248277750 +0100
+@@ -1914,6 +1914,8 @@
+ 
+     invoke-virtual {v0, p0}, Ldji/pilot/fpv/control/z;->a(Landroid/content/Context;)V
+ 
++	invoke-static {p0}, Ldji/pilot/publics/c/a;->a(Landroid/content/Context;)V
++
+     .line 464
+     invoke-static {p0}, Ldji/velib/i/c;->a(Landroid/content/Context;)V
+ 
+diff -Naur decomp_orig/smali_classes5/dji/pilot/reflect/AppPublicProvider.smali decomp_createpatch/smali_classes5/dji/pilot/reflect/AppPublicProvider.smali
+--- decomp_orig/smali_classes5/dji/pilot/reflect/AppPublicProvider.smali	2017-12-13 21:17:01.484571767 +0100
++++ decomp_createpatch/smali_classes5/dji/pilot/reflect/AppPublicProvider.smali	2017-12-22 09:37:36.319546017 +0100
+@@ -1381,10 +1381,25 @@
+     .locals 1
+ 
+     .prologue
+-    .line 266
++    .line 251
+     sget-boolean v0, Ldji/pilot/configs/CommonConfig;->c:Z
+ 
++    if-nez v0, :cond_0
++
++    sget-boolean v0, Ldji/pilot/publics/c/a;->a:Z
++
++    if-eqz v0, :cond_1
++
++    :cond_0
++    const/4 v0, 0x1
++
++    :goto_0
+     return v0
++
++    :cond_1
++    const/4 v0, 0x0
++
++    goto :goto_0
+ .end method
+ 
+ .method public isVideoWaterMarkAllow()Z
+diff -Naur decomp_orig/smali_classes5/dji/pilot2/main/activity/DJIMainFragmentActivity.smali decomp_createpatch/smali_classes5/dji/pilot2/main/activity/DJIMainFragmentActivity.smali
+--- decomp_orig/smali_classes5/dji/pilot2/main/activity/DJIMainFragmentActivity.smali	2017-12-13 21:17:01.776687552 +0100
++++ decomp_createpatch/smali_classes5/dji/pilot2/main/activity/DJIMainFragmentActivity.smali	2017-12-22 09:23:50.503861016 +0100
+@@ -1110,6 +1110,15 @@
+     .line 191
+     invoke-static {}, Ldji/pilot/playback/kumquat/a;->getInstance()Ldji/pilot/playback/kumquat/a;
+ 
++    .line 192
++    invoke-static {}, Ldji/logic/h/a;->getInstance()Ldji/logic/h/a;
++
++    move-result-object v0
++
++    sget-boolean v1, Ldji/pilot/publics/c/a;->a:Z
++
++    invoke-virtual {v0, v1}, Ldji/logic/h/a;->a(Z)V
++
+     .line 193
+     new-instance v0, Landroid/content/Intent;
+ 
