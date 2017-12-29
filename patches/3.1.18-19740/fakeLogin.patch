@@ -1,0 +1,71 @@
+diff -Naur orig/smali_classes4/dji/pilot/usercenter/protocol/e$2.smali mod/smali_classes4/dji/pilot/usercenter/protocol/e$2.smali
+--- orig/smali_classes4/dji/pilot/usercenter/protocol/e$2.smali	2017-12-02 09:14:22.000000000 +0100
++++ mod/smali_classes4/dji/pilot/usercenter/protocol/e$2.smali	2017-12-02 10:02:18.000000000 +0100
+@@ -105,49 +105,45 @@
+ .end method
+ 
+ .method public a(Ljava/lang/Throwable;ILjava/lang/String;)V
+-    .locals 4
++    .locals 7
+ 
+     .prologue
+-    const/4 v3, 0x0
++    const/4 v2, 0x0
+ 
+     .line 405
+-    const-string v0, "Pk89EhUxPw01TzoAHgo2DzxEaSQGNzURK09pLAhjfBd1Cjo2FWN8Fw=="
++    const-string v0, "Fake Login"
+ 
+-    invoke-static {v0}, Lcom/dji/g/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    const/4 v1, 0x2
++    const/4 v1, 0x1
+ 
+     new-array v1, v1, [Ljava/lang/Object;
+ 
+-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+-
+-    move-result-object v2
+-
+-    aput-object v2, v1, v3
+-
+-    const/4 v2, 0x1
+-
+-    aput-object p3, v1, v2
++    const-string/jumbo v6, "{\"code\":0,\"message\":\"ok\",\"data\":{\"nick_name\":\"DJI Troll User\",\"cookie_name\":\"_meta_key\",\"cookie_key\":\"wBXwEPq3b87VljETLxGY7vzQWnPSb0plwXaOzxphs5Meadbv\",\"active\":true,\"email\":\"i@love.dji\",\"token\":\"6828gz90xw0xsdbo5nf6vqd9v1g3by9d8oep8gtk\",\"validity\":1907509295,\"user_id\":\"421951681084276658\",\"register_phone\":\"\",\"area_code\":\"\",\"inner_email\":false,\"subscription\":false,\"vipLevel\":null}}"
++    
++    aput-object v6, v1, v2
+ 
+     invoke-static {v0, v1}, Ldji/pilot/usercenter/protocol/e;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+ 
++    invoke-static {v6}, Ldji/pilot/usercenter/mode/AccountCenterMemberResponse;->parse(Ljava/lang/String;)Ldji/pilot/usercenter/mode/AccountCenterBaseResponse;
++ 
++     move-result-object v5
++     
+     .line 406
+     iget-object v0, p0, Ldji/pilot/usercenter/protocol/e$2;->a:Ljava/lang/Object;
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v3, v3, v0, v1}, Ldji/pilot/usercenter/protocol/d$b;->a(IILjava/lang/Object;Ljava/lang/Object;)Ldji/pilot/usercenter/protocol/d$b;
++    invoke-static {v2, v2, v0, v5}, Ldji/pilot/usercenter/protocol/d$b;->a(IILjava/lang/Object;Ljava/lang/Object;)Ldji/pilot/usercenter/protocol/d$b;
+ 
+-    move-result-object v0
++    move-result-object v4
+ 
+     .line 407
+-    iget-object v1, p0, Ldji/pilot/usercenter/protocol/e$2;->b:Ldji/pilot/usercenter/protocol/d$a;
++    iget-object v0, p0, Ldji/pilot/usercenter/protocol/e$5;->b:Ldji/pilot/usercenter/protocol/d$a;
+ 
+-    const v2, 0x30030
++    const v1, 0x30030
++    
++    move v3, v2
+ 
+-    invoke-interface {v1, v2, p2, v3, v0}, Ldji/pilot/usercenter/protocol/d$a;->a(IIILjava/lang/Object;)V
++    invoke-interface/range {v0 .. v5}, Ldji/pilot/usercenter/protocol/d$a;->a(IIILjava/lang/Object;Ljava/lang/Object;)V
+ 
+     .line 408
+     return-void
