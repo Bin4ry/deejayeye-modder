@@ -1,0 +1,84 @@
+diff -Naur orig/smali_classes6/dji/setting/ui/tab/TabWifi.smali mod/smali_classes6/dji/setting/ui/tab/TabWifi.smali
+--- orig/smali_classes6/dji/setting/ui/tab/TabWifi.smali	2017-11-27 12:51:58.982212600 +0100
++++ mod/smali_classes6/dji/setting/ui/tab/TabWifi.smali	2017-11-29 15:04:41.859653000 +0100
+@@ -60,7 +60,7 @@
+ 
+     .line 46
+     :cond_1
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/tab/TabWifi;->setVisibility(I)V
+ 
+diff -Naur orig/smali_classes6/dji/setting/ui/wifi/AutoSelectChannelView.smali mod/smali_classes6/dji/setting/ui/wifi/AutoSelectChannelView.smali
+--- orig/smali_classes6/dji/setting/ui/wifi/AutoSelectChannelView.smali	2017-11-27 12:51:59.972185000 +0100
++++ mod/smali_classes6/dji/setting/ui/wifi/AutoSelectChannelView.smali	2017-11-29 15:04:50.845370500 +0100
+@@ -19,7 +19,7 @@
+     .locals 2
+ 
+     .prologue
+-    const/16 v1, 0x8
++    const/16 v1, 0x0
+ 
+     .line 42
+     invoke-static {}, Ldji/setting/ui/wifi/a;->a()Z
+diff -Naur orig/smali_classes6/dji/setting/ui/wifi/WifiChannelIndexView.smali mod/smali_classes6/dji/setting/ui/wifi/WifiChannelIndexView.smali
+--- orig/smali_classes6/dji/setting/ui/wifi/WifiChannelIndexView.smali	2017-11-27 12:52:00.052246400 +0100
++++ mod/smali_classes6/dji/setting/ui/wifi/WifiChannelIndexView.smali	2017-11-29 15:06:08.574792000 +0100
+@@ -430,7 +430,7 @@
+     if-nez v0, :cond_2
+ 
+     .line 148
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/wifi/WifiChannelIndexView;->setVisibility(I)V
+ 
+diff -Naur orig/smali_classes6/dji/setting/ui/wifi/WifiChannelSelectView.smali mod/smali_classes6/dji/setting/ui/wifi/WifiChannelSelectView.smali
+--- orig/smali_classes6/dji/setting/ui/wifi/WifiChannelSelectView.smali	2017-11-27 12:52:00.084272600 +0100
++++ mod/smali_classes6/dji/setting/ui/wifi/WifiChannelSelectView.smali	2017-11-29 15:06:39.300852300 +0100
+@@ -79,7 +79,7 @@
+     .locals 2
+ 
+     .prologue
+-    const/16 v1, 0x8
++    const/16 v1, 0x0
+ 
+     .line 61
+     invoke-static {}, Ldji/setting/ui/wifi/a;->a()Z
+diff -Naur orig/smali_classes6/dji/setting/ui/wifi/WifiCodeRateSelectView.smali mod/smali_classes6/dji/setting/ui/wifi/WifiCodeRateSelectView.smali
+--- orig/smali_classes6/dji/setting/ui/wifi/WifiCodeRateSelectView.smali	2017-11-27 12:52:00.094281200 +0100
++++ mod/smali_classes6/dji/setting/ui/wifi/WifiCodeRateSelectView.smali	2017-11-29 15:07:10.146336100 +0100
+@@ -140,7 +140,7 @@
+ 
+     .line 46
+     :cond_0
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/wifi/WifiCodeRateSelectView;->setVisibility(I)V
+ 
+diff -Naur orig/smali_classes6/dji/setting/ui/wifi/WifiFreqModeView.smali mod/smali_classes6/dji/setting/ui/wifi/WifiFreqModeView.smali
+--- orig/smali_classes6/dji/setting/ui/wifi/WifiFreqModeView.smali	2017-11-27 12:52:00.142348800 +0100
++++ mod/smali_classes6/dji/setting/ui/wifi/WifiFreqModeView.smali	2017-11-29 15:13:45.686776600 +0100
+@@ -677,7 +677,7 @@
+     .locals 4
+ 
+     .prologue
+-    const/16 v3, 0x8
++    const/16 v3, 0x0
+ 
+     const/4 v2, 0x0
+ 
+diff -Naur orig/smali_classes6/dji/setting/ui/wifi/WifiResetView.smali mod/smali_classes6/dji/setting/ui/wifi/WifiResetView.smali
+--- orig/smali_classes6/dji/setting/ui/wifi/WifiResetView.smali	2017-11-27 12:52:00.162366800 +0100
++++ mod/smali_classes6/dji/setting/ui/wifi/WifiResetView.smali	2017-11-29 15:14:20.773088600 +0100
+@@ -108,7 +108,7 @@
+ 
+     .line 85
+     :cond_0
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/wifi/WifiResetView;->setVisibility(I)V
+ 
