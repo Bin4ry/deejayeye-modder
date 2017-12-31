@@ -5,20 +5,20 @@ import sys
 import re
 import os
 
-# decrypt dji fw 4.1.4 strings by adding the decrypted version as comment to smali files
+# defog dji fw 4.1.4 strings by adding the defogged version as comment to smali files
 # - by nopcode, miek and bin4ry
 
 key_414 = 'I Love Android'
 key_415 = 'Y9*PI8B#gD^6Yhd1'
  
-def decrypt(s,l):
+def defog(s,l):
 	s = base64.decodestring(s)
 	decr = ''.join([chr(ord(c) ^ ord(key[i%l*2])) for i,c in enumerate(s)])
 	decr = decr.replace('\r', '').replace('\n', '').replace('"', '').replace('\\','')
 	return decr
 
 if len(sys.argv) != 3:
-	print "Decrypts base64 + silly encrpytion in DJI Go4 4.1.4 smali files. Adds decrypted string as comment. Original smali file is replaced!"
+	print "Defogs base64 + silly fogging in DJI Go4 4.1.4 smali files. Adds defogged string as comment. Original smali file is replaced!"
 	print "Syntax: {0} <key1 for 414 (1) or key2 for >=415 (2)> <folder>".format(sys.argv[0])
 	sys.exit(1)
 
@@ -51,7 +51,7 @@ if fname.endswith('.smali'):
 						#print(l)
 						next = lines[i+1]
 						if (("com/dji/k/a/a/b" in next) or ("com/dji/k/a/a/a" in next) or ("com/dji/f/a/a/b" in next)):
-							dec = decrypt(enc,klen)
+							dec = defog(enc,klen)
 							l = l.replace(enc,dec)
 							print(l)
 							fd.write(l + "\n")
