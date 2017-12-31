@@ -18,9 +18,6 @@ I am not responsible for any damage done! Use your brain and all will be fine!
 
 Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
 
-IF you ONLY want FCC mode and nothing else, you might be better of with this (works on Android AND iOS):
-https://dji.retroroms.info/howto/dji_configs
-
 
 ## Want to contribute or learn some stuff? 
 Join our Slack (this is where the magic happens):
@@ -28,8 +25,8 @@ https://join.slack.com/t/dji-rev/shared_invite/enQtMjIzMTI1MDA5MDcyLWJmZjQwYjdjZ
 
 ## What is the latest version to work?
 
-Latest version which works with this patches is app version 4.1.14, since the original version is encrypted you need a special decrypted version. This version can be found online.
-The filename is "go.v4_4.1.14-1027326-noSecNeo.apk" ONLY THIS VERSION is supported! 
+Latest version which works with this patches is app version 4.1.15, since the original version is encrypted you need a special decrypted version. This version can be found online.
+The filename is "4.1.15_V3027412-nosecneo" ONLY THIS VERSION is supported, you will not find this version on apk-mirror or such!
 For further information come to slack and join #android-apk-patching
 
 ## App version >= 4.1.4
@@ -53,33 +50,16 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
 
-4. RunMe.sh
-
+4. RunMe.sh or RunMeNg.sh (Ng version has new features!)
 
 ### Windows
+(For Windows there is currently no support of the new features [app-cloning etc.] like in the Ng version on Linux)
 
 1. You may need to install Java Development Kit, you can get it here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Run the download_tools.bat file
 3. Get the apk (look in the patches folder for supported versions), check above for link
 4. RunMe.bat (as Administrator)
 
-
-### Windows Patcher
-
-![APKPATCH](http://i.imgur.com/43OgEOg.jpg)
-
-1. Follow the instructions for installing java and gnuwin32 above.
-2. Install .Net Framework 4.6.2 if you don't have it: https://www.microsoft.com/en-us/download/details.aspx?id=53344
-3. Install all tools as mentioned above
-4. Rename the original apk you are going to decompile to something without any spaces like DJeyeGO-413.apk
-5. Launch the app by double clicking PatchAPK.exe
-6. Select file, and find your renamed apk
-7. Click decompile, and wait until it finishes. apk will be decompiled to "decompile" directory
-8. Select the patches to apply, and click the Patch button. (The dry run checkbox is for testing the patches without applying them)
-9. Click the build and sign button. Signed apk will be "decompile\dist\mod.apk"
-10. Enjoy!
-
-Need help? Check out the wiki: http://dji.retroroms.info/howto/deejayeye-modder
 
 #### UPDATE: No more NFZ stuff here.
 
