@@ -52,6 +52,23 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 4. RunMe.sh or RunMeNg.sh (Ng version has new features!)
 
+### macOS:
+
+1. Install the required dependencies with [Brew](https://brew.sh/):
+
+	`brew install dialog dos2unix imagemagick webp`
+
+2. Download needed tools manually or run the script provided.
+
+   a) Download [apktool](https://bitbucket.org/iBotPeaches/apktool/downloads/), rename it to `apktool.jar` and save it
+   to `tools` folder.
+
+   b) Download [sign.jar](https://github.com/appium/sign/raw/master/dist/sign.jar) and save it to `tools` folder.
+
+3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
+
+4. RunMe.sh or RunMeNg.sh (Ng version has new features!)
+
 ### Windows
 (For Windows there is currently no support of the new features [app-cloning etc.] like in the Ng version on Linux)
 

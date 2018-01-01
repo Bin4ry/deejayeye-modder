@@ -119,7 +119,11 @@ java -jar tools/apksigner/apksigner.jar sign --key tools/apksigner/testkey.pk8 -
 rm -f $outdir/mod-$ver.apk
 mv $outdir/mod.apk $outdir/mod-$ver.apk
 echo Done signing
-md5sum $outdir/mod-$ver.apk > $outdir/lastbuild-md5.txt
+if [[ "$OSTYPE" =~ ^darwin ]];then
+    md5 $outdir/mod-$ver.apk > $outdir/lastbuild-md5.txt
+else
+    md5sum $outdir/mod-$ver.apk > $outdir/lastbuild-md5.txt
+fi
 echo Removing decompile_out folder
 rm -rf decompile_out
 echo Have fun and stay safe!

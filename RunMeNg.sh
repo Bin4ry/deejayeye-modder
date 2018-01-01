@@ -203,7 +203,11 @@ message=$message"\\n"
 printf '%b\n' "$message"
 echo "Do you agree with steps above ?"
 echo ""
-read -p "Agree (y/n)" -N 1 test_continue
+if [[ "$OSTYPE" =~ ^darwin ]];then
+    read -p "Agree (y/n)" -n 1 test_continue
+else
+    read -p "Agree (y/n)" -N 1 test_continue
+fi
 echo ""
 
 test_continue=$(echo $test_continue | tr '[:upper:]' '[:lower:]')
