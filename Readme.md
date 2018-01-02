@@ -78,6 +78,20 @@ If you get a message about different region etc. etc after using the FCC patch: 
 4. RunMe.bat (as Administrator)
 
 
+### URLs patching
+
+two new tools designed for that purpose instead of the old patching way
+search_urls.sh and url_patcher.sh
+both take one argument which is the name of the decompiled directory
+
+search_urls.sh generate some config files in __MODDED_APK_OUT__/urls/subdir_with_name_of_workdir
+the file fogged_urls.txt and unfogged_urls.txt can (must) be edited, changing the first column to enable / disable further application by the second script :
+the default files DO NOT DISABLE any url in order not to break the app. The files must be edited to goOffline (or partially offline)
+
+url_patcher.sh applies the patching prepared in __MODDED_APK_OUT__/urls/subdir_with_name_of_workdir
+
+THIS DO NOT MEAN that the app can not reach servers by other path... take care...
+
 #### UPDATE: No more NFZ stuff here.
 
 ##### Reasons:
