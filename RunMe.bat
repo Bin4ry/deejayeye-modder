@@ -6,8 +6,10 @@ cd /d %~dp0
 set title=%~n0
 set "p_out=patches_out"
 set "d_out=decompile_out"
+set "s_out=source"
 set "a_out=__MODDED_APK_OUT__"
 set pCounter=1
+set "keepSource=delete"
 set FilePersist=%~dpn0+.cmd&     rem --define the filename where persistent variables get stored
 rd /S /Q %p_out% >nul 2>&1
 rd /S /Q %d_out% >nul 2>&1
@@ -21,8 +23,9 @@ call:chkinst "tools\apksigner\apksigner.jar"
 for /F "usebackq" %%A IN ('PutApkHere\orig.apk') do set size=%%~zA
 for /f "tokens=*" %%a in ('findstr %size% patches\versions.txt') do set _CmdResult=%%a
 for /F "tokens=1 delims=:" %%a in ("%_CmdResult%") do (
-   set "vers=%ver% %%a"
-   set "patches=patches\%%a"
+   set "goVers=%%a"
+   set "vers=%ver% !goVers!"
+   set "patches=patches\!goVers!"
 )
 if "%_CmdResult%" == "" ( echo.-: Unrecognized apk file.
  pause
@@ -49,14 +52,15 @@ for /f "tokens=1,* delims=. " %%X in ('dir /b %patches%\*.patch') do (
  set "stringy='%%X'                                              "
  set "scan=  !pC:~-4! !pX:~0,3! !stringy:~0,52!"
  if !pCounter! == 1 ( echo.!scan![P]atch apk
+  ) else if !pCounter! == 2 ( echo.!scan![S]ource: !keepSource!
   ) else if !pCounter! == 3 ( echo.!scan![R]eadme
   ) else if !pCounter! == 4 ( echo.!scan![D]escriptions
   ) else echo.!scan!
  set patch!pCounter!=%%X
  set /a pCounter=!pCounter!+1 )
-color 08
+REM color 08
 call:sleep 1
-color 07
+REM color 07
 set /a pCounter=22-!pCounter!
 FOR /l %%i in (1,1,!pCounter!) do echo.
 set pCounter=1
@@ -72,6 +76,9 @@ GOTO:menuLOOP
 call:getNextInList !patch%choice%! "!%newvar%_choice!"
 cls
 GOTO:EOF
+:menu_S - toggle decompiled source retention
+if !keepSource!==keep (set keepSource=remove) else (set keepSource=keep)
+goto:eof
 :menu_R - View readme
 cls
 more Readme.md
@@ -116,8 +123,15 @@ echo.-: Signing with testkey...
 java -jar tools\apksigner\apksigner.jar sign --key tools\apksigner\testkey.pk8 --cert tools\apksigner\testkey.x509.pem %a_out%\mod.apk
 move %a_out%\mod.apk %a_out%\mod-%ver%.apk >nul
 echo.-: Cleaning up...
-rd /S /Q %d_out%
-rd /S /Q %p_out%
+if !keepSource!==keep (
+   if not exist %s_out% (mkdir %s_out%)
+   set tstamp=%date:~4,2%%date:~7,2%%date:~10,2%.%time:~0,2%%time:~3,2%
+   move %d_out% %s_out%\%goVers%-%tstamp%
+   echo.-:    Patched source saved in %s_out%\%goVers%-%tstamp%
+) else (
+   echo.-:    Deleting decompiled source...
+   rd /S /Q %d_out%)
+echo.-:    Deleting seleceted patches cache... & rd /S /Q %p_out%
 echo.-: Have fun and stay safe
 pause
 exit
