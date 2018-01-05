@@ -23,9 +23,13 @@ Also i will not include any apk to this git! You have to do everything yourself,
 Due to request i add some donation methods, thank you very much for donating so the hacking of this stuff can go on :)
 
 PayPal: andreas.makris@gmail.com
+
 BTC: 1QKMFRMkauTXii8MGrYvt3C6m5dTjym9NG
+
 BCH: 12UnxVsA1Q9AHpy384spTVDNJVnudPZWXP
+
 ETH: 0x8fc3461e971790498eb43b4608ba58f7e4300c98
+
 thank you emails :) -> andreas.makris@gmail.com
 
 
