@@ -125,13 +125,16 @@ move %a_out%\mod.apk %a_out%\mod-%ver%.apk >nul
 echo.-: Cleaning up...
 if !keepSource!==keep (
    if not exist %s_out% (mkdir %s_out%)
-   set tstamp=%date:~4,2%%date:~7,2%%date:~10,2%.%time:~0,2%%time:~3,2%
-   move %d_out% %s_out%\%goVers%-%tstamp%
-   echo.-:    Patched source saved in %s_out%\%goVers%-%tstamp%
+   for /f "usebackq tokens=2,3,4,5,6,7 delims=/:. " %%g in (`echo %DATE% %TIME%`) do (
+   	   set y=%%i
+   	   set stamp=%%g%%h%y:~2,2%%%j%%k%%l
+   )
+   move %d_out% %s_out%\%goVers%-%stamp%
+   echo.-:    Patched source saved in %s_out%\%goVers%-%stamp%
 ) else (
    echo.-:    Deleting decompiled source...
    rd /S /Q %d_out%)
-echo.-:    Deleting seleceted patches cache... & rd /S /Q %p_out%
+echo.-:    Deleting selected patches cache... & rd /S /Q %p_out%
 echo.-: Have fun and stay safe
 pause
 exit
