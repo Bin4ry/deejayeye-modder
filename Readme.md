@@ -36,7 +36,7 @@ thank you emails :) -> andreas.makris@gmail.com
 
 ## Want to contribute or learn some stuff? 
 Join our Slack (this is where the magic happens):
-https://join.slack.com/t/dji-rev/shared_invite/enQtMjIzMTI1MDA5MDcyLWJmZjQwYjdjZGMzYmZhYzIwZTQ1M2ZmYTY1Y2ZhYjkzYTkwYThiMjNlYzQzN2M5NDA4MmQ3M2RkZGMzZTIyNTY
+https://join.slack.com/t/dji-rev/shared_invite/enQtMjk5OTEyMzcyMjI3LTdlZjY4NzQ5M2M2NmE5ZWM4OTgyNThmZDVmZjdjODE4ODYyNmYwZjYxMDcyYzcxNmZlYzI5ZjI2ZGQ2NGY1ZTc
 
 ## What is the latest version to work?
 
