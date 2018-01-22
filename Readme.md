@@ -1,3 +1,5 @@
+[中文文档点这儿](master/中文文档.md)
+
 # deejayeye-modder
 
 ![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
