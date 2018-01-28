@@ -1,6 +1,8 @@
-# [---中文文档点这儿---](中文文档.md)
-
 # deejayeye-modder
+
+Find the chinese version here:
+
+# [---中文文档点这儿---](中文文档.md)
 
 ![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
 
@@ -19,6 +21,10 @@ Only thing i ask for is to link this git as a start point of your own modificati
 I am not responsible for any damage done! Use your brain and all will be fine!
 
 Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
+
+## Mavic Air
+
+We will not support the Mavic Air anytime soon. Noone of us is planning of buying the drone.
 
 ## Donations
 
