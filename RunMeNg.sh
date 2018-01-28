@@ -13,6 +13,34 @@
 #	First argument  : name of apk file in PutApkHere subdirectory
 #	Second argument : 
 
+# Check if we are running an OSX or Linux system
+if uname -a|grep darwin>/dev/null
+then
+	echo "========================================"
+    echo "Running script on an Linux system"
+    echo "========================================"
+    SYSTEMTYPE=LINUX
+    DISPLAYCMD="display"
+else
+	echo "========================================"
+    echo "Running script on an OSX system"
+	echo "========================================"
+    SYSTEMTYPE=OSX
+    DISPLAYCMD="open -W"
+    GOPT_VER=$(getopt --version)
+    if [[ ! "$GOPT_VER" =~ "enhanced" ]]
+    then
+    	echo "you need to use gnu-getopt to run this script correctly on OSX"
+    	echo "this can be done with following commands if brew/homebrew package system is installed"
+    	echo "brew install gnu-getopt"
+    	echo "brew link --force gnu-getopt"
+    	echo "additionnal information about brew/homebrew package system can be found at : https://brew.sh/index_fr.html"
+    	echo "========================================"
+    	echo 
+    	exit
+    fi
+fi
+
 function usage() {
 	echo "RunMeNg : script for patching some application"
 	echo ""
@@ -76,12 +104,32 @@ command -v dos2unix >/dev/null 2>&1 || { echo "I require dos2unix but it's not i
 command -v getopt >/dev/null 2>&1 || { echo "I require getopt but it's not installed.  Aborting." >&2; err=1; }
 command -v convert >/dev/null 2>&1 || { echo "I require convert (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 command -v dwebp >/dev/null 2>&1 || { echo "I require dwebp (webp package) but it's not installed.  Aborting." >&2; err=1; }
-command -v display >/dev/null 2>&1 || { echo "I require display (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
+
+if [ $SYSTEMTYPE == LINUX ]
+then
+	command -v display >/dev/null 2>&1 || { echo "I require display (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
+fi
+
+if [ $SYSTEMTYPE == OSX ]
+then
+	command -v gsed >/dev/null 2>&1 || { echo "I require gsed (gnu-sed package) but it's not installed.  Aborting." >&2; err=1; }
+fi
 
 if [ $err = 1 ]
 then
-echo "Missing package. See detailled message above."
-exit 1
+	echo "Missing package. See detailled message above."
+	echo "on your system, missing packages can be installed with a command like : "
+	if [ $SYSTEMTYPE == OSX ]
+	then
+		echo "brew install missing_package_name"
+		echo "additionnal information about brew/homebrew package system can be found at : https://brew.sh/index_fr.html"
+	else
+		echo "sudo apt-get install missing_package_name"
+		echo "or"
+		echo "sudo yum install missing_package_name"
+		echo "or other command depending on your linux distribution and settingsÒ"
+	fi
+	exit 1
 fi
 
 SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:r:t: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
@@ -203,7 +251,7 @@ message=$message"\\n"
 printf '%b\n' "$message"
 echo "Do you agree with steps above ?"
 echo ""
-if [[ "$OSTYPE" =~ ^darwin ]];then
+if [ "$SYSTEMTYPE" = OSX ];then
     read -p "Agree (y/n)" -n 1 test_continue
 else
     read -p "Agree (y/n)" -N 1 test_continue
@@ -274,8 +322,9 @@ then
 		read -r -p "Enter value betwen 0 and 200 : " hue_shift
 		echo ""
 		echo "A window with image should open, when ready close it and choose to keep or try a new color value"
+		echo "on OSX you have to close the windows with cmd+Q to return to script execution"
 		convert /tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift /tmp/test-$unique_rnd-out.png
-		display /tmp/test-$unique_rnd-out.png
+		$DISPLAYCMD /tmp/test-$unique_rnd-out.png
 		echo ""
 		read -p "Keep this color or try a new one (y/n) ? " colorok
 		echo ""

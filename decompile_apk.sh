@@ -9,6 +9,14 @@
 # Second argument : name of the output directory e.g. decompile_out
 # Third argument  : timestamp for generating the logs with autogeneration if empty
 
+# Check if we are running an OSX or Linux system
+if uname -a|grep darwin>/dev/null
+then
+    SYSTEMTYPE=LINUX
+else
+    SYSTEMTYPE=OSX
+fi
+
 if [ ! -f tools/apktool.jar ] 
 then
 echo "apktool.jar not found, run download_tools.sh!"
@@ -45,7 +53,12 @@ echo "Output directory $2 already exist. Now you have to make a choice.
 (1) delete existing directory and overwrite
 (2) skip decompilation script
 "
-read -N 1 -p "Enter your choice : " overwrite_choice
+if [ $SYSTEMTYPE = OSX ]
+then
+	read -n 1 -p "Enter your choice : " overwrite_choice
+else
+	read -N 1 -p "Enter your choice : " overwrite_choice
+fi
 echo ""
 else
 overwrite_choice="1"

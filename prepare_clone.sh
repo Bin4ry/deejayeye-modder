@@ -32,22 +32,37 @@
 #
 # ./prepare_cloning.sh ijd.og.v5 decompile_out "AIzaSyB-ICOGgAOCBopE5MdBDJXEkljD27pBSiJ" "IJD OG 4.1.14 modded"
 
-./decrypt_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
-./decrypt_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/scan/android/CaptureActivity\$11.smali"
-./decrypt_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
-./decrypt_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
-./decrypt_strings_one_file.py 2 "$1/smali_classes4/dji/pilot/fpv/control/y.smali"
+chmod +x ./defog_strings_one_file.py
+
+# Check if we are running an OSX or Linux system
+if uname -a|grep darwin>/dev/null
+then
+    SYSTEMTYPE=LINUX
+    SED_CMD=sed
+else
+    SYSTEMTYPE=OSX
+    OLD_LC_CTYPE=$LC_CTYPE
+    # fix because OSX "tr" does not work on arbitrary chars without that environment variable set
+    export LC_CTYPE=C
+    SED_CMD=gsed
+fi
+
+./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
+./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/scan/android/CaptureActivity\$11.smali"
+./defog_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
+./defog_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
+./defog_strings_one_file.py 2 "$1/smali_classes4/dji/pilot/fpv/control/y.smali"
 
 substitution_regex_packagename="s/dji.go.v4/$2/g"
 substitution_regex_googleapi="s/AIzaSyB-ICOGgAOCBopE5MdBDJXEkljD27pBSiI/$3/g"
 
 newfbnumber=$(cat /dev/urandom | tr -dc '0-9' | fold -w 16 | head -n 1)
 substitution_regex_facebook="s/FacebookContentProvider1820832821495825/FacebookContentProvider$newfbnumber/g"
-new_package_label=$(echo "$4"|sed -e 's/ /\\x20/g')
+new_package_label=$(echo "$4"|$SED_CMD -e 's/ /\\x20/g')
 substitution_regex_label="s/DJI\x20GO\x204/$new_package_label/g"
 
 #replace dji.go.v4 by new package name in all files
-find $1 -type f -exec sed -i $substitution_regex_packagename {} +
+find $1 -type f -exec $SED_CMD -i $substitution_regex_packagename {} +
 
 #Change specific parts in AndroidManifest.xml
 #
@@ -56,9 +71,12 @@ find $1 -type f -exec sed -i $substitution_regex_packagename {} +
 #	Application Label
 #
 
-sed -i '/\s*<permission android:name="dji.permission.broadcast"\sandroid:protectionLevel="signature"\/>/d' $1/AndroidManifest.xml
-sed -i $substitution_regex_googleapi $1/AndroidManifest.xml
-sed -i $substitution_regex_facebook $1/AndroidManifest.xml
-sed -i $substitution_regex_label $1/AndroidManifest.xml
+$SED_CMD -i '/\s*<permission android:name="dji.permission.broadcast"\sandroid:protectionLevel="signature"\/>/d' $1/AndroidManifest.xml
+$SED_CMD -i $substitution_regex_googleapi $1/AndroidManifest.xml
+$SED_CMD -i $substitution_regex_facebook $1/AndroidManifest.xml
+$SED_CMD -i $substitution_regex_label $1/AndroidManifest.xml
 
-
+if [ $OSTYPE == OSX ]
+then
+	export LC_CTYPE=$OLD_LC_CTYPE
+fi
