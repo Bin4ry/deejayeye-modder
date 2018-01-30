@@ -10,7 +10,7 @@
 # Third argument  : timestamp for generating the logs with autogeneration if empty
 
 # Check if we are running an OSX or Linux system
-if uname -a|grep darwin>/dev/null
+if [ $(uname) = "Linux" ]
 then
     SYSTEMTYPE=LINUX
 else

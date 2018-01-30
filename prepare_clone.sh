@@ -35,7 +35,7 @@
 chmod +x ./defog_strings_one_file.py
 
 # Check if we are running an OSX or Linux system
-if uname -a|grep darwin>/dev/null
+if [ $(uname) = "Linux" ]
 then
     SYSTEMTYPE=LINUX
     SED_CMD=sed

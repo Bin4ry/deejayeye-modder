@@ -14,7 +14,7 @@
 #	Second argument : 
 
 # Check if we are running an OSX or Linux system
-if uname -a|grep darwin>/dev/null
+if [ $(uname) = "Linux" ]
 then
 	echo "========================================"
     echo "Running script on an Linux system"
