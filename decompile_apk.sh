@@ -34,7 +34,7 @@ else
 	timestamp=$3
 fi
 
-log_file="$outdir/log-cfg-$timestamp.txt"
+log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
 
 while true; do
 if [ -e PutApkHere/$1 ]

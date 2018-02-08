@@ -215,7 +215,7 @@ outdir="__MODDED_APK_OUT__"
 
 timestamp=$(date -u +"%Y-%M-%dT%R:%S")
 
-log_file="$outdir/log-cfg-$timestamp.txt"
+log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
 
 touch $log_file
 
