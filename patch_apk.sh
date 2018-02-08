@@ -32,7 +32,7 @@ else
 	timestamp=$2
 fi
 
-log_file="$outdir/log-cfg-$timestamp.txt"
+log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
 
 cd $1
 apkver=`cat apktool.yml | grep versionName: | awk '{print $2}'`
