@@ -17,28 +17,28 @@
 if [ $(uname) = "Linux" ]
 then
 	echo "========================================"
-    echo "Running script on an Linux system"
-    echo "========================================"
-    SYSTEMTYPE=LINUX
-    DISPLAYCMD="display"
+	echo "   Running script on an Linux system    "
+	echo "========================================"
+	SYSTEMTYPE=LINUX
+	DISPLAYCMD="display"
 else
 	echo "========================================"
-    echo "Running script on an OSX system"
+	echo "    Running script on an OSX system     "
 	echo "========================================"
-    SYSTEMTYPE=OSX
-    DISPLAYCMD="open -W"
-    GOPT_VER=$(getopt --version)
-    if [[ ! "$GOPT_VER" =~ "enhanced" ]]
-    then
-    	echo "you need to use gnu-getopt to run this script correctly on OSX"
-    	echo "this can be done with following commands if brew/homebrew package system is installed"
-    	echo "brew install gnu-getopt"
-    	echo "brew link --force gnu-getopt"
-    	echo "additionnal information about brew/homebrew package system can be found at : https://brew.sh/index_fr.html"
-    	echo "========================================"
-    	echo 
-    	exit
-    fi
+	SYSTEMTYPE=OSX
+	DISPLAYCMD="open -W"
+	GOPT_VER=$(getopt --version)
+	if [[ ! "$GOPT_VER" =~ "enhanced" ]]
+	then
+		echo "you need to use gnu-getopt to run this script correctly on OSX"
+		echo "this can be done with following commands if brew/homebrew package system is installed"
+		echo "brew install gnu-getopt"
+		echo "brew link --force gnu-getopt"
+		echo "additionnal information about brew/homebrew package system can be found at : https://brew.sh/index_fr.html"
+		echo "========================================"
+		echo 
+		exit
+	fi
 fi
 
 function usage() {
@@ -79,6 +79,10 @@ function usage() {
 	echo ""
 	echo "-i true/false or --iconmod-step=true/false"
 	echo "	   flag to do the icon color change step"
+	echo "     [default=false]"
+	echo ""
+	echo "-I true/false or --iconrep-step=true/false"
+	echo "	   flag to change the application icon"
 	echo "     [default=false]"
 	echo ""
 	echo "-r true/false or --repack-step=true/false"
@@ -132,7 +136,7 @@ then
 	exit 1
 fi
 
-SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:r:t: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
+SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:I:r:t: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
 
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
 
@@ -146,8 +150,12 @@ decompile_step="true"
 patch_step="true"
 clone_step="false"
 iconmod_step="false"
+iconrep_step="false"
 repack_step="true"
 add_timestamp="false"
+
+# Init script internal variables
+iconpath=""
 
 while true; do
 	case "$1" in
@@ -188,6 +196,10 @@ while true; do
 			iconmod_step="$2"
 			shift 2
 			;;
+		-I | --iconrep-step )
+			iconrep_step="$2"
+			shift 2
+			;;
 		-r | --repack-step )
 			repack_step="$2"
 			shift 2
@@ -208,6 +220,7 @@ clone_step=$(echo $clone_step | tr '[:upper:]' '[:lower:]')
 repack_step=$(echo $repack_step | tr '[:upper:]' '[:lower:]')
 keep_temp=$(echo $keep_temp | tr '[:upper:]' '[:lower:]')
 add_timestamp=$(echo $add_timestamp | tr '[:upper:]' '[:lower:]')
+iconrep_step=$(echo $iconrep_step | tr '[:upper:]' '[:lower:]')
 iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
 
 ver=`cat version.txt`
@@ -215,7 +228,7 @@ outdir="__MODDED_APK_OUT__"
 
 timestamp=$(date -u +"%Y-%M-%dT%R:%S")
 
-log_file="$outdir/log-cfg-$timestamp.txt"
+log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
 
 touch $log_file
 
@@ -242,6 +255,7 @@ message=$message"Do Decompile Step      : $decompile_step\\n"
 message=$message"Do Patch Step          : $patch_step\\n"
 message=$message"Do Clone Step          : $clone_step\\n"
 message=$message"Do IconMod Step        : $iconmod_step\\n"
+message=$message"Do IconRep Step        : $iconrep_step\\n"
 message=$message"Do Repack Step         : $repack_step\\n"
 message=$message"Add Timestamp          : $add_timestamp\\n"
 message=$message"\\n"
@@ -252,9 +266,9 @@ printf '%b\n' "$message"
 echo "Do you agree with steps above ?"
 echo ""
 if [ "$SYSTEMTYPE" = OSX ];then
-    read -p "Agree (y/n)" -n 1 test_continue
+    read -p "Agree (y/n) ? " -n 1 test_continue
 else
-    read -p "Agree (y/n)" -N 1 test_continue
+    read -p "Agree (y/n) ? " -N 1 test_continue
 fi
 echo ""
 
@@ -299,10 +313,59 @@ then
 	./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$applabel"
 fi
 
+# Replace the application icon by the provided one. 
+# If an invalid path or no path is enter, the original APK icon is used instead of.
+if [ "$iconrep_step" = "true" ] || [ "$iconrep_step" = "y" ] || [ "$iconrep_step" = "1" ]
+then
+	while true; do
+		# Does an icon file specify?
+		if [ "$iconpath" = "" ] || [ ! -f $iconpath ]
+		then
+			echo "Select new application icon"
+			echo "Prefered Image format : PNG @ 152 x 152"
+			echo ""
+			echo "Press enter to use default APK icon or"
+			read -r -p "Enter new icon path : " iconpath
+			if [ "$iconpath" = "" ]
+			then
+				iconpath="$workdir/res/drawable/appicon40.png"
+			fi
+		else
+			echo "Use provided logo :" $iconpath
+		fi
+		# Does the path to the icon file valid?
+		if [ -f $iconpath ]
+		then
+			echo ""
+			echo "A window with image should open, when ready close it and choose to keep or select a new icon"
+			display $iconpath
+			echo ""
+			if [ "$SYSTEMTYPE" = OSX ];then
+    			read -p "Keep this icon (y/n) ? " -n 1 iconok
+			else
+    			read -p "Keep this icon (y/n) ? " -N 1 iconok
+			fi
+			echo ""
+			iconok=$(echo $iconok | tr '[:upper:]' '[:lower:]')
+			if [ "$iconok" == "y" ] ;then break; fi
+		else
+			echo "Invalid path. Please retry"
+			echo ""
+		fi
+		iconpath=""
+	done
+
+	# Change the APK icon by the new one.
+	./change_appicons.sh $workdir $iconpath
+	echo ""
+fi
+
 if [ "$iconmod_step" = "true" ] || [ "$iconmod_step" = "y" ] || [ "$iconmod_step" = "1" ]
 then
+	if [ "$iconpath" = "" ] ;then iconpath="$workdir/res/drawable/appicon40.png"; fi
+
 	unique_rnd=$RANDOM$RANDOM$RANDOM
-	cp $workdir/res/drawable/appicon40.png /tmp/test-$unique_rnd.png
+	cp $iconpath /tmp/test-$unique_rnd.png
 	while true; do
 		echo "Choose a color shift (hue shift in HSV colorspace) for the app icon"
 		echo "Value must be between 0 and 200"
@@ -326,13 +389,14 @@ then
 		convert /tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift /tmp/test-$unique_rnd-out.png
 		$DISPLAYCMD /tmp/test-$unique_rnd-out.png
 		echo ""
-		read -p "Keep this color or try a new one (y/n) ? " colorok
+		if [ "$SYSTEMTYPE" = OSX ] ;then
+    		read -p "Keep this color or try a new one (y/n) ? " -n 1 colorok
+		else
+    		read -p "Keep this color or try a new one (y/n) ? " -N 1 colorok
+		fi
 		echo ""
 		colorok=$(echo $colorok | tr '[:upper:]' '[:lower:]')
-		if [ "$colorok" == "y" ]
-		then
-		break
-		fi
+		if [ "$colorok" == "y" ] ;then break; fi
 	done
 	rm -f /tmp/test-$unique_rnd.png
 	rm -f /tmp/test-$unique_rnd-out.png
