@@ -101,6 +101,7 @@ function usage() {
 
 err=0
 
+# Check if all required packages are installed before continuing.
 command -v dialog >/dev/null 2>&1 || { echo "I require dialog but it's not installed.  Aborting." >&2; err=1; }
 command -v bspatch >/dev/null 2>&1 || { echo "I require bspatch but it's not installed.  Aborting." >&2; err=1; }
 command -v patch >/dev/null 2>&1 || { echo "I require patch but it's not installed.  Aborting." >&2; err=1; }
@@ -108,14 +109,13 @@ command -v dos2unix >/dev/null 2>&1 || { echo "I require dos2unix but it's not i
 command -v getopt >/dev/null 2>&1 || { echo "I require getopt but it's not installed.  Aborting." >&2; err=1; }
 command -v convert >/dev/null 2>&1 || { echo "I require convert (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 command -v dwebp >/dev/null 2>&1 || { echo "I require dwebp (webp package) but it's not installed.  Aborting." >&2; err=1; }
+command -v xmlstarlet >/dev/null 2>&1 || { echo "I require xmlstarlet (xmlstarlet package) but it's not installed.  Aborting." >&2; err=1; }
 
-if [ $SYSTEMTYPE == LINUX ]
-then
+if [ $SYSTEMTYPE == LINUX ] ; then
 	command -v display >/dev/null 2>&1 || { echo "I require display (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 fi
 
-if [ $SYSTEMTYPE == OSX ]
-then
+if [ $SYSTEMTYPE == OSX ] ; then
 	command -v gsed >/dev/null 2>&1 || { echo "I require gsed (gnu-sed package) but it's not installed.  Aborting." >&2; err=1; }
 fi
 
@@ -136,15 +136,14 @@ then
 	exit 1
 fi
 
+# Read all script arguments
 SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:I:r:t: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
-
+# If an argument cannot be identified, stop the script with error status
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
-
+#  otherwise, let's go
 eval set -- "$SPLIT_ARG_TEMP"
 
-apkname=orig.apk
-workdir=decompile_out
-moddedapkname=mod.apk
+# Default selected options for output APK creation
 keep_temp="false"
 decompile_step="true"
 patch_step="true"
@@ -155,8 +154,23 @@ repack_step="true"
 add_timestamp="false"
 
 # Init script internal variables
-iconpath=""
+ver=`cat version.txt`
+workdir="decompile_out"
+config_file="Settings.xml"
+outdir="__MODDED_APK_OUT__"
+timestamp=$(date -u +"%Y-%M-%dT%R:%S")
+log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
 
+# Init settings from config file Settings.xml
+apkname="$( xmlstarlet sel -t -v '/config/apkname' "$config_file" )"
+if [ "$apkname" = "" ] ; then apkname="orig.apk"; fi
+moddedapkname="$( xmlstarlet sel -t -v '/config/moddedapkname' "$config_file" )"
+if [ "$moddedapkname" = "" ] ; then moddedapkname="mod.apk"; fi
+newapplabel="$( xmlstarlet sel -t -v '/config/newapplabel' "$config_file" )"
+googleapikey="$( xmlstarlet sel -t -v '/config/googleapikey' "$config_file" )"
+newpackagename="$( xmlstarlet sel -t -v '/config/newpackagename' "$config_file" )"
+
+# Extract all script arguments from command line
 while true; do
 	case "$1" in
 		-h | --help )
@@ -214,6 +228,7 @@ while true; do
 	esac
 done
 
+# Reformat script arguments (in lower case)
 decompile_step=$(echo $decompile_step | tr '[:upper:]' '[:lower:]')
 patch_step=$(echo $patch_step | tr '[:upper:]' '[:lower:]')
 clone_step=$(echo $clone_step | tr '[:upper:]' '[:lower:]')
@@ -223,18 +238,12 @@ add_timestamp=$(echo $add_timestamp | tr '[:upper:]' '[:lower:]')
 iconrep_step=$(echo $iconrep_step | tr '[:upper:]' '[:lower:]')
 iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
 
-ver=`cat version.txt`
-outdir="__MODDED_APK_OUT__"
-
-timestamp=$(date -u +"%Y-%M-%dT%R:%S")
-
-log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
-
+# Create the log file
 touch $log_file
 
 apkbasename=$(basename "$moddedapkname")
 apkbasename="${apkbasename%.*}"
-
+# Set the name of the output APK package 
 if [ "$add_timestamp" = "true" ] || [ "$add_timestamp" = "0" ]
 then
 	moddedapkname="$apkbasename-v$ver-$timestamp.apk"
@@ -265,7 +274,7 @@ message=$message"\\n"
 printf '%b\n' "$message"
 echo "Do you agree with steps above ?"
 echo ""
-if [ "$SYSTEMTYPE" = OSX ];then
+if [ "$SYSTEMTYPE" = OSX ] ; then
     read -p "Agree (y/n) ? " -n 1 test_continue
 else
     read -p "Agree (y/n) ? " -N 1 test_continue
@@ -273,7 +282,6 @@ fi
 echo ""
 
 test_continue=$(echo $test_continue | tr '[:upper:]' '[:lower:]')
-
 
 if [ "$test_continue" = "y" ]
 then
@@ -297,39 +305,53 @@ fi
 
 if [ "$clone_step" = "true" ] || [ "$clone_step" = "y" ] || [ "$clone_step" = "1" ]
 then
-	echo "Enter new package name (e.g. jdi.og.v4) :"
-	read -r -p "New package name : " newpackagename
+	if [ "$newpackagename" = "" ]
+	then
+		echo "Enter new package name (e.g. \"jdi.og.v4\")"
+		read -r -p "New package name : " newpackagename
+	else
+		echo "Use provided package name :" $newpackagename
+	fi
 	echo ""
-	echo "Enter Google Map V2 API key :"
-	echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
-	echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
+	if [ "$googleapikey" = "" ]
+	then
+		echo "Enter Google Map V2 API key :"
+		echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
+		echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
+		echo ""
+		read -r -p "Google API key : " googleapikey
+	else
+		echo "Use provided Google API Key :" $googleapikey
+	fi
 	echo ""
-	read -r -p "Google API key : " googleapikey
+	if [ "$newapplabel" = "" ]
+	then
+		echo "Enter the friendly name of clone application label (e.g. \"IDJ OG 4.x mod\")"
+		read -r -p "Application friendly label : " newapplabel
+	else
+		echo "Use provided Application label :" $newapplabel
+	fi
 	echo ""
-	echo "Enter the friendly name of clone application label (e.g. \"IDJ OG 4.x mod\")"
-	echo ""
-	read -r -p "Application friendly label name : " applabel
-	echo ""
-	./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$applabel"
+	./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$newapplabel"
 fi
 
 # Replace the application icon by the provided one. 
 # If an invalid path or no path is enter, the original APK icon is used instead of.
 if [ "$iconrep_step" = "true" ] || [ "$iconrep_step" = "y" ] || [ "$iconrep_step" = "1" ]
 then
+	# Check if a new icon path has been specified in the settings file.
+	iconpath="$( xmlstarlet sel -t -v '/config/iconpath' "$config_file" )"
 	while true; do
-		# Does an icon file specify?
-		if [ "$iconpath" = "" ] || [ ! -f $iconpath ]
+		# If no icon has been specified, allow user to select one.
+		if [ "$iconpath" = "" ]
 		then
 			echo "Select new application icon"
 			echo "Prefered Image format : PNG @ 152 x 152"
 			echo ""
 			echo "Press enter to use default APK icon or"
 			read -r -p "Enter new icon path : " iconpath
-			if [ "$iconpath" = "" ]
-			then
-				iconpath="$workdir/res/drawable/appicon40.png"
-			fi
+			# If an empty path has been entered, use the default application icon.
+			if [ "$iconpath" = "" ] ; then iconpath="$workdir/res/drawable/appicon40.png"; fi
 		else
 			echo "Use provided logo :" $iconpath
 		fi
@@ -340,16 +362,16 @@ then
 			echo "A window with image should open, when ready close it and choose to keep or select a new icon"
 			display $iconpath
 			echo ""
-			if [ "$SYSTEMTYPE" = OSX ];then
+			if [ "$SYSTEMTYPE" = OSX ] ; then
     			read -p "Keep this icon (y/n) ? " -n 1 iconok
 			else
     			read -p "Keep this icon (y/n) ? " -N 1 iconok
 			fi
 			echo ""
 			iconok=$(echo $iconok | tr '[:upper:]' '[:lower:]')
-			if [ "$iconok" == "y" ] ;then break; fi
+			if [ "$iconok" == "y" ] ; then break; fi
 		else
-			echo "Invalid path. Please retry"
+			echo "Invalid path: $iconpath. Please retry"
 			echo ""
 		fi
 		iconpath=""
@@ -362,45 +384,59 @@ fi
 
 if [ "$iconmod_step" = "true" ] || [ "$iconmod_step" = "y" ] || [ "$iconmod_step" = "1" ]
 then
-	if [ "$iconpath" = "" ] ;then iconpath="$workdir/res/drawable/appicon40.png"; fi
-
+	# If no icon has been specified, used the default application icon.
+	if [ "$iconpath" = "" ] ; then iconpath="$workdir/res/drawable/appicon40.png"; fi
+	# Check if a new icon color has been specified in the settings file.	
+	hue_shift="$( xmlstarlet sel -t -v '/config/hue_shift' "$config_file" )"
+	# Create unique temporary file.
 	unique_rnd=$RANDOM$RANDOM$RANDOM
 	cp $iconpath /tmp/test-$unique_rnd.png
 	while true; do
-		echo "Choose a color shift (hue shift in HSV colorspace) for the app icon"
-		echo "Value must be between 0 and 200"
-		echo "100 will not change color"
-		echo ""
-		echo "0 and 200 are the same color (the HSV colorspace is cyclic)"
-		echo "0 - 10 ~ orange"
-		echo "15 - 20 ~ yellow"
-		echo "25 - 65 ~ green"
-		echo "70 - 85 ~ turquoise"
-		echo "95 - 120 ~ blue (100 is nominal blue color)"
-		echo "125 - 140 ~ violet"
-		echo "145 - 170 ~ pink"
-		echo "175 ~ 185 ~ red"
-		echo "190 ~ 200 ~ orange"
-		echo ""
-		read -r -p "Enter value betwen 0 and 200 : " hue_shift
-		echo ""
-		echo "A window with image should open, when ready close it and choose to keep or try a new color value"
-		echo "on OSX you have to close the windows with cmd+Q to return to script execution"
-		convert /tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift /tmp/test-$unique_rnd-out.png
-		$DISPLAYCMD /tmp/test-$unique_rnd-out.png
-		echo ""
-		if [ "$SYSTEMTYPE" = OSX ] ;then
-    		read -p "Keep this color or try a new one (y/n) ? " -n 1 colorok
+		# If no icon color has been specified, allow user to select one.
+		if [ "$hue_shift" = "" ]
+			then
+			echo "Choose a color shift (hue shift in HSV colorspace) for the app icon"
+			echo "Value must be between 0 and 200"
+			echo "100 will not change color"
+			echo ""
+			echo "0 and 200 are the same color (the HSV colorspace is cyclic)"
+			echo "0 - 10 ~ orange"
+			echo "15 - 20 ~ yellow"
+			echo "25 - 65 ~ green"
+			echo "70 - 85 ~ turquoise"
+			echo "95 - 120 ~ blue (100 is nominal blue color)"
+			echo "125 - 140 ~ violet"
+			echo "145 - 170 ~ pink"
+			echo "175 ~ 185 ~ red"
+			echo "190 ~ 200 ~ orange"
+			echo ""
+			read -r -p "Enter value betwen 0 and 200 : " hue_shift
+			echo ""
+			echo "A window with image should open, when ready close it and choose to keep or try a new color value"
+			echo "on OSX you have to close the windows with cmd+Q to return to script execution"
+			convert /tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift /tmp/test-$unique_rnd-out.png
+			$DISPLAYCMD /tmp/test-$unique_rnd-out.png
+			echo ""
+			if [ "$SYSTEMTYPE" = OSX ] ; then
+    			read -p "Keep this color or try a new one (y/n) ? " -n 1 colorok
+			else
+    			read -p "Keep this color or try a new one (y/n) ? " -N 1 colorok
+			fi
+			echo ""
+			colorok=$(echo $colorok | tr '[:upper:]' '[:lower:]')
+			if [ "$colorok" == "y" ] ; then break; fi
 		else
-    		read -p "Keep this color or try a new one (y/n) ? " -N 1 colorok
+			echo "Use provided color :" $hue_shift
+			echo ""
+			break
 		fi
-		echo ""
-		colorok=$(echo $colorok | tr '[:upper:]' '[:lower:]')
-		if [ "$colorok" == "y" ] ;then break; fi
 	done
+	# Remove temporary files.
 	rm -f /tmp/test-$unique_rnd.png
 	rm -f /tmp/test-$unique_rnd-out.png
+	# Apply new color to the application icon.
 	./change_appicons_color.sh $workdir $hue_shift
+	echo ""
 fi
 
 if [ "$repack_step" = "true" ] || [ "$repack_step" = "y" ] || [ "$repack_step" = "1" ]
@@ -417,4 +453,3 @@ then
 	echo "Removing work directory $workdir"
 	rm -rf $workdir
 fi
-
