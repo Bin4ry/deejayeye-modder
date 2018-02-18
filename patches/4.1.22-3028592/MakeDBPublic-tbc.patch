@@ -10,7 +10,7 @@ diff -Naru orig/smali_classes2/com/dji/frame/c/c.smali mod/smali_classes2/com/dj
 -    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
 -
 -    move-result-object v2
-+    const-string v2, "/mnt/sdcard/DJI/dji_mod_4_1_15.db"
++    const-string v2, "/mnt/sdcard/DJI/dji_mod_4_1_22.db"
 
      sget-boolean v3, Lcom/dji/frame/c/c;->f:Z
 
@@ -26,7 +26,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/afinal/b$a.smali mod/smali_classes
 -    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
 -
 -    move-result-object v0
-+    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_15.db"
++    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_22.db"
 
      iput-object v0, p0, Ldji/thirdparty/afinal/b$a;->b:Ljava/lang/String;
 
@@ -42,7 +42,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/afinal/c$a.smali mod/smali_classes
 -    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
 -
 -    move-result-object v0
-+    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_15.db"
++    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_22.db"
 
      iput-object v0, p0, Ldji/thirdparty/afinal/c$a;->b:Ljava/lang/String;
 
