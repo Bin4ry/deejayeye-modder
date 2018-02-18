@@ -1,0 +1,12 @@
+diff -Naur ./GO_4.1.22_v4_orig/smali_classes6/dji/pilot2/main/view/d.smali ./GO_4.1.22_v4/smali_classes6/dji/pilot2/main/view/d.smali
+--- ./GO_4.1.22_v4_orig/smali_classes6/dji/pilot2/main/view/d.smali	2018-02-18 08:31:07.969871000 +0100
++++ ./GO_4.1.22_v4/smali_classes6/dji/pilot2/main/view/d.smali	2018-02-18 11:46:58.486119804 +0100
+@@ -664,7 +664,7 @@
+     .line 283
+     iget-object v0, p0, Ldji/pilot2/main/view/d;->f:Ldji/publics/DJIUI/DJILinearLayout;
+ 
+-    const/16 v1, 0x8
++    const/4 v1, 0x0
+ 
+     invoke-virtual {v0, v1}, Ldji/publics/DJIUI/DJILinearLayout;->setVisibility(I)V
+ 
