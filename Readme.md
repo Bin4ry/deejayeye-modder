@@ -49,7 +49,7 @@ https://join.slack.com/t/dji-rev/shared_invite/enQtMjk5OTEyMzcyMjI3LTdlZjY4NzQ5M
 ## What is the latest version to work?
 
 Latest version which works with this patches is app version 4.1.15, since the original version is encrypted you need a special decrypted version. This version can be found online.
-The filename is "4.1.15_V3027412-nosecneo" ONLY THIS VERSION is supported, you will not find this version on apk-mirror or such!
+The filename is "4.1.22_V3028592-nosecneo" ONLY THIS VERSION is supported, you will not find this version on apk-mirror or such!
 For further information come to slack and join #android-apk-patching
 
 ## App version >= 4.1.4
