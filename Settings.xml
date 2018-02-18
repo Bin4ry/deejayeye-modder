@@ -1,0 +1,20 @@
+<config>
+	<!-- Input and Output APK filename. -->
+	<apkname>orig.apk</apkname>
+	<moddedapkname>mod.apk</moddedapkname>
+	<!-- Set new package name (e.g. jdi.og.v4).
+	Activate Clone Step script option (-c true). -->
+	<newpackagename></newpackagename>
+	<!-- Set Google Map V2 API key.
+	Activate Clone Step script option (-c true). -->
+	<googleapikey></googleapikey>
+	<!-- Set name of clone application label (e.g. "IDJ OG 4.x mod").
+	Activate Clone Step script option (-c true). -->
+	<newapplabel></newapplabel>
+	<!-- Set path to the new APK icon.
+	Activate IconRep Step script option (-I true). -->
+	<iconpath></iconpath>
+	<!-- Set new icon color.
+	Activate IconMod Step script option (-i true). -->
+	<hue_shift></hue_shift>
+</config>

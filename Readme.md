@@ -78,6 +78,8 @@ If you get a message about different region etc. etc after using the FCC patch: 
 3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
 
 4. RunMe.sh or RunMeNg.sh (Ng version has new features!)
+   If a Settings.xml file is present, data are read from and used to automatically field the corresponding settings.
+   For more information, please read Settings.xml file content.
 
 ### macOS:
 
@@ -95,6 +97,8 @@ If you get a message about different region etc. etc after using the FCC patch: 
 3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
 
 4. RunMe.sh or RunMeNg.sh (Ng version has new features!)
+   If a Settings.xml file is present, data are read from and used to automatically field the corresponding settings.
+   For more information, please read Settings.xml file content.
 
 ### Windows
 (For Windows there is currently no support of the new features [app-cloning etc.] like in the Ng version on Linux)
