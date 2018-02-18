@@ -4,6 +4,10 @@ Find the chinese version here:
 
 # [---中文文档点这儿---](中文文档.md)
 
+## LICENSE
+
+DBAD-LICENSE: https://www.dbad-license.org/
+
 ![UNLOCK](https://i.imgflip.com/1ssr9s.jpg)
 
 ![UDONTSAY](https://image.ibb.co/e4bWLQ/dji_statement.png)
@@ -48,7 +52,7 @@ https://join.slack.com/t/dji-rev/shared_invite/enQtMjk5OTEyMzcyMjI3LTdlZjY4NzQ5M
 
 ## What is the latest version to work?
 
-Latest version which works with this patches is app version 4.1.15, since the original version is encrypted you need a special decrypted version. This version can be found online.
+Latest version which works with this patches is app version 4.1.22, since the original version is encrypted you need a special decrypted version. This version can be found online.
 The filename is "4.1.22_V3028592-nosecneo" ONLY THIS VERSION is supported, you will not find this version on apk-mirror or such!
 For further information come to slack and join #android-apk-patching
 
