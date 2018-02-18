@@ -1,0 +1,153 @@
+diff -Naru orig/smali_classes2/com/dji/service/areacode/c.smali mod/smali_classes2/com/dji/service/areacode/c.smali
+--- orig/smali_classes2/com/dji/service/areacode/c.smali        2018-02-18 20:11:32.674497900 +0100
++++ mod/smali_classes2/com/dji/service/areacode/c.smali 2018-02-18 20:32:57.699934700 +0100
+@@ -205,70 +205,9 @@
+ .end method
+
+ .method public static a()Z
+-    .locals 3
+-
+-    .prologue
+-    .line 58
+-    const-string v0, "dlkwMRM7NEs7QydtFCs="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    .line 59
+-    const-string v1, "dlkwMRM7NEshSCAsSC0s"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    .line 60
+-    new-instance v2, Ljava/io/File;
+-
+-    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+-
+-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+-
+-    move-result v2
+-
+-    if-eqz v2, :cond_0
+-
+-    invoke-static {v0}, Lcom/dji/service/areacode/c;->b(Ljava/lang/String;)Z
+-
+-    move-result v0
+-
+-    if-nez v0, :cond_1
+-
+-    :cond_0
+-    new-instance v0, Ljava/io/File;
+-
+-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+-
+-    .line 61
+-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_2
+-
+-    invoke-static {v1}, Lcom/dji/service/areacode/c;->b(Ljava/lang/String;)Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_2
+-
+-    :cond_1
+-    const/4 v0, 0x1
+-
+-    .line 60
+-    :goto_0
++    .locals 1
++    const v0, false
+     return v0
+-
+-    .line 61
+-    :cond_2
+-    const/4 v0, 0x0
+-
+-    goto :goto_0
+ .end method
+
+ .method static a(DD)Z
+diff -Naru orig/smali_classes5/dji/pilot/fpv/control/a/b.smali mod/smali_classes5/dji/pilot/fpv/control/a/b.smali
+--- orig/smali_classes5/dji/pilot/fpv/control/a/b.smali 2018-02-18 20:09:45.100420800 +0100
++++ mod/smali_classes5/dji/pilot/fpv/control/a/b.smali  2018-02-18 20:35:09.875160000 +0100
+@@ -1305,70 +1305,9 @@
+ .end method
+
+ .method public static g()Z
+-    .locals 3
+-
+-    .prologue
+-    .line 696
+-    const-string v0, "dlkwMRM7NEs7QydtFCs="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    .line 697
+-    const-string v1, "dlkwMRM7NEshSCAsSC0s"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    .line 698
+-    new-instance v2, Ljava/io/File;
+-
+-    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+-
+-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+-
+-    move-result v2
+-
+-    if-eqz v2, :cond_0
+-
+-    invoke-static {v0}, Ldji/pilot/fpv/control/a/b;->b(Ljava/lang/String;)Z
+-
+-    move-result v0
+-
+-    if-nez v0, :cond_1
+-
+-    :cond_0
+-    new-instance v0, Ljava/io/File;
+-
+-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+-
+-    .line 699
+-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_2
+-
+-    invoke-static {v1}, Ldji/pilot/fpv/control/a/b;->b(Ljava/lang/String;)Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_2
+-
+-    :cond_1
+-    const/4 v0, 0x1
+-
+-    .line 698
+-    :goto_0
++    .locals 1
++    const v0, false
+     return v0
+-
+-    .line 699
+-    :cond_2
+-    const/4 v0, 0x0
+-
+-    goto :goto_0
+ .end method
+
+ .method public static getInstance()Ldji/pilot/fpv/control/a/b;
+
