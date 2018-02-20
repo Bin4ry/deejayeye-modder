@@ -18,7 +18,7 @@ import binascii
 
 # EDIT FROM HERE -- if needed
 
-# patching will skip those strings if found in both full and partial patches // TODO: Implement me
+# patching will skip those strings if found in both full and partial patches
 overall_whitelist = [
     'schemas.android.com',
     'localhost',
@@ -30,7 +30,9 @@ overall_whitelist = [
 # partial patch ignore list, if any of those strings is found in un-fogged string, fog is not touched
 partial_whitelist = [
     '.here.com',
-    'maps.google.com'
+    'maps.google.com',
+    'mapbox.com',
+    'amap.com'
 ]
 
 # match all strings starting with those variables as URLs
