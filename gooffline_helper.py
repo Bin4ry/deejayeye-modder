@@ -20,6 +20,11 @@ import binascii
 
 # patching will skip those strings if found in both full and partial patches // TODO: Implement me
 overall_whitelist = [
+    'schemas.android.com',
+    'localhost',
+    '10.10.',
+    '192.168.',
+    '127.0.0.1'
 ]
 
 # partial patch ignore list, if any of those strings is found in un-fogged string, fog is not touched
@@ -28,9 +33,8 @@ partial_whitelist = [
     'maps.google.com'
 ]
 
-# match all strings starting with variable as URLs
-http_string_match = 'http'
-
+# match all strings starting with those variables as URLs
+start_string_match = ('http', 'ftp')
 
 # EDIT ENDS HERE
 
@@ -69,7 +73,7 @@ class PatchHelper:
             Group `name` => `v1`
             Group `fog` => `MFkMNAIwLQ==`
         """
-        self.http_fog_match = re.compile('const-string\s(?P<name>\w+),\s\"(?P<fog>[\w+/=]+=)\"')
+        self.fog_match = re.compile('const-string\s(?P<name>\w+),\s\"(?P<fog>[\w+/=]+=)\"')
 
         """
         Matching strings section eg:
@@ -79,7 +83,7 @@ class PatchHelper:
             Group `name` => `v0`
             Group `url` => `https://i.imgur.com/FCID59G.jpg`
         """
-        self.http_not_fog_match = re.compile('const-string\s(?P<name>\w+),\s\"(?P<url>.*)\"')
+        self.not_fog_match = re.compile('const-string\s(?P<name>\w+),\s\"(?P<url>.*)\"')
 
         """
         I'll implement this someday...
@@ -114,16 +118,19 @@ class PatchHelper:
             show_message('Job didn\'t started. There\'s no --yes flag', end=True)
 
     def replace_content(self):
-        print('Job started. This might take a while...')
+        print('Job started. This might take a while...\n')
 
         smali_iterator = self.iterate_dir(self.mod_dir)
 
+        print('List of whitelisted matches:')
         for file_path in smali_iterator:
             self.replace_file_content(file_path)
 
         print('Done! :-)\n')
         print('Now run diff on orig/ and mod/ directories:')
-        print('$ diff -Naru orig/ mod/ > my_patch.patch')
+        print('$ diff -Naru orig/ mod/ > {}.patch'.format(
+            'goOfflinePartial' if self.patch_type == 'partial_patch' else 'goOffline')
+        )
 
     @staticmethod
     def iterate_dir(dir_path):
@@ -139,35 +146,47 @@ class PatchHelper:
         decr = decr.replace('\r', '').replace('\n', '').replace('"', '').replace('\\', '')
         return decr
 
+    def content_whitelisted(self, defogged_content):
+        if any([row in defogged_content for row in overall_whitelist]):
+            print('- ' + defogged_content)
+            return True
+
+        if self.patch_type == 'partial_patch':
+            if any([row in defogged_content for row in partial_whitelist]):
+                print('- ' + defogged_content)
+                return True
+        
+        return False
+
     def parse_matched(self, match_tuple, fog):
-        # would be VERY great to simplify it someday :-)
         variable_name, content = match_tuple
+        return self.fog_check(variable_name, content) if fog else self.not_fog_check(variable_name, content)
 
-        if fog:
-            try:
-                defogged_content = self.defog(content.encode('ascii'))
-                if defogged_content.startswith(http_string_match):
-                    # in case it's partial, and there's string from whitelist in there we are not changing anything
-                    if self.patch_type == 'partial_patch' and any([row in defogged_content for row in partial_whitelist]):
-                        return 'const-string {}, "{}"'.format(variable_name, content)
-                    return 'const-string {}, "{}"'.format(variable_name, self.localhost_fog)
-                return 'const-string {}, "{}"'.format(variable_name, content)
-            except (UnicodeDecodeError, binascii.Error):
-                return 'const-string {}, "{}"'.format(variable_name, content)
 
-        else:
-            if content.startswith(http_string_match):
-                if self.patch_type == 'partial_patch' and any([row in content for row in partial_whitelist]):
+    def fog_check(self, variable_name, content):
+        try:
+            defogged_content = self.defog(content.encode('ascii'))
+            if defogged_content.startswith(start_string_match):
+                if self.content_whitelisted(defogged_content):
                     return 'const-string {}, "{}"'.format(variable_name, content)
-                return 'const-string {}, "{}"'.format(variable_name, self.localhost_not_fog)
+                return 'const-string {}, "{}"'.format(variable_name, self.localhost_fog)
             return 'const-string {}, "{}"'.format(variable_name, content)
+        except (UnicodeDecodeError, binascii.Error):
+            return 'const-string {}, "{}"'.format(variable_name, content)
+
+    def not_fog_check(self, variable_name, content):
+        if content.startswith(start_string_match):
+            if self.content_whitelisted(content):
+                return 'const-string {}, "{}"'.format(variable_name, content)
+            return 'const-string {}, "{}"'.format(variable_name, self.localhost_not_fog)
+        return 'const-string {}, "{}"'.format(variable_name, content)
 
     def replace_file_content(self, file_path):
         with open(file_path, 'r') as f:
             content = f.read()
 
-        content = re.sub(self.http_fog_match, lambda m: self.parse_matched(m.groups(), fog=True), content)
-        content = re.sub(self.http_not_fog_match, lambda m: self.parse_matched(m.groups(), fog=False), content)
+        content = re.sub(self.fog_match, lambda m: self.parse_matched(m.groups(), fog=True), content)
+        content = re.sub(self.not_fog_match, lambda m: self.parse_matched(m.groups(), fog=False), content)
 
         with open(file_path, 'w') as f:
             f.write(content)
@@ -180,7 +199,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Offline & partialOffline patch helper')
     parser.add_argument('path', help='mod directory location')
     parser.add_argument('-t', '--type', choices=['partial_patch', 'full_patch'], default='partial_patch',
-                        help='type of work on mod directory (partial is excluding HERE maps connections)')
+                        help='type of work on mod directory')
     parser.add_argument('-k', '--key', choices=['key_414', 'key_415'], default='key_415', help='key to use')
     parser.add_argument('-y', '--yes', action='store_true',
                         help='write changes to all smali files under provided mod directory')
