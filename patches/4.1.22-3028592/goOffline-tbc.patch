@@ -1,6 +1,19 @@
+List of whitelisted matches:
+- http://schemas.android.com/apk/res/android
+- http://localhost:5552/
+- http://192.168.1.3:8081/getFileList
+- http://192.168.1.3:8081/download
+- http://192.168.1.3:8081/download
+- http://192.168.1.3:8081/download
+- http://192.168.1.3:8081/download
+- http://192.168.1.3:8081/download
+- http://localhost/
+- http://localhost/
+- http://localhost/
+
 diff -Naru orig/smali/android/support/customtabs/CustomTabsClient.smali mod/smali/android/support/customtabs/CustomTabsClient.smali
 --- orig/smali/android/support/customtabs/CustomTabsClient.smali	2018-02-20 04:02:36.075734800 +0100
-+++ mod/smali/android/support/customtabs/CustomTabsClient.smali	2018-02-20 04:37:09.155362500 +0100
++++ mod/smali/android/support/customtabs/CustomTabsClient.smali	2018-02-20 14:36:27.837757700 +0100
 @@ -172,7 +172,7 @@
  
      const-string v3, "android.intent.action.VIEW"
@@ -10,21 +23,9 @@ diff -Naru orig/smali/android/support/customtabs/CustomTabsClient.smali mod/smal
  
      invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
  
-diff -Naru orig/smali/android/support/graphics/drawable/TypedArrayUtils.smali mod/smali/android/support/graphics/drawable/TypedArrayUtils.smali
---- orig/smali/android/support/graphics/drawable/TypedArrayUtils.smali	2018-02-20 04:02:36.856670400 +0100
-+++ mod/smali/android/support/graphics/drawable/TypedArrayUtils.smali	2018-02-20 04:37:09.797957500 +0100
-@@ -119,7 +119,7 @@
- 
-     .prologue
-     .line 25
--    const-string v0, "http://schemas.android.com/apk/res/android"
-+    const-string v0, "http://127.0.0.1"
- 
-     invoke-interface {p0, v0, p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
- 
 diff -Naru orig/smali/android/support/v4/text/util/LinkifyCompat.smali mod/smali/android/support/v4/text/util/LinkifyCompat.smali
 --- orig/smali/android/support/v4/text/util/LinkifyCompat.smali	2018-02-20 04:02:39.496198400 +0100
-+++ mod/smali/android/support/v4/text/util/LinkifyCompat.smali	2018-02-20 04:37:12.083474100 +0100
++++ mod/smali/android/support/v4/text/util/LinkifyCompat.smali	2018-02-20 14:36:30.567335100 +0100
 @@ -327,11 +327,11 @@
  
      new-array v3, v1, [Ljava/lang/String;
@@ -41,7 +42,7 @@ diff -Naru orig/smali/android/support/v4/text/util/LinkifyCompat.smali mod/smali
  
 diff -Naru orig/smali/dji/midware/i/b.smali mod/smali/dji/midware/i/b.smali
 --- orig/smali/dji/midware/i/b.smali	2018-02-20 04:02:34.450172700 +0100
-+++ mod/smali/dji/midware/i/b.smali	2018-02-20 04:37:18.592113600 +0100
++++ mod/smali/dji/midware/i/b.smali	2018-02-20 14:36:36.850042600 +0100
 @@ -344,7 +344,7 @@
  
      .prologue
@@ -53,7 +54,7 @@ diff -Naru orig/smali/dji/midware/i/b.smali mod/smali/dji/midware/i/b.smali
  
 diff -Naru orig/smali/dji/midware/m/a$a.smali mod/smali/dji/midware/m/a$a.smali
 --- orig/smali/dji/midware/m/a$a.smali	2018-02-20 04:02:34.743120000 +0100
-+++ mod/smali/dji/midware/m/a$a.smali	2018-02-20 04:37:18.850335800 +0100
++++ mod/smali/dji/midware/m/a$a.smali	2018-02-20 14:36:37.083025600 +0100
 @@ -61,7 +61,7 @@
  
      move-result-object v0
@@ -65,7 +66,7 @@ diff -Naru orig/smali/dji/midware/m/a$a.smali mod/smali/dji/midware/m/a$a.smali
  
 diff -Naru orig/smali_classes2/c/a/f/d.smali mod/smali_classes2/c/a/f/d.smali
 --- orig/smali_classes2/c/a/f/d.smali	2018-02-20 04:02:43.206932300 +0100
-+++ mod/smali_classes2/c/a/f/d.smali	2018-02-20 04:37:20.439008200 +0100
++++ mod/smali_classes2/c/a/f/d.smali	2018-02-20 14:36:38.629949200 +0100
 @@ -128,7 +128,7 @@
  
      sget-object v3, Lc/a/f/c;->e:Ld/f;
@@ -86,7 +87,7 @@ diff -Naru orig/smali_classes2/c/a/f/d.smali mod/smali_classes2/c/a/f/d.smali
  
 diff -Naru orig/smali_classes2/c/aa.smali mod/smali_classes2/c/aa.smali
 --- orig/smali_classes2/c/aa.smali	2018-02-20 04:02:42.870207400 +0100
-+++ mod/smali_classes2/c/aa.smali	2018-02-20 04:37:20.093139500 +0100
++++ mod/smali_classes2/c/aa.smali	2018-02-20 14:36:38.268848000 +0100
 @@ -52,7 +52,7 @@
  
      move-result-object v1
@@ -107,7 +108,7 @@ diff -Naru orig/smali_classes2/c/aa.smali mod/smali_classes2/c/aa.smali
  
 diff -Naru orig/smali_classes2/c/ac$a.smali mod/smali_classes2/c/ac$a.smali
 --- orig/smali_classes2/c/ac$a.smali	2018-02-20 04:02:42.880017900 +0100
-+++ mod/smali_classes2/c/ac$a.smali	2018-02-20 04:37:20.101963800 +0100
++++ mod/smali_classes2/c/ac$a.smali	2018-02-20 14:36:38.276720000 +0100
 @@ -281,7 +281,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -119,7 +120,7 @@ diff -Naru orig/smali_classes2/c/ac$a.smali mod/smali_classes2/c/ac$a.smali
  
 diff -Naru orig/smali_classes2/c/a.smali mod/smali_classes2/c/a.smali
 --- orig/smali_classes2/c/a.smali	2018-02-20 04:02:42.868220600 +0100
-+++ mod/smali_classes2/c/a.smali	2018-02-20 04:37:20.091150300 +0100
++++ mod/smali_classes2/c/a.smali	2018-02-20 14:36:38.264943700 +0100
 @@ -113,7 +113,7 @@
      if-eqz p5, :cond_0
  
@@ -140,7 +141,7 @@ diff -Naru orig/smali_classes2/c/a.smali mod/smali_classes2/c/a.smali
  
 diff -Naru orig/smali_classes2/c/c$c.smali mod/smali_classes2/c/c$c.smali
 --- orig/smali_classes2/c/c$c.smali	2018-02-20 04:02:42.943669600 +0100
-+++ mod/smali_classes2/c/c$c.smali	2018-02-20 04:37:20.159197700 +0100
++++ mod/smali_classes2/c/c$c.smali	2018-02-20 14:36:38.341073000 +0100
 @@ -766,7 +766,7 @@
      .line 654
      iget-object v0, p0, Lc/c$c;->c:Ljava/lang/String;
@@ -152,7 +153,7 @@ diff -Naru orig/smali_classes2/c/c$c.smali mod/smali_classes2/c/c$c.smali
  
 diff -Naru orig/smali_classes2/c/g$b.smali mod/smali_classes2/c/g$b.smali
 --- orig/smali_classes2/c/g$b.smali	2018-02-20 04:02:42.963318500 +0100
-+++ mod/smali_classes2/c/g$b.smali	2018-02-20 04:37:20.178839900 +0100
++++ mod/smali_classes2/c/g$b.smali	2018-02-20 14:36:38.362737600 +0100
 @@ -71,7 +71,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -173,7 +174,7 @@ diff -Naru orig/smali_classes2/c/g$b.smali mod/smali_classes2/c/g$b.smali
  
 diff -Naru orig/smali_classes2/c/m.smali mod/smali_classes2/c/m.smali
 --- orig/smali_classes2/c/m.smali	2018-02-20 04:02:42.994698700 +0100
-+++ mod/smali_classes2/c/m.smali	2018-02-20 04:37:20.206317500 +0100
++++ mod/smali_classes2/c/m.smali	2018-02-20 14:36:38.394140000 +0100
 @@ -1201,7 +1201,7 @@
  
      .line 280
@@ -185,7 +186,7 @@ diff -Naru orig/smali_classes2/c/m.smali mod/smali_classes2/c/m.smali
  
 diff -Naru orig/smali_classes2/c/v$a.smali mod/smali_classes2/c/v$a.smali
 --- orig/smali_classes2/c/v$a.smali	2018-02-20 04:02:43.048570600 +0100
-+++ mod/smali_classes2/c/v$a.smali	2018-02-20 04:37:20.247903700 +0100
++++ mod/smali_classes2/c/v$a.smali	2018-02-20 14:36:38.441352300 +0100
 @@ -1679,7 +1679,7 @@
      if-eqz v0, :cond_1
  
@@ -260,7 +261,7 @@ diff -Naru orig/smali_classes2/c/v$a.smali mod/smali_classes2/c/v$a.smali
  
 diff -Naru orig/smali_classes2/c/v.smali mod/smali_classes2/c/v.smali
 --- orig/smali_classes2/c/v.smali	2018-02-20 04:02:43.051515400 +0100
-+++ mod/smali_classes2/c/v.smali	2018-02-20 04:37:20.250847900 +0100
++++ mod/smali_classes2/c/v.smali	2018-02-20 14:36:38.444862600 +0100
 @@ -365,7 +365,7 @@
  
      .prologue
@@ -290,7 +291,7 @@ diff -Naru orig/smali_classes2/c/v.smali mod/smali_classes2/c/v.smali
  
 diff -Naru orig/smali_classes2/cn/sharesdk/facebook/d.smali mod/smali_classes2/cn/sharesdk/facebook/d.smali
 --- orig/smali_classes2/cn/sharesdk/facebook/d.smali	2018-02-20 04:02:44.218074700 +0100
-+++ mod/smali_classes2/cn/sharesdk/facebook/d.smali	2018-02-20 04:37:20.642868100 +0100
++++ mod/smali_classes2/cn/sharesdk/facebook/d.smali	2018-02-20 14:36:38.821011600 +0100
 @@ -298,7 +298,7 @@
  
      invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -338,7 +339,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/facebook/d.smali mod/smali_classes2/c
  
 diff -Naru orig/smali_classes2/cn/sharesdk/framework/b/a.smali mod/smali_classes2/cn/sharesdk/framework/b/a.smali
 --- orig/smali_classes2/cn/sharesdk/framework/b/a.smali	2018-02-20 04:02:43.535634300 +0100
-+++ mod/smali_classes2/cn/sharesdk/framework/b/a.smali	2018-02-20 04:37:20.791691300 +0100
++++ mod/smali_classes2/cn/sharesdk/framework/b/a.smali	2018-02-20 14:36:38.965552600 +0100
 @@ -2115,7 +2115,7 @@
  
      invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -359,7 +360,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/framework/b/a.smali mod/smali_classes
  
 diff -Naru orig/smali_classes2/cn/sharesdk/framework/b/c.smali mod/smali_classes2/cn/sharesdk/framework/b/c.smali
 --- orig/smali_classes2/cn/sharesdk/framework/b/c.smali	2018-02-20 04:02:43.569000400 +0100
-+++ mod/smali_classes2/cn/sharesdk/framework/b/c.smali	2018-02-20 04:37:20.797601200 +0100
++++ mod/smali_classes2/cn/sharesdk/framework/b/c.smali	2018-02-20 14:36:38.971444500 +0100
 @@ -868,7 +868,7 @@
  
      .prologue
@@ -371,7 +372,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/framework/b/c.smali mod/smali_classes
  
 diff -Naru orig/smali_classes2/cn/sharesdk/instagram/b.smali mod/smali_classes2/cn/sharesdk/instagram/b.smali
 --- orig/smali_classes2/cn/sharesdk/instagram/b.smali	2018-02-20 04:02:43.707235700 +0100
-+++ mod/smali_classes2/cn/sharesdk/instagram/b.smali	2018-02-20 04:37:20.892397100 +0100
++++ mod/smali_classes2/cn/sharesdk/instagram/b.smali	2018-02-20 14:36:39.063080300 +0100
 @@ -576,7 +576,7 @@
  
      .prologue
@@ -410,7 +411,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/instagram/b.smali mod/smali_classes2/
  
 diff -Naru orig/smali_classes2/cn/sharesdk/sina/weibo/d.smali mod/smali_classes2/cn/sharesdk/sina/weibo/d.smali
 --- orig/smali_classes2/cn/sharesdk/sina/weibo/d.smali	2018-02-20 04:02:43.861712800 +0100
-+++ mod/smali_classes2/cn/sharesdk/sina/weibo/d.smali	2018-02-20 04:37:21.030041900 +0100
++++ mod/smali_classes2/cn/sharesdk/sina/weibo/d.smali	2018-02-20 14:36:39.194437600 +0100
 @@ -221,7 +221,7 @@
      invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
  
@@ -485,7 +486,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/sina/weibo/d.smali mod/smali_classes2
  
 diff -Naru orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali
 --- orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2018-02-20 04:02:43.847975000 +0100
-+++ mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2018-02-20 04:37:21.044900400 +0100
++++ mod/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali	2018-02-20 14:36:39.206191700 +0100
 @@ -1094,7 +1094,7 @@
  
      invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -506,7 +507,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/sina/weibo/SinaWeibo.smali mod/smali_
  
 diff -Naru orig/smali_classes2/cn/sharesdk/tencent/qq/b.smali mod/smali_classes2/cn/sharesdk/tencent/qq/b.smali
 --- orig/smali_classes2/cn/sharesdk/tencent/qq/b.smali	2018-02-20 04:02:43.984573700 +0100
-+++ mod/smali_classes2/cn/sharesdk/tencent/qq/b.smali	2018-02-20 04:37:21.097891900 +0100
++++ mod/smali_classes2/cn/sharesdk/tencent/qq/b.smali	2018-02-20 14:36:39.249671600 +0100
 @@ -268,7 +268,7 @@
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
  
@@ -554,7 +555,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/tencent/qq/b.smali mod/smali_classes2
  
 diff -Naru orig/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali mod/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali
 --- orig/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali	2018-02-20 04:02:44.004200900 +0100
-+++ mod/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali	2018-02-20 04:37:21.122183600 +0100
++++ mod/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali	2018-02-20 14:36:39.265917900 +0100
 @@ -140,7 +140,7 @@
      :cond_2
      if-eqz p2, :cond_3
@@ -566,7 +567,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/tencent/qq/f$2.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/cn/sharesdk/tencent/qzone/b.smali mod/smali_classes2/cn/sharesdk/tencent/qzone/b.smali
 --- orig/smali_classes2/cn/sharesdk/tencent/qzone/b.smali	2018-02-20 04:02:43.940429200 +0100
-+++ mod/smali_classes2/cn/sharesdk/tencent/qzone/b.smali	2018-02-20 04:37:21.162515500 +0100
++++ mod/smali_classes2/cn/sharesdk/tencent/qzone/b.smali	2018-02-20 14:36:39.296339500 +0100
 @@ -327,7 +327,7 @@
  
      .prologue
@@ -632,7 +633,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/tencent/qzone/b.smali mod/smali_class
  
 diff -Naru orig/smali_classes2/cn/sharesdk/tumblr/b.smali mod/smali_classes2/cn/sharesdk/tumblr/b.smali
 --- orig/smali_classes2/cn/sharesdk/tumblr/b.smali	2018-02-20 04:02:44.028097000 +0100
-+++ mod/smali_classes2/cn/sharesdk/tumblr/b.smali	2018-02-20 04:37:21.207671500 +0100
++++ mod/smali_classes2/cn/sharesdk/tumblr/b.smali	2018-02-20 14:36:39.339081800 +0100
 @@ -84,7 +84,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -671,7 +672,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/tumblr/b.smali mod/smali_classes2/cn/
  
 diff -Naru orig/smali_classes2/cn/sharesdk/twitter/b.smali mod/smali_classes2/cn/sharesdk/twitter/b.smali
 --- orig/smali_classes2/cn/sharesdk/twitter/b.smali	2018-02-20 04:02:44.048704700 +0100
-+++ mod/smali_classes2/cn/sharesdk/twitter/b.smali	2018-02-20 04:37:21.227126100 +0100
++++ mod/smali_classes2/cn/sharesdk/twitter/b.smali	2018-02-20 14:36:39.357005100 +0100
 @@ -628,7 +628,7 @@
      aget-object v0, p2, v7
  
@@ -728,7 +729,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/twitter/b.smali mod/smali_classes2/cn
  
 diff -Naru orig/smali_classes2/cn/sharesdk/twitter/Twitter.smali mod/smali_classes2/cn/sharesdk/twitter/Twitter.smali
 --- orig/smali_classes2/cn/sharesdk/twitter/Twitter.smali	2018-02-20 04:02:44.054592400 +0100
-+++ mod/smali_classes2/cn/sharesdk/twitter/Twitter.smali	2018-02-20 04:37:21.234977300 +0100
++++ mod/smali_classes2/cn/sharesdk/twitter/Twitter.smali	2018-02-20 14:36:39.364968200 +0100
 @@ -1067,7 +1067,7 @@
  
      invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -749,7 +750,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/twitter/Twitter.smali mod/smali_class
  
 diff -Naru orig/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali
 --- orig/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali	2018-02-20 04:02:44.135886500 +0100
-+++ mod/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali	2018-02-20 04:37:21.276193000 +0100
++++ mod/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali	2018-02-20 14:36:39.404237600 +0100
 @@ -124,7 +124,7 @@
      invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
  
@@ -761,7 +762,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/wechat/utils/g$1.smali mod/smali_clas
      :try_end_0
 diff -Naru orig/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali
 --- orig/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali	2018-02-20 04:02:44.137849200 +0100
-+++ mod/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali	2018-02-20 04:37:21.279137900 +0100
++++ mod/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali	2018-02-20 14:36:39.407184900 +0100
 @@ -110,7 +110,7 @@
      invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
  
@@ -773,7 +774,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/wechat/utils/g$2.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali
 --- orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2018-02-20 04:02:44.140793500 +0100
-+++ mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2018-02-20 04:37:21.282081000 +0100
++++ mod/smali_classes2/cn/sharesdk/wechat/utils/g.smali	2018-02-20 14:36:39.409147000 +0100
 @@ -532,7 +532,7 @@
      invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
  
@@ -785,7 +786,7 @@ diff -Naru orig/smali_classes2/cn/sharesdk/wechat/utils/g.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali mod/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali	2018-02-20 04:02:44.880652900 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali	2018-02-20 04:37:21.469208700 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$QueryHostTask.smali	2018-02-20 14:36:39.603072300 +0100
 @@ -90,7 +90,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -797,7 +798,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/common/utils/HttpdnsMini$
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/common/utils/VersionInfoUtils.smali mod/smali_classes2/com/alibaba/sdk/android/common/utils/VersionInfoUtils.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/common/utils/VersionInfoUtils.smali	2018-02-20 04:02:44.873783600 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/common/utils/VersionInfoUtils.smali	2018-02-20 04:37:21.485906600 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/common/utils/VersionInfoUtils.smali	2018-02-20 14:36:39.619770700 +0100
 @@ -40,7 +40,7 @@
  
      .prologue
@@ -809,7 +810,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/common/utils/VersionInfoU
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/internal/MNSInternalRequestOperation.smali mod/smali_classes2/com/alibaba/sdk/android/mns/internal/MNSInternalRequestOperation.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/mns/internal/MNSInternalRequestOperation.smali	2018-02-20 04:02:44.313040100 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/internal/MNSInternalRequestOperation.smali	2018-02-20 04:37:21.525466000 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/internal/MNSInternalRequestOperation.smali	2018-02-20 14:36:39.658896000 +0100
 @@ -277,7 +277,7 @@
      if-eqz v2, :cond_2
  
@@ -821,7 +822,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/internal/MNSInternalR
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali mod/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali	2018-02-20 04:02:44.450498200 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali	2018-02-20 04:37:21.493742000 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali	2018-02-20 14:36:39.627605900 +0100
 @@ -44,7 +44,7 @@
      move-result-object v0
  
@@ -842,7 +843,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/MNSClient.smali mod/s
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali	2018-02-20 04:02:44.412994800 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali	2018-02-20 04:37:21.652493500 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/MessageSerializer.smali	2018-02-20 14:36:39.797105000 +0100
 @@ -48,7 +48,7 @@
      move-result-object v0
  
@@ -854,7 +855,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/Messa
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali	2018-02-20 04:02:44.424002200 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali	2018-02-20 04:37:21.654456500 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/QueueMetaSerializer.smali	2018-02-20 14:36:39.800033700 +0100
 @@ -48,7 +48,7 @@
      move-result-object v0
  
@@ -866,7 +867,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/mns/model/serialize/Queue
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali	2018-02-20 04:02:44.518484500 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali	2018-02-20 04:37:21.733832800 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsMini$QueryHostTask.smali	2018-02-20 14:36:39.889178800 +0100
 @@ -90,7 +90,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -878,7 +879,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/HttpdnsM
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/VersionInfoUtils.smali mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/VersionInfoUtils.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/VersionInfoUtils.smali	2018-02-20 04:02:44.541480400 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/VersionInfoUtils.smali	2018-02-20 04:37:21.758366100 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/common/utils/VersionInfoUtils.smali	2018-02-20 14:36:39.913714600 +0100
 @@ -40,7 +40,7 @@
  
      .prologue
@@ -890,7 +891,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/common/utils/VersionI
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/internal/InternalRequestOperation.smali mod/smali_classes2/com/alibaba/sdk/android/oss/internal/InternalRequestOperation.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/oss/internal/InternalRequestOperation.smali	2018-02-20 04:02:44.564051700 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/internal/InternalRequestOperation.smali	2018-02-20 04:37:21.775027200 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/internal/InternalRequestOperation.smali	2018-02-20 14:36:39.930395000 +0100
 @@ -375,7 +375,7 @@
      if-eqz v2, :cond_2
  
@@ -902,7 +903,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/internal/InternalRequ
  
 diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali mod/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali
 --- orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali	2018-02-20 04:02:44.460311800 +0100
-+++ mod/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali	2018-02-20 04:37:21.683917800 +0100
++++ mod/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali	2018-02-20 14:36:39.835360900 +0100
 @@ -46,7 +46,7 @@
      move-result-object v0
  
@@ -923,7 +924,7 @@ diff -Naru orig/smali_classes2/com/alibaba/sdk/android/oss/OSSClient.smali mod/s
  
 diff -Naru orig/smali_classes2/com/alipay/android/a/a/a/i.smali mod/smali_classes2/com/alipay/android/a/a/a/i.smali
 --- orig/smali_classes2/com/alipay/android/a/a/a/i.smali	2018-02-20 04:02:44.978174800 +0100
-+++ mod/smali_classes2/com/alipay/android/a/a/a/i.smali	2018-02-20 04:37:22.028385100 +0100
++++ mod/smali_classes2/com/alipay/android/a/a/a/i.smali	2018-02-20 14:36:40.186953500 +0100
 @@ -144,7 +144,7 @@
  
      new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
@@ -944,7 +945,7 @@ diff -Naru orig/smali_classes2/com/alipay/android/a/a/a/i.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/alipay/android/a/a/a/k.smali mod/smali_classes2/com/alipay/android/a/a/a/k.smali
 --- orig/smali_classes2/com/alipay/android/a/a/a/k.smali	2018-02-20 04:02:44.984074700 +0100
-+++ mod/smali_classes2/com/alipay/android/a/a/a/k.smali	2018-02-20 04:37:22.033289000 +0100
++++ mod/smali_classes2/com/alipay/android/a/a/a/k.smali	2018-02-20 14:36:40.192841200 +0100
 @@ -36,7 +36,7 @@
  
      invoke-direct {v0}, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
@@ -974,7 +975,7 @@ diff -Naru orig/smali_classes2/com/alipay/android/a/a/a/k.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/alipay/android/a/a/a/x.smali mod/smali_classes2/com/alipay/android/a/a/a/x.smali
 --- orig/smali_classes2/com/alipay/android/a/a/a/x.smali	2018-02-20 04:02:45.024715500 +0100
-+++ mod/smali_classes2/com/alipay/android/a/a/a/x.smali	2018-02-20 04:37:22.066639100 +0100
++++ mod/smali_classes2/com/alipay/android/a/a/a/x.smali	2018-02-20 14:36:40.229150800 +0100
 @@ -1107,7 +1107,7 @@
  
      iget-object v2, p0, Lcom/alipay/android/a/a/a/x;->g:Lorg/apache/http/protocol/HttpContext;
@@ -995,7 +996,7 @@ diff -Naru orig/smali_classes2/com/alipay/android/a/a/a/x.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/alipay/b/g/a.smali mod/smali_classes2/com/alipay/b/g/a.smali
 --- orig/smali_classes2/com/alipay/b/g/a.smali	2018-02-20 04:02:45.126824300 +0100
-+++ mod/smali_classes2/com/alipay/b/g/a.smali	2018-02-20 04:37:22.200994200 +0100
++++ mod/smali_classes2/com/alipay/b/g/a.smali	2018-02-20 14:36:40.355443300 +0100
 @@ -202,7 +202,7 @@
  
      packed-switch p1, :pswitch_data_0
@@ -1032,7 +1033,7 @@ diff -Naru orig/smali_classes2/com/alipay/b/g/a.smali mod/smali_classes2/com/ali
  
 diff -Naru orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali mod/smali_classes2/com/alipay/e/a/a/a/a/a.smali
 --- orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali	2018-02-20 04:02:45.339006700 +0100
-+++ mod/smali_classes2/com/alipay/e/a/a/a/a/a.smali	2018-02-20 04:37:22.237667300 +0100
++++ mod/smali_classes2/com/alipay/e/a/a/a/a/a.smali	2018-02-20 14:36:40.386872600 +0100
 @@ -10,7 +10,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -1044,7 +1045,7 @@ diff -Naru orig/smali_classes2/com/alipay/e/a/a/a/a/a.smali mod/smali_classes2/c
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/app/PayTask.smali mod/smali_classes2/com/alipay/sdk/app/PayTask.smali
 --- orig/smali_classes2/com/alipay/sdk/app/PayTask.smali	2018-02-20 04:02:45.388073900 +0100
-+++ mod/smali_classes2/com/alipay/sdk/app/PayTask.smali	2018-02-20 04:37:22.430270900 +0100
++++ mod/smali_classes2/com/alipay/sdk/app/PayTask.smali	2018-02-20 14:36:40.555524700 +0100
 @@ -978,7 +978,7 @@
      .line 106
      new-instance v1, Ljava/lang/StringBuilder;
@@ -1101,7 +1102,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/app/PayTask.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali mod/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali
 --- orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali	2018-02-20 04:02:45.461023900 +0100
-+++ mod/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali	2018-02-20 04:37:22.455807700 +0100
++++ mod/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali	2018-02-20 14:36:40.575150800 +0100
 @@ -295,7 +295,7 @@
      return v0
  
@@ -1140,7 +1141,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/auth/AuthActivity.smali mod/smali_
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/b/a.smali mod/smali_classes2/com/alipay/sdk/b/a.smali
 --- orig/smali_classes2/com/alipay/sdk/b/a.smali	2018-02-20 04:02:45.515191400 +0100
-+++ mod/smali_classes2/com/alipay/sdk/b/a.smali	2018-02-20 04:37:22.486228800 +0100
++++ mod/smali_classes2/com/alipay/sdk/b/a.smali	2018-02-20 14:36:40.601631600 +0100
 @@ -41,7 +41,7 @@
  
      .prologue
@@ -1152,7 +1153,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/b/a.smali mod/smali_classes2/com/a
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/c/a.smali mod/smali_classes2/com/alipay/sdk/c/a.smali
 --- orig/smali_classes2/com/alipay/sdk/c/a.smali	2018-02-20 04:02:45.528098900 +0100
-+++ mod/smali_classes2/com/alipay/sdk/c/a.smali	2018-02-20 04:37:22.494075000 +0100
++++ mod/smali_classes2/com/alipay/sdk/c/a.smali	2018-02-20 14:36:40.611460700 +0100
 @@ -43,7 +43,7 @@
      iput v0, p0, Lcom/alipay/sdk/c/a;->j:I
  
@@ -1173,7 +1174,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/c/a.smali mod/smali_classes2/com/a
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/e/a.smali mod/smali_classes2/com/alipay/sdk/e/a.smali
 --- orig/smali_classes2/com/alipay/sdk/e/a.smali	2018-02-20 04:02:45.551650900 +0100
-+++ mod/smali_classes2/com/alipay/sdk/e/a.smali	2018-02-20 04:37:22.518783500 +0100
++++ mod/smali_classes2/com/alipay/sdk/e/a.smali	2018-02-20 14:36:40.634015600 +0100
 @@ -139,17 +139,17 @@
  
      move-result-object v1
@@ -1250,7 +1251,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/e/a.smali mod/smali_classes2/com/a
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/e/b.smali mod/smali_classes2/com/alipay/sdk/e/b.smali
 --- orig/smali_classes2/com/alipay/sdk/e/b.smali	2018-02-20 04:02:45.555576200 +0100
-+++ mod/smali_classes2/com/alipay/sdk/e/b.smali	2018-02-20 04:37:22.524800000 +0100
++++ mod/smali_classes2/com/alipay/sdk/e/b.smali	2018-02-20 14:36:40.640530500 +0100
 @@ -77,7 +77,7 @@
      invoke-static {v0, v5}, Lorg/apache/http/params/HttpConnectionParams;->setStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;Z)V
  
@@ -1280,7 +1281,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/e/b.smali mod/smali_classes2/com/a
  
 diff -Naru orig/smali_classes2/com/alipay/sdk/f/a/c.smali mod/smali_classes2/com/alipay/sdk/f/a/c.smali
 --- orig/smali_classes2/com/alipay/sdk/f/a/c.smali	2018-02-20 04:02:45.581090600 +0100
-+++ mod/smali_classes2/com/alipay/sdk/f/a/c.smali	2018-02-20 04:37:22.547403400 +0100
++++ mod/smali_classes2/com/alipay/sdk/f/a/c.smali	2018-02-20 14:36:40.661914300 +0100
 @@ -30,7 +30,7 @@
  
      .prologue
@@ -1292,7 +1293,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/f/a/c.smali mod/smali_classes2/com
      const/4 v1, 0x1
 diff -Naru orig/smali_classes2/com/alipay/sdk/j/l.smali mod/smali_classes2/com/alipay/sdk/j/l.smali
 --- orig/smali_classes2/com/alipay/sdk/j/l.smali	2018-02-20 04:02:45.657974000 +0100
-+++ mod/smali_classes2/com/alipay/sdk/j/l.smali	2018-02-20 04:37:22.606456800 +0100
++++ mod/smali_classes2/com/alipay/sdk/j/l.smali	2018-02-20 14:36:40.725716700 +0100
 @@ -1087,7 +1087,7 @@
  
      if-nez v0, :cond_6
@@ -1304,7 +1305,7 @@ diff -Naru orig/smali_classes2/com/alipay/sdk/j/l.smali mod/smali_classes2/com/a
  
 diff -Naru orig/smali_classes2/com/amap/api/location/AMapLocationClientOption.smali mod/smali_classes2/com/amap/api/location/AMapLocationClientOption.smali
 --- orig/smali_classes2/com/amap/api/location/AMapLocationClientOption.smali	2018-02-20 04:02:45.801099600 +0100
-+++ mod/smali_classes2/com/amap/api/location/AMapLocationClientOption.smali	2018-02-20 04:37:22.677877200 +0100
++++ mod/smali_classes2/com/amap/api/location/AMapLocationClientOption.smali	2018-02-20 14:36:40.789372900 +0100
 @@ -1046,7 +1046,7 @@
  
      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1316,7 +1317,7 @@ diff -Naru orig/smali_classes2/com/amap/api/location/AMapLocationClientOption.sm
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/an.smali mod/smali_classes2/com/amap/api/mapcore/util/an.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/an.smali	2018-02-20 04:02:46.129048200 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/an.smali	2018-02-20 04:37:22.913213100 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/an.smali	2018-02-20 14:36:41.008465600 +0100
 @@ -1141,7 +1141,7 @@
      .line 405
      new-instance v0, Lcom/amap/api/maps/AMapException;
@@ -1328,7 +1329,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/an.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/eq.smali mod/smali_classes2/com/amap/api/mapcore/util/eq.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/eq.smali	2018-02-20 04:02:46.689331800 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/eq.smali	2018-02-20 04:37:23.350759100 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/eq.smali	2018-02-20 14:36:41.497501700 +0100
 @@ -524,7 +524,7 @@
  
      .line 173
@@ -1340,7 +1341,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/eq.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/er.smali mod/smali_classes2/com/amap/api/mapcore/util/er.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/er.smali	2018-02-20 04:02:46.692275800 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/er.smali	2018-02-20 04:37:23.353703100 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/er.smali	2018-02-20 14:36:41.500445700 +0100
 @@ -224,7 +224,7 @@
      move-exception v0
  
@@ -1379,7 +1380,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/er.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/es.smali mod/smali_classes2/com/amap/api/mapcore/util/es.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/es.smali	2018-02-20 04:02:46.696201400 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/es.smali	2018-02-20 04:37:23.355665800 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/es.smali	2018-02-20 14:36:41.503411300 +0100
 @@ -233,7 +233,7 @@
  
      invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1391,7 +1392,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/es.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ex.smali mod/smali_classes2/com/amap/api/mapcore/util/ex.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/ex.smali	2018-02-20 04:02:46.730009400 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/ex.smali	2018-02-20 04:37:23.381180700 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/ex.smali	2018-02-20 14:36:41.528904000 +0100
 @@ -312,7 +312,7 @@
  
      .line 154
@@ -1403,7 +1404,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ex.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ez$b.smali mod/smali_classes2/com/amap/api/mapcore/util/ez$b.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/ez$b.smali	2018-02-20 04:02:46.755471200 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/ez$b.smali	2018-02-20 04:37:23.399826000 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/ez$b.smali	2018-02-20 14:36:41.548342000 +0100
 @@ -297,13 +297,13 @@
  
      if-eqz v0, :cond_0
@@ -1422,7 +1423,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ez$b.smali mod/smali_cl
  .end method
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/fa.smali mod/smali_classes2/com/amap/api/mapcore/util/fa.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/fa.smali	2018-02-20 04:02:46.767287300 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/fa.smali	2018-02-20 04:37:23.408657800 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/fa.smali	2018-02-20 14:36:41.556746800 +0100
 @@ -36,7 +36,7 @@
      sput-object v0, Lcom/amap/api/mapcore/util/fa;->b:Ljava/lang/String;
  
@@ -1434,7 +1435,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/fa.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ff.smali mod/smali_classes2/com/amap/api/mapcore/util/ff.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/ff.smali	2018-02-20 04:02:46.796337500 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/ff.smali	2018-02-20 04:37:23.430341800 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/ff.smali	2018-02-20 14:36:41.577370600 +0100
 @@ -74,7 +74,7 @@
      .line 33
      new-instance v1, Ljava/net/URI;
@@ -1446,7 +1447,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ff.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/fk.smali mod/smali_classes2/com/amap/api/mapcore/util/fk.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/fk.smali	2018-02-20 04:02:46.823756700 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/fk.smali	2018-02-20 04:37:23.452912200 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/fk.smali	2018-02-20 14:36:41.598965500 +0100
 @@ -20,7 +20,7 @@
      sput-object v0, Lcom/amap/api/mapcore/util/fk;->a:Ljava/lang/String;
  
@@ -1467,7 +1468,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/fk.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/hb.smali mod/smali_classes2/com/amap/api/mapcore/util/hb.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/hb.smali	2018-02-20 04:02:47.040868400 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/hb.smali	2018-02-20 04:37:23.639158000 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/hb.smali	2018-02-20 14:36:41.798795600 +0100
 @@ -1145,7 +1145,7 @@
      :try_start_3
      new-instance v1, Lcom/amap/api/mapcore/util/ex;
@@ -1488,7 +1489,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/hb.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ii.smali mod/smali_classes2/com/amap/api/mapcore/util/ii.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/ii.smali	2018-02-20 04:02:47.202630500 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/ii.smali	2018-02-20 04:37:23.764970600 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/ii.smali	2018-02-20 14:36:41.935059300 +0100
 @@ -317,9 +317,9 @@
  
      move-result-object v1
@@ -1503,7 +1504,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/ii.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/il.smali mod/smali_classes2/com/amap/api/mapcore/util/il.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/il.smali	2018-02-20 04:02:47.213075200 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/il.smali	2018-02-20 04:37:23.772798300 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/il.smali	2018-02-20 14:36:41.943083900 +0100
 @@ -41,7 +41,7 @@
  
      const/4 v3, 0x0
@@ -1515,7 +1516,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/il.smali mod/smali_clas
  
 diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/v$1.smali mod/smali_classes2/com/amap/api/mapcore/util/v$1.smali
 --- orig/smali_classes2/com/amap/api/mapcore/util/v$1.smali	2018-02-20 04:02:47.315019400 +0100
-+++ mod/smali_classes2/com/amap/api/mapcore/util/v$1.smali	2018-02-20 04:37:23.854626000 +0100
++++ mod/smali_classes2/com/amap/api/mapcore/util/v$1.smali	2018-02-20 14:36:42.025776900 +0100
 @@ -41,7 +41,7 @@
      :try_start_0
      sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -1527,7 +1528,7 @@ diff -Naru orig/smali_classes2/com/amap/api/mapcore/util/v$1.smali mod/smali_cla
  
 diff -Naru orig/smali_classes2/com/amap/api/maps/AMapUtils.smali mod/smali_classes2/com/amap/api/maps/AMapUtils.smali
 --- orig/smali_classes2/com/amap/api/maps/AMapUtils.smali	2018-02-20 04:02:47.409443800 +0100
-+++ mod/smali_classes2/com/amap/api/maps/AMapUtils.smali	2018-02-20 04:37:24.011010100 +0100
++++ mod/smali_classes2/com/amap/api/maps/AMapUtils.smali	2018-02-20 14:36:42.180078900 +0100
 @@ -1029,7 +1029,7 @@
      .prologue
      .line 216
@@ -1539,7 +1540,7 @@ diff -Naru orig/smali_classes2/com/amap/api/maps/AMapUtils.smali mod/smali_class
      new-instance v1, Landroid/content/Intent;
 diff -Naru orig/smali_classes2/com/amap/api/maps/offlinemap/OfflineMapManager.smali mod/smali_classes2/com/amap/api/maps/offlinemap/OfflineMapManager.smali
 --- orig/smali_classes2/com/amap/api/maps/offlinemap/OfflineMapManager.smali	2018-02-20 04:02:47.817339200 +0100
-+++ mod/smali_classes2/com/amap/api/maps/offlinemap/OfflineMapManager.smali	2018-02-20 04:37:24.352005000 +0100
++++ mod/smali_classes2/com/amap/api/maps/offlinemap/OfflineMapManager.smali	2018-02-20 14:36:42.491934800 +0100
 @@ -173,7 +173,7 @@
      .line 464
      new-instance v0, Lcom/amap/api/maps/AMapException;
@@ -1551,7 +1552,7 @@ diff -Naru orig/smali_classes2/com/amap/api/maps/offlinemap/OfflineMapManager.sm
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/a.smali mod/smali_classes2/com/amap/api/services/a/a.smali
 --- orig/smali_classes2/com/amap/api/services/a/a.smali	2018-02-20 04:02:49.216917700 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/a.smali	2018-02-20 04:37:24.389302600 +0100
++++ mod/smali_classes2/com/amap/api/services/a/a.smali	2018-02-20 14:36:42.524340400 +0100
 @@ -296,7 +296,7 @@
      move-exception v0
  
@@ -1590,7 +1591,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/a.smali mod/smali_classes
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/aw.smali mod/smali_classes2/com/amap/api/services/a/aw.smali
 --- orig/smali_classes2/com/amap/api/services/a/aw.smali	2018-02-20 04:02:48.748345600 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/aw.smali	2018-02-20 04:37:24.512421400 +0100
++++ mod/smali_classes2/com/amap/api/services/a/aw.smali	2018-02-20 14:36:42.642361300 +0100
 @@ -30,22 +30,22 @@
  
      .prologue
@@ -1620,7 +1621,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/aw.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/az.smali mod/smali_classes2/com/amap/api/services/a/az.smali
 --- orig/smali_classes2/com/amap/api/services/a/az.smali	2018-02-20 04:02:48.766990900 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/az.smali	2018-02-20 04:37:24.527419600 +0100
++++ mod/smali_classes2/com/amap/api/services/a/az.smali	2018-02-20 14:36:42.656820300 +0100
 @@ -312,7 +312,7 @@
  
      .line 154
@@ -1632,7 +1633,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/az.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/bb$b.smali mod/smali_classes2/com/amap/api/services/a/bb$b.smali
 --- orig/smali_classes2/com/amap/api/services/a/bb$b.smali	2018-02-20 04:02:48.793486900 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/bb$b.smali	2018-02-20 04:37:24.548049200 +0100
++++ mod/smali_classes2/com/amap/api/services/a/bb$b.smali	2018-02-20 14:36:42.676446700 +0100
 @@ -347,13 +347,13 @@
  
      if-eqz v0, :cond_0
@@ -1651,7 +1652,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/bb$b.smali mod/smali_clas
  .end method
 diff -Naru orig/smali_classes2/com/amap/api/services/a/bc.smali mod/smali_classes2/com/amap/api/services/a/bc.smali
 --- orig/smali_classes2/com/amap/api/services/a/bc.smali	2018-02-20 04:02:48.801337800 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/bc.smali	2018-02-20 04:37:24.552934800 +0100
++++ mod/smali_classes2/com/amap/api/services/a/bc.smali	2018-02-20 14:36:42.681353400 +0100
 @@ -34,7 +34,7 @@
      sput-object v0, Lcom/amap/api/services/a/bc;->b:Ljava/lang/String;
  
@@ -1663,7 +1664,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/bc.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/bh.smali mod/smali_classes2/com/amap/api/services/a/bh.smali
 --- orig/smali_classes2/com/amap/api/services/a/bh.smali	2018-02-20 04:02:48.823270400 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/bh.smali	2018-02-20 04:37:24.570598200 +0100
++++ mod/smali_classes2/com/amap/api/services/a/bh.smali	2018-02-20 14:36:42.698036000 +0100
 @@ -74,7 +74,7 @@
      .line 33
      new-instance v1, Ljava/net/URI;
@@ -1675,7 +1676,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/bh.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/bk.smali mod/smali_classes2/com/amap/api/services/a/bk.smali
 --- orig/smali_classes2/com/amap/api/services/a/bk.smali	2018-02-20 04:02:48.839953900 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/bk.smali	2018-02-20 04:37:24.582374500 +0100
++++ mod/smali_classes2/com/amap/api/services/a/bk.smali	2018-02-20 14:36:42.708830700 +0100
 @@ -20,7 +20,7 @@
      sput-object v0, Lcom/amap/api/services/a/bk;->a:Ljava/lang/String;
  
@@ -1696,7 +1697,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/bk.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/db.smali mod/smali_classes2/com/amap/api/services/a/db.smali
 --- orig/smali_classes2/com/amap/api/services/a/db.smali	2018-02-20 04:02:49.046074300 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/db.smali	2018-02-20 04:37:24.761561700 +0100
++++ mod/smali_classes2/com/amap/api/services/a/db.smali	2018-02-20 14:36:42.864576700 +0100
 @@ -1145,7 +1145,7 @@
      :try_start_3
      new-instance v1, Lcom/amap/api/services/a/az;
@@ -1717,7 +1718,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/db.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/amap/api/services/a/i.smali mod/smali_classes2/com/amap/api/services/a/i.smali
 --- orig/smali_classes2/com/amap/api/services/a/i.smali	2018-02-20 04:02:49.110963400 +0100
-+++ mod/smali_classes2/com/amap/api/services/a/i.smali	2018-02-20 04:37:24.825682200 +0100
++++ mod/smali_classes2/com/amap/api/services/a/i.smali	2018-02-20 14:36:42.913643700 +0100
 @@ -115,14 +115,14 @@
      if-ne v0, v1, :cond_0
  
@@ -1788,7 +1789,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/a/i.smali mod/smali_classes
  .end method
 diff -Naru orig/smali_classes2/com/amap/api/services/core/AMapException.smali mod/smali_classes2/com/amap/api/services/core/AMapException.smali
 --- orig/smali_classes2/com/amap/api/services/core/AMapException.smali	2018-02-20 04:02:47.972707900 +0100
-+++ mod/smali_classes2/com/amap/api/services/core/AMapException.smali	2018-02-20 04:37:25.042359300 +0100
++++ mod/smali_classes2/com/amap/api/services/core/AMapException.smali	2018-02-20 14:36:43.104689400 +0100
 @@ -789,7 +789,7 @@
  
      .line 977
@@ -1800,7 +1801,7 @@ diff -Naru orig/smali_classes2/com/amap/api/services/core/AMapException.smali mo
  
 diff -Naru orig/smali_classes2/com/autonavi/ae/gmap/GLMapEngine.smali mod/smali_classes2/com/autonavi/ae/gmap/GLMapEngine.smali
 --- orig/smali_classes2/com/autonavi/ae/gmap/GLMapEngine.smali	2018-02-20 04:02:49.522789400 +0100
-+++ mod/smali_classes2/com/autonavi/ae/gmap/GLMapEngine.smali	2018-02-20 04:37:25.626368300 +0100
++++ mod/smali_classes2/com/autonavi/ae/gmap/GLMapEngine.smali	2018-02-20 14:36:43.703567500 +0100
 @@ -648,7 +648,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1821,7 +1822,7 @@ diff -Naru orig/smali_classes2/com/autonavi/ae/gmap/GLMapEngine.smali mod/smali_
  
 diff -Naru orig/smali_classes2/com/autonavi/ae/gmap/maploader/GuideMapLoader.smali mod/smali_classes2/com/autonavi/ae/gmap/maploader/GuideMapLoader.smali
 --- orig/smali_classes2/com/autonavi/ae/gmap/maploader/GuideMapLoader.smali	2018-02-20 04:02:49.909052800 +0100
-+++ mod/smali_classes2/com/autonavi/ae/gmap/maploader/GuideMapLoader.smali	2018-02-20 04:37:25.860727300 +0100
++++ mod/smali_classes2/com/autonavi/ae/gmap/maploader/GuideMapLoader.smali	2018-02-20 14:36:43.939186900 +0100
 @@ -382,7 +382,7 @@
      if-ne v0, v1, :cond_0
  
@@ -1833,7 +1834,7 @@ diff -Naru orig/smali_classes2/com/autonavi/ae/gmap/maploader/GuideMapLoader.sma
  
 diff -Naru orig/smali_classes2/com/autonavi/ae/gmap/utils/GLMapServerUtil.smali mod/smali_classes2/com/autonavi/ae/gmap/utils/GLMapServerUtil.smali
 --- orig/smali_classes2/com/autonavi/ae/gmap/utils/GLMapServerUtil.smali	2018-02-20 04:02:49.962443200 +0100
-+++ mod/smali_classes2/com/autonavi/ae/gmap/utils/GLMapServerUtil.smali	2018-02-20 04:37:25.957355700 +0100
++++ mod/smali_classes2/com/autonavi/ae/gmap/utils/GLMapServerUtil.smali	2018-02-20 14:36:44.028100000 +0100
 @@ -15,7 +15,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -1854,7 +1855,7 @@ diff -Naru orig/smali_classes2/com/autonavi/ae/gmap/utils/GLMapServerUtil.smali 
  
 diff -Naru orig/smali_classes2/com/b/a/a/h.smali mod/smali_classes2/com/b/a/a/h.smali
 --- orig/smali_classes2/com/b/a/a/h.smali	2018-02-20 04:02:50.190359400 +0100
-+++ mod/smali_classes2/com/b/a/a/h.smali	2018-02-20 04:37:26.269335100 +0100
++++ mod/smali_classes2/com/b/a/a/h.smali	2018-02-20 14:36:44.330412400 +0100
 @@ -132,7 +132,7 @@
  
      if-eqz v0, :cond_4
@@ -1973,7 +1974,7 @@ diff -Naru orig/smali_classes2/com/b/a/a/h.smali mod/smali_classes2/com/b/a/a/h.
  
 diff -Naru orig/smali_classes2/com/b/a/a/k.smali mod/smali_classes2/com/b/a/a/k.smali
 --- orig/smali_classes2/com/b/a/a/k.smali	2018-02-20 04:02:50.201154000 +0100
-+++ mod/smali_classes2/com/b/a/a/k.smali	2018-02-20 04:37:26.279134000 +0100
++++ mod/smali_classes2/com/b/a/a/k.smali	2018-02-20 14:36:44.338846300 +0100
 @@ -525,7 +525,7 @@
  
      const/4 v1, 0x1
@@ -2066,7 +2067,7 @@ diff -Naru orig/smali_classes2/com/b/a/a/k.smali mod/smali_classes2/com/b/a/a/k.
  
 diff -Naru orig/smali_classes2/com/b/a/a/o.smali mod/smali_classes2/com/b/a/a/o.smali
 --- orig/smali_classes2/com/b/a/a/o.smali	2018-02-20 04:02:50.231918400 +0100
-+++ mod/smali_classes2/com/b/a/a/o.smali	2018-02-20 04:37:26.305629400 +0100
++++ mod/smali_classes2/com/b/a/a/o.smali	2018-02-20 14:36:44.363663600 +0100
 @@ -139,7 +139,7 @@
      invoke-virtual {v0, v1}, Ljavax/xml/parsers/DocumentBuilderFactory;->setIgnoringComments(Z)V
  
@@ -2159,7 +2160,7 @@ diff -Naru orig/smali_classes2/com/b/a/a/o.smali mod/smali_classes2/com/b/a/a/o.
  
 diff -Naru orig/smali_classes2/com/b/a/a/r.smali mod/smali_classes2/com/b/a/a/r.smali
 --- orig/smali_classes2/com/b/a/a/r.smali	2018-02-20 04:02:50.246638300 +0100
-+++ mod/smali_classes2/com/b/a/a/r.smali	2018-02-20 04:37:26.318058200 +0100
++++ mod/smali_classes2/com/b/a/a/r.smali	2018-02-20 14:36:44.374458500 +0100
 @@ -210,7 +210,7 @@
  
      move-result-object v0
@@ -2243,7 +2244,7 @@ diff -Naru orig/smali_classes2/com/b/a/a/r.smali mod/smali_classes2/com/b/a/a/r.
  
 diff -Naru orig/smali_classes2/com/b/a/a/s.smali mod/smali_classes2/com/b/a/a/s.smali
 --- orig/smali_classes2/com/b/a/a/s.smali	2018-02-20 04:02:50.258415200 +0100
-+++ mod/smali_classes2/com/b/a/a/s.smali	2018-02-20 04:37:26.326079200 +0100
++++ mod/smali_classes2/com/b/a/a/s.smali	2018-02-20 14:36:44.381330300 +0100
 @@ -99,7 +99,7 @@
  
      invoke-virtual {p0, v0, v1}, Lcom/b/a/a/s;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3200,7 +3201,7 @@ diff -Naru orig/smali_classes2/com/b/a/a/s.smali mod/smali_classes2/com/b/a/a/s.
  
 diff -Naru orig/smali_classes2/com/b/a/a/u.smali mod/smali_classes2/com/b/a/a/u.smali
 --- orig/smali_classes2/com/b/a/a/u.smali	2018-02-20 04:02:50.265306100 +0100
-+++ mod/smali_classes2/com/b/a/a/u.smali	2018-02-20 04:37:26.332457300 +0100
++++ mod/smali_classes2/com/b/a/a/u.smali	2018-02-20 14:36:44.387215800 +0100
 @@ -3242,7 +3242,7 @@
  
      iget-object v0, p0, Lcom/b/a/a/u;->o:Lcom/b/a/a/n;
@@ -3212,7 +3213,7 @@ diff -Naru orig/smali_classes2/com/b/a/a/u.smali mod/smali_classes2/com/b/a/a/u.
  
 diff -Naru orig/smali_classes2/com/b/a/a.smali mod/smali_classes2/com/b/a/a.smali
 --- orig/smali_classes2/com/b/a/a.smali	2018-02-20 04:02:50.092796800 +0100
-+++ mod/smali_classes2/com/b/a/a.smali	2018-02-20 04:37:26.209021000 +0100
++++ mod/smali_classes2/com/b/a/a.smali	2018-02-20 14:36:44.277420700 +0100
 @@ -150,7 +150,7 @@
  
      sput-object v0, Lcom/b/a/a;->a:Ljava/lang/String;
@@ -3566,7 +3567,7 @@ diff -Naru orig/smali_classes2/com/b/a/a.smali mod/smali_classes2/com/b/a/a.smal
  
 diff -Naru orig/smali_classes2/com/dji/a/a/c.smali mod/smali_classes2/com/dji/a/a/c.smali
 --- orig/smali_classes2/com/dji/a/a/c.smali	2018-02-20 04:02:51.729440400 +0100
-+++ mod/smali_classes2/com/dji/a/a/c.smali	2018-02-20 04:37:26.479499400 +0100
++++ mod/smali_classes2/com/dji/a/a/c.smali	2018-02-20 14:36:44.521226000 +0100
 @@ -237,7 +237,7 @@
      .line 99
      iget-object v0, p0, Lcom/dji/a/a/c;->h:Ljava/lang/String;
@@ -3587,7 +3588,7 @@ diff -Naru orig/smali_classes2/com/dji/a/a/c.smali mod/smali_classes2/com/dji/a/
  
 diff -Naru orig/smali_classes2/com/dji/a/c.smali mod/smali_classes2/com/dji/a/c.smali
 --- orig/smali_classes2/com/dji/a/c.smali	2018-02-20 04:02:51.754955000 +0100
-+++ mod/smali_classes2/com/dji/a/c.smali	2018-02-20 04:37:26.435339100 +0100
++++ mod/smali_classes2/com/dji/a/c.smali	2018-02-20 14:36:44.481969600 +0100
 @@ -355,7 +355,7 @@
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
  
@@ -3599,7 +3600,7 @@ diff -Naru orig/smali_classes2/com/dji/a/c.smali mod/smali_classes2/com/dji/a/c.
  
 diff -Naru orig/smali_classes2/com/dji/api/a.smali mod/smali_classes2/com/dji/api/a.smali
 --- orig/smali_classes2/com/dji/api/a.smali	2018-02-20 04:02:50.669022400 +0100
-+++ mod/smali_classes2/com/dji/api/a.smali	2018-02-20 04:37:26.605485100 +0100
++++ mod/smali_classes2/com/dji/api/a.smali	2018-02-20 14:36:44.643408900 +0100
 @@ -156,7 +156,7 @@
  
      .prologue
@@ -3620,7 +3621,7 @@ diff -Naru orig/smali_classes2/com/dji/api/a.smali mod/smali_classes2/com/dji/ap
  
 diff -Naru orig/smali_classes2/com/dji/api/b/a.smali mod/smali_classes2/com/dji/api/b/a.smali
 --- orig/smali_classes2/com/dji/api/b/a.smali	2018-02-20 04:02:50.591152500 +0100
-+++ mod/smali_classes2/com/dji/api/b/a.smali	2018-02-20 04:37:26.664711700 +0100
++++ mod/smali_classes2/com/dji/api/b/a.smali	2018-02-20 14:36:44.702957900 +0100
 @@ -22,7 +22,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3632,7 +3633,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/a.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/b/c.smali mod/smali_classes2/com/dji/api/b/c.smali
 --- orig/smali_classes2/com/dji/api/b/c.smali	2018-02-20 04:02:50.524421800 +0100
-+++ mod/smali_classes2/com/dji/api/b/c.smali	2018-02-20 04:37:26.669640000 +0100
++++ mod/smali_classes2/com/dji/api/b/c.smali	2018-02-20 14:36:44.706880200 +0100
 @@ -38,7 +38,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3644,7 +3645,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/c.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/b/d$a.smali mod/smali_classes2/com/dji/api/b/d$a.smali
 --- orig/smali_classes2/com/dji/api/b/d$a.smali	2018-02-20 04:02:50.595077500 +0100
-+++ mod/smali_classes2/com/dji/api/b/d$a.smali	2018-02-20 04:37:26.671603500 +0100
++++ mod/smali_classes2/com/dji/api/b/d$a.smali	2018-02-20 14:36:44.709845000 +0100
 @@ -40,7 +40,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3656,7 +3657,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/d$a.smali mod/smali_classes2/com/dj
  
 diff -Naru orig/smali_classes2/com/dji/api/b/d$b.smali mod/smali_classes2/com/dji/api/b/d$b.smali
 --- orig/smali_classes2/com/dji/api/b/d$b.smali	2018-02-20 04:02:50.527381300 +0100
-+++ mod/smali_classes2/com/dji/api/b/d$b.smali	2018-02-20 04:37:26.673565300 +0100
++++ mod/smali_classes2/com/dji/api/b/d$b.smali	2018-02-20 14:36:44.711807700 +0100
 @@ -26,7 +26,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3668,7 +3669,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/d$b.smali mod/smali_classes2/com/dj
  
 diff -Naru orig/smali_classes2/com/dji/api/b/d$c.smali mod/smali_classes2/com/dji/api/b/d$c.smali
 --- orig/smali_classes2/com/dji/api/b/d$c.smali	2018-02-20 04:02:50.530310400 +0100
-+++ mod/smali_classes2/com/dji/api/b/d$c.smali	2018-02-20 04:37:26.676509900 +0100
++++ mod/smali_classes2/com/dji/api/b/d$c.smali	2018-02-20 14:36:44.713774800 +0100
 @@ -24,7 +24,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3680,7 +3681,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/d$c.smali mod/smali_classes2/com/dj
  
 diff -Naru orig/smali_classes2/com/dji/api/b/e.smali mod/smali_classes2/com/dji/api/b/e.smali
 --- orig/smali_classes2/com/dji/api/b/e.smali	2018-02-20 04:02:50.542086100 +0100
-+++ mod/smali_classes2/com/dji/api/b/e.smali	2018-02-20 04:37:26.686322900 +0100
++++ mod/smali_classes2/com/dji/api/b/e.smali	2018-02-20 14:36:44.722581800 +0100
 @@ -18,7 +18,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3692,7 +3693,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/e.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/b/h.smali mod/smali_classes2/com/dji/api/b/h.smali
 --- orig/smali_classes2/com/dji/api/b/h.smali	2018-02-20 04:02:50.550917500 +0100
-+++ mod/smali_classes2/com/dji/api/b/h.smali	2018-02-20 04:37:26.694152000 +0100
++++ mod/smali_classes2/com/dji/api/b/h.smali	2018-02-20 14:36:44.729475300 +0100
 @@ -28,7 +28,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3758,7 +3759,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/h.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/b/i.smali mod/smali_classes2/com/dji/api/b/i.smali
 --- orig/smali_classes2/com/dji/api/b/i.smali	2018-02-20 04:02:50.554842900 +0100
-+++ mod/smali_classes2/com/dji/api/b/i.smali	2018-02-20 04:37:26.697096000 +0100
++++ mod/smali_classes2/com/dji/api/b/i.smali	2018-02-20 14:36:44.732421800 +0100
 @@ -22,7 +22,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -3788,7 +3789,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/i.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/b/j.smali mod/smali_classes2/com/dji/api/b/j.smali
 --- orig/smali_classes2/com/dji/api/b/j.smali	2018-02-20 04:02:50.558769000 +0100
-+++ mod/smali_classes2/com/dji/api/b/j.smali	2018-02-20 04:37:26.699079700 +0100
++++ mod/smali_classes2/com/dji/api/b/j.smali	2018-02-20 14:36:44.734373100 +0100
 @@ -28,7 +28,7 @@
  
      sput-object v0, Lcom/dji/api/b/j;->b:Ljava/lang/String;
@@ -3800,7 +3801,7 @@ diff -Naru orig/smali_classes2/com/dji/api/b/j.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/c.smali mod/smali_classes2/com/dji/api/c.smali
 --- orig/smali_classes2/com/dji/api/c.smali	2018-02-20 04:02:50.601947700 +0100
-+++ mod/smali_classes2/com/dji/api/c.smali	2018-02-20 04:37:26.610874400 +0100
++++ mod/smali_classes2/com/dji/api/c.smali	2018-02-20 14:36:44.648923400 +0100
 @@ -75,7 +75,7 @@
  
      .prologue
@@ -3821,7 +3822,7 @@ diff -Naru orig/smali_classes2/com/dji/api/c.smali mod/smali_classes2/com/dji/ap
  
 diff -Naru orig/smali_classes2/com/dji/api/e$a.smali mod/smali_classes2/com/dji/api/e$a.smali
 --- orig/smali_classes2/com/dji/api/e$a.smali	2018-02-20 04:02:50.618908200 +0100
-+++ mod/smali_classes2/com/dji/api/e$a.smali	2018-02-20 04:37:26.621902900 +0100
++++ mod/smali_classes2/com/dji/api/e$a.smali	2018-02-20 14:36:44.659776200 +0100
 @@ -230,13 +230,13 @@
  
      .prologue
@@ -3856,7 +3857,7 @@ diff -Naru orig/smali_classes2/com/dji/api/e$a.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/e$b.smali mod/smali_classes2/com/dji/api/e$b.smali
 --- orig/smali_classes2/com/dji/api/e$b.smali	2018-02-20 04:02:50.621916500 +0100
-+++ mod/smali_classes2/com/dji/api/e$b.smali	2018-02-20 04:37:26.624431600 +0100
++++ mod/smali_classes2/com/dji/api/e$b.smali	2018-02-20 14:36:44.661760800 +0100
 @@ -132,13 +132,13 @@
  
      .prologue
@@ -3891,7 +3892,7 @@ diff -Naru orig/smali_classes2/com/dji/api/e$b.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/e$c.smali mod/smali_classes2/com/dji/api/e$c.smali
 --- orig/smali_classes2/com/dji/api/e$c.smali	2018-02-20 04:02:50.625843200 +0100
-+++ mod/smali_classes2/com/dji/api/e$c.smali	2018-02-20 04:37:26.626439500 +0100
++++ mod/smali_classes2/com/dji/api/e$c.smali	2018-02-20 14:36:44.664704800 +0100
 @@ -33,13 +33,13 @@
  
      .prologue
@@ -3926,7 +3927,7 @@ diff -Naru orig/smali_classes2/com/dji/api/e$c.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/e$d.smali mod/smali_classes2/com/dji/api/e$d.smali
 --- orig/smali_classes2/com/dji/api/e$d.smali	2018-02-20 04:02:50.628787500 +0100
-+++ mod/smali_classes2/com/dji/api/e$d.smali	2018-02-20 04:37:26.629407000 +0100
++++ mod/smali_classes2/com/dji/api/e$d.smali	2018-02-20 14:36:44.666667500 +0100
 @@ -33,7 +33,7 @@
  
      .prologue
@@ -3956,7 +3957,7 @@ diff -Naru orig/smali_classes2/com/dji/api/e$d.smali mod/smali_classes2/com/dji/
  
 diff -Naru orig/smali_classes2/com/dji/api/f.smali mod/smali_classes2/com/dji/api/f.smali
 --- orig/smali_classes2/com/dji/api/f.smali	2018-02-20 04:02:50.640564600 +0100
-+++ mod/smali_classes2/com/dji/api/f.smali	2018-02-20 04:37:26.637252700 +0100
++++ mod/smali_classes2/com/dji/api/f.smali	2018-02-20 14:36:44.675477300 +0100
 @@ -79,7 +79,7 @@
  
      .prologue
@@ -3977,7 +3978,7 @@ diff -Naru orig/smali_classes2/com/dji/api/f.smali mod/smali_classes2/com/dji/ap
  
 diff -Naru orig/smali_classes2/com/dji/api/i.smali mod/smali_classes2/com/dji/api/i.smali
 --- orig/smali_classes2/com/dji/api/i.smali	2018-02-20 04:02:50.651368400 +0100
-+++ mod/smali_classes2/com/dji/api/i.smali	2018-02-20 04:37:26.645085100 +0100
++++ mod/smali_classes2/com/dji/api/i.smali	2018-02-20 14:36:44.684334200 +0100
 @@ -28,7 +28,7 @@
  
      move-result-object v0
@@ -4005,7 +4006,7 @@ diff -Naru orig/smali_classes2/com/dji/api/i.smali mod/smali_classes2/com/dji/ap
  
 diff -Naru orig/smali_classes2/com/dji/api/j.smali mod/smali_classes2/com/dji/api/j.smali
 --- orig/smali_classes2/com/dji/api/j.smali	2018-02-20 04:02:50.655283500 +0100
-+++ mod/smali_classes2/com/dji/api/j.smali	2018-02-20 04:37:26.647066600 +0100
++++ mod/smali_classes2/com/dji/api/j.smali	2018-02-20 14:36:44.686287800 +0100
 @@ -140,7 +140,7 @@
  
      .line 48
@@ -4017,7 +4018,7 @@ diff -Naru orig/smali_classes2/com/dji/api/j.smali mod/smali_classes2/com/dji/ap
  
 diff -Naru orig/smali_classes2/com/dji/g/b.smali mod/smali_classes2/com/dji/g/b.smali
 --- orig/smali_classes2/com/dji/g/b.smali	2018-02-20 04:02:50.891500800 +0100
-+++ mod/smali_classes2/com/dji/g/b.smali	2018-02-20 04:37:26.897976100 +0100
++++ mod/smali_classes2/com/dji/g/b.smali	2018-02-20 14:36:44.935270400 +0100
 @@ -24,7 +24,7 @@
  
      .prologue
@@ -4029,7 +4030,7 @@ diff -Naru orig/smali_classes2/com/dji/g/b.smali mod/smali_classes2/com/dji/g/b.
  
 diff -Naru orig/smali_classes2/com/dji/update/a/a.smali mod/smali_classes2/com/dji/update/a/a.smali
 --- orig/smali_classes2/com/dji/update/a/a.smali	2018-02-20 04:02:51.512451900 +0100
-+++ mod/smali_classes2/com/dji/update/a/a.smali	2018-02-20 04:37:27.996260700 +0100
++++ mod/smali_classes2/com/dji/update/a/a.smali	2018-02-20 14:36:46.025867800 +0100
 @@ -1274,7 +1274,7 @@
      .line 174
      if-eqz v1, :cond_0
@@ -4050,7 +4051,7 @@ diff -Naru orig/smali_classes2/com/dji/update/a/a.smali mod/smali_classes2/com/d
  
 diff -Naru orig/smali_classes2/com/dji/videouploadsdk/a/a.smali mod/smali_classes2/com/dji/videouploadsdk/a/a.smali
 --- orig/smali_classes2/com/dji/videouploadsdk/a/a.smali	2018-02-20 04:02:51.699172800 +0100
-+++ mod/smali_classes2/com/dji/videouploadsdk/a/a.smali	2018-02-20 04:37:28.121950600 +0100
++++ mod/smali_classes2/com/dji/videouploadsdk/a/a.smali	2018-02-20 14:36:46.148164800 +0100
 @@ -348,7 +348,7 @@
      .line 552
      new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
@@ -4071,7 +4072,7 @@ diff -Naru orig/smali_classes2/com/dji/videouploadsdk/a/a.smali mod/smali_classe
  
 diff -Naru orig/smali_classes2/com/drew/metadata/Schema.smali mod/smali_classes2/com/drew/metadata/Schema.smali
 --- orig/smali_classes2/com/drew/metadata/Schema.smali	2018-02-20 04:02:52.624093100 +0100
-+++ mod/smali_classes2/com/drew/metadata/Schema.smali	2018-02-20 04:37:28.354741000 +0100
++++ mod/smali_classes2/com/drew/metadata/Schema.smali	2018-02-20 14:36:46.346483900 +0100
 @@ -34,7 +34,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -4110,7 +4111,7 @@ diff -Naru orig/smali_classes2/com/drew/metadata/Schema.smali mod/smali_classes2
  
 diff -Naru orig/smali_classes2/com/drew/metadata/xmp/XmpReader.smali mod/smali_classes2/com/drew/metadata/xmp/XmpReader.smali
 --- orig/smali_classes2/com/drew/metadata/xmp/XmpReader.smali	2018-02-20 04:02:53.175362900 +0100
-+++ mod/smali_classes2/com/drew/metadata/xmp/XmpReader.smali	2018-02-20 04:37:28.915036700 +0100
++++ mod/smali_classes2/com/drew/metadata/xmp/XmpReader.smali	2018-02-20 14:36:46.823790700 +0100
 @@ -36,7 +36,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -4140,7 +4141,7 @@ diff -Naru orig/smali_classes2/com/drew/metadata/xmp/XmpReader.smali mod/smali_c
  
 diff -Naru orig/smali_classes2/com/drew/tools/ProcessAllImagesInFolderUtility$TextFileOutputHandler.smali mod/smali_classes2/com/drew/tools/ProcessAllImagesInFolderUtility$TextFileOutputHandler.smali
 --- orig/smali_classes2/com/drew/tools/ProcessAllImagesInFolderUtility$TextFileOutputHandler.smali	2018-02-20 04:02:53.216815500 +0100
-+++ mod/smali_classes2/com/drew/tools/ProcessAllImagesInFolderUtility$TextFileOutputHandler.smali	2018-02-20 04:37:28.941288600 +0100
++++ mod/smali_classes2/com/drew/tools/ProcessAllImagesInFolderUtility$TextFileOutputHandler.smali	2018-02-20 14:36:46.849600500 +0100
 @@ -69,7 +69,7 @@
      invoke-virtual {p0, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
  
@@ -4152,7 +4153,7 @@ diff -Naru orig/smali_classes2/com/drew/tools/ProcessAllImagesInFolderUtility$Te
  
 diff -Naru orig/smali_classes2/com/f/a.smali mod/smali_classes2/com/f/a.smali
 --- orig/smali_classes2/com/f/a.smali	2018-02-20 04:02:53.401767900 +0100
-+++ mod/smali_classes2/com/f/a.smali	2018-02-20 04:37:28.981544300 +0100
++++ mod/smali_classes2/com/f/a.smali	2018-02-20 14:36:46.890061500 +0100
 @@ -4712,7 +4712,7 @@
  
      iget-object v1, p0, Lcom/f/a;->b:Landroid/content/Context;
@@ -4182,7 +4183,7 @@ diff -Naru orig/smali_classes2/com/f/a.smali mod/smali_classes2/com/f/a.smali
  
 diff -Naru orig/smali_classes2/com/f/aw.smali mod/smali_classes2/com/f/aw.smali
 --- orig/smali_classes2/com/f/aw.smali	2018-02-20 04:02:53.514862600 +0100
-+++ mod/smali_classes2/com/f/aw.smali	2018-02-20 04:37:29.086865900 +0100
++++ mod/smali_classes2/com/f/aw.smali	2018-02-20 14:36:46.987144200 +0100
 @@ -2690,7 +2690,7 @@
  
      iget-object v2, p0, Lcom/f/aw;->a:Landroid/content/Context;
@@ -4194,7 +4195,7 @@ diff -Naru orig/smali_classes2/com/f/aw.smali mod/smali_classes2/com/f/aw.smali
  
 diff -Naru orig/smali_classes2/com/f/bo.smali mod/smali_classes2/com/f/bo.smali
 --- orig/smali_classes2/com/f/bo.smali	2018-02-20 04:02:53.597428900 +0100
-+++ mod/smali_classes2/com/f/bo.smali	2018-02-20 04:37:29.166340800 +0100
++++ mod/smali_classes2/com/f/bo.smali	2018-02-20 14:36:47.056945700 +0100
 @@ -382,7 +382,7 @@
      :goto_0
      if-eqz v2, :cond_2
@@ -4233,7 +4234,7 @@ diff -Naru orig/smali_classes2/com/f/bo.smali mod/smali_classes2/com/f/bo.smali
  
 diff -Naru orig/smali_classes2/com/f/bq.smali mod/smali_classes2/com/f/bq.smali
 --- orig/smali_classes2/com/f/bq.smali	2018-02-20 04:02:53.602336400 +0100
-+++ mod/smali_classes2/com/f/bq.smali	2018-02-20 04:37:29.172246800 +0100
++++ mod/smali_classes2/com/f/bq.smali	2018-02-20 14:36:47.061853500 +0100
 @@ -436,13 +436,13 @@
  
      move-result-object v1
@@ -4252,7 +4253,7 @@ diff -Naru orig/smali_classes2/com/f/bq.smali mod/smali_classes2/com/f/bq.smali
  
 diff -Naru orig/smali_classes2/com/f/bv.smali mod/smali_classes2/com/f/bv.smali
 --- orig/smali_classes2/com/f/bv.smali	2018-02-20 04:02:53.619827200 +0100
-+++ mod/smali_classes2/com/f/bv.smali	2018-02-20 04:37:29.191854400 +0100
++++ mod/smali_classes2/com/f/bv.smali	2018-02-20 14:36:47.080497700 +0100
 @@ -559,7 +559,7 @@
      :goto_0
      invoke-virtual {v2, v3, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -4291,7 +4292,7 @@ diff -Naru orig/smali_classes2/com/f/bv.smali mod/smali_classes2/com/f/bv.smali
  
 diff -Naru orig/smali_classes2/com/f/ca.smali mod/smali_classes2/com/f/ca.smali
 --- orig/smali_classes2/com/f/ca.smali	2018-02-20 04:02:53.638030100 +0100
-+++ mod/smali_classes2/com/f/ca.smali	2018-02-20 04:37:29.210521900 +0100
++++ mod/smali_classes2/com/f/ca.smali	2018-02-20 14:36:47.099143300 +0100
 @@ -1970,7 +1970,7 @@
      goto :goto_0
  
@@ -4303,7 +4304,7 @@ diff -Naru orig/smali_classes2/com/f/ca.smali mod/smali_classes2/com/f/ca.smali
  
 diff -Naru orig/smali_classes2/com/f/cn$b.smali mod/smali_classes2/com/f/cn$b.smali
 --- orig/smali_classes2/com/f/cn$b.smali	2018-02-20 04:02:53.733256500 +0100
-+++ mod/smali_classes2/com/f/cn$b.smali	2018-02-20 04:37:29.297853300 +0100
++++ mod/smali_classes2/com/f/cn$b.smali	2018-02-20 14:36:47.182931500 +0100
 @@ -99,7 +99,7 @@
  
      if-eqz v0, :cond_0
@@ -4315,7 +4316,7 @@ diff -Naru orig/smali_classes2/com/f/cn$b.smali mod/smali_classes2/com/f/cn$b.sm
  
 diff -Naru orig/smali_classes2/com/f/cs.smali mod/smali_classes2/com/f/cs.smali
 --- orig/smali_classes2/com/f/cs.smali	2018-02-20 04:02:53.755827200 +0100
-+++ mod/smali_classes2/com/f/cs.smali	2018-02-20 04:37:29.317637300 +0100
++++ mod/smali_classes2/com/f/cs.smali	2018-02-20 14:36:47.201584300 +0100
 @@ -62,7 +62,7 @@
  
      new-instance v1, Ljava/net/URI;
@@ -4327,7 +4328,7 @@ diff -Naru orig/smali_classes2/com/f/cs.smali mod/smali_classes2/com/f/cs.smali
  
 diff -Naru orig/smali_classes2/com/facebook/c/b.smali mod/smali_classes2/com/facebook/c/b.smali
 --- orig/smali_classes2/com/facebook/c/b.smali	2018-02-20 04:02:54.204532500 +0100
-+++ mod/smali_classes2/com/facebook/c/b.smali	2018-02-20 04:37:29.759843100 +0100
++++ mod/smali_classes2/com/facebook/c/b.smali	2018-02-20 14:36:47.628107600 +0100
 @@ -583,7 +583,7 @@
      move-exception v0
  
@@ -4339,7 +4340,7 @@ diff -Naru orig/smali_classes2/com/facebook/c/b.smali mod/smali_classes2/com/fac
  
 diff -Naru orig/smali_classes2/com/facebook/c/c.smali mod/smali_classes2/com/facebook/c/c.smali
 --- orig/smali_classes2/com/facebook/c/c.smali	2018-02-20 04:02:54.206997100 +0100
-+++ mod/smali_classes2/com/facebook/c/c.smali	2018-02-20 04:37:29.762792400 +0100
++++ mod/smali_classes2/com/facebook/c/c.smali	2018-02-20 14:36:47.630070300 +0100
 @@ -143,12 +143,12 @@
      invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
  
@@ -4357,7 +4358,7 @@ diff -Naru orig/smali_classes2/com/facebook/c/c.smali mod/smali_classes2/com/fac
  
 diff -Naru orig/smali_classes2/com/facebook/internal/af.smali mod/smali_classes2/com/facebook/internal/af.smali
 --- orig/smali_classes2/com/facebook/internal/af.smali	2018-02-20 04:02:54.293452300 +0100
-+++ mod/smali_classes2/com/facebook/internal/af.smali	2018-02-20 04:37:29.811917500 +0100
++++ mod/smali_classes2/com/facebook/internal/af.smali	2018-02-20 14:36:47.674093700 +0100
 @@ -352,7 +352,7 @@
  
      .prologue
@@ -4378,7 +4379,7 @@ diff -Naru orig/smali_classes2/com/facebook/internal/af.smali mod/smali_classes2
  
 diff -Naru orig/smali_classes2/com/facebook/internal/ah.smali mod/smali_classes2/com/facebook/internal/ah.smali
 --- orig/smali_classes2/com/facebook/internal/ah.smali	2018-02-20 04:02:54.324217100 +0100
-+++ mod/smali_classes2/com/facebook/internal/ah.smali	2018-02-20 04:37:29.846072200 +0100
++++ mod/smali_classes2/com/facebook/internal/ah.smali	2018-02-20 14:36:47.706493500 +0100
 @@ -306,7 +306,7 @@
      invoke-direct {v2}, Landroid/net/Uri$Builder;-><init>()V
  
@@ -4423,7 +4424,7 @@ diff -Naru orig/smali_classes2/com/facebook/internal/ah.smali mod/smali_classes2
      invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 diff -Naru orig/smali_classes2/com/facebook/internal/r.smali mod/smali_classes2/com/facebook/internal/r.smali
 --- orig/smali_classes2/com/facebook/internal/r.smali	2018-02-20 04:02:54.536428900 +0100
-+++ mod/smali_classes2/com/facebook/internal/r.smali	2018-02-20 04:37:30.041587700 +0100
++++ mod/smali_classes2/com/facebook/internal/r.smali	2018-02-20 14:36:47.889840700 +0100
 @@ -155,7 +155,7 @@
  
      invoke-direct {v2}, Landroid/net/Uri$Builder;-><init>()V
@@ -4435,7 +4436,7 @@ diff -Naru orig/smali_classes2/com/facebook/internal/r.smali mod/smali_classes2/
      invoke-virtual {v2, v3}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 diff -Naru orig/smali_classes2/com/facebook/l.smali mod/smali_classes2/com/facebook/l.smali
 --- orig/smali_classes2/com/facebook/l.smali	2018-02-20 04:02:54.580588900 +0100
-+++ mod/smali_classes2/com/facebook/l.smali	2018-02-20 04:37:29.584477100 +0100
++++ mod/smali_classes2/com/facebook/l.smali	2018-02-20 14:36:47.456525900 +0100
 @@ -83,7 +83,7 @@
      if-eqz v0, :cond_1
  
@@ -4447,7 +4448,7 @@ diff -Naru orig/smali_classes2/com/facebook/l.smali mod/smali_classes2/com/faceb
  
 diff -Naru orig/smali_classes2/com/facebook/s.smali mod/smali_classes2/com/facebook/s.smali
 --- orig/smali_classes2/com/facebook/s.smali	2018-02-20 04:02:54.811007100 +0100
-+++ mod/smali_classes2/com/facebook/s.smali	2018-02-20 04:37:29.646633000 +0100
++++ mod/smali_classes2/com/facebook/s.smali	2018-02-20 14:36:47.515408400 +0100
 @@ -54,7 +54,7 @@
  
      move-result-object v0
@@ -4459,7 +4460,7 @@ diff -Naru orig/smali_classes2/com/facebook/s.smali mod/smali_classes2/com/faceb
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 diff -Naru orig/smali_classes2/com/g/a/a/af.smali mod/smali_classes2/com/g/a/a/af.smali
 --- orig/smali_classes2/com/g/a/a/af.smali	2018-02-20 04:02:55.753521800 +0100
-+++ mod/smali_classes2/com/g/a/a/af.smali	2018-02-20 04:37:31.085032000 +0100
++++ mod/smali_classes2/com/g/a/a/af.smali	2018-02-20 14:36:48.838019500 +0100
 @@ -92,7 +92,7 @@
  
      .prologue
@@ -4480,7 +4481,7 @@ diff -Naru orig/smali_classes2/com/g/a/a/af.smali mod/smali_classes2/com/g/a/a/a
  
 diff -Naru orig/smali_classes2/com/g/a/a/at.smali mod/smali_classes2/com/g/a/a/at.smali
 --- orig/smali_classes2/com/g/a/a/at.smali	2018-02-20 04:02:55.809556100 +0100
-+++ mod/smali_classes2/com/g/a/a/at.smali	2018-02-20 04:37:31.131983900 +0100
++++ mod/smali_classes2/com/g/a/a/at.smali	2018-02-20 14:36:48.881987500 +0100
 @@ -407,7 +407,7 @@
  
      if-nez v0, :cond_2
@@ -4501,7 +4502,7 @@ diff -Naru orig/smali_classes2/com/g/a/a/at.smali mod/smali_classes2/com/g/a/a/a
  
 diff -Naru orig/smali_classes2/com/google/a/b/a/ac.smali mod/smali_classes2/com/google/a/b/a/ac.smali
 --- orig/smali_classes2/com/google/a/b/a/ac.smali	2018-02-20 04:03:00.813974400 +0100
-+++ mod/smali_classes2/com/google/a/b/a/ac.smali	2018-02-20 04:37:31.499555200 +0100
++++ mod/smali_classes2/com/google/a/b/a/ac.smali	2018-02-20 14:36:49.227630900 +0100
 @@ -82,7 +82,7 @@
      :cond_0
      new-instance v1, Ljava/lang/StringBuilder;
@@ -4513,7 +4514,7 @@ diff -Naru orig/smali_classes2/com/google/a/b/a/ac.smali mod/smali_classes2/com/
  
 diff -Naru orig/smali_classes2/com/google/android/gms/auth/api/credentials/Credential$Builder.smali mod/smali_classes2/com/google/android/gms/auth/api/credentials/Credential$Builder.smali
 --- orig/smali_classes2/com/google/android/gms/auth/api/credentials/Credential$Builder.smali	2018-02-20 04:02:56.543266900 +0100
-+++ mod/smali_classes2/com/google/android/gms/auth/api/credentials/Credential$Builder.smali	2018-02-20 04:37:32.239875700 +0100
++++ mod/smali_classes2/com/google/android/gms/auth/api/credentials/Credential$Builder.smali	2018-02-20 14:36:49.898634200 +0100
 @@ -173,7 +173,7 @@
  
      move-result-object v0
@@ -4534,7 +4535,7 @@ diff -Naru orig/smali_classes2/com/google/android/gms/auth/api/credentials/Crede
  
 diff -Naru orig/smali_classes2/com/google/android/gms/auth/api/credentials/IdentityProviders.smali mod/smali_classes2/com/google/android/gms/auth/api/credentials/IdentityProviders.smali
 --- orig/smali_classes2/com/google/android/gms/auth/api/credentials/IdentityProviders.smali	2018-02-20 04:02:56.447235100 +0100
-+++ mod/smali_classes2/com/google/android/gms/auth/api/credentials/IdentityProviders.smali	2018-02-20 04:37:32.268313300 +0100
++++ mod/smali_classes2/com/google/android/gms/auth/api/credentials/IdentityProviders.smali	2018-02-20 14:36:49.922164300 +0100
 @@ -44,7 +44,7 @@
  
      if-eqz v0, :cond_0
@@ -4555,7 +4556,7 @@ diff -Naru orig/smali_classes2/com/google/android/gms/auth/api/credentials/Ident
  
 diff -Naru orig/smali_classes2/com/google/android/gms/common/internal/zzn.smali mod/smali_classes2/com/google/android/gms/common/internal/zzn.smali
 --- orig/smali_classes2/com/google/android/gms/common/internal/zzn.smali	2018-02-20 04:02:57.206827900 +0100
-+++ mod/smali_classes2/com/google/android/gms/common/internal/zzn.smali	2018-02-20 04:37:33.686025900 +0100
++++ mod/smali_classes2/com/google/android/gms/common/internal/zzn.smali	2018-02-20 14:36:51.270179800 +0100
 @@ -12,7 +12,7 @@
  .method static constructor <clinit>()V
      .locals 2
@@ -4567,7 +4568,7 @@ diff -Naru orig/smali_classes2/com/google/android/gms/common/internal/zzn.smali 
  
 diff -Naru orig/smali_classes2/com/google/android/gms/internal/zzsf.smali mod/smali_classes2/com/google/android/gms/internal/zzsf.smali
 --- orig/smali_classes2/com/google/android/gms/internal/zzsf.smali	2018-02-20 04:02:58.856058100 +0100
-+++ mod/smali_classes2/com/google/android/gms/internal/zzsf.smali	2018-02-20 04:37:34.382806500 +0100
++++ mod/smali_classes2/com/google/android/gms/internal/zzsf.smali	2018-02-20 14:36:51.937353000 +0100
 @@ -634,7 +634,7 @@
  
      const/16 v2, 0xc8
@@ -4579,7 +4580,7 @@ diff -Naru orig/smali_classes2/com/google/android/gms/internal/zzsf.smali mod/sm
  
 diff -Naru orig/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient$2.smali mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient$2.smali
 --- orig/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient$2.smali	2018-02-20 04:02:56.235992500 +0100
-+++ mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient$2.smali	2018-02-20 04:37:35.907322100 +0100
++++ mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient$2.smali	2018-02-20 14:36:53.367858700 +0100
 @@ -43,7 +43,7 @@
      invoke-direct {v0}, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
  
@@ -4609,7 +4610,7 @@ diff -Naru orig/smali_classes2/com/google/android/vending/expansion/downloader/i
      invoke-virtual {p0}, Lcom/google/android/vending/expansion/downloader/impl/AndroidHttpClient$2;->getCredentialsProvider()Lorg/apache/http/client/CredentialsProvider;
 diff -Naru orig/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient.smali mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient.smali
 --- orig/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient.smali	2018-02-20 04:02:56.320720100 +0100
-+++ mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient.smali	2018-02-20 04:37:35.915281600 +0100
++++ mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/AndroidHttpClient.smali	2018-02-20 14:36:53.374728100 +0100
 @@ -402,7 +402,7 @@
      .line 170
      new-instance v4, Lorg/apache/http/conn/scheme/Scheme;
@@ -4630,7 +4631,7 @@ diff -Naru orig/smali_classes2/com/google/android/vending/expansion/downloader/i
  
 diff -Naru orig/smali_classes2/com/google/android/vending/expansion/downloader/impl/DownloadThread.smali mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/DownloadThread.smali
 --- orig/smali_classes2/com/google/android/vending/expansion/downloader/impl/DownloadThread.smali	2018-02-20 04:02:56.270338800 +0100
-+++ mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/DownloadThread.smali	2018-02-20 04:37:35.972486000 +0100
++++ mod/smali_classes2/com/google/android/vending/expansion/downloader/impl/DownloadThread.smali	2018-02-20 14:36:53.433608900 +0100
 @@ -825,7 +825,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4651,7 +4652,7 @@ diff -Naru orig/smali_classes2/com/google/android/vending/expansion/downloader/i
  
 diff -Naru orig/smali_classes2/com/google/api/client/auth/oauth/OAuthParameters.smali mod/smali_classes2/com/google/api/client/auth/oauth/OAuthParameters.smali
 --- orig/smali_classes2/com/google/api/client/auth/oauth/OAuthParameters.smali	2018-02-20 04:03:00.784353700 +0100
-+++ mod/smali_classes2/com/google/api/client/auth/oauth/OAuthParameters.smali	2018-02-20 04:37:36.080805800 +0100
++++ mod/smali_classes2/com/google/api/client/auth/oauth/OAuthParameters.smali	2018-02-20 14:36:53.546090400 +0100
 @@ -510,7 +510,7 @@
      move-result v0
  
@@ -4672,7 +4673,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/auth/oauth/OAuthParameters.
  
 diff -Naru orig/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth2/LocalServerReceiver.smali mod/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth2/LocalServerReceiver.smali
 --- orig/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth2/LocalServerReceiver.smali	2018-02-20 04:03:00.534922500 +0100
-+++ mod/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth2/LocalServerReceiver.smali	2018-02-20 04:37:36.248313200 +0100
++++ mod/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth2/LocalServerReceiver.smali	2018-02-20 14:36:53.722222200 +0100
 @@ -228,7 +228,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4684,7 +4685,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/extensions/jetty/auth/oauth
  
 diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/clientlogin/ClientLogin.smali mod/smali_classes2/com/google/api/client/googleapis/auth/clientlogin/ClientLogin.smali
 --- orig/smali_classes2/com/google/api/client/googleapis/auth/clientlogin/ClientLogin.smali	2018-02-20 04:03:00.636313700 +0100
-+++ mod/smali_classes2/com/google/api/client/googleapis/auth/clientlogin/ClientLogin.smali	2018-02-20 04:37:36.270883500 +0100
++++ mod/smali_classes2/com/google/api/client/googleapis/auth/clientlogin/ClientLogin.smali	2018-02-20 14:36:53.744994300 +0100
 @@ -73,7 +73,7 @@
      .line 61
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
@@ -4696,7 +4697,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/clientlogin
  
 diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeFlow$Builder.smali mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeFlow$Builder.smali
 --- orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeFlow$Builder.smali	2018-02-20 04:03:00.628462800 +0100
-+++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeFlow$Builder.smali	2018-02-20 04:37:36.280696600 +0100
++++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeFlow$Builder.smali	2018-02-20 14:36:53.754022700 +0100
 @@ -44,7 +44,7 @@
  
      new-instance v4, Lcom/google/api/client/http/GenericUrl;
@@ -4735,7 +4736,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeRequestUrl.smali mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeRequestUrl.smali
 --- orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeRequestUrl.smali	2018-02-20 04:03:00.592821200 +0100
-+++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeRequestUrl.smali	2018-02-20 04:37:36.286585100 +0100
++++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeRequestUrl.smali	2018-02-20 14:36:53.759910400 +0100
 @@ -93,7 +93,7 @@
  
      .prologue
@@ -4747,7 +4748,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeTokenRequest.smali mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeTokenRequest.smali
 --- orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeTokenRequest.smali	2018-02-20 04:03:00.631406800 +0100
-+++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeTokenRequest.smali	2018-02-20 04:37:36.289544100 +0100
++++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleAuthorizationCodeTokenRequest.smali	2018-02-20 14:36:53.761895300 +0100
 @@ -9,7 +9,7 @@
  
      .prologue
@@ -4759,7 +4760,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleBrowserClientRequestUrl.smali mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleBrowserClientRequestUrl.smali
 --- orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleBrowserClientRequestUrl.smali	2018-02-20 04:03:00.599690500 +0100
-+++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleBrowserClientRequestUrl.smali	2018-02-20 04:37:36.292487500 +0100
++++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleBrowserClientRequestUrl.smali	2018-02-20 14:36:53.764839800 +0100
 @@ -58,7 +58,7 @@
  
      .prologue
@@ -4771,7 +4772,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder.smali mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder.smali
 --- orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder.smali	2018-02-20 04:03:00.608065400 +0100
-+++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder.smali	2018-02-20 04:37:36.300326900 +0100
++++ mod/smali_classes2/com/google/api/client/googleapis/auth/oauth2/GoogleCredential$Builder.smali	2018-02-20 14:36:53.771708300 +0100
 @@ -46,7 +46,7 @@
      invoke-direct {p0, v0}, Lcom/google/api/client/auth/oauth2/Credential$Builder;-><init>(Lcom/google/api/client/auth/oauth2/Credential$AccessMethod;)V
  
@@ -4783,7 +4784,7 @@ diff -Naru orig/smali_classes2/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder.smali mod/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder.smali
 --- orig/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder.smali	2018-02-20 04:03:18.034378100 +0100
-+++ mod/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder.smali	2018-02-20 04:37:36.324188900 +0100
++++ mod/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder.smali	2018-02-20 14:36:53.794256800 +0100
 @@ -41,7 +41,7 @@
      iput-object v0, p0, Lcom/google/api/client/googleapis/auth/oauth2/GooglePublicKeysManager$Builder;->clock:Lcom/google/api/client/util/Clock;
  
@@ -4795,7 +4796,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GoogleRefreshTokenRequest.smali mod/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GoogleRefreshTokenRequest.smali
 --- orig/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GoogleRefreshTokenRequest.smali	2018-02-20 04:03:18.039284500 +0100
-+++ mod/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GoogleRefreshTokenRequest.smali	2018-02-20 04:37:36.329651000 +0100
++++ mod/smali_classes3/com/google/api/client/googleapis/auth/oauth2/GoogleRefreshTokenRequest.smali	2018-02-20 14:36:53.800144600 +0100
 @@ -11,7 +11,7 @@
      .line 86
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
@@ -4807,7 +4808,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/googleapis/auth/oauth2/Goog
  
 diff -Naru orig/smali_classes3/com/google/api/client/googleapis/batch/BatchRequest.smali mod/smali_classes3/com/google/api/client/googleapis/batch/BatchRequest.smali
 --- orig/smali_classes3/com/google/api/client/googleapis/batch/BatchRequest.smali	2018-02-20 04:03:17.992695800 +0100
-+++ mod/smali_classes3/com/google/api/client/googleapis/batch/BatchRequest.smali	2018-02-20 04:37:36.345340700 +0100
++++ mod/smali_classes3/com/google/api/client/googleapis/batch/BatchRequest.smali	2018-02-20 14:36:53.814864800 +0100
 @@ -42,7 +42,7 @@
      .line 100
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
@@ -4819,7 +4820,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/googleapis/batch/BatchReque
  
 diff -Naru orig/smali_classes3/com/google/api/client/googleapis/batch/BatchUnparsedResponse.smali mod/smali_classes3/com/google/api/client/googleapis/batch/BatchUnparsedResponse.smali
 --- orig/smali_classes3/com/google/api/client/googleapis/batch/BatchUnparsedResponse.smali	2018-02-20 04:03:18.007416700 +0100
-+++ mod/smali_classes3/com/google/api/client/googleapis/batch/BatchUnparsedResponse.smali	2018-02-20 04:37:36.355145700 +0100
++++ mod/smali_classes3/com/google/api/client/googleapis/batch/BatchUnparsedResponse.smali	2018-02-20 14:36:53.825659500 +0100
 @@ -215,7 +215,7 @@
  
      new-instance v1, Lcom/google/api/client/http/GenericUrl;
@@ -4831,7 +4832,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/googleapis/batch/BatchUnpar
  
 diff -Naru orig/smali_classes3/com/google/api/client/googleapis/compute/ComputeCredential$Builder.smali mod/smali_classes3/com/google/api/client/googleapis/compute/ComputeCredential$Builder.smali
 --- orig/smali_classes3/com/google/api/client/googleapis/compute/ComputeCredential$Builder.smali	2018-02-20 04:03:17.776699200 +0100
-+++ mod/smali_classes3/com/google/api/client/googleapis/compute/ComputeCredential$Builder.smali	2018-02-20 04:37:36.365941000 +0100
++++ mod/smali_classes3/com/google/api/client/googleapis/compute/ComputeCredential$Builder.smali	2018-02-20 14:36:53.835473400 +0100
 @@ -36,7 +36,7 @@
      invoke-virtual {p0, p2}, Lcom/google/api/client/googleapis/compute/ComputeCredential$Builder;->setJsonFactory(Lcom/google/api/client/json/JsonFactory;)Lcom/google/api/client/googleapis/compute/ComputeCredential$Builder;
  
@@ -4843,7 +4844,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/googleapis/compute/ComputeC
  
 diff -Naru orig/smali_classes3/com/google/api/client/http/apache/ApacheHttpTransport.smali mod/smali_classes3/com/google/api/client/http/apache/ApacheHttpTransport.smali
 --- orig/smali_classes3/com/google/api/client/http/apache/ApacheHttpTransport.smali	2018-02-20 04:03:17.183648500 +0100
-+++ mod/smali_classes3/com/google/api/client/http/apache/ApacheHttpTransport.smali	2018-02-20 04:37:36.649274200 +0100
++++ mod/smali_classes3/com/google/api/client/http/apache/ApacheHttpTransport.smali	2018-02-20 14:36:54.110443300 +0100
 @@ -52,7 +52,7 @@
      invoke-static {v0, v1}, Lorg/apache/http/params/HttpProtocolParams;->setVersion(Lorg/apache/http/params/HttpParams;Lorg/apache/http/ProtocolVersion;)V
  
@@ -4873,7 +4874,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/http/apache/ApacheHttpTrans
  
 diff -Naru orig/smali_classes3/com/google/api/client/http/UriTemplate.smali mod/smali_classes3/com/google/api/client/http/UriTemplate.smali
 --- orig/smali_classes3/com/google/api/client/http/UriTemplate.smali	2018-02-20 04:03:17.148320500 +0100
-+++ mod/smali_classes3/com/google/api/client/http/UriTemplate.smali	2018-02-20 04:37:36.632591500 +0100
++++ mod/smali_classes3/com/google/api/client/http/UriTemplate.smali	2018-02-20 14:36:54.094741500 +0100
 @@ -404,7 +404,7 @@
  
      .line 254
@@ -4894,7 +4895,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/http/UriTemplate.smali mod/
  
 diff -Naru orig/smali_classes3/com/google/api/client/testing/http/HttpTesting.smali mod/smali_classes3/com/google/api/client/testing/http/HttpTesting.smali
 --- orig/smali_classes3/com/google/api/client/testing/http/HttpTesting.smali	2018-02-20 04:03:17.452153700 +0100
-+++ mod/smali_classes3/com/google/api/client/testing/http/HttpTesting.smali	2018-02-20 04:37:36.840370300 +0100
++++ mod/smali_classes3/com/google/api/client/testing/http/HttpTesting.smali	2018-02-20 14:36:54.312920400 +0100
 @@ -22,7 +22,7 @@
      .line 34
      new-instance v0, Lcom/google/api/client/http/GenericUrl;
@@ -4906,7 +4907,7 @@ diff -Naru orig/smali_classes3/com/google/api/client/testing/http/HttpTesting.sm
  
 diff -Naru orig/smali_classes3/com/google/api/services/youtube/YouTube$Builder.smali mod/smali_classes3/com/google/api/services/youtube/YouTube$Builder.smali
 --- orig/smali_classes3/com/google/api/services/youtube/YouTube$Builder.smali	2018-02-20 04:03:16.443199500 +0100
-+++ mod/smali_classes3/com/google/api/services/youtube/YouTube$Builder.smali	2018-02-20 04:37:37.124251500 +0100
++++ mod/smali_classes3/com/google/api/services/youtube/YouTube$Builder.smali	2018-02-20 14:36:54.605483800 +0100
 @@ -20,7 +20,7 @@
  
      .prologue
@@ -4918,7 +4919,7 @@ diff -Naru orig/smali_classes3/com/google/api/services/youtube/YouTube$Builder.s
  
 diff -Naru orig/smali_classes3/com/google/api/services/youtube/YouTubeScopes.smali mod/smali_classes3/com/google/api/services/youtube/YouTubeScopes.smali
 --- orig/smali_classes3/com/google/api/services/youtube/YouTubeScopes.smali	2018-02-20 04:03:16.625937200 +0100
-+++ mod/smali_classes3/com/google/api/services/youtube/YouTubeScopes.smali	2018-02-20 04:37:37.296890500 +0100
++++ mod/smali_classes3/com/google/api/services/youtube/YouTubeScopes.smali	2018-02-20 14:36:54.761970900 +0100
 @@ -46,27 +46,27 @@
      invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
  
@@ -4954,16 +4955,7 @@ diff -Naru orig/smali_classes3/com/google/api/services/youtube/YouTubeScopes.sma
  
 diff -Naru orig/smali_classes3/com/here/a/a/a/m$a.smali mod/smali_classes3/com/here/a/a/a/m$a.smali
 --- orig/smali_classes3/com/here/a/a/a/m$a.smali	2018-02-20 04:03:08.189448100 +0100
-+++ mod/smali_classes3/com/here/a/a/a/m$a.smali	2018-02-20 04:37:38.167152000 +0100
-@@ -75,7 +75,7 @@
- 
-     move-result-object v1
- 
--    const-string v2, "MV49Ml1xdgg2SSguDzEqEGMffHdVcQ=="
-+    const-string v2, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
++++ mod/smali_classes3/com/here/a/a/a/m$a.smali	2018-02-20 14:36:55.684783900 +0100
 @@ -94,7 +94,7 @@
  
      move-result-object v1
@@ -5029,7 +5021,7 @@ diff -Naru orig/smali_classes3/com/here/a/a/a/m$a.smali mod/smali_classes3/com/h
  
 diff -Naru orig/smali_classes3/com/here/a/a/a/m.smali mod/smali_classes3/com/here/a/a/a/m.smali
 --- orig/smali_classes3/com/here/a/a/a/m.smali	2018-02-20 04:03:08.191389700 +0100
-+++ mod/smali_classes3/com/here/a/a/a/m.smali	2018-02-20 04:37:38.169130500 +0100
++++ mod/smali_classes3/com/here/a/a/a/m.smali	2018-02-20 14:36:55.686762100 +0100
 @@ -240,7 +240,7 @@
  
      .prologue
@@ -5050,7 +5042,7 @@ diff -Naru orig/smali_classes3/com/here/a/a/a/m.smali mod/smali_classes3/com/her
  
 diff -Naru orig/smali_classes3/com/here/android/mpa/service/MapService$a.smali mod/smali_classes3/com/here/android/mpa/service/MapService$a.smali
 --- orig/smali_classes3/com/here/android/mpa/service/MapService$a.smali	2018-02-20 04:03:04.747050100 +0100
-+++ mod/smali_classes3/com/here/android/mpa/service/MapService$a.smali	2018-02-20 04:37:40.855829800 +0100
++++ mod/smali_classes3/com/here/android/mpa/service/MapService$a.smali	2018-02-20 14:36:58.266898400 +0100
 @@ -224,7 +224,7 @@
      .line 822
      new-instance v1, Ljava/net/URI;
@@ -5062,7 +5054,7 @@ diff -Naru orig/smali_classes3/com/here/android/mpa/service/MapService$a.smali m
  
 diff -Naru orig/smali_classes3/com/here/sdk/analytics/HEREAnalyticsConfiguration.smali mod/smali_classes3/com/here/sdk/analytics/HEREAnalyticsConfiguration.smali
 --- orig/smali_classes3/com/here/sdk/analytics/HEREAnalyticsConfiguration.smali	2018-02-20 04:03:06.835491900 +0100
-+++ mod/smali_classes3/com/here/sdk/analytics/HEREAnalyticsConfiguration.smali	2018-02-20 04:37:42.687731800 +0100
++++ mod/smali_classes3/com/here/sdk/analytics/HEREAnalyticsConfiguration.smali	2018-02-20 14:36:59.937672800 +0100
 @@ -48,7 +48,7 @@
  
      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -5074,7 +5066,7 @@ diff -Naru orig/smali_classes3/com/here/sdk/analytics/HEREAnalyticsConfiguration
  
 diff -Naru orig/smali_classes3/com/here/sdk/analytics/internal/AnalyticsConfiguration.smali mod/smali_classes3/com/here/sdk/analytics/internal/AnalyticsConfiguration.smali
 --- orig/smali_classes3/com/here/sdk/analytics/internal/AnalyticsConfiguration.smali	2018-02-20 04:03:06.872761500 +0100
-+++ mod/smali_classes3/com/here/sdk/analytics/internal/AnalyticsConfiguration.smali	2018-02-20 04:37:42.730290900 +0100
++++ mod/smali_classes3/com/here/sdk/analytics/internal/AnalyticsConfiguration.smali	2018-02-20 14:36:59.979142800 +0100
 @@ -34,7 +34,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5086,7 +5078,7 @@ diff -Naru orig/smali_classes3/com/here/sdk/analytics/internal/AnalyticsConfigur
  
 diff -Naru orig/smali_classes3/com/loopj/android/http/AsyncHttpClient$3.smali mod/smali_classes3/com/loopj/android/http/AsyncHttpClient$3.smali
 --- orig/smali_classes3/com/loopj/android/http/AsyncHttpClient$3.smali	2018-02-20 04:03:08.444962700 +0100
-+++ mod/smali_classes3/com/loopj/android/http/AsyncHttpClient$3.smali	2018-02-20 04:37:43.956016600 +0100
++++ mod/smali_classes3/com/loopj/android/http/AsyncHttpClient$3.smali	2018-02-20 14:37:01.104394600 +0100
 @@ -47,7 +47,7 @@
  
      .prologue
@@ -5107,7 +5099,7 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/AsyncHttpClient$3.smali mo
  
 diff -Naru orig/smali_classes3/com/loopj/android/http/AsyncHttpClient.smali mod/smali_classes3/com/loopj/android/http/AsyncHttpClient.smali
 --- orig/smali_classes3/com/loopj/android/http/AsyncHttpClient.smali	2018-02-20 04:03:08.455738800 +0100
-+++ mod/smali_classes3/com/loopj/android/http/AsyncHttpClient.smali	2018-02-20 04:37:43.963889500 +0100
++++ mod/smali_classes3/com/loopj/android/http/AsyncHttpClient.smali	2018-02-20 14:37:01.112246100 +0100
 @@ -630,7 +630,7 @@
      .line 212
      new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
@@ -5164,7 +5156,7 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/AsyncHttpClient.smali mod/
  
 diff -Naru orig/smali_classes3/com/loopj/android/http/MyRedirectHandler.smali mod/smali_classes3/com/loopj/android/http/MyRedirectHandler.smali
 --- orig/smali_classes3/com/loopj/android/http/MyRedirectHandler.smali	2018-02-20 04:03:08.539495900 +0100
-+++ mod/smali_classes3/com/loopj/android/http/MyRedirectHandler.smali	2018-02-20 04:37:44.038250500 +0100
++++ mod/smali_classes3/com/loopj/android/http/MyRedirectHandler.smali	2018-02-20 14:37:01.183655200 +0100
 @@ -15,7 +15,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5203,7 +5195,7 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/MyRedirectHandler.smali mo
  
 diff -Naru orig/smali_classes3/com/loopj/android/http/MySSLSocketFactory.smali mod/smali_classes3/com/loopj/android/http/MySSLSocketFactory.smali
 --- orig/smali_classes3/com/loopj/android/http/MySSLSocketFactory.smali	2018-02-20 04:03:08.544402300 +0100
-+++ mod/smali_classes3/com/loopj/android/http/MySSLSocketFactory.smali	2018-02-20 04:37:44.043179100 +0100
++++ mod/smali_classes3/com/loopj/android/http/MySSLSocketFactory.smali	2018-02-20 14:37:01.188561300 +0100
 @@ -378,7 +378,7 @@
      .line 189
      new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
@@ -5224,7 +5216,7 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/MySSLSocketFactory.smali m
  
 diff -Naru orig/smali_classes3/com/loopj/android/http/PreemtiveAuthorizationHttpRequestInterceptor.smali mod/smali_classes3/com/loopj/android/http/PreemtiveAuthorizationHttpRequestInterceptor.smali
 --- orig/smali_classes3/com/loopj/android/http/PreemtiveAuthorizationHttpRequestInterceptor.smali	2018-02-20 04:03:08.549330800 +0100
-+++ mod/smali_classes3/com/loopj/android/http/PreemtiveAuthorizationHttpRequestInterceptor.smali	2018-02-20 04:37:44.049063500 +0100
++++ mod/smali_classes3/com/loopj/android/http/PreemtiveAuthorizationHttpRequestInterceptor.smali	2018-02-20 14:37:01.193468500 +0100
 @@ -30,7 +30,7 @@
  
      .prologue
@@ -5245,7 +5237,7 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/PreemtiveAuthorizationHttp
  
 diff -Naru orig/smali_classes3/com/loopj/android/http/RetryHandler.smali mod/smali_classes3/com/loopj/android/http/RetryHandler.smali
 --- orig/smali_classes3/com/loopj/android/http/RetryHandler.smali	2018-02-20 04:03:08.570801600 +0100
-+++ mod/smali_classes3/com/loopj/android/http/RetryHandler.smali	2018-02-20 04:37:44.069653500 +0100
++++ mod/smali_classes3/com/loopj/android/http/RetryHandler.smali	2018-02-20 14:37:01.211132800 +0100
 @@ -216,7 +216,7 @@
  
      .line 70
@@ -5257,7 +5249,7 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/RetryHandler.smali mod/sma
  
 diff -Naru orig/smali_classes3/com/mapbox/mapboxsdk/maps/AttributionDialogManager.smali mod/smali_classes3/com/mapbox/mapboxsdk/maps/AttributionDialogManager.smali
 --- orig/smali_classes3/com/mapbox/mapboxsdk/maps/AttributionDialogManager.smali	2018-02-20 04:03:09.046935100 +0100
-+++ mod/smali_classes3/com/mapbox/mapboxsdk/maps/AttributionDialogManager.smali	2018-02-20 04:37:44.339771900 +0100
++++ mod/smali_classes3/com/mapbox/mapboxsdk/maps/AttributionDialogManager.smali	2018-02-20 14:37:01.475651900 +0100
 @@ -45,7 +45,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5278,7 +5270,7 @@ diff -Naru orig/smali_classes3/com/mapbox/mapboxsdk/maps/AttributionDialogManage
  
 diff -Naru orig/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali mod/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali
 --- orig/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali	2018-02-20 04:03:09.520758600 +0100
-+++ mod/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali	2018-02-20 04:37:44.847472100 +0100
++++ mod/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali	2018-02-20 14:37:01.942932400 +0100
 @@ -190,7 +190,7 @@
      .line 62
      if-eqz p2, :cond_0
@@ -5299,7 +5291,7 @@ diff -Naru orig/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.
  
 diff -Naru orig/smali_classes3/com/mapbox/services/android/telemetry/http/TelemetryClient.smali mod/smali_classes3/com/mapbox/services/android/telemetry/http/TelemetryClient.smali
 --- orig/smali_classes3/com/mapbox/services/android/telemetry/http/TelemetryClient.smali	2018-02-20 04:03:08.737365300 +0100
-+++ mod/smali_classes3/com/mapbox/services/android/telemetry/http/TelemetryClient.smali	2018-02-20 04:37:44.973462300 +0100
++++ mod/smali_classes3/com/mapbox/services/android/telemetry/http/TelemetryClient.smali	2018-02-20 14:37:02.058263400 +0100
 @@ -75,7 +75,7 @@
      iput-object v0, p0, Lcom/mapbox/services/android/telemetry/http/TelemetryClient;->userAgent:Ljava/lang/String;
  
@@ -5311,7 +5303,7 @@ diff -Naru orig/smali_classes3/com/mapbox/services/android/telemetry/http/Teleme
  
 diff -Naru orig/smali_classes3/com/mapbox/services/android/telemetry/MapboxEvent.smali mod/smali_classes3/com/mapbox/services/android/telemetry/MapboxEvent.smali
 --- orig/smali_classes3/com/mapbox/services/android/telemetry/MapboxEvent.smali	2018-02-20 04:03:08.671763900 +0100
-+++ mod/smali_classes3/com/mapbox/services/android/telemetry/MapboxEvent.smali	2018-02-20 04:37:44.905393200 +0100
++++ mod/smali_classes3/com/mapbox/services/android/telemetry/MapboxEvent.smali	2018-02-20 14:37:01.990681400 +0100
 @@ -90,7 +90,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5323,7 +5315,7 @@ diff -Naru orig/smali_classes3/com/mapbox/services/android/telemetry/MapboxEvent
  
 diff -Naru orig/smali_classes3/com/mapbox/services/b.smali mod/smali_classes3/com/mapbox/services/b.smali
 --- orig/smali_classes3/com/mapbox/services/b.smali	2018-02-20 04:03:08.785432000 +0100
-+++ mod/smali_classes3/com/mapbox/services/b.smali	2018-02-20 04:37:44.895557700 +0100
++++ mod/smali_classes3/com/mapbox/services/b.smali	2018-02-20 14:37:01.980876900 +0100
 @@ -50,7 +50,7 @@
      .locals 5
  
@@ -5335,7 +5327,7 @@ diff -Naru orig/smali_classes3/com/mapbox/services/b.smali mod/smali_classes3/co
  
 diff -Naru orig/smali_classes3/com/mob/commons/logcollector/c.smali mod/smali_classes3/com/mob/commons/logcollector/c.smali
 --- orig/smali_classes3/com/mob/commons/logcollector/c.smali	2018-02-20 04:03:10.159653500 +0100
-+++ mod/smali_classes3/com/mob/commons/logcollector/c.smali	2018-02-20 04:37:45.339966100 +0100
++++ mod/smali_classes3/com/mob/commons/logcollector/c.smali	2018-02-20 14:37:02.393189700 +0100
 @@ -41,7 +41,7 @@
  
      .prologue
@@ -5356,7 +5348,7 @@ diff -Naru orig/smali_classes3/com/mob/commons/logcollector/c.smali mod/smali_cl
  
 diff -Naru orig/smali_classes3/com/mob/tools/network/NetworkHelper.smali mod/smali_classes3/com/mob/tools/network/NetworkHelper.smali
 --- orig/smali_classes3/com/mob/tools/network/NetworkHelper.smali	2018-02-20 04:03:09.954247600 +0100
-+++ mod/smali_classes3/com/mob/tools/network/NetworkHelper.smali	2018-02-20 04:37:45.523013000 +0100
++++ mod/smali_classes3/com/mob/tools/network/NetworkHelper.smali	2018-02-20 14:37:02.564649300 +0100
 @@ -155,7 +155,7 @@
      if-ge v1, v2, :cond_1
  
@@ -5440,7 +5432,7 @@ diff -Naru orig/smali_classes3/com/mob/tools/network/NetworkHelper.smali mod/sma
  
 diff -Naru orig/smali_classes3/com/mob/tools/utils/R.smali mod/smali_classes3/com/mob/tools/utils/R.smali
 --- orig/smali_classes3/com/mob/tools/utils/R.smali	2018-02-20 04:03:10.005515800 +0100
-+++ mod/smali_classes3/com/mob/tools/utils/R.smali	2018-02-20 04:37:45.573125300 +0100
++++ mod/smali_classes3/com/mob/tools/utils/R.smali	2018-02-20 14:37:02.611766800 +0100
 @@ -4812,7 +4812,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5461,7 +5453,7 @@ diff -Naru orig/smali_classes3/com/mob/tools/utils/R.smali mod/smali_classes3/co
  
 diff -Naru orig/smali_classes3/com/nokia/maps/nlp/Settings.smali mod/smali_classes3/com/nokia/maps/nlp/Settings.smali
 --- orig/smali_classes3/com/nokia/maps/nlp/Settings.smali	2018-02-20 04:03:13.568519700 +0100
-+++ mod/smali_classes3/com/nokia/maps/nlp/Settings.smali	2018-02-20 04:37:49.272037200 +0100
++++ mod/smali_classes3/com/nokia/maps/nlp/Settings.smali	2018-02-20 14:37:06.382867200 +0100
 @@ -294,7 +294,7 @@
      sput-wide v0, Lcom/nokia/maps/nlp/Settings;->s_sphinxKeywordThreshold:D
  
@@ -5482,7 +5474,7 @@ diff -Naru orig/smali_classes3/com/nokia/maps/nlp/Settings.smali mod/smali_class
  
 diff -Naru orig/smali_classes3/com/nostra13/universalimageloader/core/download/ImageDownloader$Scheme.smali mod/smali_classes3/com/nostra13/universalimageloader/core/download/ImageDownloader$Scheme.smali
 --- orig/smali_classes3/com/nostra13/universalimageloader/core/download/ImageDownloader$Scheme.smali	2018-02-20 04:03:14.377520300 +0100
-+++ mod/smali_classes3/com/nostra13/universalimageloader/core/download/ImageDownloader$Scheme.smali	2018-02-20 04:37:49.711168500 +0100
++++ mod/smali_classes3/com/nostra13/universalimageloader/core/download/ImageDownloader$Scheme.smali	2018-02-20 14:37:06.773220800 +0100
 @@ -71,7 +71,7 @@
  
      move-result-object v1
@@ -5503,7 +5495,7 @@ diff -Naru orig/smali_classes3/com/nostra13/universalimageloader/core/download/I
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali mod/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali	2018-02-20 04:03:15.201094200 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali	2018-02-20 04:37:49.960920800 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smali	2018-02-20 14:37:06.998659500 +0100
 @@ -218,7 +218,7 @@
      invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
  
@@ -5515,7 +5507,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/api/share/WeiboDownloader.smal
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtils.smali mod/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtils.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtils.smali	2018-02-20 04:03:14.651434600 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtils.smali	2018-02-20 04:37:50.026691200 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtils.smali	2018-02-20 14:37:07.054973900 +0100
 @@ -41,7 +41,7 @@
  
      .line 508
@@ -5527,7 +5519,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtils.smali mod/
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtilsV2.smali mod/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtilsV2.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtilsV2.smali	2018-02-20 04:03:14.653396500 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtilsV2.smali	2018-02-20 04:37:50.030616800 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtilsV2.smali	2018-02-20 14:37:07.058897300 +0100
 @@ -54,7 +54,7 @@
  
      .line 727
@@ -5539,7 +5531,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/call/WeiboPageUtilsV2.smali mo
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/cmd/AppInvokeCmdExecutor.smali mod/smali_classes3/com/sina/weibo/sdk/cmd/AppInvokeCmdExecutor.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/cmd/AppInvokeCmdExecutor.smali	2018-02-20 04:03:14.674986100 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/cmd/AppInvokeCmdExecutor.smali	2018-02-20 04:37:50.050436800 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/cmd/AppInvokeCmdExecutor.smali	2018-02-20 14:37:07.076561000 +0100
 @@ -264,7 +264,7 @@
      move-result-object v2
  
@@ -5560,7 +5552,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/cmd/AppInvokeCmdExecutor.smali
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/GameManager.smali mod/smali_classes3/com/sina/weibo/sdk/component/GameManager.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/component/GameManager.smali	2018-02-20 04:03:14.712428600 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/component/GameManager.smali	2018-02-20 04:37:50.085414600 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/component/GameManager.smali	2018-02-20 14:37:07.110892200 +0100
 @@ -263,7 +263,7 @@
      sput-object v0, Lcom/sina/weibo/sdk/component/GameManager;->URL_ACHIEVEMENT_USER_GAIN:Ljava/lang/String;
  
@@ -5581,7 +5573,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/GameManager.smali mo
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/ShareRequestParam.smali mod/smali_classes3/com/sina/weibo/sdk/component/ShareRequestParam.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/component/ShareRequestParam.smali	2018-02-20 04:03:14.722948700 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/component/ShareRequestParam.smali	2018-02-20 04:37:50.098171400 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/component/ShareRequestParam.smali	2018-02-20 14:37:07.121686800 +0100
 @@ -65,7 +65,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5602,7 +5594,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/ShareRequestParam.sm
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/view/AttentionComponentView.smali mod/smali_classes3/com/sina/weibo/sdk/component/view/AttentionComponentView.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/component/view/AttentionComponentView.smali	2018-02-20 04:03:14.771071100 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/component/view/AttentionComponentView.smali	2018-02-20 04:37:50.146887900 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/component/view/AttentionComponentView.smali	2018-02-20 14:37:07.169151300 +0100
 @@ -48,7 +48,7 @@
      .locals 1
  
@@ -5614,7 +5606,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/view/AttentionCompon
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/WeiboSdkBrowser.smali mod/smali_classes3/com/sina/weibo/sdk/component/WeiboSdkBrowser.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/component/WeiboSdkBrowser.smali	2018-02-20 04:03:14.744538300 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/component/WeiboSdkBrowser.smali	2018-02-20 04:37:50.117820500 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/component/WeiboSdkBrowser.smali	2018-02-20 14:37:07.140515000 +0100
 @@ -685,7 +685,7 @@
  
      if-nez v2, :cond_0
@@ -5635,7 +5627,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/component/WeiboSdkBrowser.smal
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/constant/WBConstants.smali mod/smali_classes3/com/sina/weibo/sdk/constant/WBConstants.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/constant/WBConstants.smali	2018-02-20 04:03:14.831902700 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/constant/WBConstants.smali	2018-02-20 04:37:50.201076200 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/constant/WBConstants.smali	2018-02-20 14:37:07.221565900 +0100
 @@ -470,7 +470,7 @@
  
      sput-object v0, Lcom/sina/weibo/sdk/constant/WBConstants;->ACTIVITY_WEIBO_PAY_REQ:Ljava/lang/String;
@@ -5647,7 +5639,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/constant/WBConstants.smali mod
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/net/HttpManager.smali mod/smali_classes3/com/sina/weibo/sdk/net/HttpManager.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/net/HttpManager.smali	2018-02-20 04:03:14.880992900 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/net/HttpManager.smali	2018-02-20 04:37:50.249333800 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/net/HttpManager.smali	2018-02-20 14:37:07.265877400 +0100
 @@ -1316,7 +1316,7 @@
      .line 495
      new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
@@ -5668,7 +5660,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/net/HttpManager.smali mod/smal
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/net/openapi/RefreshTokenApi.smali mod/smali_classes3/com/sina/weibo/sdk/net/openapi/RefreshTokenApi.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/net/openapi/RefreshTokenApi.smali	2018-02-20 04:03:14.907022600 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/net/openapi/RefreshTokenApi.smali	2018-02-20 04:37:50.274541000 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/net/openapi/RefreshTokenApi.smali	2018-02-20 14:37:07.290410700 +0100
 @@ -15,7 +15,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5680,7 +5672,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/net/openapi/RefreshTokenApi.sm
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/net/openapi/ShareWeiboApi.smali mod/smali_classes3/com/sina/weibo/sdk/net/openapi/ShareWeiboApi.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/net/openapi/ShareWeiboApi.smali	2018-02-20 04:03:14.910012800 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/net/openapi/ShareWeiboApi.smali	2018-02-20 04:37:50.277490500 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/net/openapi/ShareWeiboApi.smali	2018-02-20 14:37:07.293355300 +0100
 @@ -26,7 +26,7 @@
      .locals 1
  
@@ -5710,7 +5702,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/net/openapi/ShareWeiboApi.smal
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/register/mobile/MobileRegisterActivity.smali mod/smali_classes3/com/sina/weibo/sdk/register/mobile/MobileRegisterActivity.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/register/mobile/MobileRegisterActivity.smali	2018-02-20 04:03:14.949612200 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/register/mobile/MobileRegisterActivity.smali	2018-02-20 04:37:50.314753700 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/register/mobile/MobileRegisterActivity.smali	2018-02-20 14:37:07.327664300 +0100
 @@ -602,7 +602,7 @@
  
      sput-object v0, Lcom/sina/weibo/sdk/register/mobile/MobileRegisterActivity;->CHINA_TW:Ljava/lang/String;
@@ -5740,7 +5732,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/register/mobile/MobileRegister
  
 diff -Naru orig/smali_classes3/com/sina/weibo/sdk/utils/AidTask.smali mod/smali_classes3/com/sina/weibo/sdk/utils/AidTask.smali
 --- orig/smali_classes3/com/sina/weibo/sdk/utils/AidTask.smali	2018-02-20 04:03:15.052083900 +0100
-+++ mod/smali_classes3/com/sina/weibo/sdk/utils/AidTask.smali	2018-02-20 04:37:50.417475600 +0100
++++ mod/smali_classes3/com/sina/weibo/sdk/utils/AidTask.smali	2018-02-20 14:37:07.425717500 +0100
 @@ -2205,7 +2205,7 @@
  
      .prologue
@@ -5761,7 +5753,7 @@ diff -Naru orig/smali_classes3/com/sina/weibo/sdk/utils/AidTask.smali mod/smali_
  
 diff -Naru orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali mod/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali
 --- orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali	2018-02-20 04:03:15.418438400 +0100
-+++ mod/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali	2018-02-20 04:37:50.650327500 +0100
++++ mod/smali_classes3/com/tencent/bugly/crashreport/common/strategy/StrategyBean.smali	2018-02-20 14:37:07.686690600 +0100
 @@ -87,17 +87,17 @@
  
      .prologue
@@ -5785,7 +5777,7 @@ diff -Naru orig/smali_classes3/com/tencent/bugly/crashreport/common/strategy/Str
  
 diff -Naru orig/smali_classes3/com/tencent/bugly/proguard/ap.smali mod/smali_classes3/com/tencent/bugly/proguard/ap.smali
 --- orig/smali_classes3/com/tencent/bugly/proguard/ap.smali	2018-02-20 04:03:15.585273100 +0100
-+++ mod/smali_classes3/com/tencent/bugly/proguard/ap.smali	2018-02-20 04:37:50.787750400 +0100
++++ mod/smali_classes3/com/tencent/bugly/proguard/ap.smali	2018-02-20 14:37:07.828826200 +0100
 @@ -511,14 +511,14 @@
      .line 307
      iget-object v1, p0, Lcom/tencent/bugly/proguard/ap;->j:Ljava/lang/String;
@@ -5805,7 +5797,7 @@ diff -Naru orig/smali_classes3/com/tencent/bugly/proguard/ap.smali mod/smali_cla
  
 diff -Naru orig/smali_classes3/com/tencent/bugly/proguard/s.smali mod/smali_classes3/com/tencent/bugly/proguard/s.smali
 --- orig/smali_classes3/com/tencent/bugly/proguard/s.smali	2018-02-20 04:03:15.647913300 +0100
-+++ mod/smali_classes3/com/tencent/bugly/proguard/s.smali	2018-02-20 04:37:50.850248500 +0100
++++ mod/smali_classes3/com/tencent/bugly/proguard/s.smali	2018-02-20 14:37:07.886360600 +0100
 @@ -94,14 +94,14 @@
      if-eqz v1, :cond_0
  
@@ -5825,7 +5817,7 @@ diff -Naru orig/smali_classes3/com/tencent/bugly/proguard/s.smali mod/smali_clas
  
 diff -Naru orig/smali_classes3/com/tencent/bugly/proguard/z.smali mod/smali_classes3/com/tencent/bugly/proguard/z.smali
 --- orig/smali_classes3/com/tencent/bugly/proguard/z.smali	2018-02-20 04:03:15.683238500 +0100
-+++ mod/smali_classes3/com/tencent/bugly/proguard/z.smali	2018-02-20 04:37:50.884713700 +0100
++++ mod/smali_classes3/com/tencent/bugly/proguard/z.smali	2018-02-20 14:37:07.919725600 +0100
 @@ -5292,7 +5292,7 @@
  
      move-result-object v2
@@ -5837,7 +5829,7 @@ diff -Naru orig/smali_classes3/com/tencent/bugly/proguard/z.smali mod/smali_clas
  
 diff -Naru orig/smali_classes4/dji/gs/g/a/a.smali mod/smali_classes4/dji/gs/g/a/a.smali
 --- orig/smali_classes4/dji/gs/g/a/a.smali	2018-02-20 04:03:20.714527500 +0100
-+++ mod/smali_classes4/dji/gs/g/a/a.smali	2018-02-20 04:37:54.229241400 +0100
++++ mod/smali_classes4/dji/gs/g/a/a.smali	2018-02-20 14:37:11.599159700 +0100
 @@ -63,7 +63,7 @@
  
      sput-object v0, Ldji/gs/g/a/a;->b:Ljava/lang/String;
@@ -5849,7 +5841,7 @@ diff -Naru orig/smali_classes4/dji/gs/g/a/a.smali mod/smali_classes4/dji/gs/g/a/
  
 diff -Naru orig/smali_classes5/dji/pilot/active/g.smali mod/smali_classes5/dji/pilot/active/g.smali
 --- orig/smali_classes5/dji/pilot/active/g.smali	2018-02-20 04:03:22.463150800 +0100
-+++ mod/smali_classes5/dji/pilot/active/g.smali	2018-02-20 04:37:55.833381000 +0100
++++ mod/smali_classes5/dji/pilot/active/g.smali	2018-02-20 14:37:13.076394200 +0100
 @@ -681,7 +681,7 @@
  
      move-result-object v1
@@ -5861,7 +5853,7 @@ diff -Naru orig/smali_classes5/dji/pilot/active/g.smali mod/smali_classes5/dji/p
  
 diff -Naru orig/smali_classes5/dji/pilot/flyforbid/j.smali mod/smali_classes5/dji/pilot/flyforbid/j.smali
 --- orig/smali_classes5/dji/pilot/flyforbid/j.smali	2018-02-20 04:03:24.132801800 +0100
-+++ mod/smali_classes5/dji/pilot/flyforbid/j.smali	2018-02-20 04:37:57.155684400 +0100
++++ mod/smali_classes5/dji/pilot/flyforbid/j.smali	2018-02-20 14:37:14.323728700 +0100
 @@ -219,7 +219,7 @@
      .line 96
      sget-object v0, Ldji/pilot/flyforbid/j;->b:Ljava/lang/String;
@@ -5882,7 +5874,7 @@ diff -Naru orig/smali_classes5/dji/pilot/flyforbid/j.smali mod/smali_classes5/dj
  
 diff -Naru orig/smali_classes5/dji/pilot/flyunlimit/a.smali mod/smali_classes5/dji/pilot/flyunlimit/a.smali
 --- orig/smali_classes5/dji/pilot/flyunlimit/a.smali	2018-02-20 04:03:24.301419800 +0100
-+++ mod/smali_classes5/dji/pilot/flyunlimit/a.smali	2018-02-20 04:37:57.372926700 +0100
++++ mod/smali_classes5/dji/pilot/flyunlimit/a.smali	2018-02-20 14:37:14.545992300 +0100
 @@ -56,7 +56,7 @@
  
      sput-object v0, Ldji/pilot/flyunlimit/a;->a:Ljava/lang/String;
@@ -5894,7 +5886,7 @@ diff -Naru orig/smali_classes5/dji/pilot/flyunlimit/a.smali mod/smali_classes5/d
  
 diff -Naru orig/smali_classes5/dji/pilot/fpv/control/a/f.smali mod/smali_classes5/dji/pilot/fpv/control/a/f.smali
 --- orig/smali_classes5/dji/pilot/fpv/control/a/f.smali	2018-02-20 04:03:27.176044700 +0100
-+++ mod/smali_classes5/dji/pilot/fpv/control/a/f.smali	2018-02-20 04:38:00.390815300 +0100
++++ mod/smali_classes5/dji/pilot/fpv/control/a/f.smali	2018-02-20 14:37:17.498146600 +0100
 @@ -47,7 +47,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -5906,7 +5898,7 @@ diff -Naru orig/smali_classes5/dji/pilot/fpv/control/a/f.smali mod/smali_classes
  
 diff -Naru orig/smali_classes5/dji/pilot/fpv/f/d$j.smali mod/smali_classes5/dji/pilot/fpv/f/d$j.smali
 --- orig/smali_classes5/dji/pilot/fpv/f/d$j.smali	2018-02-20 04:03:27.900102800 +0100
-+++ mod/smali_classes5/dji/pilot/fpv/f/d$j.smali	2018-02-20 04:38:00.700318700 +0100
++++ mod/smali_classes5/dji/pilot/fpv/f/d$j.smali	2018-02-20 14:37:17.797215000 +0100
 @@ -287,7 +287,7 @@
  
      sput-object v0, Ldji/pilot/fpv/f/d$j;->z:Ljava/lang/String;
@@ -5918,7 +5910,7 @@ diff -Naru orig/smali_classes5/dji/pilot/fpv/f/d$j.smali mod/smali_classes5/dji/
  
 diff -Naru orig/smali_classes5/dji/pilot/fpv/view/a.smali mod/smali_classes5/dji/pilot/fpv/view/a.smali
 --- orig/smali_classes5/dji/pilot/fpv/view/a.smali	2018-02-20 04:03:29.443644400 +0100
-+++ mod/smali_classes5/dji/pilot/fpv/view/a.smali	2018-02-20 04:38:01.806608000 +0100
++++ mod/smali_classes5/dji/pilot/fpv/view/a.smali	2018-02-20 14:37:18.848870100 +0100
 @@ -27,7 +27,7 @@
      invoke-direct {p0, p1}, Ldji/pilot/publics/objects/d;-><init>(Landroid/content/Context;)V
  
@@ -5930,7 +5922,7 @@ diff -Naru orig/smali_classes5/dji/pilot/fpv/view/a.smali mod/smali_classes5/dji
  
 diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/a/b.smali mod/smali_classes5/dji/pilot/liveshare/Weibo/a/b.smali
 --- orig/smali_classes5/dji/pilot/liveshare/Weibo/a/b.smali	2018-02-20 04:03:31.023203100 +0100
-+++ mod/smali_classes5/dji/pilot/liveshare/Weibo/a/b.smali	2018-02-20 04:38:03.474450000 +0100
++++ mod/smali_classes5/dji/pilot/liveshare/Weibo/a/b.smali	2018-02-20 14:37:20.420943300 +0100
 @@ -286,7 +286,7 @@
      .line 71
      iget-object v1, p0, Ldji/pilot/liveshare/Weibo/a/b;->weiboRunner:Lcom/sina/weibo/sdk/net/AsyncWeiboRunner;
@@ -5951,7 +5943,7 @@ diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/a/b.smali mod/smali_cla
  
 diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/b/a.smali mod/smali_classes5/dji/pilot/liveshare/Weibo/b/a.smali
 --- orig/smali_classes5/dji/pilot/liveshare/Weibo/b/a.smali	2018-02-20 04:03:30.995409600 +0100
-+++ mod/smali_classes5/dji/pilot/liveshare/Weibo/b/a.smali	2018-02-20 04:38:03.477393700 +0100
++++ mod/smali_classes5/dji/pilot/liveshare/Weibo/b/a.smali	2018-02-20 14:37:20.423908600 +0100
 @@ -28,7 +28,7 @@
      .locals 1
  
@@ -5963,7 +5955,7 @@ diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/b/a.smali mod/smali_cla
  
 diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/b/c.smali mod/smali_classes5/dji/pilot/liveshare/Weibo/b/c.smali
 --- orig/smali_classes5/dji/pilot/liveshare/Weibo/b/c.smali	2018-02-20 04:03:30.986577600 +0100
-+++ mod/smali_classes5/dji/pilot/liveshare/Weibo/b/c.smali	2018-02-20 04:38:03.483303400 +0100
++++ mod/smali_classes5/dji/pilot/liveshare/Weibo/b/c.smali	2018-02-20 14:37:20.428793900 +0100
 @@ -29,7 +29,7 @@
      .locals 3
  
@@ -5993,7 +5985,7 @@ diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/b/c.smali mod/smali_cla
  
 diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/b/d.smali mod/smali_classes5/dji/pilot/liveshare/Weibo/b/d.smali
 --- orig/smali_classes5/dji/pilot/liveshare/Weibo/b/d.smali	2018-02-20 04:03:30.989521600 +0100
-+++ mod/smali_classes5/dji/pilot/liveshare/Weibo/b/d.smali	2018-02-20 04:38:03.485266300 +0100
++++ mod/smali_classes5/dji/pilot/liveshare/Weibo/b/d.smali	2018-02-20 14:37:20.430778200 +0100
 @@ -23,7 +23,7 @@
  
      sput-object v0, Ldji/pilot/liveshare/Weibo/b/d;->APP_KEY:Ljava/lang/String;
@@ -6005,7 +5997,7 @@ diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/b/d.smali mod/smali_cla
  
 diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali mod/smali_classes5/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali
 --- orig/smali_classes5/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali	2018-02-20 04:03:31.002293600 +0100
-+++ mod/smali_classes5/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali	2018-02-20 04:38:03.493099200 +0100
++++ mod/smali_classes5/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.smali	2018-02-20 14:37:20.438757700 +0100
 @@ -41,7 +41,7 @@
  
      move-result-object v2
@@ -6015,9 +6007,30 @@ diff -Naru orig/smali_classes5/dji/pilot/liveshare/Weibo/view/LiveWBLoginView.sm
  
      invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
+diff -Naru orig/smali_classes6/dji/pilot/publics/control/upgrade/c$c.smali mod/smali_classes6/dji/pilot/publics/control/upgrade/c$c.smali
+--- orig/smali_classes6/dji/pilot/publics/control/upgrade/c$c.smali	2018-02-20 04:03:51.869412500 +0100
++++ mod/smali_classes6/dji/pilot/publics/control/upgrade/c$c.smali	2018-02-20 14:37:21.970684000 +0100
+@@ -75,7 +75,7 @@
+ 
+     const/4 v2, 0x0
+ 
+-    const-string v3, "P145YhIuNQs4TmkkBjc1Fw=="
++    const-string v3, "MV49Ml1xdlVrHWdySW53VQ=="
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -157,7 +157,7 @@
+ 
+     const/4 v2, 0x0
+ 
+-    const-string v3, "P145YhIuNQs4TmkkBjc1Fw=="
++    const-string v3, "MV49Ml1xdlVrHWdySW53VQ=="
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
 diff -Naru orig/smali_classes6/dji/pilot/publics/util/g.smali mod/smali_classes6/dji/pilot/publics/util/g.smali
 --- orig/smali_classes6/dji/pilot/publics/util/g.smali	2018-02-20 04:03:52.471403500 +0100
-+++ mod/smali_classes6/dji/pilot/publics/util/g.smali	2018-02-20 04:38:05.542885400 +0100
++++ mod/smali_classes6/dji/pilot/publics/util/g.smali	2018-02-20 14:37:22.482640100 +0100
 @@ -57,7 +57,7 @@
  
      sput-object v0, Ldji/pilot/publics/util/g;->g:Ljava/lang/String;
@@ -6038,7 +6051,7 @@ diff -Naru orig/smali_classes6/dji/pilot/publics/util/g.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali mod/smali_classes6/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali
 --- orig/smali_classes6/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali	2018-02-20 04:03:32.556399900 +0100
-+++ mod/smali_classes6/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali	2018-02-20 04:38:07.422503700 +0100
++++ mod/smali_classes6/dji/pilot2/academy/activity/DJIFlightBookActivity$2.smali	2018-02-20 14:37:24.275606200 +0100
 @@ -76,7 +76,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -6050,7 +6063,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/academy/activity/DJIFlightBookActivity
  
 diff -Naru orig/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity$3.smali mod/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity$3.smali
 --- orig/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity$3.smali	2018-02-20 04:03:32.575045000 +0100
-+++ mod/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity$3.smali	2018-02-20 04:38:07.440168200 +0100
++++ mod/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity$3.smali	2018-02-20 14:37:24.290326500 +0100
 @@ -370,7 +370,7 @@
      .line 326
      sget-object v1, Ldji/pilot2/welcome/fragment/DJIWebviewFragment;->z:Ljava/lang/String;
@@ -6062,7 +6075,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity
  
 diff -Naru orig/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity.smali mod/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity.smali
 --- orig/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity.smali	2018-02-20 04:03:32.577989500 +0100
-+++ mod/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity.smali	2018-02-20 04:38:07.443173400 +0100
++++ mod/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity.smali	2018-02-20 14:37:24.294250500 +0100
 @@ -114,7 +114,7 @@
      invoke-direct {p0}, Ldji/pilot2/DJIActivityNoFullScreen;-><init>()V
  
@@ -6074,7 +6087,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/academy/activity/DJINewAcademyActivity
  
 diff -Naru orig/smali_classes6/dji/pilot2/academy/model/a.smali mod/smali_classes6/dji/pilot2/academy/model/a.smali
 --- orig/smali_classes6/dji/pilot2/academy/model/a.smali	2018-02-20 04:03:32.910555900 +0100
-+++ mod/smali_classes6/dji/pilot2/academy/model/a.smali	2018-02-20 04:38:07.654586400 +0100
++++ mod/smali_classes6/dji/pilot2/academy/model/a.smali	2018-02-20 14:37:24.501062400 +0100
 @@ -134,7 +134,7 @@
      move-result-object v2
  
@@ -6095,7 +6108,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/academy/model/a.smali mod/smali_classe
  
 diff -Naru orig/smali_classes6/dji/pilot2/account/profile/b.smali mod/smali_classes6/dji/pilot2/account/profile/b.smali
 --- orig/smali_classes6/dji/pilot2/account/profile/b.smali	2018-02-20 04:03:33.233032700 +0100
-+++ mod/smali_classes6/dji/pilot2/account/profile/b.smali	2018-02-20 04:38:07.921366600 +0100
++++ mod/smali_classes6/dji/pilot2/account/profile/b.smali	2018-02-20 14:37:24.757629400 +0100
 @@ -55,7 +55,7 @@
  
      sput-object v0, Ldji/pilot2/account/profile/b;->K:Ljava/lang/String;
@@ -6107,7 +6120,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/account/profile/b.smali mod/smali_clas
  
 diff -Naru orig/smali_classes6/dji/pilot2/c/a.smali mod/smali_classes6/dji/pilot2/c/a.smali
 --- orig/smali_classes6/dji/pilot2/c/a.smali	2018-02-20 04:03:33.824476700 +0100
-+++ mod/smali_classes6/dji/pilot2/c/a.smali	2018-02-20 04:38:08.399590300 +0100
++++ mod/smali_classes6/dji/pilot2/c/a.smali	2018-02-20 14:37:25.227165500 +0100
 @@ -64,7 +64,7 @@
  
      move-result-object v1
@@ -6119,7 +6132,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/c/a.smali mod/smali_classes6/dji/pilot
  
 diff -Naru orig/smali_classes6/dji/pilot2/explore/activity/DJIMediaDisplayActivity$b.smali mod/smali_classes6/dji/pilot2/explore/activity/DJIMediaDisplayActivity$b.smali
 --- orig/smali_classes6/dji/pilot2/explore/activity/DJIMediaDisplayActivity$b.smali	2018-02-20 04:03:34.328201500 +0100
-+++ mod/smali_classes6/dji/pilot2/explore/activity/DJIMediaDisplayActivity$b.smali	2018-02-20 04:38:08.835759300 +0100
++++ mod/smali_classes6/dji/pilot2/explore/activity/DJIMediaDisplayActivity$b.smali	2018-02-20 14:37:25.663782800 +0100
 @@ -159,7 +159,7 @@
  
      if-nez v0, :cond_1
@@ -6140,7 +6153,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/explore/activity/DJIMediaDisplayActivi
  
 diff -Naru orig/smali_classes6/dji/pilot2/explore/model/DJIMsgBean.smali mod/smali_classes6/dji/pilot2/explore/model/DJIMsgBean.smali
 --- orig/smali_classes6/dji/pilot2/explore/model/DJIMsgBean.smali	2018-02-20 04:03:34.438950800 +0100
-+++ mod/smali_classes6/dji/pilot2/explore/model/DJIMsgBean.smali	2018-02-20 04:38:08.939656200 +0100
++++ mod/smali_classes6/dji/pilot2/explore/model/DJIMsgBean.smali	2018-02-20 14:37:25.759822600 +0100
 @@ -114,7 +114,7 @@
  
      if-nez v1, :cond_0
@@ -6161,7 +6174,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/explore/model/DJIMsgBean.smali mod/sma
  
 diff -Naru orig/smali_classes6/dji/pilot2/flymonitor/service/c$b.smali mod/smali_classes6/dji/pilot2/flymonitor/service/c$b.smali
 --- orig/smali_classes6/dji/pilot2/flymonitor/service/c$b.smali	2018-02-20 04:03:34.710762300 +0100
-+++ mod/smali_classes6/dji/pilot2/flymonitor/service/c$b.smali	2018-02-20 04:38:09.195274100 +0100
++++ mod/smali_classes6/dji/pilot2/flymonitor/service/c$b.smali	2018-02-20 14:37:26.003402100 +0100
 @@ -138,7 +138,7 @@
  
      .line 306
@@ -6173,7 +6186,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/flymonitor/service/c$b.smali mod/smali
  
 diff -Naru orig/smali_classes6/dji/pilot2/g/b/a/a/d/a.smali mod/smali_classes6/dji/pilot2/g/b/a/a/d/a.smali
 --- orig/smali_classes6/dji/pilot2/g/b/a/a/d/a.smali	2018-02-20 04:03:35.089119700 +0100
-+++ mod/smali_classes6/dji/pilot2/g/b/a/a/d/a.smali	2018-02-20 04:38:09.512437800 +0100
++++ mod/smali_classes6/dji/pilot2/g/b/a/a/d/a.smali	2018-02-20 14:37:26.316542700 +0100
 @@ -257,7 +257,7 @@
      if-nez v3, :cond_1
  
@@ -6185,7 +6198,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/g/b/a/a/d/a.smali mod/smali_classes6/d
  
 diff -Naru orig/smali_classes6/dji/pilot2/g/b/a$1.smali mod/smali_classes6/dji/pilot2/g/b/a$1.smali
 --- orig/smali_classes6/dji/pilot2/g/b/a$1.smali	2018-02-20 04:03:35.133165000 +0100
-+++ mod/smali_classes6/dji/pilot2/g/b/a$1.smali	2018-02-20 04:38:09.444144200 +0100
++++ mod/smali_classes6/dji/pilot2/g/b/a$1.smali	2018-02-20 14:37:26.245777800 +0100
 @@ -162,7 +162,7 @@
      if-nez v3, :cond_0
  
@@ -6197,7 +6210,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/g/b/a$1.smali mod/smali_classes6/dji/p
  
 diff -Naru orig/smali_classes6/dji/pilot2/i/a$b.smali mod/smali_classes6/dji/pilot2/i/a$b.smali
 --- orig/smali_classes6/dji/pilot2/i/a$b.smali	2018-02-20 04:03:35.171417000 +0100
-+++ mod/smali_classes6/dji/pilot2/i/a$b.smali	2018-02-20 04:38:09.554605700 +0100
++++ mod/smali_classes6/dji/pilot2/i/a$b.smali	2018-02-20 14:37:26.353696200 +0100
 @@ -72,7 +72,7 @@
  
      if-nez v2, :cond_0
@@ -6209,7 +6222,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/i/a$b.smali mod/smali_classes6/dji/pil
  
 diff -Naru orig/smali_classes6/dji/pilot2/main/a/c.smali mod/smali_classes6/dji/pilot2/main/a/c.smali
 --- orig/smali_classes6/dji/pilot2/main/a/c.smali	2018-02-20 04:03:35.662154500 +0100
-+++ mod/smali_classes6/dji/pilot2/main/a/c.smali	2018-02-20 04:38:09.697022000 +0100
++++ mod/smali_classes6/dji/pilot2/main/a/c.smali	2018-02-20 14:37:26.486999800 +0100
 @@ -245,7 +245,7 @@
      move-result-object v3
  
@@ -6230,7 +6243,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/main/a/c.smali mod/smali_classes6/dji/
  
 diff -Naru orig/smali_classes6/dji/pilot2/main/activity/DJIChangeAppActivity.smali mod/smali_classes6/dji/pilot2/main/activity/DJIChangeAppActivity.smali
 --- orig/smali_classes6/dji/pilot2/main/activity/DJIChangeAppActivity.smali	2018-02-20 04:03:35.367183800 +0100
-+++ mod/smali_classes6/dji/pilot2/main/activity/DJIChangeAppActivity.smali	2018-02-20 04:38:09.704871800 +0100
++++ mod/smali_classes6/dji/pilot2/main/activity/DJIChangeAppActivity.smali	2018-02-20 14:37:26.493893000 +0100
 @@ -20,7 +20,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -6242,7 +6255,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/main/activity/DJIChangeAppActivity.sma
  
 diff -Naru orig/smali_classes6/dji/pilot2/main/activity/DJILegalAgreement$a.smali mod/smali_classes6/dji/pilot2/main/activity/DJILegalAgreement$a.smali
 --- orig/smali_classes6/dji/pilot2/main/activity/DJILegalAgreement$a.smali	2018-02-20 04:03:35.333818000 +0100
-+++ mod/smali_classes6/dji/pilot2/main/activity/DJILegalAgreement$a.smali	2018-02-20 04:38:09.720573700 +0100
++++ mod/smali_classes6/dji/pilot2/main/activity/DJILegalAgreement$a.smali	2018-02-20 14:37:26.511555900 +0100
 @@ -101,7 +101,7 @@
      .line 189
      sget-object v1, Ldji/pilot2/welcome/fragment/DJIWebviewFragment;->z:Ljava/lang/String;
@@ -6263,7 +6276,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/main/activity/DJILegalAgreement$a.smal
  
 diff -Naru orig/smali_classes6/dji/pilot2/mine/activity/PrivacyActivity.smali mod/smali_classes6/dji/pilot2/mine/activity/PrivacyActivity.smali
 --- orig/smali_classes6/dji/pilot2/mine/activity/PrivacyActivity.smali	2018-02-20 04:03:36.581734500 +0100
-+++ mod/smali_classes6/dji/pilot2/mine/activity/PrivacyActivity.smali	2018-02-20 04:38:10.413579100 +0100
++++ mod/smali_classes6/dji/pilot2/mine/activity/PrivacyActivity.smali	2018-02-20 14:37:27.161191700 +0100
 @@ -750,7 +750,7 @@
      if-eqz v0, :cond_3
  
@@ -6284,7 +6297,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/mine/activity/PrivacyActivity.smali mo
  
 diff -Naru orig/smali_classes6/dji/pilot2/mine/adapter/UnlockContentView$2.smali mod/smali_classes6/dji/pilot2/mine/adapter/UnlockContentView$2.smali
 --- orig/smali_classes6/dji/pilot2/mine/adapter/UnlockContentView$2.smali	2018-02-20 04:03:36.136731300 +0100
-+++ mod/smali_classes6/dji/pilot2/mine/adapter/UnlockContentView$2.smali	2018-02-20 04:38:10.658161800 +0100
++++ mod/smali_classes6/dji/pilot2/mine/adapter/UnlockContentView$2.smali	2018-02-20 14:37:27.383963700 +0100
 @@ -41,7 +41,7 @@
  
      .prologue
@@ -6296,7 +6309,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/mine/adapter/UnlockContentView$2.smali
  
 diff -Naru orig/smali_classes6/dji/pilot2/mine/controller/f.smali mod/smali_classes6/dji/pilot2/mine/controller/f.smali
 --- orig/smali_classes6/dji/pilot2/mine/controller/f.smali	2018-02-20 04:03:36.219499600 +0100
-+++ mod/smali_classes6/dji/pilot2/mine/controller/f.smali	2018-02-20 04:38:10.749119400 +0100
++++ mod/smali_classes6/dji/pilot2/mine/controller/f.smali	2018-02-20 14:37:27.461269600 +0100
 @@ -725,7 +725,7 @@
  
      move-result-object v1
@@ -6308,7 +6321,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/mine/controller/f.smali mod/smali_clas
  
 diff -Naru orig/smali_classes6/dji/pilot2/mine/works/a$a.smali mod/smali_classes6/dji/pilot2/mine/works/a$a.smali
 --- orig/smali_classes6/dji/pilot2/mine/works/a$a.smali	2018-02-20 04:03:36.441016300 +0100
-+++ mod/smali_classes6/dji/pilot2/mine/works/a$a.smali	2018-02-20 04:38:10.937130600 +0100
++++ mod/smali_classes6/dji/pilot2/mine/works/a$a.smali	2018-02-20 14:37:27.631909900 +0100
 @@ -123,7 +123,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6329,7 +6342,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/mine/works/a$a.smali mod/smali_classes
  
 diff -Naru orig/smali_classes6/dji/pilot2/mine/works/a.smali mod/smali_classes6/dji/pilot2/mine/works/a.smali
 --- orig/smali_classes6/dji/pilot2/mine/works/a.smali	2018-02-20 04:03:36.426274700 +0100
-+++ mod/smali_classes6/dji/pilot2/mine/works/a.smali	2018-02-20 04:38:10.943564400 +0100
++++ mod/smali_classes6/dji/pilot2/mine/works/a.smali	2018-02-20 14:37:27.637380700 +0100
 @@ -279,7 +279,7 @@
      if-eqz p1, :cond_0
  
@@ -6359,7 +6372,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/mine/works/a.smali mod/smali_classes6/
  
 diff -Naru orig/smali_classes6/dji/pilot2/music/album/MusicAlbumView.smali mod/smali_classes6/dji/pilot2/music/album/MusicAlbumView.smali
 --- orig/smali_classes6/dji/pilot2/music/album/MusicAlbumView.smali	2018-02-20 04:03:36.870601600 +0100
-+++ mod/smali_classes6/dji/pilot2/music/album/MusicAlbumView.smali	2018-02-20 04:38:11.139798300 +0100
++++ mod/smali_classes6/dji/pilot2/music/album/MusicAlbumView.smali	2018-02-20 14:37:27.816231000 +0100
 @@ -735,7 +735,7 @@
  
      .prologue
@@ -6398,7 +6411,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/music/album/MusicAlbumView.smali mod/s
  
 diff -Naru orig/smali_classes6/dji/pilot2/music/album/MusicItemView.smali mod/smali_classes6/dji/pilot2/music/album/MusicItemView.smali
 --- orig/smali_classes6/dji/pilot2/music/album/MusicItemView.smali	2018-02-20 04:03:36.901012700 +0100
-+++ mod/smali_classes6/dji/pilot2/music/album/MusicItemView.smali	2018-02-20 04:38:11.162396100 +0100
++++ mod/smali_classes6/dji/pilot2/music/album/MusicItemView.smali	2018-02-20 14:37:27.836956700 +0100
 @@ -1102,7 +1102,7 @@
  
      move-result-object v0
@@ -6410,7 +6423,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/music/album/MusicItemView.smali mod/sm
  
 diff -Naru orig/smali_classes6/dji/pilot2/music/EditorAddMusicActivity.smali mod/smali_classes6/dji/pilot2/music/EditorAddMusicActivity.smali
 --- orig/smali_classes6/dji/pilot2/music/EditorAddMusicActivity.smali	2018-02-20 04:03:36.824211000 +0100
-+++ mod/smali_classes6/dji/pilot2/music/EditorAddMusicActivity.smali	2018-02-20 04:38:11.070112300 +0100
++++ mod/smali_classes6/dji/pilot2/music/EditorAddMusicActivity.smali	2018-02-20 14:37:27.749523100 +0100
 @@ -217,7 +217,7 @@
  
      if-nez v3, :cond_2
@@ -6431,7 +6444,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/music/EditorAddMusicActivity.smali mod
  
 diff -Naru orig/smali_classes6/dji/pilot2/nativeexplore/activity/GLMapActivity.smali mod/smali_classes6/dji/pilot2/nativeexplore/activity/GLMapActivity.smali
 --- orig/smali_classes6/dji/pilot2/nativeexplore/activity/GLMapActivity.smali	2018-02-20 04:03:37.236414700 +0100
-+++ mod/smali_classes6/dji/pilot2/nativeexplore/activity/GLMapActivity.smali	2018-02-20 04:38:11.416181200 +0100
++++ mod/smali_classes6/dji/pilot2/nativeexplore/activity/GLMapActivity.smali	2018-02-20 14:37:28.064399400 +0100
 @@ -752,7 +752,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -6443,7 +6456,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/nativeexplore/activity/GLMapActivity.s
  
 diff -Naru orig/smali_classes6/dji/pilot2/nativeexplore/model/ExploreItem.smali mod/smali_classes6/dji/pilot2/nativeexplore/model/ExploreItem.smali
 --- orig/smali_classes6/dji/pilot2/nativeexplore/model/ExploreItem.smali	2018-02-20 04:03:37.496162600 +0100
-+++ mod/smali_classes6/dji/pilot2/nativeexplore/model/ExploreItem.smali	2018-02-20 04:38:11.656478200 +0100
++++ mod/smali_classes6/dji/pilot2/nativeexplore/model/ExploreItem.smali	2018-02-20 14:37:28.282981500 +0100
 @@ -1056,7 +1056,7 @@
  
      .line 201
@@ -6462,72 +6475,9 @@ diff -Naru orig/smali_classes6/dji/pilot2/nativeexplore/model/ExploreItem.smali 
  
      invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
-diff -Naru orig/smali_classes6/dji/pilot2/newlibrary/dshare/a/b.smali mod/smali_classes6/dji/pilot2/newlibrary/dshare/a/b.smali
---- orig/smali_classes6/dji/pilot2/newlibrary/dshare/a/b.smali	2018-02-20 04:03:37.857475500 +0100
-+++ mod/smali_classes6/dji/pilot2/newlibrary/dshare/a/b.smali	2018-02-20 04:38:12.072145300 +0100
-@@ -830,7 +830,7 @@
-     .line 224
-     new-instance v1, Ljava/net/URL;
- 
--    const-string v2, "MV49Ml1xdlVgGGdzUWZ3VXcZc3pXZmhLPUU+LAsxOAA="
-+    const-string v2, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
-@@ -1542,7 +1542,7 @@
-     .line 259
-     new-instance v2, Ljava/net/URL;
- 
--    const-string v3, "MV49Ml1xdlVgGGdzUWZ3VXcZc3pXZmhLPUU+LAsxOAA="
-+    const-string v3, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
-diff -Naru orig/smali_classes6/dji/pilot2/newlibrary/dshare/a/c.smali mod/smali_classes6/dji/pilot2/newlibrary/dshare/a/c.smali
---- orig/smali_classes6/dji/pilot2/newlibrary/dshare/a/c.smali	2018-02-20 04:03:37.882016000 +0100
-+++ mod/smali_classes6/dji/pilot2/newlibrary/dshare/a/c.smali	2018-02-20 04:38:12.094716000 +0100
-@@ -642,7 +642,7 @@
-     .line 308
-     new-instance v11, Ljava/net/URL;
- 
--    const-string v13, "MV49Ml1xdlVgGGdzUWZ3VXcZc3pXZmhLPUU+LAsxOAA="
-+    const-string v13, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v13}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
-@@ -2258,7 +2258,7 @@
-     invoke-direct {v7}, Ldji/thirdparty/afinal/f/b;-><init>()V
- 
-     .line 508
--    const-string v0, "MV49Ml1xdlVgGGdzUWZ3VXcZc3pXZmhLPUU+LAsxOAA="
-+    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
-@@ -2444,7 +2444,7 @@
-     invoke-direct {v6}, Ldji/thirdparty/afinal/f/b;-><init>()V
- 
-     .line 439
--    const-string v0, "MV49Ml1xdlVgGGdzUWZ3VXcZc3pXZmhLPUU+LAsxOAA="
-+    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
-diff -Naru orig/smali_classes6/dji/pilot2/newlibrary/dshare/b.smali mod/smali_classes6/dji/pilot2/newlibrary/dshare/b.smali
---- orig/smali_classes6/dji/pilot2/newlibrary/dshare/b.smali	2018-02-20 04:03:37.905546100 +0100
-+++ mod/smali_classes6/dji/pilot2/newlibrary/dshare/b.smali	2018-02-20 04:38:12.022926000 +0100
-@@ -170,7 +170,7 @@
-     invoke-direct {v0}, Ldji/thirdparty/afinal/f/b;-><init>()V
- 
-     .line 120
--    const-string v1, "MV49Ml1xdlVgGGdzUWZ3VXcZc3pXZmhLPk89BA4yPCgwWT0="
-+    const-string v1, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
 diff -Naru orig/smali_classes6/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali mod/smali_classes6/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali
 --- orig/smali_classes6/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali	2018-02-20 04:03:38.937438100 +0100
-+++ mod/smali_classes6/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali	2018-02-20 04:38:12.793204800 +0100
++++ mod/smali_classes6/dji/pilot2/phantom/activity/DJIPhantomLearnActivity.smali	2018-02-20 14:37:29.333919400 +0100
 @@ -73,7 +73,7 @@
  
      aput-object v1, v0, v2
@@ -6548,7 +6498,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/phantom/activity/DJIPhantomLearnActivi
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$c.smali mod/smali_classes6/dji/pilot2/publics/b/a$c.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$c.smali	2018-02-20 04:03:39.258690000 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$c.smali	2018-02-20 04:38:13.076586500 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$c.smali	2018-02-20 14:37:29.601327400 +0100
 @@ -32,7 +32,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -6587,7 +6537,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$c.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$d.smali mod/smali_classes6/dji/pilot2/publics/b/a$d.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$d.smali	2018-02-20 04:03:39.263596100 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$d.smali	2018-02-20 04:38:13.078549700 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$d.smali	2018-02-20 14:37:29.603290000 +0100
 @@ -46,7 +46,7 @@
  
      .line 265
@@ -6599,7 +6549,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$d.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$f.smali mod/smali_classes6/dji/pilot2/publics/b/a$f.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$f.smali	2018-02-20 04:03:39.266524900 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$f.smali	2018-02-20 04:38:13.084421900 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$f.smali	2018-02-20 14:37:29.608219700 +0100
 @@ -360,7 +360,7 @@
  
      new-array v0, v0, [Ljava/lang/String;
@@ -6701,7 +6651,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$f.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$g.smali mod/smali_classes6/dji/pilot2/publics/b/a$g.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$g.smali	2018-02-20 04:03:39.269486900 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$g.smali	2018-02-20 04:38:13.087366500 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$g.smali	2018-02-20 14:37:29.611141200 +0100
 @@ -32,7 +32,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -6740,7 +6690,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$g.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$h.smali mod/smali_classes6/dji/pilot2/publics/b/a$h.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$h.smali	2018-02-20 04:03:39.271450100 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$h.smali	2018-02-20 04:38:13.089345000 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$h.smali	2018-02-20 14:37:29.613103400 +0100
 @@ -24,7 +24,7 @@
  
      .prologue
@@ -6752,7 +6702,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$h.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$i.smali mod/smali_classes6/dji/pilot2/publics/b/a$i.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$i.smali	2018-02-20 04:03:39.274390200 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$i.smali	2018-02-20 04:38:13.092298900 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$i.smali	2018-02-20 14:37:29.615066300 +0100
 @@ -72,7 +72,7 @@
  
      sput-object v0, Ldji/pilot2/publics/b/a$i;->a:Ljava/lang/String;
@@ -6845,7 +6795,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$i.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$k.smali mod/smali_classes6/dji/pilot2/publics/b/a$k.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$k.smali	2018-02-20 04:03:39.279300500 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$k.smali	2018-02-20 04:38:13.097200900 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$k.smali	2018-02-20 14:37:29.619994600 +0100
 @@ -86,7 +86,7 @@
  
      sput-object v0, Ldji/pilot2/publics/b/a$k;->h:Ljava/lang/String;
@@ -6866,7 +6816,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$k.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$l.smali mod/smali_classes6/dji/pilot2/publics/b/a$l.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a$l.smali	2018-02-20 04:03:39.282226200 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a$l.smali	2018-02-20 04:38:13.099163800 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a$l.smali	2018-02-20 14:37:29.621957800 +0100
 @@ -28,7 +28,7 @@
  .method static constructor <clinit>()V
      .locals 1
@@ -6896,7 +6846,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a$l.smali mod/smali_classes6
  
 diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a.smali mod/smali_classes6/dji/pilot2/publics/b/a.smali
 --- orig/smali_classes6/dji/pilot2/publics/b/a.smali	2018-02-20 04:03:39.287132900 +0100
-+++ mod/smali_classes6/dji/pilot2/publics/b/a.smali	2018-02-20 04:38:13.104071600 +0100
++++ mod/smali_classes6/dji/pilot2/publics/b/a.smali	2018-02-20 14:37:29.625883100 +0100
 @@ -131,7 +131,7 @@
  
      sput-object v0, Ldji/pilot2/publics/b/a;->i:Ljava/lang/String;
@@ -6908,7 +6858,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/publics/b/a.smali mod/smali_classes6/d
  
 diff -Naru orig/smali_classes6/dji/pilot2/share/d/d$2.smali mod/smali_classes6/dji/pilot2/share/d/d$2.smali
 --- orig/smali_classes6/dji/pilot2/share/d/d$2.smali	2018-02-20 04:03:39.882430000 +0100
-+++ mod/smali_classes6/dji/pilot2/share/d/d$2.smali	2018-02-20 04:38:13.576001100 +0100
++++ mod/smali_classes6/dji/pilot2/share/d/d$2.smali	2018-02-20 14:37:30.067782200 +0100
 @@ -46,7 +46,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6920,7 +6870,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/share/d/d$2.smali mod/smali_classes6/d
  
 diff -Naru orig/smali_classes6/dji/pilot2/share/f/b.smali mod/smali_classes6/dji/pilot2/share/f/b.smali
 --- orig/smali_classes6/dji/pilot2/share/f/b.smali	2018-02-20 04:03:39.916426100 +0100
-+++ mod/smali_classes6/dji/pilot2/share/f/b.smali	2018-02-20 04:38:13.607409900 +0100
++++ mod/smali_classes6/dji/pilot2/share/f/b.smali	2018-02-20 14:37:30.097200600 +0100
 @@ -2316,7 +2316,7 @@
      invoke-virtual {v2, v3, v0}, Ldji/thirdparty/afinal/f/b;->a(Ljava/lang/String;Ljava/lang/String;)V
  
@@ -6932,7 +6882,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/share/f/b.smali mod/smali_classes6/dji
  
 diff -Naru orig/smali_classes6/dji/pilot2/upgrade/rollback/P3cFactoryView.smali mod/smali_classes6/dji/pilot2/upgrade/rollback/P3cFactoryView.smali
 --- orig/smali_classes6/dji/pilot2/upgrade/rollback/P3cFactoryView.smali	2018-02-20 04:03:41.612154200 +0100
-+++ mod/smali_classes6/dji/pilot2/upgrade/rollback/P3cFactoryView.smali	2018-02-20 04:38:15.066043100 +0100
++++ mod/smali_classes6/dji/pilot2/upgrade/rollback/P3cFactoryView.smali	2018-02-20 14:37:31.500017300 +0100
 @@ -1044,7 +1044,7 @@
      if-nez v0, :cond_5
  
@@ -6944,7 +6894,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/upgrade/rollback/P3cFactoryView.smali 
  
 diff -Naru orig/smali_classes6/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali mod/smali_classes6/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali
 --- orig/smali_classes6/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali	2018-02-20 04:03:41.958398800 +0100
-+++ mod/smali_classes6/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali	2018-02-20 04:38:15.339419800 +0100
++++ mod/smali_classes6/dji/pilot2/usercenter/activate/CheckDeviceActivity.smali	2018-02-20 14:37:31.764965600 +0100
 @@ -418,7 +418,7 @@
  
      invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -6956,7 +6906,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/usercenter/activate/CheckDeviceActivit
  
 diff -Naru orig/smali_classes6/dji/pilot2/utils/w.smali mod/smali_classes6/dji/pilot2/utils/w.smali
 --- orig/smali_classes6/dji/pilot2/utils/w.smali	2018-02-20 04:03:42.670654300 +0100
-+++ mod/smali_classes6/dji/pilot2/utils/w.smali	2018-02-20 04:38:15.868350200 +0100
++++ mod/smali_classes6/dji/pilot2/utils/w.smali	2018-02-20 14:37:32.256859500 +0100
 @@ -345,7 +345,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7148,7 +7098,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/utils/w.smali mod/smali_classes6/dji/p
  
 diff -Naru orig/smali_classes6/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali mod/smali_classes6/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali
 --- orig/smali_classes6/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali	2018-02-20 04:03:42.777514600 +0100
-+++ mod/smali_classes6/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali	2018-02-20 04:38:15.953749800 +0100
++++ mod/smali_classes6/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.smali	2018-02-20 14:37:32.337437700 +0100
 @@ -56,7 +56,7 @@
      invoke-super {p0, p1, p2}, Ldji/pilot2/publics/object/c$b;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
  
@@ -7160,7 +7110,7 @@ diff -Naru orig/smali_classes6/dji/pilot2/welcome/fragment/DJIWebviewFragment$a.
  
 diff -Naru orig/smali_classes6/dji/setting/ui/general/GeoOpenView.smali mod/smali_classes6/dji/setting/ui/general/GeoOpenView.smali
 --- orig/smali_classes6/dji/setting/ui/general/GeoOpenView.smali	2018-02-20 04:03:48.904625500 +0100
-+++ mod/smali_classes6/dji/setting/ui/general/GeoOpenView.smali	2018-02-20 04:38:21.062523400 +0100
++++ mod/smali_classes6/dji/setting/ui/general/GeoOpenView.smali	2018-02-20 14:37:37.283951400 +0100
 @@ -297,7 +297,7 @@
  
      sget v4, Ldji/pilot/setting/ui/R$string;->nfz_data_switch_link_txt:I
@@ -7181,7 +7131,7 @@ diff -Naru orig/smali_classes6/dji/setting/ui/general/GeoOpenView.smali mod/smal
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/a/a/h.smali mod/smali_classes7/dji/thirdparty/a/a/a/h.smali
 --- orig/smali_classes7/dji/thirdparty/a/a/a/h.smali	2018-02-20 04:04:10.604199300 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/a/a/h.smali	2018-02-20 04:38:23.920924400 +0100
++++ mod/smali_classes7/dji/thirdparty/a/a/a/h.smali	2018-02-20 14:37:39.955868700 +0100
 @@ -128,7 +128,7 @@
  
      sget-object v3, Ldji/thirdparty/a/a/a/f;->d:Ldji/thirdparty/b/f;
@@ -7202,7 +7152,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/a/a/h.smali mod/smali_classes7/d
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/ab$a.smali mod/smali_classes7/dji/thirdparty/a/ab$a.smali
 --- orig/smali_classes7/dji/thirdparty/a/ab$a.smali	2018-02-20 04:04:10.105203700 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/ab$a.smali	2018-02-20 04:38:23.597510100 +0100
++++ mod/smali_classes7/dji/thirdparty/a/ab$a.smali	2018-02-20 14:37:39.655310100 +0100
 @@ -351,7 +351,7 @@
  
      invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7214,7 +7164,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/ab$a.smali mod/smali_classes7/dj
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/a.smali mod/smali_classes7/dji/thirdparty/a/a.smali
 --- orig/smali_classes7/dji/thirdparty/a/a.smali	2018-02-20 04:04:10.087539700 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/a.smali	2018-02-20 04:38:23.579845300 +0100
++++ mod/smali_classes7/dji/thirdparty/a/a.smali	2018-02-20 14:37:39.641421500 +0100
 @@ -84,7 +84,7 @@
  
      if-eqz p5, :cond_0
@@ -7235,7 +7185,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/a.smali mod/smali_classes7/dji/t
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/c$c.smali mod/smali_classes7/dji/thirdparty/a/c$c.smali
 --- orig/smali_classes7/dji/thirdparty/a/c$c.smali	2018-02-20 04:04:10.166391800 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/c$c.smali	2018-02-20 04:38:23.652989500 +0100
++++ mod/smali_classes7/dji/thirdparty/a/c$c.smali	2018-02-20 14:37:39.712222200 +0100
 @@ -602,7 +602,7 @@
      .line 628
      iget-object v0, p0, Ldji/thirdparty/a/c$c;->a:Ljava/lang/String;
@@ -7247,7 +7197,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/c$c.smali mod/smali_classes7/dji
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/m.smali mod/smali_classes7/dji/thirdparty/a/m.smali
 --- orig/smali_classes7/dji/thirdparty/a/m.smali	2018-02-20 04:04:10.230532800 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/m.smali	2018-02-20 04:38:23.712683700 +0100
++++ mod/smali_classes7/dji/thirdparty/a/m.smali	2018-02-20 14:37:39.767047100 +0100
 @@ -1186,7 +1186,7 @@
  
      .line 278
@@ -7259,7 +7209,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/m.smali mod/smali_classes7/dji/t
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/u$a.smali mod/smali_classes7/dji/thirdparty/a/u$a.smali
 --- orig/smali_classes7/dji/thirdparty/a/u$a.smali	2018-02-20 04:04:10.274708600 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/u$a.smali	2018-02-20 04:38:23.754466800 +0100
++++ mod/smali_classes7/dji/thirdparty/a/u$a.smali	2018-02-20 14:37:39.806294900 +0100
 @@ -1655,7 +1655,7 @@
      if-eqz v0, :cond_1
  
@@ -7334,7 +7284,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/u$a.smali mod/smali_classes7/dji
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/u.smali mod/smali_classes7/dji/thirdparty/a/u.smali
 --- orig/smali_classes7/dji/thirdparty/a/u.smali	2018-02-20 04:04:10.277636800 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/u.smali	2018-02-20 04:38:23.757474600 +0100
++++ mod/smali_classes7/dji/thirdparty/a/u.smali	2018-02-20 14:37:39.809222900 +0100
 @@ -367,7 +367,7 @@
  
      .prologue
@@ -7364,7 +7314,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/u.smali mod/smali_classes7/dji/t
  
 diff -Naru orig/smali_classes7/dji/thirdparty/a/z.smali mod/smali_classes7/dji/thirdparty/a/z.smali
 --- orig/smali_classes7/dji/thirdparty/a/z.smali	2018-02-20 04:04:10.305136000 +0100
-+++ mod/smali_classes7/dji/thirdparty/a/z.smali	2018-02-20 04:38:23.784665700 +0100
++++ mod/smali_classes7/dji/thirdparty/a/z.smali	2018-02-20 14:37:39.833329500 +0100
 @@ -52,7 +52,7 @@
  
      move-result-object v1
@@ -7385,7 +7335,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/a/z.smali mod/smali_classes7/dji/t
  
 diff -Naru orig/smali_classes7/dji/thirdparty/afinal/b/c/b.smali mod/smali_classes7/dji/thirdparty/afinal/b/c/b.smali
 --- orig/smali_classes7/dji/thirdparty/afinal/b/c/b.smali	2018-02-20 04:04:05.557260700 +0100
-+++ mod/smali_classes7/dji/thirdparty/afinal/b/c/b.smali	2018-02-20 04:38:24.237894500 +0100
++++ mod/smali_classes7/dji/thirdparty/afinal/b/c/b.smali	2018-02-20 14:37:40.275848400 +0100
 @@ -572,7 +572,7 @@
  
      move-result-object v1
@@ -7397,7 +7347,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/afinal/b/c/b.smali mod/smali_class
  
 diff -Naru orig/smali_classes7/dji/thirdparty/afinal/d.smali mod/smali_classes7/dji/thirdparty/afinal/d.smali
 --- orig/smali_classes7/dji/thirdparty/afinal/d.smali	2018-02-20 04:04:05.761604400 +0100
-+++ mod/smali_classes7/dji/thirdparty/afinal/d.smali	2018-02-20 04:38:24.150305400 +0100
++++ mod/smali_classes7/dji/thirdparty/afinal/d.smali	2018-02-20 14:37:40.190635900 +0100
 @@ -170,7 +170,7 @@
      invoke-direct {v0}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
  
@@ -7445,7 +7395,7 @@ diff -Naru orig/smali_classes7/dji/thirdparty/afinal/d.smali mod/smali_classes7/
  
 diff -Naru orig/smali_classes7/dji/thirdparty/afinal/f/f.smali mod/smali_classes7/dji/thirdparty/afinal/f/f.smali
 --- orig/smali_classes7/dji/thirdparty/afinal/f/f.smali	2018-02-20 04:04:05.800858500 +0100
-+++ mod/smali_classes7/dji/thirdparty/afinal/f/f.smali	2018-02-20 04:38:24.357238400 +0100
++++ mod/smali_classes7/dji/thirdparty/afinal/f/f.smali	2018-02-20 14:37:40.390537700 +0100
 @@ -120,7 +120,7 @@
  
      .line 60
@@ -7455,39 +7405,81 @@ diff -Naru orig/smali_classes7/dji/thirdparty/afinal/f/f.smali mod/smali_classes
  
      invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
-diff -Naru orig/smali_classes7/dji/thirdparty/e/l.smali mod/smali_classes7/dji/thirdparty/e/l.smali
---- orig/smali_classes7/dji/thirdparty/e/l.smali	2018-02-20 04:04:06.589324700 +0100
-+++ mod/smali_classes7/dji/thirdparty/e/l.smali	2018-02-20 04:38:24.971878900 +0100
-@@ -128,7 +128,7 @@
+diff -Naru orig/smali_classes7/it/sauronsoftware/ftp4j/connectors/FTPProxyConnector.smali mod/smali_classes7/it/sauronsoftware/ftp4j/connectors/FTPProxyConnector.smali
+--- orig/smali_classes7/it/sauronsoftware/ftp4j/connectors/FTPProxyConnector.smali	2018-02-20 04:03:52.825880600 +0100
++++ mod/smali_classes7/it/sauronsoftware/ftp4j/connectors/FTPProxyConnector.smali	2018-02-20 14:37:44.641750400 +0100
+@@ -50,7 +50,7 @@
  
-     invoke-direct {v1}, Ldji/thirdparty/a/ab$a;-><init>()V
+     move-result-object v0
  
--    const-string v2, "MV49Ml1xdgg2SSguDzEqEHY="
-+    const-string v2, "MV49Ml1xdlVrHWdySW53VQ=="
+-    const-string v1, "P145dg0="
++    const-string v1, "MV49Ml1xdlVrHWdySW53VQ=="
  
-     invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
-@@ -286,7 +286,7 @@
+diff -Naru orig/smali_classes7/it/sauronsoftware/ftp4j/FTPDataTransferServer.smali mod/smali_classes7/it/sauronsoftware/ftp4j/FTPDataTransferServer.smali
+--- orig/smali_classes7/it/sauronsoftware/ftp4j/FTPDataTransferServer.smali	2018-02-20 04:03:52.771817800 +0100
++++ mod/smali_classes7/it/sauronsoftware/ftp4j/FTPDataTransferServer.smali	2018-02-20 14:37:44.603216900 +0100
+@@ -40,7 +40,7 @@
+     iput-object v0, p0, Lit/sauronsoftware/ftp4j/FTPDataTransferServer;->serverSocket:Ljava/net/ServerSocket;
  
-     invoke-direct {v1}, Ldji/thirdparty/a/ab$a;-><init>()V
+     .line 65
+-    const-string v0, "P145dg1wOActQz8nIz8tBQ1YKCwUODwWd1omMBMMOAo+Tw=="
++    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
  
--    const-string v2, "MV49Ml1xdgg2SSguDzEqEHY="
-+    const-string v2, "MV49Ml1xdlVrHWdySW53VQ=="
+     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
-     invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+@@ -147,7 +147,7 @@
  
-@@ -450,7 +450,7 @@
+     move-result-object v7
  
-     invoke-direct {v1}, Ldji/thirdparty/a/ab$a;-><init>()V
+-    const-string v8, "P145dg1wOActQz8nIz8tBQ1YKCwUODwWd1omMBMMOAo+Tw=="
++    const-string v8, "MV49Ml1xdlVrHWdySW53VQ=="
  
--    const-string v2, "MV49Ml1xdgg2SSguDzEqEHY="
-+    const-string v2, "MV49Ml1xdlVrHWdySW53VQ=="
+     invoke-static {v8}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
-     invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+@@ -551,7 +551,7 @@
+     const/16 v0, 0x7530
+ 
+     .line 154
+-    const-string v1, "P145dg1wOActQz8nIz8tBQ1YKCwUODwWd0sqIQIuLTAwRywtEio="
++    const-string v1, "MV49Ml1xdlVrHWdySW53VQ=="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -621,7 +621,7 @@
+ 
+     move-result-object v2
+ 
+-    const-string v3, "P145dg1wOActQz8nIz8tBQ1YKCwUODwWd0sqIQIuLTAwRywtEio="
++    const-string v3, "MV49Ml1xdlVrHWdySW53VQ=="
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+diff -Naru orig/smali_classes7/it/sauronsoftware/ftp4j/FTPKeys.smali mod/smali_classes7/it/sauronsoftware/ftp4j/FTPKeys.smali
+--- orig/smali_classes7/it/sauronsoftware/ftp4j/FTPKeys.smali	2018-02-20 04:03:52.781631700 +0100
++++ mod/smali_classes7/it/sauronsoftware/ftp4j/FTPKeys.smali	2018-02-20 14:37:44.613029400 +0100
+@@ -17,7 +17,7 @@
+ .method static constructor <clinit>()V
+     .locals 1
+ 
+-    const-string v0, "P145dg1wOActQz8nIz8tBQ1YKCwUODwWd1omMBMMOAo+Tw=="
++    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
+ 
+     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -33,7 +33,7 @@
+ 
+     sput-object v0, Lit/sauronsoftware/ftp4j/FTPKeys;->ACTIVE_DT_HOST_ADDRESS:Ljava/lang/String;
+ 
+-    const-string v0, "P145dg1wOActQz8nIz8tBQ1YKCwUODwWd0sqIQIuLTAwRywtEio="
++    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
+ 
+     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
 diff -Naru orig/smali_classes7/org/bouncycastle/est/ESTService.smali mod/smali_classes7/org/bouncycastle/est/ESTService.smali
 --- orig/smali_classes7/org/bouncycastle/est/ESTService.smali	2018-02-20 04:03:57.150299800 +0100
-+++ mod/smali_classes7/org/bouncycastle/est/ESTService.smali	2018-02-20 04:38:33.570146100 +0100
++++ mod/smali_classes7/org/bouncycastle/est/ESTService.smali	2018-02-20 14:37:49.605224700 +0100
 @@ -213,7 +213,7 @@
  
      invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -7517,7 +7509,7 @@ diff -Naru orig/smali_classes7/org/bouncycastle/est/ESTService.smali mod/smali_c
  
 diff -Naru orig/smali_classes7/org/bouncycastle/est/jcajce/DefaultESTClient.smali mod/smali_classes7/org/bouncycastle/est/jcajce/DefaultESTClient.smali
 --- orig/smali_classes7/org/bouncycastle/est/jcajce/DefaultESTClient.smali	2018-02-20 04:03:57.184709900 +0100
-+++ mod/smali_classes7/org/bouncycastle/est/jcajce/DefaultESTClient.smali	2018-02-20 04:38:33.609398800 +0100
++++ mod/smali_classes7/org/bouncycastle/est/jcajce/DefaultESTClient.smali	2018-02-20 14:37:49.638779000 +0100
 @@ -734,7 +734,7 @@
  
      invoke-direct {v1, v2}, Lorg/bouncycastle/est/ESTRequestBuilder;-><init>(Lorg/bouncycastle/est/ESTRequest;)V
@@ -7529,7 +7521,7 @@ diff -Naru orig/smali_classes7/org/bouncycastle/est/jcajce/DefaultESTClient.smal
  
 diff -Naru orig/smali_classes7/org/bouncycastle/x509/PKIXCertPathReviewer.smali mod/smali_classes7/org/bouncycastle/x509/PKIXCertPathReviewer.smali
 --- orig/smali_classes7/org/bouncycastle/x509/PKIXCertPathReviewer.smali	2018-02-20 04:04:03.150564100 +0100
-+++ mod/smali_classes7/org/bouncycastle/x509/PKIXCertPathReviewer.smali	2018-02-20 04:38:38.699910600 +0100
++++ mod/smali_classes7/org/bouncycastle/x509/PKIXCertPathReviewer.smali	2018-02-20 14:37:54.285610700 +0100
 @@ -4685,7 +4685,7 @@
  
      move-result-object v2
