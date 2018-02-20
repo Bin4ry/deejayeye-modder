@@ -1,0 +1,22 @@
+diff -Naru orig/smali_classes2/com/dji/update/config/OnlineConfig.smali mod/smali_classes2/com/dji/update/config/OnlineConfig.smali
+--- orig/smali_classes2/com/dji/update/config/OnlineConfig.smali        2018-02-18 20:11:32.866724700 +0100
++++ mod/smali_classes2/com/dji/update/config/OnlineConfig.smali 2018-02-18 20:14:21.044158200 +0100
+@@ -387,7 +387,7 @@
+
+     .prologue
+     .line 66
+-    iget-boolean v0, p0, Lcom/dji/update/config/OnlineConfig;->force_update:Z
++    const v0, 0x0
+
+     return v0
+ .end method
+@@ -397,7 +397,7 @@
+
+     .prologue
+     .line 54
+-    iget-boolean v0, p0, Lcom/dji/update/config/OnlineConfig;->update:Z
++    const v0, 0x0
+
+     return v0
+ .end method
+
