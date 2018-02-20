@@ -1,0 +1,48 @@
+diff -Naru orig/smali_classes2/com/dji/frame/c/c.smali mod/smali_classes2/com/dji/frame/c/c.smali
+--- orig/smali_classes2/com/dji/frame/c/c.smali 2018-02-18 20:11:32.166096300 +0100
++++ mod/smali_classes2/com/dji/frame/c/c.smali  2018-02-18 20:18:35.619880100 +0100
+@@ -404,11 +404,7 @@
+
+     const/4 v1, 0x0
+
+-    const-string v2, "PUAgbAM8"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "/mnt/sdcard/DJI/dji_mod_4_1_22.db"
+
+     sget-boolean v3, Lcom/dji/frame/c/c;->f:Z
+
+diff -Naru orig/smali_classes7/dji/thirdparty/afinal/b$a.smali mod/smali_classes7/dji/thirdparty/afinal/b$a.smali
+--- orig/smali_classes7/dji/thirdparty/afinal/b$a.smali 2018-02-18 20:10:21.278366500 +0100
++++ mod/smali_classes7/dji/thirdparty/afinal/b$a.smali  2018-02-18 20:19:00.741464800 +0100
+@@ -46,11 +46,7 @@
+     iput-object v0, p0, Ldji/thirdparty/afinal/b$a;->a:Landroid/content/Context;
+
+     .line 877
+-    const-string v0, "PUAgbAM8"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_22.db"
+
+     iput-object v0, p0, Ldji/thirdparty/afinal/b$a;->b:Ljava/lang/String;
+
+diff -Naru orig/smali_classes7/dji/thirdparty/afinal/c$a.smali mod/smali_classes7/dji/thirdparty/afinal/c$a.smali
+--- orig/smali_classes7/dji/thirdparty/afinal/c$a.smali 2018-02-18 20:10:21.348626900 +0100
++++ mod/smali_classes7/dji/thirdparty/afinal/c$a.smali  2018-02-18 20:19:24.547947500 +0100
+@@ -46,11 +46,7 @@
+     iput-object v0, p0, Ldji/thirdparty/afinal/c$a;->a:Landroid/content/Context;
+
+     .line 887
+-    const-string v0, "PUAgbAM8"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "/mnt/sdcard/DJI/dji_mod_4_1_22.db"
+
+     iput-object v0, p0, Ldji/thirdparty/afinal/c$a;->b:Ljava/lang/String;
+
