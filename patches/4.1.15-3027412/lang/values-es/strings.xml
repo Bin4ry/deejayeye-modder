@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?> 
 <resources>
     <string name="com_facebook_device_auth_instructions">Visita %@ en tu smartphone u ordenador e introduce este código:</string>
     <string name="com_facebook_image_download_unknown_error">Se produjo un error inesperado al descargar una imagen.</string>
