@@ -102,6 +102,7 @@ for /f "tokens=*" %%f in ('dir /b %patches%\*.patch') do ( copy %patches%\%%f %p
 rename "%patches%\origin.patch" origin
 echo.-: Decompiling original apk...
 java -jar tools\apktool.jar d -o %d_out% PutApkHere\orig.apk
+xcopy %patches%\lang %d_out%\res\ /s /e /i
 cd %d_out%
 ..\tools\patch  -l -s -p1 -N -r - < ..\%p_out%\origin.patch
 if exist "..\%patches%\so2.bspatch" (

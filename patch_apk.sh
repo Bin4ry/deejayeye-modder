@@ -89,6 +89,11 @@ do
 	echo "    $patch" >> ../$log_file
 done
 
+if [ -d ../patches/$apkver-$apkvcode/lang ]
+then
+cp -rf ../patches/$apkver-$apkvcode/lang/. res/
+fi
+
 dos2unix ../patches/$apkver-$apkvcode/origin
 if [ -f ../patches/$apkver-$apkvcode/so2.bspatch ] 
 then
