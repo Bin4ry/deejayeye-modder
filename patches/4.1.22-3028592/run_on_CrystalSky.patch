@@ -1,0 +1,111 @@
+diff -Naur orig/smali/dji/midware/data/config/a/a.smali mod/smali/dji/midware/data/config/a/a.smali
+--- orig/smali/dji/midware/data/config/a/a.smali	2018-02-24 14:55:53.412292000 +0100
++++ mod/smali/dji/midware/data/config/a/a.smali	2018-02-24 14:57:52.101740900 +0100
+@@ -71,7 +71,7 @@
+     .line 27
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "CUUkIxMx"
++    const-string v1, "DUUkIxMx"
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -79,7 +79,7 @@
+ 
+     const/16 v2, 0x65
+ 
+-    const-string v3, "HmZ6clcb"
++    const-string v3, "ImZ6clcb"
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -92,7 +92,7 @@
+     .line 31
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "GlgwMRM/NTcyUwg="
++    const-string v1, "HlgwMRM/NTcyUwg="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -100,7 +100,7 @@
+ 
+     const/16 v2, 0xc9
+ 
+-    const-string v3, "A3l/clcf"
++    const-string v3, "B3l/clcf"
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -113,7 +113,7 @@
+     .line 35
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "GlgwMRM/NTcyUws="
++    const-string v1, "HlgwMRM/NTcyUws="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -121,7 +121,7 @@
+ 
+     const/16 v2, 0xca
+ 
+-    const-string v3, "A3l/clcc"
++    const-string v3, "B3l/clcc"
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -134,7 +134,7 @@
+     .line 39
+     new-instance v0, Ldji/midware/data/config/a/a;
+ 
+-    const-string v1, "FE14EQ=="
++    const-string v1, "GE14EQ=="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+@@ -142,7 +142,7 @@
+ 
+     const/16 v2, 0x12d
+ 
+-    const-string v3, "GG19clI="
++    const-string v3, "HG19clI="
+ 
+     invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+diff -Naur orig/smali/dji/midware/l/e.smali mod/smali/dji/midware/l/e.smali
+--- orig/smali/dji/midware/l/e.smali	2018-02-24 14:55:53.948135300 +0100
++++ mod/smali/dji/midware/l/e.smali	2018-02-24 15:01:35.028085900 +0100
+@@ -25,7 +25,7 @@
+ 
+     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+ 
+-    const-string v1, "I1l/clc="
++    const-string v1, "J1l/clc="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+diff -Naur orig/smali_classes3/dji/c/a/a.smali mod/smali_classes3/dji/c/a/a.smali
+--- orig/smali_classes3/dji/c/a/a.smali	2018-02-24 14:55:58.517152200 +0100
++++ mod/smali_classes3/dji/c/a/a.smali	2018-02-24 15:02:06.401316100 +0100
+@@ -29,7 +29,7 @@
+ 
+     move-result-object v0
+ 
+-    const-string v1, "I1l/clc="
++    const-string v1, "J1l/clc="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
+diff -Naur orig/smali_classes6/dji/pilot2/utils/ae.smali mod/smali_classes6/dji/pilot2/utils/ae.smali
+--- orig/smali_classes6/dji/pilot2/utils/ae.smali	2018-02-24 14:56:01.304845200 +0100
++++ mod/smali_classes6/dji/pilot2/utils/ae.smali	2018-02-24 15:02:51.520052300 +0100
+@@ -481,7 +481,7 @@
+ 
+     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+ 
+-    const-string v1, "I1l/clc="
++    const-string v1, "J1l/clc="
+ 
+     invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
