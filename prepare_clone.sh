@@ -47,11 +47,25 @@ else
     SED_CMD=gsed
 fi
 
-./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
-./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/scan/android/CaptureActivity\$11.smali"
-./defog_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
-./defog_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
-./defog_strings_one_file.py 2 "$1/smali_classes4/dji/pilot/fpv/control/y.smali"
+apkver=`cat $1/apktool.yml | grep versionName: | awk '{print $2}'`
+
+case $apkver in
+    "4.1.15")
+        ./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot2/scan/android/CaptureActivity\$11.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes4/dji/pilot/fpv/control/y.smali"
+        ;;
+    "4.1.22")
+        ./defog_strings_one_file.py 2 "$1/smali_classes6/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot/fpv/control/z.smali"
+        ;;
+    *)
+    ;;
+esac
 
 substitution_regex_packagename="s/dji.go.v4/$2/g"
 substitution_regex_googleapi="s/AIzaSyB-ICOGgAOCBopE5MdBDJXEkljD27pBSiI/$3/g"
