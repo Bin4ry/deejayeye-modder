@@ -48,7 +48,7 @@ brings back the Wifi channel selection screen! Works but the graph where you can
 enableCacheControl:
 brings back the option whether to cache video locally or not. May reduced crashes and CPU-load if switched off.
 
-wind:
+wind/windWarning:
 removes the "high wind velocity. fly with caution." pop-up.
 
 wheel:
