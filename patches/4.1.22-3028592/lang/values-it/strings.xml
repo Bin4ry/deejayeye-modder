@@ -3673,8 +3673,8 @@ Vola con cautela. "</string>
     <string name="setting_rc_delete_confirm">Elimina?</string>
     <string name="setting_ui_battery">Drone Battery</string>
     <string name="setting_ui_battery_adv">Impostazioni avanzate</string>
-    <string name="setting_ui_battery_charge_times">orari caricati</string>
-    <string name="setting_ui_battery_charge_times_dot">orari caricati:</string>
+    <string name="setting_ui_battery_charge_times">Numero delle cariche</string>
+    <string name="setting_ui_battery_charge_times_dot">Numero delle cariche:</string>
     <string name="setting_ui_battery_current_volume">Potenza rimanente</string>
     <string name="setting_ui_battery_discharge_day">%d Giorni</string>
     <string name="setting_ui_battery_discharge_desc">Tempo di scarico</string>
