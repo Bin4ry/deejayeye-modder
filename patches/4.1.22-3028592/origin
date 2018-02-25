@@ -10,3 +10,15 @@ diff -Naur go-orig/res/values/strings.xml go-mod/res/values/strings.xml
      <string name="phantom_dji_osmo_camera">Camera</string>
      <string name="phantom_dji_phantom">PHANTOM</string>
      <string name="phantom_dji_plz_connect">Connect Your Aircraft</string>
+diff -Naur DJI_4122_ori/smali_classes6/dji/pilot2/scan/android/CaptureActivity$7.smali DJI_4122_patch/smali_classes6/dji/pilot2/scan/android/CaptureActivity$7.smali
+--- DJI_4122_ori/smali_classes6/dji/pilot2/scan/android/CaptureActivity$7.smali	2018-02-24 14:56:01.060760600 +0100
++++ DJI_4122_patch/smali_classes6/dji/pilot2/scan/android/CaptureActivity$7.smali	2018-02-25 11:00:45.652509400 +0100
+@@ -61,7 +61,7 @@
+ 
+     move-result-object v1
+ 
+-    const-string v2, "PUAgbBc3NQstBDkjAw=="
++    const-string v2, "PUAgbAAxdxJt"
+ 
+     invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
