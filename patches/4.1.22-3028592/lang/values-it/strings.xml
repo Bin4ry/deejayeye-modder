@@ -1603,7 +1603,7 @@ Modello:%4$s "</string>
     <string name="fpv_gensetting_gimbal">Gimbal</string>
     <string name="fpv_gensetting_gimbal_auto_calibration_tip">"Controlla che l'aereo si trovi su una superficie piana e nulla stia ostruendo il movimento del gimbal. Toccare OK per iniziare la calibrazione automatica."</string>
     <string name="fpv_gensetting_gimbal_cali_fail">Calibrazione del giunto gimbal fallita</string>
-    <string name="fpv_gensetting_gimbal_cali_success">Calibrazione cardanica riuscita</string>
+    <string name="fpv_gensetting_gimbal_cali_success">Calibrazione gimbal riuscita</string>
     <string name="fpv_gensetting_gimbal_caling">"La calibrazione del giunto gimbal è%1$s %%completa. Non spostare l'aereo."</string>
     <string name="fpv_gensetting_gimbal_mode">Gimbal Mode</string>
     <string name="fpv_gensetting_gimbal_roll_fine_tune">Regola Rotolo Gimbal</string>
@@ -1885,7 +1885,7 @@ Modello:%4$s "</string>
     <string name="fpv_rc_control_title">Slave richiede controllo Gimbal</string>
     <string name="fpv_rc_gain">"Guadagno &amp; Sintonizzazione dell'Expo"</string>
     <string name="fpv_rc_master_map_save_tip">"Completare l'installazione prima di salvare."</string>
-    <string name="fpv_rc_wheel_gain">Velocità della ghiera cardanica</string>
+    <string name="fpv_rc_wheel_gain">Velocità della ghiera del gimbal</string>
     <string name="fpv_rcsetting_calibrate_note">"Spegni l'aeromobile, quindi calibra il telecomando."</string>
     <string name="fpv_rcsetting_cannot_frequency_motorup">"Il controller remoto non può essere collegato quando i motori dell'aeromobile sono in esecuzione."</string>
     <string name="fpv_rcsetting_change_function">Cambia funzione del telecomando?</string>
@@ -3132,8 +3132,8 @@ Vola con cautela. "</string>
     <string name="mc_exp_description">"L'asse X mostra l'output fisico della levetta manipolata. L'asse Y mostra l'uscita di controllo dello stick manipolato. L'intervallo va da 0,2 a 0,8."</string>
     <string name="mc_limit_height_reachded_reason_gps">Altitudine massima avvicinata. Attendere il ritorno al normale segnale satellitare GPS per salire.</string>
     <string name="mc_limit_height_reached_reason_campass">Temp Max Altitude Approached. Attendere che Compass Auto Calibration sia completato o calibrare manualmente la bussola su.</string>
-    <string name="mc_param_pack_mode_failed">"Impossibile accedere alla modalità Viaggio. Posiziona l'aeromobile su una superficie piana e dura, rimuovi la sospensione cardanica, quindi riprova."</string>
-    <string name="mc_param_pack_mode_success">"Rimuovi la sospensione cardanica dall'aereo. L'aereo ritrae automaticamente il carrello di atterraggio e attiva la Modalità Viaggio."</string>
+    <string name="mc_param_pack_mode_failed">"Impossibile accedere alla modalità Viaggio. Posiziona l'aeromobile su una superficie piana e dura, rimuovi la sospensione del gimbal, quindi riprova."</string>
+    <string name="mc_param_pack_mode_success">"Rimuovi la sospensione del gimbal dal drone. Il drone ritrae automaticamente il carrello di atterraggio e attiva la Modalità Viaggio."</string>
     <string name="mc_param_pack_mode_success_nocamera">"L'aeromobile ritrae automaticamente gli ingranaggi di atterraggio e attiva la modalità Viaggio."</string>
     <string name="mc_protect_confirm">Il carrello di atterraggio non si abbasserà automaticamente e la telecamera non sarà protetta se il carrello di atterraggio automatico è disabilitato.</string>
     <string name="mc_protect_desc">Intelligent Landing Gear</string>
@@ -3550,7 +3550,7 @@ Vola con cautela. "</string>
     <string name="rcsetting_pwd_warning">Le password devono essere lunghe 4 cifre.</string>
     <string name="rcsetting_request_permission">Richiedi controllo Gimbal</string>
     <string name="rcsetting_request_success">Richiesta di controllo del giunto gimbal riuscita.</string>
-    <string name="rcsetting_request_success_desc">Ora puoi controllare la direzione del giunto gimbal, scattare foto o video e impostare la sospensione cardanica in modalità libera.</string>
+    <string name="rcsetting_request_success_desc">Ora puoi controllare la direzione del giunto gimbal, scattare foto o video e impostare la sospensione del gimbal in modalità libera.</string>
     <string name="rcsetting_right">Right</string>
     <string name="rcsetting_slaver_limit">Limite numero slave raggiunto.</string>
     <string name="rcsetting_slow">lento</string>
@@ -3585,8 +3585,8 @@ Vola con cautela. "</string>
     <string name="rcupgrade_nonet_tip">Impossibile connettersi a Internet. Controlla la tua connessione di rete.</string>
     <string name="rcupgrade_package_error">Errore del pacchetto firmware. Si prega di scaricare di nuovo.</string>
     <string name="rcupgrade_upgrade">Avvia aggiornamento</string>
-    <string name="rcupgrade_upgrade220ac_tip">"Verificare che la batteria dell'aeromobile e del telecomando sia superiore al 50%, che l'aeromobile sia collegato al telecomando e che la copertura cardanica e il morsetto gimbal siano rimossi prima dell'aggiornamento. L'aggiornamento richiede circa 30 minuti. Non spegnere durante l'aggiornamento."</string>
-    <string name="rcupgrade_upgrade220gl_tip" formatted="false">"Rimuovere prima la copertura cardanica e il morsetto gimbal. Assicurarsi che la batteria dell'aeromodello e del telecomando sia al di sopra del 50%e che gli occhiali di protezione siano superiori al 25%prima dell'aggiornamento. Questo aggiornamento richiede circa 30 minuti. Non spegnere durante l'aggiornamento."</string>
+    <string name="rcupgrade_upgrade220ac_tip">"Verificare che la batteria dell'aeromobile e del telecomando sia superiore al 50%, che l'aeromobile sia collegato al telecomando e che la copertura del gimbal e il morsetto gimbal siano rimossi prima dell'aggiornamento. L'aggiornamento richiede circa 30 minuti. Non spegnere durante l'aggiornamento."</string>
+    <string name="rcupgrade_upgrade220gl_tip" formatted="false">"Rimuovere prima la copertura del gimbal e il morsetto gimbal. Assicurarsi che la batteria dell'aeromodello e del telecomando sia al di sopra del 50%e che gli occhiali di protezione siano superiori al 25%prima dell'aggiornamento. Questo aggiornamento richiede circa 30 minuti. Non spegnere durante l'aggiornamento."</string>
     <string name="rcupgrade_upgrade220rc_tip">"Assicurarsi che la batteria del telecomando sia superiore al 20%prima dell'aggiornamento. L'aggiornamento richiede circa 15 minuti. Non spegnere durante l'aggiornamento."</string>
     <string name="rcupgrade_upgrade_fail">Aggiornamento fallito</string>
     <string name="rcupgrade_upgrade_now">Aggiornamento in corso ...</string>
@@ -3815,7 +3815,7 @@ Vola con cautela. "</string>
     <string name="setting_ui_flyc_gain_yaw_endpoint">Yaw Endpoint</string>
     <string name="setting_ui_flyc_gear_hide">Disabilita blocco automatico del carrello di atterraggio</string>
     <string name="setting_ui_flyc_gear_hide_desc">"Quando l'aeromobile atterra, le sue marce si bloccheranno automaticamente. È possibile controllare manualmente le marce di atterraggio con la leva sul telecomando dopo aver disabilitato il blocco automatico del carrello."</string>
-    <string name="setting_ui_flyc_gear_hide_tip">"Questa funzione è solo a scopo di test. Sollevare l'aereo prima di utilizzare l'interruttore del carrello di atterraggio sul telecomando. In caso contrario, la sospensione cardanica o la fotocamera potrebbero colpire il suolo e provocare danni."</string>
+    <string name="setting_ui_flyc_gear_hide_tip">"Questa funzione è solo a scopo di test. Sollevare l'aereo prima di utilizzare l'interruttore del carrello di atterraggio sul telecomando. In caso contrario, la sospensione del gimbal o la fotocamera potrebbero colpire il suolo e provocare danni."</string>
     <string name="setting_ui_flyc_gear_protect">Carrello di atterraggio autoadattativo</string>
     <string name="setting_ui_flyc_gear_protect_tip">"Con lo Smart Landing Gear abilitato, l'aereo solleverà automaticamente le marce quando l'aereo è a 1,2 m dal suolo. Sarà necessario sollevare manualmente le leve di atterraggio quando questa funzione è disattivata."</string>
     <string name="setting_ui_flyc_gohome_height">Altitudine di ritorno a casa</string>
@@ -4214,7 +4214,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_rc_rcname">Nome controller remoto</string>
     <string name="setting_ui_rc_request_permission">Richiedi controllo Gimbal</string>
     <string name="setting_ui_rc_request_success">Richiesta di controllo del giunto gimbal riuscita</string>
-    <string name="setting_ui_rc_request_success_desc">Puoi controllare la sospensione cardanica, scattare foto o video e impostare la sospensione cardanica in modalità libera.</string>
+    <string name="setting_ui_rc_request_success_desc">Puoi controllare la sospensione del gimbal, scattare foto o video e impostare la sospensione del gimbal in modalità libera.</string>
     <string name="setting_ui_rc_right">Tilt Right</string>
     <string name="setting_ui_rc_right_rotate">Ruota a destra</string>
     <string name="setting_ui_rc_searching">Cerca</string>
@@ -6091,7 +6091,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="check_device_valid_exit">"Esci dall'attivazione"</string>
     <string name="check_device_valid_not_continue_content">"L'analisi ha determinato che il tuo prodotto proviene da una fonte non autorizzata. Pertanto, la garanzia del prodotto di un anno non è stata attivata. Si prega di contattare il venditore per organizzare uno scambio."</string>
     <!--string name="check_gimbal_calibrate_error">Errore di inizializzazione del sensore angolo giunto gimbal.</string-->
-    <string name="check_gimbal_calibrate_error_solution">Riavvia il tuo aereo. Se il problema persiste, la sospensione cardanica può essere rotta. Si prega di contattare il supporto DJI.</string>
+    <string name="check_gimbal_calibrate_error_solution">Riavvia il tuo aereo. Se il problema persiste, la sospensione del gimbal può essere rotta. Si prega di contattare il supporto DJI.</string>
     <string name="check_gimbal_whole_calibrate_error">Errore calibrazione gimbal</string>
     <string name="check_list_gimbal_cali_error_solution">"Riavvia l'aeromobile. Contatta l'assistenza DJI se questo errore persiste dopo il riavvio."</string>
     <string name="check_rc_pro_battery">Batteria del telecomando non crittografata. Autenticazione della batteria non riuscita.</string>
@@ -6619,7 +6619,7 @@ KEEP FLYING "</string>
     <string name="fly_unlimit_legal_agreement_terms_of_use_title">"Condizioni d'uso dei prodotti DJI UAS"</string>
     <string name="flyc_compass_install_error_tip">"Bussola incoerente con l'IMU. Controllare la direzione di montaggio. Rimontare la bussola e quindi riavviare Flight Controller."</string>
     <string name="flyc_flat_paddle_on_highland_warn">Non utilizzare le eliche standard ad altitudini elevate.</string>
-    <string name="flyc_gear_exception">"Impossibile abbassare o alzare gli ingranaggi di atterraggio. Fare attenzione a non danneggiare la sospensione cardanica durante l'atterraggio."</string>
+    <string name="flyc_gear_exception">"Impossibile abbassare o alzare gli ingranaggi di atterraggio. Fare attenzione a non danneggiare la sospensione del gimbal durante l'atterraggio."</string>
     <string name="flyc_gear_exception_fixed">Funzione Landing gear ripristinata.</string>
     <string name="flyc_gear_exception_fixing">Errore di ritrazione del carrello di atterraggio. Cercando di correggere ...</string>
     <string name="flyc_high_paddle_on_flatland_warn">Non utilizzare le eliche ad alta quota a basse altitudini.</string>
