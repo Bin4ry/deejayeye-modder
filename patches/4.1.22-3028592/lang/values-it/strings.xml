@@ -1260,19 +1260,19 @@
     <string name="fpv_camera_filter_m31">Beach</string>
     <string name="fpv_camera_filter_neutral">D-Log</string>
     <string name="fpv_camera_filter_none">Nessuno</string>
-    <string name="fpv_camera_filter_postrize">Posterize</string>
-    <string name="fpv_camera_filter_prismo">Classic</string>
+    <string name="fpv_camera_filter_postrize">Posterizza</string>
+    <string name="fpv_camera_filter_prismo">Classico</string>
     <string name="fpv_camera_filter_solarize">Solarizza</string>
-    <string name="fpv_camera_filter_visionx">TrueColor</string>
+    <string name="fpv_camera_filter_visionx">Colori veri</string>
     <string name="fpv_camera_filter_whiteboard">Lavagna</string>
     <string name="fpv_camera_info">"Profilo dell'obiettivo"</string>
-    <string name="fpv_camera_info_desc">"MemberID:%1$d
+    <string name="fpv_camera_info_desc">"Membro ID:%1$d
 ID fornitore:%2$d
 Versione hardware:%3$d
 Modello:%4$s "</string>
     <string name="fpv_camera_iris">Iris</string>
     <string name="fpv_camera_iso">ISO</string>
-    <string name="fpv_camera_manual">Manual</string>
+    <string name="fpv_camera_manual">Manuale</string>
     <string name="fpv_camera_photo_mode">Foto</string>
     <string name="fpv_camera_photoformat">Formato immagine</string>
     <string name="fpv_camera_photomode_aeb">AEB</string>
@@ -1381,8 +1381,8 @@ Modello:%4$s "</string>
     <string name="fpv_checklist_status_poor">Scarso</string>
     <string name="fpv_checklist_status_poor_desc">Forte interferenza. Vola con cautela.</string>
     <string name="fpv_checklist_struct_check">Controllo struttura</string>
-    <string name="fpv_checklist_struct_check_action">Manutenzione ora</string>
-    <string name="fpv_checklist_struct_check_done">Maintenance Complete</string>
+    <string name="fpv_checklist_struct_check_action">Manutenziona ora</string>
+    <string name="fpv_checklist_struct_check_done">Manutenzione Completa</string>
     <string name="fpv_checklist_struct_check_guide_content">"1. Controllare gli ammortizzatori sul controller di volo per usura e ammaccature.
  2. Controllare le viti a testa quadrata sui cavi di alimentazione del braccio del telaio nella parte inferiore del telaio centrale. Utilizzare la chiave a tubo quadrata fornita con il Matrice 600 per serrare le viti se lasco.
  3. Controllare le viti collegate al kit di montaggio ad espansione e al telaio centrale. Applicare un frenafiletti di media resistenza e quindi serrare le viti se sono allentate.
@@ -1422,7 +1422,7 @@ Modello:%4$s "</string>
     <string name="fpv_errorpop_flightaction_low_voltage_gohome">Bassa tensione. Tornando a casa ora. Premi il tasto RTH sul telecomando per fermarti.</string>
     <string name="fpv_errorpop_flightaction_low_voltage_landing">"Potenza estremamente bassa. L'aereo sta atterrando. Premi il tasto RTH sul telecomando per fermarti."</string>
     <string name="fpv_errorpop_flightaction_motor_block">Motor Obstructed</string>
-    <string name="fpv_errorpop_flightaction_outof_control_gohome">Segnale perso. Gli aerei stanno tornando a casa.</string>
+    <string name="fpv_errorpop_flightaction_outof_control_gohome">Segnale perso. Il drone sta tornando a casa.</string>
     <string name="fpv_errorpop_flightaction_propeller_catapult">Il motore è inattivo (elica persa o mancante).</string>
     <string name="fpv_errorpop_flightaction_rc_assistant_takeoff">Decollo assistito dal controller remoto avviato.</string>
     <string name="fpv_errorpop_flightaction_rc_onekey_landing">Avvio automatico del controller remoto avviato</string>
@@ -1559,7 +1559,7 @@ Modello:%4$s "</string>
     <string name="fpv_flyc_formating_recorder">Formattazione del registratore di dati ...</string>
     <string name="fpv_flyc_fpa_toggle_desc">Abilita modalità di volo intelligenti</string>
     <string name="fpv_flyc_fs_action">Segnale RC perso</string>
-    <string name="fpv_flyc_fs_gohome">Torna a Home</string>
+    <string name="fpv_flyc_fs_gohome">Torna a Casa</string>
     <string name="fpv_flyc_fs_hover">Hover</string>
     <string name="fpv_flyc_fs_landing">Descend</string>
     <string name="fpv_flyc_intelligent_tripod">Smart Landing Gear</string>
@@ -1573,7 +1573,7 @@ Modello:%4$s "</string>
     <string name="fpv_flyc_visual_off_msg">"Quando il Vision Positioning System è disabilitato, l'aeromobile non sarà in grado di librarsi stabilmente all'interno o senza il segnale GPS. Disabilitare il sistema di posizionamento della vista?"</string>
     <string name="fpv_fx">Colore:</string>
     <string name="fpv_gensetting_about">Informazioni su</string>
-    <string name="fpv_gensetting_backdownload">Download in background</string>
+    <string name="fpv_gensetting_backdownload">Scaricamento in background</string>
     <string name="fpv_gensetting_backgroudn_fetch_media">Auto sincronizzazione HD Foto</string>
     <string name="fpv_gensetting_basic">Basic</string>
     <string name="fpv_gensetting_beginner_mode_note">La modalità principiante non può essere abilitata dopo il decollo.</string>
@@ -1614,7 +1614,7 @@ Modello:%4$s "</string>
     <string name="fpv_gensetting_histogram">Istogramma</string>
     <string name="fpv_gensetting_liveshare">Diretta video</string>
     <string name="fpv_gensetting_lock_gimbal_shotting">Lock Gimbal While Shooting</string>
-    <string name="fpv_gensetting_lowflight_desc">Lower Altitude Limit</string>
+    <string name="fpv_gensetting_lowflight_desc">Limite Altitudine minima</string>
     <string name="fpv_gensetting_lowflight_toggle_desc">Altitudine minima (terreno da evitare)</string>
     <string name="fpv_gensetting_map">Map</string>
     <string name="fpv_gensetting_metric">M</string>
@@ -1826,10 +1826,10 @@ Modello:%4$s "</string>
     <string name="fpv_leftmenu_takeoff_desc">"Assicurati che sia sicuro decollare. L'arcaio salirà a%s e passerà al passaggio del mouse."</string>
     <string name="fpv_leftmenu_takeoff_failed">Decollo fallito</string>
     <string name="fpv_leftmenu_takeoff_success">Decollo completato</string>
-    <string name="fpv_leftmenu_takeoff_switch">Slide to Take Off</string>
-    <string name="fpv_leftmenu_tip_gohome">Torna a Home</string>
+    <string name="fpv_leftmenu_takeoff_switch">Trascina per decollare</string>
+    <string name="fpv_leftmenu_tip_gohome">Torna a Casa</string>
     <string name="fpv_limit_confirm">OK</string>
-    <string name="fpv_lowvoltage_dangerous_desc">Drone sarà costretto ad atterrare.</string>
+    <string name="fpv_lowvoltage_dangerous_desc">Il drone sarà costretto ad atterrare.</string>
     <string name="fpv_lowvoltage_dangerous_title">Avviso di bassa tensione critico</string>
     <string name="fpv_lowvoltage_warning_desc">Atterra il prima possibile, altrimenti la batteria sarà danneggiata.</string>
     <string name="fpv_lowvoltage_warning_title">Avviso di bassa tensione critico</string>
@@ -1893,8 +1893,8 @@ Modello:%4$s "</string>
     <string name="fpv_rcsetting_custom">Modalità Stick personalizzata</string>
     <string name="fpv_rcsetting_down">Tilt Down</string>
     <string name="fpv_rcsetting_getperm">autorizzazione di richiesta</string>
-    <string name="fpv_rcsetting_gimbal_speed">Impostazioni Gimbal Speed ​​</string>
-    <string name="fpv_rcsetting_gimbal_speed_desc">Gimbal Speed ​​</string>
+    <string name="fpv_rcsetting_gimbal_speed">Impostazioni velocità Gimbal ​​</string>
+    <string name="fpv_rcsetting_gimbal_speed_desc">Velocità Gimbal ​​</string>
     <string name="fpv_rcsetting_host_mode_desc">Master</string>
     <string name="fpv_rcsetting_input_pwd">Inserisci password</string>
     <string name="fpv_rcsetting_left">Roll Clockwise</string>
@@ -1989,13 +1989,13 @@ Modello:%4$s "</string>
     <string name="fpv_redundancy_sensor_imu_calc_msg2">"Non lasciare questa pagina.
  La calibrazione richiede circa 5 minuti. "</string>
     <string name="fpv_redundancy_sensor_imu_calc_title">Calibrazione IMU</string>
-    <string name="fpv_redundancy_sensor_imu_desc_bad">Bad</string>
+    <string name="fpv_redundancy_sensor_imu_desc_bad">Scarso</string>
     <string name="fpv_redundancy_sensor_imu_desc_cur_use">In uso</string>
-    <string name="fpv_redundancy_sensor_imu_desc_good">Excellent</string>
+    <string name="fpv_redundancy_sensor_imu_desc_good">Eccellente</string>
     <string name="fpv_redundancy_sensor_imu_desc_normal">Buono</string>
     <string name="fpv_redundancy_sensor_imu_gryo_label">Giroscopio</string>
     <string name="fpv_redundancy_sensor_imu_label">IMU</string>
-    <string name="fpv_redundancy_sensor_imu_stat_0">Unknown Status</string>
+    <string name="fpv_redundancy_sensor_imu_stat_0">Stato sconosciuto</string>
     <string name="fpv_redundancy_sensor_imu_stat_1">Disconnesso</string>
     <string name="fpv_redundancy_sensor_imu_stat_2">Calibrazione</string>
     <string name="fpv_redundancy_sensor_imu_stat_3">Calibrazione fallita</string>
@@ -2022,7 +2022,7 @@ Modello:%4$s "</string>
     <string name="fpv_rtk_dialog_lng">Longitudine</string>
     <string name="fpv_rtk_dialog_location_status_text">Posizionamento</string>
     <string name="fpv_rtk_dialog_north_num">BeiDou Satellites</string>
-    <string name="fpv_rtk_dialog_pilot_location">Drone Coordinates</string>
+    <string name="fpv_rtk_dialog_pilot_location">Coordinate Drone</string>
     <string name="fpv_rtk_dialog_title">RTK Satellite Status</string>
     <string name="fpv_rtk_introduction_txt">"Il posizionamento cinematico in tempo reale si basa sulla fase della fase portante del segnale e genera il posizionamento 3D a livello centimetrico su particolari coordinate. L'intestazione è determinata dalle due antenne del rover."</string>
     <string name="fpv_setting_videoFormat_error">Impossibile impostare la risoluzione</string>
