@@ -1804,12 +1804,12 @@ Modello:%4$s "</string>
     <string name="fpv_leftmenu_cgh_tip">Tocca per annullare Return-to-Home</string>
     <string name="fpv_leftmenu_cl_tip">Tocca su Annulla atterraggio</string>
     <string name="fpv_leftmenu_drop_land_failed">"Impossibile annullare l'atterraggio."</string>
-    <string name="fpv_leftmenu_drop_land_success">atterraggio annullato.</string>
-    <string name="fpv_leftmenu_gohome">Torna a casa e terra?</string>
+    <string name="fpv_leftmenu_drop_land_success">Atterraggio annullato.</string>
+    <string name="fpv_leftmenu_gohome">Tornare a casa e atterrare?</string>
     <string name="fpv_leftmenu_gohome_above_desc">"L'aeromobile regolerà il suo naso per affrontare l'Home Point e volerà a casa alla sua attuale altitudine:%1$1fm (%2$1fft). Quando si torna a casa, controllare manualmente l'aereo per evitare eventuali ostacoli."</string>
     <string name="fpv_leftmenu_gohome_below_desc">"L'aeromobile regolerà il suo naso per affrontare il punto base e salirà a un'altitudine di %1$1fm (%2$1fft) prima di tornare a casa. Quando si torna a casa, controllare manualmente l'aereo per evitare eventuali ostacoli."</string>
     <string name="fpv_leftmenu_gohome_desc">"La direzione e l'altitudine del drone saranno regolate in base alle impostazioni RTH e Failsafe. Premere il pulsante RTH direttamente sul telecomando per annullare."</string>
-    <string name="fpv_leftmenu_gohome_failed">Return to Home Failed</string>
+    <string name="fpv_leftmenu_gohome_failed">Ritorno a Casa Fallito</string>
     <string name="fpv_leftmenu_gohome_inner_desc">"Il velivolo si trova a meno di 20 m (65,6 piedi) dal punto di partenza. L'aeromobile atterrerà se viene avviato Return to Home."</string>
     <string name="fpv_leftmenu_gohome_success">Return to Home Complete</string>
     <string name="fpv_leftmenu_gohome_switch">Scorri per tornare a casa</string>
@@ -1823,7 +1823,7 @@ Modello:%4$s "</string>
     <string name="fpv_leftmenu_land_failed">atterraggio fallito</string>
     <string name="fpv_leftmenu_land_success">Atterrato</string>
     <string name="fpv_leftmenu_takeoff">Sei sicuro di voler decollare?</string>
-    <string name="fpv_leftmenu_takeoff_desc">"Assicurati che sia sicuro decollare. L'arcaio salirà a%s e passerà al passaggio del mouse."</string>
+    <string name="fpv_leftmenu_takeoff_desc">"Assicurati che sia sicuro decollare. Il drone salirà a%s e oltre."</string>
     <string name="fpv_leftmenu_takeoff_failed">Decollo fallito</string>
     <string name="fpv_leftmenu_takeoff_success">Decollo completato</string>
     <string name="fpv_leftmenu_takeoff_switch">Trascina per decollare</string>
