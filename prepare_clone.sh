@@ -59,9 +59,11 @@ case $apkver in
         ;;
     "4.1.22")
         ./defog_strings_one_file.py 2 "$1/smali_classes6/dji/pilot2/newlibrary/dshare/model/a\$a.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes6/dji/pilot2/scan/android/CaptureActivity\$7.smali"
         ./defog_strings_one_file.py 2 "$1/smali_classes2/com/dji/update/view/UpdateDialogActivity.smali"
         ./defog_strings_one_file.py 2 "$1/smali_classes3/dji/assets/b.smali"
         ./defog_strings_one_file.py 2 "$1/smali_classes5/dji/pilot/fpv/control/z.smali"
+        ./defog_strings_one_file.py 2 "$1/smali_classes6/dji/pilot2/scan/BaseScanQrActivity\$1.smali"
         ;;
     *)
     ;;
