@@ -39,7 +39,7 @@ def try_to_replace(fname, replace_extensions=DEFAULT_REPLACE_EXTENSIONS):
         return fname.lower().endswith(replace_extensions)
     return True
 
-def file_replace(fname, pat):
+def file_replace(fname, pat, subpat, check_import):
     # first, see if the pattern is even in the file.
     with open(fname) as f:
         if not any(re.search(pat, line) for line in f):
@@ -50,23 +50,21 @@ def file_replace(fname, pat):
         out_fname = fname + ".tmp"
         out = open(out_fname, "w")
         for line in f:
-            match = re.search(pat, line)
-
-	    # Grab the rest of the line here!!! don't just replace with the decrypted match
-	    if match is not None:
-		match = match.group(1)
-		s_after = ""
-		try:
-		        s_after = decrypt(match,klen)
-		except binascii.Error as err:	
-			out.write(line)
-			pass
-
-		line_after = line.replace(match,s_after)
-		line_after = line_after.replace("a.a(",'(')
-                out.write(re.sub(pat, line_after, line)[:-1])
-	    else:
-            	out.write(line)
+            match = re.findall(pat, line)
+            if len(match) > 0:            
+                for onematch in match:
+                    string_fog = (re.search(subpat, onematch)).group(1)
+                    try:
+                        string_defog = decrypt(string_fog, klen)
+                        string_defog = '"'+string_defog+'"'
+                    except binascii.Error as err:
+                        string_defog = onematch
+                        pass
+                    #print onematch, string_fog, string_defog
+                    line = line.replace(onematch, string_defog);
+                out.write(line[:-1])
+            else:
+                out.write(line)
         out.close()
 	print "wrote " + fname
         os.rename(out_fname, fname)
@@ -80,11 +78,27 @@ def recursive_glob(rootdir='.', pattern='*'):
         return matches
 
 def mass_replace(dir_name, replace_extensions=DEFAULT_REPLACE_EXTENSIONS):
-    pat = re.compile('.*?a\.a\("([A-Za-z0-9+\/=]*)".*')
+
+#    pat = re.compile('.*?(com\.dji\.f\.a\.a\.b\.a\(\"[A-Za-z0-9+\/=]\"\)).*')
+    regex1 = 'com\.dji\.f\.a\.a\.b\.a\("[A-Za-z0-9+\/=]+?"\)'
+    regex1_sub = 'com\.dji\.f\.a\.a\.b\.a\("([A-Za-z0-9+\/=]+?)"\)'
+    pat1 = re.compile(regex1)
+    pat1_sub = re.compile(regex1_sub)
+    check_import1 = ""
+
+    regex2 = 'b\.a\("[A-Za-z0-9+\/=]+?"\)'
+    regex2_sub = 'b\.a\("([A-Za-z0-9+\/=]+?)"\)'
+    pat2 = re.compile(regex2)
+    pat2_sub = re.compile(regex2_sub)
+    check_import2 = "import com\.dji\.f\.a\.a"
+
+#    pat = re.compile('.*?b\.a\("([A-Za-z0-9+\/=]*)"\).*')
+
     filenames = recursive_glob(dir_name, "*.java")
     for fname in filenames:
     	if try_to_replace(fname, replace_extensions):
-		file_replace(fname, pat)
+            file_replace(fname, pat1, pat1_sub, check_import1)
+            file_replace(fname, pat2, pat2_sub, check_import2)
 
 if len(sys.argv) != 2:
     u = "Usage: mass_replace <dir_name>\n"
@@ -92,4 +106,3 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 mass_replace(sys.argv[1])
-
