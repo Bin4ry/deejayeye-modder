@@ -3314,7 +3314,7 @@ Vola con cautela. "</string>
     <string name="minute_and_seconds">1 min%1$d secondi</string>
     <string name="minutes">%1$d mins</string>
     <string name="motor_escm_block">Motore bloccato. Controllare i motori.</string>
-    <string name="motor_escm_disconnect">Disconnect</string>
+    <string name="motor_escm_disconnect">Disconnesso</string>
     <string name="motor_escm_eror">Errore ESC</string>
     <string name="motor_escm_error_resart">Errore ESC%s. Contatta il supporto DJI il problema persiste.</string>
     <string name="motor_escm_index">No. %d Esc -</string>
@@ -3322,7 +3322,7 @@ Vola con cautela. "</string>
     <string name="motor_escm_non_balance">ESC non bilanciato</string>
     <string name="motor_escm_propeller_off">Motor Shoot Paddle. Controlla lo stato del motore</string>
     <string name="motor_escm_resistance_eror">Errore resistenza motore</string>
-    <string name="motor_escm_signal_error">Signal Error</string>
+    <string name="motor_escm_signal_error">Errore segnale</string>
     <string name="motor_off_new_content">"Sposta la levetta sinistra nell'angolo in basso a destra mentre premi il pulsante RTH per fermare i motori a mezz'aria. Utilizzalo solo in caso di emergenza."</string>
     <string name="motor_off_new_isee">Ottenuto</string>
     <string name="motor_off_new_title">Modalità Midair Emergency Stop modificata!</string>
@@ -3334,7 +3334,7 @@ Vola con cautela. "</string>
     <string name="motor_stop_reason_roll_over_on_grd">Drone si è ribaltato. Verifica danni.</string>
     <string name="motor_stop_reason_takeoff_exception">Errore motore o elica. Controllare i motori e le eliche.</string>
     <string name="music_album">Album</string>
-    <string name="music_download_failed">Download fallito</string>
+    <string name="music_download_failed">Scaricamento fallito</string>
     <string name="music_downloading">Scaricamento ...</string>
     <string name="music_rhythm_mode_auto">Auto</string>
     <string name="music_rhythm_mode_full">Full</string>
@@ -3349,9 +3349,9 @@ Vola con cautela. "</string>
     <string name="new_library_like_empty_large_text">Nessun preferito</string>
     <string name="new_library_like_empty_small_text">Tocca Preferito per raccogliere foto e video qui.</string>
     <string name="new_library_likes">Preferito</string>
-    <string name="new_library_manage">Manage</string>
-    <string name="new_library_original">Original</string>
-    <string name="new_library_other">Folder</string>
+    <string name="new_library_manage">Gestisci</string>
+    <string name="new_library_original">Originale</string>
+    <string name="new_library_other">Cartella</string>
     <string name="new_library_photo">Foto</string>
     <string name="new_library_photo_empty_large_text">Nessuna foto</string>
     <string name="new_library_photo_empty_small_text">I video che hai scattato oggi verranno salvati automaticamente nella cache qui.</string>
@@ -3440,16 +3440,16 @@ Vola con cautela. "</string>
     <string name="photo">Foto</string>
     <string name="photo_water_mark">Photo Watermark</string>
     <string name="playback_delete_fail">Elimina fallito. Per favore riprova</string>
-    <string name="playback_download_complete">Scarica completo</string>
-    <string name="playback_download_fail">download fallito</string>
+    <string name="playback_download_complete">Scaricamento completo</string>
+    <string name="playback_download_fail">Scaricamento fallito</string>
     <string name="playback_download_master_downloading">Master controller download ...</string>
     <string name="playback_download_mult_complete">scaricato:%1$d non riuscito:%2$d</string>
     <string name="playback_download_rate">Velocità di download:%sKB / S</string>
-    <string name="playback_downloading">Download in corso ... (%1$d /%2$d)</string>
-    <string name="playback_downloading_one">Downloading ...</string>
+    <string name="playback_downloading">Scaricamento in corso ... (%1$d /%2$d)</string>
+    <string name="playback_downloading_one">Scaricamento ...</string>
     <string name="playback_select_num">Seleziona:%s elementi</string>
-    <string name="playback_select_tip">seleziona un file.</string>
-    <string name="playback_tab_tv_local">Local</string>
+    <string name="playback_select_tip">Seleziona un file.</string>
+    <string name="playback_tab_tv_local">Locale</string>
     <string name="playback_tab_tv_remote">scheda SD</string>
     <string name="please_retry">Riprova.</string>
     <string name="pm820_battery_error_1">Errore di differenza di tensione della cella della batteria. Si prega di contattare il supporto DJI.</string>
@@ -3494,7 +3494,7 @@ Vola con cautela. "</string>
     <string name="quick_fragment_two_title">CONTROLLA CONTEGGIO SATELLITE GPS</string>
     <string name="quick_item_choosehighly">SCEGLI UN ALTITUDINE</string>
     <string name="quick_setfail_toast">"Impossibile impostare l'altitudine Ritorno-A-Casa. Controllare la connessione tra il telecomando e l'aeromobile."</string>
-    <string name="quick_skip_button">Skip</string>
+    <string name="quick_skip_button">Salta</string>
     <string name="quick_title">SAFETY TUTORIAL</string>
     <string name="radio_channel_custom_warning_title">Nota</string>
     <string name="rc_adv_gain_tilt_desc">Attitude</string>
@@ -4091,7 +4091,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_hd_signal_desc4">Assicurati che tutte le connessioni su Air System siano sicure.</string>
     <string name="setting_ui_hd_sweeprange_desc">Intervallo di scansione in frequenza</string>
     <string name="setting_ui_hd_transmission">Modalità di trasmissione</string>
-    <string name="setting_ui_hd_transmission_fails">"Setup fallito. Controlla se l'aereo è collegato."</string>
+    <string name="setting_ui_hd_transmission_fails">"Setup fallito. Controlla se il drone è collegato."</string>
     <string name="setting_ui_hd_transmission_high">Modalità alta qualità</string>
     <string name="setting_ui_hd_transmission_low">Modalità bassa latenza</string>
     <string name="setting_ui_hd_view_sdr_btn">Image Transmission State</string>
@@ -4293,7 +4293,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_redundancy_sensor_imu_calc_title">Calibrazione IMU</string>
     <string name="setting_ui_redundancy_sensor_imu_desc_bad">Cattivo</string>
     <string name="setting_ui_redundancy_sensor_imu_desc_cur_use">In uso</string>
-    <string name="setting_ui_redundancy_sensor_imu_desc_good">Excellent</string>
+    <string name="setting_ui_redundancy_sensor_imu_desc_good">Eccellente</string>
     <string name="setting_ui_redundancy_sensor_imu_desc_normal">Buono</string>
     <string name="setting_ui_redundancy_sensor_imu_gryo_label">Giroscopio</string>
     <string name="setting_ui_redundancy_sensor_imu_label">IMU</string>
@@ -4382,7 +4382,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_vision">Impostazioni di navigazione visuale</string>
     <string name="setting_ui_vision_abnormal">Anormale</string>
     <string name="setting_ui_vision_adv_desc">Impostazioni visione avanzata</string>
-    <string name="setting_ui_vision_adv_title">Advance</string>
+    <string name="setting_ui_vision_adv_title">Avanzato</string>
     <string name="setting_ui_vision_ass">Abilita Obstacle Avoidance</string>
     <string name="setting_ui_vision_ass_desc1">"Quando i sensori di ostacolo in avanti rilevano un ostacolo, l'aereo rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s."</string>
     <string name="setting_ui_vision_ass_desc2">Le telecamere di rilevamento ostacoli in avanti hanno un campo visivo orizzontale di 60º e un campo visivo di 54º. Gli ostacoli al di fuori di questi intervalli non verranno rilevati.</string>
@@ -4703,8 +4703,8 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="usercenter_dji_shop">Negozio</string>
     <string name="usercenter_flight_record">Log di volo</string>
     <string name="usercenter_my_info">Me</string>
-    <string name="usercenter_my_info_gender_female">Female</string>
-    <string name="usercenter_my_info_gender_male">Male</string>
+    <string name="usercenter_my_info_gender_female">Donna</string>
+    <string name="usercenter_my_info_gender_male">Uomo</string>
     <string name="usercenter_my_info_gender_nottell">Privacy</string>
     <string name="usercenter_my_info_gender_unknown">Privacy</string>
     <string name="usercenter_my_info_modify_gender">Gender</string>
@@ -4716,7 +4716,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="usercenter_my_info_modify_password_old">Password corrente:</string>
     <string name="usercenter_my_info_modify_password_title">Imposta password</string>
     <string name="usercenter_my_info_select_region">Seleziona regione</string>
-    <string name="usercenter_no_more_data">No More Data</string>
+    <string name="usercenter_no_more_data">Nessun dato</string>
     <string name="usercenter_search_hint">Cerca</string>
     <string name="usercenter_upload_cloud_edit_description">Descrizione</string>
     <string name="usercenter_upload_cloud_edit_leftbutton">Annulla</string>
@@ -4756,9 +4756,9 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="v2_academy_hot_tips">Suggerimenti rapidi</string>
     <string name="v2_academy_hotfaq">Domande frequenti</string>
     <string name="v2_academy_introduction_text">Manuali utente</string>
-    <string name="v2_academy_simulator_text">Simulator</string>
+    <string name="v2_academy_simulator_text">Simulatore</string>
     <string name="v2_academy_video_text">Tutorial video</string>
-    <string name="v2_activate_activate">Activate</string>
+    <string name="v2_activate_activate">Attiva</string>
     <string name="v2_activate_activating">Attivazione in corso ...</string>
     <string name="v2_activate_aircraft">Drone</string>
     <string name="v2_activate_change">Modifica</string>
@@ -4799,7 +4799,7 @@ Continua a volare "</string>
     <string name="v2_active_camera_inspire_2">Recenter Gimbal</string>
     <string name="v2_active_camera_inspire_3">Cambia modalità gimbal</string>
     <string name="v2_active_camera_inspire_4">Cambia mappa / FPV</string>
-    <string name="v2_active_camera_inspire_5">Clear Flight Route</string>
+    <string name="v2_active_camera_inspire_5">Pulisci rotta di volo</string>
     <string name="v2_active_camera_inspire_6">Info batteria</string>
     <string name="v2_active_camera_inspire_7">Gimbal Pitch / Yaw</string>
     <string name="v2_active_camera_inspire_8">Non definito</string>
@@ -4821,7 +4821,7 @@ Continua a volare "</string>
     <string name="v2_active_dialog_32_osmo">"Conferma che l'Osmo è connesso."</string>
     <string name="v2_active_dialog_33">Continua</string>
     <string name="v2_active_dialog_41">Cambia account</string>
-    <string name="v2_active_dialog_42">Esci e usa un account diverso per attivare il tuo aereo.</string>
+    <string name="v2_active_dialog_42">Esci e usa un account diverso per attivare il tuo drone.</string>
     <string name="v2_active_dialog_43">Annulla</string>
     <string name="v2_active_dialog_44">Disconnetti</string>
     <string name="v2_active_dialog_cancel">Annulla</string>
@@ -4867,7 +4867,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_active_success">Attivazione riuscita</string>
     <string name="v2_active_tip">Prima del tuo primo volo, puoi migliorare le tue abilità di volo con il simulatore di volo incorporato.</string>
     <string name="v2_active_title_01">Indietro</string>
-    <string name="v2_active_toast_01">Close (2 sec)</string>
+    <string name="v2_active_toast_01">Chiudi (2 sec)</string>
     <string name="v2_active_toast_02">Chiudi (1 secondo)</string>
     <string name="v2_active_toast_03">Chiudi (0 sec)</string>
     <string name="v2_active_toast_04">Chiudi (3 sec)</string>
@@ -5681,7 +5681,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="vision_brake_disallow_right">"Braking now! Non serve spostare la levetta a destra. Evita l'ostacolo."</string>
     <string name="vision_overshot_now_tip">Ostacolo avanti / indietro Rilevato. Gli aerei volano per evitarlo ora.</string>
     <string name="vision_selfcal_already_cali">Nota: si consiglia la calibrazione di precisione tramite DJI Assistant su PC o Mac. Questa calibrazione è solo per situazioni urgenti.</string>
-    <string name="vision_selfcal_calculating">Calibrating ...</string>
+    <string name="vision_selfcal_calculating">Calibrazione ...</string>
     <string name="vision_selfcal_collect_completed">"Raccolta di immagini completata. Metti giù l'aereo. Tenere l'aeromobile acceso e non accendere i motori."</string>
     <string name="vision_selfcal_collect_image">"Cattura delle immagini di calibrazione. Sposta l'aereo come indicato."</string>
     <string name="vision_selfcal_desc_back">"1. Garantire un'illuminazione adeguata e trame chiare del terreno.
