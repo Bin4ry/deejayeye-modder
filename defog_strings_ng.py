@@ -15,7 +15,11 @@ key_415 = 'Y9*PI8B#gD^6Yhd1'
 def defog(s,l):
    s = base64.decodestring(s)
    decr = ''.join([chr(ord(c) ^ ord(key[i%l*2])) for i,c in enumerate(s)])
-   decr = decr.replace('\r', '').replace('\n', '').replace('"', '').replace('\\','')
+   decr = decr.replace("\\","\\\\")
+   decr = decr.replace('\r', "\\r")
+   decr = decr.replace('\n', "\\n")
+   decr = decr.replace('\t', "\\t")
+   decr = decr.replace('"', '\\"')
    return decr
 
 if len(sys.argv) != 3:
@@ -34,8 +38,8 @@ for directory, subdirectories, files in os.walk(path):
     for file in files:
       fname = os.path.join(directory, file)
       if fname.endswith('.smali'):
-         pat1 = re.compile('^(\s*const-string.*\s*v[0-9]+\s*,\s*\"[^\"]+\"\s*$\s*^.*com/dji/f/a/a/b.*$\s*^.*v[0-9]+.*)$', re.MULTILINE|re.UNICODE)
-         pat2 = re.compile('(?:^(\s*)const-string.*\s*(v[0-9]+)\s*,\s*\"([^\"]+)\"\s*$\s*^.*com/dji/f/a/a/b.*$\s*^.*(v[0-9]+).*$)', re.MULTILINE|re.UNICODE)
+         pat1 = re.compile('^(\s*const-string.*\s*v[0-9]+\s*,\s*\"[^\"]+\"\s*$\s*^.*invoke-static\s+\{v[0-9]+\},\s+Lcom/dji/f/a/a/b;->a\(Ljava/lang/String;\)Ljava/lang/String.*$\s*^.*move-result-object\s+v[0-9]+.*)$', re.MULTILINE|re.UNICODE)
+         pat2 = re.compile('(?:^(\s*)const-string.*\s*(v[0-9]+)\s*,\s*\"([^\"]+)\"\s*$\s*^.*invoke-static\s+\{v[0-9]+\},\s+Lcom/dji/f/a/a/b;->a\(Ljava/lang/String;\)Ljava/lang/String.*$\s*^.*move-result-object\s+(v[0-9]+).*$)', re.MULTILINE|re.UNICODE)
          content = open(fname,'r').read()
          matches1 = re.findall(pat1, content)
          matches2 = re.findall(pat2, content)
@@ -46,25 +50,16 @@ for directory, subdirectories, files in os.walk(path):
                     defog_str = defog(matches2[i][2],klen)
                     if matches2[i][1] == matches2[i][3]:
                     #only one register used
-                       new_str = matches2[i][0]+"const-string "+matches2[i][3]+','+' "'+defog_str+'"'
+                       new_str = matches2[i][0]+"const-string "+matches2[i][3]+', "'+defog_str+'"'
                     else:
                     #two register used : keep first fake string to avoid messing up number of locale registers
-                       new_str = matches2[i][0]+"const-string "+matches2[i][1]+','+' ""\n'
+                       new_str = matches2[i][0]+"const-string "+matches2[i][1]+', "'+matches2[i][2] +'"\n'
                        new_str = new_str + matches2[i][0]+"const-string "+matches2[i][3]+','+' "'+defog_str+'"'
-                    #if fname.endswith('smali/dji/midware/j/a.smali'):
-                    #   print onematch
-                    #   print '*************************'
-                    #   print matches2
-                    #   print '*************************'
-                    #   print new_str
                     content = content.replace(onematch,new_str,1)
                  except binascii.Error as err:
-                    #if fname.endswith('smali/dji/midware/j/a.smali'):
-                    #   print "====================="
                     pass
                  i = i+1
-             newfilename = fname + '.decrypt'
-             print(newfilename)
+             print fname
              out = open(fname,'w')
              out.write(content)
              out.close()
