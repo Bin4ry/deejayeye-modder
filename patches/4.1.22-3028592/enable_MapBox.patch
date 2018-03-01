@@ -1,0 +1,12 @@
+diff -Naur orig/smali_classes6/dji/setting/ui/general/MapboxTrialSwitch.smali mod/smali_classes6/dji/setting/ui/general/MapboxTrialSwitch.smali
+--- orig/smali_classes6/dji/setting/ui/general/MapboxTrialSwitch.smali	2018-02-25 17:14:21.529116800 +0100
++++ mod/smali_classes6/dji/setting/ui/general/MapboxTrialSwitch.smali	2018-03-01 11:10:04.520649800 +0100
+@@ -54,7 +54,7 @@
+ 
+     .line 37
+     :cond_0
+-    const/16 v0, 0x8
++    const/4 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/general/MapboxTrialSwitch;->setVisibility(I)V
+ 
