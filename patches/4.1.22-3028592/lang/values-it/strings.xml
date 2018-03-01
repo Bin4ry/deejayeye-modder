@@ -5231,7 +5231,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_nativeexplore_tags_count">%1$d Tag</string>
     <string name="v2_net_error">Errore di rete!</string>
     <string name="v2_net_statistics_clear">Cancella statistiche</string>
-    <string name="v2_net_statistics_download">Total Download Download mobile</string>
+    <string name="v2_net_statistics_download">Totale scaricamenti in linea mobile</string>
     <string name="v2_net_statistics_start">Avvia monitoraggio</string>
     <string name="v2_net_statistics_stop">Stop Monitoring</string>
     <string name="v2_net_statistics_upload">Flusso di caricamento totale del dispositivo mobile</string>
@@ -5361,7 +5361,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_profile_favorite_tab">Preferiti</string>
     <string name="v2_profile_follower_tab">Fan</string>
     <string name="v2_profile_following_tab">Segui</string>
-    <string name="v2_profile_sex_secret">Private</string>
+    <string name="v2_profile_sex_secret">Privato</string>
     <string name="v2_quickstart_five_1">Red Means Front</string>
     <string name="v2_quickstart_five_2">"I LED rossi indicano la parte anteriore dell'aereo. I LED verdi indicano la parte posteriore dell'aereo."</string>
     <string name="v2_quickstart_five_3">LED rossi: anteriore</string>
@@ -5467,10 +5467,10 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_smlt_wind_east">Est</string>
     <string name="v2_smlt_wind_enhance">Accelerazione</string>
     <string name="v2_smlt_wind_north">North</string>
-    <string name="v2_smlt_wind_set_title">Wind Velocity Setting</string>
-    <string name="v2_smlt_wind_short_tx">Wind:</string>
+    <string name="v2_smlt_wind_set_title">Impostazioni velocità vento</string>
+    <string name="v2_smlt_wind_short_tx">Vento:</string>
     <string name="v2_smlt_wind_south">South</string>
-    <string name="v2_smlt_wind_sp_txt">Wind Velocity</string>
+    <string name="v2_smlt_wind_sp_txt">Velocità vento</string>
     <string name="v2_smlt_wind_weaken">Decelerate</string>
     <string name="v2_smlt_wind_west">West</string>
     <string name="v2_smlt_windspeed_txt">%.1f m / s</string>
@@ -5527,9 +5527,9 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_upgrade_activity_upgrading">Aggiornamento (%s)</string>
     <string name="v2_upgrade_activity_upload_progress">Caricamento (%s)</string>
     <string name="v2_upgrade_activity_upload_start">Carica ora</string>
-    <string name="v2_upgrade_activity_upload_wait">"Caricamento sull'aereo ..."</string>
+    <string name="v2_upgrade_activity_upload_wait">"Caricamento sul drone ..."</string>
     <string name="v2_upgrade_camera_fails">Impossibile aggiornare la videocamera</string>
-    <string name="v2_upgrade_complete_tip">Riavvia il tuo aereo e il controller remoto.</string>
+    <string name="v2_upgrade_complete_tip">Riavvia il tuo drone e il controller remoto.</string>
     <string name="v2_upgrade_complete_tip_osmo">Riavvia il tuo dispositivo.</string>
     <string name="v2_upgrade_device_device_sleep">Premi il pulsante di accensione per uscire dalla modalità di sospensione.</string>
     <string name="v2_upgrade_device_not_connect">Dispositivo disconnesso. Controlla la tua connessione.</string>
