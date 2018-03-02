@@ -4082,7 +4082,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_hd_sdr_freq_type_desc">Frequenza</string>
     <string name="setting_ui_hd_sdr_full_band">Full Band</string>
     <string name="setting_ui_hd_sdr_maxcolor_desc">Segnale debole</string>
-    <string name="setting_ui_hd_sdr_mincolor_desc">Strong Signal</string>
+    <string name="setting_ui_hd_sdr_mincolor_desc">Segnale forte</string>
     <string name="setting_ui_hd_signal_check">Diagnostica segnale</string>
     <string name="setting_ui_hd_signal_check_aerial">Antenna</string>
     <string name="setting_ui_hd_signal_desc1">Mantieni le antenne di Air System e Ground System perpendicolari al suolo e parallele tra loro.</string>
@@ -4131,7 +4131,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_rc_5d_button_title">Personalizzazione del pulsante 5D</string>
     <string name="setting_ui_rc_5d_button_up_button_desc">Gimbal forward</string>
     <string name="setting_ui_rc_5d_button_up_button_title">Su</string>
-    <string name="setting_ui_rc_cal">Calibrate</string>
+    <string name="setting_ui_rc_cal">Calibra</string>
     <string name="setting_ui_rc_calibrate_note">"Spegnere l'aeromobile e quindi calibrare il telecomando."</string>
     <string name="setting_ui_rc_calibration">Calibrazione controller remoto</string>
     <string name="setting_ui_rc_calibration_1">1. Sposta ogni stick per tutta la sua gamma di movimento più volte.</string>
@@ -5504,7 +5504,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_upgrade_activity_download_continue">Rete connessa. Il download è stato ripreso.</string>
     <string name="v2_upgrade_activity_download_fail_reason_offline">Rete disconnessa. Riconnetti per continuare il download.</string>
     <string name="v2_upgrade_activity_download_fail_reason_offuav">Drone disconnected. Riconnetti per continuare di nuovo.</string>
-    <string name="v2_upgrade_activity_downloading">Download di%s</string>
+    <string name="v2_upgrade_activity_downloading">Scaricamento di%s</string>
     <string name="v2_upgrade_activity_finish">Aggiornamento riuscito</string>
     <string name="v2_upgrade_activity_finish_btn">Completa</string>
     <string name="v2_upgrade_activity_finish_desc">"%s è stato aggiornato all'ultima versione."</string>
@@ -5657,10 +5657,10 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
  Converti video in cache in videoclip in Centro utenti \" - Album \" "</string>
     <string name="ve_create_moments_save_moments">Elaborazione metraggio ...</string>
     <string name="ve_cut_save_HD">HD</string>
-    <string name="ve_downloading_video">Download in corso ...</string>
+    <string name="ve_downloading_video">Scaricamento in corso ...</string>
     <string name="ve_gallery_create_moments">Crea momenti</string>
     <string name="ve_home_createfilm">Crea video</string>
-    <string name="ve_home_myworks">My Work</string>
+    <string name="ve_home_myworks">I miei Lavori</string>
     <string name="ve_home_myworks_select">Seleziona</string>
     <string name="ve_home_title">Director</string>
     <string name="ve_no_prod_text">No Works. Crea uno ora!</string>
@@ -6237,7 +6237,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="dji_check_fc_compass_reason">Errore bussola</string>
     <string name="dji_check_fc_compass_solution">"Soluzione: riavvia l'aereo, se il problema persiste, contatta l'assistenza DJI"</string>
     <string name="dji_check_fc_data_record_error_reason">Errori del registratore di dati</string>
-    <string name="dji_check_fc_data_record_error_solution">"Soluzione: riavvia l'aereo, se il problema persiste, contatta l'assistenza DJI"</string>
+    <string name="dji_check_fc_data_record_error_solution">"Soluzione: riavvia il drone, se il problema persiste, contatta l'assistenza DJI"</string>
     <string name="dji_check_fc_gyroscope_data_error_reason">Errore del giroscopio</string>
     <string name="dji_check_fc_gyroscope_data_error_solution">"Soluzione: riavvia l'aereo, se il problema persiste, contatta l'assistenza DJI"</string>
     <string name="dji_check_fc_gyroscope_reason">Errore del giroscopio</string>
@@ -7137,7 +7137,7 @@ Zona rilevata: "</string>
     <string name="normal_sub_type_standard">STANDARD</string>
     <string name="not_support_cpu">Tipo di CPU non supportato. DJIGO4 ora uscirà.</string>
     <string name="notification_content">Ultima versione disponibile</string>
-    <string name="offline_map_all_pausing_text">Download mappa arrestato</string>
+    <string name="offline_map_all_pausing_text">Scaricamento mappa arrestato</string>
     <string name="offline_map_all_upgrade">Aggiorna tutto</string>
     <string name="offline_map_cancel_text">Annulla</string>
     <string name="offline_map_confirm_text">Sì</string>
@@ -7146,8 +7146,8 @@ Zona rilevata: "</string>
     <string name="offline_map_download_all_countries">Tutti i paesi</string>
     <string name="offline_map_download_all_regions">Tutte le regioni</string>
     <string name="offline_map_download_text">DJIGO4 Offline Map Download</string>
-    <string name="offline_map_download_title">Offline Map (s) Scarica</string>
-    <string name="offline_map_downloaded">Offline Map (s) scaricato</string>
+    <string name="offline_map_download_title">Scarica mappe Offline</string>
+    <string name="offline_map_downloaded">Mappe Offline Scaricate</string>
     <string name="offline_map_downloaded_text">scaricato</string>
     <string name="offline_map_downloading">Mappa (e) non in linea che scarica ...</string>
     <string name="offline_map_downloading_text">Downloading ...</string>
@@ -7159,11 +7159,11 @@ Zona rilevata: "</string>
     <string name="offline_map_manager_all_upgrade">Aggiorna tutto</string>
     <string name="offline_map_network_disconnected">Rete non disponibile</string>
     <string name="offline_map_network_disconnected_hint">Controlla la tua connessione di rete.</string>
-    <string name="offline_map_network_exception">Errore di download. Controlla la tua connessione di rete.</string>
+    <string name="offline_map_network_exception">Errore di scaricamento. Controlla la tua connessione di rete.</string>
     <string name="offline_map_network_type_in_mobile">Stai utilizzando dati cellulari.</string>
     <string name="offline_map_network_type_in_mobile_hint">Continua a scaricare utilizzando i dati cellulari?</string>
     <string name="offline_map_pause_text">In pausa</string>
-    <string name="offline_map_pausing_text">Scarica mappa in pausa</string>
+    <string name="offline_map_pausing_text">Scaricamento mappa in pausa</string>
     <string name="offline_map_search_hint_text">Digitare i nomi di città.</string>
     <string name="offline_map_search_no_data_hint">Nessun dato pertinente trovato</string>
     <string name="offline_map_server_no_response">Il server non risponde.</string>
@@ -7276,7 +7276,7 @@ Zona rilevata: "</string>
     <string name="phantom_type_wm220_s">MAVIC</string>
     <string name="playback_download_origin">Scarica file originale</string>
     <string name="playback_new_burst_select">Seleziona</string>
-    <string name="playback_new_burst_today">Today</string>
+    <string name="playback_new_burst_today">Oggi</string>
     <string name="playback_new_burst_yesterday">ieri</string>
     <string name="playback_video_too_short">Durata del video troppo lunga. Impossibile riprodurre.</string>
     <string name="popup_choose_devices">Scegli il dispositivo</string>
@@ -8334,9 +8334,9 @@ La directory è:%2$s "</string>
     <string name="nfz_fly_zone_class_b">Spazio aereo di classe B</string>
     <string name="nfz_fly_zone_class_c">Spazio aereo di classe C</string>
     <string name="nfz_fly_zone_class_d">Spazio aereo di classe D</string>
-    <string name="nfz_fly_zone_class_e0">Spazio aereo E classe</string>
-    <string name="nfz_fly_zone_heliports">Heliports</string>
-    <string name="nfz_fly_zone_military">Military Zones</string>
+    <string name="nfz_fly_zone_class_e0">Spazio aereo di classe E</string>
+    <string name="nfz_fly_zone_heliports">Eliporti</string>
+    <string name="nfz_fly_zone_military">Zona Militare</string>
     <string name="nfz_fly_zone_national_parks">Parchi nazionali</string>
     <string name="nfz_fly_zone_noaa">NOAA Areas</string>
     <string name="nfz_fly_zone_nuclear_power_plant">Centrali nucleari</string>
