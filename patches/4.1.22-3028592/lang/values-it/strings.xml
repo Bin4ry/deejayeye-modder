@@ -3993,7 +3993,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_gimbal_reset_confirm">La reimpostazione di tutte le impostazioni ripristinerà tutti i parametri del gimbal ai valori predefiniti di fabbrica. Vorresti continuare?</string>
     <string name="setting_ui_gimbal_reset_gimbal_setting_fail">Ripristina impostazioni Gimbal fallite</string>
     <string name="setting_ui_gimbal_reset_gimbal_setting_success">Ripristina impostazioni Gimbal successo</string>
-    <string name="setting_ui_gimbal_reset_mode">Recenter Gimbal</string>
+    <string name="setting_ui_gimbal_reset_mode">Ricentra Gimbal</string>
     <string name="setting_ui_gimbal_roll_fine_tune">Regola Rotolo Gimbal</string>
     <string name="setting_ui_gimbal_yaw">Gimbal Yaw EXP</string>
     <string name="setting_ui_gimbal_yaw_follow">Gimbal Yaw Synchronous Follow</string>
@@ -4155,7 +4155,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_rc_custom_12">Center Metering</string>
     <string name="setting_ui_rc_custom_13">Blocco / sblocco AE</string>
     <string name="setting_ui_rc_custom_14">Attiva / disattiva i LED anteriori</string>
-    <string name="setting_ui_rc_custom_2">Recenter Gimbal</string>
+    <string name="setting_ui_rc_custom_2">Ricentra Gimbal</string>
     <string name="setting_ui_rc_custom_2_litchi">Camera Forward / Down</string>
     <string name="setting_ui_rc_custom_4">Modalità FPV / Modalità Segui</string>
     <string name="setting_ui_rc_custom_4_in2">Gimbal Follow / Free Mode</string>
@@ -4163,7 +4163,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_rc_custom_6">Clear Flight Route</string>
     <string name="setting_ui_rc_custom_9">Info batteria</string>
     <string name="setting_ui_rc_custom_center_focus">Center Auto Focus</string>
-    <string name="setting_ui_rc_custom_gimbal_recenter">Recenter FPV Gimbal / Downward 45 °</string>
+    <string name="setting_ui_rc_custom_gimbal_recenter">Ricentra FPV Gimbal / Downward 45 °</string>
     <string name="setting_ui_rc_custom_navigation">Navigazione</string>
     <string name="setting_ui_rc_custom_playback">Replay</string>
     <string name="setting_ui_rc_custom_quick_circle">Manual QuickSpin</string>
@@ -4796,7 +4796,7 @@ Continua a volare "</string>
     <string name="v2_active_c1">C1</string>
     <string name="v2_active_c2">C2</string>
     <string name="v2_active_camera_inspire_1">Camera Setting</string>
-    <string name="v2_active_camera_inspire_2">Recenter Gimbal</string>
+    <string name="v2_active_camera_inspire_2">Ricentra Gimbal</string>
     <string name="v2_active_camera_inspire_3">Cambia modalità gimbal</string>
     <string name="v2_active_camera_inspire_4">Cambia mappa / FPV</string>
     <string name="v2_active_camera_inspire_5">Pulisci rotta di volo</string>
@@ -5016,7 +5016,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
  Condividi di più del tuo lavoro per ottenere follower! "</string>
     <string name="v2_explore_host_empty_following">"Non stai seguendo nessuno.
  Trova e segui gli account SkyPixel dalla scheda Esplora \". "</string>
-    <string name="v2_explore_host_empty_tip">Segui gli account SkyPixel dalla tua scheda Popular e \" Recent . I loro aggiornamenti verranno visualizzati nella scheda Seguenti \".</string>
+    <string name="v2_explore_host_empty_tip">Segui gli account SkyPixel dalla tua scheda Populare e \" Recente . I loro aggiornamenti verranno visualizzati nella scheda Seguenti \".</string>
     <string name="v2_explore_likes_count">%1$d mi piace</string>
     <string name="v2_explore_network_error">Errore di rete</string>
     <string name="v2_explore_no_network_detail">Controlla la tua connessione internet</string>
@@ -5032,8 +5032,8 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_explore_select_bottom_dialog_1">Pubblica foto memorizzate localmente.</string>
     <string name="v2_explore_select_bottom_dialog_2">"Pubblica foto nell'editor"</string>
     <string name="v2_explore_tab_1_text">Popolare</string>
-    <string name="v2_explore_tab_2_text">Recent</string>
-    <string name="v2_explore_tab_3_text">Following</string>
+    <string name="v2_explore_tab_2_text">Recente</string>
+    <string name="v2_explore_tab_3_text">Segui</string>
     <string name="v2_explore_title">Esplora</string>
     <string name="v2_explore_title_text">commenti</string>
     <string name="v2_explorepost_nopic">Nessuna immagine</string>
