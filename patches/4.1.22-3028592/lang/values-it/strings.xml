@@ -3670,8 +3670,8 @@ Vola con cautela. "</string>
     <string name="service_tel">Phone</string>
     <string name="set_cover_btn_text">Imposta come copertina</string>
     <string name="setting_rc_delete">Elimina</string>
-    <string name="setting_rc_delete_confirm">Elimina?</string>
-    <string name="setting_ui_battery">Drone Battery</string>
+    <string name="setting_rc_delete_confirm">Eliminare?</string>
+    <string name="setting_ui_battery">Batteria Drone</string>
     <string name="setting_ui_battery_adv">Impostazioni avanzate</string>
     <string name="setting_ui_battery_charge_times">Numero delle cariche</string>
     <string name="setting_ui_battery_charge_times_dot">Numero delle cariche:</string>
@@ -4383,7 +4383,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_vision_abnormal">Anormale</string>
     <string name="setting_ui_vision_adv_desc">Impostazioni visione avanzata</string>
     <string name="setting_ui_vision_adv_title">Avanzato</string>
-    <string name="setting_ui_vision_ass">Abilita Obstacle Avoidance</string>
+    <string name="setting_ui_vision_ass">Abilita Evitare Ostacoli</string>
     <string name="setting_ui_vision_ass_desc1">"Quando i sensori di ostacolo in avanti rilevano un ostacolo, l'aereo rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s."</string>
     <string name="setting_ui_vision_ass_desc2">Le telecamere di rilevamento ostacoli in avanti hanno un campo visivo orizzontale di 60º e un campo visivo di 54º. Gli ostacoli al di fuori di questi intervalli non verranno rilevati.</string>
     <string name="setting_ui_vision_ass_desc3">"Nota: le telecamere di rilevamento ostacoli avanti non funzionano di notte o in condizioni di scarsa illuminazione. La precisione del rilevamento degli ostacoli dipende dalla dimensione dell'ostacolo. Fare riferimento al Manuale dell'utente per ulteriori dettagli."</string>
@@ -7834,7 +7834,7 @@ La directory è:%2$s "</string>
     <string name="setting_ui_vision_ass_desc2_mammoth">Il sistema di rilevamento 3D ha un campo visivo orizzontale di 70º e un campo visivo di 54º.</string>
     <string name="setting_ui_vision_ass_desc3_in2">"Le telecamere di rilevamento ostacoli in avanti non possono funzionare di notte o in condizioni di scarsa luminosità. Ostacolo La precisione del rilevamento dipende anche dalla dimensione dell'ostacolo. L'intervallo di rilevamento è 0,7 m-30 m."</string>
     <string name="setting_ui_vision_ass_desc3_mammoth">Nota: il 3D Sensing System funziona ancora correttamente quando la luce ambientale è debole.</string>
-    <string name="setting_ui_vision_ass_desc4">Abilitare Ostacoli Evita abilita automaticamente il Controllo Ostacoli RTH. Accedi a Impostazioni avanzate per apportare modifiche.</string>
+    <string name="setting_ui_vision_ass_desc4">Abilitando Evitare Ostacoli, abilita automaticamente il Controllo Ostacoli in RTH. Accedi a Impostazioni avanzate per apportare modifiche.</string>
     <string name="setting_ui_vision_ass_desc4_mammoth">"L'abilitazione di Obstacle Avoidance abiliterà automaticamente il controllo degli ostacoli RTH."</string>
     <string name="setting_ui_vision_ass_open_tip">"L'attivazione dell'eliminazione dell'ostacolo abilita automaticamente il controllo dell'elusione dell'RTH. Sei sicuro di voler abilitarlo adesso?"</string>
     <string name="setting_ui_vision_ghass_title">RTH Obstacle Avoidance</string>
