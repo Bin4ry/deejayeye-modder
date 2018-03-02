@@ -4379,12 +4379,12 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_setting_fail_disconnect">Impostazione fallita. Controlla la connessione del dispositivo e riprova.</string>
     <string name="setting_ui_setting_fail_out_of_range">"Impossibile impostare. Inserisci il numero nell'intervallo."</string>
     <string name="setting_ui_setting_success">Impostazione riuscita</string>
-    <string name="setting_ui_vision">Impostazioni di navigazione visuale</string>
+    <string name="setting_ui_vision">Impostazioni della visuale in volo</string>
     <string name="setting_ui_vision_abnormal">Anormale</string>
-    <string name="setting_ui_vision_adv_desc">Impostazioni visione avanzata</string>
+    <string name="setting_ui_vision_adv_desc">Impostazioni visuale avanzata</string>
     <string name="setting_ui_vision_adv_title">Avanzato</string>
     <string name="setting_ui_vision_ass">Abilita Evitare Ostacoli</string>
-    <string name="setting_ui_vision_ass_desc1">"Quando i sensori di ostacolo in avanti rilevano un ostacolo, l'aereo rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s."</string>
+    <string name="setting_ui_vision_ass_desc1">"Quando i sensori di ostacolo anteriori rilevano un ostacolo, il drone rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s."</string>
     <string name="setting_ui_vision_ass_desc2">Le telecamere di rilevamento ostacoli in avanti hanno un campo visivo orizzontale di 60º e un campo visivo di 54º. Gli ostacoli al di fuori di questi intervalli non verranno rilevati.</string>
     <string name="setting_ui_vision_ass_desc3">"Nota: le telecamere di rilevamento ostacoli avanti non funzionano di notte o in condizioni di scarsa illuminazione. La precisione del rilevamento degli ostacoli dipende dalla dimensione dell'ostacolo. Fare riferimento al Manuale dell'utente per ulteriori dettagli."</string>
     <string name="setting_ui_vision_ass_tip_content">"Disattivare il Forward Obstacle Sensing significa che l'aereo non eviterà automaticamente ostacoli nel suo percorso di volo. Sei sicuro di volerlo spegnere?"</string>
