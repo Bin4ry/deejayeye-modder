@@ -3156,21 +3156,21 @@ Vola con cautela. "</string>
     <string name="medal_photographer_exp_unit">Foto</string>
     <string name="medal_photographer_name">Level%1$d Photographer</string>
     <string name="medal_photographer_next_level">Livello%1$d richiede: Foto:%2$d/%3$d</string>
-    <string name="medal_pilot_exp_unit">Level</string>
+    <string name="medal_pilot_exp_unit">Livello</string>
     <string name="medal_pilot_name">Livello</string>
-    <string name="medal_pilot_next_level">Level%1$d Pilot</string>
+    <string name="medal_pilot_next_level">Livello%1$d Pilota</string>
     <string name="medal_sharer_exp_unit">%1$d livello richiede: Lv%2$d / Lv%3$d</string>
     <string name="medal_sharer_name">Livello%1$d Condivisione del master</string>
     <string name="medal_sharer_next_level">Livello%1$d richiede: Opera condivisa:%2$d /%3$d</string>
     <string name="medal_tab_director">Director</string>
-    <string name="medal_tab_photographer">Photographer</string>
+    <string name="medal_tab_photographer">Fotografo</string>
     <string name="medal_tab_pilot">Pilota</string>
     <string name="medal_tab_sharer">Condivisione master</string>
     <string name="media_info_created">Creato:</string>
     <string name="media_info_dimensions">Dimensioni:</string>
     <string name="media_info_exposure_program">Esposizione:</string>
     <string name="media_info_exposure_time">Tempo di esposizione:</string>
-    <string name="media_info_f_number">Aperture:</string>
+    <string name="media_info_f_number">Apertura:</string>
     <string name="media_info_iso">ISO:</string>
     <string name="media_info_make">Produttore dispositivo:</string>
     <string name="media_info_model">Dispositivo:</string>
@@ -4702,7 +4702,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="usercenter_cloudalbum_share_notsupport">Condivisione di file non disponibili.</string>
     <string name="usercenter_dji_shop">Negozio</string>
     <string name="usercenter_flight_record">Log di volo</string>
-    <string name="usercenter_my_info">Me</string>
+    <string name="usercenter_my_info">Io</string>
     <string name="usercenter_my_info_gender_female">Donna</string>
     <string name="usercenter_my_info_gender_male">Uomo</string>
     <string name="usercenter_my_info_gender_nottell">Privacy</string>
@@ -4795,7 +4795,7 @@ Continua a volare "</string>
     <string name="v2_active_aircraft">Attiva il tuo velivolo</string>
     <string name="v2_active_c1">C1</string>
     <string name="v2_active_c2">C2</string>
-    <string name="v2_active_camera_inspire_1">Camera Setting</string>
+    <string name="v2_active_camera_inspire_1">Impostazioni Camera</string>
     <string name="v2_active_camera_inspire_2">Ricentra Gimbal</string>
     <string name="v2_active_camera_inspire_3">Cambia modalità gimbal</string>
     <string name="v2_active_camera_inspire_4">Cambia mappa / FPV</string>
@@ -4921,10 +4921,10 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_bigfilm_reunion_tip">Ti auguro il miglior anno nuovo di sempre.</string>
     <string name="v2_bigfilm_trip_content">Partiamo per esplorare il mondo esterno!</string>
     <string name="v2_bigfilm_trip_tip">2016, sono in viaggio.</string>
-    <string name="v2_ble_device_connect_txt">Connect</string>
-    <string name="v2_ble_device_connected">Connected</string>
+    <string name="v2_ble_device_connect_txt">Connetti</string>
+    <string name="v2_ble_device_connected">Connesso</string>
     <string name="v2_ble_device_connected_issue">Interferenza del segnale di connessione</string>
-    <string name="v2_ble_device_connecting">Connecting</string>
+    <string name="v2_ble_device_connecting">Connessione</string>
     <string name="v2_ble_device_disconnect_confirm_txt">Disconnetti il ​​dispositivo.</string>
     <string name="v2_ble_device_disconnect_notify">Connetti dispositivo.</string>
     <string name="v2_ble_device_disconnect_txt">Disconnetti</string>
@@ -5449,7 +5449,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_smlt_academy_cannot_enter_title">Impossibile immettere Flight Simulator.</string>
     <string name="v2_smlt_academy_connect_tip">Collega il tuo drone</string>
     <string name="v2_smlt_academy_enter_tip">Avvia Flight Simulator</string>
-    <string name="v2_smlt_academy_exit_tip">Simulator Exited</string>
+    <string name="v2_smlt_academy_exit_tip">Uscita simulatore</string>
     <string name="v2_smlt_academy_reboot_tip">Riavvia il tuo aereo per sbloccare i motori.</string>
     <string name="v2_smlt_academy_title">Flight Simulator</string>
     <string name="v2_smlt_disconnect">Drone Disconnesso</string>
@@ -5561,7 +5561,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_upgrade_tip_upgrade_wait">Pacchetto di aggiornamento scaricato. Il firmware può essere aggiornato ora.</string>
     <string name="v2_upgrade_tip_upgrading">Aggiornamento (%s)</string>
     <string name="v2_upgrade_tip_version">Nuovo firmware disponibile!</string>
-    <string name="v2_upgrade_tomc_btn">Drone Not Connected</string>
+    <string name="v2_upgrade_tomc_btn">Drone non connesso</string>
     <string name="v2_upgrade_tomc_title">"Preparazione all'aggiornamento"</string>
     <string name="v2_upgrade_tomc_tv">Usa il cavo adattatore per connetterti.</string>
     <string name="v2_upload_failed">caricamento fallito</string>
@@ -5869,7 +5869,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_track_cmd_failed">Impossibile inviare il comando ActiveTrack.</string>
     <string name="visual_track_exception_drone_toohigh">Drone too High</string>
     <string name="visual_track_exception_drone_toolow">Drone too Low</string>
-    <string name="visual_track_exception_exit_default">ActiveTrack Flight Stopped</string>
+    <string name="visual_track_exception_exit_default">ActiveTrack Flight Fermato</string>
     <string name="visual_track_exception_gimbal_pitchlow">Tilt fotocamera troppo bassa</string>
     <string name="visual_track_exception_ground">​​Riprova dopo il decollo</string>
     <string name="visual_track_exception_lowdetect">Confirm Subject</string>
@@ -6141,7 +6141,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="connection_control_input_password">Password</string>
     <string name="connection_control_input_ssid">Nome Wi-Fi</string>
     <string name="connection_control_input_title">Modifica nome e password Wi-Fi</string>
-    <string name="connection_control_rc_btn_reset">collegamento del controller remoto</string>
+    <string name="connection_control_rc_btn_reset">Collegamento del controller remoto</string>
     <string name="connection_control_rc_tip_description_1">"Accendi l'aeromobile. Premere e tenere premuto il pulsante di accensione per circa 3 secondi. Rilasciare quando si sente il segnale acustico dell'aeromobile e l'aereo inizierà il collegamento."</string>
     <string name="connection_control_rc_tip_description_2">"Il velivolo termina il collegamento entro 30 secondi. Assicurarsi che l'aeromobile e il telecomando si trovino a una distanza di 20 cm l'uno dall'altro. Se il collegamento si interrompe, ripetere il passaggio 1."</string>
     <string name="connection_control_rc_tip_description_3">"Se il telecomando non è collegato all'aereo, tocca Collegamento del telecomando per iniziare il collegamento."</string>
@@ -6423,7 +6423,7 @@ KEEP FLYING "</string>
     <string name="draw_send_trajectory_fail">"Impossibile caricare il percorso. L'annullamento cancella il percorso corrente. Riprovare?"</string>
     <string name="draw_send_trajectory_success">Percorso caricato. Entrare in modalità Draw.</string>
     <string name="draw_start_failed">Impossibile accedere alla modalità Draw.</string>
-    <string name="draw_start_point">Start Point</string>
+    <string name="draw_start_point">Punto di partenza</string>
     <string name="draw_start_point_desc">Inizia a tracciare un percorso da qui.</string>
     <string name="draw_stop_by_braking">"Rilevato ostacolo. L'aeromobile è in bilico."</string>
     <string name="ds_assets_installed">Inizializzazione completata. DJIGO4 si avvia ...</string>
@@ -6764,7 +6764,7 @@ Sembra "</string>
 Assicurarsi che ci sia sufficiente luce ambientale e che la traiettoria di volo non sia bloccata da alberi, linee elettriche o altri ostacoli. Lo spostamento dei bastoncini durante il decollo può influire sull'acquisizione delle immagini. In caso di emergenza, scendere il velivolo usando le levette di controllo. "</string>
     <string name="fpv_leftmenu_precision_takeoff_failure_desc">Segnale GPS debole. Impossibile abilitare Precision Takeoff.</string>
     <string name="fpv_leftmenu_precision_takeoff_failure_title">Decollo fallito</string>
-    <string name="fpv_low_battery_back_home_tip">La batteria rimanente è sufficiente per RTH. Torna a casa ora.</string>
+    <string name="fpv_low_battery_back_home_tip">La batteria rimanente è sufficiente per RTH. Torna a casa ORA.</string>
     <string name="fpv_m600_pro_is_not_activite">M600 PRO non attivato. Connettiti con DJI Assistant 2.</string>
     <string name="fpv_metering_ae_toast">Esposizione automatica bloccata.</string>
     <string name="fpv_non_sdcard_cache_dlg_full_exit_desc">Spazio di archiviazione insufficiente per dispositivi mobili. Liberare spazio di archiviazione per continuare la memorizzazione nella cache.</string>
