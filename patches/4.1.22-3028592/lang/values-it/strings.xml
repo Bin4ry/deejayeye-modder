@@ -5827,9 +5827,9 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_point_taplimit_tip">Impossibile volare in quella direzione.</string>
     <string name="visual_point_terrian_follow">Abilita prevenzione collisione di terra</string>
     <string name="visual_point_tip">"In modalità TapFly, l'aereo volerà automaticamente nella direzione in cui tocchi lo schermo."</string>
-    <string name="visual_point_under_exposure">Ambient Light è troppo debole.</string>
+    <string name="visual_point_under_exposure">La luce nell'ambiente è troppo debole.</string>
     <string name="visual_radar_dected_fail_attilarge">"L'atteggiamento è troppo grande. %s Obstacle Sensing non funziona."</string>
-    <string name="visual_radar_dected_fail_autolanding">Auto atterraggio ora. %s Obstacle Sensing non funziona.</string>
+    <string name="visual_radar_dected_fail_autolanding">Auto atterraggio ora. %s Sensori ostacoli non funziona.</string>
     <string name="visual_radar_dected_fail_diff">I sensori di ostacolo in avanti sono parzialmente bloccati o troppo vicini a un ostacolo.</string>
     <string name="visual_radar_dected_fail_diff_back">"I sensori ostacolo all'indietro sono parzialmente bloccati o un ostacolo troppo vicino."</string>
     <string name="visual_radar_dected_fail_diff_bottom">I sensori di ostacolo verso il basso sono parzialmente bloccati o un ostacolo è troppo vicino.</string>
@@ -5846,9 +5846,9 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_radar_detect_abnormal_left">Left Obstacle Sensing non funziona.</string>
     <string name="visual_radar_detect_abnormal_right">Right Obstacle Sensing non funziona.</string>
     <string name="visual_radar_detect_fail">Forward Obstacle Sensing non funziona.</string>
-    <string name="visual_radar_detect_fail_dark">Ambient Light è troppo debole.</string>
+    <string name="visual_radar_detect_fail_dark">La luce nell'ambiente è troppo debole.</string>
     <string name="visual_radar_detect_fail_default">Forward Obstacle Sensing non è abilitato. Vola con cautela.</string>
-    <string name="visual_radar_detect_fail_light">Ambient Light è troppo forte.</string>
+    <string name="visual_radar_detect_fail_light">La luce nell'ambiente è troppo forte.</string>
     <string name="visual_selfie_tracking_dont_remind">Non mostrare più</string>
     <string name="visual_selfie_tracking_gesture1">Gesture 1</string>
     <string name="visual_selfie_tracking_gesture1_desc">Move to be Tracked</string>
