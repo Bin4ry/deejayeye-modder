@@ -158,7 +158,7 @@ ver=`cat version.txt`
 workdir="decompile_out"
 config_file="Settings.xml"
 outdir="__MODDED_APK_OUT__"
-timestamp=$(date -u +"%Y-%m-%dT%R:%S")
+timestamp=$(date -u +"%Y-%M-%dT%R:%S")
 log_file="$outdir/log-cfg-${timestamp//:/_}.txt"
 
 # Init settings from config file Settings.xml

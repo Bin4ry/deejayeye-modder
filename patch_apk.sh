@@ -3,10 +3,11 @@
 # Part of original RunMe.sh script that handles patching the apk found
 # in subdirectory PutApkHere that have been decompiled
 #
-# script is modified to take 2 arguments
+# script is modified to take 3 arguments
 #
 # First argument  : name of the decompiled apk directory e.g. decompile_out
 # Second argument : timestamp for generating the logs with autogeneration if empty
+# Third argument : bool value if additional languages should be added or not
 
 err=0
 
@@ -89,9 +90,12 @@ do
 	echo "    $patch" >> ../$log_file
 done
 
-if [ -d ../patches/$apkver-$apkvcode/lang ]
-then
-cp -rf ../patches/$apkver-$apkvcode/lang/. res/
+if [ "$3" == "true" ]
+	then
+	if [ -d ../patches/$apkver-$apkvcode/lang ]
+		then
+		cp -rf ../patches/$apkver-$apkvcode/lang/. res/
+	fi
 fi
 
 dos2unix ../patches/$apkver-$apkvcode/origin
