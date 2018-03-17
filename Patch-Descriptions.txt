@@ -26,7 +26,7 @@ On 4.1.8 you will need to stay online for the initial obb Download! This is need
 
 goOffline:
 Similar to removeOnlinefunction but for app version 4.1.14 etc. This patch changes all online calls to localhost :)
-For version 4.1.22 it's whitelisting online calls realted to maps
+It's whitelisting online calls realted to maps
 
 soPatch:
 This patch is automatically applied with "remove Onlinefunction". Will patch the libSDKRelativeJNI.so to stop it from calling home! 
