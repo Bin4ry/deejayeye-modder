@@ -1,13 +1,12 @@
-diff -Naur orig/smali_classes6/dji/pilot/publics/d/h.smali mod/smali_classes6/dji/pilot/publics/d/h.smali 
---- orig/smali_classes6/dji/pilot/publics/d/h.smali  2018-02-18 20:38:58.183634656 +0100 
-+++ mod/smali_classes6/dji/pilot/publics/d/h.smali  2018-02-18 20:29:47.100423864 +0100 
+diff -Naur orig/smali_classes6/dji/pilot/publics/d/h.smali mod/smali_classes6/dji/pilot/publics/d/h.smali
+--- orig/smali_classes6/dji/pilot/publics/d/h.smali	2018-03-17 14:48:25.040721700 +0100
++++ mod/smali_classes6/dji/pilot/publics/d/h.smali	2018-03-17 14:55:12.011821400 +0100
+@@ -5147,6 +5147,8 @@
+ 
+     move-result v1
+ 
++    const v1, 0x0
 +
-@@ -5146,8 +5146,6 @@ 
-     invoke-virtual {p1}, Ldji/midware/data/model/P3/DataOsdGetPushHome;->isBigGale()Z 
-  
-     move-result v1 
-+     
-+    const v1, 0x0 
-  
-     .line 805 
+     .line 805
      iget-boolean v0, p0, Ldji/pilot/publics/d/h;->D:Z
+ 
