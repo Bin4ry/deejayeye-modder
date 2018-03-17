@@ -1,4 +1,13 @@
 @echo OFF
+echo Administrative permissions required. Detecting permissions...
+net session >nul 2>&1
+if %errorLevel% == 0 (
+   	echo Success: Administrative permissions confirmed.
+) else (
+	echo Failure: Please run this script from within an Admin Shell!
+	pause
+	exit /B 1
+)
 SETLOCAL ENABLEEXTENSIONS
 SETLOCAL ENABLEDELAYEDEXPANSION
 cd /d %~dp0
