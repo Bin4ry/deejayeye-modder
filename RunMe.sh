@@ -238,6 +238,9 @@ add_timestamp=$(echo $add_timestamp | tr '[:upper:]' '[:lower:]')
 iconrep_step=$(echo $iconrep_step | tr '[:upper:]' '[:lower:]')
 iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
 
+# Create outdir
+mkdir $outdir 2>&1 >/dev/null
+
 # Create the log file
 touch $log_file
 
