@@ -1,0 +1,21 @@
+diff -Naru orig/smali_classes4/dji/data/upgrade/d/a.smali mod/smali_classes4/dji/data/upgrade/d/a.smali
+--- orig/smali_classes4/dji/data/upgrade/d/a.smali    2018-02-20 04:02:39.496198400 +0100
++++ mod/smali_classes4/dji/data/upgrade/d/a.smali    2018-02-20 17:21:49.221880900 +0100
+@@ -1060,7 +1060,7 @@
+     .line 189
+     sget-boolean v0, Ldji/pilot2/upgrade/DataUpgradeActivity;->a:Z
+
+-    if-eqz v0, :cond_0
++    goto :cond_0
+
+     .line 190
+     iget-object v0, p0, Ldji/data/upgrade/d/a;->a:Ljava/lang/String;
+@@ -1113,7 +1113,7 @@
+     .line 196
+     sget-boolean v4, Ldji/pilot2/upgrade/DataUpgradeActivity;->a:Z
+
+-    if-nez v4, :cond_1
++    goto :cond_1
+
+     .line 197
+     invoke-static {}, Ldji/midware/data/forbid/util/FlyfrbSupportUtil;->isUseSlaveMode()Z
