@@ -239,7 +239,7 @@ iconrep_step=$(echo $iconrep_step | tr '[:upper:]' '[:lower:]')
 iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
 
 # Create outdir
-mkdir $outdir 2>&1 >/dev/null
+mkdir $outdir &> /dev/null
 
 # Create the log file
 touch $log_file
