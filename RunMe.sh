@@ -2,7 +2,7 @@
 #
 #   New version of the RunMe.sh with a "modular" construction
 #   Can take arguments or default to old behaviour
-#   ApkName = orig.apk 
+#   ApkName = orig.apk
 #   Decompile directory = decompile_out
 #   Select and apply patches
 #   No cloning
@@ -11,10 +11,10 @@
 #   remove every "temporary" directory at the end of process
 #
 #   First argument  : name of apk file in PutApkHere subdirectory
-#   Second argument : 
+#   Second argument :
 
 # Check if we are running an OSX or Linux system
-if [ $(uname) = "Linux" ]
+if [ "$(uname)" = "Linux" ]
 then
     echo "========================================"
     echo "   Running script on an Linux system    "
@@ -36,7 +36,7 @@ else
         echo "brew link --force gnu-getopt"
         echo "additionnal information about brew/homebrew package system can be found at : https://brew.sh/index_fr.html"
         echo "========================================"
-        echo 
+        echo
         exit
     fi
 fi
@@ -46,7 +46,7 @@ function usage() {
 RunMeNg : script for patching some application
 
 arguments syntax and default values:
-    
+
   -h or --help
       display this message
 
@@ -115,19 +115,19 @@ command -v convert >/dev/null 2>&1 || { echo "I require convert (imagemagick pac
 command -v dwebp >/dev/null 2>&1 || { echo "I require dwebp (webp package) but it's not installed.  Aborting." >&2; err=1; }
 command -v xmlstarlet >/dev/null 2>&1 || { echo "I require xmlstarlet (xmlstarlet package) but it's not installed.  Aborting." >&2; err=1; }
 
-if [ $SYSTEMTYPE == LINUX ] ; then
+if [ "$SYSTEMTYPE" == LINUX ] ; then
     command -v display >/dev/null 2>&1 || { echo "I require display (imagemagick package) but it's not installed.  Aborting." >&2; err=1; }
 fi
 
-if [ $SYSTEMTYPE == OSX ] ; then
+if [ "$SYSTEMTYPE" == OSX ] ; then
     command -v gsed >/dev/null 2>&1 || { echo "I require gsed (gnu-sed package) but it's not installed.  Aborting." >&2; err=1; }
 fi
 
-if [ $err = 1 ]
+if [ "$err" = 1 ]
 then
     echo "Missing package. See detailled message above."
     echo "on your system, missing packages can be installed with a command like : "
-    if [ $SYSTEMTYPE == OSX ]
+    if [ "$SYSTEMTYPE" == OSX ]
     then
         echo "brew install missing_package_name"
         echo "additionnal information about brew/homebrew package system can be found at : https://brew.sh/index_fr.html"
@@ -141,7 +141,7 @@ then
 fi
 
 # Read all script arguments
-SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:I:r:t:f: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog: -u -n 'RunMeNg.sh' -- "$@"`
+SPLIT_ARG_TEMP=$(getopt -o ha:w:o:k:d:p:c:i:I:r:t:f: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog: -u -n 'RunMeNg.sh' -- "$@")
 # If an argument cannot be identified, stop the script with error status
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
 #  otherwise, let's go
@@ -159,7 +159,7 @@ add_timestamp="false"
 source_defog="false"
 
 # Init script internal variables
-ver=`cat version.txt`
+ver=$(cat version.txt)
 workdir="decompile_out"
 config_file="Settings.xml"
 outdir="__MODDED_APK_OUT__"
@@ -238,25 +238,25 @@ while true; do
 done
 
 # Reformat script arguments (in lower case)
-decompile_step=$(echo $decompile_step | tr '[:upper:]' '[:lower:]')
-patch_step=$(echo $patch_step | tr '[:upper:]' '[:lower:]')
-clone_step=$(echo $clone_step | tr '[:upper:]' '[:lower:]')
-repack_step=$(echo $repack_step | tr '[:upper:]' '[:lower:]')
-keep_temp=$(echo $keep_temp | tr '[:upper:]' '[:lower:]')
-add_timestamp=$(echo $add_timestamp | tr '[:upper:]' '[:lower:]')
-iconrep_step=$(echo $iconrep_step | tr '[:upper:]' '[:lower:]')
-iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
-source_defog=$(echo $source_defog | tr '[:upper:]' '[:lower:]')
+decompile_step=$(echo "$decompile_step" | tr '[:upper:]' '[:lower:]')
+patch_step=$(echo "$patch_step" | tr '[:upper:]' '[:lower:]')
+clone_step=$(echo "$clone_step" | tr '[:upper:]' '[:lower:]')
+repack_step=$(echo "$repack_step" | tr '[:upper:]' '[:lower:]')
+keep_temp=$(echo "$keep_temp" | tr '[:upper:]' '[:lower:]')
+add_timestamp=$(echo "$add_timestamp" | tr '[:upper:]' '[:lower:]')
+iconrep_step=$(echo "$iconrep_step" | tr '[:upper:]' '[:lower:]')
+iconmod_step=$(echo "$iconmod_step" | tr '[:upper:]' '[:lower:]')
+source_defog=$(echo "$source_defog" | tr '[:upper:]' '[:lower:]')
 
 # Create outdir
-mkdir $outdir &> /dev/null
+mkdir "$outdir" &> /dev/null
 
 # Create the log file
-touch $log_file
+touch "$log_file"
 
 apkbasename=$(basename "$moddedapkname")
 apkbasename="${apkbasename%.*}"
-# Set the name of the output APK package 
+# Set the name of the output APK package
 if [ "$add_timestamp" = "true" ] || [ "$add_timestamp" = "0" ]
 then
     moddedapkname="$apkbasename-v$ver-$timestamp.apk"
@@ -289,17 +289,17 @@ printf '%b\n' "$message"
 echo "Do you agree with steps above ?"
 echo ""
 if [ "$SYSTEMTYPE" = OSX ] ; then
-    read -p "Agree (y/n) ? " -n 1 test_continue
+    read -rp "Agree (y/n) ? " -n 1 test_continue
 else
-    read -p "Agree (y/n) ? " -N 1 test_continue
+    read -rp "Agree (y/n) ? " -N 1 test_continue
 fi
 echo ""
 
-test_continue=$(echo $test_continue | tr '[:upper:]' '[:lower:]')
+test_continue=$(echo "$test_continue" | tr '[:upper:]' '[:lower:]')
 
 if [ "$test_continue" = "y" ]
 then
-    printf '%b\n' "$message" >> $log_file
+    printf '%b\n' "$message" >> "$log_file"
 else
     echo "User stopped script"
     exit 1
@@ -309,12 +309,12 @@ apkname=$(basename "$apkname")
 
 if [ "$decompile_step" = "true" ] || [ "$decompile_step" = "y" ] || [ "$decompile_step" = "1" ]
 then
-    ./decompile_apk.sh $apkname $workdir $timestamp
+    ./decompile_apk.sh "$apkname" "$workdir" "$timestamp"
 fi
 
 if [ "$patch_step" = "true" ] || [ "$patch_step" = "y" ] || [ "$patch_step" = "1" ]
 then
-    ./patch_apk.sh $workdir $timestamp
+    ./patch_apk.sh "$workdir" "$timestamp"
 fi
 
 if [ "$clone_step" = "true" ] || [ "$clone_step" = "y" ] || [ "$clone_step" = "1" ]
@@ -322,9 +322,9 @@ then
     if [ "$newpackagename" = "" ]
     then
         echo "Enter new package name (e.g. \"jdi.og.v4\")"
-        read -r -p "New package name : " newpackagename
+        read -rp "New package name : " newpackagename
     else
-        echo "Use provided package name :" $newpackagename
+        echo "Use provided package name :" "$newpackagename"
     fi
     echo ""
     if [ "$googleapikey" = "" ]
@@ -333,23 +333,23 @@ then
         echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
         echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
         echo ""
-        read -r -p "Google API key : " googleapikey
+        read -rp "Google API key : " googleapikey
     else
-        echo "Use provided Google API Key :" $googleapikey
+        echo "Use provided Google API Key :" "$googleapikey"
     fi
     echo ""
     if [ "$newapplabel" = "" ]
     then
         echo "Enter the friendly name of clone application label (e.g. \"IDJ OG 4.x mod\")"
-        read -r -p "Application friendly label : " newapplabel
+        read -rp "Application friendly label : " newapplabel
     else
-        echo "Use provided Application label :" $newapplabel
+        echo "Use provided Application label :" "$newapplabel"
     fi
     echo ""
     ./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$newapplabel"
 fi
 
-# Replace the application icon by the provided one. 
+# Replace the application icon by the provided one.
 # If an invalid path or no path is enter, the original APK icon is used instead of.
 if [ "$iconrep_step" = "true" ] || [ "$iconrep_step" = "y" ] || [ "$iconrep_step" = "1" ]
 then
@@ -367,22 +367,22 @@ then
             # If an empty path has been entered, use the default application icon.
             if [ "$iconpath" = "" ] ; then iconpath="$workdir/res/drawable/appicon40.png"; fi
         else
-            echo "Use provided logo :" $iconpath
+            echo "Use provided logo :" "$iconpath"
         fi
         # Does the path to the icon file valid?
-        if [ -f $iconpath ]
+        if [ -f "$iconpath" ]
         then
             echo ""
             echo "A window with image should open, when ready close it and choose to keep or select a new icon"
-            display $iconpath
+            display "$iconpath"
             echo ""
             if [ "$SYSTEMTYPE" = OSX ] ; then
-                read -p "Keep this icon (y/n) ? " -n 1 iconok
+                read -rp "Keep this icon (y/n) ? " -n 1 iconok
             else
-                read -p "Keep this icon (y/n) ? " -N 1 iconok
+                read -rp "Keep this icon (y/n) ? " -N 1 iconok
             fi
             echo ""
-            iconok=$(echo $iconok | tr '[:upper:]' '[:lower:]')
+            iconok=$(echo "$iconok" | tr '[:upper:]' '[:lower:]')
             if [ "$iconok" == "y" ] ; then break; fi
         else
             echo "Invalid path: $iconpath. Please retry"
@@ -392,7 +392,7 @@ then
     done
 
     # Change the APK icon by the new one.
-    ./change_appicons.sh $workdir $iconpath
+    ./change_appicons.sh "$workdir" "$iconpath"
     echo ""
 fi
 
@@ -400,15 +400,15 @@ if [ "$iconmod_step" = "true" ] || [ "$iconmod_step" = "y" ] || [ "$iconmod_step
 then
     # If no icon has been specified, used the default application icon.
     if [ "$iconpath" = "" ] ; then iconpath="$workdir/res/drawable/appicon40.png"; fi
-    # Check if a new icon color has been specified in the settings file.    
+    # Check if a new icon color has been specified in the settings file.
     hue_shift="$( xmlstarlet sel -t -v '/config/hue_shift' "$config_file" )"
     # Create unique temporary file.
-    unique_rnd=$RANDOM$RANDOM$RANDOM
-    cp $iconpath /tmp/test-$unique_rnd.png
+    unique_rnd="$RANDOM$RANDOM$RANDOM"
+    cp "$iconpath" "/tmp/test-$unique_rnd.png"
     while true; do
         # If no icon color has been specified, allow user to select one.
         if [ "$hue_shift" = "" ]
-            then
+        then
             echo "Choose a color shift (hue shift in HSV colorspace) for the app icon"
             echo "Value must be between 0 and 200"
             echo "100 will not change color"
@@ -428,49 +428,49 @@ then
             echo ""
             echo "A window with image should open, when ready close it and choose to keep or try a new color value"
             echo "on OSX you have to close the windows with cmd+Q to return to script execution"
-            convert /tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift /tmp/test-$unique_rnd-out.png
-            $DISPLAYCMD /tmp/test-$unique_rnd-out.png
+            convert "/tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift" "/tmp/test-$unique_rnd-out.png"
+            $DISPLAYCMD "/tmp/test-$unique_rnd-out.png"
             echo ""
             if [ "$SYSTEMTYPE" = OSX ] ; then
-                read -p "Keep this color or try a new one (y/n) ? " -n 1 colorok
+                read -rp "Keep this color or try a new one (y/n) ? " -n 1 colorok
             else
-                read -p "Keep this color or try a new one (y/n) ? " -N 1 colorok
+                read -rp "Keep this color or try a new one (y/n) ? " -N 1 colorok
             fi
             echo ""
-            colorok=$(echo $colorok | tr '[:upper:]' '[:lower:]')
+            colorok=$(echo "$colorok" | tr '[:upper:]' '[:lower:]')
             if [ "$colorok" == "y" ] ; then break; fi
         else
-            echo "Use provided color :" $hue_shift
+            echo "Use provided color :" "$hue_shift"
             echo ""
             break
         fi
     done
     # Remove temporary files.
-    rm -f /tmp/test-$unique_rnd.png
-    rm -f /tmp/test-$unique_rnd-out.png
+    rm -f "/tmp/test-$unique_rnd.png"
+    rm -f "/tmp/test-$unique_rnd-out.png"
     # Apply new color to the application icon.
-    ./change_appicons_color.sh $workdir $hue_shift
+    ./change_appicons_color.sh "$workdir" "$hue_shift"
     echo ""
 fi
 
 if [ "$source_defog" = "true" ] || [ "$source_defog" = "y" ] || [ "$source_defog" = "1" ]
 then
-    echo "Source defog"
+    echo "Source defog (this will take a while...)"
     # TODO: add key detection
-    python defog_strings_ng.py 2 $workdir
+    python defog_strings_ng.py "2" "$workdir" &> /dev/null
 fi
 
 if [ "$repack_step" = "true" ] || [ "$repack_step" = "y" ] || [ "$repack_step" = "1" ]
 then
     echo Rebuilding apk
-    rm -rf $outdir/build
-    java -jar tools/apktool.jar b -o $outdir/$moddedapkname $workdir
+    rm -rf "$outdir/build"
+    java -jar tools/apktool.jar b -o "$outdir/$moddedapkname" "$workdir"
     echo Signing with testkey
-    java -jar tools/apksigner/apksigner.jar sign --key tools/apksigner/testkey.pk8 --cert tools/apksigner/testkey.x509.pem $outdir/$moddedapkname
+    java -jar tools/apksigner/apksigner.jar sign --key tools/apksigner/testkey.pk8 --cert tools/apksigner/testkey.x509.pem "$outdir/$moddedapkname"
 fi
 
 if [ "$keep_temp" = "false" ] || [ "$keep_temp" = "n" ] || [ "$keep_temp" = "0" ]
 then
     echo "Removing work directory $workdir"
-    rm -rf $workdir
+    rm -rf "$workdir"
 fi
