@@ -42,61 +42,65 @@ else
 fi
 
 function usage() {
-	echo "RunMeNg : script for patching some application"
-	echo ""
-	echo "arguments syntax and default values:"
-	echo ""
-	echo "-h or --help"
-	echo "     display this message"
-	echo ""
-	echo "-a name.apk or --apk-name=name.apk"
-	echo "     name of pk from PutApkHere directory"
-	echo "     [default = orig.apk]"
-	echo ""
-	echo "-w workdir or --work-directory=workdir"
-	echo "     name of working decompile directory"
-	echo "     [default=decompile_out]"
-	echo ""
-	echo "-o out.apk or --output-apk=out.apk"
-	echo "     name of the modded apk filename"
-	echo "     [default=mod-ver.apk]"
-	echo ""
-	echo "-k true/false or --keep-temp=true/false"
-	echo "     flag to keep modded working directory at end of script"
-	echo "     [default=false]"
-	echo ""
-	echo "-d true/false or --decompile-step=true/false"
-	echo "     flag to do the decompiling step"
-	echo "     [default=true]"
-	echo ""
-	echo "-p true/false or --patch-step=true/false"
-	echo "     flag do the smali patching step"
-	echo "     [default=true]"
-	echo ""
-	echo "-c true/false or --clone-step=true/false"
-	echo "     flag to do the cloning step"
-	echo "     [default=false]"
-	echo ""
-	echo "-i true/false or --iconmod-step=true/false"
-	echo "	   flag to do the icon color change step"
-	echo "     [default=false]"
-	echo ""
-	echo "-I true/false or --iconrep-step=true/false"
-	echo "	   flag to change the application icon"
-	echo "     [default=false]"
-	echo ""
-	echo "-r true/false or --repack-step=true/false"
-	echo "     flag to do the repacking and signing step"
-	echo "     [default=true]"
-	echo ""
-	echo "-t true/false or --timestamp=true/false"
-	echo "     flag to add a timestamp to output modded apk"
-	echo "     [default=false]"
-	echo ""
-#	echo "-u true/false or --user-interactive=true/false"
-#	echo "     flag to select interactive mode (when applicable)"
-#	echo "     [default=true]"
-#	echo ""
+    echo "
+RunMeNg : script for patching some application
+
+arguments syntax and default values:
+    
+  -h or --help
+      display this message
+
+  -a name.apk or --apk-name=name.apk
+      name of pk from PutApkHere directory
+      [default = orig.apk]
+
+  -w workdir or --work-directory=workdir
+      name of working decompile directory
+      [default=decompile_out]
+
+  -o out.apk or --output-apk=out.apk
+      name of the modded apk filename
+      [default=mod-ver.apk]
+
+  -k true/false or --keep-temp=true/false
+      flag to keep modded working directory at end of script
+      [default=false]
+
+  -d true/false or --decompile-step=true/false
+      flag to do the decompiling step
+      [default=true]
+
+  -p true/false or --patch-step=true/false
+      flag do the smali patching step
+      [default=true]
+
+  -c true/false or --clone-step=true/false
+      flag to do the cloning step
+      [default=false]
+
+  -i true/false or --iconmod-step=true/false
+      flag to do the icon color change step
+      [default=false]
+
+  -I true/false or --iconrep-step=true/false
+      flag to change the application icon
+      [default=false]
+
+  -r true/false or --repack-step=true/false
+      flag to do the repacking and signing step
+      [default=true]
+
+  -t true/false or --timestamp=true/false
+      flag to add a timestamp to output modded apk
+      [default=false]
+
+  -f true/false or --defog=true/false
+      flag to defog all files after patching
+      this process MIGHT provide app speedup but will take a while
+      keep in mind that is changing almost all files
+      so patches on workdir after using this option might not work
+      [default=false]
+    "
 }
 
 err=0
@@ -137,7 +141,7 @@ then
 fi
 
 # Read all script arguments
-SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:I:r:t: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp: -u -n 'RunMeNg.sh' -- "$@"`
+SPLIT_ARG_TEMP=`getopt -o ha:w:o:k:d:p:c:i:I:r:t:f: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog: -u -n 'RunMeNg.sh' -- "$@"`
 # If an argument cannot be identified, stop the script with error status
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
 #  otherwise, let's go
@@ -152,6 +156,7 @@ iconmod_step="false"
 iconrep_step="false"
 repack_step="true"
 add_timestamp="false"
+source_defog="false"
 
 # Init script internal variables
 ver=`cat version.txt`
@@ -222,6 +227,10 @@ while true; do
 			add_timestamp="$2"
 			shift 2
 			;;
+		-f | --defog )
+			source_defog="$2"
+			shift 2
+			;;
 		* )
 			break
 			;;
@@ -237,9 +246,10 @@ keep_temp=$(echo $keep_temp | tr '[:upper:]' '[:lower:]')
 add_timestamp=$(echo $add_timestamp | tr '[:upper:]' '[:lower:]')
 iconrep_step=$(echo $iconrep_step | tr '[:upper:]' '[:lower:]')
 iconmod_step=$(echo $iconmod_step | tr '[:upper:]' '[:lower:]')
+source_defog=$(echo $source_defog | tr '[:upper:]' '[:lower:]')
 
 # Create outdir
-mkdir $outdir 2>&1 >/dev/null
+mkdir $outdir &> /dev/null
 
 # Create the log file
 touch $log_file
@@ -269,6 +279,7 @@ message=$message"Do Clone Step          : $clone_step\\n"
 message=$message"Do IconMod Step        : $iconmod_step\\n"
 message=$message"Do IconRep Step        : $iconrep_step\\n"
 message=$message"Do Repack Step         : $repack_step\\n"
+message=$message"Do Source Defog        : $source_defog\\n"
 message=$message"Add Timestamp          : $add_timestamp\\n"
 message=$message"\\n"
 message=$message"TimeStamp value        : $timestamp\\n"
@@ -440,6 +451,13 @@ then
 	# Apply new color to the application icon.
 	./change_appicons_color.sh $workdir $hue_shift
 	echo ""
+fi
+
+if [ "$source_defog" = "true" ] || [ "$source_defog" = "y" ] || [ "$source_defog" = "1" ]
+then
+	echo "Source defog"
+	# TODO: add key detection
+	python defog_strings_ng.py 2 $workdir
 fi
 
 if [ "$repack_step" = "true" ] || [ "$repack_step" = "y" ] || [ "$repack_step" = "1" ]
