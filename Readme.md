@@ -68,7 +68,7 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 ### Linux:
 
-1. make sure you have dialog installed: sudo apt-get install dialog
+1. make sure you have `dialog`, `bspatch`, `dos2unix` and `java` installed: `sudo apt-get install dialog bspatch dos2unix openjdk-8-jre`
 2. Download needed tools manually or run the script provided.
 
    a) Download apktool, rename it to apktool.jar and save it to tools folder: https://bitbucket.org/iBotPeaches/apktool/downloads/
