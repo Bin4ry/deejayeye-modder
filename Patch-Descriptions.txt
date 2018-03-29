@@ -64,3 +64,6 @@ This database hold the recorded missions and moving it in user public area allow
 
 RemovePlatiniumMotorPropError(FW<1.03.1000):
 Removes the "Motor current error. Check your propellers and fly with caution." pop-up on Mavic Pro Platinium when using flight controler modules (305 & 306) which come from Firmware < 1.03.1000
+
+removeNfzUpdate:
+Removes popup "New Fly Safe data found... DJI GO 4 cannot be used normally without updating."
