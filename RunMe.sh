@@ -251,9 +251,6 @@ source_defog=$(echo "$source_defog" | tr '[:upper:]' '[:lower:]')
 # Create outdir
 mkdir "$outdir" &> /dev/null
 
-# Create the log file
-touch "$log_file"
-
 apkbasename=$(basename "$moddedapkname")
 apkbasename="${apkbasename%.*}"
 # Set the name of the output APK package
@@ -264,26 +261,25 @@ else
     moddedapkname="$apkbasename-v$ver.apk"
 fi
 
-message="\\n"
-message=$message"========================================\\n"
-message=$message"         Configuration Summary\\n"
-message=$message"========================================\\n"
-message=$message""
-message=$message"Input Apk Name         : $apkname\\n"
-message=$message"Working Directory      : $workdir\\n"
-message=$message"Output Modded Apk Name : $moddedapkname\\n"
-message=$message"Keep Work Dir          : $keep_temp\\n"
-message=$message"Do Decompile Step      : $decompile_step\\n"
-message=$message"Do Patch Step          : $patch_step\\n"
-message=$message"Do Clone Step          : $clone_step\\n"
-message=$message"Do IconMod Step        : $iconmod_step\\n"
-message=$message"Do IconRep Step        : $iconrep_step\\n"
-message=$message"Do Repack Step         : $repack_step\\n"
-message=$message"Do Source Defog        : $source_defog\\n"
-message=$message"Add Timestamp          : $add_timestamp\\n"
-message=$message"\\n"
-message=$message"TimeStamp value        : $timestamp\\n"
-message=$message"\\n"
+message="
+========================================
+         Configuration Summary
+========================================
+
+Input Apk Name         : $apkname
+Working Directory      : $workdir
+Output Modded Apk Name : $moddedapkname
+Keep Work Dir          : $keep_temp
+Do Decompile Step      : $decompile_step
+Do Patch Step          : $patch_step
+Do Clone Step          : $clone_step
+Do IconMod Step        : $iconmod_step
+Do IconRep Step        : $iconrep_step
+Do Repack Step         : $repack_step
+Do Source Defog        : $source_defog
+Add Timestamp          : $add_timestamp\\n
+TimeStamp value        : $timestamp\\n
+"
 
 printf '%b\n' "$message"
 echo "Do you agree with steps above ?"
@@ -299,6 +295,7 @@ test_continue=$(echo "$test_continue" | tr '[:upper:]' '[:lower:]')
 
 if [ "$test_continue" = "y" ]
 then
+    touch "$log_file"  # Create the log file
     printf '%b\n' "$message" >> "$log_file"
 else
     echo "User stopped script"
