@@ -1,7 +1,9 @@
 RunMe+.cmd
-PutApkHere/orig.apk
+PutApkHere/*.apk
 tools/
 __MODDED_APK_OUT__/
 patches_out/
-decompile_out/
+decompile_out*/
 source/
+mod/
+orig/
