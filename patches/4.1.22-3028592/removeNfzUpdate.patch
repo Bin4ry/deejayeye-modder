@@ -1,21 +1,373 @@
 diff -Naru orig/smali_classes4/dji/data/upgrade/d/a.smali mod/smali_classes4/dji/data/upgrade/d/a.smali
---- orig/smali_classes4/dji/data/upgrade/d/a.smali    2018-02-20 04:02:39.496198400 +0100
-+++ mod/smali_classes4/dji/data/upgrade/d/a.smali    2018-02-20 17:21:49.221880900 +0100
+--- orig/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-01 14:30:30.204308700 +0200
++++ mod/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-01 15:07:07.112777500 +0200
 @@ -1060,7 +1060,7 @@
      .line 189
      sget-boolean v0, Ldji/pilot2/upgrade/DataUpgradeActivity;->a:Z
 
 -    if-eqz v0, :cond_0
-+    goto :cond_0
++    goto :goto_0
 
      .line 190
      iget-object v0, p0, Ldji/data/upgrade/d/a;->a:Ljava/lang/String;
-@@ -1113,7 +1113,7 @@
+@@ -1074,7 +1074,7 @@
+     invoke-static {v0, v3}, Ldji/dbox/upgrade/p4/a/a;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+     .line 193
+-    :cond_0
++    :goto_0
+     invoke-static {}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->getInstance()Ldji/midware/data/model/P3/DataOsdGetPushCommon;
+
+     move-result-object v0
+@@ -1084,24 +1084,24 @@
+
+     move-result v3
+
+-    if-nez v3, :cond_3
++    if-nez v3, :cond_2
+
+     invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->isGetted()Z
+
+     move-result v3
+
+-    if-eqz v3, :cond_3
++    if-eqz v3, :cond_2
+
+     invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->isMotorUp()Z
+
+     move-result v0
+
+-    if-eqz v0, :cond_3
++    if-eqz v0, :cond_2
+
+     move v0, v1
+
+     .line 195
+-    :goto_0
++    :goto_1
+     invoke-static {}, Ldji/pilot2/usercenter/activate/a;->getInstance()Ldji/pilot2/usercenter/activate/a;
+
+     move-result-object v3
+@@ -1113,31 +1113,32 @@
      .line 196
      sget-boolean v4, Ldji/pilot2/upgrade/DataUpgradeActivity;->a:Z
 
 -    if-nez v4, :cond_1
-+    goto :cond_1
++    goto :goto_2
 
      .line 197
      invoke-static {}, Ldji/midware/data/forbid/util/FlyfrbSupportUtil;->isUseSlaveMode()Z
+
+     move-result v4
+
+-    if-nez v4, :cond_1
++    if-nez v4, :cond_0
+
+-    if-nez v0, :cond_1
++    if-nez v0, :cond_0
+
+-    if-nez v3, :cond_2
++    if-nez v3, :cond_1
+
+-    :cond_1
++    :cond_0
++    :goto_2
+     move v2, v1
+
+     .line 196
+-    :cond_2
++    :cond_1
+     return v2
+
+-    :cond_3
++    :cond_2
+     move v0, v2
+
+     .line 194
+-    goto :goto_0
++    goto :goto_1
+ .end method
+
+ .method public static getInstance(Landroid/content/Context;)Ldji/data/upgrade/d/a;
+@@ -1537,186 +1538,11 @@
+ .end method
+
+ .method private n()V
+-    .locals 9
++    .locals 0
+
+     .prologue
+-    const/4 v8, 0x1
+-
+-    const/4 v7, 0x0
+-
+     .line 476
+-    invoke-direct {p0}, Ldji/data/upgrade/d/a;->g()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_1
+-
+-    .line 525
+-    :cond_0
+-    :goto_0
+     return-void
+-
+-    .line 477
+-    :cond_1
+-    invoke-direct {p0}, Ldji/data/upgrade/d/a;->h()Z
+-
+-    move-result v0
+-
+-    if-nez v0, :cond_0
+-
+-    .line 482
+-    iget-object v0, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    invoke-static {v0}, Ldji/data/upgrade/c/d;->getInstance(Landroid/content/Context;)Ldji/data/upgrade/c/d;
+-
+-    move-result-object v1
+-
+-    .line 483
+-    invoke-virtual {v1}, Ldji/data/upgrade/c/d;->a()Z
+-
+-    move-result v0
+-
+-    if-nez v0, :cond_2
+-
+-    invoke-virtual {v1}, Ldji/data/upgrade/c/d;->c()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_2
+-
+-    .line 486
+-    new-instance v0, Ljava/util/ArrayList;
+-
+-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+-
+-    .line 487
+-    sget-object v1, Ldji/data/upgrade/a/e$b;->a:Ldji/data/upgrade/a/e$b;
+-
+-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+-
+-    .line 488
+-    sget-object v1, Ldji/data/upgrade/a/e$b;->b:Ldji/data/upgrade/a/e$b;
+-
+-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+-
+-    .line 489
+-    new-instance v1, Ldji/data/upgrade/d/a$a;
+-
+-    const/4 v2, 0x0
+-
+-    invoke-direct {v1, v2, v0, v7}, Ldji/data/upgrade/d/a$a;-><init>(Ljava/util/List;Ljava/util/List;I)V
+-
+-    .line 493
+-    invoke-direct {p0, v1}, Ldji/data/upgrade/d/a;->a(Ldji/data/upgrade/d/a$a;)V
+-
+-    goto :goto_0
+-
+-    .line 497
+-    :cond_2
+-    iget-object v0, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    const v2, 0x7f091ee0
+-
+-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    .line 498
+-    invoke-virtual {v1}, Ldji/data/upgrade/c/d;->a()Z
+-
+-    move-result v1
+-
+-    if-eqz v1, :cond_3
+-
+-    .line 499
+-    iget-object v0, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    const v1, 0x7f091ee1
+-
+-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    .line 502
+-    :cond_3
+-    invoke-direct {p0}, Ldji/data/upgrade/d/a;->e()Ldji/publics/widget/dialog/c;
+-
+-    move-result-object v1
+-
+-    iput-object v1, p0, Ldji/data/upgrade/d/a;->q:Ldji/publics/widget/dialog/c;
+-
+-    .line 503
+-    iget-object v1, p0, Ldji/data/upgrade/d/a;->q:Ldji/publics/widget/dialog/c;
+-
+-    iget-object v2, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    const v3, 0x7f091eea
+-
+-    new-array v4, v8, [Ljava/lang/Object;
+-
+-    iget-object v5, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    const v6, 0x7f091ed3
+-
+-    .line 504
+-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v5
+-
+-    aput-object v5, v4, v7
+-
+-    .line 503
+-    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+-
+-    move-result-object v2
+-
+-    invoke-virtual {v1, v2}, Ldji/publics/widget/dialog/c;->setTitle(Ljava/lang/CharSequence;)V
+-
+-    .line 505
+-    iget-object v1, p0, Ldji/data/upgrade/d/a;->q:Ldji/publics/widget/dialog/c;
+-
+-    invoke-virtual {v1, v0}, Ldji/publics/widget/dialog/c;->b(Ljava/lang/CharSequence;)Ldji/publics/widget/dialog/c;
+-
+-    .line 506
+-    iget-object v0, p0, Ldji/data/upgrade/d/a;->q:Ldji/publics/widget/dialog/c;
+-
+-    iget-object v1, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    const v2, 0x7f09152a
+-
+-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    new-instance v2, Ldji/data/upgrade/d/a$2;
+-
+-    invoke-direct {v2, p0}, Ldji/data/upgrade/d/a$2;-><init>(Ldji/data/upgrade/d/a;)V
+-
+-    invoke-virtual {v0, v1, v2, v8}, Ldji/publics/widget/dialog/c;->b(Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;Z)Ldji/publics/widget/dialog/c;
+-
+-    .line 516
+-    iget-object v0, p0, Ldji/data/upgrade/d/a;->q:Ldji/publics/widget/dialog/c;
+-
+-    iget-object v1, p0, Ldji/data/upgrade/d/a;->b:Landroid/content/Context;
+-
+-    const v2, 0x7f090cf1
+-
+-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    new-instance v2, Ldji/data/upgrade/d/a$3;
+-
+-    invoke-direct {v2, p0}, Ldji/data/upgrade/d/a$3;-><init>(Ldji/data/upgrade/d/a;)V
+-
+-    invoke-virtual {v0, v1, v2}, Ldji/publics/widget/dialog/c;->a(Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)Ldji/publics/widget/dialog/c;
+-
+-    .line 524
+-    iget-object v0, p0, Ldji/data/upgrade/d/a;->q:Ldji/publics/widget/dialog/c;
+-
+-    invoke-virtual {v0}, Ldji/publics/widget/dialog/c;->show()V
+-
+-    goto/16 :goto_0
+ .end method
+
+
+diff -Naru orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali mod/smali_classes5/dji/pilot/flyunlimit/a/g.smali
+--- orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali	2018-04-01 14:30:38.749753100 +0200
++++ mod/smali_classes5/dji/pilot/flyunlimit/a/g.smali	2018-04-01 14:43:33.504996400 +0200
+@@ -1195,89 +1195,11 @@
+ .end method
+
+ .method public b(Landroid/content/Context;)V
+-    .locals 4
++    .locals 0
+
+     .prologue
+-    const/4 v0, 0x0
+-
+     .line 200
+-    invoke-direct {p0, p1}, Ldji/pilot/flyunlimit/a/g;->e(Landroid/content/Context;)Z
+-
+-    move-result v1
+-
+-    if-nez v1, :cond_0
+-
+-    .line 215
+-    :goto_0
+     return-void
+-
+-    .line 205
+-    :cond_0
+-    iget-object v1, p0, Ldji/pilot/flyunlimit/a/g;->b:Landroid/content/Context;
+-
+-    invoke-static {v1}, Ldji/pilot/flyforbid/d;->getInstance(Landroid/content/Context;)Ldji/pilot/flyforbid/d;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v1}, Ldji/pilot/flyforbid/d;->a()Ljava/util/ArrayList;
+-
+-    move-result-object v1
+-
+-    .line 206
+-    invoke-interface {v1}, Ljava/util/List;->size()I
+-
+-    move-result v2
+-
+-    if-lez v2, :cond_1
+-
+-    .line 207
+-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+-
+-    move-result-object v0
+-
+-    check-cast v0, Ldji/midware/data/forbid/DJIFlightLimitAreaModel;
+-
+-    iget v0, v0, Ldji/midware/data/forbid/DJIFlightLimitAreaModel;->type:I
+-
+-    .line 210
+-    :cond_1
+-    iget-object v1, p0, Ldji/pilot/flyunlimit/a/g;->d:Ldji/pilot/flyunlimit/a/b;
+-
+-    new-instance v2, Ldji/pilot/flyunlimit/a/b$a;
+-
+-    invoke-direct {v2}, Ldji/pilot/flyunlimit/a/b$a;-><init>()V
+-
+-    .line 211
+-    invoke-direct {p0, v0}, Ldji/pilot/flyunlimit/a/g;->a(I)Ldji/pilot/flyunlimit/view/NfzZoneDescView$a;
+-
+-    move-result-object v0
+-
+-    invoke-virtual {v2, v0}, Ldji/pilot/flyunlimit/a/b$a;->a(Ldji/pilot/flyunlimit/view/NfzZoneDescView$a;)Ldji/pilot/flyunlimit/a/b$a;
+-
+-    move-result-object v0
+-
+-    iget-object v2, p0, Ldji/pilot/flyunlimit/a/g;->b:Landroid/content/Context;
+-
+-    const v3, 0x7f09197f
+-
+-    .line 212
+-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v2
+-
+-    invoke-virtual {v0, v2}, Ldji/pilot/flyunlimit/a/b$a;->a(Ljava/lang/String;)Ldji/pilot/flyunlimit/a/b$a;
+-
+-    move-result-object v0
+-
+-    .line 210
+-    invoke-virtual {v1, v0}, Ldji/pilot/flyunlimit/a/b;->a(Ldji/pilot/flyunlimit/a/b$a;)V
+-
+-    .line 213
+-    iget-object v0, p0, Ldji/pilot/flyunlimit/a/g;->d:Ldji/pilot/flyunlimit/a/b;
+-
+-    invoke-virtual {v0}, Ldji/pilot/flyunlimit/a/b;->show()V
+-
+-    goto :goto_0
+ .end method
+
+ .method public b(Landroid/content/Context;Ldji/pilot/flyforbid/h$b;)V
