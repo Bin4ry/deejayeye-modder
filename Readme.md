@@ -123,7 +123,17 @@ url_patcher.sh applies the patching prepared in __MODDED_APK_OUT__/urls/subdir_w
 
 THIS DO NOT MEAN that the app can not reach servers by other path... take care...
 
-#### UPDATE: No more NFZ stuff here.
+#### NFZ : 2018 April 24th update
+
+After a while and discussions on Slack with active "NFZ" workers, it was decided to make a public release for the NFZ unlocking patches.
+There was already an app patch that removes some upgrade warning. It has been merged with the new parts and renamed removeNFZ_ApplicationPart
+As the name tells, this is the Application part only and you will still need to make some firmware modifications (much simpler than module mixing) that will also be released soon.
+Stay tuned on Slack channel !
+Without the firmware part, the NFZ is still active onboard the birds and will actually prevent  flying DJI NFZ
+
+This release has been made possible thanks to hard work of alexstalker, Len, quad808, d95gas, jezzab, bin4ry and others.
+
+There was a previous "no NFZ unlocking policy" in the modder with following reasons :
 
 ##### Reasons:
 
@@ -132,6 +142,15 @@ THIS DO NOT MEAN that the app can not reach servers by other path... take care..
 
 If you want to fly in a RED NFZ AND are allowed to AND have problems with them activating your account to do so you should fallback to the firmware parameter change. This was never meant to help people fly in RED NFZ!
 
+The first argument still make sense : we do not want people to fly in any civil/military aviations official NFZ that may exist anywere in the world. Doing this is illegal, dumb, and dangerous.
+
+However, we changed our minds because :
+
+1. the DJI unlocking system is PITA to use, and that it requires actual account loging with all potential data leaks involved. 
+2. DJI NFZ db is far from perfectly match actual NFZ areas. Some real areas are missing, some DJI db areas should have no official reality. UAV pilots should educate themselves and seek for the actual official data sources rather than relying on a third party system that is not approved by any aviation authorities.
+3. having a geofence system is not a legal requierement onboard UAV's , at least we did not heard about such rules yet... by the way many other brands do not have this kind of "features"
+4. Some people (pros) need to fly in NFZ and have official clearance to do so. Sometimes, DJI has no reason to even know about...
+5. now the patches works !
 
 ### #DeejayeyeHackingClub information repos aka "The OG's" (Original Gangsters)
 

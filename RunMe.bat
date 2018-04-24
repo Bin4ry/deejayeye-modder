@@ -133,6 +133,15 @@ for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!
    ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\%patches%\so.bspatch"
    del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
    rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so ) ) )
+   if "%%f"=="removeNFZ_ApplicationPart" ( echo.-: Deleting all NFZ db all files...
+    del /f /q "assets\expansion\internal\flysafe\dji.nfzdb.confumix"
+    del /f /q "assets\expansion\internal\flysafe\dji.nfzdb.sig"
+    del /f /q "assets\expansion\internal\flysafe\flysafe_areas_djigo.db"
+    del /f /q "assets\expansion\internal\flysafe\flysafe_polygon_1860.db"
+    del /f /q "assets\expansion\internal\flysafe\flyforbid_airmap\*.json"
+    del /f /q "res\raw\flyforbid.json"
+    copy /b NUL "res\raw\flyforbid.json" )
+   ) )
 REM nothing
 REM here
 cd ..

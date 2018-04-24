@@ -87,6 +87,18 @@ do
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
 	fi
 	
+	  if [ "$patch" == "removeNFZ_ApplicationPart" ]
+  then
+      rm assets/expansion/internal/flysafe/dji.nfzdb.confumix
+      rm assets/expansion/internal/flysafe/dji.nfzdb.sig
+      rm assets/expansion/internal/flysafe/flysafe_areas_djigo.db
+      rm assets/expansion/internal/flysafe/flysafe_polygon_1860.db
+      rm assets/expansion/internal/flysafe/flyforbid_airmap/*.json
+      rm res/raw/flyforbid.json
+      touch res/raw/flyforbid.json
+  fi
+
+  
 	echo "    $patch" >> ../$log_file
 done
 
