@@ -17,10 +17,6 @@ diff -Naur orig/AndroidManifest.xml mod/AndroidManifest.xml
          <activity android:label="@string/app_name" android:name="dji.setting.ui.MainActivity" android:screenOrientation="sensorLandscape" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateHidden"/>
          <activity android:name="dji.checklist.TestCheckListActivity" android:screenOrientation="sensorLandscape"/>
          <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dji.update.view.UpdateDialogActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-@@ -338,4 +336,4 @@
-         <service android:name="com.mapbox.services.android.telemetry.service.TelemetryService"/>
-         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="dji.publics.jiobject.djicrashactivity"/>
-     </application>
 
 diff -Naur orig/apktool.yml mod/apktool.yml
 --- orig/apktool.yml	2018-04-24 21:46:22.302838700 +0200
@@ -46,10 +42,6 @@ diff -Naur orig/res/layout/v2_upgrade_data_activity.xml mod/res/layout/v2_upgrad
              <dji.publics.DJIUI.DJIRelativeLayout android:layout_gravity="bottom" android:id="@id/v2_upgrade_data_progress_layout" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="55.0dip">
                  <ProgressBar android:id="@id/v2_upgrade_data_progress" android:background="#ffc1c1c1" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginTop="4.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/v2_upgrade_activity_progress" style="?android:attr/progressBarStyleHorizontal" />
                  <dji.publics.DJIUI.DJITextView android:textSize="16.0sp" android:textColor="@color/acad_item_name_font" android:id="@id/v2_upgrade_data_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:maxWidth="@dimen/dp_250_in_sw320dp" android:text="@string/tip_upgrade_data_upgrading" android:layout_below="@id/v2_upgrade_data_progress" android:layout_centerHorizontal="true" />
-@@ -24,4 +22,4 @@
-             </dji.publics.DJIUI.DJIRelativeLayout>
-         </FrameLayout>
-     </dji.publics.DJIUI.DJIRelativeLayout>
 
 diff -Naur orig/smali_classes4/dji/data/upgrade/d/a.smali mod/smali_classes4/dji/data/upgrade/d/a.smali
 --- orig/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-24 21:46:14.765705700 +0200
