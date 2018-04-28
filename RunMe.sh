@@ -425,7 +425,7 @@ then
             echo ""
             echo "A window with image should open, when ready close it and choose to keep or try a new color value"
             echo "on OSX you have to close the windows with cmd+Q to return to script execution"
-            convert "/tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift" "/tmp/test-$unique_rnd-out.png"
+            convert "/tmp/test-$unique_rnd.png" -modulate 100,100,$hue_shift "/tmp/test-$unique_rnd-out.png"
             $DISPLAYCMD "/tmp/test-$unique_rnd-out.png"
             echo ""
             if [ "$SYSTEMTYPE" = OSX ] ; then
