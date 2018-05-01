@@ -273,6 +273,10 @@ Keep Work Dir          : $keep_temp
 Do Decompile Step      : $decompile_step
 Do Patch Step          : $patch_step
 Do Clone Step          : $clone_step
+
+### WARNING: DO NEVER USE THE CLONED APP NEXT TO THE ORIGINAL APP! THIS WILL ENABLE DJI TO SEND YOUR DATA TO THEM! ###
+###          EVEN IF YOU MAKE THIS APP OFFLINE, THE ORIGINAL APP WILL SEND ALL YOU DATA TO DJI!                    ###
+
 Do IconMod Step        : $iconmod_step
 Do IconRep Step        : $iconrep_step
 Do Repack Step         : $repack_step
