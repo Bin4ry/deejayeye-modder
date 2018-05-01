@@ -1,6 +1,6 @@
 diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali
 --- orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali	2018-04-30 18:20:22.017256800 +0200
-+++ mod/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali	2018-04-30 17:25:36.672489000 +0200
++++ mod/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali	2018-05-01 18:35:57.502951000 +0200
 @@ -97,48 +97,29 @@
  
  .field private z:Ldji/sdksharedlib/b/c;
@@ -251,7 +251,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1320,84 +1237,74 @@
+@@ -1320,49 +1237,62 @@
  .end method
  
  .method private j()V
@@ -329,20 +329,17 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
 +    invoke-virtual/range { v0 .. v11 }, Log/patch/DTM;->getAircraft_HMSL(DDDDFFZ)F
      move-result v0
  
--    .line 417
--    :goto_0
-+    # v0 = float altitude from new algorithm...
++    const/4 v6, 0x0
 +
++    const-wide v4, 0x3ff3333333333333L    # 1.2
++
+     .line 417
+-    :goto_0
      iget v1, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->l:F
  
      cmpl-float v1, v1, v0
-+    if-nez v1, :cond_alt_changed
- 
--    if-nez v1, :cond_1
--
--    .line 429
--    :goto_1
-+    :goto_exit
+@@ -1373,25 +1303,6 @@
+     :goto_1
      return-void
  
 -    .line 414
@@ -364,20 +361,10 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
 -    goto :goto_0
 -
 -    .line 420
--    :cond_1
-+    :cond_alt_changed
+     :cond_1
      iput v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->l:F
  
--    .line 421
--    float-to-double v2, v0
-+    const-wide v4, 0x3ff3333333333333L    # 1.2
-+    const/4 v6, 0x0
- 
-+    float-to-double v2, v0
-     cmpg-double v1, v2, v4
- 
-     if-gtz v1, :cond_3
-@@ -1424,16 +1331,14 @@
+@@ -1424,11 +1335,7 @@
      :goto_2
      sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
  
@@ -390,23 +377,15 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      const/4 v3, 0x1
  
-     new-array v3, v3, [Ljava/lang/Object;
+@@ -1489,6 +1396,7 @@
+     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
  
+     goto :goto_2
 +
-+
-     iget-object v4, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->g:Ldji/pilot/fpv/control/DJIGenSettingDataManager;
+ .end method
  
-     invoke-virtual {v4, v0}, Ldji/pilot/fpv/control/DJIGenSettingDataManager;->c(F)F
-@@ -1461,7 +1366,7 @@
- 
-     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
- 
--    goto :goto_1
-+    goto :goto_exit
- 
-     .line 423
-     :cond_3
-@@ -1504,11 +1409,7 @@
+ .method private k()V
+@@ -1504,11 +1412,7 @@
      const/4 v6, 0x0
  
      .line 433
@@ -419,7 +398,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1519,11 +1420,7 @@
+@@ -1519,11 +1423,7 @@
      move-result v0
  
      .line 434
@@ -432,7 +411,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v1}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1534,11 +1431,7 @@
+@@ -1534,11 +1434,7 @@
      move-result v1
  
      .line 435
@@ -445,7 +424,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1604,11 +1497,7 @@
+@@ -1604,11 +1500,7 @@
      .line 446
      sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
  
@@ -458,7 +437,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      const/4 v4, 0x1
  
-@@ -1749,11 +1638,7 @@
+@@ -1749,11 +1641,7 @@
      const/4 v12, 0x0
  
      .line 501
@@ -471,7 +450,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1775,11 +1660,7 @@
+@@ -1775,11 +1663,7 @@
  
      .line 507
      :cond_0
@@ -484,7 +463,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1808,11 +1689,7 @@
+@@ -1808,11 +1692,7 @@
  
      .line 514
      :cond_1
@@ -497,7 +476,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1823,11 +1700,7 @@
+@@ -1823,11 +1703,7 @@
      move-result v8
  
      .line 516
@@ -510,7 +489,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1838,11 +1711,7 @@
+@@ -1838,11 +1714,7 @@
      move-result-wide v0
  
      .line 517
@@ -523,7 +502,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1853,11 +1722,7 @@
+@@ -1853,11 +1725,7 @@
      move-result-wide v2
  
      .line 518
@@ -536,7 +515,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1868,11 +1733,7 @@
+@@ -1868,11 +1736,7 @@
      move-result-wide v4
  
      .line 519
@@ -549,7 +528,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
      invoke-static {v6}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -1974,11 +1835,7 @@
+@@ -1974,11 +1838,7 @@
      .line 537
      sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
  
@@ -564,7 +543,7 @@ diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/s
  
 diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali
 --- orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali	2018-04-30 18:20:22.248530400 +0200
-+++ mod/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali	2018-04-30 17:44:38.002497000 +0200
++++ mod/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali	2018-05-01 20:36:45.534142000 +0200
 @@ -111,48 +111,29 @@
  
  .field private z:Ldji/pilot/fpv/control/DJIGenSettingDataManager;
@@ -990,7 +969,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      new-array v3, v8, [Ljava/lang/Object;
  
-@@ -2323,38 +2188,67 @@
+@@ -2323,62 +2188,75 @@
  .end method
  
  .method private m()V
@@ -999,30 +978,32 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      .prologue
 -    const/4 v3, 0x1
+-
+-    const/4 v5, 0x0
+-
+-    .line 603
+-    const-string v0, "GEY9KxMrPQE="
 +    const-string v0, "AircraftLocationLatitude"
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
 +    move-result-object v0
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
 +    move-result-wide v1
  
--    const/4 v5, 0x0
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
 +    const-string v0, "AircraftLocationLongitude"
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
 +    move-result-object v0
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
 +    move-result-wide v3
  
--    .line 603
--    const-string v0, "GEY9KxMrPQE="
 +    const-string v0, "HomeLocationLatitude"
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
-+    move-result-object v0
+     move-result-object v0
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
 +    move-result-wide v5
  
--    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
 +    const-string v0, "HomeLocationLongitude"
-+    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
 +    move-result-object v0
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
 +    move-result-wide v7
@@ -1033,45 +1014,44 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
 +    move-result v9
  
+-    check-cast v0, Ljava/lang/Float;
 +    const-string v0, "UltrasonicHeightInMeters"
-     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
 +    move-result-object v0
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
 +    move-result v10
  
+-    .line 604
+-    if-nez v0, :cond_0
 +    const-string v0, "IsUltrasonicBeingUsed"
 +    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
-     move-result-object v0
++    move-result-object v0
 +    const/4 v11, 0x0
 +    invoke-static {v0, v11}, Ldji/sdksharedlib/a/a;->a(Ljava/lang/Object;Z)Z
 +    move-result v11
  
--    check-cast v0, Ljava/lang/Float;
-+    iget-object v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->m_dtm:Log/patch/DTM;
+-    .line 618
+-    :goto_0
+-    return-void
++    iget-object v0, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->m_dtm:Log/patch/DTM;
 +    invoke-virtual/range { v0 .. v11 }, Log/patch/DTM;->getAircraft_HMSL(DDDDFFZ)F
 +    move-result v0
  
--    .line 604
--    if-nez v0, :cond_0
+-    .line 609
+-    :cond_0
+-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 +    const/4 v3, 0x1
  
--    .line 618
--    :goto_0
-+    const/4 v5, 0x0
-+
-+    :goto_exit
-     return-void
- 
-     .line 609
-     :cond_0
--    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
- 
 -    move-result v1
-+    move v1, v0
++    const/4 v5, 0x0
  
      const/high16 v2, 0x41200000    # 10.0f
  
-@@ -2365,20 +2259,12 @@
+-    cmpg-float v1, v1, v2
++    cmpg-float v1, v0, v2
+ 
+     if-gez v1, :cond_1
+ 
      .line 611
      sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
  
@@ -1093,12 +1073,12 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
      invoke-virtual {v4, v0}, Ldji/pilot/fpv/control/DJIGenSettingDataManager;->c(F)F
  
      move-result v0
-@@ -2405,26 +2291,18 @@
+@@ -2405,26 +2283,18 @@
  
      invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
  
 -    goto :goto_0
-+    goto :goto_exit
++    return-void
  
      .line 614
      :cond_1
@@ -1122,7 +1102,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
      invoke-virtual {v4, v0}, Ldji/pilot/fpv/control/DJIGenSettingDataManager;->c(F)F
  
      move-result v0
-@@ -2459,11 +2337,7 @@
+@@ -2459,11 +2329,7 @@
      const/4 v12, 0x0
  
      .line 621
@@ -1135,7 +1115,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2485,11 +2359,7 @@
+@@ -2485,11 +2351,7 @@
  
      .line 627
      :cond_0
@@ -1148,7 +1128,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2518,11 +2388,7 @@
+@@ -2518,11 +2380,7 @@
  
      .line 634
      :cond_1
@@ -1161,7 +1141,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2533,11 +2399,7 @@
+@@ -2533,11 +2391,7 @@
      move-result v8
  
      .line 636
@@ -1174,7 +1154,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2548,11 +2410,7 @@
+@@ -2548,11 +2402,7 @@
      move-result-wide v0
  
      .line 637
@@ -1187,7 +1167,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2563,11 +2421,7 @@
+@@ -2563,11 +2413,7 @@
      move-result-wide v2
  
      .line 638
@@ -1200,7 +1180,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2578,11 +2432,7 @@
+@@ -2578,11 +2424,7 @@
      move-result-wide v4
  
      .line 639
@@ -1213,7 +1193,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      invoke-static {v6}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
  
-@@ -2691,11 +2541,7 @@
+@@ -2691,11 +2533,7 @@
      .line 661
      sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
  
@@ -1226,7 +1206,7 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
      new-array v3, v13, [Ljava/lang/Object;
  
-@@ -2736,11 +2582,7 @@
+@@ -2736,11 +2574,7 @@
      :cond_5
      sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
  
