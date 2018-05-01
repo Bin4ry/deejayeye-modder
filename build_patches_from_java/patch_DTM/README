@@ -12,9 +12,16 @@ This part is provided as a "standard patch"
 The java source code is in ./og directory
 There is currently 2 java files, one responsible for handling 1 tile and the other one to handle a collection of tiles and interface to the app.
 
-The DTM (digital terrain model) tiles must be downloaded from http://dwtkns.com/srtm30m/
+The DTM (digital terrain model) tiles must be downloaded from 
+
+http://dwtkns.com/srtm30m/
+or
+https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&m=34.9453125!86.8359375!3!1!0!0%2C2&tl=935366399!6!!&q=SRTM&ok=SRTM
+
+but the first link is far more user friendly.
 
 once downloaded, you have to copy the tiles in the DJI/data/ directory of your phone/tablet/CrystalSky
+Do not rename the downloaded files...
 
 the settings.json file must also be copied in the DJI/ directory of your phone/tablet/CrystalSky
 the array of tiles file names must be modified to match the files you need.
