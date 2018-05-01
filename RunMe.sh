@@ -276,6 +276,8 @@ Do Clone Step          : $clone_step
 
 ### WARNING: DO NEVER USE THE CLONED APP NEXT TO THE ORIGINAL APP! THIS WILL ENABLE DJI TO SEND YOUR DATA TO THEM! ###
 ###          EVEN IF YOU MAKE THIS APP OFFLINE, THE ORIGINAL APP WILL SEND ALL YOU DATA TO DJI!                    ###
+###          DJI CAN EVEN LOCK YOUR DRONE IF YOU CHOOSE TO USE THE ORIGINAL APP ALONG WITH THE MODDED ONE          ###
+###                         DO NOT COME TO US AND CRY IF SOMETHING HAPPENS! I TOLD YOU SO!                         ###
 
 Do IconMod Step        : $iconmod_step
 Do IconRep Step        : $iconrep_step
