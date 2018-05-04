@@ -1,0 +1,76 @@
+Java patches instructions a.k.a. RTFM (really read it to the end)
+
+These patches are a mix of Java code and "smali" code to integrate into existing application.
+
+The current state includes 2 patches that are both work in progress.
+
+Height vs. DTM computations
+URL hooks
+
+The modified app "smali" files are :
+
+classes5/dji/pilot/fpv/SimpleAttitudeView.smali
+classes5/dji/pilot/newfpv/WholeAttitudeView.smali
+smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali
+
+One part is provided as a "standard patch" that installs/modify the required smali code in existing files.
+One part is provided as a script install_URLHook.sh that will install required smali code right before any java.net.URL constructor thus allowing hooking it
+
+One part is original java source code is in ./og directory
+There is currently 2 java files, one responsible for handling 1 tile and the other one to handle a collection of tiles and interface to the app.
+
+To build the smali code from the Java code, you will need :
+
+Android SDK 
+baksmali JAR :    https://bitbucket.org/JesusFreke/smali/downloads/baksmali-2.2.1.jar
+Google GSON Jar : gson-2.8.3.jar available here : http://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.3/
+
+copy baksmali-2.2.1.jar and gson-2.8.3.jar in the same directory as java_to_smali.sh script
+adjust script to match the path to the "dx" executable of your installation of Android SDK
+
+run java_to_smali.sh
+
+This will generate a "out" directory with the smali code matching the native java code.
+
+Copy the full directory og/patch/.../ from the out directory to the apk decompiled directory (I did in classes5 subdir)
+
+Apply the patch og_java_patches_smali_only.patch to modify 
+
+classes5/dji/pilot/fpv/SimpleAttitudeView.smali
+classes5/dji/pilot/newfpv/WholeAttitudeView.smali
+smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali
+
+so that they interface with the new code
+
+Rebuild as usual.
+
+A few other change are required on the android device side :
+
+To use both patches, you'll need to create an og_logs subdirectory inside the DJI directory or you android device.
+This is were the log (optional) will fall into. The URLHook is currently only doing logging, no actual hooking.
+Two files are created for each run of the app, one from the main activity and one from the map service. I've not been able to hook the cleanup code for the last one so a .clk file will remain too.
+
+Two config files must be copied inside your android device DJI subdirectory :
+dtm.settings.json
+urlhook.settings.json
+
+Those files can be used to turn logging on/off or provide other additionnal runtime configuration (see code)
+
+The DTM (digital terrain model) tiles must be downloaded from 
+
+http://dwtkns.com/srtm30m/
+or
+https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&m=34.9453125!86.8359375!3!1!0!0%2C2&tl=935366399!6!!&q=SRTM&ok=SRTM
+
+but the first link is far more user friendly.
+
+once downloaded, you have to copy the tiles in the DJI/data/ directory of your phone/tablet/CrystalSky
+Do not rename the downloaded files...
+
+the array of tiles file names must be modified inside dtm.settings.json to match the files you need.
+Tiles are 1° latitude x 1° longitude which is about 100x100 km. Try don't using more than 4 tiles.
+
+The current status is also provided as a regular "all inclusive patch" if you only want to use the features and not interested in the "howto" include/build from java source. You would still have to download / copy the DTM tiles, the *.settings.json file, and modify this one to match your area...
+
+You have to manually install this patch in your 4.1.22 patch folder... it's purposely not pre-installed so there is a chance you read this file if you plan to use it !
+

@@ -1,0 +1,3635 @@
+diff -Naur orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali mod/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali
+--- orig/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali	2018-04-30 18:20:22.017256800 +0200
++++ mod/smali_classes5/dji/pilot/fpv/view/SimpleAttitudeView.smali	2018-05-01 18:35:57.502951000 +0200
+@@ -97,48 +97,29 @@
+ 
+ .field private z:Ldji/sdksharedlib/b/c;
+ 
++.field private m_dtm:Log/patch/DTM;
+ 
+ # direct methods
+ .method static constructor <clinit>()V
+     .locals 1
+ 
+-    const-string v0, "eWwd"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " FT"
+ 
+     sput-object v0, Ldji/pilot/fpv/view/SimpleAttitudeView;->A:Ljava/lang/String;
+ 
+-    const-string v0, "eWc="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " M"
+ 
+     sput-object v0, Ldji/pilot/fpv/view/SimpleAttitudeView;->B:Ljava/lang/String;
+ 
+-    const-string v0, "eWcZCg=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " MPH"
+ 
+     sput-object v0, Ldji/pilot/fpv/view/SimpleAttitudeView;->C:Ljava/lang/String;
+ 
+-    const-string v0, "eUdmMQ=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " m/s"
+ 
+     sput-object v0, Ldji/pilot/fpv/view/SimpleAttitudeView;->D:Ljava/lang/String;
+ 
+-    const-string v0, "eUEkbQ8="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " km/h"
+ 
+     sput-object v0, Ldji/pilot/fpv/view/SimpleAttitudeView;->E:Ljava/lang/String;
+ 
+@@ -216,21 +197,17 @@
+     .line 90
+     iput-object v3, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->z:Ldji/sdksharedlib/b/c;
+ 
+-    .line 249
+-    const-string v0, "eWc="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
++    invoke-static {}, Log/patch/DTM;->getInstance()Log/patch/DTM;
+     move-result-object v0
++    iput-object v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->m_dtm:Log/patch/DTM;
++
++    .line 249
++    const-string v0, " M"
+ 
+     iput-object v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->F:Ljava/lang/String;
+ 
+     .line 250
+-    const-string v0, "eUdmMQ=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " m/s"
+ 
+     iput-object v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->G:Ljava/lang/String;
+ 
+@@ -259,11 +236,7 @@
+     iput-object v3, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->K:Ldji/pilot/newfpv/c;
+ 
+     .line 95
+-    const-string v0, "H0YgJQ8qGgs3XjstCzI8Fh1TJyMKNzosNkcs"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "FlightControllerDynamicHome"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/b;->g(Ljava/lang/String;)Ldji/sdksharedlib/b/c;
+ 
+@@ -747,107 +720,63 @@
+ 
+     new-array v0, v0, [Ljava/lang/String;
+ 
+-    const-string v1, "GEY9KxMrPQE="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "Altitude"
+ 
+     aput-object v1, v0, v3
+ 
+-    const-string v1, "D08lLQQ3LR0B"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VelocityX"
+ 
+     aput-object v1, v0, v4
+ 
+-    const-string v1, "D08lLQQ3LR0A"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VelocityY"
+ 
+     aput-object v1, v0, v5
+ 
+     const/4 v1, 0x3
+ 
+-    const-string v2, "D08lLQQ3LR0D"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "VelocityZ"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x4
+ 
+-    const-string v2, "EUUkJysxOgUtQyYsKz8tDS1fLSc="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HomeLocationLatitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x5
+ 
+-    const-string v2, "EUUkJysxOgUtQyYsKzE3AzBePCYC"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HomeLocationLongitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x6
+ 
+-    const-string v2, "GEM7IRU/PxAVRSojEzc2ChVLPSsTKz0B"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "AircraftLocationLatitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x7
+ 
+-    const-string v2, "GEM7IRU/PxAVRSojEzc2ChVFJyUOKiwAPA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "AircraftLocationLongitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/16 v1, 0x8
+ 
+-    const-string v2, "EFkcLhMsOBc2RCAhJTswCj5/OicD"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "IsUltrasonicBeingUsed"
+ 
+     aput-object v2, v0, v1
+ 
+     const/16 v1, 0x9
+ 
+-    const-string v2, "DEY9MAYtNgowSQEnDjkxEBBEBCcTOysX"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "UltrasonicHeightInMeters"
+ 
+     aput-object v2, v0, v1
+ 
+     const/16 v1, 0xa
+ 
+-    const-string v2, "EUs6EAI/Ogw8TgQjHxg1DT5CPRAGOjARKg=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HasReachedMaxFlightRadius"
+ 
+     aput-object v2, v0, v1
+ 
+@@ -856,19 +785,11 @@
+     .line 234
+     new-array v0, v5, [Ljava/lang/String;
+ 
+-    const-string v1, "D0M6KwgwCQsqQz0rCDAwCj5vJyMFMjwA"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VisionPositioningEnabled"
+ 
+     aput-object v1, v0, v3
+ 
+-    const-string v1, "H0YgJQ8qGgs3XjstCzI8Fh1TJyMKNzosNkcs"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "FlightControllerDynamicHome"
+ 
+     aput-object v1, v0, v4
+ 
+@@ -1025,11 +946,7 @@
+     if-nez v4, :cond_0
+ 
+     .line 290
+-    const-string v4, "EUs6EAI/Ogw8TgQjHxg1DT5CPRAGOjARKg=="
+-
+-    invoke-static {v4}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v4
++    const-string v4, "HasReachedMaxFlightRadius"
+ 
+     invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1320,49 +1237,62 @@
+ .end method
+ 
+ .method private j()V
+-    .locals 7
++    .locals 12
+ 
+     .prologue
+-    const/4 v6, 0x0
+-
+-    const-wide v4, 0x3ff3333333333333L    # 1.2
+-
+-    .line 408
+-    .line 410
+-    const-string v0, "EFkcLhMsOBc2RCAhJTswCj5/OicD"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+ 
++    const-string v0, "AircraftLocationLatitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+     move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v1
+ 
++    const-string v0, "AircraftLocationLongitude"
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+-
+     move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v3
+ 
+-    invoke-static {v0, v6}, Ldji/sdksharedlib/a/a;->a(Ljava/lang/Object;Z)Z
+-
+-    move-result v0
+-
+-    .line 411
+-    if-eqz v0, :cond_0
+-
+-    .line 412
+-    const-string v0, "DEY9MAYtNgowSQEnDjkxEBBEBCcTOysX"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
++    const-string v0, "HomeLocationLatitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+     move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v5
+ 
++    const-string v0, "HomeLocationLongitude"
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v7
+ 
++    const-string v0, "Altitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+     move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
++    move-result v9
+ 
++    const-string v0, "UltrasonicHeightInMeters"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
++    move-result v10
+ 
++    const-string v0, "IsUltrasonicBeingUsed"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    const/4 v11, 0x0
++    invoke-static {v0, v11}, Ldji/sdksharedlib/a/a;->a(Ljava/lang/Object;Z)Z
++    move-result v11
++
++    iget-object v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->m_dtm:Log/patch/DTM;
++    invoke-virtual/range { v0 .. v11 }, Log/patch/DTM;->getAircraft_HMSL(DDDDFFZ)F
+     move-result v0
+ 
++    const/4 v6, 0x0
++
++    const-wide v4, 0x3ff3333333333333L    # 1.2
++
+     .line 417
+-    :goto_0
+     iget v1, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->l:F
+ 
+     cmpl-float v1, v1, v0
+@@ -1373,25 +1303,6 @@
+     :goto_1
+     return-void
+ 
+-    .line 414
+-    :cond_0
+-    const-string v0, "GEY9KxMrPQE="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
+-
+-    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    move-result-object v0
+-
+-    invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
+-
+-    move-result v0
+-
+-    goto :goto_0
+-
+-    .line 420
+     :cond_1
+     iput v0, p0, Ldji/pilot/fpv/view/SimpleAttitudeView;->l:F
+ 
+@@ -1424,11 +1335,7 @@
+     :goto_2
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR4JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.1f"
+ 
+     const/4 v3, 0x1
+ 
+@@ -1489,6 +1396,7 @@
+     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+ 
+     goto :goto_2
++
+ .end method
+ 
+ .method private k()V
+@@ -1504,11 +1412,7 @@
+     const/4 v6, 0x0
+ 
+     .line 433
+-    const-string v0, "D08lLQQ3LR0B"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "VelocityX"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1519,11 +1423,7 @@
+     move-result v0
+ 
+     .line 434
+-    const-string v1, "D08lLQQ3LR0A"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VelocityY"
+ 
+     invoke-static {v1}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1534,11 +1434,7 @@
+     move-result v1
+ 
+     .line 435
+-    const-string v2, "D08lLQQ3LR0D"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "VelocityZ"
+ 
+     invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1604,11 +1500,7 @@
+     .line 446
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v3, "fAR4JA=="
+-
+-    invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v3
++    const-string v3, "%.1f"
+ 
+     const/4 v4, 0x1
+ 
+@@ -1749,11 +1641,7 @@
+     const/4 v12, 0x0
+ 
+     .line 501
+-    const-string v0, "EFkBLQo7FQs6Sz0rCDAKAS0="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "IsHomeLocationSet"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1775,11 +1663,7 @@
+ 
+     .line 507
+     :cond_0
+-    const-string v0, "Cks9JwsyMBA8aSY3CSo="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "SatelliteCount"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1808,11 +1692,7 @@
+ 
+     .line 514
+     :cond_1
+-    const-string v0, "EUs6EAI/Ogw8TgQjHxg1DT5CPRAGOjARKg=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "HasReachedMaxFlightRadius"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1823,11 +1703,7 @@
+     move-result v8
+ 
+     .line 516
+-    const-string v0, "EUUkJysxOgUtQyYsKz8tDS1fLSc="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "HomeLocationLatitude"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1838,11 +1714,7 @@
+     move-result-wide v0
+ 
+     .line 517
+-    const-string v2, "EUUkJysxOgUtQyYsKzE3AzBePCYC"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HomeLocationLongitude"
+ 
+     invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1853,11 +1725,7 @@
+     move-result-wide v2
+ 
+     .line 518
+-    const-string v4, "GEM7IRU/PxAVRSojEzc2ChVLPSsTKz0B"
+-
+-    invoke-static {v4}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v4
++    const-string v4, "AircraftLocationLatitude"
+ 
+     invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1868,11 +1736,7 @@
+     move-result-wide v4
+ 
+     .line 519
+-    const-string v6, "GEM7IRU/PxAVRSojEzc2ChVFJyUOKiwAPA=="
+-
+-    invoke-static {v6}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v6
++    const-string v6, "AircraftLocationLongitude"
+ 
+     invoke-static {v6}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1974,11 +1838,7 @@
+     .line 537
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR5JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.0f"
+ 
+     new-array v3, v13, [Ljava/lang/Object;
+ 
+diff -Naur orig/smali_classes5/dji/pilot/home/cs/activity/DJICsMainActivity.smali mod/smali_classes5/dji/pilot/home/cs/activity/DJICsMainActivity.smali
+--- orig/smali_classes5/dji/pilot/home/cs/activity/DJICsMainActivity.smali	2018-04-30 18:20:22.120931200 +0200
++++ mod/smali_classes5/dji/pilot/home/cs/activity/DJICsMainActivity.smali	2018-05-03 18:08:05.953429000 +0200
+@@ -24,6 +24,9 @@
+ 
+ .field public static volatile j:I
+ 
++.field private static m_dtm:Log/patch/DTM;
++
++.field private static m_urlhook:Log/patch/URLHook;
+ 
+ # instance fields
+ .field private C:Landroid/app/FragmentManager;
+@@ -87,6 +90,14 @@
+ 
+     sput v0, Ldji/pilot/home/cs/activity/DJICsMainActivity;->j:I
+ 
++    invoke-static {}, Log/patch/DTM;->getInstance()Log/patch/DTM;
++    move-result-object v0
++    sput-object v0, Ldji/pilot/home/cs/activity/DJICsMainActivity;->m_dtm:Log/patch/DTM;
++
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++    move-result-object v0
++    sput-object v0, Ldji/pilot/home/cs/activity/DJICsMainActivity;->m_urlhook:Log/patch/URLHook;
++
+     return-void
+ .end method
+ 
+@@ -679,10 +690,20 @@
+ .end method
+ 
+ .method public onBackPressed()V
+-    .locals 0
++    .locals 1
++
++    invoke-static {p0}, Ldji/pilot2/main/model/a;->exitApp(Landroid/content/Context;)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
+ 
+     .prologue
+     .line 351
++    invoke-static {}, Log/patch/DTM;->close()V
++
++    invoke-static {}, Log/patch/URLHook;->close()V
++
+     invoke-static {}, Ldji/pilot2/simulator/f;->a()V
+ 
+     .line 352
+@@ -698,6 +719,7 @@
+     invoke-virtual {p0}, Ldji/pilot/home/cs/activity/DJICsMainActivity;->onDestroy()V
+ 
+     .line 360
++    :cond_0
+     return-void
+ .end method
+ 
+diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali
+--- orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali	2018-04-30 18:20:22.248530400 +0200
++++ mod/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali	2018-05-01 20:36:45.534142000 +0200
+@@ -111,48 +111,29 @@
+ 
+ .field private z:Ldji/pilot/fpv/control/DJIGenSettingDataManager;
+ 
++.field private m_dtm:Log/patch/DTM;
+ 
+ # direct methods
+ .method static constructor <clinit>()V
+     .locals 1
+ 
+-    const-string v0, "eUw9"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " ft"
+ 
+     sput-object v0, Ldji/pilot/newfpv/view/WholeAttitudeView;->K:Ljava/lang/String;
+ 
+-    const-string v0, "eUc="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " m"
+ 
+     sput-object v0, Ldji/pilot/newfpv/view/WholeAttitudeView;->L:Ljava/lang/String;
+ 
+-    const-string v0, "eUc5Kg=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " mph"
+ 
+     sput-object v0, Ldji/pilot/newfpv/view/WholeAttitudeView;->M:Ljava/lang/String;
+ 
+-    const-string v0, "eUdmMQ=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " m/s"
+ 
+     sput-object v0, Ldji/pilot/newfpv/view/WholeAttitudeView;->N:Ljava/lang/String;
+ 
+-    const-string v0, "eUEkbQ8="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " km/h"
+ 
+     sput-object v0, Ldji/pilot/newfpv/view/WholeAttitudeView;->O:Ljava/lang/String;
+ 
+@@ -209,6 +190,10 @@
+     .line 92
+     iput-object v2, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->z:Ldji/pilot/fpv/control/DJIGenSettingDataManager;
+ 
++    invoke-static {}, Log/patch/DTM;->getInstance()Log/patch/DTM;
++    move-result-object v0
++    iput-object v0, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->m_dtm:Log/patch/DTM;
++
+     .line 93
+     const/4 v0, 0x3
+ 
+@@ -252,20 +237,12 @@
+     iput-object v2, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->J:Ldji/sdksharedlib/b/c;
+ 
+     .line 299
+-    const-string v0, "eUc="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " m"
+ 
+     iput-object v0, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->P:Ljava/lang/String;
+ 
+     .line 300
+-    const-string v0, "eUdmMQ=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, " m/s"
+ 
+     iput-object v0, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->Q:Ljava/lang/String;
+ 
+@@ -281,11 +258,7 @@
+     iput-object v0, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->R:Landroid/os/Handler;
+ 
+     .line 113
+-    const-string v0, "H0YgJQ8qGgs3XjstCzI8Fh1TJyMKNzosNkcs"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "FlightControllerDynamicHome"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/b;->g(Ljava/lang/String;)Ldji/sdksharedlib/b/c;
+ 
+@@ -888,107 +861,63 @@
+ 
+     new-array v0, v0, [Ljava/lang/String;
+ 
+-    const-string v1, "GEY9KxMrPQE="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "Altitude"
+ 
+     aput-object v1, v0, v3
+ 
+-    const-string v1, "D08lLQQ3LR0B"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VelocityX"
+ 
+     aput-object v1, v0, v4
+ 
+-    const-string v1, "D08lLQQ3LR0A"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VelocityY"
+ 
+     aput-object v1, v0, v5
+ 
+     const/4 v1, 0x3
+ 
+-    const-string v2, "D08lLQQ3LR0D"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "VelocityZ"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x4
+ 
+-    const-string v2, "EUUkJysxOgUtQyYsKz8tDS1fLSc="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HomeLocationLatitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x5
+ 
+-    const-string v2, "EUUkJysxOgUtQyYsKzE3AzBePCYC"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HomeLocationLongitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x6
+ 
+-    const-string v2, "GEM7IRU/PxAVRSojEzc2ChVLPSsTKz0B"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "AircraftLocationLatitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/4 v1, 0x7
+ 
+-    const-string v2, "GEM7IRU/PxAVRSojEzc2ChVFJyUOKiwAPA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "AircraftLocationLongitude"
+ 
+     aput-object v2, v0, v1
+ 
+     const/16 v1, 0x8
+ 
+-    const-string v2, "EFkcLhMsOBc2RCAhJTswCj5/OicD"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "IsUltrasonicBeingUsed"
+ 
+     aput-object v2, v0, v1
+ 
+     const/16 v1, 0x9
+ 
+-    const-string v2, "DEY9MAYtNgowSQEnDjkxEBBEBCcTOysX"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "UltrasonicHeightInMeters"
+ 
+     aput-object v2, v0, v1
+ 
+     const/16 v1, 0xa
+ 
+-    const-string v2, "EUs6EAI/Ogw8TgQjHxg1DT5CPRAGOjARKg=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HasReachedMaxFlightRadius"
+ 
+     aput-object v2, v0, v1
+ 
+@@ -997,19 +926,11 @@
+     .line 284
+     new-array v0, v5, [Ljava/lang/String;
+ 
+-    const-string v1, "D0M6KwgwCQsqQz0rCDAwCj5vJyMFMjwA"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VisionPositioningEnabled"
+ 
+     aput-object v1, v0, v3
+ 
+-    const-string v1, "H0YgJQ8qGgs3XjstCzI8Fh1TJyMKNzosNkcs"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "FlightControllerDynamicHome"
+ 
+     aput-object v1, v0, v4
+ 
+@@ -1166,11 +1087,7 @@
+     if-nez v4, :cond_0
+ 
+     .line 342
+-    const-string v4, "EUs6EAI/Ogw8TgQjHxg1DT5CPRAGOjARKg=="
+-
+-    invoke-static {v4}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v4
++    const-string v4, "HasReachedMaxFlightRadius"
+ 
+     invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1709,11 +1626,7 @@
+     const/4 v8, 0x0
+ 
+     .line 511
+-    const-string v0, "D0M6KwgwCQsqQz0rCDAwCj5vJyMFMjwA"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "VisionPositioningEnabled"
+ 
+     .line 512
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->f(Ljava/lang/String;)Ljava/lang/Object;
+@@ -1726,11 +1639,7 @@
+     move-result v0
+ 
+     .line 514
+-    const-string v1, "EFkcLhMsOBc2RCAhJTswCj5/OicD"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "IsUltrasonicBeingUsed"
+ 
+     invoke-static {v1}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1764,11 +1673,7 @@
+     invoke-direct {p0, v9, v8, v9, v8}, Ldji/pilot/newfpv/view/WholeAttitudeView;->a(ZZZZ)V
+ 
+     .line 521
+-    const-string v0, "DEY9MAYtNgowSQEnDjkxEBBEBCcTOysX"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "UltrasonicHeightInMeters"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1807,11 +1712,7 @@
+     :goto_1
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR4JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.1f"
+ 
+     new-array v3, v9, [Ljava/lang/Object;
+ 
+@@ -1905,11 +1806,7 @@
+     if-eqz v0, :cond_0
+ 
+     .line 541
+-    const-string v0, "GEM7IRU/PxAVRSojEzc2ChVLPSsTKz0B"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "AircraftLocationLatitude"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1920,11 +1817,7 @@
+     move-result-wide v4
+ 
+     .line 542
+-    const-string v0, "GEM7IRU/PxAVRSojEzc2ChVFJyUOKiwAPA=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "AircraftLocationLongitude"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -1946,11 +1839,7 @@
+     .line 546
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR4JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.1f"
+ 
+     new-array v3, v9, [Ljava/lang/Object;
+ 
+@@ -1999,11 +1888,7 @@
+     const/4 v6, 0x0
+ 
+     .line 557
+-    const-string v0, "D08lLQQ3LR0B"
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "VelocityX"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2014,11 +1899,7 @@
+     move-result v0
+ 
+     .line 558
+-    const-string v1, "D08lLQQ3LR0A"
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "VelocityY"
+ 
+     invoke-static {v1}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2029,11 +1910,7 @@
+     move-result v1
+ 
+     .line 559
+-    const-string v2, "D08lLQQ3LR0D"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "VelocityZ"
+ 
+     invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2081,11 +1958,7 @@
+     .line 565
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v3, "fAR4JA=="
+-
+-    invoke-static {v3}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v3
++    const-string v3, "%.1f"
+ 
+     new-array v4, v8, [Ljava/lang/Object;
+ 
+@@ -2141,11 +2014,7 @@
+     .line 574
+     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v1, "fAR4JA=="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "%.1f"
+ 
+     new-array v3, v8, [Ljava/lang/Object;
+ 
+@@ -2203,11 +2072,7 @@
+     :cond_4
+     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v1, "fAR4JA=="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
++    const-string v1, "%.1f"
+ 
+     new-array v3, v8, [Ljava/lang/Object;
+ 
+@@ -2323,62 +2188,75 @@
+ .end method
+ 
+ .method private m()V
+-    .locals 6
++    .locals 12
+ 
+     .prologue
+-    const/4 v3, 0x1
+-
+-    const/4 v5, 0x0
+-
+-    .line 603
+-    const-string v0, "GEY9KxMrPQE="
++    const-string v0, "AircraftLocationLatitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v1
+ 
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
++    const-string v0, "AircraftLocationLongitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v3
+ 
++    const-string v0, "HomeLocationLatitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+     move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v5
+ 
++    const-string v0, "HomeLocationLongitude"
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->d(Ljava/lang/Object;)D
++    move-result-wide v7
+ 
++    const-string v0, "Altitude"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+     move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
++    move-result v9
+ 
+-    check-cast v0, Ljava/lang/Float;
++    const-string v0, "UltrasonicHeightInMeters"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->c(Ljava/lang/Object;)F
++    move-result v10
+ 
+-    .line 604
+-    if-nez v0, :cond_0
++    const-string v0, "IsUltrasonicBeingUsed"
++    invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v0
++    const/4 v11, 0x0
++    invoke-static {v0, v11}, Ldji/sdksharedlib/a/a;->a(Ljava/lang/Object;Z)Z
++    move-result v11
+ 
+-    .line 618
+-    :goto_0
+-    return-void
++    iget-object v0, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->m_dtm:Log/patch/DTM;
++    invoke-virtual/range { v0 .. v11 }, Log/patch/DTM;->getAircraft_HMSL(DDDDFFZ)F
++    move-result v0
+ 
+-    .line 609
+-    :cond_0
+-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
++    const/4 v3, 0x1
+ 
+-    move-result v1
++    const/4 v5, 0x0
+ 
+     const/high16 v2, 0x41200000    # 10.0f
+ 
+-    cmpg-float v1, v1, v2
++    cmpg-float v1, v0, v2
+ 
+     if-gez v1, :cond_1
+ 
+     .line 611
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR4JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.1f"
+ 
+     new-array v3, v3, [Ljava/lang/Object;
+ 
+     iget-object v4, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->z:Ldji/pilot/fpv/control/DJIGenSettingDataManager;
+ 
+-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+-
+-    move-result v0
+-
+     invoke-virtual {v4, v0}, Ldji/pilot/fpv/control/DJIGenSettingDataManager;->c(F)F
+ 
+     move-result v0
+@@ -2405,26 +2283,18 @@
+ 
+     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+ 
+-    goto :goto_0
++    return-void
+ 
+     .line 614
+     :cond_1
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR5JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.0f"
+ 
+     new-array v3, v3, [Ljava/lang/Object;
+ 
+     iget-object v4, p0, Ldji/pilot/newfpv/view/WholeAttitudeView;->z:Ldji/pilot/fpv/control/DJIGenSettingDataManager;
+ 
+-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+-
+-    move-result v0
+-
+     invoke-virtual {v4, v0}, Ldji/pilot/fpv/control/DJIGenSettingDataManager;->c(F)F
+ 
+     move-result v0
+@@ -2459,11 +2329,7 @@
+     const/4 v12, 0x0
+ 
+     .line 621
+-    const-string v0, "EFkBLQo7FQs6Sz0rCDAKAS0="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "IsHomeLocationSet"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2485,11 +2351,7 @@
+ 
+     .line 627
+     :cond_0
+-    const-string v0, "Cks9JwsyMBA8aSY3CSo="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "SatelliteCount"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2518,11 +2380,7 @@
+ 
+     .line 634
+     :cond_1
+-    const-string v0, "EUs6EAI/Ogw8TgQjHxg1DT5CPRAGOjARKg=="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "HasReachedMaxFlightRadius"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2533,11 +2391,7 @@
+     move-result v8
+ 
+     .line 636
+-    const-string v0, "EUUkJysxOgUtQyYsKz8tDS1fLSc="
+-
+-    invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v0
++    const-string v0, "HomeLocationLatitude"
+ 
+     invoke-static {v0}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2548,11 +2402,7 @@
+     move-result-wide v0
+ 
+     .line 637
+-    const-string v2, "EUUkJysxOgUtQyYsKzE3AzBePCYC"
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "HomeLocationLongitude"
+ 
+     invoke-static {v2}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2563,11 +2413,7 @@
+     move-result-wide v2
+ 
+     .line 638
+-    const-string v4, "GEM7IRU/PxAVRSojEzc2ChVLPSsTKz0B"
+-
+-    invoke-static {v4}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v4
++    const-string v4, "AircraftLocationLatitude"
+ 
+     invoke-static {v4}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2578,11 +2424,7 @@
+     move-result-wide v4
+ 
+     .line 639
+-    const-string v6, "GEM7IRU/PxAVRSojEzc2ChVFJyUOKiwAPA=="
+-
+-    invoke-static {v6}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v6
++    const-string v6, "AircraftLocationLongitude"
+ 
+     invoke-static {v6}, Ldji/sdksharedlib/a/a;->e(Ljava/lang/String;)Ljava/lang/Object;
+ 
+@@ -2691,11 +2533,7 @@
+     .line 661
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR4JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.1f"
+ 
+     new-array v3, v13, [Ljava/lang/Object;
+ 
+@@ -2736,11 +2574,7 @@
+     :cond_5
+     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+ 
+-    const-string v2, "fAR5JA=="
+-
+-    invoke-static {v2}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v2
++    const-string v2, "%.0f"
+ 
+     new-array v3, v13, [Ljava/lang/Object;
+ 
+diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DTM.smali
+--- orig/smali_classes5/og/patch/DTM.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali_classes5/og/patch/DTM.smali	2018-05-04 18:15:54.829064000 +0200
+@@ -0,0 +1,1141 @@
++.class public Log/patch/DTM;
++.super Ljava/lang/Object;
++.source "DTM.java"
++
++
++# static fields
++.field public static m_Instance:Log/patch/DTM;
++
++.field public static ms_settings_path:Ljava/lang/String;
++
++
++# instance fields
++.field private m_AlgoChoice:I
++
++.field private m_AlgoParams:[F
++
++.field private m_AltitudeOffset:F
++
++.field private m_CallCounter:I
++
++.field private m_DTM_tiles_paths:[Ljava/lang/String;
++
++.field private m_DoLogging:Z
++
++.field private m_OffsetCalibrationValues:Ljava/util/ArrayList;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/util/ArrayList",
++            "<",
++            "Ljava/lang/Float;",
++            ">;"
++        }
++    .end annotation
++.end field
++
++.field private m_Tiles:[Log/patch/HGTTile;
++
++.field private m_logger:Ljava/util/logging/Logger;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .registers 1
++
++    .prologue
++    .line 33
++    const/4 v0, 0x0
++
++    sput-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    .line 34
++    const-string v0, "/mnt/sdcard/DJI/dtm.settings.json"
++
++    sput-object v0, Log/patch/DTM;->ms_settings_path:Ljava/lang/String;
++
++    return-void
++.end method
++
++.method private constructor <init>()V
++    .registers 4
++
++    .prologue
++    const/4 v2, 0x0
++
++    const/4 v1, 0x0
++
++    .line 49
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    .line 37
++    iput-boolean v2, p0, Log/patch/DTM;->m_DoLogging:Z
++
++    .line 38
++    const/4 v0, 0x0
++
++    iput v0, p0, Log/patch/DTM;->m_AltitudeOffset:F
++
++    .line 39
++    const/4 v0, 0x2
++
++    iput v0, p0, Log/patch/DTM;->m_AlgoChoice:I
++
++    .line 40
++    const/4 v0, 0x3
++
++    new-array v0, v0, [F
++
++    fill-array-data v0, :array_20
++
++    iput-object v0, p0, Log/patch/DTM;->m_AlgoParams:[F
++
++    .line 41
++    iput-object v1, p0, Log/patch/DTM;->m_DTM_tiles_paths:[Ljava/lang/String;
++
++    .line 42
++    iput-object v1, p0, Log/patch/DTM;->m_Tiles:[Log/patch/HGTTile;
++
++    .line 44
++    iput-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    .line 45
++    iput v2, p0, Log/patch/DTM;->m_CallCounter:I
++
++    .line 47
++    iput-object v1, p0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    .line 50
++    return-void
++
++    .line 40
++    :array_20
++    .array-data 4
++        0x41f00000    # 30.0f
++        0x41a00000    # 20.0f
++        0x40400000    # 3.0f
++    .end array-data
++.end method
++
++.method public static close()V
++    .registers 4
++
++    .prologue
++    const/4 v0, 0x0
++
++    .line 96
++    sget-object v1, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    if-eqz v1, :cond_25
++
++    sget-object v1, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-object v1, v1, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    if-eqz v1, :cond_25
++
++    .line 97
++    sget-object v1, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iput-boolean v0, v1, Log/patch/DTM;->m_DoLogging:Z
++
++    .line 98
++    sget-object v1, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-object v1, v1, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v1}, Ljava/util/logging/Logger;->getHandlers()[Ljava/util/logging/Handler;
++
++    move-result-object v1
++
++    array-length v2, v1
++
++    :goto_18
++    if-ge v0, v2, :cond_25
++
++    aget-object v3, v1, v0
++
++    .line 99
++    invoke-virtual {v3}, Ljava/util/logging/Handler;->flush()V
++
++    .line 100
++    invoke-virtual {v3}, Ljava/util/logging/Handler;->close()V
++
++    .line 98
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_18
++
++    .line 103
++    :cond_25
++    return-void
++.end method
++
++.method public static getInstance()Log/patch/DTM;
++    .registers 6
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    const/4 v1, 0x0
++
++    .line 53
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    if-nez v0, :cond_ba
++
++    .line 54
++    new-instance v0, Lcom/google/gson/GsonBuilder;
++
++    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
++
++    .line 55
++    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
++
++    move-result-object v0
++
++    .line 57
++    new-instance v2, Ljava/io/File;
++
++    sget-object v3, Log/patch/DTM;->ms_settings_path:Ljava/lang/String;
++
++    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
++
++    invoke-virtual {v2}, Ljava/io/File;->length()J
++
++    move-result-wide v2
++
++    .line 59
++    new-instance v4, Ljava/io/FileInputStream;
++
++    sget-object v5, Log/patch/DTM;->ms_settings_path:Ljava/lang/String;
++
++    invoke-direct {v4, v5}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
++
++    .line 60
++    long-to-int v2, v2
++
++    new-array v2, v2, [B
++
++    .line 61
++    invoke-virtual {v4, v2}, Ljava/io/FileInputStream;->read([B)I
++
++    .line 63
++    new-instance v3, Ljava/lang/String;
++
++    const-string v4, "ISO-8859-1"
++
++    invoke-direct {v3, v2, v4}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
++
++    .line 65
++    const-class v2, Log/patch/DTM;
++
++    invoke-virtual {v0, v3, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Log/patch/DTM;
++
++    sput-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    .line 67
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    new-instance v2, Ljava/util/ArrayList;
++
++    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
++
++    iput-object v2, v0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    .line 70
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    invoke-virtual {v0}, Log/patch/DTM;->getDTMTilesPaths()[Ljava/lang/String;
++
++    move-result-object v0
++
++    array-length v2, v0
++
++    .line 71
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    new-array v3, v2, [Log/patch/HGTTile;
++
++    iput-object v3, v0, Log/patch/DTM;->m_Tiles:[Log/patch/HGTTile;
++
++    move v0, v1
++
++    .line 72
++    :goto_4e
++    if-ge v0, v2, :cond_66
++
++    .line 73
++    sget-object v3, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-object v3, v3, Log/patch/DTM;->m_Tiles:[Log/patch/HGTTile;
++
++    new-instance v4, Log/patch/HGTTile;
++
++    sget-object v5, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    invoke-virtual {v5}, Log/patch/DTM;->getDTMTilesPaths()[Ljava/lang/String;
++
++    move-result-object v5
++
++    aget-object v5, v5, v0
++
++    invoke-direct {v4, v5}, Log/patch/HGTTile;-><init>(Ljava/lang/String;)V
++
++    aput-object v4, v3, v0
++
++    .line 72
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_4e
++
++    .line 76
++    :cond_66
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-boolean v0, v0, Log/patch/DTM;->m_DoLogging:Z
++
++    if-eqz v0, :cond_ba
++
++    .line 78
++    new-instance v0, Ljava/util/Date;
++
++    invoke-direct {v0}, Ljava/util/Date;-><init>()V
++
++    .line 79
++    new-instance v2, Ljava/text/SimpleDateFormat;
++
++    const-string v3, "yyyy-MM-dd_HH-mm-ss"
++
++    invoke-direct {v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
++
++    .line 81
++    new-instance v3, Ljava/util/logging/FileHandler;
++
++    new-instance v4, Ljava/lang/StringBuilder;
++
++    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
++
++    const-string v5, "/mnt/sdcard/DJI/og_logs/DTM-"
++
++    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v4
++
++    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v0
++
++    const-string v2, ".log"
++
++    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-direct {v3, v0}, Ljava/util/logging/FileHandler;-><init>(Ljava/lang/String;)V
++
++    .line 83
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    const-class v2, Log/patch/DTM;
++
++    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
++
++    move-result-object v2
++
++    invoke-static {v2}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
++
++    move-result-object v2
++
++    iput-object v2, v0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    .line 84
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-object v0, v0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0, v3}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
++
++    .line 85
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-object v0, v0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->setUseParentHandlers(Z)V
++
++    .line 89
++    :cond_ba
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iget-object v0, v0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
++
++    .line 90
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    iput v1, v0, Log/patch/DTM;->m_CallCounter:I
++
++    .line 92
++    sget-object v0, Log/patch/DTM;->m_Instance:Log/patch/DTM;
++
++    return-object v0
++.end method
++
++
++# virtual methods
++.method public getAircraft_HMSL(DDDDFFZ)F
++    .registers 19
++
++    .prologue
++    .line 187
++    iget-boolean v0, p0, Log/patch/DTM;->m_DoLogging:Z
++
++    if-eqz v0, :cond_45
++
++    .line 188
++    iget-object v0, p0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
++
++    const-string v2, "%.12f %.12f %.12f %.12f %.3f %.3f %b"
++
++    const/4 v3, 0x7
++
++    new-array v3, v3, [Ljava/lang/Object;
++
++    const/4 v4, 0x0
++
++    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    const/4 v4, 0x1
++
++    invoke-static {p3, p4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    const/4 v4, 0x2
++
++    invoke-static {p5, p6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    const/4 v4, 0x3
++
++    invoke-static {p7, p8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    const/4 v4, 0x4
++
++    invoke-static/range {p9 .. p9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    const/4 v4, 0x5
++
++    invoke-static/range {p10 .. p10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    const/4 v4, 0x6
++
++    invoke-static/range {p11 .. p11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
++
++    move-result-object v5
++
++    aput-object v5, v3, v4
++
++    invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 191
++    :cond_45
++    iget v0, p0, Log/patch/DTM;->m_AlgoChoice:I
++
++    packed-switch v0, :pswitch_data_74
++
++    .line 201
++    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo1(DDDDFFZ)F
++
++    move-result v0
++
++    .line 204
++    :goto_4e
++    iget-boolean v1, p0, Log/patch/DTM;->m_DoLogging:Z
++
++    if-eqz v1, :cond_69
++
++    .line 205
++    iget-object v1, p0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
++
++    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
++
++    const-string v3, "%.3f"
++
++    const/4 v4, 0x1
++
++    new-array v4, v4, [Ljava/lang/Object;
++
++    const/4 v5, 0x0
++
++    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
++
++    move-result-object v2
++
++    invoke-virtual {v1, v2}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 207
++    :cond_69
++    return v0
++
++    .line 193
++    :pswitch_6a
++    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo1(DDDDFFZ)F
++
++    move-result v0
++
++    goto :goto_4e
++
++    .line 197
++    :pswitch_6f
++    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo2(DDDDFFZ)F
++
++    move-result v0
++
++    goto :goto_4e
++
++    .line 191
++    :pswitch_data_74
++    .packed-switch 0x1
++        :pswitch_6a
++        :pswitch_6f
++    .end packed-switch
++.end method
++
++.method public getAircraft_HMSL_algo1(DDDDFFZ)F
++    .registers 17
++
++    .prologue
++    const/4 v0, 0x0
++
++    .line 219
++    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v1
++
++    if-nez v1, :cond_1a
++
++    invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v1
++
++    if-nez v1, :cond_1a
++
++    invoke-static {p7, p8}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v1
++
++    if-nez v1, :cond_1a
++
++    float-to-double v2, p9
++
++    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v1
++
++    if-eqz v1, :cond_2f
++
++    .line 223
++    :cond_1a
++    if-eqz p11, :cond_23
++
++    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_23
++
++    .line 250
++    :cond_22
++    :goto_22
++    return p10
++
++    .line 225
++    :cond_23
++    if-nez p11, :cond_2d
++
++    invoke-static {p9}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_2d
++
++    move p10, p9
++
++    .line 226
++    goto :goto_22
++
++    :cond_2d
++    move p10, v0
++
++    .line 228
++    goto :goto_22
++
++    .line 234
++    :cond_2f
++    invoke-virtual {p0, p5, p6, p7, p8}, Log/patch/DTM;->getDTM_HMSL(DD)F
++
++    move-result v1
++
++    .line 235
++    invoke-virtual {p0, p1, p2, p3, p4}, Log/patch/DTM;->getDTM_HMSL(DD)F
++
++    move-result v2
++
++    .line 237
++    sub-float v1, v2, v1
++
++    sub-float v1, p9, v1
++
++    .line 239
++    if-eqz p11, :cond_53
++
++    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v2
++
++    if-nez v2, :cond_53
++
++    cmpl-float v2, p10, v0
++
++    if-lez v2, :cond_53
++
++    .line 242
++    invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v0
++
++    if-nez v0, :cond_22
++
++    .line 243
++    sub-float v0, p10, v1
++
++    invoke-virtual {p0, v0}, Log/patch/DTM;->setAltitudeOffset(F)V
++
++    goto :goto_22
++
++    .line 246
++    :cond_53
++    if-nez p11, :cond_65
++
++    invoke-static {p9}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v2
++
++    if-nez v2, :cond_65
++
++    .line 248
++    invoke-virtual {p0}, Log/patch/DTM;->getAltitudeOffset()F
++
++    move-result v2
++
++    add-float/2addr v1, v2
++
++    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
++
++    move-result p10
++
++    goto :goto_22
++
++    :cond_65
++    move p10, v0
++
++    .line 250
++    goto :goto_22
++.end method
++
++.method public getAircraft_HMSL_algo2(DDDDFFZ)F
++    .registers 17
++
++    .prologue
++    .line 270
++    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v0
++
++    if-nez v0, :cond_19
++
++    invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v0
++
++    if-nez v0, :cond_19
++
++    invoke-static {p7, p8}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v0
++
++    if-nez v0, :cond_19
++
++    float-to-double v0, p9
++
++    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_33
++
++    .line 274
++    :cond_19
++    if-eqz p11, :cond_27
++
++    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v0
++
++    if-nez v0, :cond_27
++
++    const/4 v0, 0x0
++
++    cmpl-float v0, p10, v0
++
++    if-lez v0, :cond_27
++
++    .line 311
++    :cond_26
++    :goto_26
++    return p10
++
++    .line 276
++    :cond_27
++    if-nez p11, :cond_31
++
++    invoke-static {p9}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v0
++
++    if-nez v0, :cond_31
++
++    move p10, p9
++
++    .line 277
++    goto :goto_26
++
++    .line 279
++    :cond_31
++    const/4 p10, 0x0
++
++    goto :goto_26
++
++    .line 285
++    :cond_33
++    invoke-virtual {p0, p5, p6, p7, p8}, Log/patch/DTM;->getDTM_HMSL(DD)F
++
++    move-result v0
++
++    .line 286
++    invoke-virtual {p0, p1, p2, p3, p4}, Log/patch/DTM;->getDTM_HMSL(DD)F
++
++    move-result v1
++
++    .line 288
++    sub-float v0, v1, v0
++
++    sub-float v0, p9, v0
++
++    .line 290
++    if-eqz p11, :cond_c5
++
++    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_c5
++
++    const/4 v1, 0x0
++
++    cmpl-float v1, p10, v1
++
++    if-lez v1, :cond_c5
++
++    .line 294
++    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_26
++
++    sub-float v1, p10, v0
++
++    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
++
++    move-result v1
++
++    iget-object v2, p0, Log/patch/DTM;->m_AlgoParams:[F
++
++    const/4 v3, 0x1
++
++    aget v2, v2, v3
++
++    cmpg-float v1, v1, v2
++
++    if-gtz v1, :cond_26
++
++    .line 295
++    iget-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
++
++    move-result v1
++
++    iget-object v2, p0, Log/patch/DTM;->m_AlgoParams:[F
++
++    const/4 v3, 0x0
++
++    aget v2, v2, v3
++
++    float-to-int v2, v2
++
++    if-ge v1, v2, :cond_26
++
++    .line 296
++    iget-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    new-instance v2, Ljava/lang/Float;
++
++    sub-float v0, p10, v0
++
++    invoke-direct {v2, v0}, Ljava/lang/Float;-><init>(F)V
++
++    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
++
++    .line 297
++    new-instance v0, Ljava/lang/Float;
++
++    const/4 v1, 0x0
++
++    invoke-direct {v0, v1}, Ljava/lang/Float;-><init>(F)V
++
++    .line 298
++    iget-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
++
++    move-result-object v2
++
++    move-object v1, v0
++
++    :goto_88
++    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_a3
++
++    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Ljava/lang/Float;
++
++    .line 299
++    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
++
++    move-result v1
++
++    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
++
++    move-result v0
++
++    add-float/2addr v0, v1
++
++    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v0
++
++    move-object v1, v0
++
++    .line 300
++    goto :goto_88
++
++    .line 301
++    :cond_a3
++    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
++
++    move-result v0
++
++    new-instance v1, Ljava/lang/Float;
++
++    iget-object v2, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
++
++    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
++
++    move-result v2
++
++    int-to-float v2, v2
++
++    invoke-direct {v1, v2}, Ljava/lang/Float;-><init>(F)V
++
++    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
++
++    move-result v1
++
++    div-float/2addr v0, v1
++
++    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v0
++
++    .line 302
++    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
++
++    move-result v0
++
++    invoke-virtual {p0, v0}, Log/patch/DTM;->setAltitudeOffset(F)V
++
++    goto/16 :goto_26
++
++    .line 307
++    :cond_c5
++    if-nez p11, :cond_df
++
++    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_df
++
++    .line 309
++    const/4 v1, 0x0
++
++    invoke-virtual {p0}, Log/patch/DTM;->getAltitudeOffset()F
++
++    move-result v2
++
++    add-float/2addr v0, v2
++
++    iget-object v2, p0, Log/patch/DTM;->m_AlgoParams:[F
++
++    const/4 v3, 0x2
++
++    aget v2, v2, v3
++
++    sub-float/2addr v0, v2
++
++    invoke-static {v1, v0}, Ljava/lang/Math;->max(FF)F
++
++    move-result p10
++
++    goto/16 :goto_26
++
++    .line 311
++    :cond_df
++    const/4 p10, 0x0
++
++    goto/16 :goto_26
++.end method
++
++.method public getAlgoChoice()I
++    .registers 2
++
++    .prologue
++    .line 122
++    iget v0, p0, Log/patch/DTM;->m_AlgoChoice:I
++
++    return v0
++.end method
++
++.method public getAlgoParams()[F
++    .registers 2
++
++    .prologue
++    .line 130
++    iget-object v0, p0, Log/patch/DTM;->m_AlgoParams:[F
++
++    return-object v0
++.end method
++
++.method public getAltitudeOffset()F
++    .registers 2
++
++    .prologue
++    .line 114
++    iget v0, p0, Log/patch/DTM;->m_AltitudeOffset:F
++
++    return v0
++.end method
++
++.method public getDTMTilesPaths()[Ljava/lang/String;
++    .registers 2
++
++    .prologue
++    .line 138
++    iget-object v0, p0, Log/patch/DTM;->m_DTM_tiles_paths:[Ljava/lang/String;
++
++    return-object v0
++.end method
++
++.method public getDTM_HMSL(DD)F
++    .registers 12
++
++    .prologue
++    const/4 v0, 0x0
++
++    .line 146
++    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v1
++
++    if-nez v1, :cond_d
++
++    invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
++
++    move-result v1
++
++    if-eqz v1, :cond_e
++
++    .line 156
++    :cond_d
++    :goto_d
++    return v0
++
++    .line 150
++    :cond_e
++    iget-object v2, p0, Log/patch/DTM;->m_Tiles:[Log/patch/HGTTile;
++
++    array-length v3, v2
++
++    const/4 v1, 0x0
++
++    :goto_12
++    if-ge v1, v3, :cond_d
++
++    aget-object v4, v2, v1
++
++    .line 151
++    invoke-virtual {v4, p1, p2, p3, p4}, Log/patch/HGTTile;->isPointInTile(DD)Z
++
++    move-result v5
++
++    if-eqz v5, :cond_21
++
++    .line 152
++    invoke-virtual {v4, p1, p2, p3, p4}, Log/patch/HGTTile;->getAltAtLatLng(DD)F
++
++    move-result v0
++
++    goto :goto_d
++
++    .line 150
++    :cond_21
++    add-int/lit8 v1, v1, 0x1
++
++    goto :goto_12
++.end method
++
++.method public getDoLogging()Z
++    .registers 2
++
++    .prologue
++    .line 106
++    iget-boolean v0, p0, Log/patch/DTM;->m_DoLogging:Z
++
++    return v0
++.end method
++
++.method public setAlgoChoice(I)V
++    .registers 2
++
++    .prologue
++    .line 126
++    iput p1, p0, Log/patch/DTM;->m_AlgoChoice:I
++
++    .line 127
++    return-void
++.end method
++
++.method public setAlgoParams([F)V
++    .registers 2
++
++    .prologue
++    .line 134
++    iput-object p1, p0, Log/patch/DTM;->m_AlgoParams:[F
++
++    .line 135
++    return-void
++.end method
++
++.method public setAltitudeOffset(F)V
++    .registers 2
++
++    .prologue
++    .line 118
++    iput p1, p0, Log/patch/DTM;->m_AltitudeOffset:F
++
++    .line 119
++    return-void
++.end method
++
++.method public setDTMTilesPaths([Ljava/lang/String;)V
++    .registers 2
++
++    .prologue
++    .line 142
++    iput-object p1, p0, Log/patch/DTM;->m_DTM_tiles_paths:[Ljava/lang/String;
++
++    .line 143
++    return-void
++.end method
++
++.method public setDoLogging(Z)V
++    .registers 2
++
++    .prologue
++    .line 110
++    iput-boolean p1, p0, Log/patch/DTM;->m_DoLogging:Z
++
++    .line 111
++    return-void
++.end method
+diff -Naur orig/smali_classes5/og/patch/HGTTile.smali mod/smali_classes5/og/patch/HGTTile.smali
+--- orig/smali_classes5/og/patch/HGTTile.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali_classes5/og/patch/HGTTile.smali	2018-05-04 18:15:54.825063000 +0200
+@@ -0,0 +1,604 @@
++.class public Log/patch/HGTTile;
++.super Ljava/lang/Object;
++.source "HGTTile.java"
++
++
++# instance fields
++.field public m_TileData:[S
++
++.field ref_lat:D
++
++.field ref_lng:D
++
++
++# direct methods
++.method constructor <init>()V
++    .registers 3
++
++    .prologue
++    .line 20
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    .line 15
++    const/4 v0, 0x0
++
++    iput-object v0, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    .line 17
++    const-wide v0, 0x4056800000000000L    # 90.0
++
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lat:D
++
++    .line 18
++    const-wide/16 v0, 0x0
++
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lng:D
++
++    .line 21
++    return-void
++.end method
++
++.method constructor <init>(Ljava/lang/String;)V
++    .registers 4
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 23
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    .line 15
++    const/4 v0, 0x0
++
++    iput-object v0, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    .line 17
++    const-wide v0, 0x4056800000000000L    # 90.0
++
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lat:D
++
++    .line 18
++    const-wide/16 v0, 0x0
++
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lng:D
++
++    .line 24
++    invoke-virtual {p0, p1}, Log/patch/HGTTile;->load(Ljava/lang/String;)V
++
++    .line 25
++    return-void
++.end method
++
++
++# virtual methods
++.method public getAltAtIndexes(II)F
++    .registers 7
++
++    .prologue
++    const/16 v3, 0xe10
++
++    const/4 v0, 0x0
++
++    .line 58
++    iget-object v1, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    if-eqz v1, :cond_23
++
++    iget-object v1, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    array-length v1, v1
++
++    const v2, 0xc5dd21
++
++    if-ne v1, v2, :cond_23
++
++    if-ltz p1, :cond_23
++
++    if-gt p1, v3, :cond_23
++
++    if-ltz p2, :cond_23
++
++    if-gt p2, v3, :cond_23
++
++    .line 59
++    iget-object v1, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    mul-int/lit16 v2, p2, 0xe11
++
++    add-int/2addr v2, p1
++
++    aget-short v1, v1, v2
++
++    .line 60
++    const/16 v2, -0x8000
++
++    if-eq v1, v2, :cond_23
++
++    int-to-float v0, v1
++
++    .line 62
++    :cond_23
++    return v0
++.end method
++
++.method public getAltAtLatLng(DD)F
++    .registers 26
++
++    .prologue
++    .line 73
++    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
++
++    move-object/from16 v0, p0
++
++    iget-wide v4, v0, Log/patch/HGTTile;->ref_lat:D
++
++    sub-double v4, p1, v4
++
++    sub-double/2addr v2, v4
++
++    .line 74
++    move-object/from16 v0, p0
++
++    iget-wide v4, v0, Log/patch/HGTTile;->ref_lng:D
++
++    sub-double v4, p3, v4
++
++    .line 76
++    const-wide v6, 0x40ac200000000000L    # 3600.0
++
++    mul-double/2addr v6, v2
++
++    invoke-static {v6, v7}, Ljava/lang/Math;->floor(D)D
++
++    move-result-wide v6
++
++    double-to-int v6, v6
++
++    .line 77
++    const-wide v8, 0x40ac200000000000L    # 3600.0
++
++    mul-double/2addr v8, v4
++
++    invoke-static {v8, v9}, Ljava/lang/Math;->floor(D)D
++
++    move-result-wide v8
++
++    double-to-int v7, v8
++
++    .line 80
++    move-object/from16 v0, p0
++
++    invoke-virtual {v0, v7, v6}, Log/patch/HGTTile;->getAltAtIndexes(II)F
++
++    move-result v8
++
++    .line 81
++    add-int/lit8 v9, v7, 0x1
++
++    move-object/from16 v0, p0
++
++    invoke-virtual {v0, v9, v6}, Log/patch/HGTTile;->getAltAtIndexes(II)F
++
++    move-result v9
++
++    .line 82
++    add-int/lit8 v10, v7, 0x1
++
++    add-int/lit8 v11, v6, 0x1
++
++    move-object/from16 v0, p0
++
++    invoke-virtual {v0, v10, v11}, Log/patch/HGTTile;->getAltAtIndexes(II)F
++
++    move-result v10
++
++    .line 83
++    add-int/lit8 v11, v6, 0x1
++
++    move-object/from16 v0, p0
++
++    invoke-virtual {v0, v7, v11}, Log/patch/HGTTile;->getAltAtIndexes(II)F
++
++    move-result v11
++
++    .line 86
++    float-to-double v12, v11
++
++    .line 87
++    float-to-double v14, v10
++
++    float-to-double v0, v11
++
++    move-wide/from16 v16, v0
++
++    sub-double v14, v14, v16
++
++    .line 88
++    float-to-double v0, v8
++
++    move-wide/from16 v16, v0
++
++    float-to-double v0, v11
++
++    move-wide/from16 v18, v0
++
++    sub-double v16, v16, v18
++
++    .line 89
++    float-to-double v0, v11
++
++    move-wide/from16 v18, v0
++
++    float-to-double v10, v10
++
++    sub-double v10, v18, v10
++
++    float-to-double v0, v8
++
++    move-wide/from16 v18, v0
++
++    sub-double v10, v10, v18
++
++    float-to-double v8, v9
++
++    add-double/2addr v8, v10
++
++    .line 91
++    const-wide/high16 v10, 0x3ff0000000000000L    # 1.0
++
++    const-wide v18, 0x40ac200000000000L    # 3600.0
++
++    mul-double v2, v2, v18
++
++    int-to-double v0, v6
++
++    move-wide/from16 v18, v0
++
++    sub-double v2, v2, v18
++
++    sub-double v2, v10, v2
++
++    .line 92
++    const-wide v10, 0x40ac200000000000L    # 3600.0
++
++    mul-double/2addr v4, v10
++
++    int-to-double v6, v7
++
++    sub-double/2addr v4, v6
++
++    .line 94
++    mul-double v6, v14, v4
++
++    add-double/2addr v6, v12
++
++    mul-double v10, v16, v2
++
++    add-double/2addr v6, v10
++
++    mul-double/2addr v4, v8
++
++    mul-double/2addr v2, v4
++
++    add-double/2addr v2, v6
++
++    double-to-float v2, v2
++
++    return v2
++.end method
++
++.method public isPointInTile(DD)Z
++    .registers 16
++
++    .prologue
++    const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
++
++    const-wide/16 v6, 0x0
++
++    .line 67
++    iget-wide v0, p0, Log/patch/HGTTile;->ref_lat:D
++
++    sub-double v0, p1, v0
++
++    .line 68
++    iget-wide v2, p0, Log/patch/HGTTile;->ref_lng:D
++
++    sub-double v2, p3, v2
++
++    .line 69
++    iget-object v4, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    if-eqz v4, :cond_2a
++
++    iget-object v4, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    array-length v4, v4
++
++    const v5, 0xc5dd21
++
++    if-ne v4, v5, :cond_2a
++
++    cmpg-double v4, v6, v0
++
++    if-gez v4, :cond_2a
++
++    cmpg-double v0, v0, v8
++
++    if-gtz v0, :cond_2a
++
++    cmpg-double v0, v6, v2
++
++    if-gtz v0, :cond_2a
++
++    cmpg-double v0, v2, v8
++
++    if-gez v0, :cond_2a
++
++    const/4 v0, 0x1
++
++    :goto_29
++    return v0
++
++    :cond_2a
++    const/4 v0, 0x0
++
++    goto :goto_29
++.end method
++
++.method public load(Ljava/lang/String;)V
++    .registers 12
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    const/4 v6, 0x0
++
++    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
++
++    const-wide/high16 v2, -0x4010000000000000L    # -1.0
++
++    .line 29
++    const-string v0, "((?<=%1$s)|(?=%1$s))"
++
++    const/4 v1, 0x1
++
++    new-array v1, v1, [Ljava/lang/Object;
++
++    const-string v7, "[/.EWNS]"
++
++    aput-object v7, v1, v6
++
++    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
++
++    move-result-object v0
++
++    .line 30
++    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
++
++    move-result-object v7
++
++    .line 32
++    array-length v0, v7
++
++    add-int/lit8 v0, v0, -0x9
++
++    aget-object v0, v7, v0
++
++    const-string v1, "W"
++
++    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_aa
++
++    move-wide v0, v2
++
++    :goto_24
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lng:D
++
++    .line 33
++    iget-wide v0, p0, Log/patch/HGTTile;->ref_lng:D
++
++    array-length v8, v7
++
++    add-int/lit8 v8, v8, -0x8
++
++    aget-object v8, v7, v8
++
++    invoke-static {v8}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
++
++    move-result-wide v8
++
++    mul-double/2addr v0, v8
++
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lng:D
++
++    .line 34
++    array-length v0, v7
++
++    add-int/lit8 v0, v0, -0xb
++
++    aget-object v0, v7, v0
++
++    const-string v1, "S"
++
++    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_ad
++
++    :goto_41
++    iput-wide v2, p0, Log/patch/HGTTile;->ref_lat:D
++
++    .line 35
++    iget-wide v0, p0, Log/patch/HGTTile;->ref_lat:D
++
++    array-length v2, v7
++
++    add-int/lit8 v2, v2, -0xa
++
++    aget-object v2, v7, v2
++
++    invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
++
++    move-result-wide v2
++
++    mul-double/2addr v0, v2
++
++    iput-wide v0, p0, Log/patch/HGTTile;->ref_lat:D
++
++    .line 41
++    new-instance v0, Ljava/util/zip/ZipFile;
++
++    invoke-direct {v0, p1}, Ljava/util/zip/ZipFile;-><init>(Ljava/lang/String;)V
++
++    .line 42
++    new-instance v1, Ljava/lang/String;
++
++    new-instance v2, Ljava/lang/StringBuilder;
++
++    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
++
++    array-length v3, v7
++
++    add-int/lit8 v3, v3, -0xb
++
++    aget-object v3, v7, v3
++
++    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v2
++
++    array-length v3, v7
++
++    add-int/lit8 v3, v3, -0xa
++
++    aget-object v3, v7, v3
++
++    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v2
++
++    array-length v3, v7
++
++    add-int/lit8 v3, v3, -0x9
++
++    aget-object v3, v7, v3
++
++    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v2
++
++    array-length v3, v7
++
++    add-int/lit8 v3, v3, -0x8
++
++    aget-object v3, v7, v3
++
++    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v2
++
++    const-string v3, ".hgt"
++
++    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v2
++
++    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v2
++
++    invoke-direct {v1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
++
++    .line 43
++    invoke-virtual {v0, v1}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
++
++    move-result-object v1
++
++    .line 44
++    invoke-virtual {v0, v1}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
++
++    move-result-object v2
++
++    .line 45
++    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getSize()J
++
++    move-result-wide v0
++
++    long-to-int v0, v0
++
++    .line 46
++    new-array v1, v0, [B
++
++    move v0, v6
++
++    .line 49
++    :goto_9e
++    invoke-virtual {v2}, Ljava/io/InputStream;->available()I
++
++    move-result v3
++
++    if-lez v3, :cond_af
++
++    .line 50
++    invoke-virtual {v2, v1, v0, v3}, Ljava/io/InputStream;->read([BII)I
++
++    move-result v3
++
++    add-int/2addr v0, v3
++
++    goto :goto_9e
++
++    :cond_aa
++    move-wide v0, v4
++
++    .line 32
++    goto/16 :goto_24
++
++    :cond_ad
++    move-wide v2, v4
++
++    .line 34
++    goto :goto_41
++
++    .line 53
++    :cond_af
++    array-length v0, v1
++
++    div-int/lit8 v0, v0, 0x2
++
++    new-array v0, v0, [S
++
++    iput-object v0, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    .line 54
++    invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
++
++    move-result-object v0
++
++    sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
++
++    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
++
++    move-result-object v0
++
++    iget-object v1, p0, Log/patch/HGTTile;->m_TileData:[S
++
++    invoke-virtual {v0, v1}, Ljava/nio/ShortBuffer;->get([S)Ljava/nio/ShortBuffer;
++
++    .line 55
++    return-void
++.end method
+diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patch/URLHook.smali
+--- orig/smali_classes5/og/patch/URLHook.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali_classes5/og/patch/URLHook.smali	2018-05-04 18:15:54.825063000 +0200
+@@ -0,0 +1,560 @@
++.class public Log/patch/URLHook;
++.super Ljava/lang/Object;
++.source "URLHook.java"
++
++
++# static fields
++.field public static m_Instance:Log/patch/URLHook;
++
++.field public static ms_settings_path:Ljava/lang/String;
++
++
++# instance fields
++.field private m_DoLogging:Z
++
++.field private m_logger:Ljava/util/logging/Logger;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .registers 1
++
++    .prologue
++    .line 28
++    const/4 v0, 0x0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 29
++    const-string v0, "/mnt/sdcard/DJI/urlhook.settings.json"
++
++    sput-object v0, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
++
++    return-void
++.end method
++
++.method public constructor <init>()V
++    .registers 2
++
++    .prologue
++    .line 26
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    .line 30
++    const/4 v0, 0x0
++
++    iput-boolean v0, p0, Log/patch/URLHook;->m_DoLogging:Z
++
++    .line 31
++    const/4 v0, 0x0
++
++    iput-object v0, p0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    return-void
++.end method
++
++.method public static checkURL_S(Ljava/lang/String;)Ljava/lang/String;
++    .registers 2
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 91
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_a
++
++    .line 92
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++
++    move-result-object v0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 94
++    :cond_a
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v0, :cond_17
++
++    .line 95
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0, p0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 97
++    :cond_17
++    return-object p0
++.end method
++
++.method public static checkURL_SS(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    .registers 4
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 101
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_a
++
++    .line 102
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++
++    move-result-object v0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 104
++    :cond_a
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v0, :cond_30
++
++    .line 105
++    new-instance v0, Ljava/lang/StringBuilder;
++
++    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 106
++    const-string v1, "protocol : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 107
++    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 108
++    const-string v1, "\nhost : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 109
++    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 110
++    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v1, v1, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v1, v0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 112
++    :cond_30
++    return-object p1
++.end method
++
++.method public static checkURL_SSIS(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
++    .registers 6
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 133
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_a
++
++    .line 134
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++
++    move-result-object v0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 136
++    :cond_a
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v0, :cond_40
++
++    .line 137
++    new-instance v0, Ljava/lang/StringBuilder;
++
++    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 138
++    const-string v1, "protocol : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 139
++    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 140
++    const-string v1, "\nhost : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 141
++    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 142
++    const-string v1, "\nport : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 143
++    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
++
++    .line 144
++    const-string v1, "\nfile : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 145
++    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 146
++    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v1, v1, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v1, v0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 148
++    :cond_40
++    return-object p1
++.end method
++
++.method public static checkURL_SSS(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    .registers 5
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 116
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_a
++
++    .line 117
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++
++    move-result-object v0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 119
++    :cond_a
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v0, :cond_38
++
++    .line 120
++    new-instance v0, Ljava/lang/StringBuilder;
++
++    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 121
++    const-string v1, "protocol : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 122
++    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 123
++    const-string v1, "\nhost : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 124
++    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 125
++    const-string v1, "\nfile : "
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 126
++    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 127
++    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v1, v1, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v1, v0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 129
++    :cond_38
++    return-object p1
++.end method
++
++.method public static close()V
++    .registers 4
++
++    .prologue
++    .line 72
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-eqz v0, :cond_2a
++
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    if-eqz v0, :cond_2a
++
++    .line 73
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    const-string v1, "closing"
++
++    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 75
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0}, Ljava/util/logging/Logger;->getHandlers()[Ljava/util/logging/Handler;
++
++    move-result-object v1
++
++    array-length v2, v1
++
++    const/4 v0, 0x0
++
++    :goto_1d
++    if-ge v0, v2, :cond_2a
++
++    aget-object v3, v1, v0
++
++    .line 76
++    invoke-virtual {v3}, Ljava/util/logging/Handler;->flush()V
++
++    .line 77
++    invoke-virtual {v3}, Ljava/util/logging/Handler;->close()V
++
++    .line 75
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_1d
++
++    .line 80
++    :cond_2a
++    return-void
++.end method
++
++.method public static getInstance()Log/patch/URLHook;
++    .registers 5
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 41
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_8b
++
++    .line 43
++    new-instance v0, Lcom/google/gson/GsonBuilder;
++
++    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
++
++    .line 44
++    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
++
++    move-result-object v0
++
++    .line 46
++    new-instance v1, Ljava/io/File;
++
++    sget-object v2, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
++
++    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
++
++    invoke-virtual {v1}, Ljava/io/File;->length()J
++
++    move-result-wide v2
++
++    .line 48
++    new-instance v1, Ljava/io/FileInputStream;
++
++    sget-object v4, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
++
++    invoke-direct {v1, v4}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
++
++    .line 49
++    long-to-int v2, v2
++
++    new-array v2, v2, [B
++
++    .line 50
++    invoke-virtual {v1, v2}, Ljava/io/FileInputStream;->read([B)I
++
++    .line 52
++    new-instance v1, Ljava/lang/String;
++
++    const-string v3, "ISO-8859-1"
++
++    invoke-direct {v1, v2, v3}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
++
++    .line 54
++    const-class v2, Log/patch/URLHook;
++
++    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Log/patch/URLHook;
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 56
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v0, :cond_8b
++
++    .line 58
++    new-instance v0, Ljava/util/Date;
++
++    invoke-direct {v0}, Ljava/util/Date;-><init>()V
++
++    .line 59
++    new-instance v1, Ljava/text/SimpleDateFormat;
++
++    const-string v2, "yyyy-MM-dd_HH-mm-ss"
++
++    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
++
++    .line 62
++    new-instance v2, Ljava/util/logging/FileHandler;
++
++    new-instance v3, Ljava/lang/StringBuilder;
++
++    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
++
++    const-string v4, "/mnt/sdcard/DJI/og_logs/URLHook-"
++
++    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v3
++
++    invoke-virtual {v1, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v0
++
++    const-string v1, ".log"
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-direct {v2, v0}, Ljava/util/logging/FileHandler;-><init>(Ljava/lang/String;)V
++
++    .line 63
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    const-class v1, Log/patch/URLHook;
++
++    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-static {v1}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
++
++    move-result-object v1
++
++    iput-object v1, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    .line 64
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
++
++    .line 65
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    const/4 v1, 0x0
++
++    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->setUseParentHandlers(Z)V
++
++    .line 68
++    :cond_8b
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    return-object v0
++.end method
++
++
++# virtual methods
++.method public getDoLogging()Z
++    .registers 2
++
++    .prologue
++    .line 83
++    iget-boolean v0, p0, Log/patch/URLHook;->m_DoLogging:Z
++
++    return v0
++.end method
++
++.method public setDoLogging(Z)V
++    .registers 2
++
++    .prologue
++    .line 87
++    iput-boolean p1, p0, Log/patch/URLHook;->m_DoLogging:Z
++
++    .line 88
++    return-void
++.end method
+diff -Naur orig/smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali mod/smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali
+--- orig/smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali	2018-04-30 18:20:23.075042000 +0200
++++ mod/smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali	2018-05-03 18:02:26.699403000 +0200
+@@ -33,6 +33,9 @@
+ 
+ .field private static final at:J = 0x1388L
+ 
++.field private static m_dtm:Log/patch/DTM;
++
++.field private static m_urlhook:Log/patch/URLHook;
+ 
+ # instance fields
+ .field public P:I
+@@ -122,6 +125,14 @@
+     .line 153
+     sput v1, Ldji/pilot2/main/activity/DJIMainFragmentActivity;->O:I
+ 
++    invoke-static {}, Log/patch/DTM;->getInstance()Log/patch/DTM;
++    move-result-object v0
++    sput-object v0, Ldji/pilot2/main/activity/DJIMainFragmentActivity;->m_dtm:Log/patch/DTM;
++
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++    move-result-object v0
++    sput-object v0, Ldji/pilot2/main/activity/DJIMainFragmentActivity;->m_urlhook:Log/patch/URLHook;
++
+     return-void
+ .end method
+ 
+@@ -579,6 +590,10 @@
+ 
+     .prologue
+     .line 405
++    invoke-static {}, Log/patch/DTM;->close()V
++
++    invoke-static {}, Log/patch/URLHook;->close()V
++
+     invoke-static {}, Ldji/pilot2/simulator/f;->a()V
+ 
+     .line 406
