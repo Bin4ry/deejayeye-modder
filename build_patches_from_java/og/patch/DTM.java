@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import og.patch.HGTTile;
 
+import java.lang.Thread;
 import java.lang.String;
 import java.lang.Integer;
 import java.lang.Double;
@@ -77,7 +78,7 @@ public class DTM {
                 Date now = new Date();
                 formater = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
                 FileHandler fh;   
-                fh = new FileHandler("/mnt/sdcard/DJI/DTM-"+formater.format(now).toString()+".log");
+                fh = new FileHandler("/mnt/sdcard/DJI/og_logs/DTM-"+formater.format(now).toString()+".log");
                 //fh = new FileHandler("DTM-"+formater.format(now).toString()+".log");
                 DTM.m_Instance.m_logger = Logger.getLogger(DTM.class.getName());
                 DTM.m_Instance.m_logger.addHandler(fh);
@@ -95,6 +96,7 @@ public class DTM {
         if (DTM.m_Instance != null && DTM.m_Instance.m_logger != null) {
             DTM.m_Instance.m_DoLogging = false;
             for(Handler h:DTM.m_Instance.m_logger.getHandlers())  {
+               h.flush();
                h.close();
             }
         }
@@ -182,11 +184,12 @@ public class DTM {
 */
     public float getAircraft_HMSL(double aircraftLatDeg, double aircraftLngDeg, double homeLatDeg, double homeLngDeg,
                                   float delta_altitude, float ultrasonicHeight, boolean isUltrasonicInUse) {
-        if (m_DoLogging) {
-            this.m_logger.info(String.format(Locale.US, "%.12f %.12f %.12f %.12f %.3f %.3f %b", aircraftLatDeg, aircraftLngDeg, homeLatDeg, homeLngDeg, delta_altitude, ultrasonicHeight, isUltrasonicInUse));
-        }
         float result = 0.0f;
         switch (this.m_AlgoChoice) {
+            case 0:
+                result = getAircraft_HMSL_algo0(aircraftLatDeg, aircraftLngDeg, homeLatDeg, homeLngDeg, delta_altitude, ultrasonicHeight, isUltrasonicInUse);
+                break;
+
             case 1:
                 result = getAircraft_HMSL_algo1(aircraftLatDeg, aircraftLngDeg, homeLatDeg, homeLngDeg, delta_altitude, ultrasonicHeight, isUltrasonicInUse);
                 break;
@@ -196,13 +199,30 @@ public class DTM {
                 break;
 
             default:
-                result = getAircraft_HMSL_algo1(aircraftLatDeg, aircraftLngDeg, homeLatDeg, homeLngDeg, delta_altitude, ultrasonicHeight, isUltrasonicInUse);
+                result = getAircraft_HMSL_algo0(aircraftLatDeg, aircraftLngDeg, homeLatDeg, homeLngDeg, delta_altitude, ultrasonicHeight, isUltrasonicInUse);
                 break;
         }
+
         if (m_DoLogging) {
-            this.m_logger.info(String.format(Locale.US, "%.3f",result));
+            this.m_logger.info(String.format(Locale.US, "%.12f %.12f %.12f %.12f %.3f %.3f %b result = %.3f", aircraftLatDeg, aircraftLngDeg, homeLatDeg, homeLngDeg, delta_altitude, ultrasonicHeight, isUltrasonicInUse,result));
         }
+
         return result;
+    }
+
+/*
+    Algo 0 : Behave as DJI default implementation
+*/
+    public float getAircraft_HMSL_algo0(double aircraftLatDeg, double aircraftLngDeg, double homeLatDeg, double homeLngDeg,
+                                  float delta_altitude, float ultrasonicHeight, boolean isUltrasonicInUse) {
+        if (isUltrasonicInUse && !Float.isNaN(ultrasonicHeight) && ultrasonicHeight > 0.0f) {
+            return ultrasonicHeight;
+        } else if (!isUltrasonicInUse && !Float.isNaN(delta_altitude))  {
+            //  If ultrasonic sensor is not providing data, then switch to the delta_altitude value
+            return delta_altitude;
+        } else {
+            return 0.0f;
+        }
     }
 
 /*
@@ -319,7 +339,10 @@ public class DTM {
         System.out.println(Arrays.toString(theDTM.getAlgoParams()));
 
         //System.out.println(theDTM.getDTM_HMSL(46.25,2.75));
-    }
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace(); 
+        System.out.println(Arrays.toString(stackTraceElements));
+   }
 */
+
 }
 

@@ -1279,8 +1279,8 @@ diff -Naur orig/smali_classes5/dji/pilot/newfpv/view/WholeAttitudeView.smali mod
  
 diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DTM.smali
 --- orig/smali_classes5/og/patch/DTM.smali	1970-01-01 01:00:00.000000000 +0100
-+++ mod/smali_classes5/og/patch/DTM.smali	2018-05-04 18:15:54.829064000 +0200
-@@ -0,0 +1,1141 @@
++++ mod/smali_classes5/og/patch/DTM.smali	2018-05-08 10:08:59.229992000 +0200
+@@ -0,0 +1,1173 @@
 +.class public Log/patch/DTM;
 +.super Ljava/lang/Object;
 +.source "DTM.java"
@@ -1690,112 +1690,90 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    .prologue
 +    .line 187
-+    iget-boolean v0, p0, Log/patch/DTM;->m_DoLogging:Z
-+
-+    if-eqz v0, :cond_45
-+
 +    .line 188
-+    iget-object v0, p0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
-+
-+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
-+
-+    const-string v2, "%.12f %.12f %.12f %.12f %.3f %.3f %b"
-+
-+    const/4 v3, 0x7
-+
-+    new-array v3, v3, [Ljava/lang/Object;
-+
-+    const/4 v4, 0x0
-+
-+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    const/4 v4, 0x1
-+
-+    invoke-static {p3, p4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    const/4 v4, 0x2
-+
-+    invoke-static {p5, p6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    const/4 v4, 0x3
-+
-+    invoke-static {p7, p8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    const/4 v4, 0x4
-+
-+    invoke-static/range {p9 .. p9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    const/4 v4, 0x5
-+
-+    invoke-static/range {p10 .. p10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    const/4 v4, 0x6
-+
-+    invoke-static/range {p11 .. p11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-+
-+    move-result-object v5
-+
-+    aput-object v5, v3, v4
-+
-+    invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-+
-+    move-result-object v1
-+
-+    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
-+
-+    .line 191
-+    :cond_45
 +    iget v0, p0, Log/patch/DTM;->m_AlgoChoice:I
 +
-+    packed-switch v0, :pswitch_data_74
++    packed-switch v0, :pswitch_data_66
 +
-+    .line 201
-+    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo1(DDDDFFZ)F
++    .line 202
++    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo0(DDDDFFZ)F
 +
 +    move-result v0
 +
-+    .line 204
-+    :goto_4e
++    .line 206
++    :goto_9
 +    iget-boolean v1, p0, Log/patch/DTM;->m_DoLogging:Z
 +
-+    if-eqz v1, :cond_69
++    if-eqz v1, :cond_56
 +
-+    .line 205
++    .line 207
 +    iget-object v1, p0, Log/patch/DTM;->m_logger:Ljava/util/logging/Logger;
 +
 +    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 +
-+    const-string v3, "%.3f"
++    const-string v3, "%.12f %.12f %.12f %.12f %.3f %.3f %b result = %.3f"
 +
-+    const/4 v4, 0x1
++    const/16 v4, 0x8
 +
 +    new-array v4, v4, [Ljava/lang/Object;
 +
 +    const/4 v5, 0x0
++
++    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x1
++
++    invoke-static {p3, p4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x2
++
++    invoke-static {p5, p6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x3
++
++    invoke-static {p7, p8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x4
++
++    invoke-static/range {p9 .. p9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x5
++
++    invoke-static/range {p10 .. p10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x6
++
++    invoke-static/range {p11 .. p11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
++
++    move-result-object v6
++
++    aput-object v6, v4, v5
++
++    const/4 v5, 0x7
 +
 +    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 +
@@ -1809,32 +1787,86 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    invoke-virtual {v1, v2}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
 +
-+    .line 207
-+    :cond_69
++    .line 210
++    :cond_56
 +    return v0
 +
-+    .line 193
-+    :pswitch_6a
++    .line 190
++    :pswitch_57
++    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo0(DDDDFFZ)F
++
++    move-result v0
++
++    goto :goto_9
++
++    .line 194
++    :pswitch_5c
 +    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo1(DDDDFFZ)F
 +
 +    move-result v0
 +
-+    goto :goto_4e
++    goto :goto_9
 +
-+    .line 197
-+    :pswitch_6f
++    .line 198
++    :pswitch_61
 +    invoke-virtual/range {p0 .. p11}, Log/patch/DTM;->getAircraft_HMSL_algo2(DDDDFFZ)F
 +
 +    move-result v0
 +
-+    goto :goto_4e
++    goto :goto_9
 +
-+    .line 191
-+    :pswitch_data_74
-+    .packed-switch 0x1
-+        :pswitch_6a
-+        :pswitch_6f
++    .line 188
++    :pswitch_data_66
++    .packed-switch 0x0
++        :pswitch_57
++        :pswitch_5c
++        :pswitch_61
 +    .end packed-switch
++.end method
++
++.method public getAircraft_HMSL_algo0(DDDDFFZ)F
++    .registers 14
++
++    .prologue
++    const/4 v0, 0x0
++
++    .line 218
++    if-eqz p11, :cond_e
++
++    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_e
++
++    cmpl-float v1, p10, v0
++
++    if-lez v1, :cond_e
++
++    .line 224
++    :goto_d
++    return p10
++
++    .line 220
++    :cond_e
++    if-nez p11, :cond_18
++
++    invoke-static {p9}, Ljava/lang/Float;->isNaN(F)Z
++
++    move-result v1
++
++    if-nez v1, :cond_18
++
++    move p10, p9
++
++    .line 222
++    goto :goto_d
++
++    :cond_18
++    move p10, v0
++
++    .line 224
++    goto :goto_d
 +.end method
 +
 +.method public getAircraft_HMSL_algo1(DDDDFFZ)F
@@ -1843,7 +1875,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +    .prologue
 +    const/4 v0, 0x0
 +
-+    .line 219
++    .line 237
 +    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
 +
 +    move-result v1
@@ -1870,7 +1902,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-eqz v1, :cond_2f
 +
-+    .line 223
++    .line 241
 +    :cond_1a
 +    if-eqz p11, :cond_23
 +
@@ -1880,12 +1912,12 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-nez v1, :cond_23
 +
-+    .line 250
++    .line 268
 +    :cond_22
 +    :goto_22
 +    return p10
 +
-+    .line 225
++    .line 243
 +    :cond_23
 +    if-nez p11, :cond_2d
 +
@@ -1897,32 +1929,32 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    move p10, p9
 +
-+    .line 226
++    .line 244
 +    goto :goto_22
 +
 +    :cond_2d
 +    move p10, v0
 +
-+    .line 228
++    .line 246
 +    goto :goto_22
 +
-+    .line 234
++    .line 252
 +    :cond_2f
 +    invoke-virtual {p0, p5, p6, p7, p8}, Log/patch/DTM;->getDTM_HMSL(DD)F
 +
 +    move-result v1
 +
-+    .line 235
++    .line 253
 +    invoke-virtual {p0, p1, p2, p3, p4}, Log/patch/DTM;->getDTM_HMSL(DD)F
 +
 +    move-result v2
 +
-+    .line 237
++    .line 255
 +    sub-float v1, v2, v1
 +
 +    sub-float v1, p9, v1
 +
-+    .line 239
++    .line 257
 +    if-eqz p11, :cond_53
 +
 +    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
@@ -1935,21 +1967,21 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-lez v2, :cond_53
 +
-+    .line 242
++    .line 260
 +    invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
 +
 +    move-result v0
 +
 +    if-nez v0, :cond_22
 +
-+    .line 243
++    .line 261
 +    sub-float v0, p10, v1
 +
 +    invoke-virtual {p0, v0}, Log/patch/DTM;->setAltitudeOffset(F)V
 +
 +    goto :goto_22
 +
-+    .line 246
++    .line 264
 +    :cond_53
 +    if-nez p11, :cond_65
 +
@@ -1959,7 +1991,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-nez v2, :cond_65
 +
-+    .line 248
++    .line 266
 +    invoke-virtual {p0}, Log/patch/DTM;->getAltitudeOffset()F
 +
 +    move-result v2
@@ -1975,7 +2007,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +    :cond_65
 +    move p10, v0
 +
-+    .line 250
++    .line 268
 +    goto :goto_22
 +.end method
 +
@@ -1983,7 +2015,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +    .registers 17
 +
 +    .prologue
-+    .line 270
++    .line 288
 +    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
 +
 +    move-result v0
@@ -2010,7 +2042,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-eqz v0, :cond_33
 +
-+    .line 274
++    .line 292
 +    :cond_19
 +    if-eqz p11, :cond_27
 +
@@ -2026,12 +2058,12 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-lez v0, :cond_27
 +
-+    .line 311
++    .line 329
 +    :cond_26
 +    :goto_26
 +    return p10
 +
-+    .line 276
++    .line 294
 +    :cond_27
 +    if-nez p11, :cond_31
 +
@@ -2043,32 +2075,32 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    move p10, p9
 +
-+    .line 277
++    .line 295
 +    goto :goto_26
 +
-+    .line 279
++    .line 297
 +    :cond_31
 +    const/4 p10, 0x0
 +
 +    goto :goto_26
 +
-+    .line 285
++    .line 303
 +    :cond_33
 +    invoke-virtual {p0, p5, p6, p7, p8}, Log/patch/DTM;->getDTM_HMSL(DD)F
 +
 +    move-result v0
 +
-+    .line 286
++    .line 304
 +    invoke-virtual {p0, p1, p2, p3, p4}, Log/patch/DTM;->getDTM_HMSL(DD)F
 +
 +    move-result v1
 +
-+    .line 288
++    .line 306
 +    sub-float v0, v1, v0
 +
 +    sub-float v0, p9, v0
 +
-+    .line 290
++    .line 308
 +    if-eqz p11, :cond_c5
 +
 +    invoke-static {p10}, Ljava/lang/Float;->isNaN(F)Z
@@ -2083,7 +2115,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-lez v1, :cond_c5
 +
-+    .line 294
++    .line 312
 +    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 +
 +    move-result v1
@@ -2106,7 +2138,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-gtz v1, :cond_26
 +
-+    .line 295
++    .line 313
 +    iget-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
 +
 +    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2123,7 +2155,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-ge v1, v2, :cond_26
 +
-+    .line 296
++    .line 314
 +    iget-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
 +
 +    new-instance v2, Ljava/lang/Float;
@@ -2134,14 +2166,14 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 +
-+    .line 297
++    .line 315
 +    new-instance v0, Ljava/lang/Float;
 +
 +    const/4 v1, 0x0
 +
 +    invoke-direct {v0, v1}, Ljava/lang/Float;-><init>(F)V
 +
-+    .line 298
++    .line 316
 +    iget-object v1, p0, Log/patch/DTM;->m_OffsetCalibrationValues:Ljava/util/ArrayList;
 +
 +    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2163,7 +2195,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    check-cast v0, Ljava/lang/Float;
 +
-+    .line 299
++    .line 317
 +    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 +
 +    move-result v1
@@ -2180,10 +2212,10 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    move-object v1, v0
 +
-+    .line 300
++    .line 318
 +    goto :goto_88
 +
-+    .line 301
++    .line 319
 +    :cond_a3
 +    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 +
@@ -2211,7 +2243,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    move-result-object v0
 +
-+    .line 302
++    .line 320
 +    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 +
 +    move-result v0
@@ -2220,7 +2252,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    goto/16 :goto_26
 +
-+    .line 307
++    .line 325
 +    :cond_c5
 +    if-nez p11, :cond_df
 +
@@ -2230,7 +2262,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    if-nez v1, :cond_df
 +
-+    .line 309
++    .line 327
 +    const/4 v1, 0x0
 +
 +    invoke-virtual {p0}, Log/patch/DTM;->getAltitudeOffset()F
@@ -2253,7 +2285,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +
 +    goto/16 :goto_26
 +
-+    .line 311
++    .line 329
 +    :cond_df
 +    const/4 p10, 0x0
 +
@@ -2424,7 +2456,7 @@ diff -Naur orig/smali_classes5/og/patch/DTM.smali mod/smali_classes5/og/patch/DT
 +.end method
 diff -Naur orig/smali_classes5/og/patch/HGTTile.smali mod/smali_classes5/og/patch/HGTTile.smali
 --- orig/smali_classes5/og/patch/HGTTile.smali	1970-01-01 01:00:00.000000000 +0100
-+++ mod/smali_classes5/og/patch/HGTTile.smali	2018-05-04 18:15:54.825063000 +0200
++++ mod/smali_classes5/og/patch/HGTTile.smali	2018-05-08 10:08:59.229992000 +0200
 @@ -0,0 +1,604 @@
 +.class public Log/patch/HGTTile;
 +.super Ljava/lang/Object;
@@ -3032,8 +3064,8 @@ diff -Naur orig/smali_classes5/og/patch/HGTTile.smali mod/smali_classes5/og/patc
 +.end method
 diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patch/URLHook.smali
 --- orig/smali_classes5/og/patch/URLHook.smali	1970-01-01 01:00:00.000000000 +0100
-+++ mod/smali_classes5/og/patch/URLHook.smali	2018-05-04 18:15:54.825063000 +0200
-@@ -0,0 +1,560 @@
++++ mod/smali_classes5/og/patch/URLHook.smali	2018-05-08 10:08:59.233993000 +0200
+@@ -0,0 +1,1200 @@
 +.class public Log/patch/URLHook;
 +.super Ljava/lang/Object;
 +.source "URLHook.java"
@@ -3046,7 +3078,48 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +
 +# instance fields
++.field private m_AllowedURLs:[Ljava/lang/String;
++
++.field private m_AllowedURLsPatterns:Ljava/util/ArrayList;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/util/ArrayList",
++            "<",
++            "Ljava/util/regex/Pattern;",
++            ">;"
++        }
++    .end annotation
++.end field
++
 +.field private m_DoLogging:Z
++
++.field private m_ForbiddenURLs:[Ljava/lang/String;
++
++.field private m_ForbiddenURLsPatterns:Ljava/util/ArrayList;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/util/ArrayList",
++            "<",
++            "Ljava/util/regex/Pattern;",
++            ">;"
++        }
++    .end annotation
++.end field
++
++.field private m_HardcodedAllowed:[Ljava/lang/String;
++
++.field private m_HardcodedAllowedURlsList:Ljava/util/ArrayList;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/util/ArrayList",
++            "<",
++            "Ljava/lang/String;",
++            ">;"
++        }
++    .end annotation
++.end field
++
++.field private m_UrlFilteringType:I
 +
 +.field private m_logger:Ljava/util/logging/Logger;
 +
@@ -3056,12 +3129,12 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +    .registers 1
 +
 +    .prologue
-+    .line 28
++    .line 31
 +    const/4 v0, 0x0
 +
 +    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    .line 29
++    .line 32
 +    const-string v0, "/mnt/sdcard/DJI/urlhook.settings.json"
 +
 +    sput-object v0, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
@@ -3070,67 +3143,260 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +.end method
 +
 +.method public constructor <init>()V
-+    .registers 2
++    .registers 5
 +
 +    .prologue
-+    .line 26
++    const/4 v2, 0x0
++
++    const/4 v3, 0x0
++
++    .line 29
 +    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 +
-+    .line 30
-+    const/4 v0, 0x0
++    .line 34
++    iput-boolean v2, p0, Log/patch/URLHook;->m_DoLogging:Z
 +
-+    iput-boolean v0, p0, Log/patch/URLHook;->m_DoLogging:Z
++    .line 35
++    iput-object v3, p0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
 +
-+    .line 31
-+    const/4 v0, 0x0
++    .line 36
++    iput v2, p0, Log/patch/URLHook;->m_UrlFilteringType:I
 +
-+    iput-object v0, p0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++    .line 37
++    iput-object v3, p0, Log/patch/URLHook;->m_AllowedURLs:[Ljava/lang/String;
++
++    .line 38
++    iput-object v3, p0, Log/patch/URLHook;->m_ForbiddenURLs:[Ljava/lang/String;
++
++    .line 39
++    const/4 v0, 0x4
++
++    new-array v0, v0, [Ljava/lang/String;
++
++    const-string v1, "192.168.42.1"
++
++    aput-object v1, v0, v2
++
++    const/4 v1, 0x1
++
++    const-string v2, "192.168.42.2"
++
++    aput-object v2, v0, v1
++
++    const/4 v1, 0x2
++
++    const-string v2, "192.168.42.3"
++
++    aput-object v2, v0, v1
++
++    const/4 v1, 0x3
++
++    const-string v2, "localhost"
++
++    aput-object v2, v0, v1
++
++    iput-object v0, p0, Log/patch/URLHook;->m_HardcodedAllowed:[Ljava/lang/String;
++
++    .line 41
++    iput-object v3, p0, Log/patch/URLHook;->m_AllowedURLsPatterns:Ljava/util/ArrayList;
++
++    .line 42
++    iput-object v3, p0, Log/patch/URLHook;->m_ForbiddenURLsPatterns:Ljava/util/ArrayList;
++
++    .line 43
++    iput-object v3, p0, Log/patch/URLHook;->m_HardcodedAllowedURlsList:Ljava/util/ArrayList;
 +
 +    return-void
 +.end method
 +
-+.method public static checkURL_S(Ljava/lang/String;)Ljava/lang/String;
-+    .registers 2
-+    .annotation system Ldalvik/annotation/Throws;
-+        value = {
-+            Ljava/io/IOException;
-+        }
-+    .end annotation
++.method private static checkHost(Ljava/lang/String;I)Ljava/lang/String;
++    .registers 8
 +
 +    .prologue
-+    .line 91
-+    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++    const/4 v1, 0x1
 +
-+    if-nez v0, :cond_a
++    const/4 v2, 0x0
 +
-+    .line 92
-+    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++    .line 150
++    const-string v0, "((?<=%1$s)|(?=%1$s))"
++
++    new-array v3, v1, [Ljava/lang/Object;
++
++    const-string v4, "[/:]"
++
++    aput-object v4, v3, v2
++
++    invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 +
 +    move-result-object v0
 +
-+    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++    .line 151
++    invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 +
-+    .line 94
-+    :cond_a
++    move-result-object v3
++
++    .line 153
++    array-length v0, v3
++
++    if-lt v0, p1, :cond_28
++
++    .line 154
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++    iget-object v0, v0, Log/patch/URLHook;->m_HardcodedAllowedURlsList:Ljava/util/ArrayList;
 +
-+    if-eqz v0, :cond_17
++    aget-object v4, v3, p1
 +
-+    .line 95
-+    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 +
-+    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++    move-result v0
 +
-+    invoke-virtual {v0, p0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++    .line 155
++    sget-object v4, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    .line 97
-+    :cond_17
++    iget v4, v4, Log/patch/URLHook;->m_UrlFilteringType:I
++
++    packed-switch v4, :pswitch_data_7c
++
++    .line 174
++    :goto_26
++    if-eqz v0, :cond_62
++
++    .line 187
++    :cond_28
++    :goto_28
 +    return-object p0
++
++    .line 158
++    :pswitch_29
++    aget-object v1, v3, p1
++
++    sget-object v4, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v4, v4, Log/patch/URLHook;->m_AllowedURLsPatterns:Ljava/util/ArrayList;
++
++    invoke-static {v1, v4}, Log/patch/URLHook;->stringMatchPatternList(Ljava/lang/String;Ljava/util/ArrayList;)Z
++
++    move-result v1
++
++    or-int/2addr v0, v1
++
++    .line 159
++    goto :goto_26
++
++    .line 164
++    :pswitch_35
++    aget-object v0, v3, p1
++
++    sget-object v4, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v4, v4, Log/patch/URLHook;->m_ForbiddenURLsPatterns:Ljava/util/ArrayList;
++
++    invoke-static {v0, v4}, Log/patch/URLHook;->stringMatchPatternList(Ljava/lang/String;Ljava/util/ArrayList;)Z
++
++    move-result v0
++
++    if-nez v0, :cond_44
++
++    move v0, v1
++
++    :goto_42
++    and-int/2addr v0, v1
++
++    .line 165
++    goto :goto_26
++
++    :cond_44
++    move v0, v2
++
++    .line 164
++    goto :goto_42
++
++    .line 169
++    :pswitch_46
++    aget-object v4, v3, p1
++
++    sget-object v5, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v5, v5, Log/patch/URLHook;->m_AllowedURLsPatterns:Ljava/util/ArrayList;
++
++    invoke-static {v4, v5}, Log/patch/URLHook;->stringMatchPatternList(Ljava/lang/String;Ljava/util/ArrayList;)Z
++
++    move-result v4
++
++    if-eqz v4, :cond_60
++
++    aget-object v4, v3, p1
++
++    sget-object v5, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v5, v5, Log/patch/URLHook;->m_ForbiddenURLsPatterns:Ljava/util/ArrayList;
++
++    invoke-static {v4, v5}, Log/patch/URLHook;->stringMatchPatternList(Ljava/lang/String;Ljava/util/ArrayList;)Z
++
++    move-result v4
++
++    if-nez v4, :cond_60
++
++    :goto_5e
++    or-int/2addr v0, v1
++
++    goto :goto_26
++
++    :cond_60
++    move v1, v2
++
++    goto :goto_5e
++
++    .line 177
++    :cond_62
++    new-instance v1, Ljava/lang/StringBuilder;
++
++    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 178
++    :goto_67
++    array-length v0, v3
++
++    if-ge v2, v0, :cond_77
++
++    .line 179
++    if-ne v2, p1, :cond_74
++
++    const-string v0, "127.0.0.1"
++
++    :goto_6e
++    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 178
++    add-int/lit8 v2, v2, 0x1
++
++    goto :goto_67
++
++    .line 179
++    :cond_74
++    aget-object v0, v3, v2
++
++    goto :goto_6e
++
++    .line 181
++    :cond_77
++    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object p0
++
++    goto :goto_28
++
++    .line 155
++    :pswitch_data_7c
++    .packed-switch 0x1
++        :pswitch_29
++        :pswitch_35
++        :pswitch_46
++    .end packed-switch
 +.end method
 +
-+.method public static checkURL_SS(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++.method public static checkURL_S(Ljava/lang/String;)Ljava/lang/String;
 +    .registers 4
 +    .annotation system Ldalvik/annotation/Throws;
 +        value = {
@@ -3139,146 +3405,84 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +    .end annotation
 +
 +    .prologue
-+    .line 101
++    .line 191
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    if-nez v0, :cond_a
 +
-+    .line 102
++    .line 192
 +    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
 +
 +    move-result-object v0
 +
 +    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    .line 104
++    .line 197
 +    :cond_a
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++    iget v0, v0, Log/patch/URLHook;->m_UrlFilteringType:I
 +
-+    if-eqz v0, :cond_30
++    if-nez v0, :cond_38
 +
-+    .line 105
-+    new-instance v0, Ljava/lang/StringBuilder;
++    move-object v0, p0
 +
-+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-+
-+    .line 106
-+    const-string v1, "protocol : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 107
-+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 108
-+    const-string v1, "\nhost : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 109
-+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 110
++    .line 204
++    :goto_11
 +    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    iget-object v1, v1, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++    iget-boolean v1, v1, Log/patch/URLHook;->m_DoLogging:Z
 +
-+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++    if-eqz v1, :cond_37
++
++    .line 205
++    new-instance v1, Ljava/lang/StringBuilder;
++
++    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 206
++    const-string v2, "orig_url = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 207
++    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 208
++    const-string v2, ", subst_url = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 209
++    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 210
++    sget-object v2, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v2, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-virtual {v2, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 212
++    :cond_37
++    return-object v0
++
++    .line 201
++    :cond_38
++    const/4 v0, 0x4
++
++    invoke-static {p0, v0}, Log/patch/URLHook;->checkHost(Ljava/lang/String;I)Ljava/lang/String;
 +
 +    move-result-object v0
 +
-+    invoke-virtual {v1, v0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
-+
-+    .line 112
-+    :cond_30
-+    return-object p1
++    goto :goto_11
 +.end method
 +
-+.method public static checkURL_SSIS(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-+    .registers 6
-+    .annotation system Ldalvik/annotation/Throws;
-+        value = {
-+            Ljava/io/IOException;
-+        }
-+    .end annotation
-+
-+    .prologue
-+    .line 133
-+    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
-+
-+    if-nez v0, :cond_a
-+
-+    .line 134
-+    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
-+
-+    move-result-object v0
-+
-+    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
-+
-+    .line 136
-+    :cond_a
-+    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
-+
-+    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
-+
-+    if-eqz v0, :cond_40
-+
-+    .line 137
-+    new-instance v0, Ljava/lang/StringBuilder;
-+
-+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-+
-+    .line 138
-+    const-string v1, "protocol : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 139
-+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 140
-+    const-string v1, "\nhost : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 141
-+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 142
-+    const-string v1, "\nport : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 143
-+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-+
-+    .line 144
-+    const-string v1, "\nfile : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 145
-+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 146
-+    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
-+
-+    iget-object v1, v1, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
-+
-+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-+
-+    move-result-object v0
-+
-+    invoke-virtual {v1, v0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
-+
-+    .line 148
-+    :cond_40
-+    return-object p1
-+.end method
-+
-+.method public static checkURL_SSS(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++.method public static checkURL_SS(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +    .registers 5
 +    .annotation system Ldalvik/annotation/Throws;
 +        value = {
@@ -3287,76 +3491,308 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +    .end annotation
 +
 +    .prologue
-+    .line 116
++    .line 216
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    if-nez v0, :cond_a
 +
-+    .line 117
++    .line 217
 +    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
 +
 +    move-result-object v0
 +
 +    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    .line 119
++    .line 222
 +    :cond_a
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
++    iget v0, v0, Log/patch/URLHook;->m_UrlFilteringType:I
 +
-+    if-eqz v0, :cond_38
++    if-nez v0, :cond_40
 +
-+    .line 120
-+    new-instance v0, Ljava/lang/StringBuilder;
++    move-object v0, p1
 +
-+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-+
-+    .line 121
-+    const-string v1, "protocol : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 122
-+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 123
-+    const-string v1, "\nhost : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 124
-+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 125
-+    const-string v1, "\nfile : "
-+
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 126
-+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    .line 127
++    .line 229
++    :goto_11
 +    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    iget-object v1, v1, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++    iget-boolean v1, v1, Log/patch/URLHook;->m_DoLogging:Z
 +
-+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++    if-eqz v1, :cond_3f
++
++    .line 230
++    new-instance v1, Ljava/lang/StringBuilder;
++
++    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 231
++    const-string v2, "protocol = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 232
++    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 233
++    const-string v2, ", orig host = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 234
++    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 235
++    const-string v2, ", subst host = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 236
++    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 237
++    sget-object v2, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v2, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-virtual {v2, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 239
++    :cond_3f
++    return-object v0
++
++    .line 226
++    :cond_40
++    const/4 v0, 0x0
++
++    invoke-static {p1, v0}, Log/patch/URLHook;->checkHost(Ljava/lang/String;I)Ljava/lang/String;
 +
 +    move-result-object v0
 +
-+    invoke-virtual {v1, v0}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++    goto :goto_11
++.end method
 +
-+    .line 129
-+    :cond_38
-+    return-object p1
++.method public static checkURL_SSIS(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
++    .registers 7
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 272
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_a
++
++    .line 273
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++
++    move-result-object v0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 278
++    :cond_a
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget v0, v0, Log/patch/URLHook;->m_UrlFilteringType:I
++
++    if-nez v0, :cond_50
++
++    move-object v0, p1
++
++    .line 285
++    :goto_11
++    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v1, v1, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v1, :cond_4f
++
++    .line 286
++    new-instance v1, Ljava/lang/StringBuilder;
++
++    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 287
++    const-string v2, "protocol = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 288
++    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 289
++    const-string v2, ", orig host = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 290
++    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 291
++    const-string v2, ", subst host = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 292
++    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 293
++    const-string v2, ", port = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 294
++    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
++
++    .line 295
++    const-string v2, ", file = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 296
++    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 297
++    sget-object v2, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v2, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-virtual {v2, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 299
++    :cond_4f
++    return-object v0
++
++    .line 282
++    :cond_50
++    const/4 v0, 0x0
++
++    invoke-static {p1, v0}, Log/patch/URLHook;->checkHost(Ljava/lang/String;I)Ljava/lang/String;
++
++    move-result-object v0
++
++    goto :goto_11
++.end method
++
++.method public static checkURL_SSS(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    .registers 6
++    .annotation system Ldalvik/annotation/Throws;
++        value = {
++            Ljava/io/IOException;
++        }
++    .end annotation
++
++    .prologue
++    .line 243
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    if-nez v0, :cond_a
++
++    .line 244
++    invoke-static {}, Log/patch/URLHook;->getInstance()Log/patch/URLHook;
++
++    move-result-object v0
++
++    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    .line 249
++    :cond_a
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget v0, v0, Log/patch/URLHook;->m_UrlFilteringType:I
++
++    if-nez v0, :cond_48
++
++    move-object v0, p1
++
++    .line 256
++    :goto_11
++    sget-object v1, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-boolean v1, v1, Log/patch/URLHook;->m_DoLogging:Z
++
++    if-eqz v1, :cond_47
++
++    .line 257
++    new-instance v1, Ljava/lang/StringBuilder;
++
++    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
++
++    .line 258
++    const-string v2, "protocol = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 259
++    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 260
++    const-string v2, ", orig host = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 261
++    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 262
++    const-string v2, ", subst host = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 263
++    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 264
++    const-string v2, ", file = "
++
++    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 265
++    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    .line 266
++    sget-object v2, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v2, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++
++    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-virtual {v2, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
++
++    .line 268
++    :cond_47
++    return-object v0
++
++    .line 253
++    :cond_48
++    const/4 v0, 0x0
++
++    invoke-static {p1, v0}, Log/patch/URLHook;->checkHost(Ljava/lang/String;I)Ljava/lang/String;
++
++    move-result-object v0
++
++    goto :goto_11
 +.end method
 +
 +.method public static close()V
 +    .registers 4
 +
 +    .prologue
-+    .line 72
++    .line 96
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    if-eqz v0, :cond_2a
@@ -3367,7 +3803,7 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +    if-eqz v0, :cond_2a
 +
-+    .line 73
++    .line 97
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
@@ -3376,7 +3812,7 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
 +
-+    .line 75
++    .line 99
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
@@ -3394,24 +3830,24 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +    aget-object v3, v1, v0
 +
-+    .line 76
++    .line 100
 +    invoke-virtual {v3}, Ljava/util/logging/Handler;->flush()V
 +
-+    .line 77
++    .line 101
 +    invoke-virtual {v3}, Ljava/util/logging/Handler;->close()V
 +
-+    .line 75
++    .line 99
 +    add-int/lit8 v0, v0, 0x1
 +
 +    goto :goto_1d
 +
-+    .line 80
++    .line 104
 +    :cond_2a
 +    return-void
 +.end method
 +
 +.method public static getInstance()Log/patch/URLHook;
-+    .registers 5
++    .registers 6
 +    .annotation system Ldalvik/annotation/Throws;
 +        value = {
 +            Ljava/io/IOException;
@@ -3419,58 +3855,60 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +    .end annotation
 +
 +    .prologue
-+    .line 41
++    const/4 v1, 0x0
++
++    .line 48
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    if-nez v0, :cond_8b
++    if-nez v0, :cond_ea
 +
-+    .line 43
++    .line 50
 +    new-instance v0, Lcom/google/gson/GsonBuilder;
 +
 +    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
 +
-+    .line 44
++    .line 51
 +    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
 +
 +    move-result-object v0
 +
-+    .line 46
-+    new-instance v1, Ljava/io/File;
++    .line 53
++    new-instance v2, Ljava/io/File;
 +
-+    sget-object v2, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
++    sget-object v3, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
 +
-+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
++    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 +
-+    invoke-virtual {v1}, Ljava/io/File;->length()J
++    invoke-virtual {v2}, Ljava/io/File;->length()J
 +
 +    move-result-wide v2
 +
-+    .line 48
-+    new-instance v1, Ljava/io/FileInputStream;
++    .line 55
++    new-instance v4, Ljava/io/FileInputStream;
 +
-+    sget-object v4, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
++    sget-object v5, Log/patch/URLHook;->ms_settings_path:Ljava/lang/String;
 +
-+    invoke-direct {v1, v4}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
++    invoke-direct {v4, v5}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
 +
-+    .line 49
++    .line 56
 +    long-to-int v2, v2
 +
 +    new-array v2, v2, [B
 +
-+    .line 50
-+    invoke-virtual {v1, v2}, Ljava/io/FileInputStream;->read([B)I
++    .line 57
++    invoke-virtual {v4, v2}, Ljava/io/FileInputStream;->read([B)I
 +
-+    .line 52
-+    new-instance v1, Ljava/lang/String;
++    .line 59
++    new-instance v3, Ljava/lang/String;
 +
-+    const-string v3, "ISO-8859-1"
++    const-string v4, "ISO-8859-1"
 +
-+    invoke-direct {v1, v2, v3}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
++    invoke-direct {v3, v2, v4}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 +
-+    .line 54
++    .line 61
 +    const-class v2, Log/patch/URLHook;
 +
-+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
++    invoke-virtual {v0, v3, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 +
 +    move-result-object v0
 +
@@ -3478,39 +3916,155 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +    sput-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    .line 56
++    .line 63
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    new-instance v2, Ljava/util/ArrayList;
++
++    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
++
++    iput-object v2, v0, Log/patch/URLHook;->m_AllowedURLsPatterns:Ljava/util/ArrayList;
++
++    .line 64
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    new-instance v2, Ljava/util/ArrayList;
++
++    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
++
++    iput-object v2, v0, Log/patch/URLHook;->m_ForbiddenURLsPatterns:Ljava/util/ArrayList;
++
++    .line 65
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    new-instance v2, Ljava/util/ArrayList;
++
++    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
++
++    iput-object v2, v0, Log/patch/URLHook;->m_HardcodedAllowedURlsList:Ljava/util/ArrayList;
++
++    .line 67
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v0, Log/patch/URLHook;->m_HardcodedAllowed:[Ljava/lang/String;
++
++    array-length v3, v2
++
++    move v0, v1
++
++    :goto_58
++    if-ge v0, v3, :cond_66
++
++    aget-object v4, v2, v0
++
++    .line 68
++    sget-object v5, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v5, v5, Log/patch/URLHook;->m_HardcodedAllowedURlsList:Ljava/util/ArrayList;
++
++    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
++
++    .line 67
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_58
++
++    .line 71
++    :cond_66
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v0, Log/patch/URLHook;->m_AllowedURLs:[Ljava/lang/String;
++
++    array-length v3, v2
++
++    move v0, v1
++
++    :goto_6c
++    if-ge v0, v3, :cond_7e
++
++    aget-object v4, v2, v0
++
++    .line 72
++    sget-object v5, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v5, v5, Log/patch/URLHook;->m_AllowedURLsPatterns:Ljava/util/ArrayList;
++
++    invoke-static {v4}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
++
++    move-result-object v4
++
++    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
++
++    .line 71
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_6c
++
++    .line 75
++    :cond_7e
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v2, v0, Log/patch/URLHook;->m_ForbiddenURLs:[Ljava/lang/String;
++
++    array-length v3, v2
++
++    move v0, v1
++
++    :goto_84
++    if-ge v0, v3, :cond_96
++
++    aget-object v4, v2, v0
++
++    .line 76
++    sget-object v5, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v5, v5, Log/patch/URLHook;->m_ForbiddenURLsPatterns:Ljava/util/ArrayList;
++
++    invoke-static {v4}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
++
++    move-result-object v4
++
++    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
++
++    .line 75
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_84
++
++    .line 80
++    :cond_96
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    iget-boolean v0, v0, Log/patch/URLHook;->m_DoLogging:Z
 +
-+    if-eqz v0, :cond_8b
++    if-eqz v0, :cond_ea
 +
-+    .line 58
++    .line 82
 +    new-instance v0, Ljava/util/Date;
 +
 +    invoke-direct {v0}, Ljava/util/Date;-><init>()V
 +
-+    .line 59
-+    new-instance v1, Ljava/text/SimpleDateFormat;
++    .line 83
++    new-instance v2, Ljava/text/SimpleDateFormat;
 +
-+    const-string v2, "yyyy-MM-dd_HH-mm-ss"
++    const-string v3, "yyyy-MM-dd_HH-mm-ss"
 +
-+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
++    invoke-direct {v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 +
-+    .line 62
-+    new-instance v2, Ljava/util/logging/FileHandler;
++    .line 85
++    new-instance v3, Ljava/util/logging/FileHandler;
 +
-+    new-instance v3, Ljava/lang/StringBuilder;
++    new-instance v4, Ljava/lang/StringBuilder;
 +
-+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
++    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 +
-+    const-string v4, "/mnt/sdcard/DJI/og_logs/URLHook-"
++    const-string v5, "/mnt/sdcard/DJI/og_logs/URLHook-"
 +
-+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 +
-+    move-result-object v3
++    move-result-object v4
 +
-+    invoke-virtual {v1, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
++    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 +
 +    move-result-object v0
 +
@@ -3518,13 +4072,13 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +    move-result-object v0
 +
-+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 +
 +    move-result-object v0
 +
-+    const-string v1, ".log"
++    const-string v2, ".log"
 +
-+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 +
 +    move-result-object v0
 +
@@ -3532,66 +4086,184 @@ diff -Naur orig/smali_classes5/og/patch/URLHook.smali mod/smali_classes5/og/patc
 +
 +    move-result-object v0
 +
-+    invoke-direct {v2, v0}, Ljava/util/logging/FileHandler;-><init>(Ljava/lang/String;)V
++    invoke-direct {v3, v0}, Ljava/util/logging/FileHandler;-><init>(Ljava/lang/String;)V
 +
-+    .line 63
++    .line 87
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
-+    const-class v1, Log/patch/URLHook;
++    const-class v2, Log/patch/URLHook;
 +
-+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
++    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 +
-+    move-result-object v1
++    move-result-object v2
 +
-+    invoke-static {v1}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
++    invoke-static {v2}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 +
-+    move-result-object v1
++    move-result-object v2
 +
-+    iput-object v1, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
++    iput-object v2, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
 +
-+    .line 64
-+    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
-+
-+    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
-+
-+    invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
-+
-+    .line 65
++    .line 88
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
 +
-+    const/4 v1, 0x0
++    invoke-virtual {v0, v3}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
++
++    .line 89
++    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
++
++    iget-object v0, v0, Log/patch/URLHook;->m_logger:Ljava/util/logging/Logger;
 +
 +    invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->setUseParentHandlers(Z)V
 +
-+    .line 68
-+    :cond_8b
++    .line 92
++    :cond_ea
 +    sget-object v0, Log/patch/URLHook;->m_Instance:Log/patch/URLHook;
 +
 +    return-object v0
 +.end method
 +
++.method private static stringMatchPatternList(Ljava/lang/String;Ljava/util/ArrayList;)Z
++    .registers 4
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "(",
++            "Ljava/lang/String;",
++            "Ljava/util/ArrayList",
++            "<",
++            "Ljava/util/regex/Pattern;",
++            ">;)Z"
++        }
++    .end annotation
++
++    .prologue
++    .line 139
++    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
++
++    move-result-object v1
++
++    :cond_4
++    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_1c
++
++    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Ljava/util/regex/Pattern;
++
++    .line 140
++    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
++
++    move-result-object v0
++
++    .line 141
++    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_4
++
++    .line 142
++    const/4 v0, 0x1
++
++    .line 145
++    :goto_1b
++    return v0
++
++    :cond_1c
++    const/4 v0, 0x0
++
++    goto :goto_1b
++.end method
++
 +
 +# virtual methods
++.method public getAllowedURLs()[Ljava/lang/String;
++    .registers 2
++
++    .prologue
++    .line 115
++    iget-object v0, p0, Log/patch/URLHook;->m_AllowedURLs:[Ljava/lang/String;
++
++    return-object v0
++.end method
++
 +.method public getDoLogging()Z
 +    .registers 2
 +
 +    .prologue
-+    .line 83
++    .line 107
 +    iget-boolean v0, p0, Log/patch/URLHook;->m_DoLogging:Z
 +
 +    return v0
++.end method
++
++.method public getForbiddenURLs()[Ljava/lang/String;
++    .registers 2
++
++    .prologue
++    .line 123
++    iget-object v0, p0, Log/patch/URLHook;->m_ForbiddenURLs:[Ljava/lang/String;
++
++    return-object v0
++.end method
++
++.method public getUrlFilteringType()I
++    .registers 2
++
++    .prologue
++    .line 131
++    iget v0, p0, Log/patch/URLHook;->m_UrlFilteringType:I
++
++    return v0
++.end method
++
++.method public setAllowedURLs([Ljava/lang/String;)V
++    .registers 2
++
++    .prologue
++    .line 119
++    iput-object p1, p0, Log/patch/URLHook;->m_AllowedURLs:[Ljava/lang/String;
++
++    .line 120
++    return-void
 +.end method
 +
 +.method public setDoLogging(Z)V
 +    .registers 2
 +
 +    .prologue
-+    .line 87
++    .line 111
 +    iput-boolean p1, p0, Log/patch/URLHook;->m_DoLogging:Z
 +
-+    .line 88
++    .line 112
++    return-void
++.end method
++
++.method public setForbiddenURLs([Ljava/lang/String;)V
++    .registers 2
++
++    .prologue
++    .line 127
++    iput-object p1, p0, Log/patch/URLHook;->m_ForbiddenURLs:[Ljava/lang/String;
++
++    .line 128
++    return-void
++.end method
++
++.method public setUrlFilteringType(I)V
++    .registers 2
++
++    .prologue
++    .line 135
++    iput p1, p0, Log/patch/URLHook;->m_UrlFilteringType:I
++
++    .line 136
 +    return-void
 +.end method
 diff -Naur orig/smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali mod/smali_classes6/dji/pilot2/main/activity/DJIMainFragmentActivity.smali
