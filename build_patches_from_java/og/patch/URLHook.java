@@ -36,13 +36,11 @@ public class URLHook {
     private int m_UrlFilteringType = 0;
     private String[] m_AllowedURLs = null;
     private String[] m_ForbiddenURLs = null;
-    private String[] m_HardcodedAllowed = { "192.168.42.1", "192.168.42.2", "192.168.42.3", "localhost" };
+    private String[] m_HardcodedAllowed = { ".*gnss_assist.*", ".*\\.ubx.*", ".*192.168.42.1.*", ".*192.168.42.2.*", ".*192.168.42.3.*", ".*localhost.*"};
 
     private ArrayList<Pattern> m_AllowedURLsPatterns = null;
     private ArrayList<Pattern> m_ForbiddenURLsPatterns = null;
-    private ArrayList<String> m_HardcodedAllowedURlsList = null;
-
-    //private String m_DefaultBlockURL = null;
+    private ArrayList<Pattern> m_HardcodedAllowedPatterns = null;
 
     public static URLHook getInstance() throws IOException {
         if (URLHook.m_Instance == null) {
@@ -62,10 +60,10 @@ public class URLHook {
 
             URLHook.m_Instance.m_AllowedURLsPatterns = new ArrayList<Pattern>();
             URLHook.m_Instance.m_ForbiddenURLsPatterns = new ArrayList<Pattern>();
-            URLHook.m_Instance.m_HardcodedAllowedURlsList = new ArrayList<String>();
+            URLHook.m_Instance.m_HardcodedAllowedPatterns = new ArrayList<Pattern>();
 
             for(String s : URLHook.m_Instance.m_HardcodedAllowed) {
-                URLHook.m_Instance.m_HardcodedAllowedURlsList.add(s);
+                URLHook.m_Instance.m_HardcodedAllowedPatterns.add(Pattern.compile(s));
             }
 
             for(String s : URLHook.m_Instance.m_AllowedURLs) {
@@ -150,8 +148,21 @@ public class URLHook {
         String delim = String.format("((?<=%1$s)|(?=%1$s))","[/:]");
         String[] tokens = inputstr.split(delim);
         boolean test_allow = false;
+        for(String token : tokens) {
+            for(Pattern p : URLHook.m_Instance.m_HardcodedAllowedPatterns) {
+                Matcher m = p.matcher(token);
+                if (m.matches()) {
+                    test_allow = true;
+                    break;
+                }
+            }
+            if (test_allow) {
+                break;
+            }
+        }
+
         if (tokens.length >= test_token) {
-            test_allow = URLHook.m_Instance.m_HardcodedAllowedURlsList.contains(tokens[test_token]);
+
             switch (URLHook.m_Instance.m_UrlFilteringType) {
                 // 1 = online if allowed only (default to block)
                 case 1:

@@ -4781,27 +4781,6 @@ diff -Naru orig/smali_classes3/com/loopj/android/http/RetryHandler.smali mod/sma
  
      invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
  
-diff -Naru orig/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali mod/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali
---- orig/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali	2018-02-20 04:03:09.520758600 +0100
-+++ mod/smali_classes3/com/mapbox/mapboxsdk/style/sources/GeoJsonSource.smali	2018-02-20 17:22:20.991834700 +0100
-@@ -190,7 +190,7 @@
-     .line 62
-     if-eqz p2, :cond_0
- 
--    const-string v0, "MV49Mg=="
-+    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
-@@ -239,7 +239,7 @@
-     .line 77
-     if-eqz p2, :cond_0
- 
--    const-string v0, "MV49Mg=="
-+    const-string v0, "MV49Ml1xdlVrHWdySW53VQ=="
- 
-     invoke-static {v0}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
- 
 diff -Naru orig/smali_classes3/com/mob/commons/logcollector/c.smali mod/smali_classes3/com/mob/commons/logcollector/c.smali
 --- orig/smali_classes3/com/mob/commons/logcollector/c.smali	2018-02-20 04:03:10.159653500 +0100
 +++ mod/smali_classes3/com/mob/commons/logcollector/c.smali	2018-02-20 17:22:21.480617000 +0100

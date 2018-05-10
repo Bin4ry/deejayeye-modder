@@ -1,1 +1,1 @@
-{"m_DoLogging":true,"m_UrlFilteringType":1,"m_AllowedURLs":[".*amap.com", ".*here.com", ".*google.com"],"m_ForbiddenURLs":[".*dji.com"]}
+{"m_DoLogging":true,"m_UrlFilteringType":1,"m_AllowedURLs":[".*amap.com", ".*here.com", ".*google.com", ".*mapbox.com"],"m_ForbiddenURLs":[".*dji.com"]}
