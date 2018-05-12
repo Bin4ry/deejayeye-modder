@@ -70,3 +70,8 @@ Removes popup "New Fly Safe data found... DJI GO 4 cannot be used normally witho
 
 enable MapBox:
 Mapbox is in teststage by DJI. Feel free to try it already.
+
+runtime_use_GoogleMap:
+assuming you have a valid Google API key and a valid HereMap key for the signing key and package names, then you can switch between GoogleMap and Here maps :
+if a fiel named useGoogleMap can be found in your DJI directory, then GoogleMap will be used, otherwise, HereMaps will be used.
+If the mapbox patch is enabled and you choosed mapbox within the app, then mapbox will be used.
