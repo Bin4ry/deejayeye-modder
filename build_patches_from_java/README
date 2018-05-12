@@ -74,3 +74,18 @@ The current status is also provided as a regular "all inclusive patch" if you on
 
 You have to manually install this patch in your 4.1.22 patch folder... it's purposely not pre-installed so there is a chance you read this file if you plan to use it !
 
+update may 12th 2018 :
+
+DTM height algo v3 now seems pretty stable : wrong VPS/ultrasonic measurements get filtered out.
+Algo parameter settings can be found in the DTM.java code
+Do not use v0 -> v2 algos anymore...
+
+rename HMSL methods to HAGL
+added extra check of VPS in use in addition to ultrasonicvalid flag (mimics WholeAttitudeView.smali k() method )
+added a suffix to the height display unit :
+-QFE (quebec fox echo)    : delta altitude with take off point
+-AGL (above ground level) : reading of ultrasonic / VPS sensor
+-DTM (digital terrain model) : agl value from dtm computations
+
+low height values are also displayed in yellow instead of red as red get really low readability
+
