@@ -16,7 +16,7 @@ DBAD-LICENSE: https://www.dbad-license.org/
 
 This software is free to use, feel free to modify.
 
-Only thing i ask for is to link this git as a start point of your own modifications.
+Only thing I ask for is to link this git as a start point of your own modifications.
 
 
 ## Disclaimer:
@@ -24,7 +24,7 @@ Only thing i ask for is to link this git as a start point of your own modificati
 
 I am not responsible for any damage done! Use your brain and all will be fine!
 
-Also i will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
+Also I will not include any apk to this git! You have to do everything yourself, if you cannot you should not play with stuff like this!
 
 ## Mavic Air
 
@@ -32,7 +32,7 @@ We will not support the Mavic Air anytime soon. Noone of us is planning of buyin
 
 ## Donations
 
-Due to request i add some donation methods, thank you very much for donating so the hacking of this stuff can go on :)
+Due to request I added some donation methods, thank you very much for donating so the hacking of this stuff can go on :)
 
 PayPal: andreas.makris@gmail.com
 
@@ -42,7 +42,7 @@ BCH: 12UnxVsA1Q9AHpy384spTVDNJVnudPZWXP
 
 ETH: 0x8fc3461e971790498eb43b4608ba58f7e4300c98
 
-thank you emails :) -> andreas.makris@gmail.com
+Thank you emails :) -> andreas.makris@gmail.com
 
 
 
@@ -68,7 +68,16 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 ### Linux:
 
-1. make sure you have `dialog`, `bspatch`, `dos2unix` and `java` installed: `sudo apt-get install dialog bspatch dos2unix openjdk-8-jre`
+1. Make sure you have `dialog`, `bspatch`, `dos2unix` `xmlstarlet` `java` and `libwebp` installed.
+    a)`sudo apt-get install dialog bspatch dos2unix xmlstarlet openjdk-8-jre`
+    b)    i)`mkdir temp`
+          ii)`wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.0.tar.gz -O temp/libwebp-1.0.0.tar.gz`
+	  iii)`tar xvzf libwebp-1.0.0.tar.gz`
+	  iv)`cd libwebp-1.0.0`
+	  v)`./configure`
+	  vi)`make`
+	  vii)`sudo make install`
+	  
 2. Download needed tools manually or run the script provided.
 
    a) Download apktool, rename it to apktool.jar and save it to tools folder: https://bitbucket.org/iBotPeaches/apktool/downloads/
@@ -77,7 +86,7 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 3. Get the apk to modify (ver. **4.1.3**), try 'Raccoon, the apk downloader' (Linux/OSX/Windows), you can get it here: http://raccoon.onyxbits.de/, or try a mirror such as http://www.apkmirror.com/
 
-4. RunMe.sh or RunMeNg.sh (Ng version has new features!)
+4. RunMe.sh
    If a Settings.xml file is present, data are read from and used to automatically field the corresponding settings.
    For more information, please read Settings.xml file content.
 
@@ -111,12 +120,12 @@ If you get a message about different region etc. etc after using the FCC patch: 
 
 ### URLs patching
 
-two new tools designed for that purpose instead of the old patching way
+Two new tools designed for that purpose instead of the old patching way
 search_urls.sh and url_patcher.sh
-both take one argument which is the name of the decompiled directory
+Both take one argument which is the name of the decompiled directory.
 
-search_urls.sh generate some config files in __MODDED_APK_OUT__/urls/subdir_with_name_of_workdir
-the file fogged_urls.txt and unfogged_urls.txt can (must) be edited, changing the first column to enable / disable further application by the second script :
+Search_urls.sh generate some config files in __MODDED_APK_OUT__/urls/subdir_with_name_of_workdir
+The file fogged_urls.txt and unfogged_urls.txt can (must) be edited, changing the first column to enable / disable further application by the second script:
 the default files DO NOT DISABLE any url in order not to break the app. The files must be edited to goOffline (or partially offline)
 
 url_patcher.sh applies the patching prepared in __MODDED_APK_OUT__/urls/subdir_with_name_of_workdir
@@ -128,12 +137,12 @@ THIS DO NOT MEAN that the app can not reach servers by other path... take care..
 After a while and discussions on Slack with active "NFZ" workers, it was decided to make a public release for the NFZ unlocking patches.
 There was already an app patch that removes some upgrade warning. It has been merged with the new parts and renamed removeNFZ_ApplicationPart
 As the name tells, this is the Application part only and you will still need to make some firmware modifications (much simpler than module mixing) that will also be released soon.
-Stay tuned on Slack channel !
-Without the firmware part, the NFZ is still active onboard the birds and will actually prevent  flying DJI NFZ
+Stay tuned on Slack channel!
+Without the firmware part, the NFZ is still active onboard the birds and will actually prevent flying DJI NFZ
 
 This release has been made possible thanks to hard work of alexstalker, Len, quad808, d95gas, jezzab, bin4ry and others.
 
-There was a previous "no NFZ unlocking policy" in the modder with following reasons :
+There was a previous "no NFZ unlocking policy" in the modder with following reasons:
 
 ##### Reasons:
 
@@ -144,13 +153,13 @@ If you want to fly in a RED NFZ AND are allowed to AND have problems with them a
 
 The first argument still make sense : we do not want people to fly in any civil/military aviations official NFZ that may exist anywere in the world. Doing this is illegal, dumb, and dangerous.
 
-However, we changed our minds because :
+However, we changed our minds because:
 
-1. the DJI unlocking system is PITA to use, and that it requires actual account loging with all potential data leaks involved. 
+1. The DJI unlocking system is PITA to use, and that it requires actual account loging with all potential data leaks involved. 
 2. DJI NFZ db is far from perfectly match actual NFZ areas. Some real areas are missing, some DJI db areas should have no official reality. UAV pilots should educate themselves and seek for the actual official data sources rather than relying on a third party system that is not approved by any aviation authorities.
-3. having a geofence system is not a legal requierement onboard UAV's , at least we did not heard about such rules yet... by the way many other brands do not have this kind of "features"
+3. Having a geofence system is not a legal requierement onboard UAV's, at least we did not heard about such rules yet... by the way many other brands do not have this kind of "features"
 4. Some people (pros) need to fly in NFZ and have official clearance to do so. Sometimes, DJI has no reason to even know about...
-5. now the patches works !
+5. Now the patches works!
 
 ### #DeejayeyeHackingClub information repos aka "The OG's" (Original Gangsters)
 
@@ -160,7 +169,7 @@ https://github.com/fvantienen/dji_rev - This repository contains tools for rever
 
 https://github.com/Bin4ry/deejayeye-modder - APK "tweaks" for settings & "mods" for additional / altered functionality
 
-https://github.com/hdnes/pyduml - Assistant-less firmware pushes and DUMLHacks referred to as DUMBHerring when used with "fireworks.tar" from RedHerring. DJI silently changes Assistant? great... we will just stop using it.
+https://github.com/hdnes/pyduml - Assistant-less firmware pushes and DUMLHacks referred to as DUMBHerring when used with "fireworks.tar" from RedHerring. DJI silently changes Assistant? Great... we will just stop using it.
 
 https://github.com/MAVProxyUser/P0VsRedHerring - RedHerring, aka "July 4th Independence Day exploit", "FTPD directory transversal 0day", etc. (Requires Assistant). We all needed a public root exploit... why not burn some 0day?
 
@@ -172,6 +181,6 @@ https://github.com/MAVProxyUser/DUMLrub - Ruby port of PyDUML, and firmware cher
 
 https://github.com/jezzab/DUMLdore - Even windows users need some love, so DUMLDore was created to help archive, and flash dji_system.bin files on windows platforms.
 
-https://github.com/MAVProxyUser/DJI_ftpd_aes_unscramble - DJI has modified the GPL Busybox ftpd on Mavic, Spark, & Inspire 2 to include AES scrambling of downloaded files... this tool will reverse the scrambling
+https://github.com/MAVProxyUser/DJI_ftpd_aes_unscramble - DJI has modified the GPL Busybox ftpd on Mavic, Spark, & Inspire 2 to include AES scrambling of downloaded files... this tool will reverse the scrambling.
 
 https://github.com/darksimpson/jdjitools - Java DJI Tools, a collection of various tools/snippets tied in one CLI shell-like application.
