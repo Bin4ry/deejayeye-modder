@@ -132,3 +132,77 @@ diff -Naur orig/smali_classes2/com/dji/service/areacode/e.smali mod/smali_classe
  
      .line 244
      invoke-virtual {v0, v2, v3, v4, v5}, Lcom/dji/service/areacode/d;->a(DD)Lcom/dji/service/areacode/d$a;
+--- orig/smali_classes4/dji/logic/f/a.smali	2018-04-30 18:20:21.151181800 +0200
++++ mod/smali_classes4/dji/logic/f/a.smali	2018-05-25 18:21:36.093688800 +0200
+@@ -174,69 +174,9 @@
+ .end method
+ 
+ .method public static a(DD)Z
+-    .locals 12
++    .locals 0
+ 
+     .prologue
+-    const/4 v10, 0x0
+-
+-    .line 45
+-    const/4 v0, 0x3
+-
+-    new-array v8, v0, [F
+-
+-    .line 46
+-    sget-object v0, Ldji/logic/f/a;->a:Ljava/util/ArrayList;
+-
+-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+-
+-    move-result-object v11
+-
+-    :cond_0
+-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_1
+-
+-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+-
+-    move-result-object v0
+-
+-    move-object v9, v0
+-
+-    check-cast v9, Ldji/logic/f/a$a;
+-
+-    .line 47
+-    iget-wide v0, v9, Ldji/logic/f/a$a;->a:D
+-
+-    iget-wide v2, v9, Ldji/logic/f/a$a;->b:D
+-
+-    move-wide v4, p0
+-
+-    move-wide v6, p2
+-
+-    invoke-static/range {v0 .. v8}, Landroid/location/Location;->distanceBetween(DDDD[F)V
+-
+-    .line 48
+-    aget v0, v8, v10
+-
+-    iget v1, v9, Ldji/logic/f/a$a;->c:I
+-
+-    int-to-float v1, v1
+-
+-    cmpg-float v0, v0, v1
+-
+-    if-gtz v0, :cond_0
+-
+-    .line 49
+-    const/4 v0, 0x1
+-
+-    .line 52
+-    :goto_0
++    const/4 v0, 0x0
+     return v0
+-
+-    :cond_1
+-    move v0, v10
+-
+-    goto :goto_0
+ .end method
