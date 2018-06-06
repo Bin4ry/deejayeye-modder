@@ -1,15 +1,31 @@
---- orig/smali_classes3/com/nokia/maps/ApplicationContextImpl.smali	2018-04-30 18:20:20.090504100 +0200
-+++ mod/smali_classes3/com/nokia/maps/ApplicationContextImpl.smali	2018-05-12 19:09:40.033541200 +0200
-@@ -325,12 +325,30 @@
+--- orig/smali_classes3/com/nokia/maps/ApplicationContextImpl.smali	2018-06-06 21:11:05.688151800 +0200
++++ mod/smali_classes3/com/nokia/maps/ApplicationContextImpl.smali	2018-05-30 06:46:19.774182900 +0200
+@@ -325,12 +325,46 @@
      if-eqz v0, :cond_0
  
      .line 328
 -    const-string v0, "com.here.android.maps.license.key"
  
 -    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-+    new-instance v0, Ljava/io/File;
++    new-instance v0, Ljava/lang/StringBuilder;
 +
-+    const-string v1, "/mnt/sdcard/DJI/useGoogleMap"
++    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
++
++    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
++
++    move-result-object v1
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
++
++    const-string v1, "/DJI/og_settings/useGoogleMap"
++
++    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++
++    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++
++    move-result-object v1
+ 
++    new-instance v0, Ljava/io/File;
 +
 +    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 +
@@ -17,7 +33,7 @@
 +    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 +
 +    move-result v0
- 
++
 +    if-nez v0, :cond_G
 +
 +    const-string v0, "com.here.android.maps.license.key"
