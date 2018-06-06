@@ -509,7 +509,7 @@
     <string name="check_2100_vision">Errore del sistema di visione.</string>
     <string name="check_2100_vision2">Errore del sensore di visione.</string>
     <string name="check_app_must_upgrade">La tua app deve essere aggiornata alla versione più recente.</string>
-    <string name="check_app_must_upgrade_now">Scarica dallo Store</string>
+    <string name="check_app_must_upgrade_now">Scarica dal Negozio</string>
     <string name="check_app_must_upgrade_now_web">Download dal sito web</string>
     <string name="check_app_upgrade_not_show">Remind Me Later</string>
     <string name="check_app_upgrade_tip">"Nuova versione dell'app disponibile"</string>
@@ -1106,7 +1106,7 @@
     <string name="flyc_adv_fs_gohome_forward">inoltra</string>
     <string name="flyc_adv_fs_height">(20-500m)</string>
     <string name="flyc_adv_fs_height_desc">Altitudine di ritorno a casa</string>
-    <string name="flyc_adv_fs_height_desc2">"Dopo aver avviato Return to Home, l'aereo salirà all'altitudine RTH preimpostata e tornerà a casa. Se il Forward Obstacle Sensing funziona normalmente, l'aereo salirà per evitare ostacoli che rileva."</string>
+    <string name="flyc_adv_fs_height_desc2">"Dopo aver avviato Return to Home, l'aereo salirà all'altitudine RTH preimpostata e tornerà a casa. Se il Rilevamento Ostacoli Anteriori funziona normalmente, l'aereo salirà per evitare ostacoli che rileva."</string>
     <string name="flyc_adv_fs_hover">Passaggio del mouse</string>
     <string name="flyc_adv_gain">Gain</string>
     <string name="flyc_adv_gain_atti">Advanced Gain</string>
@@ -2735,7 +2735,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gsnew_gs_terrain_tracking_auto_notify_msg_title">Avvia terreno Segui</string>
     <string name="gsnew_gs_terrain_tracking_current_height_is_too_high">Drone troppo alto</string>
     <string name="gsnew_gs_terrain_tracking_current_height_is_too_low">Drone troppo basso</string>
-    <string name="gsnew_gs_terrain_tracking_help_desc">"Se abilitato, Terrain Follow manterrà l'aereo a un'altezza preimpostata dal suolo. La modalità Follow Terrain sarà automaticamente disabilitata se l'aereo vola troppo alto."</string>
+    <string name="gsnew_gs_terrain_tracking_help_desc">"Se abilitato, Terrain Follow manterrà il drone a un'altezza preimpostata dal suolo. La modalità Follow Terrain sarà automaticamente disabilitata se l'aereo vola troppo alto."</string>
     <string name="gsnew_gs_terrain_tracking_help_dont_show_again">Non ricordare più</string>
     <string name="gsnew_gs_terrain_tracking_help_i_know">OK</string>
     <string name="gsnew_gs_terrain_tracking_help_title">Come usare il terreno Segui</string>
@@ -2746,7 +2746,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gsnew_gs_terrain_tracking_stage_start">Inizio</string>
     <string name="gsnew_gs_terrain_tracking_start_error_no_horizontal_velocity">Nessuna velocità orizzontale rilevata. Impossibile accedere a Terrain Follow.</string>
     <string name="gsnew_gs_terrain_tracking_start_error_no_relative_height">Altezza al suolo non rilevata. Impossibile accedere a Terrain Follow.</string>
-    <string name="gsnew_gs_terrain_tracking_status_exit">Exit</string>
+    <string name="gsnew_gs_terrain_tracking_status_exit">Esci</string>
     <string name="gsnew_gs_terrain_tracking_status_hide">Nascondi</string>
     <string name="gsnew_gs_terrain_tracking_title">Terreno Segui</string>
     <string name="gsnew_gs_topbar_hide_tips">Mostra questo pannello.</string>
@@ -2763,7 +2763,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gsnew_gs_wait_download_mession_failed_desc">Impossibile scaricare la missione. Riprova o esci da questa modalità.</string>
     <string name="gsnew_gs_wait_download_mession_failed_retry">Riprova</string>
     <string name="gsnew_gs_wait_download_mession_title">Scarica Mission</string>
-    <string name="gsnew_gs_way_point_add_point_btn">Record (C1)</string>
+    <string name="gsnew_gs_way_point_add_point_btn">Registra (C1)</string>
     <string name="gsnew_gs_way_point_add_point_desc">Il velivolo memorizzerà le altitudini di volo ei movimenti del giunto gimbal sui Waypoint registrati.</string>
     <string name="gsnew_gs_way_point_add_point_distance_limit">Distanza min waypoint: 16,4 ft (5 m)</string>
     <string name="gsnew_gs_way_point_add_point_done">Fine</string>
@@ -2919,7 +2919,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="home_account_second_radio_2_right">Imperiale</string>
     <string name="home_account_second_radio_3_left">PAL</string>
     <string name="home_account_second_radio_3_right">NTSC</string>
-    <string name="home_account_sign_fail">Accedi fallito. Per favore riprova.</string>
+    <string name="home_account_sign_fail">Accesso fallito. Per favore riprova.</string>
     <string name="home_account_signin">Autenticazione</string>
     <string name="home_account_signin_doing">Accedi</string>
     <string name="home_account_signining">Accesso in corso ...</string>
@@ -2967,7 +2967,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="inner_tool_tip">Suggerimenti</string>
     <string name="inner_tool_title">Strumenti di ottimizzazione</string>
     <string name="inner_tool_unlock_fail">Impossibile sbloccare i motori.</string>
-    <string name="inner_tool_unlock_success">Motors Unlocked</string>
+    <string name="inner_tool_unlock_success">Motori Sbloccati</string>
     <string name="inner_tool_usb_mode">Modalità scheda SD inserita</string>
     <string name="inner_tool_vibrate">Vibration Test</string>
     <string name="inner_tool_waiting">Wait</string>
@@ -3115,7 +3115,7 @@ Vola con cautela. "</string>
     <string name="lp_ble_device_list_txt">Elenco dispositivi</string>
     <string name="lp_ble_name">Bluetooth</string>
     <string name="main_back_tip">Premere di nuovo per uscire.</string>
-    <string name="main_btn_text_store">STORE</string>
+    <string name="main_btn_text_store">Negozio</string>
     <string name="mainframe_topbar_listview_item_scan">Scansiona QR</string>
     <string name="mainframe_topbar_listview_item_tutorial">Tutorial</string>
     <string name="manual_camera_setting_dial">Dial Impostazioni fotocamera</string>
@@ -3216,8 +3216,8 @@ Vola con cautela. "</string>
     <string name="mine_dji_bbs">Forum DJI</string>
     <string name="mine_dji_circle_text">DJI Circle</string>
     <string name="mine_dji_dds">I miei guadagni</string>
-    <string name="mine_dji_store">DJI Store</string>
-    <string name="mine_dji_store_text">DJI Store</string>
+    <string name="mine_dji_store">Negozio DJI</string>
+    <string name="mine_dji_store_text">Negozio DJI</string>
     <string name="mine_draft_confirm_delete">Elimina dalla coda di caricamento?</string>
     <string name="mine_draft_confirm_stop_upload">Interrompe il caricamento?</string>
     <string name="mine_draft_delete_task_and_file">Elimina attività e file video</string>
@@ -3288,7 +3288,7 @@ Vola con cautela. "</string>
     <string name="mine_settings_use_cellular_data">Usa dati cellulari da caricare.</string>
     <string name="mine_settings_version">DJIGO4 v%1$s (%2$s)</string>
     <string name="mine_skypixel_text">SkyPixel</string>
-    <string name="mine_store_title">DJI Store</string>
+    <string name="mine_store_title">Negozio DJI</string>
     <string name="mine_topbar_me">Me</string>
     <string name="mine_unlock_list">GEO Zone Unlocking Applications</string>
     <string name="mine_upload_mission">Cronologia caricamento</string>
@@ -3848,7 +3848,7 @@ Vola con cautela. "</string>
     <string name="setting_ui_flyc_mode_sport">Sport</string>
     <string name="setting_ui_flyc_mode_sport_kumquat">"Modalità P (Posizionamento) - I sistemi di posizionamento in avanti di rilevamento ostacoli, GPS e visione sono abilitati.
 
- Modalità S (Sport) - La velocità massima aumenta a 40 mph (65 km / h) con il supporto di posizionamento satellitare e di visione. Forward Obstacle Sensing è disabilitato. "</string>
+ Modalità S (Sport) - La velocità massima aumenta a 40 mph (65 km / h) con il supporto di posizionamento satellitare e di visione. Rilevamento Ostacoli Anteriori è disabilitato. "</string>
     <string name="setting_ui_flyc_mode_sport_novision">"Modalità P (posizionamento) - Sistemi di posizionamento satellitare e di visione abilitati
 Modalità S (Sport) - La velocità massima aumenta a 45 mph (72 km / h) mantenendo il supporto di posizionamento satellitare e di visione.
 A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio del mouse è meno stabile. "</string>
@@ -3856,7 +3856,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
 
  Modalità S (Sport) - La velocità massima aumenta a 45 mph (72 km / h) con il supporto di posizionamento satellitare e di visione. I sistemi di rilevamento ostacoli in avanti sono disabilitati.
 
- A (Attitude) Mode - Forward Obstacle Sensing, GPS e Vision Il sistema di posizionamento è disabilitato. Il passaggio del mouse è meno stabile. "</string>
+ A (Attitude) Mode - Rilevamento Ostacoli Anteriori, GPS e Vision Il sistema di posizionamento è disabilitato. Il passaggio del mouse è meno stabile. "</string>
     <string name="setting_ui_flyc_mode_sport_pomato">"Modalità P (posizionamento) - Inoltro / indietro Sensing ostacoli, GPS e posizionamento della vista sono abilitati.
 
  Modalità S (Sport) - La velocità massima aumenta a 45 mph (72 km / h) con il supporto di posizionamento satellitare e di visione. I sistemi di rilevamento dell'ostacolo Forward / Back sono disabilitati.
@@ -4387,7 +4387,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_vision_ass_desc1">"Quando i sensori di ostacolo anteriori rilevano un ostacolo, il drone rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s."</string>
     <string name="setting_ui_vision_ass_desc2">Le telecamere di rilevamento ostacoli in avanti hanno un campo visivo orizzontale di 60º e un campo visivo di 54º. Gli ostacoli al di fuori di questi intervalli non verranno rilevati.</string>
     <string name="setting_ui_vision_ass_desc3">"Nota: le telecamere di rilevamento ostacoli avanti non funzionano di notte o in condizioni di scarsa illuminazione. La precisione del rilevamento degli ostacoli dipende dalla dimensione dell'ostacolo. Fare riferimento al Manuale dell'utente per ulteriori dettagli."</string>
-    <string name="setting_ui_vision_ass_tip_content">"Disattivare il Forward Obstacle Sensing significa che l'aereo non eviterà automaticamente ostacoli nel suo percorso di volo. Sei sicuro di volerlo spegnere?"</string>
+    <string name="setting_ui_vision_ass_tip_content">"Disattivare il Rilevamento Ostacoli Anteriori significa che l'aereo non eviterà automaticamente ostacoli nel suo percorso di volo. Sei sicuro di volerlo spegnere?"</string>
     <string name="setting_ui_vision_auto_parallel">Abilita Evitamento Ostacoli in ActiveTrack</string>
     <string name="setting_ui_vision_auto_parallel_desc">"Quando attivato, l'aereo eviterà gli ostacoli orizzontalmente. In caso contrario, si rallenterà fino a fermarsi."</string>
     <string name="setting_ui_vision_back_sensor">Backward Vision Sensor</string>
@@ -4396,25 +4396,25 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_vision_below_position">Abilita posizionamento della vista verso il basso</string>
     <string name="setting_ui_vision_below_title">Sensibilità alla vista verso il basso</string>
     <string name="setting_ui_vision_cali_desc">Nota: questo metodo di calibrazione deve essere utilizzato solo temporaneamente. Usa un PC o un Mac per calibrare con precisione.</string>
-    <string name="setting_ui_vision_calibration">Calibrate</string>
+    <string name="setting_ui_vision_calibration">Calibra</string>
     <string name="setting_ui_vision_down_enable">Abilita il posizionamento della vista verso il basso</string>
     <string name="setting_ui_vision_down_enable_tip">"Il sistema di posizionamento della visione verso il basso aiuta il velivolo a librarsi stabilmente quando il segnale GPS è insufficiente e assiste con l'atterraggio di precisione e il controllo di atterraggio."</string>
     <string name="setting_ui_vision_down_sensor">Sensore di visione verso il basso</string>
     <string name="setting_ui_vision_down_title">Sensore di visione verso il basso</string>
     <string name="setting_ui_vision_flatcheck">Landing Protection</string>
     <string name="setting_ui_vision_flatcheck_tip">"Il velivolo controllerà l'area di atterraggio quando la protezione di atterraggio è abilitata."</string>
-    <string name="setting_ui_vision_forward_title">Forward Obstacle Sensing</string>
-    <string name="setting_ui_vision_front_sensor">Forward Vision Sensors</string>
+    <string name="setting_ui_vision_forward_title">Rilevamento ostacoli Anteriore</string>
+    <string name="setting_ui_vision_front_sensor">Sensori di visione Anteriore</string>
     <string name="setting_ui_vision_frontback_ass">Abilita il rilevamento di ostacoli in avanti e indietro</string>
     <string name="setting_ui_vision_frontback_ass_desc1">Drone passerà automaticamente al passaggio del mouse quando viene rilevato un ostacolo nel rilevamento di ostacoli in avanti o indietro. La velocità massima utilizzando Obstacle Sensing è%s.</string>
     <string name="setting_ui_vision_frontback_ass_desc2">"Le telecamere di rilevamento ostacoli anteriori e posteriori hanno un campo visivo orizzontale di 60 gradi e 54 verticale. Gli ostacoli oltre l'intervallo non possono essere rilevati."</string>
     <string name="setting_ui_vision_frontback_ass_desc3">"Nota: la telecamera di rilevamento ostacoli avanti e indietro non può funzionare quando la luce è insufficiente. Anche la precisione del rilevamento dell'ostacolo è influenzata dalla dimensione dell'ostacolo. Fare riferimento al Manuale dell'utente per i dettagli."</string>
-    <string name="setting_ui_vision_frontback_ass_tip_content">Drone non salirà automaticamente per evitare ostacoli quando il Forward Obstacle Sensing è disabilitato. Sei sicuro di voler disabilitare questa opzione?</string>
-    <string name="setting_ui_vision_frontback_ghass">Rilevazione ostacolo RTH</string>
+    <string name="setting_ui_vision_frontback_ass_tip_content">Drone non salirà automaticamente per evitare ostacoli quando il Rilevamento Ostacoli Anteriori è disabilitato. Sei sicuro di voler disabilitare questa opzione?</string>
+    <string name="setting_ui_vision_frontback_ghass">Rilevazione ostacoli RTH</string>
     <string name="setting_ui_vision_frontback_ghass_desc">"Durante il ritorno a casa, l'aereo volerà indietro e ascenderà automaticamente per evitare ostacoli quando viene rilevato."</string>
-    <string name="setting_ui_vision_frontback_ghass_tip_content">"Con RTH Obstacle Avoidance disabilitato, il drone non rileva gli ostacoli durante il RTH o sale per evitare ostacoli, aumentando il rischio di collisione. Sei sicuro di voler disabilitare questa opzione?"</string>
-    <string name="setting_ui_vision_ghass">RTH Obstacle Detection</string>
-    <string name="setting_ui_vision_ghass_desc">"Quando la luce ambientale è sufficiente, l'aereo salirà automaticamente per evitare ostacoli. Dopo l'abilitazione, anche se l'Evitamento Ostacoli è disabilitato, l'aeromobile controllerà automaticamente gli ostacoli durante il RTH. Sia Obstacle Avoidance che RTH Obstacle Detection saranno disabilitati durante l'atterraggio."</string>
+    <string name="setting_ui_vision_frontback_ghass_tip_content">"Con RTH Evitamento degli Ostacoli disabilitato, il drone non rileva gli ostacoli durante il RTH o sale per evitare ostacoli, aumentando il rischio di collisione. Sei sicuro di voler disabilitare questa opzione?"</string>
+    <string name="setting_ui_vision_ghass">RTH Rilevamento Ostacoli</string>
+    <string name="setting_ui_vision_ghass_desc">"Quando la luce ambientale è sufficiente, l'aereo salirà automaticamente per evitare ostacoli. Dopo l'abilitazione, anche se l'Evitamento Ostacoli è disabilitato, l'aeromobile controllerà automaticamente gli ostacoli durante il RTH. Sia Obstacle Avoidance che RTH Rilevamento Ostacoli saranno disabilitati durante l'atterraggio."</string>
     <string name="setting_ui_vision_ghass_tip_content">"Quando questa opzione è disabilitata, l'aeromobile non eviterà automaticamente ostacoli nella sua traiettoria di volo. Sei sicuro di voler disabilitare questa opzione?"</string>
     <string name="setting_ui_vision_intelligent">Pose Track</string>
     <string name="setting_ui_vision_intelligent_desc">Quando Pose Track è abilitato, salta nello schermo e verrai riconosciuto automaticamente a breve.</string>
@@ -4509,7 +4509,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="ssd_status_verify_failed">Verifica SSD non riuscita</string>
     <string name="ssd_status_waiting">In attesa ...</string>
     <string name="ssd_status_write_protected">SSD Scrittura Protetta</string>
-    <string name="store_title">Store</string>
+    <string name="store_title">Negozio</string>
     <string name="str_usd_unplugged">USB Disconnesso</string>
     <string name="switch_off">@string/app_off</string>
     <string name="switch_on">@string/app_on</string>
@@ -4966,7 +4966,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_coupon_text2">Regole per i dettagli</string>
     <string name="v2_coupon_validdate">termine valido</string>
     <string name="v2_coupondialog_go">Verifica</string>
-    <string name="v2_coupondialog_txt1">"Hai vinto una carta regalo Phantom 4 ufficiale ufficiale DJI Online Store! Dai un'occhiata!"</string>
+    <string name="v2_coupondialog_txt1">"Hai vinto una carta regalo Phantom 4 ufficiale ufficiale nel negozio DJI Online! Dai un'occhiata!"</string>
     <string name="v2_create_account_txt">Crea un account DJI</string>
     <string name="v2_cut_moment_default_length">"10 "</string>
     <string name="v2_cut_tips_txt">Taglia e modifica metraggio</string>
@@ -5174,7 +5174,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_mine_multilanguage_jp">日本語</string>
     <string name="v2_mine_multilanguage_sc">简体 中文</string>
     <string name="v2_mine_multilanguage_tw">繁體 中文</string>
-    <string name="v2_mine_store_dji">DJI Store</string>
+    <string name="v2_mine_store_dji">Negozio DJI</string>
     <string name="v2_moment_preview_share_moment">Crea video</string>
     <string name="v2_moremusic_name">Altro musica</string>
     <string name="v2_multimoment_bigfilm_temp1">Trip</string>
@@ -5736,8 +5736,8 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="vision_type_back">Indietro</string>
     <string name="vision_type_down">Verso il basso</string>
     <string name="vision_type_front">Avanti</string>
-    <string name="vision_type_left">Left</string>
-    <string name="vision_type_right">Right</string>
+    <string name="vision_type_left">Sinistra</string>
+    <string name="vision_type_right">Destra</string>
     <string name="vision_type_up">Upward</string>
     <string name="visual_backward">Abilita retrocessione</string>
     <string name="visual_beginner_ass_content">Il sistema di visione deve essere abilitato per questo tutorial.</string>
@@ -5781,9 +5781,9 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_beginner_track_exception_title">ActiveTrack</string>
     <string name="visual_beginner_track_select">Seleziona te stesso.</string>
     <string name="visual_brake_assistant">Abilita sistema di rilevamento ostacoli in avanti</string>
-    <string name="visual_brake_off_tip">"Con Forward Obstacle Sensing disabilitato, l'aeromobile non sarà in grado di evitare ostacoli nella sua traiettoria di volo. Sei sicuro di volerlo spegnere?"</string>
+    <string name="visual_brake_off_tip">"Con Rilevamento Ostacoli anteriori disabilitato, l'aeromobile non sarà in grado di evitare ostacoli nella sua traiettoria di volo. Sei sicuro di volerlo spegnere?"</string>
     <string name="visual_exec_desc">Applica</string>
-    <string name="visual_exit_desc">Exit</string>
+    <string name="visual_exit_desc">Esci</string>
     <string name="visual_flight_mode_circle">Circle</string>
     <string name="visual_flight_mode_desc">Modalità volo</string>
     <string name="visual_flight_mode_headless_follow">Trace</string>
@@ -5791,7 +5791,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_flight_mode_watch">Spotlight</string>
     <string name="visual_gh_avoidance">Abilita controllo ostacolo RTH</string>
     <string name="visual_ghavoid_off_tip">"Disabilitare il controllo dell'ostacolo RTH significa che l'aeromobile non sarà in grado di evitare ostacoli nella sua traiettoria di volo. Sei sicuro di volerlo spegnere?"</string>
-    <string name="visual_go">GO</string>
+    <string name="visual_go">Via</string>
     <string name="visual_guidance_title">Impostazioni di navigazione visuale</string>
     <string name="visual_normal_mode">Visual Navigation</string>
     <string name="visual_normal_tip">Nelle modalità di navigazione visiva, puoi condurre voli automatici in ActiveTrack e TapFly.</string>
@@ -5810,9 +5810,9 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_point_mode">TapFly</string>
     <string name="visual_point_mode_desc">Modalità TapFly</string>
     <string name="visual_point_mode_switch_tip">Impossibile cambiare la modalità di volo in modalità TapFly. Esci da TapFly e riprova.</string>
-    <string name="visual_point_need_avoid_alert_content">"Attiva Forward Obstacle Sensing prima di entrare in modalità TapFly. Ciò consente all'aeromobile di evitare ostacoli nel suo percorso di volo."</string>
+    <string name="visual_point_need_avoid_alert_content">"Attiva Rilevamento Ostacoli Anteriori prima di entrare in modalità TapFly. Ciò consente all'aeromobile di evitare ostacoli nel suo percorso di volo."</string>
     <string name="visual_point_need_avoid_alert_title">Abilitazione del rilevamento di ostacoli in avanti è richiesto</string>
-    <string name="visual_point_no_radar">Forward Obstacle Sensing non risponde.</string>
+    <string name="visual_point_no_radar">Rilevamento Ostacoli Anteriori non risponde.</string>
     <string name="visual_point_non_fly_zone">Drone Entering Restricted Area</string>
     <string name="visual_point_normal">Avanti</string>
     <string name="visual_point_normal_desc">"L'aereo volerà nella direzione di un punto che lo tocca sullo schermo. Il sistema di rilevamento dell'ostacolo in avanti funziona quando l'aereo sta volando."</string>
@@ -5841,13 +5841,13 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_radar_dected_fail_tripod">Carrello di atterraggio abbassato. %s Obstacle Sensing non funziona.</string>
     <string name="visual_radar_dected_faile_propeller_cover">"Le protezioni dell'elica sono montate."</string>
     <string name="visual_radar_detect_abnormal">Inoltro rilevamento ostacolo non funziona.</string>
-    <string name="visual_radar_detect_abnormal_back">Backward Obstacle Sensing non funziona.</string>
+    <string name="visual_radar_detect_abnormal_back">Rilevamento ostacolo posteriore non funziona.</string>
     <string name="visual_radar_detect_abnormal_bottom">Downward Obstacle Sensing non funziona.</string>
     <string name="visual_radar_detect_abnormal_left">Left Obstacle Sensing non funziona.</string>
     <string name="visual_radar_detect_abnormal_right">Right Obstacle Sensing non funziona.</string>
-    <string name="visual_radar_detect_fail">Forward Obstacle Sensing non funziona.</string>
+    <string name="visual_radar_detect_fail">Rilevamento Ostacoli Anteriori non funziona.</string>
     <string name="visual_radar_detect_fail_dark">luce ambiente troppo debole.</string>
-    <string name="visual_radar_detect_fail_default">Forward Obstacle Sensing non è abilitato. Vola con cautela.</string>
+    <string name="visual_radar_detect_fail_default">Rilevamento Ostacoli Anteriori non è abilitato. Vola con cautela.</string>
     <string name="visual_radar_detect_fail_light">luce ambiente troppo forte.</string>
     <string name="visual_selfie_tracking_dont_remind">Non mostrare più</string>
     <string name="visual_selfie_tracking_gesture1">Gesture 1</string>
@@ -5896,12 +5896,12 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_track_gps_signal_good">Buono</string>
     <string name="visual_track_gps_signal_invalid">non valido</string>
     <string name="visual_track_gps_signal_low">Basso</string>
-    <string name="visual_track_gps_signal_medium">Medium</string>
+    <string name="visual_track_gps_signal_medium">Medio</string>
     <string name="visual_track_gps_switch_desc">GPS</string>
     <string name="visual_track_gps_tracking_disable">Il monitoraggio GPS assistito è stato disabilitato.</string>
     <string name="visual_track_gps_tracking_enable">Drone sta utilizzando il GPS Assisted Tracking.</string>
     <string name="visual_track_mode">ActiveTrack</string>
-    <string name="visual_track_need_avoid_alert_content">"Prima di utilizzare ActiveTrack, abilita Forward Obstacle Sensing. Ciò consente all'aeromobile di evitare alcuni ostacoli nel suo percorso di combattimento."</string>
+    <string name="visual_track_need_avoid_alert_content">"Prima di utilizzare ActiveTrack, abilita Rilevamento Ostacoli Anteriori. Ciò consente all'aeromobile di evitare alcuni ostacoli nel suo percorso di combattimento."</string>
     <string name="visual_track_normal_tip">"Tocca o trascina un riquadro attorno a un soggetto, quindi tocca VAI per iniziare a seguirlo. In modalità Traccia, l'aereo seguirà un soggetto di fronte o dietro. Puoi circondare il soggetto usando le levette di controllo o il cursore sullo schermo, ma tieni presente che l'Evitamento Ostacolo non funzionerà quando voli di lato."</string>
     <string name="visual_track_normal_tip_title">Modalità di traccia</string>
     <string name="visual_track_phone_gps_abnormal">Errore GPS dispositivo mobile.</string>
@@ -6019,7 +6019,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="aviator_uuid_force_login">Accedi con il tuo account prima di utilizzare DJIGO4.</string>
     <string name="aviator_uuid_not_login">"Sei disconnesso o non connesso a DJIGO4. Di conseguenza, l'altitudine e la distanza di volo massime sono state limitate. Effettua il login per eliminare le restrizioni."</string>
     <string name="aviator_uuid_write_fail">"L'altitudine e la distanza di volo sono state limitate a 30 me 50 m, rispettivamente. Si prega di riprovare dopo il riavvio. Non oltrepassare questo intervallo."</string>
-    <string name="battery_history_invalid">Battery Cell Broken</string>
+    <string name="battery_history_invalid">Celle batteria Rotte</string>
     <string name="camera_afc">AFC</string>
     <string name="camera_change_265_will_change_rate">Il frame rate corrente non supporta H.265. Passando a H.265 si riduce automaticamente la frequenza dei fotogrammi. Passare a H.265?</string>
     <string name="camera_change_cant_switch_to_265">La risoluzione video corrente non supporta H.265. Seleziona un altro codec.</string>
@@ -6202,7 +6202,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="dji_check_camera_sd_card_read_only_solution">Soluzione: cambia la scheda SD o riparala</string>
     <string name="dji_check_camera_sensor_reason">Errore sensore fotocamera</string>
     <string name="dji_check_camera_sensor_solution">"Malfunzionamento dell'hardware: contatta l'assistenza DJI per organizzare le riparazioni"</string>
-    <string name="dji_check_camera_upgrade_reason">Errore upgrade drone</string>
+    <string name="dji_check_camera_upgrade_reason">Errore aggiornamento drone</string>
     <string name="dji_check_camera_upgrade_solution">Soluzione: riprova e segui tutte le istruzioni fornite</string>
     <string name="dji_check_center_battery_connection_reason">Il collegamento della batteria alla scheda centrale non è riuscito</string>
     <string name="dji_check_center_battery_connection_solution">"Malfunzionamento dell'hardware: contatta l'assistenza DJI per organizzare le riparazioni"</string>
@@ -6380,7 +6380,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="dji_check_vision_down_calibrate_reason">Errore di calibrazione del sensore di visione verso il basso</string>
     <string name="dji_check_vision_front_calibrate_reason">Errore di calibrazione del sensore di visione in avanti</string>
     <string name="dji_check_vision_propeller_guard_reason">"Protezione dell'elica montata"</string>
-    <string name="dji_check_vision_propeller_guard_solution">"Protezione dell'elica montata. Forward Obstacle Sensing verrà automaticamente disattivato"</string>
+    <string name="dji_check_vision_propeller_guard_solution">"Protezione dell'elica montata. Rilevamento Ostacoli Anteriori verrà automaticamente disattivato"</string>
     <string name="dji_check_vision_restart_solution">"Soluzione: riavvia l'aereo, se il problema persiste, contatta l'assistenza DJI"</string>
     <string name="dji_check_vision_return_solution">"Malfunzionamento dell'hardware: contatta l'assistenza DJI per organizzare le riparazioni"</string>
     <string name="dji_check_vision_sensor_reason_down_left">Errore sensore di visione in basso a sinistra</string>
@@ -6411,7 +6411,7 @@ KEEP FLYING "</string>
     <string name="draw_fly_reach_endpoint">End Point Reached</string>
     <string name="draw_fly_stop_exception">Draw Stopped</string>
     <string name="draw_fly_stoped">Modalità di disegno disattivata.</string>
-    <string name="draw_need_avoid_alert_content">"Attiva Forward Obstacle Sensing prima di accedere alla modalità Draw. Ciò consente all'aeromobile di evitare ostacoli nel suo percorso di volo."</string>
+    <string name="draw_need_avoid_alert_content">"Attiva Rilevamento Ostacoli Anteriori prima di accedere alla modalità Draw. Ciò consente all'aeromobile di evitare ostacoli nel suo percorso di volo."</string>
     <string name="draw_need_avoid_alert_content_frontback">"Attiva il rilevamento dell'ostacolo avanti / indietro prima di entrare nella modalità Disegno. Ciò consente all'aeromobile di evitare ostacoli nel suo percorso di volo."</string>
     <string name="draw_need_downvps_content">Abilita il posizionamento della vista verso il basso prima di utilizzare Draw.</string>
     <string name="draw_over_skyline">"Il percorso tracciato è oltre l'intervallo limite. Disegna all'interno delle linee della griglia. I punti al di fuori di questo intervallo non saranno disponibili."</string>
@@ -6518,18 +6518,18 @@ KEEP FLYING "</string>
     <string name="error_esc_calibrating_soul">Esci dalla modalità di calibrazione ESC</string>
     <string name="error_esc_echoing">ESC beeping. Impossibile decollare.</string>
     <string name="error_esc_version_not_match_desc">mancata corrispondenza della versione di ESC.</string>
-    <string name="error_esc_version_not_match_soul">Aggiorna il firmware di esc.</string>
+    <string name="error_esc_version_not_match_soul">Aggiorna il firmware degli Esc.</string>
     <string name="error_gps_sign_invalid_desc">Firma GPS non valida.</string>
     <string name="error_imu_ori_not_match_desc">IMU è disallineato.</string>
     <string name="error_imu_ori_not_match_soul">Verifica che tutte le IMU siano posizionate correttamente.</string>
     <string name="error_lock_by_app_desc">Drone è bloccato.</string>
     <string name="error_motor_battery_install_error">Batteria non inserita</string>
-    <string name="error_motor_battery_over_temp">surriscaldamento della batteria</string>
+    <string name="error_motor_battery_over_temp">Surriscaldamento della batteria</string>
     <string name="error_motor_be_impact">Collision Detected</string>
     <string name="error_motor_less_paddle_desc">Controlla i motori e le eliche.</string>
     <string name="error_motor_less_paddle_title">Eliche non rilevate.</string>
     <string name="error_motor_stuck_desc">Controlla i motori e le eliche.</string>
-    <string name="error_motor_stuck_title">Motor (s) Stalled</string>
+    <string name="error_motor_stuck_title">Motore(i) in stallo</string>
     <string name="error_motor_unbalanced_desc">Controlla i motori e le eliche.</string>
     <string name="error_motor_unbalanced_title">Motore(i) non bilanciati</string>
     <string name="error_start_fly_height_error_desc">Eccezione decollo altezza.</string>
@@ -7287,7 +7287,7 @@ Zona rilevata: "</string>
     <string name="popup_more_map">Mappe Offline</string>
     <string name="popup_more_no_fly_zone">Informazioni sulle restrizioni di volo</string>
     <string name="popup_more_scan">Scansiona QR Code</string>
-    <string name="popup_more_store">Store</string>
+    <string name="popup_more_store">Negozio</string>
     <string name="popup_more_tutorial">Accademia</string>
     <string name="position_cant_enter_exceed_max_height">Vola in basso per accedere alla modalità Coordinate.</string>
     <string name="position_cant_enter_lower_than_min_height">Vola più in alto per accedere alla modalità Coordinate.</string>
@@ -7746,7 +7746,7 @@ A Modalità (Attitude) - Il rilevamento dell'ostacolo in avanti / all'indietro, 
     <string name="setting_ui_rcpro_func_clearroute">Clear flight route</string>
     <string name="setting_ui_rcpro_func_closedownvps">Attiva / disattiva sistema di visione verso il basso</string>
     <string name="setting_ui_rcpro_func_closefrontass">Attiva / Disattiva sistema di visione in avanti</string>
-    <string name="setting_ui_rcpro_func_closefrontvisionavoid">Disable Forward Obstacle Sensing</string>
+    <string name="setting_ui_rcpro_func_closefrontvisionavoid">Disable Rilevamento Ostacoli Anteriori</string>
     <string name="setting_ui_rcpro_func_closeradarmap">Attiva / disattiva mappa radar</string>
     <string name="setting_ui_rcpro_func_closetips">Chiudi suggerimenti</string>
     <string name="setting_ui_rcpro_func_compositionmode">Modalità di composizione</string>
@@ -8422,3 +8422,4 @@ La directory è:%2$s "</string>
     <string name="v2_product_type_wm220">Mavic Pro</string>
     <string name="v2_product_type_wm220_s">Mavic</string>
 </resources>
+
