@@ -168,8 +168,8 @@ exit
 ::-----------------------------------------------------------
 :: helpers here
 ::-----------------------------------------------------------
-:sleep -– waits some seconds before returning
-::     -- %~1 – in, number of seconds to wait
+:sleep :: -- waits some seconds before returning
+::        -- %~1 – in, number of seconds to wait
 FOR /l %%a in (%~1,-1,1) do (ping -n 2 -w 1 127.0.0.1>NUL)
 GOTO:EOF
 :chkinst -- check for required items
