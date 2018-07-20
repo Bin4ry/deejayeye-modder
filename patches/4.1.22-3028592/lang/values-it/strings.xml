@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>   
+<resources>
     <string name="abc_action_bar_home_description">Vai alla home page</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -236,7 +236,6 @@
     <string name="activate_control_mode_3">Modalità 3</string>
     <string name="activate_control_mode_3_diagram">Modalità 3 Stick Diagram</string>
     <string name="activate_control_mode_backward">Indietro</string>
-    <string name="activate_control_mode_desc">Personalizza lo schema di controllo desiderato.</string>
     <string name="activate_control_mode_forward">Avanti</string>
     <string name="activate_control_mode_left">Sinistra</string>
     <string name="activate_control_mode_right">Destra</string>
@@ -663,17 +662,17 @@
     <string name="checklist_compass_tip_1_desc">Ruota il velivolo di 360 gradi in orizzontale.</string>
     <string name="checklist_compass_tip_2">"Passaggio 2: assicurarsi che nessun magnete o oggetto metallico si trovino entro 1,5 m (4,9 piedi) dalla bussola. Affronta il muso verso il basso, quindi ruota l'aereo di altri 360 gradi."</string>
     <string name="checklist_compass_tip_2_desc">Punta il muso verso il basso, quindi ruota di nuovo il velivolo di 360 gradi.</string>
-    <string name="checklist_escm_desc">ESC Status</string>
+    <string name="checklist_escm_desc">Stato ESC</string>
     <string name="checklist_flyc_upgrade">"È richiesto l'aggiornamento di Drone. Per maggiori dettagli, fai riferimento ai video tutorial sull'aggiornamento del firmware in Academy."</string>
     <string name="checklist_force_ugprade">Aggiorna</string>
     <string name="checklist_force_upgrade_please">Aggiorna firmware</string>
-    <string name="checklist_format">Formato</string>
+    <string name="checklist_format">Formatta</string>
     <string name="checklist_gensetting_format_sdcard_confirm">Sei sicuro di voler formattare la scheda SD?</string>
     <string name="checklist_gensetting_format_sdcard_fail">Formattazione scheda SD non riuscita</string>
     <string name="checklist_gensetting_format_sdcard_success">Formattazione scheda SD completata</string>
-    <string name="checklist_gimbal">Gimbal Status</string>
+    <string name="checklist_gimbal">Stato del Gimbal</string>
     <string name="checklist_gimbal_no_connection">Disconnesso</string>
-    <string name="checklist_gimbal_stuck">Gimbal Motor Overloaded</string>
+    <string name="checklist_gimbal_stuck">Motore del Gimbal Sovraccaricato</string>
     <string name="checklist_gimbal_stuck_tip">"Rimuovi il morsetto gimbal. Contatta l'assistenza DJI se questo errore persiste."</string>
     <string name="checklist_imu_desc">IMU</string>
     <string name="checklist_imu_stat_0">IMU sconosciuto.</string>
@@ -684,7 +683,7 @@
     <string name="checklist_imu_stat_6">"Errore di posizionamento dell'installazione IMU."</string>
     <string name="checklist_lb2_upgrade">"È richiesto l'aggiornamento del firmware di Air System. Collegati a un computer e aggiorna con DJI Assistant 2. Per ulteriori dettagli, fai riferimento al manuale utente."</string>
     <string name="checklist_lb2module_upgrade">"È richiesto l'aggiornamento del firmware di LB2 Air System. Collegati a un computer e aggiorna con DJI Assistant 2. Per ulteriori dettagli, fai riferimento al manuale utente."</string>
-    <string name="checklist_mag_stat_0">stato GPS sconosciuto.</string>
+    <string name="checklist_mag_stat_0">Stato GPS sconosciuto.</string>
     <string name="checklist_mag_stat_2">Calibrate Compass</string>
     <string name="checklist_mag_stat_3_1">Controllare la direzione di installazione.</string>
     <string name="checklist_mag_stat_3_2">Tenere lontano da interferenze magnetiche a terra.</string>
@@ -709,19 +708,19 @@
     <string name="checklist_rc_upgrade_delpackage_tip">Pacchetto firmware cancellato</string>
     <string name="checklist_rc_upgrade_download_cancel">Annulla</string>
     <string name="checklist_rc_upgrade_download_nettip">Controlla la tua connessione di rete</string>
-    <string name="checklist_rc_upgrade_download_now">Download in corso ...</string>
+    <string name="checklist_rc_upgrade_download_now">Scaricamento in corso ...</string>
     <string name="checklist_rc_upgrade_download_package">Scarica firmware</string>
-    <string name="checklist_rc_upgrade_download_package_fail">Download non riuscito</string>
+    <string name="checklist_rc_upgrade_download_package_fail">Scaricamento non riuscito</string>
     <string name="checklist_rc_upgrade_download_pause">Pausa</string>
     <string name="checklist_rc_upgrade_download_percent">%1$d %%scaricato.</string>
     <string name="checklist_rc_upgrade_download_retry">Riprova</string>
-    <string name="checklist_rc_upgrade_download_success">Download completato</string>
-    <string name="checklist_rc_upgrade_download_version">Download versione:%1$s</string>
+    <string name="checklist_rc_upgrade_download_success">Scaricamento completato</string>
+    <string name="checklist_rc_upgrade_download_version">Scaricamento versione:%1$s</string>
     <string name="checklist_rc_upgrade_fail_request_upgrade_mode">Impossibile accedere alla modalità di aggiornamento.</string>
     <string name="checklist_rc_upgrade_motorup">I motori sono in esecuzione, si prega di aggiornare più tardi.</string>
     <string name="checklist_rc_upgrade_nonet_tip">Impossibile connettersi a Internet. Controlla la tua connessione di rete.</string>
     <string name="checklist_rc_upgrade_package_error">Errore del pacchetto firmware. Si prega di scaricare di nuovo.</string>
-    <string name="checklist_rc_upgrade_upgrade_fail">Aggiornamento fallito</string>
+    <string name="checklist_rc_upgrade_upgrade_fail">Aggiornamento Fallito</string>
     <string name="checklist_rc_upgrade_upgrade_now">Aggiornamento in corso ...</string>
     <string name="checklist_rc_upgrade_upgrade_percent">%1$d %%scaricato. Non scollegare o spegnere il telecomando.</string>
     <string name="checklist_rc_upgrade_upgrade_retry">Riprova</string>
@@ -733,7 +732,7 @@
     <string name="checklist_redundancy_clear_history">Cancella cronologia</string>
     <string name="checklist_redundancy_desc">Stato ridondanza</string>
     <string name="checklist_redundancy_history">Cronologia</string>
-    <string name="checklist_redundancy_history_in_air">(In Flight)</string>
+    <string name="checklist_redundancy_history_in_air">(In Volo)</string>
     <string name="checklist_redundancy_history_switch">Cronologia di commutazione ridondanza</string>
     <string name="checklist_redundancy_history_system1">IMU interno</string>
     <string name="checklist_redundancy_history_system2">Estendi IMU 1</string>
@@ -793,7 +792,7 @@
     <string name="continue_">Continua</string>
     <string name="create">Crea</string>
     <string name="creation_change_name_text_max_tip">Limit Reached</string>
-    <string name="creation_change_name_title">Name Your Work</string>
+    <string name="creation_change_name_title">Nome del tuo lavoro</string>
     <string name="creation_editor_create_memory">Crea un video AutoEdit</string>
     <string name="creation_editor_new_function">Nuova funzionalità</string>
     <string name="creation_editor_new_function_subtitle_1">Crea incredibili video AutoEdit!</string>
@@ -818,8 +817,8 @@
     <string name="dialog_media_preview_del_message">Elimina file</string>
     <string name="dialog_product_tip_txt1">Hai un lavoro non condiviso. Condividilo ora!</string>
     <string name="dialog_product_tip_txt2">Condividi ora.</string>
-    <string name="dialog_title_cancel_download">Annulla download</string>
-    <string name="disconnect_gohome_alert_gohome_button">Return Home</string>
+    <string name="dialog_title_cancel_download">Annulla scaricamento</string>
+    <string name="disconnect_gohome_alert_gohome_button">Ritorno a Casa</string>
     <string name="disconnect_gohome_alert_title">Nessuna immagine disponibile. Gli aeromobili torneranno a casa tra:%d secondi.</string>
     <string name="disconnect_gohome_alert_title2">"Trasmissione dell'immagine persa. Torna a casa ora?"</string>
     <string name="dlgtip_double_gimbal_not_support">Utilizzare DJI Pilot quando si utilizzano due gomiti.</string>
@@ -834,14 +833,14 @@
     <string name="editor_broken_project_title">Progetto non valido</string>
     <string name="editor_cut_save_tip">Modifica incompleta</string>
     <string name="editor_delete_seg_cancel">Annulla</string>
-    <string name="editor_delete_seg_content">Elimina clip?</string>
+    <string name="editor_delete_seg_content">Eliminare clip?</string>
     <string name="editor_delete_seg_ok">Elimina</string>
-    <string name="editor_delete_seg_title">Elimina clip?</string>
-    <string name="editor_edit_finish">Completa</string>
+    <string name="editor_delete_seg_title">Eliminare clip?</string>
+    <string name="editor_edit_finish">Completato</string>
     <string name="editor_exit_dialog_content">Vuoi salvare il tuo lavoro?</string>
     <string name="editor_exit_dialog_negative">Non salvare</string>
     <string name="editor_exit_dialog_positive">Salva</string>
-    <string name="editor_exit_dialog_title">Exit</string>
+    <string name="editor_exit_dialog_title">Esci</string>
     <string name="editor_filter_default">Nessuno</string>
     <string name="editor_max_duration_confirm">Sì</string>
     <string name="editor_max_duration_content">Le clip esportate non possono durare più di 5 minuti.</string>
@@ -853,10 +852,10 @@
     <string name="editor_music_time_full">Full</string>
     <string name="editor_music_time_helight">Evidenzia</string>
     <string name="editor_music_time_title">Durata della musica:</string>
-    <string name="editor_music_title_empty">No Music</string>
+    <string name="editor_music_title_empty">No Musica</string>
     <string name="editor_op_default">Testo</string>
     <string name="editor_pro_c_addfilter">Completa</string>
-    <string name="editor_pro_c_creat">download fallito</string>
+    <string name="editor_pro_c_creat">scaricamento fallito</string>
     <string name="editor_pro_c_finish">Completa</string>
     <string name="editor_pro_c_next">Altro musica</string>
     <string name="editor_project_default_title">File progetto senza nome</string>
@@ -903,18 +902,18 @@
     <string name="error_gimbal_esc_roll_error_desc">"Contatta il supporto DJI se l'errore persiste dopo il riavvio."</string>
     <string name="error_gimbal_esc_yaw_error">Gimbal Yaw Motor Error</string>
     <string name="error_gimbal_esc_yaw_error_desc">"Contatta l'assistenza DJI se persiste dopo il riavvio"</string>
-    <string name="error_gimbal_is_calibrating">Gimbal sta calibrando ...</string>
-    <string name="error_gimbal_is_updating">Gimbal sta aggiornando ...</string>
+    <string name="error_gimbal_is_calibrating">Il Gimball si sta calibrando ...</string>
+    <string name="error_gimbal_is_updating">Il Gimbal si sta aggiornando ...</string>
     <string name="error_gimbal_is_updating_desc">"Attendi il completamento dell'aggiornamento."</string>
-    <string name="error_gimbal_pitch_shock">"Rilevata vibrazione dell'asse del giunto gimbal."</string>
+    <string name="error_gimbal_pitch_shock">"Rilevata vibrazione dell'asse del giunto del gimbal."</string>
     <string name="error_gimbal_pitch_shock_desc">Proteggi la videocamera o riduci il valore del guadagno.</string>
-    <string name="error_gimbal_roll_shock">"Rilevata vibrazione dell'asse del giunto gimbal."</string>
+    <string name="error_gimbal_roll_shock">"Rilevata vibrazione dell'asse del giunto del gimbal."</string>
     <string name="error_gimbal_roll_shock_desc">Proteggi la videocamera o riduci il valore del guadagno.</string>
     <string name="error_gimbal_yaw_shock">"Vibrazione dell'asse di imbardata del giunto gimbal rilevata."</string>
     <string name="error_gimbal_yaw_shock_desc">Proteggi la videocamera o riduci il valore del guadagno.</string>
-    <string name="error_gps_abnormal">"errore GPS. Contatta l'assistenza DJI se l'errore persiste dopo il riavvio."</string>
+    <string name="error_gps_abnormal">"Errore GPS. Contatta l'assistenza DJI se l'errore persiste dopo il riavvio."</string>
     <string name="error_gps_disconnect">GPS disconnesso.</string>
-    <string name="error_imu_calibration_finished_desc">"Riavvia l'aeromobile."</string>
+    <string name="error_imu_calibration_finished_desc">"Riavvia il drone."</string>
     <string name="error_imu_calibration_finished_title">Calibrazione IMU completata.</string>
     <string name="error_imu_noconnection_desc">"Contatta l'assistenza DJI se continua dopo il riavvio."</string>
     <string name="error_imu_noconnection_title">Modulo di navigazione Disconnesso</string>
@@ -986,13 +985,13 @@
     <string name="flight_record_clear_all">Cancella tutti i record memorizzati nella cache</string>
     <string name="flight_record_clear_exceptfavorite">Solo record preferiti cache</string>
     <string name="flight_record_clearcache">Cancella record memorizzati localmente</string>
-    <string name="flight_record_data_desc">DATE</string>
-    <string name="flight_record_date_desc">Date</string>
-    <string name="flight_record_distance_desc">DISTANCE</string>
+    <string name="flight_record_data_desc">DATA</string>
+    <string name="flight_record_date_desc">Data</string>
+    <string name="flight_record_distance_desc">DISTANZA</string>
     <string name="flight_record_distance_ft_format">%sft</string>
     <string name="flight_record_distance_m_format">%sm</string>
     <string name="flight_record_favour_desc">Preferito</string>
-    <string name="flight_record_flight_times">Flight Times</string>
+    <string name="flight_record_flight_times">Tempo di volo</string>
     <string name="flight_record_footprints">FOOTPRINTS</string>
     <string name="flight_record_fragment_data_title">DATI DI VOLO (%s)</string>
     <string name="flight_record_fragment_data_title_all">ALL</string>
@@ -1012,15 +1011,15 @@
     <string name="flight_record_moment_desc">Momenti</string>
     <string name="flight_record_na">N/A</string>
     <string name="flight_record_nogps">Nessun GPS</string>
-    <string name="flight_record_none">No Flight Records</string>
-    <string name="flight_record_phone_list">FLIGHT LIST</string>
+    <string name="flight_record_none">Nessune registrazioni di volo</string>
+    <string name="flight_record_phone_list">Lista dei voli</string>
     <string name="flight_record_pilot_level">Livello pilota</string>
-    <string name="flight_record_player_distance">DISTANCE</string>
+    <string name="flight_record_player_distance">DISTANZA</string>
     <string name="flight_record_player_h_speed">"HORIZ. VELOCITA '"</string>
-    <string name="flight_record_player_height">HEIGHT</string>
+    <string name="flight_record_player_height">ALTEZZA</string>
     <string name="flight_record_player_v_speed">"VERT. VELOCITA '"</string>
     <string name="flight_record_save_shot">Lo screenshot è stato salvato su%s</string>
-    <string name="flight_record_share_cancel">CANCEL</string>
+    <string name="flight_record_share_cancel">CANCELLA</string>
     <string name="flight_record_share_copylink_label">Copia collegamento</string>
     <string name="flight_record_share_facebook_label">Facebook</string>
     <string name="flight_record_share_photo_label">Condividi foto</string>
@@ -1035,21 +1034,21 @@
     <string name="flight_record_share_wechat_moments_label">Momenti</string>
     <string name="flight_record_sync_del_result">Elimina errori:%d</string>
     <string name="flight_record_sync_download_result">Errori di download:%d</string>
-    <string name="flight_record_sync_fail">Sync flight record failed</string>
+    <string name="flight_record_sync_fail">Sinc registrazioni di volo fallita</string>
     <string name="flight_record_sync_for_time">FOR%s</string>
     <string name="flight_record_sync_progress">Sincronizzazione in corso ...%d %%</string>
-    <string name="flight_record_sync_settings">IMPOSTAZIONI DELLA REGISTRAZIONE DI VOLO</string>
-    <string name="flight_record_sync_success">I record di volo sono stati sincronizzati!</string>
+    <string name="flight_record_sync_settings">IMPOSTAZIONI DELLE REGISTRAZIONI DI VOLO</string>
+    <string name="flight_record_sync_success">Le registrazioni di volo sono stati sincronizzati!</string>
     <string name="flight_record_sync_time">Tempo di sincronizzazione</string>
-    <string name="flight_record_sync_title">SYNC YOUR FLIGHT RECORDS</string>
+    <string name="flight_record_sync_title">Sincronizza le registrazioni di volo</string>
     <string name="flight_record_sync_upload_result">errori di caricamento:%d</string>
     <string name="flight_record_syncing">Sincronizzazione in corso ...%d %%</string>
-    <string name="flight_record_syncsetting">I record di volo generati entro il periodo seguente verranno memorizzati nella cache durante la sincronizzazione:</string>
-    <string name="flight_record_time_desc">TIME</string>
+    <string name="flight_record_syncsetting">Le registrazioni di volo generati entro il periodo seguente verranno memorizzati nella cache durante la sincronizzazione:</string>
+    <string name="flight_record_time_desc">TEMPO</string>
     <string name="flight_record_time_format">%1$02d:%2$02d</string>
-    <string name="flight_record_top_attitude">TOP ALTITUDE</string>
-    <string name="flight_record_top_distance">TOP DISTANCE</string>
-    <string name="flight_record_top_h_speed">TOP SPEED</string>
+    <string name="flight_record_top_attitude">TOP ALTITUDINE</string>
+    <string name="flight_record_top_distance">TOP DISTANZA</string>
+    <string name="flight_record_top_h_speed">TOP VELOCITÀ</string>
     <string name="flight_record_top_v_speed">VELOCITÀ VERTICALE SUPERIORE</string>
     <string name="flight_record_total_distance">Distanza di viaggio</string>
     <string name="flight_record_total_time">Tempo totale del volo</string>
@@ -1144,12 +1143,12 @@
     <string name="flyc_adv_setting_menu_f_mode_m">Modalità manuale</string>
     <string name="flyc_adv_title">Impostazioni avanzate</string>
     <string name="flyc_adv_yaw_endpoint_desc">Yaw Endpoint</string>
-    <string name="flyc_calib_desc">Compass Calibration</string>
+    <string name="flyc_calib_desc">Calibrazione Compass</string>
     <string name="flyc_exp_title">EXP</string>
     <string name="flyc_failsafe_setting">Advanced Failsafe Settings</string>
     <string name="flyc_gain_setting">Impostazioni di guadagno</string>
     <string name="flyc_gain_title">Sensibilità</string>
-    <string name="flyc_gale_warning">Vento forte. Vola con cautela.</string>
+    <string name="flyc_gale_warning">Vento forte! Vola con cautela.</string>
     <string name="flyc_hd_signal_desc1">Mantieni entrambe le antenne di Air System e Ground System perpendicolarmente al suolo e parallele tra loro.</string>
     <string name="flyc_hd_signal_desc2">Mantieni una distanza di 2 metri.</string>
     <string name="flyc_hd_signal_desc3">RSSI (indicatore forza di ricezione ricevuta)</string>
@@ -1174,8 +1173,8 @@
     <string name="flyc_sensor_ing_high_temp">Sistema surriscaldato.</string>
     <string name="flyc_sensor_ing_low_temp">Temperatura del sistema troppo bassa.</string>
     <string name="flyc_sensor_low_temp">Temperatura del sistema troppo bassa.</string>
-    <string name="flyc_unlock_desc">Unlock Motor</string>
-    <string name="flyc_unpack_desc">Exit Travel Mode</string>
+    <string name="flyc_unlock_desc">Sblocca Motori</string>
+    <string name="flyc_unpack_desc">Esci dalla modalità viaggio</string>
     <string name="follow_focus_ccw_enable_focus">La messa a fuoco è bloccata. Ruotare il volantino di messa a fuoco in senso antiorario sul valore di messa a fuoco corrente per sbloccare.</string>
     <string name="follow_focus_ccw_enable_iris">Aperture è bloccato. Ruotare il volantino di messa a fuoco in senso antiorario sul valore corrente del diaframma per sbloccare.</string>
     <string name="follow_focus_connected_tip">DJI Focus Handwheel è connesso.</string>
@@ -1211,7 +1210,7 @@
     <string name="fpv_adb_debug_tip">Abilita prima Debug USB, quindi continua a guardare i video.</string>
     <string name="fpv_adv_setting_menu_f_mode">F Flight Mode</string>
     <string name="fpv_adv_setting_menu_f_mode_in">Modalità Smart Flight</string>
-    <string name="fpv_adv_setting_menu_f_mode_m">Manual Flight Mode</string>
+    <string name="fpv_adv_setting_menu_f_mode_m">Modalità di volo manuale</string>
     <string name="fpv_adv_setting_menu_f_mode_m_dialog_agree">Accetto</string>
     <string name="fpv_adv_setting_menu_f_mode_m_dialog_cancel">"Non sono d'accordo"</string>
     <string name="fpv_adv_setting_menu_f_mode_m_dialog_desc">Disclaimer in modalità manuale</string>
@@ -1295,7 +1294,7 @@ Modello:%4$s "</string>
     <string name="fpv_camera_picturestyle_scenery">Landscape</string>
     <string name="fpv_camera_picturestyle_soft">Soft</string>
     <string name="fpv_camera_picturestyle_standard">Standard</string>
-    <string name="fpv_camera_saturation">Saturation</string>
+    <string name="fpv_camera_saturation">Saturazione</string>
     <string name="fpv_camera_setting_close">Modalità avanzata disattivata</string>
     <string name="fpv_camera_setting_open">Modalità avanzata attiva</string>
     <string name="fpv_camera_sharpness">Nitidezza</string>
@@ -1356,7 +1355,7 @@ Modello:%4$s "</string>
     <string name="fpv_checklist_compass_tip_1_desc">"Ruota l'aereo di 360 gradi in orizzontale."</string>
     <string name="fpv_checklist_compass_tip_2">"Passaggio 2: assicurarsi che nessun magnete o oggetto metallico si trovi entro 1,5 m (4,9 piedi) dalla bussola. Affronta il muso verso il basso, quindi ruota l'aereo di altri 360 gradi."</string>
     <string name="fpv_checklist_compass_tip_2_desc">Punta il muso verso il basso, quindi ruota di nuovo il velivolo di 360 gradi.</string>
-    <string name="fpv_checklist_escm_desc">ESC Status</string>
+    <string name="fpv_checklist_escm_desc">Stato ESC</string>
     <string name="fpv_checklist_force_ugprade">Aggiornamento</string>
     <string name="fpv_checklist_force_upgrade_please">Aggiorna il firmware</string>
     <string name="fpv_checklist_format">Formato</string>
@@ -1379,7 +1378,7 @@ Modello:%4$s "</string>
     <string name="fpv_checklist_sd_volume_desc">Capacità della scheda SD rimanente</string>
     <string name="fpv_checklist_status_good">Buono</string>
     <string name="fpv_checklist_status_poor">Scarso</string>
-    <string name="fpv_checklist_status_poor_desc">Forte interferenza. Vola con cautela.</string>
+    <string name="fpv_checklist_status_poor_desc">Forte interferenza! Vola con cautela.</string>
     <string name="fpv_checklist_struct_check">Controllo struttura</string>
     <string name="fpv_checklist_struct_check_action">Manutenziona ora</string>
     <string name="fpv_checklist_struct_check_done">Manutenzione Completa</string>
@@ -1509,7 +1508,7 @@ Modello:%4$s "</string>
     <string name="fpv_flight_mode_exit">Esci</string>
     <string name="fpv_flight_mode_failed_by_simulator">La funzione non può essere utilizzata nel simulatore.</string>
     <string name="fpv_flight_mode_gesture">Gesture</string>
-    <string name="fpv_flight_mode_normal">Perfetto</string>
+    <string name="fpv_flight_mode_normal">Normale</string>
     <string name="fpv_flight_mode_not_pmode">Si prega di decollare in P-Mode.</string>
     <string name="fpv_flight_mode_novice_tip">Le modalità di volo intelligenti sono disabilitate nella modalità Principiante.</string>
     <string name="fpv_flight_mode_patti_tip">Segnale del GPS debole ... volare con cautela</string>
@@ -1546,7 +1545,7 @@ Modello:%4$s "</string>
     <string name="fpv_fly_unlimit_one_key_unlimit">Zone Unlocked</string>
     <string name="fpv_fly_unlimit_require_network">"Connettiti a Internet per sbloccare.
  Sblocca la zona in Sblocco avanzato. "</string>
-    <string name="fpv_fly_unlimit_success">Success</string>
+    <string name="fpv_fly_unlimit_success">Successo</string>
     <string name="fpv_fly_unlimit_switch_label">Open No Fly Function</string>
     <string name="fpv_fly_unlimit_title">Unlock Area</string>
     <string name="fpv_flyc_cant_resetall_tip">Impossibile ripristinare tutte le impostazioni quando i motori sono in esecuzione.</string>
@@ -1613,7 +1612,7 @@ Modello:%4$s "</string>
     <string name="fpv_gensetting_heightflight_toggle_desc">Limite di altitudine superiore</string>
     <string name="fpv_gensetting_histogram">Istogramma</string>
     <string name="fpv_gensetting_liveshare">Diretta video</string>
-    <string name="fpv_gensetting_lock_gimbal_shotting">Lock Gimbal While Shooting</string>
+    <string name="fpv_gensetting_lock_gimbal_shotting">Blocco Gimbal While Shooting</string>
     <string name="fpv_gensetting_lowflight_desc">Limite Altitudine minima</string>
     <string name="fpv_gensetting_lowflight_toggle_desc">Altitudine minima (terreno da evitare)</string>
     <string name="fpv_gensetting_map">Map</string>
@@ -1823,7 +1822,7 @@ Modello:%4$s "</string>
     <string name="fpv_leftmenu_land_failed">Atterraggio fallito</string>
     <string name="fpv_leftmenu_land_success">Atterrato</string>
     <string name="fpv_leftmenu_takeoff">Sei sicuro di voler decollare?</string>
-    <string name="fpv_leftmenu_takeoff_desc">"Assicurati che sia sicuro decollare. Il drone salirà a%s e oltre."</string>
+    <string name="fpv_leftmenu_takeoff_desc">Assicurati che sia sicuro decollare. Il drone salirà a%s e oltre.</string>
     <string name="fpv_leftmenu_takeoff_failed">Decollo fallito</string>
     <string name="fpv_leftmenu_takeoff_success">Decollo completato</string>
     <string name="fpv_leftmenu_takeoff_switch">Trascina per decollare</string>
@@ -2247,9 +2246,9 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gs_follow_me_notify_msg_desc">Disattiva la modalità F per uscire dalle modalità di volo intelligenti.</string>
     <string name="gs_follow_me_notify_msg_title">Accedi alla modalità Seguimi</string>
     <string name="gs_follow_me_phone_gps_label">Segnale GPS dispositivo mobile:</string>
-    <string name="gs_follow_me_phone_gps_strong">Strong</string>
+    <string name="gs_follow_me_phone_gps_strong">Forte</string>
     <string name="gs_follow_me_phone_gps_weak">Debole</string>
-    <string name="gs_follow_me_radius_too_far">Drone è troppo lontano.</string>
+    <string name="gs_follow_me_radius_too_far">Il drone è troppo lontano.</string>
     <string name="gs_follow_me_send_command_failed">Impossibile accedere alla modalità Seguimi.</string>
     <string name="gs_follow_me_status_desc">Drone vola sempre in sincronia con il tuo movimento, mantenendo una distanza fissa nella modalità Follow Me.</string>
     <string name="gs_follow_me_status_limits_desc" formatted="false">(Raggio:%d-%dm; Altezza:%d-%dm)</string>
@@ -2272,14 +2271,14 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gs_home_lock_view_title">Home Lock</string>
     <string name="gs_low_power_go_home">Altitudine intelligente di ritorno a casa:</string>
     <string name="gs_main_exit_help_ok">Conferma</string>
-    <string name="gs_main_view_title">Intelligent Flight Modes</string>
+    <string name="gs_main_view_title">Modalità di volo intelligenti</string>
     <string name="gs_maker_info_coordinates_in_restrict_area">"I waypoint non possono essere impostati in un'area riservata."</string>
     <string name="gs_maker_info_coordinates_too_far">La coordinata del waypoint è troppo lontana dal punto di home.</string>
     <string name="gs_maker_info_invalid_coordinates">Coordinate waypoint non valide</string>
     <string name="gs_maker_info_latitude">Latitudine</string>
     <string name="gs_maker_info_lontitude">Longitudine</string>
-    <string name="gs_manager_battery_low">Alimentazione al di sotto del 30%.Takeoff Prevented</string>
-    <string name="gs_manager_battery_low_flying">Alimentazione al di sotto del 30%.Go-casa?</string>
+    <string name="gs_manager_battery_low">Alimentazione al di sotto del 30%. Decollo impedito.</string>
+    <string name="gs_manager_battery_low_flying">Alimentazione al di sotto del 30%.Torno a casa?</string>
     <string name="gs_manager_battery_low_mid">Alimentazione al di sotto del 50%.Vola con cautela</string>
     <string name="gs_manager_disconnect">Connessione interrotta</string>
     <string name="gs_manager_do_cacel">Annulla missione</string>
@@ -2305,13 +2304,13 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gs_manager_state_bar_mode_atti">ATTI</string>
     <string name="gs_manager_state_bar_mode_gohome">VAI HOME</string>
     <string name="gs_manager_state_bar_mode_gps">GPS</string>
-    <string name="gs_manager_state_bar_mode_landing">LANDING</string>
+    <string name="gs_manager_state_bar_mode_landing">ATTERRAGGIO</string>
     <string name="gs_manager_state_bar_mode_manual">MANUALE</string>
     <string name="gs_manager_state_bar_mode_no">N/A</string>
     <string name="gs_manager_state_bar_mode_pause">HOVER</string>
-    <string name="gs_manager_state_bar_mode_takeoff">TAKEOFF</string>
+    <string name="gs_manager_state_bar_mode_takeoff">DECOLLO</string>
     <string name="gs_manager_state_bar_mode_waypoint">WAYPOINT</string>
-    <string name="gs_manager_switch_gps_mode">"Passa alla modalità GPS(Modalità pronto a volare)"</string>
+    <string name="gs_manager_switch_gps_mode">Passa alla modalità GPS(Modalità pronto a volare)</string>
     <string name="gs_manager_upload_point_index">Waypoint%d caricati ...</string>
     <string name="gs_manager_upload_task_fail">Caricamento missione non riuscito. Controlla la tua connessione di rete.</string>
     <string name="gs_manager_waypoint_count_exceed">Nessun altro waypoint disponibile</string>
@@ -2466,13 +2465,13 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gs_way_point_collection_item_too_less_point">Sono richiesti almeno due waypoint.</string>
     <string name="gs_way_point_collection_location_label">Posizione:</string>
     <string name="gs_way_point_collection_node_label">Waypoint:</string>
-    <string name="gs_way_point_collection_title">Saved Missions</string>
+    <string name="gs_way_point_collection_title">Missioni salvate</string>
     <string name="gs_way_point_create">Avvia registrazione waypoint</string>
     <string name="gs_way_point_del_from_favorite">Rimosso dai preferiti.</string>
     <string name="gs_way_point_del_point_btn">Elimina</string>
     <string name="gs_way_point_desc">"In modalità Waypoint, l'aereo seguirà una traiettoria di volo dei Waypoint impostati."</string>
     <string name="gs_way_point_distance_too_long">Il percorso di volo totale è troppo lungo. (Max: 16404 ft, 5000 m)</string>
-    <string name="gs_way_point_enter_low_limit_mode">Drone sta volando troppo vicino al suolo. Impossibile scendere ulteriormente.</string>
+    <string name="gs_way_point_enter_low_limit_mode">Il Drone sta volando troppo vicino al suolo. Impossibile scendere ulteriormente.</string>
     <string name="gs_way_point_favorite_auto_add">Auto registrato</string>
     <string name="gs_way_point_favorite_tips">Salva waypoint in preferiti</string>
     <string name="gs_way_point_finish_go_home_notice">Ultimo punto home raggiunto. Gli aerei stanno tornando a casa.</string>
@@ -2498,7 +2497,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gs_way_point_to_too_far_to_start_point">Si prega di avvicinarsi al Punto di partenza.</string>
     <string name="gs_way_point_upload_failed_retry">Riprova</string>
     <string name="gs_way_point_view_title">Waypoint</string>
-    <string name="gs_wp_paused">Waypoint Mission Paused</string>
+    <string name="gs_wp_paused">Missione Waypoint in Pausa</string>
     <string name="gs_wp_resume">Missione waypoint ripristinata</string>
     <string name="gsnew_app_cancel">Annulla</string>
     <string name="gsnew_app_enter">OK</string>
@@ -2511,7 +2510,7 @@ http://www.dji.com/flysafe/geo-system "</string>
     <string name="gsnew_fpv_flight_mode_disagree">"Non sono d'accordo"</string>
     <string name="gsnew_fpv_flight_mode_disclaimer_title">Termini della modalità di volo intelligente</string>
     <string name="gsnew_fpv_flight_mode_gesture">Gesture</string>
-    <string name="gsnew_fpv_flight_mode_normal">Perfetto</string>
+    <string name="gsnew_fpv_flight_mode_normal">Normale</string>
     <string name="gsnew_fpv_flight_mode_novice_tip">Le modalità di volo intelligenti sono disabilitate in modalità Principiante.</string>
     <string name="gsnew_fpv_flight_mode_point">TapFly</string>
     <string name="gsnew_fpv_flight_mode_smart">SMART</string>
@@ -3007,7 +3006,6 @@ Fare clic su Ripristina \" per ripristinare la rotta dell'aeromobile. "</string>
     <string name="limit_tips4">"Il tuo aereo si sta avvicinando a una No-Fly Zone.
 Vola con cautela. "</string>
     <string name="limit_tips5">"Il tuo aereo in un'area riservata."</string>
-    <!--string name="limit_tips6">Vola lontano da No-fly Zone</string-->
     <string name="liveshare_base_audio_enable">Abilita registrazione audio</string>
     <string name="liveshare_base_description_hint">Descrivi il tuo livestream.</string>
     <string name="liveshare_base_exit">Stop livestreaming?</string>
@@ -3133,7 +3131,7 @@ Vola con cautela. "</string>
     <string name="mc_limit_height_reachded_reason_gps">Altitudine massima avvicinata. Attendere il ritorno al normale segnale satellitare GPS per salire.</string>
     <string name="mc_limit_height_reached_reason_campass">Temp Max Altitude Approached. Attendere che Compass Auto Calibration sia completato o calibrare manualmente la bussola su.</string>
     <string name="mc_param_pack_mode_failed">"Impossibile accedere alla modalità Viaggio. Posiziona l'aeromobile su una superficie piana e dura, rimuovi la sospensione del gimbal, quindi riprova."</string>
-    <string name="mc_param_pack_mode_success">"Rimuovi la sospensione del gimbal dal drone. Il drone ritrae automaticamente il carrello di atterraggio e attiva la Modalità Viaggio."</string>
+    <string name="mc_param_pack_mode_success">Rimuovi la sospensione del gimbal dal drone. Il drone ritrae automaticamente il carrello di atterraggio e attiva la Modalità Viaggio.</string>
     <string name="mc_param_pack_mode_success_nocamera">"L'aeromobile ritrae automaticamente gli ingranaggi di atterraggio e attiva la modalità Viaggio."</string>
     <string name="mc_protect_confirm">Il carrello di atterraggio non si abbasserà automaticamente e la telecamera non sarà protetta se il carrello di atterraggio automatico è disabilitato.</string>
     <string name="mc_protect_desc">Intelligent Landing Gear</string>
@@ -3421,7 +3419,8 @@ Vola con cautela. "</string>
     <string name="phantom_dji_control_connect">Telecomando connesso. Si prega di collegare il velivolo.</string>
     <string name="phantom_dji_hlz_connect_device">Connetti il ​​tuo dispositivo</string>
     <string name="phantom_dji_how_to_connect">Come connettersi</string>
-    <string name="phantom_dji_learn_advice">DJI GO 4 ITA FCC \n Vola con cautela!</string>
+    <string name="phantom_dji_learn_advice">"DJI GO 4 ITA FCC 
+ Vola con cautela!"</string>
     <string name="phantom_dji_osmo_camera">Camera</string>
     <string name="phantom_dji_phantom">PHANTOM</string>
     <string name="phantom_dji_plz_connect">Collega il tuo drone</string>
@@ -3538,7 +3537,7 @@ Vola con cautela. "</string>
     <string name="rcsetting_down_ward">Su</string>
     <string name="rcsetting_fast">Veloce</string>
     <string name="rcsetting_finish">Fine</string>
-    <string name="rcsetting_finish_tip">"Spingi tutti i bastoni nell'intero intervallo di movimento e ripeti più volte. Quindi premere Finish per completare la calibrazione."</string>
+    <string name="rcsetting_finish_tip">"Spingi tutti i bastoni nell'intero intervallo di movimento e ripeti più volte. Quindi premere Fine per completare la calibrazione."</string>
     <string name="rcsetting_forward">Avanti</string>
     <string name="rcsetting_forwardright">Avanti / Destra</string>
     <string name="rcsetting_has_permission">Controllo Gimbal ottenuto</string>
@@ -3620,23 +3619,23 @@ Vola con cautela. "</string>
     <string name="rtk_gps_switch_to_rtk_tips">Passato a RTK</string>
     <string name="save_project_tip_1">Suggerimenti: il lavoro di output verrà salvato sul tuo dispositivo.</string>
     <string name="save_project_tip_2">Suggerimenti: carica il tuo lavoro su SkyPixel, la piattaforma per la condivisione di foto e video aerea di DJI.</string>
-    <string name="sdcardstatus_busy">SD Card Busy</string>
-    <string name="sdcardstatus_cant_format">%s, Can not Format SD Card</string>
-    <string name="sdcardstatus_formating">La scheda SD sta formattando ...</string>
+    <string name="sdcardstatus_busy">SD Card Occupata</string>
+    <string name="sdcardstatus_cant_format">%s, Impossibile Formattare SD Card</string>
+    <string name="sdcardstatus_formating">La scheda SD si sta formattando ...</string>
     <string name="sdcardstatus_full">SD Card completa</string>
     <string name="sdcardstatus_initial">Inizializzazione scheda SD ...</string>
     <string name="sdcardstatus_invalid">Scheda SD non valida</string>
     <string name="sdcardstatus_invalid_filesystem">Scheda SD non valida</string>
     <string name="sdcardstatus_normal">SD Card OK</string>
-    <string name="sdcardstatus_not_formated">SD Card Not Formatted</string>
+    <string name="sdcardstatus_not_formated">SD Card non Formattata</string>
     <string name="sdcardstatus_recover_file">Riparazione dei file video</string>
     <string name="sdcardstatus_removal">Nessuna scheda SD</string>
-    <string name="sdcardstatus_slow">Slow SD Card</string>
+    <string name="sdcardstatus_slow">SD Card lenta</string>
     <string name="sdcardstatus_slow_tip">La velocità di scrittura della scheda SD è troppo lenta. Non adatto per la ripresa di un video 4K.</string>
     <string name="sdcardstatus_toformat">La formattazione della scheda SD è consigliata</string>
     <string name="sdcardstatus_unknown_error">Errore scheda SD sconosciuto</string>
     <string name="sdcardstatus_usb_connected">USB connesso</string>
-    <string name="sdcardstatus_write_protect">SD Card Write Protected</string>
+    <string name="sdcardstatus_write_protect">SD Card Scrittura Protetta</string>
     <string name="sdr_custom_signal_disturbance_tip">Interferenze del canale personalizzato. Il segnale potrebbe essere perso Vola con cautela.</string>
     <string name="sdr_low_signal_avoid_tip">"Evita di bloccare le antenne e di mantenere le antenne parallele e rivolte verso l'aereo durante il volo."</string>
     <string name="sdr_low_signal_power_tip">"Segnale debole. Evitare di bloccare le antenne e mantenere le antenne parallele e rivolte verso l'aereo durante il volo."</string>
@@ -3644,10 +3643,10 @@ Vola con cautela. "</string>
     <string name="sdr_rc_disturbance_tip">Interferenza aerea forte</string>
     <string name="sdr_rc_to_glass_tip">Evita che il telecomando sia troppo lontano da occhiali o occhiali da bloccare.</string>
     <string name="sdr_strong_disturbance_tip">Forte interferenza. Vola con cautela.</string>
-    <string name="sdr_uav_restart_tip">Drone Restart</string>
-    <string name="sdr_video_disturbance_tip">Interferenza del controller remoto forte</string>
+    <string name="sdr_uav_restart_tip">Riavvio Drone</string>
+    <string name="sdr_video_disturbance_tip">Forte Interferenza del controller remoto</string>
     <string name="sdr_warning_tip_gnd_interfered">Interferenze verso terra. Si prega di volare con cautela.</string>
-    <string name="sdr_warning_tip_signal_blocked">Signal Block</string>
+    <string name="sdr_warning_tip_signal_blocked">Segnale bloccato</string>
     <string name="sdr_warning_tip_uav_interfered">Interferenze per aeromobili</string>
     <string name="seconds">%1$d secondi</string>
     <string name="select_music_rhythm_mode">Music Rhythm Mode</string>
@@ -3778,8 +3777,8 @@ Vola con cautela. "</string>
     <string name="setting_ui_flyc_avoid_ground_desc">"Quando la conferma di atterraggio è abilitata, l'aeromobile si fermerà e si librerà a un'altitudine di 0,3 m (0,98 piedi) quando si scende verso terra. Conferma o sposta nuovamente la levetta per continuare l'atterraggio."</string>
     <string name="setting_ui_flyc_base">Impostazioni di base</string>
     <string name="setting_ui_flyc_beginner">Modalità principiante</string>
-    <string name="setting_ui_flyc_beginner_desc">"Nella modalità Principiante, l'aereo può volare solo entro un raggio di 30 dall'Home Point a velocità significativamente inferiori."</string>
-    <string name="setting_ui_flyc_beginner_mode_close_note">La velocità e la sensibilità del volo saranno sostanzialmente aumentate quando si disattiva la modalità Principiante. Vola con cautela.</string>
+    <string name="setting_ui_flyc_beginner_desc">"Nella modalità Principiante, il drone può volare solo entro un raggio di 30m dall'Home Point a una velocità significativamente ridotta."</string>
+    <string name="setting_ui_flyc_beginner_mode_close_note">La velocità e la sensibilità del volo saranno significativamente aumentate quando si disattiva la modalità Principiante. Vola con cautela.</string>
     <string name="setting_ui_flyc_beginner_mode_note">Per motivi di sicurezza, non puoi attivare la modalità Principiante dopo il decollo.</string>
     <string name="setting_ui_flyc_cant_resetall_tip">"Non puoi ripristinare tutte le impostazioni quando i motori dell'aereo girano."</string>
     <string name="setting_ui_flyc_cinematic_course_angular_velocity_range">Sensibilità di imbardata in modalità cinematografica</string>
@@ -3836,7 +3835,7 @@ Vola con cautela. "</string>
     <string name="setting_ui_flyc_limit_height">Altitudine massima</string>
     <string name="setting_ui_flyc_limit_height_notice">"Stai modificando l'impostazione dell'altitudine massima, che potrebbe violare le leggi e i regolamenti locali (un limite di volo di 400 piedi è fissato dalla FAA). L'utente è l'unico responsabile e responsabile per il funzionamento dell'aeromobile dopo aver modificato queste impostazioni. DJI e le sue affiliate non saranno responsabili per eventuali danni, sia nel contratto, illecito (inclusa la negligenza), o qualsiasi altra teoria legale o equa."</string>
     <string name="setting_ui_flyc_limit_height_range">(20-500m)</string>
-    <string name="setting_ui_flyc_low_battery_back">Smart Return Home</string>
+    <string name="setting_ui_flyc_low_battery_back">Ritorno a Casa Smart</string>
     <string name="setting_ui_flyc_mode">Modalità volo</string>
     <string name="setting_ui_flyc_mode_gentle">Gentile</string>
     <string name="setting_ui_flyc_mode_normal">Perfetto</string>
@@ -3957,7 +3956,6 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_general_temperature_celsius">Celsius</string>
     <string name="setting_ui_general_temperature_fahrenheit">Fahrenheit</string>
     <string name="setting_ui_general_temperature_kelvin">Kelvin</string>
-    <string name="setting_ui_general_unit_imperial">Imperiale</string>
     <string name="setting_ui_general_unit_metric">Metrico (m / s)</string>
     <string name="setting_ui_general_unit_metric_km">Metrico (km / h)</string>
     <string name="setting_ui_general_units">Unità di Misura</string>
@@ -4069,6 +4067,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_hd_output_resolution">Risoluzione di output</string>
     <string name="setting_ui_hd_output_sdi_desc">SDI</string>
     <string name="setting_ui_hd_output_switch">Uscita video HDMI / SDI</string>
+    <string name="setting_ui_hd_output_switch_in2">HDMI abilitato</string>
     <string name="setting_ui_hd_pip">Picture-in-Picture</string>
     <string name="setting_ui_hd_pip_desc">Picture-in-Picture</string>
     <string name="setting_ui_hd_pip_left_bottom">In basso a sinistra</string>
@@ -4091,7 +4090,7 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_hd_signal_desc4">Assicurati che tutte le connessioni su Air System siano sicure.</string>
     <string name="setting_ui_hd_sweeprange_desc">Intervallo di scansione in frequenza</string>
     <string name="setting_ui_hd_transmission">Modalità di trasmissione</string>
-    <string name="setting_ui_hd_transmission_fails">"Setup fallito. Controlla se il drone è collegato."</string>
+    <string name="setting_ui_hd_transmission_fails">Setup fallito. Controlla se il drone è collegato.</string>
     <string name="setting_ui_hd_transmission_high">Modalità alta qualità</string>
     <string name="setting_ui_hd_transmission_low">Modalità bassa latenza</string>
     <string name="setting_ui_hd_view_sdr_btn">Image Transmission State</string>
@@ -4134,8 +4133,6 @@ A (Attitude) Mode - GPS and Vision Positioning sono disabilitati. Il passaggio d
     <string name="setting_ui_rc_cal">Calibra</string>
     <string name="setting_ui_rc_calibrate_note">"Spegnere l'aeromobile e quindi calibrare il telecomando."</string>
     <string name="setting_ui_rc_calibration">Calibrazione controller remoto</string>
-    <string name="setting_ui_rc_calibration_1">1. Sposta ogni stick per tutta la sua gamma di movimento più volte.</string>
-    <string name="setting_ui_rc_calibration_2">2. Ruota la ghiera della fotocamera a sinistra.</string>
     <string name="setting_ui_rc_calibration_time_out">"L'ultima calibrazione del telecomando è scaduta, lo stato della calibrazione sarà ripristinato."</string>
     <string name="setting_ui_rc_calibration_tip">"Spegnere l'aereo, quindi calibrare il telecomando."</string>
     <string name="setting_ui_rc_cannot_frequency_motorup">"Il telecomando non può essere collegato quando i motori dell'aeromobile girano."</string>
@@ -4384,7 +4381,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_vision_adv_desc">Impostazioni visuale avanzata</string>
     <string name="setting_ui_vision_adv_title">Avanzato</string>
     <string name="setting_ui_vision_ass">Abilita Evitare Ostacoli</string>
-    <string name="setting_ui_vision_ass_desc1">"Quando i sensori di ostacolo anteriori rilevano un ostacolo, il drone rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s."</string>
+    <string name="setting_ui_vision_ass_desc1">Quando i sensori di ostacolo anteriori rilevano un ostacolo, il drone rallenta fino a fermarsi. La velocità massima con rilevamento ostacolo abilitato è%s.</string>
     <string name="setting_ui_vision_ass_desc2">Le telecamere di rilevamento ostacoli in avanti hanno un campo visivo orizzontale di 60º e un campo visivo di 54º. Gli ostacoli al di fuori di questi intervalli non verranno rilevati.</string>
     <string name="setting_ui_vision_ass_desc3">"Nota: le telecamere di rilevamento ostacoli avanti non funzionano di notte o in condizioni di scarsa illuminazione. La precisione del rilevamento degli ostacoli dipende dalla dimensione dell'ostacolo. Fare riferimento al Manuale dell'utente per ulteriori dettagli."</string>
     <string name="setting_ui_vision_ass_tip_content">"Disattivare il Rilevamento Ostacoli Anteriori significa che l'aereo non eviterà automaticamente ostacoli nel suo percorso di volo. Sei sicuro di volerlo spegnere?"</string>
@@ -4412,7 +4409,7 @@ Non regolare i valori Forza, Outfilter o Controllo predefiniti a meno che tu non
     <string name="setting_ui_vision_frontback_ass_tip_content">Drone non salirà automaticamente per evitare ostacoli quando il Rilevamento Ostacoli Anteriori è disabilitato. Sei sicuro di voler disabilitare questa opzione?</string>
     <string name="setting_ui_vision_frontback_ghass">Rilevazione ostacoli RTH</string>
     <string name="setting_ui_vision_frontback_ghass_desc">"Durante il ritorno a casa, l'aereo volerà indietro e ascenderà automaticamente per evitare ostacoli quando viene rilevato."</string>
-    <string name="setting_ui_vision_frontback_ghass_tip_content">"Con RTH Evitamento degli Ostacoli disabilitato, il drone non rileva gli ostacoli durante il RTH o sale per evitare ostacoli, aumentando il rischio di collisione. Sei sicuro di voler disabilitare questa opzione?"</string>
+    <string name="setting_ui_vision_frontback_ghass_tip_content">Con RTH Evitamento degli Ostacoli disabilitato, il drone non rileva gli ostacoli durante il RTH o sale per evitare ostacoli, aumentando il rischio di collisione. Sei sicuro di voler disabilitare questa opzione?</string>
     <string name="setting_ui_vision_ghass">RTH Rilevamento Ostacoli</string>
     <string name="setting_ui_vision_ghass_desc">"Quando la luce ambientale è sufficiente, l'aereo salirà automaticamente per evitare ostacoli. Dopo l'abilitazione, anche se l'Evitamento Ostacoli è disabilitato, l'aeromobile controllerà automaticamente gli ostacoli durante il RTH. Sia Obstacle Avoidance che RTH Rilevamento Ostacoli saranno disabilitati durante l'atterraggio."</string>
     <string name="setting_ui_vision_ghass_tip_content">"Quando questa opzione è disabilitata, l'aeromobile non eviterà automaticamente ostacoli nella sua traiettoria di volo. Sei sicuro di voler disabilitare questa opzione?"</string>
@@ -5527,7 +5524,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="v2_upgrade_activity_upgrading">Aggiornamento (%s)</string>
     <string name="v2_upgrade_activity_upload_progress">Caricamento (%s)</string>
     <string name="v2_upgrade_activity_upload_start">Carica ora</string>
-    <string name="v2_upgrade_activity_upload_wait">"Caricamento sul drone ..."</string>
+    <string name="v2_upgrade_activity_upload_wait">Caricamento sul drone ...</string>
     <string name="v2_upgrade_camera_fails">Impossibile aggiornare la videocamera</string>
     <string name="v2_upgrade_complete_tip">Riavvia il tuo drone e il controller remoto.</string>
     <string name="v2_upgrade_complete_tip_osmo">Riavvia il tuo dispositivo.</string>
@@ -5663,7 +5660,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="ve_home_myworks">I miei Lavori</string>
     <string name="ve_home_myworks_select">Seleziona</string>
     <string name="ve_home_title">Director</string>
-    <string name="ve_no_prod_text">No Works. Crea uno ora!</string>
+    <string name="ve_no_prod_text">Nessun Lavoro. Creane uno ora!</string>
     <string name="video">Video</string>
     <string name="video_Trailer_date_settting">Visualizza la data alla fine</string>
     <string name="video_Trailer_director_settting">Visualizza autore alla fine</string>
@@ -5675,11 +5672,11 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="video_water_mark">Filigrana video</string>
     <string name="videocache_nospace">"La cache video è stata interrotta perché non c'è abbastanza spazio di archiviazione. Puoi abilitare la cancellazione automatica della cache o eliminare manualmente la cache per ottenere spazio sufficiente."</string>
     <string name="videoeditor_unsupported">"L'editor è disponibile solo su Android v4.3 (API 18) o superiore. Aggiorna la versione di Android."</string>
-    <string name="vision_brake_disallow_back">Frenando ora. Restituisci i bastoncini ai punti medi, quindi continua a volare.</string>
-    <string name="vision_brake_disallow_front">Frenando ora. Restituisci i bastoncini ai punti medi, quindi continua a volare.</string>
-    <string name="vision_brake_disallow_left">"Frenando ora. Non serve spostare la levetta a sinistra. Evita l'ostacolo."</string>
-    <string name="vision_brake_disallow_right">"Braking now! Non serve spostare la levetta a destra. Evita l'ostacolo."</string>
-    <string name="vision_overshot_now_tip">Ostacolo avanti / indietro Rilevato. Gli aerei volano per evitarlo ora.</string>
+    <string name="vision_brake_disallow_back">Sto Frenando. Riporta i bastoncini a metà, quindi continua a volare.</string>
+    <string name="vision_brake_disallow_front">Sto Frenando. Riporta i bastoncini a metà, quindi continua a volare.</string>
+    <string name="vision_brake_disallow_left">"Sto Frenando. Non serve spostare i bastoncini a sinistra. Evita l'ostacolo."</string>
+    <string name="vision_brake_disallow_right">"Sto Frenando! Non serve spostare i bastoncini a destra. Evita l'ostacolo."</string>
+    <string name="vision_overshot_now_tip">Ostacolo avanti/indietro Rilevato. Gli aerei volano per evitarlo ora.</string>
     <string name="vision_selfcal_already_cali">Nota: si consiglia la calibrazione di precisione tramite DJI Assistant su PC o Mac. Questa calibrazione è solo per situazioni urgenti.</string>
     <string name="vision_selfcal_calculating">Calibrazione ...</string>
     <string name="vision_selfcal_collect_completed">"Raccolta di immagini completata. Metti giù l'aereo. Tenere l'aeromobile acceso e non accendere i motori."</string>
@@ -5730,7 +5727,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="vision_selfcal_return_fpv">Torna alla videocamera</string>
     <string name="vision_selfcal_start">Start</string>
     <string name="vision_selfcal_success">%s Calibrazione sensore visione riuscita</string>
-    <string name="vision_selfcal_tip">Calibrate Vision Sensors?</string>
+    <string name="vision_selfcal_tip">Calibrare i sensori di visione?</string>
     <string name="vision_selfcal_title">%s Vision Sensors Calibrating</string>
     <string name="vision_selfcal_waiting_move">"Ruota l'aeromobile come indicato"</string>
     <string name="vision_type_back">Indietro</string>
@@ -5867,28 +5864,28 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="visual_track_camera_setting_tip">Impostazioni della fotocamera ActiveTrack ottimizzato</string>
     <string name="visual_track_cancel_failed">Impossibile uscire da ActiveTrack</string>
     <string name="visual_track_cmd_failed">Impossibile inviare il comando ActiveTrack.</string>
-    <string name="visual_track_exception_drone_toohigh">Drone too High</string>
-    <string name="visual_track_exception_drone_toolow">Drone too Low</string>
+    <string name="visual_track_exception_drone_toohigh">Il Drone è troppo alto!</string>
+    <string name="visual_track_exception_drone_toolow">Il Drone è troppo basso!</string>
     <string name="visual_track_exception_exit_default">ActiveTrack Flight Fermato</string>
     <string name="visual_track_exception_gimbal_pitchlow">Tilt fotocamera troppo bassa</string>
     <string name="visual_track_exception_ground">​​Riprova dopo il decollo</string>
-    <string name="visual_track_exception_lowdetect">Confirm Subject</string>
+    <string name="visual_track_exception_lowdetect">Conferma Soggetto</string>
     <string name="visual_track_exception_lowfps">Internal Exception (04)</string>
-    <string name="visual_track_exception_nodetect">Can not Identify Subject</string>
+    <string name="visual_track_exception_nodetect">Non riesco a trovare il Soggetto</string>
     <string name="visual_track_exception_nofusion">Can not Get Air Velocity</string>
     <string name="visual_track_exception_nonimage">Internal Exception (03)</string>
     <string name="visual_track_exception_obstacle">Ostacolo nel percorso di volo</string>
     <string name="visual_track_exception_radar_fail">Inoltro rilevamento ostacolo non rispondente</string>
     <string name="visual_track_exception_rc_halt">ActiveTrack Flight Paused</string>
-    <string name="visual_track_exception_searching">Oggetto perso. Ricerca ...</string>
-    <string name="visual_track_exception_shake">Oggetto troppo instabile da tracciare</string>
-    <string name="visual_track_exception_timeout">Can not Find Subject</string>
-    <string name="visual_track_exception_title">Impossibile monitorare Oggetto.</string>
-    <string name="visual_track_exception_too_close">Oggetto troppo vicino</string>
+    <string name="visual_track_exception_searching">Soggetto perso. Ricerca ...</string>
+    <string name="visual_track_exception_shake">Soggetto troppo instabile da tracciare</string>
+    <string name="visual_track_exception_timeout">Non riesco a trovare il Soggetto</string>
+    <string name="visual_track_exception_title">Impossibile monitorare Soggetto.</string>
+    <string name="visual_track_exception_too_close">Soggetto troppo vicino</string>
     <string name="visual_track_exception_too_far">Subject Out of Range</string>
-    <string name="visual_track_exception_toohigh">Oggetto troppo alto</string>
-    <string name="visual_track_exception_toolarge">Oggetto troppo grande. Sposta e riprova.</string>
-    <string name="visual_track_exception_toosmall">Oggetto troppo piccolo. Get Closer and Retry.</string>
+    <string name="visual_track_exception_toohigh">Soggetto troppo alto</string>
+    <string name="visual_track_exception_toolarge">Soggetto troppo grande. Sposta e riprova.</string>
+    <string name="visual_track_exception_toosmall">Soggetto troppo piccolo. Get Closer and Retry.</string>
     <string name="visual_track_flusion_abnormal">Errore di velocità di tracciamento GPS e visivo</string>
     <string name="visual_track_gps">GPS Follow</string>
     <string name="visual_track_gps_desc">Il tuo dispositivo mobile GPS ti aiuterà a rintracciare se il sistema di visione del velivolo fallisce. Abilitare questa opzione è raccomandata se pensi di seguirti.</string>
@@ -5955,6 +5952,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="activate_control_joy_mode_1_diagram">Modalità 1 Diagramma del joystick virtuale</string>
     <string name="activate_control_joy_mode_2_diagram">Modalità 2 Virtual Joystick Diagram</string>
     <string name="activate_control_joy_mode_3_diagram">Modalità 3 Virtual Joystick Diagram</string>
+    <string name="activate_control_mode_desc">Personalizza lo schema di controllo desiderato.</string>
     <string name="activate_gesture_tips">PalmControl Notifications</string>
     <string name="activate_gesture_tips_env">"Usa Gesture Control in un'area aperta, senza vento con sufficiente illuminazione."</string>
     <string name="activate_gesture_tips_hand">Assicurati che le dita siano sotto e lontane dalle eliche quando usi PalmLaunch o PalmLand.</string>
@@ -6037,9 +6035,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="camera_mshutter_desc">Otturatore meccanico</string>
     <string name="camera_rawburst_tip">"La velocità dell'otturatore nella modalità RAW Burst non può superare 1 / 30s."</string>
     <string name="camera_ref_in2_dust_reduction_cancel">Annulla</string>
-    <!--string name="camera_ref_in2_dust_reduction_doing">"L'obiettivo è deducibile ..."</string-->
     <string name="camera_ref_in2_dust_reduction_done">Completamento della deduzione degli obiettivi.</string>
-    <!--string name="camera_ref_in2_dust_reduction_start_reduction">"Obiettivo rimosso. Tocca Avvia per avviare la depolverazione dell'obiettivo."</string-->
     <string name="camera_ref_in2_dust_reduction_start_uninstall">Avvia</string>
     <string name="camera_ref_in2_dust_reduction_title">Lens Dedusting</string>
     <string name="camera_ref_in2_dust_reduction_tutorial_1">Segui le istruzioni.</string>
@@ -6090,7 +6086,6 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="check_device_valid_continue_title">Continua ad attivare il dispositivo DJI?</string>
     <string name="check_device_valid_exit">"Esci dall'attivazione"</string>
     <string name="check_device_valid_not_continue_content">"L'analisi ha determinato che il tuo prodotto proviene da una fonte non autorizzata. Pertanto, la garanzia del prodotto di un anno non è stata attivata. Si prega di contattare il venditore per organizzare uno scambio."</string>
-    <!--string name="check_gimbal_calibrate_error">Errore di inizializzazione del sensore angolo giunto gimbal.</string-->
     <string name="check_gimbal_calibrate_error_solution">Riavvia il tuo aereo. Se il problema persiste, la sospensione del gimbal può essere rotta. Si prega di contattare il supporto DJI.</string>
     <string name="check_gimbal_whole_calibrate_error">Errore calibrazione gimbal</string>
     <string name="check_list_gimbal_cali_error_solution">"Riavvia l'aeromobile. Contatta l'assistenza DJI se questo errore persiste dopo il riavvio."</string>
@@ -6151,7 +6146,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="connection_control_scan_title_horizontal">不 翻译</string>
     <string name="connection_control_scan_title_vertical">"Punta la telecamera dell'aereo verso il QR Code da circa 20 cm di distanza. Premi due volte il pulsante di accensione."</string>
     <string name="connection_control_tab_drone">Dispositivo mobile</string>
-    <string name="connection_control_tab_rc">Remote Controller</string>
+    <string name="connection_control_tab_rc">Controller Remoto</string>
     <string name="country_code_none_tip">Impossibile identificare questo paese o regione. La funzione di Slave è disabilitata. Connetti alla rete per recuperare lo slave.</string>
     <string name="creation_auto_edit_type_desc">"L'app riconosce automaticamente i momenti salienti dei tuoi scatti, combinandoli in un breve video facilmente condivisibile."</string>
     <string name="creation_auto_edit_type_name">Crea AutoEdit film</string>
@@ -6165,6 +6160,16 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="creation_select_type_title">Scegli la funzione Editor</string>
     <string name="custom_opening_scene_click_to_edit">Tocca per modificare</string>
     <string name="custom_opening_scene_title">Puoi inserire%1$d più caratteri.</string>
+    <string name="desc_limit_height_content">Puoi decollare, ma l altezza massima sarà limitata a 120 m. </string>
+    <string name="desc_limit_height_title">Altitude Zone Introduction</string>
+    <string name="device_guide_item_connect_help">Connettiti al drone</string>
+    <string name="device_guide_item_connect_help_desc">Perfavore segui la guida per la una corretta connessione al drone.</string>
+    <string name="device_guide_item_enter_fpv">Entra in Visuale Camera</string>
+    <string name="device_guide_item_enter_fpv_desc">Entra in Visuale Camera senza connesione.</string>
+    <string name="device_guide_item_scan_active">Attiva il Drone</string>
+    <string name="device_guide_item_scan_active_desc">Tap per attivare il nuovo Drone.</string>
+    <string name="device_guide_remark_text">Questa pagina sarà nascosta se il drone sarà connesso.</string>
+    <string name="device_guide_title">Perfavore scegli il prossimo passo.</string>
     <string name="dialog_product_tip_txt3">Lavoro caricato</string>
     <string name="dji_check_air_encoder_error_reason">Errore Encoder Drone</string>
     <string name="dji_check_air_encoder_restart_solution">"Soluzione: riavvia l'aereo, se il problema persiste, contatta l'assistenza DJI"</string>
@@ -6198,7 +6203,7 @@ Controlla se è necessario aggiornare il firmware dell'aeromobile. Se il firmwar
     <string name="dji_check_camera_sd_card_no_space_solution">Soluzione: cambia la scheda SD o elimina alcuni file.</string>
     <string name="dji_check_camera_sd_card_not_format_reason">Scheda SD non formattata</string>
     <string name="dji_check_camera_sd_card_not_format_solution">Soluzione: formatta la scheda SD</string>
-    <string name="dji_check_camera_sd_card_read_only_reason">SD card readonly</string>
+    <string name="dji_check_camera_sd_card_read_only_reason">SD card in solalettura</string>
     <string name="dji_check_camera_sd_card_read_only_solution">Soluzione: cambia la scheda SD o riparala</string>
     <string name="dji_check_camera_sensor_reason">Errore sensore fotocamera</string>
     <string name="dji_check_camera_sensor_solution">"Malfunzionamento dell'hardware: contatta l'assistenza DJI per organizzare le riparazioni"</string>
@@ -6630,7 +6635,7 @@ KEEP FLYING "</string>
     <string name="fmd_item_drone_loc">Drone Missing Coordinates</string>
     <string name="fmd_item_map_rectification">Map Correction</string>
     <string name="fmd_map_hybrid">Ibrido</string>
-    <string name="fmd_map_night">Night</string>
+    <string name="fmd_map_night">Notte</string>
     <string name="fmd_map_satellite">Satellite</string>
     <string name="fmd_map_standard">Standard</string>
     <string name="fmd_menu_copy">Duplicato</string>
@@ -6690,14 +6695,14 @@ KEEP FLYING "</string>
     <string name="fpv_checklist_compass_tip_show_arm">Spiega gli aeromobili come indicato.</string>
     <string name="fpv_checklist_limit_distance_closed">Disabled</string>
     <string name="fpv_checklist_ssd_desc">Dati SSD scritti cumulativi</string>
-    <string name="fpv_compass_adjust_complete">Compass Calibration Complete</string>
+    <string name="fpv_compass_adjust_complete">Calibrazione della bussola completata</string>
     <string name="fpv_confirm_touchdown_msg_in2">Il Drone sta atterrando. Assicurarsi che il punto di atterraggio sia sicuro e spingere lo stick verso il basso per atterrare.</string>
     <string name="fpv_count_down_view_description">Toccando un punto qualsiasi sullo schermo durante il conto alla rovescia si annulla lo scatto.</string>
     <string name="fpv_errorpop_flightaction_app_auto_gohome">"Drone sta tornando al punto di partenza. L'altitudine RTH è%dm. È possibile ripristinare l'altitudine RTH in Impostazioni controller remoto dopo aver annullato RTH, se necessario."</string>
     <string name="fpv_errorpop_flightaction_app_request_forcelanding">Forza richiesta di atterraggio da DJIGO4.</string>
     <string name="fpv_errorpop_flightaction_fakebattery_landing">Rilevata batteria non ufficiale. Gli aerei stanno atterrando.</string>
-    <string name="fpv_errorpop_flightaction_imuerror_rth">Errore IMU. Gli aerei stanno tornando a casa.</string>
-    <string name="fpv_errorpop_flightaction_rc_onekey_gohome">"Drone sta tornando al punto di partenza. L'altitudine minima RTH è%dm. È possibile ripristinare l'altitudine RTH in Impostazioni controller remoto dopo aver annullato RTH, se necessario."</string>
+    <string name="fpv_errorpop_flightaction_imuerror_rth">Errore IMU. I droni stanno tornando a casa.</string>
+    <string name="fpv_errorpop_flightaction_rc_onekey_gohome">"Il Drone sta tornando al punto di partenza. L'altitudine minima RTH è%dm. È possibile ripristinare l'altitudine RTH in Impostazioni controller remoto dopo aver annullato RTH, se necessario."</string>
     <string name="fpv_errorpop_flightaction_rth_obstacle_landing">"Rilevato ostacolo. L'aeromobile sta atterrando"</string>
     <string name="fpv_errorpop_near_protect_tips">Altezza minima raggiunta. Continuare a spingere lo stick del motore verso il basso per atterrare un aereo. Atterra il più delicatamente possibile per evitare di danneggiare il giunto gimbal.</string>
     <string name="fpv_errorpop_should_request_gimbal_control">"Nessun controllo del giunto gimbal. Premi l'icona a sinistra per ottenere il controllo del giunto gimbal."</string>
@@ -7539,6 +7544,7 @@ A Modalità (Attitude) - Il rilevamento dell'ostacolo in avanti / all'indietro, 
     <string name="setting_ui_general_remote_flyfrb_version">Drone Database</string>
     <string name="setting_ui_general_stablization_content">Se abilitato, riduzione della vibrazione e derive del liveview ingrandito.</string>
     <string name="setting_ui_general_stablization_title">Stabilizzazione liveview ingrandita</string>
+    <string name="setting_ui_general_unit_imperial">Imperiale</string>
     <string name="setting_ui_general_videocache_audioswitch_title">"Registra anche l'audio nel video"</string>
     <string name="setting_ui_general_videocache_autoclean_desc">I file più vecchi verrano automaticamente cancellati quando la dimensione della cache supera i%d GB.</string>
     <string name="setting_ui_general_videocache_autoclean_no_limit_desc">I video memorizzati nella cache verranno automaticamente eliminati quando la memoria del dispositivo non è sufficiente.</string>
@@ -7584,7 +7590,6 @@ A Modalità (Attitude) - Il rilevamento dell'ostacolo in avanti / all'indietro, 
     <string name="setting_ui_hd_lcdformat_normal">Modalità normale</string>
     <string name="setting_ui_hd_output_cam">Visualizzazione videocamera</string>
     <string name="setting_ui_hd_output_cam_pip">Visualizzazione Picture in Picture (PIP)</string>
-    <string name="setting_ui_hd_output_switch_in2">HDMI abilitato</string>
     <string name="setting_ui_imu_ok">OK</string>
     <string name="setting_ui_imu_reboot_aircraft_manually">"Avvia manualmente l'aeromobile."</string>
     <string name="setting_ui_imu_restart">"Riavvia ora l'aeromobile."</string>
@@ -7604,6 +7609,8 @@ A Modalità (Attitude) - Il rilevamento dell'ostacolo in avanti / all'indietro, 
     <string name="setting_ui_rc_aircraft_type_tip">La modifica del tipo di telecomando disconnetterà il tuo aereo dal telecomando. Utilizzare questa opzione solo quando si desidera connettersi a un altro velivolo e procedere con cautela. Sei sicuro di voler cambiare?</string>
     <string name="setting_ui_rc_apply">Applica</string>
     <string name="setting_ui_rc_ascend_descend">&lt; font color = # 008FFF>16. &lt; /font>Ascend / Descend</string>
+    <string name="setting_ui_rc_calibration_1">1. Sposta ogni stick per tutta la sua gamma di movimento più volte.</string>
+    <string name="setting_ui_rc_calibration_2">2. Ruota la ghiera della fotocamera a sinistra.</string>
     <string name="setting_ui_rc_calibration_continue">Avanti</string>
     <string name="setting_ui_rc_calibration_hint_joystick_calibration">Spingi il bastoncino come indicato. Ripeti.</string>
     <string name="setting_ui_rc_calibration_hint_start">Tocca Calibra e segui le istruzioni.</string>
@@ -7987,6 +7994,9 @@ La directory è:%2$s "</string>
     <string name="v2_active_inspire_2">ACTIVATE INSPIRE &lt; font color = # FF0000>2 &amp; nbsp; &lt; /font></string>
     <string name="v2_active_inspire_cv600">ATTIVA ZENMUSE &lt; font color = # FF0000>Z3 &amp; nbsp; &lt; /font></string>
     <string name="v2_active_kumquat_desc">"Rimuovi la copertura protettiva prima di accendere l'aeromobile."</string>
+    <string name="v2_active_m200">ACTIVATE MATRICE &lt; font color = # FF0000>200 &amp; nbsp; &lt; /font></string>
+    <string name="v2_active_m210">ACTIVATE MATRICE &lt; font color = # FF0000>210 &amp; nbsp; &lt; /font></string>
+    <string name="v2_active_m210rtk">ACTIVATE MATRICE &lt; font color = # FF0000>210RTK &amp; nbsp; &lt; /font></string>
     <string name="v2_active_olives">ATTIVA ZENMUSE &lt; font color = # FF0000>XT &amp; nbsp; &lt; /font></string>
     <string name="v2_active_remote_controller_monitor_aircraft_battery">"&lt; font color = # 008FFF>4. &lt; /font>Livello della batteria dell'aereo"</string>
     <string name="v2_active_remote_controller_monitor_ascend_descend">&lt; font color = # 008FFF>16. &lt; /font>Ascend / Descend</string>
@@ -8201,7 +8211,6 @@ La directory è:%2$s "</string>
     <string name="visual_track_spotlight_lost">Oggetto perso. Ricerca ...</string>
     <string name="visual_tracking_speed_hint">Priorità di velocità</string>
     <string name="adsb_list_top_name">Sistema AirSense</string>
-    <string name="offline_map_delete_failing_info">La mappa è in fase di download. Impossibile eliminare.</string>
     <string name="YoutubeClientId">23340936357-tchp4f4qhmmen0ro43lm1aj0j6tms36d.apps.googleusercontent.com</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
@@ -8357,6 +8366,7 @@ La directory è:%2$s "</string>
     <string name="normal_sub_type_raw">RAW</string>
     <string name="normal_sub_type_rtk">RTK</string>
     <string name="normal_sub_type_se">SE</string>
+    <string name="offline_map_delete_failing_info">La mappa è in fase di download. Impossibile eliminare.</string>
     <string name="product_pkg_name">dji.go.v5</string>
     <string name="proxy_looks_cine_dlog">DLog</string>
     <string name="proxy_looks_cine_rec709">Rec.709</string>
@@ -8400,15 +8410,32 @@ La directory è:%2$s "</string>
     <string name="setting_ui_aircraft_p4">PHANTOM 4</string>
     <string name="setting_ui_aircraft_p4a">PHANTOM 4 ADVANCED</string>
     <string name="setting_ui_aircraft_p4p">PHANTOM 4 PRO</string>
+	<string name="setting_ui_can_not_set">Non puo essere impostato in volo. Riprova dopo atterraggio.</string>
+    <string name="setting_ui_common_success">Successo</string>
+    <string name="setting_ui_flyc_droneid">Identificazione:</string>
+    <string name="setting_ui_flyc_droneid_hint">Massimo 10 caratteri.</string>
+    <string name="setting_ui_flyc_identity">Identificazione Remota</string>
+    <string name="setting_ui_flyc_identity_apply">Applica</string>
+    <string name="setting_ui_flyc_identity_desc">Identificazione remota permette al personale autorizzato vicino di capire dove i droni stanno volando e chi li sta usando, simile ad una targa auto. inserimento delle tue informazioni personali è facoltativo.</string>
+    <string name="setting_ui_flyc_identity_flight_info_over">Flight Information is more than 90 alphabetic character</string>
+    <string name="setting_ui_flyc_identity_identification_over">Identification is more than 10 alphabetic character</string>
+    <string name="setting_ui_flyc_identity_same_content">No Changes</string>
+    <string name="setting_ui_flyc_identity_set_fails">Applicazione fallita, prova dopo!</string>
+    <string name="setting_ui_flyc_identity_set_success">Applicato!</string>
+    <string name="setting_ui_flyc_license">informazioni di volo:</string>
+    <string name="setting_ui_flyc_license_tip">Cannot exceed 90 characters.</string>
+    <string name="setting_ui_flyc_switch_app_gps">Person GPS</string>
+    <string name="setting_ui_flyc_switch_droneid_flyplan">Identificatzione &amp; Informazioni di volo</string>
+    <string name="setting_ui_flyc_switch_gps">GPS</string>
+    <string name="setting_ui_flyc_switch_homegps">Home GPS</string>
+    <string name="setting_ui_flyc_switch_sn">Numero Seriale</string>
+    <string name="setting_ui_flyc_switch_uuid">UUID</string>
     <string name="setting_ui_rcpro_delete_error">"Impossibile eliminare l'ultimo"</string>
     <string name="setting_ui_rcpro_loading">Caricamento in corso ...</string>
     <string name="setting_ui_select_file">Seleziona file</string>
     <string name="ssdk_instapager_login_html" formatted="false">"&lt;! DOCTYPE html>&lt; html>&lt; head>&lt; meta content = text / html; charset = utf-8 \" http-equiv = Content-Type \">&lt; meta content = width = larghezza del dispositivo, scala minima = 1, scala massima = 1, scala iniziale = 1, scalabile dall'utente = no \" id = viewport name = \" viewport >&lt; meta content = \" yes name = \" apple-mobile-web-app-capable >&lt; title>%s &lt; / title>&lt; tipo di stile = text / css \">body {margin: 0; padding: 0} .inputstyle {-webkit-tap-highlight-color: rgba (255,255,255,0); larghezza: 100 %%; altezza: 44px; color: # 000; sfondo: 0; border: 0; font-size: 16px; contorni: nessuno; -webkit-appearance: none} .btn {width: 90 %%; altezza: 44px; line-height: 44px; background: # A0C035; border: 0; border-radius: 4px; color: #fff; font-size: 16px; text-align: center; margin-top: 15px; display: block} .btn: disabled {background: #dddddd; } .error {color: red; } &lt; / style>&lt; / head>&lt; body>&lt; tipo di script = testo / javascript \">login di funzione (modulo) {var u = form [u \"]. value, p = formare [p \"] valore.; se (! u ||! p) restituisce falso; forma [s \"]. disabled = true; ritorna vero; } &lt; / script>&lt; form style = margin-top: 45px; \" action = %s \" metho = get \" onsubmit = return login (this); \">%s &lt; div style = padding-left: 15px; border-top: 1px solid # E3E3E5; border-bottom: 1px solid # E3E3E5; \">&lt; input type = hidden \" name = ID_SIGN value = \" OWELJSFPWECSFEW />&lt; input class = \" inputstyle id = \" u nome = \" u tipo = \" testo valore = \"%s  placeholder = %s \" style = border-bottom: 1px solido # E3E3E5; \" />&lt; input class = inputstyle \" id = p \" nome = p \" tipo = password \" segnaposto = %s \" />&lt; / div>&lt; p>&lt; input style = margin: 0 auto; \" type = submit \" name =  s value = \"%s class = \" btn />&lt; / p>&lt; / form>&lt; / body>&lt; / html>"</string>
     <string name="unit_power">Potenza</string>
     <string name="v2_academy_feedback_tag2">DJIGO4</string>
-    <string name="v2_active_m200">ACTIVATE MATRICE &lt; font color = # FF0000>200 &amp; nbsp; &lt; /font></string>
-    <string name="v2_active_m210">ACTIVATE MATRICE &lt; font color = # FF0000>210 &amp; nbsp; &lt; /font></string>
-    <string name="v2_active_m210rtk">ACTIVATE MATRICE &lt; font color = # FF0000>210RTK &amp; nbsp; &lt; /font></string>
     <string name="v2_nfz_unlock_geo_type">GEO</string>
     <string name="v2_product_type_longan_pro">OSMO PRO</string>
     <string name="v2_product_type_longan_raw">OSMO RAW</string>
@@ -8422,4 +8449,5 @@ La directory è:%2$s "</string>
     <string name="v2_product_type_wm220">Mavic Pro</string>
     <string name="v2_product_type_wm220_s">Mavic</string>
 </resources>
+
 
