@@ -1,0 +1,93 @@
+diff -Naur orig/AndroidManifest.xml mod/AndroidManifest.xml
+--- orig/AndroidManifest.xml    2018-06-01 20:13:31.007326100 +0200
++++ mod/AndroidManifest.xml     2018-10-06 23:23:17.711992100 +0200
+@@ -59,9 +59,9 @@
+         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB-ICOGgAOCBopE5MdBDJXEkljD27pBSiI"/>
+         <meta-data android:name="com.amap.api.v2.apikey" android:value="b1e52be18021dc874d4ee28ea57ec0bf"/>
+-        <meta-data android:name="com.here.android.maps.appid" android:value="NZ8FOeGKY9JnLToE7gDo"/>
+-        <meta-data android:name="com.here.android.maps.apptoken" android:value="7gkrwNc2rN1u6Gfxt_cUGQ"/>
+-        <meta-data android:name="com.here.android.maps.license.key" android:value="Bg7cI+u69w3SrCWMA0hKLIwJHtvyWDp1ce/K6LqqW4ZyKKULGLMaeixJH0t7lHdIgiGgeoAT++a5Mngk+tGap+pf2sIWR2+q9K3hs5IDbk6zWQcXm7tRlP+dImBy91pFI0WRAeWmyYKyGkOWmfGYfx+xopu2IKtT5sNxe84ohDRuCQ6gg58QiZj5YSL+IQWyJkSwtWMhCa/h5axKwFfNd1JoTuAmlDCOgcWvnGxz6M34PPsZgTeeR+xxoDJ+Xh+O6iJ/EmrOytrhjxptR64PNIGw2eKTu5jrF50GR8tlVPFLjJXsro2LYDeDwkgraXKaWvT9UFRykleFgC0jH2kzXpLMS5iAKVdcFpBY6j1Z91f6jv95xY7Rtp4LB06fpkEMflNngpsPNth50NGGjYJljaohrNWaZ5+YtUTCx+kESA07OzshcRF6r5rTxtvfATVz1Q494UREVPjAbpTo/JeUkvezUgCadF8lIgXC85lGAVrLIOZc10OFCWVnR9A81rmOoPrev9zIJawrSOqPbdddOh0m0hzL/HYlvAFUV78D4DRhDUt4IxwtrMblLA0jFcEZAiuaslKOe0lgMHAcjYkb6t6RPKjaLo3Z83Rtz1GWQF75PH9e4nwsXMsR/4qc22+6adMWe2sQ7aYavM47MKW9T3e1UdFinAEL8JDJI8oLjQI="/>
++        <meta-data android:name="com.here.android.maps.appid" android:value="TU3wfM3272o2BkJrcO2c"/>
++        <meta-data android:name="com.here.android.maps.apptoken" android:value="VCUv-uumVMheXJAMr7I-rA"/>
++        <meta-data android:name="com.here.android.maps.license.key" android:value="R7bNe0Ux0nsGMtBNhDng8CFGpUbNPJfp3x87ua04MN8owjkn4UIQq9/GHQZUfhCc7dTCDA/qC3w++mK0e4IMYSK9HRtcnvxjb5YtpB5z29mCVIXN1ZpZ0PHgWqYNh6jtZpY3JCQAeFpAERUIXKTi6c6SufS8LqoKFJ3I87oUEp3k2CdwL/v6w5Xnn2hOHCf+RFZgy1y5aizG+7V+OYQjc1f2HBFKjjpZIColkcDMGeFwewlCQlF884PTlVVJ/QXwMNlTQ8TasJrqgyDlsjMaQReplbp1zA7wnGk16cdJ9wscYsYUNRQ4LuX6+VFccAer01nqZBlhcuLH/xXYRablHdFAAOSUxrbI33GSkKFYn1XaNZR652mIO8CZam4zLBCnhMkAcQO0AhyzN+huqHxiAqlUj/jlbafkqIfEhB+b0jHCP+bAGYn4/TuK9iDrbt5gRyvTwFwmOiBCPP27mCPRSkbiq2MUIDSEnN0zrPZsHCKMXI85fPALW7EnYoOX4PIlo4La0JubIhP+IHHdY9X+Rreq4+KRmPTAs/t/4rwDaR+lRdtx3LvLCNTOAqKKxUR8NeB9vDzR82cxy+1xNAxqt9Y6YYkS1+arpq2ehcK8/+HTIwrk3zf40+4HgDovFE+DgJwrZmEJX5XRF6P3Fp8punY0Oux2/JuOMdDu/0B0hDw="/>
+         <service android:label="DJIHereMapService" android:name="com.here.android.mpa.service.MapService" android:process="dji.Here.Map.Service.v2" android:stopWithTask="false">
+             <intent-filter>
+                 <action android:name="com.here.android.mpa.service.MapService.dji.go.v4"/>
+--- orig/smali_classes2/com/dji/mapkit/maps/hmap/a.smali        2018-06-01 20:14:09.371897700 +0200
++++ mod/smali_classes2/com/dji/mapkit/maps/hmap/a.smali 2018-10-07 14:22:08.405743500 +0200
+@@ -777,11 +777,8 @@
+     .locals 2
+
+     .prologue
+-    .line 280
+-    packed-switch p1, :pswitch_data_0
+
+     .line 291
+-    :pswitch_0
+     iget-object v0, p0, Lcom/dji/mapkit/maps/hmap/a;->g:Lcom/here/android/mpa/mapping/Map;
+
+     const-string v1, "N0U7LwYydwA4Uw=="
+@@ -793,61 +790,8 @@
+     invoke-virtual {v0, v1}, Lcom/here/android/mpa/mapping/Map;->setMapScheme(Ljava/lang/String;)Lcom/here/android/mpa/mapping/Map;
+
+     .line 293
+-    :goto_0
+     return-void
+
+-    .line 282
+-    :pswitch_1
+-    iget-object v0, p0, Lcom/dji/mapkit/maps/hmap/a;->g:Lcom/here/android/mpa/mapping/Map;
+-
+-    const-string v1, "N0U7LwYydwA4Uw=="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v0, v1}, Lcom/here/android/mpa/mapping/Map;->setMapScheme(Ljava/lang/String;)Lcom/here/android/mpa/mapping/Map;
+-
+-    goto :goto_0
+-
+-    .line 285
+-    :pswitch_2
+-    iget-object v0, p0, Lcom/dji/mapkit/maps/hmap/a;->g:Lcom/here/android/mpa/mapping/Map;
+-
+-    const-string v1, "Kks9JwsyMBA8BC0jHg=="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v0, v1}, Lcom/here/android/mpa/mapping/Map;->setMapScheme(Ljava/lang/String;)Lcom/here/android/mpa/mapping/Map;
+-
+-    goto :goto_0
+-
+-    .line 288
+-    :pswitch_3
+-    iget-object v0, p0, Lcom/dji/mapkit/maps/hmap/a;->g:Lcom/here/android/mpa/mapping/Map;
+-
+-    const-string v1, "MVMrMA46dwA4Uw=="
+-
+-    invoke-static {v1}, Lcom/dji/f/a/a/b;->a(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v0, v1}, Lcom/here/android/mpa/mapping/Map;->setMapScheme(Ljava/lang/String;)Lcom/here/android/mpa/mapping/Map;
+-
+-    goto :goto_0
+-
+-    .line 280
+-    nop
+-
+-    :pswitch_data_0
+-    .packed-switch 0x1
+-        :pswitch_1
+-        :pswitch_2
+-        :pswitch_0
+-        :pswitch_3
+-    .end packed-switch
+ .end method
+
+ .method public a(Lcom/dji/mapkit/a/b;)V
+ 
