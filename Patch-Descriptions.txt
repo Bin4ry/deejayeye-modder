@@ -76,3 +76,6 @@ Assuming you have a valid Google API key and a valid HereMap key for the signing
 If a file named useGoogleMap can be found in /DJI/og_settings/ (you'll have to manually create this subdirectory), then GoogleMap will be used, otherwise, HereMaps will be used.
 If the mapbox patch is enabled and you choosed mapbox within the app, then mapbox will be used.
 For CrystalSky special versions, the cs_only_allowgooglemap.patch must also be used together with this patch. This requires a rooted CS with GooglePlayServices installed
+
+enableHereMaps:
+Renews invalid HERE Maps key and reenables HERE Maps (Note: hybrid and sat maps are disabled)
