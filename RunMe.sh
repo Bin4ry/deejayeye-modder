@@ -466,7 +466,7 @@ fi
 if [ "$repack_step" = "true" ] || [ "$repack_step" = "y" ] || [ "$repack_step" = "1" ]
 then
     echo Rebuilding apk
-    echo "Do any AndroidManifest.xml modifications now (such as HERE MAPS Key insertion), then press Enter to start repacking (press enter if you did not modify AndroidManifest.xml)"
+    echo "Do any AndroidManifest.xml modifications now, then press Enter to start repacking (press enter if you do not want to modify AndroidManifest.xml)"
     read
     rm -rf "$outdir/build"
     java -jar tools/apktool.jar b -o "$outdir/$moddedapkname" "$workdir"
