@@ -1,0 +1,5 @@
+license_key="R7bNe0Ux0nsGMtBNhDng8CFGpUbNPJfp3x87ua04MN8owjkn4UIQq9/GHQZUfhCc7dTCDA/qC3w++mK0e4IMYSK9HRtcnvxjb5YtpB5z29mCVIXN1ZpZ0PHgWqYNh6jtZpY3JCQAeFpAERUIXKTi6c6SufS8LqoKFJ3I87oUEp3k2CdwL/v6w5Xnn2hOHCf+RFZgy1y5aizG+7V+OYQjc1f2HBFKjjpZIColkcDMGeFwewlCQlF884PTlVVJ/QXwMNlTQ8TasJrqgyDlsjMaQReplbp1zA7wnGk16cdJ9wscYsYUNRQ4LuX6+VFccAer01nqZBlhcuLH/xXYRablHdFAAOSUxrbI33GSkKFYn1XaNZR652mIO8CZam4zLBCnhMkAcQO0AhyzN+huqHxiAqlUj/jlbafkqIfEhB+b0jHCP+bAGYn4/TuK9iDrbt5gRyvTwFwmOiBCPP27mCPRSkbiq2MUIDSEnN0zrPZsHCKMXI85fPALW7EnYoOX4PIlo4La0JubIhP+IHHdY9X+Rreq4+KRmPTAs/t/4rwDaR+lRdtx3LvLCNTOAqKKxUR8NeB9vDzR82cxy+1xNAxqt9Y6YYkS1+arpq2ehcK8/+HTIwrk3zf40+4HgDovFE+DgJwrZmEJX5XRF6P3Fp8punY0Oux2/JuOMdDu/0B0hDw="
+echo "Patching HERE Maps with provided variables..."
+sed -i "s/TU3wfM3272o2BkJrcO2c/$1/g" AndroidManifest.xml
+sed -i "s/VCUv-uumVMheXJAMr7I-rA/$2/g" AndroidManifest.xml
+sed -i -e "s@$license_key@$3@g" AndroidManifest.xml
