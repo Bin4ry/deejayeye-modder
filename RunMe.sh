@@ -330,17 +330,6 @@ then
         echo "Use provided package name :" "$newpackagename"
     fi
     echo ""
-    if [ "$googleapikey" = "" ]
-    then
-        echo "Enter Google Map V2 API key :"
-        echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
-        echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
-        echo ""
-        read -rp "Google API key : " googleapikey
-    else
-        echo "Use provided Google API Key :" "$googleapikey"
-    fi
-    echo ""
     if [ "$newapplabel" = "" ]
     then
         echo "Enter the friendly name of clone application label (e.g. \"IDJ OG 4.x mod\")"
@@ -349,7 +338,25 @@ then
         echo "Use provided Application label :" "$newapplabel"
     fi
     echo ""
-    ./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$newapplabel"
+    read -rp "Use Google API for Mapping? [Y/n]: " usegoogleapi
+    if [ "$usegoogleapi" = "Y" ]
+    then
+		if [ "$googleapikey" = "" ]
+		then
+		    echo "Enter Google Map V2 API key :"
+		    echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
+		    echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
+		    echo ""
+		    read -rp "Google API key : " googleapikey
+		else
+		    echo "Use provided Google API Key :" "$googleapikey"
+		fi
+		./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$newapplabel"
+	else
+		echo "Make sure you've selected ENABLE HERE MAPS + entered your keys!"
+		./prepare_clone_heremaps.sh "$workdir" "$newpackagename" "$newapplabel"
+	fi
+    
 fi
 
 # Replace the application icon by the provided one.

@@ -84,7 +84,7 @@ do
 	then
 		echo -ne "Do you wish to input a new key for HERE Maps? [Y/n]: "
 		read choice
-		if [ $choice == "Y" ]
+		if [ "$choice" == "Y" ] || [ "$choice" = "y" ]
 			then
 			echo "Go to https://developer.here.com - login/sign-up"
 			echo "Then go to \"Premium SDKs - Offline functionality\" and click on Android SDK - Generate AppID and AppCode."
