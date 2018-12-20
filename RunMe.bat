@@ -92,12 +92,12 @@ if !keepSource!==keep (set keepSource=remove) else (set keepSource=keep)
 goto:eof
 :menu_R - View readme
 cls
-more Readme.md
+more /E Readme.md
 pause
 GOTO:EOF
 :menu_D - View patch descriptions
 cls
-more Patch-Descriptions.txt
+more /E Patch-Descriptions.txt
 pause
 GOTO:EOF
 :menu_L - Add additonal languages if present
@@ -112,7 +112,7 @@ echo.
 echo.-: Converting patches...
 rename "%patches%\origin" origin.patch
 for /f "tokens=*" %%f in ('dir /b %patches%\*.patch') do ( copy %patches%\%%f %p_out%\%%f.copy >nul
- TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
+ TYPE "%p_out%\%%f.copy" | MORE /E /P > "%p_out%\%%f"
  del /f /q %p_out%\%%f.copy )
 rename "%patches%\origin.patch" origin
 echo.-: Decompiling original apk...
