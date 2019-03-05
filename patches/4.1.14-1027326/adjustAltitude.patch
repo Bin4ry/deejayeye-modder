@@ -1,6 +1,6 @@
 diff -Naur orig/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali mod/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali
 --- orig/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali	2018-04-10 18:06:53.866589587 +0200
-+++ mod/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali	2019-03-05 15:51:29.720248190 +0100
++++ mod/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali	2019-03-05 15:57:23.101191110 +0100
 @@ -26,6 +26,7 @@
  
  # static fields
@@ -157,7 +157,7 @@ diff -Naur orig/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali mod/s
  
      move-result v0
  
-+    invoke-static {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->adjust_altitude(I)I;
++    invoke-static {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->adjust_altitude(I)I
 +
 +    move-result v0
 +
