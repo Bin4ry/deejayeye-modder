@@ -80,6 +80,24 @@ do
 	patch=${options[$sel]}
 	dos2unix ../patches/$apkver-$apkvcode/$patch.patch
 	patch -l -p1 -N -r - < ../patches/$apkver-$apkvcode/$patch.patch
+	if [ "$patch" == "enableHereMaps" ]
+	then
+		echo -ne "Do you wish to input a new key for HERE Maps? [Y/n]: "
+		read choice
+		if [ "$choice" == "Y" ] || [ "$choice" = "y" ]
+			then
+			echo "Go to https://developer.here.com - login/sign-up"
+			echo "Then go to \"Premium SDKs - Offline functionality\" and click on Android SDK - Generate AppID and AppCode."
+			echo "VERY IMPORTANT: Enter dji.go.v4 as the package name. If you are cloning the APK put the chosen new package name." 
+			echo "Enter the App ID: "
+			read HereMapsAppId
+			echo "Enter the App Code: "
+			read HereMapsAppCode
+			echo "Enter the License Key: "
+			read HereMapsLicenseKey
+			../patch_here_maps.sh $HereMapsAppId $HereMapsAppCode $HereMapsLicenseKey
+		fi
+	fi
 	if [ "$patch" == "removeOnlinefunction" ]
 	then
 			bspatch lib/armeabi-v7a/libSDKRelativeJNI.so lib/armeabi-v7a/libSDKRelativeJNI-n.so ../patches/$apkver-$apkvcode/so.bspatch
@@ -87,6 +105,18 @@ do
 			mv lib/armeabi-v7a/libSDKRelativeJNI-n.so lib/armeabi-v7a/libSDKRelativeJNI.so
 	fi
 	
+	  if [ "$patch" == "removeNFZ_ApplicationPart" ]
+  then
+      rm assets/expansion/internal/flysafe/dji.nfzdb.confumix
+      rm assets/expansion/internal/flysafe/dji.nfzdb.sig
+      rm assets/expansion/internal/flysafe/flysafe_areas_djigo.db
+      rm assets/expansion/internal/flysafe/flysafe_polygon_1860.db
+      rm assets/expansion/internal/flysafe/flyforbid_airmap/*.json
+      rm res/raw/flyforbid.json
+      touch res/raw/flyforbid.json
+  fi
+
+  
 	echo "    $patch" >> ../$log_file
 done
 
