@@ -100,6 +100,10 @@ arguments syntax and default values:
       keep in mind that is changing almost all files
       so patches on workdir after using this option might not work
       [default=false]
+
+   -l true/false or --languages=true/false
+      flag to add custom languages
+      [default=true]
     "
 }
 
@@ -141,7 +145,7 @@ then
 fi
 
 # Read all script arguments
-SPLIT_ARG_TEMP=$(getopt -o ha:w:o:k:d:p:c:i:I:r:t:f: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog: -u -n 'RunMeNg.sh' -- "$@")
+SPLIT_ARG_TEMP=$(getopt -o ha:w:o:k:d:p:c:i:I:r:t:f:l: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog:,languages: -u -n 'RunMe.sh' -- "$@")
 # If an argument cannot be identified, stop the script with error status
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
 #  otherwise, let's go
@@ -157,6 +161,7 @@ iconrep_step="false"
 repack_step="true"
 add_timestamp="false"
 source_defog="false"
+languages="true"
 
 # Init script internal variables
 ver=$(cat version.txt)
@@ -231,6 +236,10 @@ while true; do
             source_defog="$2"
             shift 2
             ;;
+        -l | --languages )
+	    languages="$2"
+	    shift 2
+	    ;;
         * )
             break
             ;;
@@ -283,6 +292,7 @@ Do IconMod Step        : $iconmod_step
 Do IconRep Step        : $iconrep_step
 Do Repack Step         : $repack_step
 Do Source Defog        : $source_defog
+Add custom languages   : $languages
 Add Timestamp          : $add_timestamp\\n
 TimeStamp value        : $timestamp\\n
 "
@@ -315,9 +325,16 @@ then
     ./decompile_apk.sh "$apkname" "$workdir" "$timestamp"
 fi
 
-if [ "$patch_step" = "true" ] || [ "$patch_step" = "y" ] || [ "$patch_step" = "1" ]
+if [ "$languages" = "true" ] || [ "$languages" = "y" ] || [ "$languages"="1" ]
 then
-    ./patch_apk.sh "$workdir" "$timestamp"
+	languages="true"
+else
+	languages="false"
+fi
+
+if [ "$patch_step" = "true" ] || [ "$patch_step" = "y" ] || [ "$patch_step" = :"1" ]
+then
+    ./patch_apk.sh "$workdir" "$timestamp" "$languages"
 fi
 
 if [ "$clone_step" = "true" ] || [ "$clone_step" = "y" ] || [ "$clone_step" = "1" ]
