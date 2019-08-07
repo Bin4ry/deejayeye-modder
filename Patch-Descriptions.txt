@@ -67,3 +67,6 @@ Removes the "Motor current error. Check your propellers and fly with caution." p
 
 removeNfzUpdate:
 Removes popup "New Fly Safe data found... DJI GO 4 cannot be used normally without updating." and similiar popups. It's not removing NFZ system, just upgrade popups!
+
+enableCSCOnSpark:
+enables the CSC option in Settings -> Advanced for Spark
