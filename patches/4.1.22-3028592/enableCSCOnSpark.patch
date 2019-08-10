@@ -1,0 +1,14 @@
+diff -Naur orig/smali_classes6/dji/setting/ui/flyc/StopMotorTypeView.smali mod/smali_classes6/dji/setting/ui/flyc/StopMotorTypeView.smali
+--- orig/smali_classes6/dji/setting/ui/flyc/StopMotorTypeView.smali	2018-04-11 12:06:33.349591076 +0200
++++ mod/smali_classes6/dji/setting/ui/flyc/StopMotorTypeView.smali	2019-08-07 23:45:21.171598757 +0200
+@@ -114,6 +114,10 @@
+     move-result v1
+ 
+     .line 122
++    sget-object v4, Ldji/midware/data/config/P3/ProductType;->Mammoth:Ldji/midware/data/config/P3/ProductType;
++
++    if-eq v0, v4, :cond_0
++
+     sget-object v4, Ldji/midware/data/config/P3/ProductType;->KumquatS:Ldji/midware/data/config/P3/ProductType;
+ 
+     if-eq v0, v4, :cond_0

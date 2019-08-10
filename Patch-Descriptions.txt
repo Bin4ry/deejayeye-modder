@@ -82,3 +82,7 @@ For CrystalSky special versions, the cs_only_allowgooglemap.patch must also be u
 
 enableHereMaps:
 Renews invalid HERE Maps key and reenables HERE Maps (Note: hybrid and sat maps are disabled)
+
+enableCSCOnSpark:
+enables the CSC option in Settings -> Advanced for Spark
+
