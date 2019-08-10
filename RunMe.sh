@@ -100,6 +100,10 @@ arguments syntax and default values:
       keep in mind that is changing almost all files
       so patches on workdir after using this option might not work
       [default=false]
+
+   -l true/false or --languages=true/false
+      flag to add custom languages
+      [default=true]
     "
 }
 
@@ -141,7 +145,7 @@ then
 fi
 
 # Read all script arguments
-SPLIT_ARG_TEMP=$(getopt -o ha:w:o:k:d:p:c:i:I:r:t:f: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog: -u -n 'RunMeNg.sh' -- "$@")
+SPLIT_ARG_TEMP=$(getopt -o ha:w:o:k:d:p:c:i:I:r:t:f:l: --longoptions help,apkname:,work-directory:,output-apk:,keep-temp:,decompile-step:,patch-step:,clone-step:,iconmod-step:,iconrep-step:,repack-step:,timestamp:,defog:,languages: -u -n 'RunMe.sh' -- "$@")
 # If an argument cannot be identified, stop the script with error status
 if [ $? != 0 ] ; then echo "Problem while parsing arguments with getopt... terminating..." >&2 ; exit 1 ; fi
 #  otherwise, let's go
@@ -157,6 +161,7 @@ iconrep_step="false"
 repack_step="true"
 add_timestamp="false"
 source_defog="false"
+languages="true"
 
 # Init script internal variables
 ver=$(cat version.txt)
@@ -231,6 +236,10 @@ while true; do
             source_defog="$2"
             shift 2
             ;;
+        -l | --languages )
+	    languages="$2"
+	    shift 2
+	    ;;
         * )
             break
             ;;
@@ -273,10 +282,17 @@ Keep Work Dir          : $keep_temp
 Do Decompile Step      : $decompile_step
 Do Patch Step          : $patch_step
 Do Clone Step          : $clone_step
+
+### WARNING: DO NEVER USE THE CLONED APP NEXT TO THE ORIGINAL APP! THIS WILL ENABLE DJI TO SEND YOUR DATA TO THEM! ###
+###          EVEN IF YOU MAKE THIS APP OFFLINE, THE ORIGINAL APP WILL SEND ALL YOU DATA TO DJI!                    ###
+###          DJI CAN EVEN LOCK YOUR DRONE IF YOU CHOOSE TO USE THE ORIGINAL APP ALONG WITH THE MODDED ONE          ###
+###                         DO NOT COME TO US AND CRY IF SOMETHING HAPPENS! I TOLD YOU SO!                         ###
+
 Do IconMod Step        : $iconmod_step
 Do IconRep Step        : $iconrep_step
 Do Repack Step         : $repack_step
 Do Source Defog        : $source_defog
+Add custom languages   : $languages
 Add Timestamp          : $add_timestamp\\n
 TimeStamp value        : $timestamp\\n
 "
@@ -309,9 +325,16 @@ then
     ./decompile_apk.sh "$apkname" "$workdir" "$timestamp"
 fi
 
-if [ "$patch_step" = "true" ] || [ "$patch_step" = "y" ] || [ "$patch_step" = "1" ]
+if [ "$languages" = "true" ] || [ "$languages" = "y" ] || [ "$languages"="1" ]
 then
-    ./patch_apk.sh "$workdir" "$timestamp"
+	languages="true"
+else
+	languages="false"
+fi
+
+if [ "$patch_step" = "true" ] || [ "$patch_step" = "y" ] || [ "$patch_step" = :"1" ]
+then
+    ./patch_apk.sh "$workdir" "$timestamp" "$languages"
 fi
 
 if [ "$clone_step" = "true" ] || [ "$clone_step" = "y" ] || [ "$clone_step" = "1" ]
@@ -324,17 +347,6 @@ then
         echo "Use provided package name :" "$newpackagename"
     fi
     echo ""
-    if [ "$googleapikey" = "" ]
-    then
-        echo "Enter Google Map V2 API key :"
-        echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
-        echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
-        echo ""
-        read -rp "Google API key : " googleapikey
-    else
-        echo "Use provided Google API Key :" "$googleapikey"
-    fi
-    echo ""
     if [ "$newapplabel" = "" ]
     then
         echo "Enter the friendly name of clone application label (e.g. \"IDJ OG 4.x mod\")"
@@ -343,7 +355,25 @@ then
         echo "Use provided Application label :" "$newapplabel"
     fi
     echo ""
-    ./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$newapplabel"
+    read -rp "Use Google API for Mapping? [Y/n]: " usegoogleapi
+    if [ "$usegoogleapi" = "Y" ]
+    then
+		if [ "$googleapikey" = "" ]
+		then
+		    echo "Enter Google Map V2 API key :"
+		    echo "you can get one for the selected $newpackagename at following URL (right click to open link) :"
+		    echo "https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=61:ED:37:7E:85:D3:86:A8:DF:EE:6B:86:4B:D8:5B:0B:FA:A5:AF:81;$newpackagename&pli=1"
+		    echo ""
+		    read -rp "Google API key : " googleapikey
+		else
+		    echo "Use provided Google API Key :" "$googleapikey"
+		fi
+		./prepare_clone.sh "$workdir" "$newpackagename" "$googleapikey" "$newapplabel"
+	else
+		echo "Make sure you've selected ENABLE HERE MAPS + entered your keys!"
+		./prepare_clone_heremaps.sh "$workdir" "$newpackagename" "$newapplabel"
+	fi
+    
 fi
 
 # Replace the application icon by the provided one.
@@ -425,7 +455,7 @@ then
             echo ""
             echo "A window with image should open, when ready close it and choose to keep or try a new color value"
             echo "on OSX you have to close the windows with cmd+Q to return to script execution"
-            convert "/tmp/test-$unique_rnd.png -modulate 100,100,$hue_shift" "/tmp/test-$unique_rnd-out.png"
+            convert "/tmp/test-$unique_rnd.png" -modulate 100,100,$hue_shift "/tmp/test-$unique_rnd-out.png"
             $DISPLAYCMD "/tmp/test-$unique_rnd-out.png"
             echo ""
             if [ "$SYSTEMTYPE" = OSX ] ; then
@@ -460,6 +490,8 @@ fi
 if [ "$repack_step" = "true" ] || [ "$repack_step" = "y" ] || [ "$repack_step" = "1" ]
 then
     echo Rebuilding apk
+    echo "Do any AndroidManifest.xml modifications now, then press Enter to start repacking (press enter if you do not want to modify AndroidManifest.xml)"
+    read
     rm -rf "$outdir/build"
     java -jar tools/apktool.jar b -o "$outdir/$moddedapkname" "$workdir"
     echo Signing with testkey

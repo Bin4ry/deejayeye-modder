@@ -1,0 +1,28 @@
+diff -Naur orig/smali_classes6/dji/pilot/publics/b/a.smali mod/smali_classes6/dji/pilot/publics/b/a.smali
+--- orig/smali_classes6/dji/pilot/publics/b/a.smali	2018-05-06 11:01:49.710193200 +0200
++++ mod/smali_classes6/dji/pilot/publics/b/a.smali	2018-05-06 11:18:06.691217100 +0200
+@@ -597,24 +597,6 @@
+     .locals 3
+ 
+     .prologue
+-    .line 309
+-    new-instance v0, Landroid/content/Intent;
+-
+-    iget-object v1, p0, Ldji/pilot/publics/b/a;->a:Landroid/app/Application;
+-
+-    const-class v2, Ldji/dbox/upgrade/p4/statemachine/DJIUpgradeService;
+-
+-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+-
+-    iput-object v0, p0, Ldji/pilot/publics/b/a;->c:Landroid/content/Intent;
+-
+-    .line 310
+-    iget-object v0, p0, Ldji/pilot/publics/b/a;->a:Landroid/app/Application;
+-
+-    iget-object v1, p0, Ldji/pilot/publics/b/a;->c:Landroid/content/Intent;
+-
+-    invoke-virtual {v0, v1}, Landroid/app/Application;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+-
+     .line 311
+     return-void
+ .end method
