@@ -69,4 +69,4 @@ removeNfzUpdate:
 Removes popup "New Fly Safe data found... DJI GO 4 cannot be used normally without updating." and similiar popups. It's not removing NFZ system, just upgrade popups!
 
 enableGoHomeAvoidSwitchOnSpark:
-brings back the option to disable ETH Obstacle Detection and thus the possibility to have a faster RTH speed (g_config.go_home.gohome_idle_vel) on Spark
+brings back the option to disable RTH Obstacle Detection and thus the possibility to have a faster RTH speed (g_config.go_home.gohome_idle_vel) on Spark
