@@ -1,0 +1,12 @@
+diff -Naur orig/smali_classes7/dji/setting/ui/vision/VisionAdvancedSettingItemViewGroup.smali mod/smali_classes7/dji/setting/ui/vision/VisionAdvancedSettingItemViewGroup.smali
+--- orig/smali_classes7/dji/setting/ui/vision/VisionAdvancedSettingItemViewGroup.smali	2018-04-10 18:07:08.919152810 +0200
++++ mod/smali_classes7/dji/setting/ui/vision/VisionAdvancedSettingItemViewGroup.smali	2019-08-13 14:41:11.919417867 +0200
+@@ -30,7 +30,7 @@
+     if-eqz v0, :cond_0
+ 
+     .line 39
+-    const/16 v0, 0x8
++    const/16 v0, 0x0
+ 
+     invoke-virtual {p0, v0}, Ldji/setting/ui/vision/VisionAdvancedSettingItemViewGroup;->setVisibility(I)V
+ 
