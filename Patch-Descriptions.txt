@@ -88,3 +88,7 @@ enables the CSC option in Settings -> Advanced for Spark
 
 enableGoHomeAvoidSwitchOnSpark:
 brings back the option to disable RTH Obstacle Detection and thus the possibility to have a faster RTH speed (g_config.go_home.gohome_idle_vel) on Spark
+
+enableLEDSwitchOnSpark
+Enables dark mode on Spark. Fly responsibly.
+
