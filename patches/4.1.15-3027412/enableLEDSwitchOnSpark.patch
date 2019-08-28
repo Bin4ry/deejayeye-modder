@@ -1,0 +1,838 @@
+diff -Naur orig/smali/dji/midware/data/model/P3/DataFlycAssistantLock.smali mod/smali/dji/midware/data/model/P3/DataFlycAssistantLock.smali
+--- orig/smali/dji/midware/data/model/P3/DataFlycAssistantLock.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali/dji/midware/data/model/P3/DataFlycAssistantLock.smali	2019-08-27 18:07:49.755658752 +0200
+@@ -0,0 +1,185 @@
++.class public Ldji/midware/data/model/P3/DataFlycAssistantLock;
++.super Ldji/midware/data/manager/P3/p;
++.source "SourceFile"
++
++# interfaces
++.implements Ldji/midware/e/e;
++
++
++# static fields
++.field private static a:Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .locals 1
++
++    .prologue
++    .line 24
++    const/4 v0, 0x0
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycAssistantLock;->a:Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++    return-void
++.end method
++
++.method public constructor <init>()V
++    .locals 0
++
++    .prologue
++    .line 22
++    invoke-direct {p0}, Ldji/midware/data/manager/P3/p;-><init>()V
++
++    return-void
++.end method
++
++.method public static declared-synchronized getInstance()Ldji/midware/data/model/P3/DataFlycAssistantLock;
++    .locals 2
++
++    .prologue
++    .line 27
++    const-class v1, Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++    monitor-enter v1
++
++    :try_start_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycAssistantLock;->a:Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++    if-nez v0, :cond_0
++
++    .line 28
++    new-instance v0, Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataFlycAssistantLock;-><init>()V
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycAssistantLock;->a:Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++    .line 30
++    :cond_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycAssistantLock;->a:Ldji/midware/data/model/P3/DataFlycAssistantLock;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    monitor-exit v1
++
++    return-object v0
++
++    .line 27
++    :catchall_0
++    move-exception v0
++
++    monitor-exit v1
++
++    throw v0
++.end method
++
++
++# virtual methods
++.method protected doPack()V
++    .locals 3
++
++    .prologue
++    .line 45
++    const/4 v0, 0x4
++
++    new-array v0, v0, [B
++
++    iput-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    .line 46
++    iget-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    const/4 v1, 0x0
++
++    const/4 v2, 0x1
++
++    aput-byte v1, v0, v1
++
++    aput-byte v1, v0, v2
++
++    const/4 v2, 0x2
++
++    aput-byte v1, v0, v2
++
++    const/4 v2, 0x3
++
++    aput-byte v1, v0, v2
++
++    .line 47
++    return-void
++.end method
++
++.method public start()V
++    .locals 2
++
++    .prologue
++    .line 54
++    new-instance v0, Ldji/midware/data/a/a/d;
++
++    invoke-direct {v0}, Ldji/midware/data/a/a/d;-><init>()V
++
++    .line 55
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->APP:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->f:I
++
++    .line 56
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->FLYC:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->h:I
++
++    .line 57
++    sget-object v1, Ldji/midware/data/config/P3/v$a;->a:Ldji/midware/data/config/P3/v$a;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$a;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->j:I
++
++    .line 58
++    sget-object v1, Ldji/midware/data/config/P3/v$c;->a:Ldji/midware/data/config/P3/v$c;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$c;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->k:I
++
++    .line 59
++    sget-object v1, Ldji/midware/data/config/P3/v$b;->a:Ldji/midware/data/config/P3/v$b;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$b;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->l:I
++
++    .line 60
++    sget-object v1, Ldji/midware/data/config/P3/t;->d:Ldji/midware/data/config/P3/t;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/t;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->m:I
++
++    .line 61
++    const/16 v1, 0xdf
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->n:I
++
++    .line 65
++    invoke-virtual {p0, v0}, Ldji/midware/data/model/P3/DataFlycLEDsOn;->start(Ldji/midware/data/a/a/d;)V
++
++    .line 66
++    return-void
++.end method
+diff -Naur orig/smali/dji/midware/data/model/P3/DataFlycAssistantUnlock.smali mod/smali/dji/midware/data/model/P3/DataFlycAssistantUnlock.smali
+--- orig/smali/dji/midware/data/model/P3/DataFlycAssistantUnlock.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali/dji/midware/data/model/P3/DataFlycAssistantUnlock.smali	2019-08-27 17:55:47.765640894 +0200
+@@ -0,0 +1,185 @@
++.class public Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++.super Ldji/midware/data/manager/P3/p;
++.source "SourceFile"
++
++# interfaces
++.implements Ldji/midware/e/e;
++
++
++# static fields
++.field private static a:Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .locals 1
++
++    .prologue
++    .line 24
++    const/4 v0, 0x0
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;->a:Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++    return-void
++.end method
++
++.method public constructor <init>()V
++    .locals 0
++
++    .prologue
++    .line 22
++    invoke-direct {p0}, Ldji/midware/data/manager/P3/p;-><init>()V
++
++    return-void
++.end method
++
++.method public static declared-synchronized getInstance()Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++    .locals 2
++
++    .prologue
++    .line 27
++    const-class v1, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++    monitor-enter v1
++
++    :try_start_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;->a:Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++    if-nez v0, :cond_0
++
++    .line 28
++    new-instance v0, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;-><init>()V
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;->a:Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++    .line 30
++    :cond_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;->a:Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    monitor-exit v1
++
++    return-object v0
++
++    .line 27
++    :catchall_0
++    move-exception v0
++
++    monitor-exit v1
++
++    throw v0
++.end method
++
++
++# virtual methods
++.method protected doPack()V
++    .locals 4
++
++    .prologue
++    .line 45
++    const/4 v0, 0x4
++
++    new-array v0, v0, [B
++
++    iput-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    .line 46
++    iget-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    const/4 v1, 0x0
++
++    const/4 v2, 0x1
++
++    aput-byte v2, v0, v1
++
++    aput-byte v2, v0, v2
++
++    const/4  v3, 0x2
++
++    aput-byte v2, v0, v3
++
++    const/4 v3, 0x3
++
++    aput-byte v1, v0, v3
++    
++    .line 47
++    return-void
++.end method
++
++.method public start()V
++    .locals 2
++
++    .prologue
++    .line 54
++    new-instance v0, Ldji/midware/data/a/a/d;
++
++    invoke-direct {v0}, Ldji/midware/data/a/a/d;-><init>()V
++
++    .line 55
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->APP:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->f:I
++
++    .line 56
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->FLYC:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->h:I
++
++    .line 57
++    sget-object v1, Ldji/midware/data/config/P3/v$a;->a:Ldji/midware/data/config/P3/v$a;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$a;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->j:I
++
++    .line 58
++    sget-object v1, Ldji/midware/data/config/P3/v$c;->a:Ldji/midware/data/config/P3/v$c;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$c;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->k:I
++
++    .line 59
++    sget-object v1, Ldji/midware/data/config/P3/v$b;->a:Ldji/midware/data/config/P3/v$b;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$b;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->l:I
++
++    .line 60
++    sget-object v1, Ldji/midware/data/config/P3/t;->d:Ldji/midware/data/config/P3/t;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/t;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->m:I
++
++    .line 61
++    const/16 v1, 0xdf
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->n:I
++
++    .line 65
++    invoke-virtual {p0, v0}, Ldji/midware/data/model/P3/DataFlycLEDsOn;->start(Ldji/midware/data/a/a/d;)V
++
++    .line 66
++    return-void
++.end method
+diff -Naur orig/smali/dji/midware/data/model/P3/DataFlycLEDsOff.smali mod/smali/dji/midware/data/model/P3/DataFlycLEDsOff.smali
+--- orig/smali/dji/midware/data/model/P3/DataFlycLEDsOff.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali/dji/midware/data/model/P3/DataFlycLEDsOff.smali	2019-08-27 16:29:16.433607544 +0200
+@@ -0,0 +1,179 @@
++.class public Ldji/midware/data/model/P3/DataFlycLEDsOff;
++.super Ldji/midware/data/manager/P3/p;
++.source "SourceFile"
++
++# interfaces
++.implements Ldji/midware/e/e;
++
++
++# static fields
++.field private static a:Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .locals 1
++
++    .prologue
++    .line 24
++    const/4 v0, 0x0
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOff;->a:Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++    return-void
++.end method
++
++.method public constructor <init>()V
++    .locals 0
++
++    .prologue
++    .line 22
++    invoke-direct {p0}, Ldji/midware/data/manager/P3/p;-><init>()V
++
++    return-void
++.end method
++
++.method public static declared-synchronized getInstance()Ldji/midware/data/model/P3/DataFlycLEDsOff;
++    .locals 2
++
++    .prologue
++    .line 27
++    const-class v1, Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++    monitor-enter v1
++
++    :try_start_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOff;->a:Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++    if-nez v0, :cond_0
++
++    .line 28
++    new-instance v0, Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataFlycLEDsOff;-><init>()V
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOff;->a:Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++    .line 30
++    :cond_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOff;->a:Ldji/midware/data/model/P3/DataFlycLEDsOff;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    monitor-exit v1
++
++    return-object v0
++
++    .line 27
++    :catchall_0
++    move-exception v0
++
++    monitor-exit v1
++
++    throw v0
++.end method
++
++
++# virtual methods
++.method protected doPack()V
++    .locals 3
++
++    .prologue
++    .line 45
++    const/4 v0, 0x2
++
++    new-array v0, v0, [B
++
++    iput-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    .line 46
++    iget-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    const/4 v1, 0x0
++
++    const/16 v2, 0x64
++
++    aput-byte v2, v0, v1
++
++    const/4 v2, 0x1
++
++    aput-byte v1, v0, v2
++
++    .line 47
++    return-void
++.end method
++
++.method public start()V
++    .locals 2
++
++    .prologue
++    .line 54
++    new-instance v0, Ldji/midware/data/a/a/d;
++
++    invoke-direct {v0}, Ldji/midware/data/a/a/d;-><init>()V
++
++    .line 55
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->APP:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->f:I
++
++    .line 56
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->FLYC:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->h:I
++
++    .line 57
++    sget-object v1, Ldji/midware/data/config/P3/v$a;->a:Ldji/midware/data/config/P3/v$a;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$a;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->j:I
++
++    .line 58
++    sget-object v1, Ldji/midware/data/config/P3/v$c;->a:Ldji/midware/data/config/P3/v$c;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$c;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->k:I
++
++    .line 59
++    sget-object v1, Ldji/midware/data/config/P3/v$b;->a:Ldji/midware/data/config/P3/v$b;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$b;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->l:I
++
++    .line 60
++    sget-object v1, Ldji/midware/data/config/P3/t;->d:Ldji/midware/data/config/P3/t;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/t;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->m:I
++
++    .line 61
++    const/16 v1, 0xe9
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->n:I
++
++    .line 65
++    invoke-virtual {p0, v0}, Ldji/midware/data/model/P3/DataFlycLEDsOn;->start(Ldji/midware/data/a/a/d;)V
++
++    .line 66
++    return-void
++.end method
+diff -Naur orig/smali/dji/midware/data/model/P3/DataFlycLEDsOn.smali mod/smali/dji/midware/data/model/P3/DataFlycLEDsOn.smali
+--- orig/smali/dji/midware/data/model/P3/DataFlycLEDsOn.smali	1970-01-01 01:00:00.000000000 +0100
++++ mod/smali/dji/midware/data/model/P3/DataFlycLEDsOn.smali	2019-08-27 17:57:17.872017239 +0200
+@@ -0,0 +1,179 @@
++.class public Ldji/midware/data/model/P3/DataFlycLEDsOn;
++.super Ldji/midware/data/manager/P3/p;
++.source "SourceFile"
++
++# interfaces
++.implements Ldji/midware/e/e;
++
++
++# static fields
++.field private static a:Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .locals 1
++
++    .prologue
++    .line 24
++    const/4 v0, 0x0
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOn;->a:Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++    return-void
++.end method
++
++.method public constructor <init>()V
++    .locals 0
++
++    .prologue
++    .line 22
++    invoke-direct {p0}, Ldji/midware/data/manager/P3/p;-><init>()V
++
++    return-void
++.end method
++
++.method public static declared-synchronized getInstance()Ldji/midware/data/model/P3/DataFlycLEDsOn;
++    .locals 2
++
++    .prologue
++    .line 27
++    const-class v1, Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++    monitor-enter v1
++
++    :try_start_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOn;->a:Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++    if-nez v0, :cond_0
++
++    .line 28
++    new-instance v0, Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++    invoke-direct {v0}, Ldji/midware/data/model/P3/DataFlycLEDsOn;-><init>()V
++
++    sput-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOn;->a:Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++    .line 30
++    :cond_0
++    sget-object v0, Ldji/midware/data/model/P3/DataFlycLEDsOn;->a:Ldji/midware/data/model/P3/DataFlycLEDsOn;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    monitor-exit v1
++
++    return-object v0
++
++    .line 27
++    :catchall_0
++    move-exception v0
++
++    monitor-exit v1
++
++    throw v0
++.end method
++
++
++# virtual methods
++.method protected doPack()V
++    .locals 3
++
++    .prologue
++    .line 45
++    const/4 v0, 0x2
++
++    new-array v0, v0, [B
++
++    iput-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    .line 46
++    iget-object v0, p0, Ldji/midware/data/model/P3/DataFlycFunctionControl;->_sendData:[B
++
++    const/4 v1, 0x0
++
++    const/16 v2, 0x65
++
++    aput-byte v2, v0, v1
++
++    const/4 v2, 0x1
++
++    aput-byte v1, v0, v2
++
++    .line 47
++    return-void
++.end method
++
++.method public start()V
++    .locals 2
++
++    .prologue
++    .line 54
++    new-instance v0, Ldji/midware/data/a/a/d;
++
++    invoke-direct {v0}, Ldji/midware/data/a/a/d;-><init>()V
++
++    .line 55
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->APP:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->f:I
++
++    .line 56
++    sget-object v1, Ldji/midware/data/config/P3/DeviceType;->FLYC:Ldji/midware/data/config/P3/DeviceType;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/DeviceType;->value()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->h:I
++
++    .line 57
++    sget-object v1, Ldji/midware/data/config/P3/v$a;->a:Ldji/midware/data/config/P3/v$a;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$a;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->j:I
++
++    .line 58
++    sget-object v1, Ldji/midware/data/config/P3/v$c;->a:Ldji/midware/data/config/P3/v$c;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$c;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->k:I
++
++    .line 59
++    sget-object v1, Ldji/midware/data/config/P3/v$b;->a:Ldji/midware/data/config/P3/v$b;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/v$b;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->l:I
++
++    .line 60
++    sget-object v1, Ldji/midware/data/config/P3/t;->d:Ldji/midware/data/config/P3/t;
++
++    invoke-virtual {v1}, Ldji/midware/data/config/P3/t;->a()I
++
++    move-result v1
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->m:I
++
++    .line 61
++    const/16 v1, 0xe9
++
++    iput v1, v0, Ldji/midware/data/a/a/d;->n:I
++
++    .line 65
++    invoke-virtual {p0, v0}, Ldji/midware/data/model/P3/DataFlycLEDsOn;->start(Ldji/midware/data/a/a/d;)V
++
++    .line 66
++    return-void
++.end method
+diff -Naur orig/smali_classes6/dji/setting/ui/flyc/ForearmLampView.smali mod/smali_classes6/dji/setting/ui/flyc/ForearmLampView.smali
+--- orig/smali_classes6/dji/setting/ui/flyc/ForearmLampView.smali	2018-04-10 18:07:08.435134670 +0200
++++ mod/smali_classes6/dji/setting/ui/flyc/ForearmLampView.smali	2019-08-28 14:50:59.631289657 +0200
+@@ -168,6 +168,12 @@
+ 
+     if-nez v2, :cond_0
+ 
++    invoke-static {}, Ldji/pilot/publics/util/c;->d()Z
++
++    move-result v2
++
++    if-nez v2, :cond_0
++
+     .line 153
+     invoke-static {v4}, Ldji/pilot/publics/util/c;->k(Ldji/midware/data/config/P3/ProductType;)Z
+ 
+@@ -195,6 +201,12 @@
+     move-result v0
+ 
+     .line 158
++    invoke-static {}, Ldji/pilot/publics/util/c;->d()Z
++
++    move-result v2
++
++    if-nez v2, :cond_4
++
+     invoke-static {}, Ldji/midware/data/manager/P3/k;->getInstance()Ldji/midware/data/manager/P3/k;
+ 
+     move-result-object v2
+@@ -216,13 +228,6 @@
+ 
+     if-nez v0, :cond_3
+ 
+-    .line 160
+-    invoke-static {}, Ldji/pilot/publics/util/c;->d()Z
+-
+-    move-result v0
+-
+-    if-nez v0, :cond_3
+-
+     .line 161
+     invoke-static {v1}, Ldji/pilot/publics/util/c;->f(Ljava/lang/String;)Z
+ 
+@@ -231,6 +236,7 @@
+     if-nez v0, :cond_3
+ 
+     .line 163
++    :cond_4
+     invoke-virtual {p0}, Ldji/setting/ui/flyc/ForearmLampView;->getVisibility()I
+ 
+     move-result v0
+@@ -414,6 +420,42 @@
+ 
+     const/4 v1, 0x0
+ 
++    invoke-static {}, Ldji/pilot/publics/util/c;->d()Z
++
++    move-result v2
++
++    if-eqz v2, :goto_3
++
++    if-eqz p2, :goto_4
++
++    invoke-static {}, Ldji/midware/data/model/P3/DataFlycLEDsOn;->getInstance()Ldji/midware/data/model/P3/DataFlycLEDsOn;
++
++    move-result-object v2
++
++    invoke-virtual {v2}, Ldji/midware/data/model/P3/DataFlycLEDsOn;->start()V
++
++    invoke-static {}, Ldji/midware/data/model/P3/DataFlycAssistantLock;->getInstance()Ldji/midware/data/model/P3/DataFlycAssistantLock;
++
++    move-result-object v2
++
++    invoke-virtual {v2}, Ldji/midware/data/model/P3/DataFlycAssistantLock;->start()V
++
++    goto :goto_3
++
++    :goto_4
++    invoke-static {}, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;->getInstance()Ldji/midware/data/model/P3/DataFlycAssistantUnlock;
++
++    move-result-object v2
++
++    invoke-virtual {v2}, Ldji/midware/data/model/P3/DataFlycAssistantUnlock;->start()V
++
++    invoke-static {}, Ldji/midware/data/model/P3/DataFlycLEDsOff;->getInstance()Ldji/midware/data/model/P3/DataFlycLEDsOff;
++
++    move-result-object v2
++
++    invoke-virtual {v2}, Ldji/midware/data/model/P3/DataFlycLEDsOff;->start()V
++
++    :goto_3
+     .line 63
+     sget-object v2, Ldji/setting/ui/flyc/ForearmLampView;->ad:Ljava/lang/String;
+ 
