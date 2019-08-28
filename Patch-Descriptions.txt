@@ -32,7 +32,7 @@ soPatch:
 This patch is automatically applied with "remove Onlinefunction". Will patch the libSDKRelativeJNI.so to stop it from calling home! 
 
 remove Google API:
-will remove Google API's (keep them if you want social!)
+Will remove Google API's (keep them if you want social!)
 
 remove Social:
 This will remove all the social network stuff. FB, Twitter blablab (if you want this you should keep googleapi's too!)
@@ -41,32 +41,54 @@ enable P3series:
 This patch will enable P3 Series with DJI Go, you HAVE TO remove the SD-Card otherwise it will crash. (thx to DKoro1)
 
 enableMavicFlightModesOnSpark:
-enable Mavic Pro flight modes for Spark (thx djayeyeballs)
+Enable Mavic Pro flight modes for Spark (thx djayeyeballs)
 
 enableSparkWifiChannelSelectOnOtg:
-brings back the Wifi channel selection screen! Works but the graph where you can see the network occupation is not filled with data yet. 
+Brings back the Wifi channel selection screen! Works but the graph where you can see the network occupation is not filled with data yet. 
 
 enableCacheControl:
-brings back the option whether to cache video locally or not. May reduced crashes and CPU-load if switched off.
+Brings back the option whether to cache video locally or not. May reduced crashes and CPU-load if switched off.
 
 wind/windWarning:
-removes the "high wind velocity. fly with caution." pop-up.
+Removes the "high wind velocity. fly with caution." pop-up.
 
 wheel:
-removes the "Remote Controller Right Dial Locked. Lightly press it to adjust" pop-up. Inspire 2 only!
+Removes the "Remote Controller Right Dial Locked. Lightly press it to adjust" pop-up. Inspire 2 only!
 
 point of interest for inspire 2:
-activates point of interest for inspire 2. this has not been fully tested, be careful while using!
+Activates point of interest for inspire 2. this has not been fully tested, be careful while using!
 
 MakeDBPublic:
-will move the app private database dji.db wich is normally located at /data/data/dji.go.v4/databases/dji.db to /mnt/sdcard/DJI/dji_mod_{version_string}.db
+Will move the app private database dji.db wich is normally located at /data/data/dji.go.v4/databases/dji.db to /mnt/sdcard/DJI/dji_mod_{version_string}.db
 This database hold the recorded missions and moving it in user public area allow to do offline flight planning on non rooted devices ( https://www.dropbox.com/s/ne4rk6l7dr3qphj/Tutorial%20DJI%20Waypoints%20with%20Spark.pdf?dl=0 )
 
 RemovePlatiniumMotorPropError(FW<1.03.1000):
 Removes the "Motor current error. Check your propellers and fly with caution." pop-up on Mavic Pro Platinium when using flight controler modules (305 & 306) which come from Firmware < 1.03.1000
 
-removeNfzUpdate:
-Removes popup "New Fly Safe data found... DJI GO 4 cannot be used normally without updating." and similiar popups. It's not removing NFZ system, just upgrade popups!
+adjustAltitude:
+Shows correct altitude beyond +-3276.7m
+
+removeNfzUpdate-Appside:
+Removes popup "New Fly Safe data found... DJI GO 4 cannot be used normally without updating." and similiar popups. It's not removing NFZ system, just upgrade popups! Also removes all NFZ related stuff on the APP. THIS WILL NOT MAKE YOUR BIRD FLY IN NFZ! You still need to make the correct patches to the bird. Please read here: http://dji.retroroms.info/howto/nfzbypass
+
+enable MapBox:
+Mapbox is in teststage by DJI. Feel free to try it already.
+
+runtime_use_GoogleMap:
+Assuming you have a valid Google API key and a valid HereMap key for the signing key and package names, then you can switch between GoogleMap and Here maps :
+If a file named useGoogleMap can be found in /DJI/og_settings/ (you'll have to manually create this subdirectory), then GoogleMap will be used, otherwise, HereMaps will be used.
+If the mapbox patch is enabled and you choosed mapbox within the app, then mapbox will be used.
+For CrystalSky special versions, the cs_only_allowgooglemap.patch must also be used together with this patch. This requires a rooted CS with GooglePlayServices installed
+
+enableHereMaps:
+Renews invalid HERE Maps key and reenables HERE Maps (Note: hybrid and sat maps are disabled)
+
+enableCSCOnSpark:
+enables the CSC option in Settings -> Advanced for Spark
+
+enableGoHomeAvoidSwitchOnSpark:
+brings back the option to disable RTH Obstacle Detection and thus the possibility to have a faster RTH speed (g_config.go_home.gohome_idle_vel) on Spark
 
 enableLEDSwitchOnSpark
 Enables dark mode on Spark. Fly responsibly.
+

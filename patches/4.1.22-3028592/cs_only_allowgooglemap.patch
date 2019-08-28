@@ -1,0 +1,21 @@
+--- orig/smali_classes4/dji/e/a.smali	2018-04-30 18:20:20.957383700 +0200
++++ mod/smali_classes4/dji/e/a.smali	2018-05-15 15:47:23.643656300 +0200
+@@ -133,6 +133,8 @@
+ 
+     const/4 v1, 0x0
+ 
++    goto :cond_b    # Added to allow google maps on rooted CS with GooglePlayServices installed
++
+     .line 131
+     invoke-static {}, Ldji/midware/data/manager/a/d;->getInstance()Ldji/midware/data/manager/a/d;
+ 
+@@ -1512,7 +1514,8 @@
+     .line 184
+     const/4 v0, 0x0
+ 
+-    invoke-direct {p0, p1, v0}, Ldji/e/a;->a(Landroid/content/Context;Z)V
++#    invoke-direct {p0, p1, v0}, Ldji/e/a;->a(Landroid/content/Context;Z)V
++    invoke-direct {p0, p1}, Ldji/e/a;->a(Landroid/content/Context;)V
+ 
+     .line 185
+     return-void
