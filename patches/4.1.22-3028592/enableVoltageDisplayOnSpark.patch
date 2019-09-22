@@ -1,0 +1,21 @@
+diff -Naur orig/smali_classes5/dji/pilot/newfpv/topbar/sub/DJIFpvTopBatteryView.smali mod/smali_classes5/dji/pilot/newfpv/topbar/sub/DJIFpvTopBatteryView.smali
+--- orig/smali_classes5/dji/pilot/newfpv/topbar/sub/DJIFpvTopBatteryView.smali	2018-06-01 20:14:36.641867400 +0200
++++ mod/smali_classes5/dji/pilot/newfpv/topbar/sub/DJIFpvTopBatteryView.smali	2019-09-22 17:08:28.714541700 +0200
+@@ -847,7 +847,7 @@
+     :cond_0
+     iget-object v0, p0, Ldji/pilot/newfpv/topbar/sub/DJIFpvTopBatteryView;->j:Landroid/widget/TextView;
+ 
+-    const/16 v1, 0x8
++    const/16 v1, 0x0
+ 
+     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+ 
+@@ -905,7 +905,7 @@
+     :cond_0
+     iget-object v0, p0, Ldji/pilot/newfpv/topbar/sub/DJIFpvTopBatteryView;->j:Landroid/widget/TextView;
+ 
+-    const/16 v1, 0x8
++    const/16 v1, 0x0
+ 
+     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+ 
