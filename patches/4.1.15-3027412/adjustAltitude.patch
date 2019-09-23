@@ -1,0 +1,166 @@
+diff -Naur orig/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali mod/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali
+--- orig/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali	2018-04-10 18:06:53.866589587 +0200
++++ mod/smali/dji/midware/data/model/P3/DataOsdGetPushCommon.smali	2019-03-05 15:57:23.101191110 +0100
+@@ -26,6 +26,7 @@
+ 
+ # static fields
+ .field private static instance:Ldji/midware/data/model/P3/DataOsdGetPushCommon;
++.field private static adjusted_altitude:I
+ 
+ 
+ # direct methods
+@@ -38,6 +39,10 @@
+ 
+     sput-object v0, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->instance:Ldji/midware/data/model/P3/DataOsdGetPushCommon;
+ 
++    const/4 v0, 0x0
++
++    sput v0, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->adjusted_altitude:I
++
+     return-void
+ .end method
+ 
+@@ -562,6 +567,132 @@
+     return v0
+ .end method
+ 
++.method public static adjust_altitude(I)I
++    .registers 7
++
++    .prologue
++    .line 176
++    const/4 v0, 0x0
++
++    .line 180
++    sget v2, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->adjusted_altitude:I
++
++    .line 187
++    const/4 v3, 0x6
++
++    .line 190
++    const/16 v4, 0x1388
++
++    .line 193
++    const/4 v1, 0x1
++
++    :goto_7
++    if-ge v1, v3, :cond_49
++
++    .line 194
++    if-ltz v2, :cond_27
++
++    mul-int/lit16 v5, v1, 0x7fff
++
++    sub-int/2addr v5, v4
++
++    if-ge v2, v5, :cond_27
++
++    .line 195
++    rem-int/lit8 v0, v1, 0x2
++
++    if-nez v0, :cond_1c
++
++    if-gez p0, :cond_1c
++
++    .line 196
++    mul-int/lit16 v0, v1, 0x7fff
++
++    add-int/2addr p0, v0
++
++    .line 220
++    :cond_19
++    :goto_19
++    sput p0, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->adjusted_altitude:I
++
++    .line 222
++    return p0
++
++    .line 198
++    :cond_1c
++    add-int/lit8 v0, v1, -0x1
++
++    add-int/lit8 v1, v1, -0x1
++
++    rem-int/lit8 v1, v1, 0x2
++
++    sub-int/2addr v0, v1
++
++    mul-int/lit16 v0, v0, 0x7fff
++
++    add-int/2addr p0, v0
++
++    .line 199
++    goto :goto_19
++
++    .line 202
++    :cond_27
++    if-gez v2, :cond_43
++
++    mul-int/lit16 v5, v1, -0x8000
++
++    add-int/2addr v5, v4
++
++    if-le v2, v5, :cond_43
++
++    .line 203
++    rem-int/lit8 v0, v1, 0x2
++
++    if-nez v0, :cond_38
++
++    if-lez p0, :cond_38
++
++    .line 204
++    mul-int/lit16 v0, v1, -0x8000
++
++    add-int/2addr p0, v0
++
++    goto :goto_19
++
++    .line 206
++    :cond_38
++    add-int/lit8 v0, v1, -0x1
++
++    add-int/lit8 v1, v1, -0x1
++
++    rem-int/lit8 v1, v1, 0x2
++
++    sub-int/2addr v0, v1
++
++    mul-int/lit16 v0, v0, -0x8000
++
++    add-int/2addr p0, v0
++
++    .line 207
++    goto :goto_19
++
++    .line 211
++    :cond_43
++    const/4 v5, 0x5
++
++    if-eq v1, v5, :cond_19
++
++    .line 193
++    add-int/lit8 v1, v1, 0x1
++
++    goto :goto_7
++
++    :cond_49
++    move p0, v0
++
++    goto :goto_19
++.end method
++
+ .method public getHeight()I
+     .locals 3
+ 
+@@ -583,6 +714,10 @@
+ 
+     move-result v0
+ 
++    invoke-static {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->adjust_altitude(I)I
++
++    move-result v0
++
+     return v0
+ .end method
+ 

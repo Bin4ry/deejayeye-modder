@@ -92,12 +92,12 @@ if !keepSource!==keep (set keepSource=remove) else (set keepSource=keep)
 goto:eof
 :menu_R - View readme
 cls
-more Readme.md
+more /E Readme.md
 pause
 GOTO:EOF
 :menu_D - View patch descriptions
 cls
-more Patch-Descriptions.txt
+more /E Patch-Descriptions.txt
 pause
 GOTO:EOF
 :menu_L - Add additonal languages if present
@@ -112,7 +112,7 @@ echo.
 echo.-: Converting patches...
 rename "%patches%\origin" origin.patch
 for /f "tokens=*" %%f in ('dir /b %patches%\*.patch') do ( copy %patches%\%%f %p_out%\%%f.copy >nul
- TYPE "%p_out%\%%f.copy" | MORE /P > "%p_out%\%%f"
+ TYPE "%p_out%\%%f.copy" | MORE /E /P > "%p_out%\%%f"
  del /f /q %p_out%\%%f.copy )
 rename "%patches%\origin.patch" origin
 echo.-: Decompiling original apk...
@@ -132,7 +132,15 @@ for /f "tokens=1,* delims=. " %%f in ('dir /b ..\%p_out%\*.patch') do ( if /i "!
   if "%%f"=="removeOnlinefunction" ( echo.-: Supporting with so.bspatch...
    ..\tools\bspatch lib\armeabi-v7a\libSDKRelativeJNI.so lib\armeabi-v7a\libSDKRelativeJNI-n.so ..\%patches%\so.bspatch"
    del /f /q "lib\armeabi-v7a\libSDKRelativeJNI.so"
-   rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so ) ) )
+   rename "lib\armeabi-v7a\libSDKRelativeJNI-n.so" libSDKRelativeJNI.so )
+   if "%%f"=="removeNFZ_ApplicationPart" ( echo.-: Deleting all NFZ db all files...
+   del /f /q "assets\expansion\internal\flysafe\dji.nfzdb.confumix"
+   del /f /q "assets\expansion\internal\flysafe\dji.nfzdb.sig"
+   del /f /q "assets\expansion\internal\flysafe\flysafe_areas_djigo.db"
+   del /f /q "assets\expansion\internal\flysafe\flysafe_polygon_1860.db"
+   del /f /q "assets\expansion\internal\flysafe\flyforbid_airmap\*.json"
+   del /f /q "res\raw\flyforbid.json"
+   copy /b NUL "res\raw\flyforbid.json" ) ) )
 REM nothing
 REM here
 cd ..
@@ -160,8 +168,8 @@ exit
 ::-----------------------------------------------------------
 :: helpers here
 ::-----------------------------------------------------------
-:sleep -– waits some seconds before returning
-::     -- %~1 – in, number of seconds to wait
+:sleep :: -- waits some seconds before returning
+::        -- %~1 – in, number of seconds to wait
 FOR /l %%a in (%~1,-1,1) do (ping -n 2 -w 1 127.0.0.1>NUL)
 GOTO:EOF
 :chkinst -- check for required items

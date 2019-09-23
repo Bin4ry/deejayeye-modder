@@ -1,109 +1,199 @@
-diff -Naru orig/smali_classes4/dji/data/upgrade/d/a.smali mod/smali_classes4/dji/data/upgrade/d/a.smali
---- orig/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-01 14:30:30.204308700 +0200
-+++ mod/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-01 15:07:07.112777500 +0200
-@@ -1060,7 +1060,7 @@
+diff -Naur orig/AndroidManifest.xml mod/AndroidManifest.xml
+--- orig/AndroidManifest.xml	2018-04-24 21:46:02.622193600 +0200
++++ mod/AndroidManifest.xml	2018-04-24 21:51:43.073739000 +0200
+@@ -73,7 +73,6 @@
+         <service android:name="dji.pilot2.flymonitor.service.FlyMonitorService" android:stopWithTask="true"/>
+         <service android:name="dji.pilot.flightrecord.DJIRecordService" android:stopWithTask="true"/>
+         <service android:name="dji.pilot.battery.service.BatteryCheckService" android:stopWithTask="true"/>
+-        <service android:name="dji.pilot.flyforbid.FlyforbidUpdateService" android:stopWithTask="true"/>
+         <receiver android:name="dji.pilot2.publics.receiver.NetworkStatShutdownReceiver">
+             <intent-filter>
+                 <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+@@ -287,7 +286,6 @@
+             </intent-filter>
+         </receiver>
+         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="dji.assets.InstallActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+-        <service android:name="dji.assets.obbdownloader.download.ObbDownloadService"/>
+         <activity android:label="@string/app_name" android:name="dji.setting.ui.MainActivity" android:screenOrientation="sensorLandscape" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateHidden"/>
+         <activity android:name="dji.checklist.TestCheckListActivity" android:screenOrientation="sensorLandscape"/>
+         <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dji.update.view.UpdateDialogActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+diff -Naur orig/apktool.yml mod/apktool.yml
+--- orig/apktool.yml	2018-04-24 21:46:22.302838700 +0200
++++ mod/apktool.yml	2018-04-24 21:50:31.808438500 +0200
+@@ -5,8 +5,6 @@
+ - arsc
+ - data
+ - assets/build
+-- assets/expansion/internal/flysafe/dji.nfzdb.confumix
+-- assets/expansion/internal/flysafe/dji.nfzdb.sig
+ - so
+ - webp
+ - lib/armeabi-v7a/libos_adaptation.context.so
+diff -Naur orig/res/layout/v2_upgrade_data_activity.xml mod/res/layout/v2_upgrade_data_activity.xml
+--- orig/res/layout/v2_upgrade_data_activity.xml	2018-04-24 21:46:04.587622400 +0200
++++ mod/res/layout/v2_upgrade_data_activity.xml	2018-04-24 21:56:20.562618300 +0200
+@@ -15,8 +15,6 @@
+             <TextView android:id="@id/v2_upgrade_data_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/tip_upgrade_data_to_upgrade" style="@style/data_upgrade_bold_tip" />
+         </dji.publics.DJIUI.DJILinearLayout>
+         <FrameLayout android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="fill_parent">
+-            <dji.pilot.publics.widget.DJIStateTextView android:enabled="true" android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@id/v2_upgrade_data_ok_btn" android:background="@drawable/common_bottom_btn_selector" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/tip_upgrade_data_start" android:maxLines="1" />
+-            <dji.pilot.publics.widget.DJIStateTextView android:enabled="true" android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@id/v2_upgrade_data_finish_btn" android:background="@drawable/common_bottom_btn_selector" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/ok" android:maxLines="1" />
+             <dji.publics.DJIUI.DJIRelativeLayout android:layout_gravity="bottom" android:id="@id/v2_upgrade_data_progress_layout" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="55.0dip">
+                 <ProgressBar android:id="@id/v2_upgrade_data_progress" android:background="#ffc1c1c1" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginTop="4.0dip" android:max="100" android:progress="20" android:progressDrawable="@drawable/v2_upgrade_activity_progress" style="?android:attr/progressBarStyleHorizontal" />
+                 <dji.publics.DJIUI.DJITextView android:textSize="16.0sp" android:textColor="@color/acad_item_name_font" android:id="@id/v2_upgrade_data_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:maxWidth="@dimen/dp_250_in_sw320dp" android:text="@string/tip_upgrade_data_upgrading" android:layout_below="@id/v2_upgrade_data_progress" android:layout_centerHorizontal="true" />
+
+diff -Naur orig/smali_classes4/dji/data/upgrade/d/a.smali mod/smali_classes4/dji/data/upgrade/d/a.smali
+--- orig/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-24 21:46:14.765705700 +0200
++++ mod/smali_classes4/dji/data/upgrade/d/a.smali	2018-04-12 14:31:41.238046000 +0200
+@@ -483,8 +483,6 @@
+     .line 231
+     iget-object v0, p0, Ldji/data/upgrade/d/a;->m:Ldji/publics/widget/dialog/c;
+ 
+-    invoke-virtual {v0}, Ldji/publics/widget/dialog/c;->show()V
+-
+     .line 232
+     return-void
+ .end method
+@@ -652,8 +650,6 @@
+     .line 313
+     iget-object v1, p0, Ldji/data/upgrade/d/a;->n:Ldji/publics/widget/dialog/c;
+ 
+-    invoke-virtual {v1}, Ldji/publics/widget/dialog/c;->show()V
+-
+     goto :goto_0
+ .end method
+ 
+@@ -771,8 +767,6 @@
+     .line 365
+     iget-object v0, p0, Ldji/data/upgrade/d/a;->o:Ldji/publics/widget/dialog/c;
+ 
+-    invoke-virtual {v0}, Ldji/publics/widget/dialog/c;->show()V
+-
+     goto :goto_0
+ 
+     .line 337
+@@ -1060,7 +1054,7 @@
      .line 189
      sget-boolean v0, Ldji/pilot2/upgrade/DataUpgradeActivity;->a:Z
-
+ 
 -    if-eqz v0, :cond_0
 +    goto :goto_0
-
+ 
      .line 190
      iget-object v0, p0, Ldji/data/upgrade/d/a;->a:Ljava/lang/String;
-@@ -1074,7 +1074,7 @@
+@@ -1074,7 +1068,7 @@
      invoke-static {v0, v3}, Ldji/dbox/upgrade/p4/a/a;->b(Ljava/lang/String;Ljava/lang/String;)V
-
+ 
      .line 193
 -    :cond_0
 +    :goto_0
      invoke-static {}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->getInstance()Ldji/midware/data/model/P3/DataOsdGetPushCommon;
-
+ 
      move-result-object v0
-@@ -1084,24 +1084,24 @@
-
+@@ -1084,24 +1078,24 @@
+ 
      move-result v3
-
+ 
 -    if-nez v3, :cond_3
 +    if-nez v3, :cond_2
-
+ 
      invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->isGetted()Z
-
+ 
      move-result v3
-
+ 
 -    if-eqz v3, :cond_3
 +    if-eqz v3, :cond_2
-
+ 
      invoke-virtual {v0}, Ldji/midware/data/model/P3/DataOsdGetPushCommon;->isMotorUp()Z
-
+ 
      move-result v0
-
+ 
 -    if-eqz v0, :cond_3
 +    if-eqz v0, :cond_2
-
+ 
      move v0, v1
-
+ 
      .line 195
 -    :goto_0
 +    :goto_1
      invoke-static {}, Ldji/pilot2/usercenter/activate/a;->getInstance()Ldji/pilot2/usercenter/activate/a;
-
+ 
      move-result-object v3
-@@ -1113,31 +1113,32 @@
+@@ -1113,31 +1107,32 @@
      .line 196
      sget-boolean v4, Ldji/pilot2/upgrade/DataUpgradeActivity;->a:Z
-
+ 
 -    if-nez v4, :cond_1
 +    goto :goto_2
-
+ 
      .line 197
      invoke-static {}, Ldji/midware/data/forbid/util/FlyfrbSupportUtil;->isUseSlaveMode()Z
-
+ 
      move-result v4
-
+ 
 -    if-nez v4, :cond_1
 +    if-nez v4, :cond_0
-
+ 
 -    if-nez v0, :cond_1
 +    if-nez v0, :cond_0
-
+ 
 -    if-nez v3, :cond_2
 +    if-nez v3, :cond_1
-
+ 
 -    :cond_1
 +    :cond_0
 +    :goto_2
      move v2, v1
-
+ 
      .line 196
 -    :cond_2
 +    :cond_1
      return v2
-
+ 
 -    :cond_3
 +    :cond_2
      move v0, v2
-
+ 
      .line 194
 -    goto :goto_0
 +    goto :goto_1
  .end method
-
+ 
  .method public static getInstance(Landroid/content/Context;)Ldji/data/upgrade/d/a;
-@@ -1537,186 +1538,11 @@
+@@ -1467,8 +1462,6 @@
+     .line 445
+     iget-object v0, p0, Ldji/data/upgrade/d/a;->p:Ldji/publics/widget/dialog/c;
+ 
+-    invoke-virtual {v0}, Ldji/publics/widget/dialog/c;->show()V
+-
+     goto :goto_0
  .end method
-
+ 
+@@ -1509,8 +1502,6 @@
+     .line 459
+     iget-object v0, p0, Ldji/data/upgrade/d/a;->k:Ldji/data/upgrade/d/b;
+ 
+-    invoke-virtual {v0}, Ldji/data/upgrade/d/b;->show()V
+-
+     goto :goto_0
+ .end method
+ 
+@@ -1537,186 +1528,13 @@
+ .end method
+ 
  .method private n()V
 -    .locals 9
 +    .locals 0
-
+ 
      .prologue
 -    const/4 v8, 0x1
 -
 -    const/4 v7, 0x0
--
+ 
      .line 476
 -    invoke-direct {p0}, Ldji/data/upgrade/d/a;->g()Z
--
+ 
 -    move-result v0
 -
 -    if-eqz v0, :cond_1
@@ -275,18 +365,45 @@ diff -Naru orig/smali_classes4/dji/data/upgrade/d/a.smali mod/smali_classes4/dji
 -
 -    goto/16 :goto_0
  .end method
-
-
-diff -Naru orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali mod/smali_classes5/dji/pilot/flyunlimit/a/g.smali
---- orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali	2018-04-01 14:30:38.749753100 +0200
-+++ mod/smali_classes5/dji/pilot/flyunlimit/a/g.smali	2018-04-01 14:43:33.504996400 +0200
+ 
+ 
+diff -Naur orig/smali_classes4/dji/data/upgrade/models/DJIUpDataModel.smali mod/smali_classes4/dji/data/upgrade/models/DJIUpDataModel.smali
+--- orig/smali_classes4/dji/data/upgrade/models/DJIUpDataModel.smali	2018-04-24 21:46:14.765417100 +0200
++++ mod/smali_classes4/dji/data/upgrade/models/DJIUpDataModel.smali	2018-04-24 22:02:40.566997000 +0200
+@@ -56,7 +56,7 @@
+ 
+     if-eqz v0, :cond_0
+ 
+-    iget-boolean v0, p0, Ldji/data/upgrade/models/DJIUpDataModel;->update:Z
++    const v0, 0x0
+ 
+     if-eqz v0, :cond_0
+ 
+@@ -106,12 +106,12 @@
+ 
+     if-eqz v0, :cond_0
+ 
+-    iget-boolean v0, p0, Ldji/data/upgrade/models/DJIUpDataModel;->update:Z
++    const v0, 0x0
+ 
+     if-eqz v0, :cond_1
+ 
+     :cond_0
+-    iget-object v0, p0, Ldji/data/upgrade/models/DJIUpDataModel;->url:Ljava/lang/String;
++    const v0, 0x0
+ 
+     if-eqz v0, :cond_1
+ 
+diff -Naur orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali mod/smali_classes5/dji/pilot/flyunlimit/a/g.smali
+--- orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali	2018-04-24 21:46:15.260402100 +0200
++++ mod/smali_classes5/dji/pilot/flyunlimit/a/g.smali	2018-04-24 22:02:40.574564000 +0200
 @@ -1195,89 +1195,11 @@
  .end method
-
+ 
  .method public b(Landroid/content/Context;)V
 -    .locals 4
 +    .locals 0
-
+ 
      .prologue
 -    const/4 v0, 0x0
 -
@@ -369,5 +486,5 @@ diff -Naru orig/smali_classes5/dji/pilot/flyunlimit/a/g.smali mod/smali_classes5
 -
 -    goto :goto_0
  .end method
-
+ 
  .method public b(Landroid/content/Context;Ldji/pilot/flyforbid/h$b;)V
