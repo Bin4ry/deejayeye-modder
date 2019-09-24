@@ -92,3 +92,5 @@ brings back the option to disable RTH Obstacle Detection and thus the possibilit
 enableLEDSwitchOnSpark
 Enables dark mode on Spark. Fly responsibly.
 
+enableVoltageDisplayOnSpark
+Enables little voltage display on all devices
