@@ -1,5 +1,8 @@
 # deejayeye-modder
 
+This is for advanced users, if you are looking into easy drone modding look at our partner website drone-hacks
+https://drone-hacks.com
+
 Find the chinese version here:
 
 # [---中文文档点这儿---](中文文档.md)
