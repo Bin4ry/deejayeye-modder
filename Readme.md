@@ -50,8 +50,8 @@ Thank you emails :) -> andreas.makris@gmail.com
 
 
 ## Want to contribute or learn some stuff? 
-Join our Slack (this is where the magic happens): UPDATED LINK (06.05.2021) 
-https://join.slack.com/t/dji-rev/shared_invite/zt-b1dubybk-K9M~z7zS8h_8f97F9LbYug
+Join our Mattermost (this is where the magic happens): UPDATED LINK (30.11.2021) 
+https://dji-rev.com
 
 ## What is the latest version to work?
 
